@@ -16,6 +16,7 @@
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
 		857EE0E21BFD14F30010295C /* CruDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EE0E11BFD14F30010295C /* CruDBClient.swift */; settings = {ASSET_TAGS = (); }; };
+		85C61D031BFD2BAB00651BB5 /* CruDBClientTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C61D021BFD2BAB00651BB5 /* CruDBClientTest.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		857EE0E11BFD14F30010295C /* CruDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CruDBClient.swift; sourceTree = "<group>"; };
+		85C61D021BFD2BAB00651BB5 /* CruDBClientTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CruDBClientTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +118,7 @@
 		0F8CEF371BEC0E14008FC70D /* CruTests */ = {
 			isa = PBXGroup;
 			children = (
+				85C61D011BFD2B7700651BB5 /* CruDBClient */,
 				0F8CEF381BEC0E14008FC70D /* CruTests.swift */,
 				0F8CEF3A1BEC0E14008FC70D /* Info.plist */,
 			);
@@ -135,6 +138,14 @@
 			isa = PBXGroup;
 			children = (
 				857EE0E11BFD14F30010295C /* CruDBClient.swift */,
+			);
+			name = CruDBClient;
+			sourceTree = "<group>";
+		};
+		85C61D011BFD2B7700651BB5 /* CruDBClient */ = {
+			isa = PBXGroup;
+			children = (
+				85C61D021BFD2BAB00651BB5 /* CruDBClientTest.swift */,
 			);
 			name = CruDBClient;
 			sourceTree = "<group>";
@@ -212,7 +223,6 @@
 					0F8CEF331BEC0E14008FC70D = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 55E3ZU82Z7;
-						TestTargetID = 0F8CEF1C1BEC0E13008FC70D;
 					};
 					0F8CEF3E1BEC0E14008FC70D = {
 						CreatedOnToolsVersion = 7.1;
@@ -285,6 +295,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
+				85C61D031BFD2BAB00651BB5 /* CruDBClientTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -418,10 +429,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -429,34 +444,36 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cru/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
 		0F8CEF4C1BEC0E14008FC70D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = CruTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cru.app/Cru";
 			};
 			name = Debug;
 		};
 		0F8CEF4D1BEC0E14008FC70D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_IDENTITY = "";
 				INFOPLIST_FILE = CruTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cru.app/Cru";
 			};
 			name = Release;
 		};

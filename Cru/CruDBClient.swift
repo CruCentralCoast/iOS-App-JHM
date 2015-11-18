@@ -9,6 +9,7 @@
 import Foundation
 
 class CruDBClient {
+    let serverUrl = "http://localhost:3000/"
     var something : String
     
     init() {
@@ -17,5 +18,28 @@ class CruDBClient {
     
     func getSomething() -> String {
         return self.something
+    }
+    
+    func getCollection() {
+        
+        
+        
+    }
+    
+    func sendHttpRequest(reqUrl : String, reqMethod : String) ->NSURLSessionDataTask {
+        let requestUrl = NSURL(string: reqUrl)
+        let request = NSMutableURLRequest(URL: requestUrl!)
+        request.HTTPMethod = reqMethod
+        
+        let session = NSURLSession.sharedSession()
+        
+        let task = session.dataTaskWithRequest(request, completionHandler: {(date: NSData?, response: NSURLResponse?, error: NSError?) in
+            //do something
+            print(self.something)
+        })
+        
+        task.resume()
+        
+        return task
     }
 }
