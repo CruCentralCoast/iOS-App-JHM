@@ -15,6 +15,7 @@
 		0F8CEF2E1BEC0E13008FC70D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */; };
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
+		857EE0E21BFD14F30010295C /* CruDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 857EE0E11BFD14F30010295C /* CruDBClient.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		857EE0E11BFD14F30010295C /* CruDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CruDBClient.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				857EE0DF1BFD14940010295C /* CruDBClient */,
 				0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */,
 				0F8CEF221BEC0E13008FC70D /* ViewController.swift */,
 				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
@@ -126,6 +129,14 @@
 				0F8CEF451BEC0E14008FC70D /* Info.plist */,
 			);
 			path = CruUITests;
+			sourceTree = "<group>";
+		};
+		857EE0DF1BFD14940010295C /* CruDBClient */ = {
+			isa = PBXGroup;
+			children = (
+				857EE0E11BFD14F30010295C /* CruDBClient.swift */,
+			);
+			name = CruDBClient;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -265,6 +276,7 @@
 				0F8CEF231BEC0E13008FC70D /* ViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
+				857EE0E21BFD14F30010295C /* CruDBClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -491,6 +503,7 @@
 				0F8CEF4A1BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F8CEF4B1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +512,7 @@
 				0F8CEF4D1BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F8CEF4E1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +521,7 @@
 				0F8CEF501BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
