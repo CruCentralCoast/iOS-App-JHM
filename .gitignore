@@ -1,3 +1,4 @@
-Cru.xcodeproj/xcuserdata/
-build/
+Cru.xcodeproj/xcuserdata
+Cru.xcodeproj/*/xcuserdata
 .DS_Store
+build/
