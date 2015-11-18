@@ -1,4 +1,5 @@
-Cru.xcodeproj/xcuserdata
-Cru.xcodeproj/*/xcuserdata
+Cru.xcodeproj/xcuserdata/
+Cru.xcodeproj/*/xcuserdata/
 .DS_Store
 build/
+Cru.xcodeproj/project.xcworkspace/xcuserdata/pgodkin.xcuserdatad/UserInterfaceState.xcuserstate
