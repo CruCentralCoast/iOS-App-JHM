@@ -15,6 +15,14 @@
 		0F8CEF2E1BEC0E13008FC70D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */; };
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
+		501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085A91BFBDAF000849CED /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AB1BFBDB4100849CED /* EventsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AF1BFBDB7900849CED /* RideSharingViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		501085B21BFBDB8600849CED /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501085BA1BFBE56A00849CED /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,16 @@
 		0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		501085A91BFBDAF000849CED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		501085AB1BFBDB4100849CED /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
+		501085AD1BFBDB6700849CED /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
+		501085AF1BFBDB7900849CED /* RideSharingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideSharingViewController.swift; sourceTree = "<group>"; };
+		501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInvolvedViewController.swift; sourceTree = "<group>"; };
+		501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionsViewController.swift; sourceTree = "<group>"; };
+		501085B51BFBDCCE00849CED /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		501085B81BFBE56A00849CED /* Cru-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cru-Bridging-Header.h"; sourceTree = "<group>"; };
+		501085B91BFBE56A00849CED /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		501085BA1BFBE56A00849CED /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +117,17 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				501085B71BFBE52700849CED /* SWRevealController */,
 				0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */,
 				0F8CEF221BEC0E13008FC70D /* ViewController.swift */,
 				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
+				501085B51BFBDCCE00849CED /* SettingsViewController.swift */,
+				501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */,
+				501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */,
+				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
+				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
+				501085AB1BFBDB4100849CED /* EventsViewController.swift */,
+				501085A91BFBDAF000849CED /* HomeViewController.swift */,
 				0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */,
 				0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */,
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
@@ -126,6 +152,16 @@
 				0F8CEF451BEC0E14008FC70D /* Info.plist */,
 			);
 			path = CruUITests;
+			sourceTree = "<group>";
+		};
+		501085B71BFBE52700849CED /* SWRevealController */ = {
+			isa = PBXGroup;
+			children = (
+				501085B91BFBE56A00849CED /* SWRevealViewController.h */,
+				501085BA1BFBE56A00849CED /* SWRevealViewController.m */,
+				501085B81BFBE56A00849CED /* Cru-Bridging-Header.h */,
+			);
+			name = SWRevealController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -262,9 +298,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */,
+				501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */,
+				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* ViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
+				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,
+				501085B21BFBDB8600849CED /* GetInvolvedViewController.swift in Sources */,
+				501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */,
+				501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
+				501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +399,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -394,7 +438,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -406,10 +450,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cru/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -417,10 +468,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cru/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -452,6 +509,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = CruUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = CruUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -491,6 +550,7 @@
 				0F8CEF4A1BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F8CEF4B1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +559,7 @@
 				0F8CEF4D1BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F8CEF4E1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +568,7 @@
 				0F8CEF501BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
