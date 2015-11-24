@@ -105,6 +105,13 @@
 				0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */,
 				0F8CEF221BEC0E13008FC70D /* ViewController.swift */,
 				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
+				501085B51BFBDCCE00849CED /* SettingsViewController.swift */,
+				501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */,
+				501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */,
+				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
+				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
+				501085AB1BFBDB4100849CED /* EventsViewController.swift */,
+				501085A91BFBDAF000849CED /* HomeViewController.swift */,
 				0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */,
 				0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */,
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
@@ -273,8 +280,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */,
+				501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */,
+				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* ViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
+				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,
+				501085B21BFBDB8600849CED /* GetInvolvedViewController.swift in Sources */,
+				501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */,
+				501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 				857EE0E21BFD14F30010295C /* CruDBClient.swift in Sources */,
 			);
@@ -367,7 +381,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -406,7 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -418,10 +432,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cru/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -429,10 +450,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = Cru/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -464,6 +491,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = CruUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -476,6 +504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = CruUITests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
