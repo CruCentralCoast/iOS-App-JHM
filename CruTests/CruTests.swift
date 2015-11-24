@@ -33,11 +33,6 @@ class CruTests: XCTestCase {
         
     }
     
-    func testFail(){
-        let client: CruDBClient
-        client = CruDBClient()
-        XCTAssertEqual(client.getSomething(), "nope")
-    }
     
     func testPerformanceExample() {
         // This is an example of a performance test case.
