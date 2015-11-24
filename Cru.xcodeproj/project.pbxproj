@@ -12,7 +12,6 @@
 		0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF241BEC0E13008FC70D /* Main.storyboard */; };
 		0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF271BEC0E13008FC70D /* Cru.xcdatamodeld */; };
 		0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */; };
-		0F8CEF2E1BEC0E13008FC70D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */; };
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
 		501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085A91BFBDAF000849CED /* HomeViewController.swift */; };
@@ -24,6 +23,14 @@
 		501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; };
 		501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501085BA1BFBE56A00849CED /* SWRevealViewController.m */; };
 		501DE6431C042E72007990D5 /* CruDBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501DE6421C042E72007990D5 /* CruDBClient.swift */; };
+		50ED8FD31C0508F0002C9E30 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */; };
+		50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE01C052B80002C9E30 /* home.storyboard */; };
+		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
+		50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE51C052BF9002C9E30 /* events.storyboard */; };
+		50ED8FE91C052C2A002C9E30 /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE81C052C2A002C9E30 /* summermissions.storyboard */; };
+		50ED8FEC1C052C48002C9E30 /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FEA1C052C48002C9E30 /* resources.storyboard */; };
+		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
+		50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,7 +57,6 @@
 		0F8CEF251BEC0E13008FC70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F8CEF281BEC0E13008FC70D /* Cru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cru.xcdatamodel; sourceTree = "<group>"; };
 		0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0F8CEF2D1BEC0E13008FC70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0F8CEF2F1BEC0E13008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8CEF341BEC0E14008FC70D /* CruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF381BEC0E14008FC70D /* CruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruTests.swift; sourceTree = "<group>"; };
@@ -69,6 +75,14 @@
 		501085B91BFBE56A00849CED /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		501085BA1BFBE56A00849CED /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		501DE6421C042E72007990D5 /* CruDBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CruDBClient.swift; sourceTree = "<group>"; };
+		50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		50ED8FE11C052B80002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/home.storyboard; sourceTree = "<group>"; };
+		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
+		50ED8FE61C052BF9002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/events.storyboard; sourceTree = "<group>"; };
+		50ED8FE81C052C2A002C9E30 /* summermissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = summermissions.storyboard; sourceTree = "<group>"; };
+		50ED8FEB1C052C48002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/resources.storyboard; sourceTree = "<group>"; };
+		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
+		50ED8FF01C052D04002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ridesharing.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,22 +133,22 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
-				501085B71BFBE52700849CED /* SWRevealController */,
+				50ED8FDA1C052AEF002C9E30 /* Home */,
+				50ED8FDF1C052B3C002C9E30 /* Summer Missions */,
+				50ED8FDE1C052B09002C9E30 /* Resources */,
+				50ED8FDD1C052B03002C9E30 /* Get Involved */,
+				50ED8FDC1C052AFF002C9E30 /* Events */,
+				50ED8FDB1C052AFB002C9E30 /* Settings */,
+				50ED8FCF1C05063D002C9E30 /* RideSharing */,
 				0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */,
 				0F8CEF221BEC0E13008FC70D /* ViewController.swift */,
 				501DE6421C042E72007990D5 /* CruDBClient.swift */,
 				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
-				501085B51BFBDCCE00849CED /* SettingsViewController.swift */,
-				501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */,
-				501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */,
-				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
-				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
-				501085AB1BFBDB4100849CED /* EventsViewController.swift */,
-				501085A91BFBDAF000849CED /* HomeViewController.swift */,
 				0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */,
-				0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */,
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
 				0F8CEF271BEC0E13008FC70D /* Cru.xcdatamodeld */,
+				50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */,
+				501085B71BFBE52700849CED /* SWRevealController */,
 			);
 			path = Cru;
 			sourceTree = "<group>";
@@ -165,6 +179,69 @@
 				501085B81BFBE56A00849CED /* Cru-Bridging-Header.h */,
 			);
 			name = SWRevealController;
+			sourceTree = "<group>";
+		};
+		50ED8FCF1C05063D002C9E30 /* RideSharing */ = {
+			isa = PBXGroup;
+			children = (
+				50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */,
+				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
+			);
+			name = RideSharing;
+			sourceTree = "<group>";
+		};
+		50ED8FDA1C052AEF002C9E30 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				50ED8FE01C052B80002C9E30 /* home.storyboard */,
+				501085A91BFBDAF000849CED /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		50ED8FDB1C052AFB002C9E30 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				50ED8FED1C052C65002C9E30 /* settings.storyboard */,
+				501085B51BFBDCCE00849CED /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
+		50ED8FDC1C052AFF002C9E30 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				50ED8FE51C052BF9002C9E30 /* events.storyboard */,
+				501085AB1BFBDB4100849CED /* EventsViewController.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
+		50ED8FDD1C052B03002C9E30 /* Get Involved */ = {
+			isa = PBXGroup;
+			children = (
+				50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */,
+				501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */,
+			);
+			name = "Get Involved";
+			sourceTree = "<group>";
+		};
+		50ED8FDE1C052B09002C9E30 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				50ED8FEA1C052C48002C9E30 /* resources.storyboard */,
+				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		50ED8FDF1C052B3C002C9E30 /* Summer Missions */ = {
+			isa = PBXGroup;
+			children = (
+				50ED8FE81C052C2A002C9E30 /* summermissions.storyboard */,
+				501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */,
+			);
+			name = "Summer Missions";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,9 +351,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0F8CEF2E1BEC0E13008FC70D /* LaunchScreen.storyboard in Resources */,
+				50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */,
+				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
+				50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */,
+				50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */,
+				50ED8FEC1C052C48002C9E30 /* resources.storyboard in Resources */,
 				0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */,
+				50ED8FE91C052C2A002C9E30 /* summermissions.storyboard in Resources */,
 				0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */,
+				50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -303,6 +386,7 @@
 			files = (
 				501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */,
 				501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */,
+				50ED8FD31C0508F0002C9E30 /* MenuTableViewController.swift in Sources */,
 				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* ViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
@@ -356,12 +440,36 @@
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */ = {
+		50ED8FE01C052B80002C9E30 /* home.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				0F8CEF2D1BEC0E13008FC70D /* Base */,
+				50ED8FE11C052B80002C9E30 /* Base */,
 			);
-			name = LaunchScreen.storyboard;
+			name = home.storyboard;
+			sourceTree = "<group>";
+		};
+		50ED8FE51C052BF9002C9E30 /* events.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50ED8FE61C052BF9002C9E30 /* Base */,
+			);
+			name = events.storyboard;
+			sourceTree = "<group>";
+		};
+		50ED8FEA1C052C48002C9E30 /* resources.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50ED8FEB1C052C48002C9E30 /* Base */,
+			);
+			name = resources.storyboard;
+			sourceTree = "<group>";
+		};
+		50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				50ED8FF01C052D04002C9E30 /* Base */,
+			);
+			name = ridesharing.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
