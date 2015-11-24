@@ -15,6 +15,19 @@
 		0F8CEF2E1BEC0E13008FC70D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */; };
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
+		6DCF1AB01C0150DB00A87655 /* MealTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF1AAE1C0150DB00A87655 /* MealTableViewController.swift */; };
+		6DCF1AB11C0150DB00A87655 /* MealTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF1AAF1C0150DB00A87655 /* MealTableViewController.xib */; };
+		6DCF1AB31C01536B00A87655 /* MealTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF1AB21C01536B00A87655 /* MealTableViewCell.swift */; };
+		6DCF1AB61C0261E100A87655 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF1AB41C0261E100A87655 /* EventTableViewController.swift */; };
+		6DCF1AB71C0261E100A87655 /* EventTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6DCF1AB51C0261E100A87655 /* EventTableViewController.xib */; };
+		6DCF1AB91C02698B00A87655 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DCF1AB81C02698B00A87655 /* EventTableViewCell.swift */; };
+		6DEB5F1D1BFD36DE006CD588 /* RatingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB5F1C1BFD36DE006CD588 /* RatingControl.swift */; };
+		6DEB5F1F1BFFE5D0006CD588 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB5F1E1BFFE5D0006CD588 /* Meal.swift */; };
+		6DEB5F201BFFE5D0006CD588 /* Meal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB5F1E1BFFE5D0006CD588 /* Meal.swift */; };
+		6DEB5F221BFFE65A006CD588 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB5F211BFFE65A006CD588 /* Event.swift */; };
+		6DEB5F231BFFE65A006CD588 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DEB5F211BFFE65A006CD588 /* Event.swift */; };
+		6DFE3BE61C041668005E80E0 /* EventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DFE3BE51C041668005E80E0 /* EventViewController.swift */; };
+		6DFE3BE81C042778005E80E0 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DFE3BE71C042778005E80E0 /* FreigSanProLig.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +62,17 @@
 		0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6DCF1AAE1C0150DB00A87655 /* MealTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MealTableViewController.swift; sourceTree = "<group>"; };
+		6DCF1AAF1C0150DB00A87655 /* MealTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MealTableViewController.xib; sourceTree = "<group>"; };
+		6DCF1AB21C01536B00A87655 /* MealTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MealTableViewCell.swift; path = ../MealTableViewCell.swift; sourceTree = "<group>"; };
+		6DCF1AB41C0261E100A87655 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
+		6DCF1AB51C0261E100A87655 /* EventTableViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EventTableViewController.xib; sourceTree = "<group>"; };
+		6DCF1AB81C02698B00A87655 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
+		6DEB5F1C1BFD36DE006CD588 /* RatingControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingControl.swift; sourceTree = "<group>"; };
+		6DEB5F1E1BFFE5D0006CD588 /* Meal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Meal.swift; sourceTree = "<group>"; };
+		6DEB5F211BFFE65A006CD588 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		6DFE3BE51C041668005E80E0 /* EventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventViewController.swift; sourceTree = "<group>"; };
+		6DFE3BE71C042778005E80E0 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +123,20 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				6DCF1AB21C01536B00A87655 /* MealTableViewCell.swift */,
+				6DCF1AB81C02698B00A87655 /* EventTableViewCell.swift */,
 				0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */,
-				0F8CEF221BEC0E13008FC70D /* ViewController.swift */,
+				6DEB5F1E1BFFE5D0006CD588 /* Meal.swift */,
+				6DEB5F211BFFE65A006CD588 /* Event.swift */,
 				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
+				6DFE3BE71C042778005E80E0 /* FreigSanProLig.otf */,
+				6DCF1AB41C0261E100A87655 /* EventTableViewController.swift */,
+				6DCF1AB51C0261E100A87655 /* EventTableViewController.xib */,
+				6DCF1AAE1C0150DB00A87655 /* MealTableViewController.swift */,
+				6DCF1AAF1C0150DB00A87655 /* MealTableViewController.xib */,
+				6DEB5F1C1BFD36DE006CD588 /* RatingControl.swift */,
+				0F8CEF221BEC0E13008FC70D /* ViewController.swift */,
+				6DFE3BE51C041668005E80E0 /* EventViewController.swift */,
 				0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */,
 				0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */,
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
@@ -235,8 +270,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DCF1AB71C0261E100A87655 /* EventTableViewController.xib in Resources */,
 				0F8CEF2E1BEC0E13008FC70D /* LaunchScreen.storyboard in Resources */,
 				0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */,
+				6DFE3BE81C042778005E80E0 /* FreigSanProLig.otf in Resources */,
+				6DCF1AB11C0150DB00A87655 /* MealTableViewController.xib in Resources */,
 				0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +300,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEB5F1F1BFFE5D0006CD588 /* Meal.swift in Sources */,
+				6DFE3BE61C041668005E80E0 /* EventViewController.swift in Sources */,
+				6DCF1AB61C0261E100A87655 /* EventTableViewController.swift in Sources */,
+				6DEB5F1D1BFD36DE006CD588 /* RatingControl.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* ViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
+				6DCF1AB31C01536B00A87655 /* MealTableViewCell.swift in Sources */,
+				6DEB5F221BFFE65A006CD588 /* Event.swift in Sources */,
+				6DCF1AB01C0150DB00A87655 /* MealTableViewController.swift in Sources */,
+				6DCF1AB91C02698B00A87655 /* EventTableViewCell.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,6 +318,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6DEB5F201BFFE5D0006CD588 /* Meal.swift in Sources */,
+				6DEB5F231BFFE65A006CD588 /* Event.swift in Sources */,
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -491,6 +539,7 @@
 				0F8CEF4A1BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F8CEF4B1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruTests" */ = {
 			isa = XCConfigurationList;
@@ -499,6 +548,7 @@
 				0F8CEF4D1BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		0F8CEF4E1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruUITests" */ = {
 			isa = XCConfigurationList;
@@ -507,6 +557,7 @@
 				0F8CEF501BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
