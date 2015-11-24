@@ -15,14 +15,14 @@
 		0F8CEF2E1BEC0E13008FC70D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2C1BEC0E13008FC70D /* LaunchScreen.storyboard */; };
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
-		501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085A91BFBDAF000849CED /* HomeViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AB1BFBDB4100849CED /* EventsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AF1BFBDB7900849CED /* RideSharingViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		501085B21BFBDB8600849CED /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501085BA1BFBE56A00849CED /* SWRevealViewController.m */; settings = {ASSET_TAGS = (); }; };
+		501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085A91BFBDAF000849CED /* HomeViewController.swift */; };
+		501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AB1BFBDB4100849CED /* EventsViewController.swift */; };
+		501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
+		501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AF1BFBDB7900849CED /* RideSharingViewController.swift */; };
+		501085B21BFBDB8600849CED /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
+		501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */; };
+		501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; };
+		501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501085BA1BFBE56A00849CED /* SWRevealViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
