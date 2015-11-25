@@ -23,6 +23,7 @@ class HomeViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
+        self.title = "Cru Central Coast"
         // Do any additional setup after loading the view.
     }
     
