@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SOu-VK-CUe">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="SOu-VK-CUe">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
         <!--Reveal View Controller-->
@@ -362,7 +362,7 @@
             </objects>
             <point key="canvasLocation" x="984" y="1715"/>
         </scene>
-        <!--Events View Controller-->
+        <!--Events-->
         <scene sceneID="cHO-ce-pRP">
             <objects>
                 <viewController id="JFZ-9f-GhS" customClass="EventsViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
@@ -371,11 +371,11 @@
                         <viewControllerLayoutGuide type="bottom" id="qfR-wC-xuh"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="wJU-Iw-lmg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="drq-Jo-Rza">
-                                <rect key="frame" x="269" y="289" width="52" height="21"/>
+                                <rect key="frame" x="269" y="257" width="52" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -389,8 +389,9 @@
                             <constraint firstItem="drq-Jo-Rza" firstAttribute="centerY" secondItem="wJU-Iw-lmg" secondAttribute="centerY" id="g9Z-xi-Bzi"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="aRP-eQ-wbK">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="gNs-Nj-JRa"/>
+                    <navigationItem key="navigationItem" title="Events" id="aRP-eQ-wbK">
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="gNs-Nj-JRa"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="search" id="hrQ-eH-jnp"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="gNs-Nj-JRa" id="IbZ-En-Xaz"/>
@@ -405,10 +406,12 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lge-5S-5Og" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="QgF-HV-8j3">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="QgF-HV-8j3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.40000000000000002" green="0.37647058823529411" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -648,7 +651,10 @@
             <point key="canvasLocation" x="984" y="5068"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuIcon" width="27" height="18"/>
+    </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eeQ-8j-YGJ"/>
+        <segue reference="Lan-Cf-xVG"/>
     </inferredMetricsTieBreakers>
 </document>
