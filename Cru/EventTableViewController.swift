@@ -21,18 +21,21 @@ class EventTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        loadSampleEvents()
     }
     
     func loadSampleEvents()
     {
         let photo1 = UIImage(named: "event1")!
-        let event1 = Event(name: "Dinners for 8", image: photo1, month: "NOV", date: 13, startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses")!
+        let event1 = Event(name: "Dinners for 8", image: photo1, month: "NOV", date: "13", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses")!
         
         let photo2 = UIImage(named: "event2")!
-        let event2 = Event(name: "Dinners for 8", image: photo2, month: "NOV", date: 13, startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses")!
+        let event2 = Event(name: "Crossroads", image: photo2, month: "NOV", date: "20", startTime: "4:00", endTime: "12:00", startamORpm: "PM", endamORpm: "AM", location: "Hyatt Westlake Village")!
         
         let photo3 = UIImage(named: "event3")!
-        let event3 = Event(name: "Dinners for 8", image: photo3, month: "NOV", date: 13, startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses")!
+        let event3 = Event(name: "Sophomore Social", image: photo3, month: "NOV", date: "20", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "233 Patricia Drive, San Luis Obispo, CA")!
+        
+        events += [event1, event2, event3]
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,24 +46,30 @@ class EventTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        
+        return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        return events.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
+        let cellIdentifier = "EventTableViewCell"
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! EventTableViewCell
+        
+        // Fetches the appropriate meal for the data source layout.
+        let event = events[indexPath.row]
+        
+        cell.monthLabel.text = event.month
+        cell.dateLabel.text = event.date
+        cell.nameLabel.text = event.name
+        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

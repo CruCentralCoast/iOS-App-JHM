@@ -15,7 +15,7 @@ class Event {
     var name: String
     var image: UIImage?
     var month: String
-    var date: Int
+    var date: String
     var startTime: String
     var endTime: String
     var startamORpm: String
@@ -24,7 +24,7 @@ class Event {
     
     
     //MARK: Initialization
-    init?(name: String, image: UIImage?, month: String, date: Int, startTime: String, endTime: String, startamORpm: String, endamORpm: String, location: String)
+    init?(name: String, image: UIImage?, month: String, date: String, startTime: String, endTime: String, startamORpm: String, endamORpm: String, location: String)
     {
         self.name = name
         self.image = image
