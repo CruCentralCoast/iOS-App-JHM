@@ -14,13 +14,27 @@ class Event {
     
     var name: String
     var image: UIImage?
+    var month: String
+    var date: Int
+    var startTime: String
+    var endTime: String
+    var startamORpm: String
+    var endamORpm: String
+    var location: String
     
     
     //MARK: Initialization
-    init?(name: String, image: UIImage?)
+    init?(name: String, image: UIImage?, month: String, date: Int, startTime: String, endTime: String, startamORpm: String, endamORpm: String, location: String)
     {
         self.name = name
         self.image = image
+        self.month = month
+        self.date = date
+        self.startTime = startTime
+        self.endTime = endTime
+        self.startamORpm = startamORpm
+        self.endamORpm = endamORpm
+        self.location = location
     }
     
 }
