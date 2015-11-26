@@ -23,6 +23,7 @@ class EventsViewController: UIViewController {
         // Do any additional setup after loading the view.
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,5 +35,7 @@ class EventsViewController: UIViewController {
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
     }
+    
+    
 
 }
