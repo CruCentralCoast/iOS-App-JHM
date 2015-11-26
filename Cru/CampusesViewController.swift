@@ -1,26 +1,18 @@
 //
-//  SettingsViewController.swift
+//  CampusesViewController.swift
 //  Cru
 //
-//  Created by Max Crane on 11/17/15.
+//  Created by Max Crane on 11/25/15.
 //  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-    @IBOutlet weak var menuButton: UIBarButtonItem!
+class CampusesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if(self.revealViewController() != nil){
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        
-        self.title = "Settings"
         // Do any additional setup after loading the view.
     }
 

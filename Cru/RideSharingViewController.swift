@@ -10,7 +10,7 @@ import UIKit
 
 class RideSharingViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +19,11 @@ class RideSharingViewController: UIViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        else{
+            print("view controller is nil brah")
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
 

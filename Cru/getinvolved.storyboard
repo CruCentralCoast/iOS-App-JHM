@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qKH-sz-Wh1">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Get Involved View Controller-->
+        <scene sceneID="721-Ra-dym">
+            <objects>
+                <viewController id="Pi5-cD-Qdc" customClass="GetInvolvedViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ywn-no-K3C"/>
+                        <viewControllerLayoutGuide type="bottom" id="fOa-tz-KrW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iky-x5-IPD">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Get Involved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc7-IP-Dez">
+                                <rect key="frame" x="225" y="289" width="96" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pc7-IP-Dez" firstAttribute="centerX" secondItem="iky-x5-IPD" secondAttribute="centerX" id="M3E-ox-lsm"/>
+                            <constraint firstItem="pc7-IP-Dez" firstAttribute="centerY" secondItem="iky-x5-IPD" secondAttribute="centerY" id="wvG-Eh-nGH"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="JMl-pk-V0g">
+                        <barButtonItem key="leftBarButtonItem" title="Menu" id="Hav-vb-26K"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="Hav-vb-26K" id="XMa-pQ-NDZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kZZ-tb-zri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="1715"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mkK-IV-cDm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qKH-sz-Wh1" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Aj-E9-wWT">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Pi5-cD-Qdc" kind="relationship" relationship="rootViewController" id="NDE-As-HnT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2YV-x3-Xvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="984" y="1715"/>
+        </scene>
+    </scenes>
+</document>
