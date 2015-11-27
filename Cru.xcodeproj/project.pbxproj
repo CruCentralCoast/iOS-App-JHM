@@ -41,6 +41,7 @@
 		6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7A1C06AB6900F8B007 /* Event.swift */; };
 		6D76CA7E1C06AF9E00F8B007 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7D1C06AF9E00F8B007 /* EventTableViewController.swift */; };
 		6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
+		6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -102,6 +103,7 @@
 		6D76CA7A1C06AB6900F8B007 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6D76CA7D1C06AF9E00F8B007 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBook.otf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -169,6 +171,7 @@
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
 				0F8CEF271BEC0E13008FC70D /* Cru.xcdatamodeld */,
 				50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */,
+				6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */,
 				6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */,
 				6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */,
 				501085B71BFBE52700849CED /* SWRevealController */,
@@ -389,6 +392,7 @@
 				50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
 				50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */,
+				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
 				50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */,
 				50ED8FEC1C052C48002C9E30 /* resources.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,

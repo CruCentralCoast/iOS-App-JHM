@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YUa-vL-0MC">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
@@ -13,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="lBx-6x-L50"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="6dL-Vb-gil">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Resources" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhe-cA-g0W">
-                                <rect key="frame" x="240" y="289" width="81" height="21"/>
+                                <rect key="frame" x="240" y="257" width="81" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -32,7 +33,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="E7P-td-LNN">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="2ct-wE-zgs"/>
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="2ct-wE-zgs"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="2ct-wE-zgs" id="eAQ-YX-rla"/>
@@ -47,10 +48,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="YUa-vL-0MC" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="LVJ-h0-kil">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="LVJ-h0-kil">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -62,4 +68,7 @@
             <point key="canvasLocation" x="984" y="4395"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuIcon" width="27" height="18"/>
+    </resources>
 </document>

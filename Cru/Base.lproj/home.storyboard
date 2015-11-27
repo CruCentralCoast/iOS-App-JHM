@@ -14,11 +14,11 @@
                         <viewControllerLayoutGuide type="bottom" id="XFU-rk-iVZ"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3qc-xo-NCa">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="homepage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWW-h3-4pS">
-                                <rect key="frame" x="259" y="289" width="82" height="21"/>
+                                <rect key="frame" x="259" y="257" width="82" height="21"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -33,7 +33,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="eSP-tx-YIq">
-                        <barButtonItem key="leftBarButtonItem" title="Menu" id="R7x-Jg-VAn"/>
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="R7x-Jg-VAn"/>
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="R7x-Jg-VAn" id="3dQ-4M-St3"/>
@@ -48,10 +48,15 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="SQA-bo-zGq" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Pa1-ef-B9s">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="Pa1-ef-B9s">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -63,4 +68,7 @@
             <point key="canvasLocation" x="984" y="1046"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="menuIcon" width="27" height="18"/>
+    </resources>
 </document>

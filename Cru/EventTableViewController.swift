@@ -27,13 +27,13 @@ class EventTableViewController: UITableViewController {
     func loadSampleEvents()
     {
         let photo1 = UIImage(named: "event1")!
-        let event1 = Event(name: "Dinners for 8", image: photo1, month: "NOV", date: "13", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses")!
+        let event1 = Event(name: "Dinners for 8", image: photo1, month: "November", date: "13", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses")!
         
         let photo2 = UIImage(named: "event2")!
-        let event2 = Event(name: "Crossroads", image: photo2, month: "NOV", date: "20", startTime: "4:00", endTime: "12:00", startamORpm: "PM", endamORpm: "AM", location: "Hyatt Westlake Village")!
+        let event2 = Event(name: "Crossroads", image: photo2, month: "January", date: "20", startTime: "4:00", endTime: "12:00", startamORpm: "PM", endamORpm: "AM", location: "Hyatt Westlake Village")!
         
         let photo3 = UIImage(named: "event3")!
-        let event3 = Event(name: "Sophomore Social", image: photo3, month: "NOV", date: "20", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "233 Patricia Drive, San Luis Obispo, CA")!
+        let event3 = Event(name: "Sophomore Social", image: photo3, month: "February", date: "20", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "233 Patricia Drive, San Luis Obispo, CA")!
         
         events += [event1, event2, event3]
     }
@@ -63,7 +63,11 @@ class EventTableViewController: UITableViewController {
         // Fetches the appropriate meal for the data source layout.
         let event = events[indexPath.row]
         
-        cell.monthLabel.text = event.month
+        //Creating the abbreviated version of the month to be displayed
+        let index1 = event.month.startIndex.advancedBy(3)
+        let abbrMonth = event.month.substringToIndex(index1)
+        cell.monthLabel.text = abbrMonth.uppercaseString
+        
         cell.dateLabel.text = event.date
         cell.nameLabel.text = event.name
         
@@ -110,6 +114,12 @@ class EventTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let eventDetailViewController = segue.destinationViewController as! EventDetailsViewController
+        if let selectedEventCell = sender as? EventTableViewCell {
+            let indexPath = tableView.indexPathForCell(selectedEventCell)!
+            let selectedEvent = events[indexPath.row]
+            eventDetailViewController.event = selectedEvent
+        }
         
     }
 

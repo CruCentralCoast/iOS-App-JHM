@@ -24,6 +24,7 @@
 	<true/>
 	<key>UIAppFonts</key>
 	<array>
+		<string>FreigSanProBook.otf</string>
 		<string>FreigSanProLig.otf</string>
 		<string>Leitura-Roman 3.otf</string>
 	</array>

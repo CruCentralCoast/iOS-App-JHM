@@ -15,12 +15,23 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    
+    /*
+    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
+    or constructed as part of adding a new meal.
+    */
+    var event: Event?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        if let event = event {
+            navigationItem.title = "Details"
+            nameLabel.text = event.name
+            image.image = event.image
+            dateLabel.text = event.month + event.date
+            timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,14 +40,12 @@ class EventDetailsViewController: UIViewController {
     }
     
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        
     }
-    */
+    
 
 }
