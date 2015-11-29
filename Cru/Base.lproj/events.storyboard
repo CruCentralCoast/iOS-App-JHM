@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lge-5S-5Og">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="lge-5S-5Og">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -33,6 +34,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBx-iX-V2v">
                                 <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <animations/>
                                 <connections>
                                     <segue destination="FaW-UL-zWO" kind="embed" id="8c0-hY-oc4"/>
                                 </connections>
@@ -76,6 +78,7 @@
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pHK-lL-rrC">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="200" id="YWn-s2-zV6"/>
                                         </constraints>
@@ -83,8 +86,9 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
                                         </variation>
                                     </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTM-ls-w9P">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oTM-ls-w9P">
                                         <rect key="frame" x="20" y="208" width="560" height="51"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="40"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -92,8 +96,9 @@
                                             <rect key="frame" x="20" y="208" width="560" height="44"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPs-GO-e8T">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPs-GO-e8T">
                                         <rect key="frame" x="20" y="259" width="560" height="27"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="FreightSansProLight-Regular" family="FreightSans Pro" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -101,8 +106,9 @@
                                             <rect key="frame" x="20" y="254" width="560" height="28"/>
                                         </variation>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-HM-dI7">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uBe-HM-dI7">
                                         <rect key="frame" x="20" y="286" width="560" height="27"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="FreightSansProLight-Regular" family="FreightSans Pro" pointSize="24"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -112,6 +118,7 @@
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iM-EX-Ytp">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="53" id="TQF-4y-Far"/>
                                             <constraint firstAttribute="width" constant="56" id="XQF-GH-3sD"/>
@@ -133,6 +140,7 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NVf-h8-lRQ">
                                         <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                        <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="53" id="8vb-JT-EAv"/>
                                             <constraint firstAttribute="width" constant="56" id="9Ev-8s-uVE"/>
@@ -155,8 +163,9 @@
                                             <action selector="saveToCalendar:" destination="QR0-2a-cn2" eventType="touchUpInside" id="gbm-iP-GjO"/>
                                         </connections>
                                     </button>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moh-yg-Yh4">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="moh-yg-Yh4">
                                         <rect key="frame" x="20" y="324" width="560" height="128"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="13"/>
@@ -167,6 +176,7 @@
                                         </variation>
                                     </textView>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="NVf-h8-lRQ" firstAttribute="top" secondItem="moh-yg-Yh4" secondAttribute="bottom" constant="18" id="60v-en-kQR"/>
                                     <constraint firstAttribute="trailing" secondItem="uBe-HM-dI7" secondAttribute="trailing" constant="20" id="CNY-TZ-AQg"/>
@@ -198,6 +208,10 @@
                                         <exclude reference="moh-yg-Yh4"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <exclude reference="Jur-O4-Gh0"/>
+                                        <exclude reference="wsm-Bs-dR9"/>
+                                        <exclude reference="60v-en-kQR"/>
+                                        <exclude reference="lEm-GF-9z0"/>
                                         <exclude reference="Z1J-vk-d77"/>
                                         <exclude reference="Zgj-fF-yuL"/>
                                         <exclude reference="yfM-bq-S8s"/>
@@ -212,10 +226,6 @@
                                         <exclude reference="bem-Wo-e9Y"/>
                                         <exclude reference="Lvv-q0-4o4"/>
                                         <exclude reference="sII-Vc-EFg"/>
-                                        <exclude reference="60v-en-kQR"/>
-                                        <exclude reference="lEm-GF-9z0"/>
-                                        <exclude reference="Jur-O4-Gh0"/>
-                                        <exclude reference="wsm-Bs-dR9"/>
                                     </mask>
                                 </variation>
                                 <variation key="heightClass=regular" ambiguous="YES">
@@ -230,6 +240,10 @@
                                         <include reference="moh-yg-Yh4"/>
                                     </mask>
                                     <mask key="constraints">
+                                        <include reference="Jur-O4-Gh0"/>
+                                        <include reference="wsm-Bs-dR9"/>
+                                        <include reference="60v-en-kQR"/>
+                                        <include reference="lEm-GF-9z0"/>
                                         <include reference="Z1J-vk-d77"/>
                                         <include reference="Zgj-fF-yuL"/>
                                         <include reference="yfM-bq-S8s"/>
@@ -244,14 +258,11 @@
                                         <include reference="bem-Wo-e9Y"/>
                                         <include reference="Lvv-q0-4o4"/>
                                         <include reference="sII-Vc-EFg"/>
-                                        <include reference="60v-en-kQR"/>
-                                        <include reference="lEm-GF-9z0"/>
-                                        <include reference="Jur-O4-Gh0"/>
-                                        <include reference="wsm-Bs-dR9"/>
                                     </mask>
                                 </variation>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="QwS-UI-jxY" firstAttribute="top" secondItem="fIo-Qf-2SM" secondAttribute="bottom" id="W6P-B8-BwV"/>
@@ -264,10 +275,10 @@
                                 <exclude reference="fIo-Qf-2SM"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="W6P-B8-BwV"/>
                                 <exclude reference="YRh-A3-GeZ"/>
                                 <exclude reference="fhc-4h-dEd"/>
                                 <exclude reference="xKH-c1-Xna"/>
-                                <exclude reference="W6P-B8-BwV"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
@@ -275,10 +286,10 @@
                                 <include reference="fIo-Qf-2SM"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="W6P-B8-BwV"/>
                                 <include reference="YRh-A3-GeZ"/>
                                 <include reference="fhc-4h-dEd"/>
                                 <include reference="xKH-c1-Xna"/>
-                                <include reference="W6P-B8-BwV"/>
                             </mask>
                         </variation>
                     </view>
@@ -325,6 +336,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="RCa-0j-dMS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="EventTableViewCell" rowHeight="90" id="423-ah-krZ" customClass="EventTableViewCell" customModule="Cru" customModuleProvider="target">
@@ -336,24 +348,29 @@
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zr8-ay-J0K">
                                             <rect key="frame" x="8" y="32" width="79" height="34"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="FreightSansProLight-Regular" family="FreightSans Pro" pointSize="38"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fall Retreat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT0-Dm-a22">
                                             <rect key="frame" x="109" y="31" width="458" height="28"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="FreightSansProLight-Regular" family="FreightSans Pro" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LFb-LA-PaD">
                                             <rect key="frame" x="8" y="8" width="79" height="31"/>
+                                            <animations/>
                                             <fontDescription key="fontDescription" name="FreightSansProLight-Regular" family="FreightSans Pro" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
+                                    <animations/>
                                 </tableViewCellContentView>
+                                <animations/>
                                 <connections>
                                     <outlet property="dateLabel" destination="Zr8-ay-J0K" id="HEx-E0-UkX"/>
                                     <outlet property="monthLabel" destination="LFb-LA-PaD" id="KqD-EH-KKy"/>
