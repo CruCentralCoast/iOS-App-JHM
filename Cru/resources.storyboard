@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="t1n-wO-pdg">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+    </dependencies>
+    <scenes>
+        <!--Resources View Controller-->
+        <scene sceneID="Erz-N0-Mtg">
+            <objects>
+                <viewController id="M8g-nZ-a69" customClass="ResourcesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f5g-tm-D2p"/>
+                        <viewControllerLayoutGuide type="bottom" id="3yH-Hf-Q2X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Jz1-iA-bcz">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Resources" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zjo-kR-Cot">
+                                <rect key="frame" x="240" y="257" width="81" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zjo-kR-Cot" firstAttribute="centerY" secondItem="Jz1-iA-bcz" secondAttribute="centerY" id="Aq8-qV-yYI"/>
+                            <constraint firstItem="Zjo-kR-Cot" firstAttribute="centerX" secondItem="Jz1-iA-bcz" secondAttribute="centerX" id="joQ-2a-Q1y"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="cax-rf-stk">
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="18u-6D-tuA"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="menuButton" destination="18u-6D-tuA" id="WOE-C8-K5W"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dcp-a8-aSs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1684" y="2623"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DWL-sK-P0d">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="t1n-wO-pdg" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="UgZ-69-TSM">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M8g-nZ-a69" kind="relationship" relationship="rootViewController" id="HbW-kk-pNT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M1E-1f-RLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="872" y="2623"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="menuIcon" width="27" height="18"/>
+    </resources>
+</document>

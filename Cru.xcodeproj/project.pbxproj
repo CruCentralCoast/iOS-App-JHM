@@ -29,10 +29,10 @@
 		50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE01C052B80002C9E30 /* home.storyboard */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE51C052BF9002C9E30 /* events.storyboard */; };
-		50ED8FE91C052C2A002C9E30 /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE81C052C2A002C9E30 /* summermissions.storyboard */; };
-		50ED8FEC1C052C48002C9E30 /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FEA1C052C48002C9E30 /* resources.storyboard */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
 		50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */; };
+		50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251C1C0BB8DF005396BC /* summermissions.storyboard */; };
+		50F8251F1C0BB965005396BC /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
 		6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */; };
 		6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */; };
@@ -92,10 +92,10 @@
 		50ED8FE11C052B80002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/home.storyboard; sourceTree = "<group>"; };
 		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		50ED8FE61C052BF9002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/events.storyboard; sourceTree = "<group>"; };
-		50ED8FE81C052C2A002C9E30 /* summermissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = summermissions.storyboard; sourceTree = "<group>"; };
-		50ED8FEB1C052C48002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/resources.storyboard; sourceTree = "<group>"; };
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		50ED8FF01C052D04002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ridesharing.storyboard; sourceTree = "<group>"; };
+		50F8251C1C0BB8DF005396BC /* summermissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = summermissions.storyboard; sourceTree = "<group>"; };
+		50F8251E1C0BB965005396BC /* resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = resources.storyboard; sourceTree = "<group>"; };
 		6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman 3.otf"; sourceTree = "<group>"; };
 		6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
@@ -261,8 +261,8 @@
 		50ED8FDE1C052B09002C9E30 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				50F8251E1C0BB965005396BC /* resources.storyboard */,
 				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
-				50ED8FEA1C052C48002C9E30 /* resources.storyboard */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -270,8 +270,8 @@
 		50ED8FDF1C052B3C002C9E30 /* Summer Missions */ = {
 			isa = PBXGroup;
 			children = (
+				50F8251C1C0BB8DF005396BC /* summermissions.storyboard */,
 				501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */,
-				50ED8FE81C052C2A002C9E30 /* summermissions.storyboard */,
 			);
 			name = "Summer Missions";
 			sourceTree = "<group>";
@@ -389,15 +389,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */,
 				50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
+				50F8251F1C0BB965005396BC /* resources.storyboard in Resources */,
 				50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
 				50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */,
-				50ED8FEC1C052C48002C9E30 /* resources.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,
 				0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */,
-				50ED8FE91C052C2A002C9E30 /* summermissions.storyboard in Resources */,
 				0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */,
 				6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */,
 				6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */,
@@ -503,14 +503,6 @@
 				50ED8FE61C052BF9002C9E30 /* Base */,
 			);
 			name = events.storyboard;
-			sourceTree = "<group>";
-		};
-		50ED8FEA1C052C48002C9E30 /* resources.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50ED8FEB1C052C48002C9E30 /* Base */,
-			);
-			name = resources.storyboard;
 			sourceTree = "<group>";
 		};
 		50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */ = {
