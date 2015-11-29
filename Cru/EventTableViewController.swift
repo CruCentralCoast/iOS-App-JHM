@@ -26,14 +26,16 @@ class EventTableViewController: UITableViewController {
     
     func loadSampleEvents()
     {
+        let descriptionSample = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+        
         let photo1 = UIImage(named: "event1")!
-        let event1 = Event(name: "Dinners for 8", image: photo1, month: "November", date: "13", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses")!
+        let event1 = Event(name: "Dinners for 8", image: photo1, month: "November", date: "13", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses", description: descriptionSample)!
         
         let photo2 = UIImage(named: "event2")!
-        let event2 = Event(name: "Crossroads", image: photo2, month: "January", date: "20", startTime: "4:00", endTime: "12:00", startamORpm: "PM", endamORpm: "AM", location: "Hyatt Westlake Village")!
+        let event2 = Event(name: "Crossroads", image: photo2, month: "January", date: "20", startTime: "4:00", endTime: "12:00", startamORpm: "PM", endamORpm: "AM", location: "Hyatt Westlake Village", description: descriptionSample)!
         
         let photo3 = UIImage(named: "event3")!
-        let event3 = Event(name: "Sophomore Social", image: photo3, month: "February", date: "20", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "233 Patricia Drive, San Luis Obispo, CA")!
+        let event3 = Event(name: "Sophomore Social", image: photo3, month: "February", date: "20", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "233 Patricia Drive, San Luis Obispo, CA", description: descriptionSample)!
         
         events += [event1, event2, event3]
     }

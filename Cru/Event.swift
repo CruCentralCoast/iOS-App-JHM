@@ -21,10 +21,11 @@ class Event {
     var startamORpm: String
     var endamORpm: String
     var location: String
+    var description: String
     
     
     //MARK: Initialization
-    init?(name: String, image: UIImage?, month: String, date: String, startTime: String, endTime: String, startamORpm: String, endamORpm: String, location: String)
+    init?(name: String, image: UIImage?, month: String, date: String, startTime: String, endTime: String, startamORpm: String, endamORpm: String, location: String, description: String)
     {
         self.name = name
         self.image = image
@@ -35,6 +36,7 @@ class Event {
         self.startamORpm = startamORpm
         self.endamORpm = endamORpm
         self.location = location
+        self.description = description
     }
     
 }
