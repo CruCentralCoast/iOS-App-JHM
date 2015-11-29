@@ -29,13 +29,13 @@ class EventTableViewController: UITableViewController {
         let descriptionSample = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
         
         let photo1 = UIImage(named: "event1")!
-        let event1 = Event(name: "Dinners for 8", image: photo1, month: "November", date: "13", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "Various students' houses", description: descriptionSample)!
+        let event1 = Event(name: "Dinners for 8", image: photo1, month: 11, year: 2015, startDay: 13, startHour: 18, startMinute: 0, endDay: 13, endHour: 21, endMinute: 0, location: "Various students' houses", description: descriptionSample)!
         
         let photo2 = UIImage(named: "event2")!
-        let event2 = Event(name: "Crossroads", image: photo2, month: "January", date: "20", startTime: "4:00", endTime: "12:00", startamORpm: "PM", endamORpm: "AM", location: "Hyatt Westlake Village", description: descriptionSample)!
+        let event2 = Event(name: "Crossroads", image: photo2, month: 1, year: 2016, startDay: 20, startHour: 16, startMinute: 0, endDay: 21, endHour: 0, endMinute: 0, location: "Hyatt Westlake Village", description: descriptionSample)!
         
         let photo3 = UIImage(named: "event3")!
-        let event3 = Event(name: "Sophomore Social", image: photo3, month: "February", date: "20", startTime: "6:00", endTime: "9:00", startamORpm: "PM", endamORpm: "PM", location: "233 Patricia Drive, San Luis Obispo, CA", description: descriptionSample)!
+        let event3 = Event(name: "Sophomore Social", image: photo3, month: 2, year: 2016, startDay: 9, startHour: 18, startMinute: 0, endDay: 9, endHour: 21, endMinute: 0, location: "233 Patricia Drive, San Luis Obispo, CA", description: descriptionSample)!
         
         events += [event1, event2, event3]
     }
@@ -66,11 +66,14 @@ class EventTableViewController: UITableViewController {
         let event = events[indexPath.row]
         
         //Creating the abbreviated version of the month to be displayed
-        let index1 = event.month.startIndex.advancedBy(3)
-        let abbrMonth = event.month.substringToIndex(index1)
-        cell.monthLabel.text = abbrMonth.uppercaseString
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
         
-        cell.dateLabel.text = event.date
+        let months = dateFormatter.shortMonthSymbols
+        let monthShort = months[event.month-1]
+        
+        cell.monthLabel.text = monthShort.uppercaseString
+        
+        cell.dateLabel.text = String(event.startDay)
         cell.nameLabel.text = event.name
         
         return cell

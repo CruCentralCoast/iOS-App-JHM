@@ -57,13 +57,19 @@ class EventDetailsViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         if let event = event {
+            
+            
             navigationItem.title = "Details"
             nameLabel.text = event.name
             image.image = event.image
-            dateLabel.text = event.month + event.date
-            timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
+            //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             descriptionView.text = event.description
             
+            let dateFormatter: NSDateFormatter = NSDateFormatter()
+            
+            let months = dateFormatter.monthSymbols
+            let monthLong = months[event.month-1]
+            dateLabel.text = monthLong + " " + String(event.startDay)
         }
     }
     
@@ -125,9 +131,26 @@ class EventDetailsViewController: UIViewController {
             // 2
             if calendar.title == "Cru" {
                 // 3
-                let startDate = NSDate()
-                // 2 hours
-                let endDate = startDate.dateByAddingTimeInterval(2 * 60 * 60)
+                
+                let start = NSDateComponents()
+                start.day = event!.startDay
+                start.month = event!.month
+                start.minute = event!.startMinute
+                start.hour = event!.startHour
+                start.year = event!.year
+                
+                let end = NSDateComponents()
+                end.day = event!.endDay
+                end.month = event!.month
+                end.minute = event!.endMinute
+                end.hour = event!.endHour
+                end.year = event!.year
+                
+                let userCalendar = NSCalendar.currentCalendar()
+                
+                let startDate = userCalendar.dateFromComponents(start)
+                let endDate = userCalendar.dateFromComponents(end)
+                
                 
                 // 4
                 // Create Event
@@ -135,8 +158,9 @@ class EventDetailsViewController: UIViewController {
                 newEvent.calendar = calendar
                 
                 newEvent.title = event!.name
-                newEvent.startDate = startDate
-                newEvent.endDate = endDate
+                newEvent.startDate = startDate!
+                newEvent.endDate = endDate!
+                newEvent.location = event!.location
                 
                 // 5
                 // Save Event in Calendar
