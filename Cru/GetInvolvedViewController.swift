@@ -9,10 +9,18 @@
 import UIKit
 
 class GetInvolvedViewController: UIViewController {
+    //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
-
+    
+    struct Constants {
+        static let userKey = "user"
+    }
+    var user: User?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        loadUserInfo()
 
         if(self.revealViewController() != nil){
             menuButton.target = self.revealViewController()
@@ -25,6 +33,29 @@ class GetInvolvedViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    
+    //MARK: Actions
+    
+    
+    //function for saving a user's information if they are inputting it for the first time
+    func saveUserInfo() {
+        let defaults = NSUserDefaults()
+        
+        defaults.setObject(user, forKey: Constants.userKey)
+    }
+    
+    //function for loading the user's information if it exists
+    func loadUserInfo() {
+        let defaults = NSUserDefaults()
+        
+        if let user = defaults.objectForKey(Constants.userKey) {
+            print(user)
+        }
+        else {
+            print("No User data stored")
+        }
     }
     
 

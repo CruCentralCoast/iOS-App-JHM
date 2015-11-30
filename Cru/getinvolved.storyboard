@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Get Involved View Controller-->
@@ -17,19 +18,21 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Get Involved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pc7-IP-Dez">
-                                <rect key="frame" x="225" y="257" width="96" height="21"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p2j-3F-WWA">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <connections>
+                                    <segue destination="zHF-PB-qOK" kind="embed" id="GDg-Hi-Nib"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="pc7-IP-Dez" firstAttribute="centerX" secondItem="iky-x5-IPD" secondAttribute="centerX" id="M3E-ox-lsm"/>
-                            <constraint firstItem="pc7-IP-Dez" firstAttribute="centerY" secondItem="iky-x5-IPD" secondAttribute="centerY" id="wvG-Eh-nGH"/>
+                            <constraint firstItem="p2j-3F-WWA" firstAttribute="top" secondItem="ywn-no-K3C" secondAttribute="bottom" id="Afm-sS-wHo"/>
+                            <constraint firstItem="fOa-tz-KrW" firstAttribute="top" secondItem="p2j-3F-WWA" secondAttribute="bottom" id="F0c-0h-oeD"/>
+                            <constraint firstItem="p2j-3F-WWA" firstAttribute="leading" secondItem="iky-x5-IPD" secondAttribute="leadingMargin" constant="-20" id="kN1-CZ-Mvc"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="p2j-3F-WWA" secondAttribute="trailing" constant="-20" id="lTf-zr-vDY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="JMl-pk-V0g">
@@ -66,6 +69,131 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2YV-x3-Xvj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="984" y="1715"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="oP7-gt-jRi">
+            <objects>
+                <viewController id="zHF-PB-qOK" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ece-Hk-h1F"/>
+                        <viewControllerLayoutGuide type="bottom" id="kji-PF-qZ6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" placeholderIntrinsicWidth="400" placeholderIntrinsicHeight="infinite" id="sQY-8g-cA4">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Bga-6w-s1b">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LOJ-IC-8UU">
+                                        <rect key="frame" x="226" y="224" width="148" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Go To Ministry Teams"/>
+                                        <connections>
+                                            <segue destination="kL8-IZ-zeg" kind="show" id="CIQ-9n-OiR"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oHB-Fh-zAj">
+                                        <rect key="frame" x="216" y="105" width="169" height="30"/>
+                                        <animations/>
+                                        <state key="normal" title="Go To Community Group"/>
+                                        <connections>
+                                            <segue destination="YpQ-Aj-YH7" kind="show" id="H2d-a0-ALl"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="LOJ-IC-8UU" firstAttribute="centerX" secondItem="Bga-6w-s1b" secondAttribute="centerX" id="dgP-ar-YK0"/>
+                                    <constraint firstItem="LOJ-IC-8UU" firstAttribute="centerX" secondItem="oHB-Fh-zAj" secondAttribute="centerX" id="gQ3-FA-DOT"/>
+                                    <constraint firstItem="LOJ-IC-8UU" firstAttribute="top" secondItem="oHB-Fh-zAj" secondAttribute="bottom" constant="89" id="pWV-ZY-6Pf"/>
+                                    <constraint firstItem="oHB-Fh-zAj" firstAttribute="top" secondItem="Bga-6w-s1b" secondAttribute="top" constant="105" id="tGQ-kM-Wn6"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="kji-PF-qZ6" firstAttribute="top" secondItem="Bga-6w-s1b" secondAttribute="bottom" id="XVw-5t-AGJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Bga-6w-s1b" secondAttribute="trailing" constant="-20" id="g4g-oQ-sS8"/>
+                            <constraint firstItem="Bga-6w-s1b" firstAttribute="top" secondItem="ece-Hk-h1F" secondAttribute="bottom" id="uul-VL-GH1"/>
+                            <constraint firstItem="Bga-6w-s1b" firstAttribute="leading" secondItem="sQY-8g-cA4" secondAttribute="leadingMargin" constant="-20" id="xcL-WR-oUA"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eja-dx-GC1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2581" y="1715"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Fal-YT-hK9">
+            <objects>
+                <viewController id="YpQ-Aj-YH7" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TIC-6O-qAs"/>
+                        <viewControllerLayoutGuide type="bottom" id="QTm-Vb-RKg"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cRr-N8-K8x">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community Groups" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aiM-UA-WRB">
+                                <rect key="frame" x="226" y="257" width="148" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="aiM-UA-WRB" firstAttribute="top" secondItem="TIC-6O-qAs" secondAttribute="bottom" constant="257" id="GWc-eC-jzJ"/>
+                            <constraint firstItem="aiM-UA-WRB" firstAttribute="centerY" secondItem="cRr-N8-K8x" secondAttribute="centerY" id="HQG-yx-DNj"/>
+                            <constraint firstItem="aiM-UA-WRB" firstAttribute="centerX" secondItem="cRr-N8-K8x" secondAttribute="centerX" id="NHD-E8-StD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mNd-rq-elV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3298" y="1307"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tNC-PP-RGE">
+            <objects>
+                <viewController id="kL8-IZ-zeg" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ftn-aO-iXA"/>
+                        <viewControllerLayoutGuide type="bottom" id="dzz-mr-Z5I"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bin-45-Xil">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Teams" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="avd-AK-FA4">
+                                <rect key="frame" x="242" y="257" width="116" height="21"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="kaV-9a-h0i"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="avd-AK-FA4" firstAttribute="centerY" secondItem="bin-45-Xil" secondAttribute="centerY" id="UeT-aH-bsd"/>
+                            <constraint firstItem="avd-AK-FA4" firstAttribute="centerX" secondItem="bin-45-Xil" secondAttribute="centerX" id="Y4G-s5-8ke"/>
+                            <constraint firstItem="avd-AK-FA4" firstAttribute="top" secondItem="ftn-aO-iXA" secondAttribute="bottom" constant="257" id="eHt-sc-1c4"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="arV-g7-MXJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3298" y="1982"/>
         </scene>
     </scenes>
     <resources>

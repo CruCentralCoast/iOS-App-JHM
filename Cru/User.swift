@@ -19,7 +19,6 @@ class User: NSObject, NSCoding {
         static let phoneNoKey = "PhoneNo"
     }
     
-    
     //MARK: Initialization
     init?(first: String, last:String, phone: String) {
         self.firstName = first
