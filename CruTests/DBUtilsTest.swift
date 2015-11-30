@@ -1,16 +1,18 @@
 //
-//  CruTests.swift
-//  CruTests
+//  DBUtilsTest.swift
+//  Cru
 //
-//  Created by Deniz Tumer on 11/5/15.
+//  Created by Peter Godkin on 11/29/15.
 //  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
 import XCTest
-@testable import Cru
+import Foundation
+import UIKit
+//@testable import Cru
 
-class CruTests: XCTestCase {
-    
+class DBUtilsTest: XCTestCase {
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,22 +24,20 @@ class CruTests: XCTestCase {
     }
     
     func testExample() {
+        XCTAssert(true)
+    }
+
+    func testDateFromString() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPass(){
-        //let client: CruDBClient
-        //client = CruDBClient()
-        //XCTAssertEqual(client.getSomething(), "Maxxx Crane")
         
+        //let dateComps : NSDateComponents? = DBUtils.dateFromString("2015-10-17T12:00:00.000Z")
+        
+        //XCTAssert(2015, dateComps.year)
+        /*XCTAssert(10, dateComps.month)
+        XCTAssert(17, dateComps.day)
+        XCTAssert(12, dateComps.hour)
+        XCTAssert(0, dateComps.minute)*/
     }
     
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measureBlock {
-            // Put the code you want to measure the time of here.
-        }
-    }
 }
