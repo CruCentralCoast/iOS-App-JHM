@@ -29,10 +29,8 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="7GJ-R0-g7s" secondAttribute="trailing" constant="-20" id="Jxd-nk-Qcb"/>
-                            <constraint firstItem="7GJ-R0-g7s" firstAttribute="leading" secondItem="Pyi-Pv-lmb" secondAttribute="leadingMargin" constant="-20" id="ijh-u9-wJ7"/>
-                            <constraint firstItem="7GJ-R0-g7s" firstAttribute="centerX" secondItem="Pyi-Pv-lmb" secondAttribute="centerX" id="nbf-ZS-5YG"/>
-                            <constraint firstItem="7GJ-R0-g7s" firstAttribute="top" secondItem="b5n-l2-6Ps" secondAttribute="bottom" constant="-64" id="ud3-Q3-tNZ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7GJ-R0-g7s" secondAttribute="trailing" constant="-20" id="2ei-Zd-9pJ"/>
+                            <constraint firstItem="7GJ-R0-g7s" firstAttribute="leading" secondItem="Pyi-Pv-lmb" secondAttribute="leadingMargin" constant="-20" id="NtA-T9-jgf"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="SlI-hJ-gTM">
