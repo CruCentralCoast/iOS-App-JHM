@@ -72,6 +72,7 @@ class EventDetailsViewController: UIViewController {
             let monthLong = months[event.month-1]
             dateLabel.text = monthLong + " " + String(event.startDay)
         }
+        
     }
     
     func insertEvent(store: EKEventStore) {
