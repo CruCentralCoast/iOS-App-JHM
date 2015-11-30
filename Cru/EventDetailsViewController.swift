@@ -31,6 +31,7 @@ class EventDetailsViewController: UIViewController {
         switch EKEventStore.authorizationStatusForEntityType(EKEntityType.Event) {
         case .Authorized:
             insertEvent(eventStore)
+            sender.setImage(UIImage(named: "addedToCalendar"), forState: UIControlState.Normal)
         case .Denied:
             print("Access denied")
         case .NotDetermined:

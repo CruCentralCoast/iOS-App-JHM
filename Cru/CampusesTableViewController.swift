@@ -44,11 +44,9 @@ class CampusesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("campusCell", forIndexPath: indexPath)
         cell.textLabel?.text = campusNames[indexPath.row]
 
-        print("dequeued cell \(indexPath.row)")
         
         if(checked[indexPath.row] == true){
             cell.accessoryType = .Checkmark
-            print("accessory is check")
         }
         else{
             cell.accessoryType = .None
@@ -65,7 +63,6 @@ class CampusesTableViewController: UITableViewController {
             }
             else{
                 cell.accessoryType = .Checkmark
-                print("check cell at \(indexPath.row)")
                 checked[indexPath.row] = true
             }
             
