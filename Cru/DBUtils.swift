@@ -17,18 +17,22 @@ class DBUtils {
     
         return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
-                let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                let jsonList = jsonResponse as! NSArray
-                if data != nil {
-                    dispatch_async(dispatch_get_main_queue(), {
-                        for sm in jsonList {
-                            if let dict = sm as? [String: AnyObject]{
-                                inserter(dict)
+                if (data != nil) {
+                    let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                    let jsonList = jsonResponse as! NSArray
+                    if data != nil {
+                        dispatch_async(dispatch_get_main_queue(), {
+                            for sm in jsonList {
+                                if let dict = sm as? [String: AnyObject]{
+                                    inserter(dict)
+                                }
                             }
-                        }
-                    })
+                        })
+                    }
+                } else {
+                    // TODO: display message for user
+                    print("Failed to get stuff from database")
                 }
-                
             } catch {
                 print("Something went wrong with http request...")
             }
