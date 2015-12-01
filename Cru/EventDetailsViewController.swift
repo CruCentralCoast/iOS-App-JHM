@@ -18,15 +18,19 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
     
-    @IBAction func facebookLinkButton(sender: UIButton) {
-        
-    }
+    
     /*
     This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
     or constructed as part of adding a new meal.
     */
     var event: Event?
     var eventStore: EKEventStore!
+    
+    //MARK: Actions
+    @IBAction func facebookLinkButton(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: (event?.facebookURL)!)!)
+    }
+    
     @IBAction func saveToCalendar(sender: UIButton) {
         // 1
         eventStore = EKEventStore()
