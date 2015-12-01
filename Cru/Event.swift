@@ -24,6 +24,7 @@ class Event {
     var endMinute: Int?
     var location: String?
     var description: String?
+    var facebookURL: String?
     
     
     //MARK: Initialization
@@ -44,7 +45,7 @@ class Event {
         self.description = description
     }
     
-    init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, location: String?, description: String?)
+    init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, location: String?, description: String?, url: String?)
     {
         self.id = "boo"
         self.name = name
@@ -64,6 +65,7 @@ class Event {
         self.endMinute = endComps.minute
         self.location = location
         self.description = description
+        self.facebookURL = url
     }
     
     convenience init?(dict : NSDictionary) {
@@ -72,8 +74,9 @@ class Event {
         let endDate = dict["endDate"] as! String?
         let location = "Mars"
         let description = dict["description"] as! String?
+        let url = dict["url"] as! String
         
-        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description)
+        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description, url: url)
     }
 
 }
