@@ -9,7 +9,10 @@
 import UIKit
 
 class ResourcesViewController: UIViewController {
+    //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var videoView: UIView!
+    @IBOutlet weak var imageView: UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +29,23 @@ class ResourcesViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    //MARK: Actions
+    @IBAction func changeSegment(sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            imageView.hidden = false
+            videoView.hidden = true
+        case 1:
+            videoView.hidden = false
+            imageView.hidden = true
+        default:
+            print("error")
+            break;
+        }
+    }
+    
+    //action function for changing the segmented view
     
 
     /*

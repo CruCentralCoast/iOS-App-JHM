@@ -9,8 +9,10 @@
 import UIKit
 
 class GetInvolvedViewController: UIViewController {
+    //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +27,32 @@ class GetInvolvedViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    //MARK: Actions
+    @IBAction func goToCommunityGroup(sender: UIButton) {
+        var view: UIViewController
+        
+        if let user = loadUserInfo() {
+            view = self.storyboard!.instantiateViewControllerWithIdentifier("communityGroupsLoadedView")
+        }
+        else {
+            view = self.storyboard!.instantiateViewControllerWithIdentifier("communityGroupsUnloadedView")
+        }
+        
+        self.showViewController(view, sender: self)
+    }
+    
+    //function for loading the user's information if it exists
+    func loadUserInfo() -> User? {
+        let defaults = NSUserDefaults()
+        
+        if let user = defaults.objectForKey("user") {
+            return user as? User
+        }
+        else {
+            return nil
+        }
     }
     
 
