@@ -66,12 +66,14 @@ class Event {
         self.description = description
     }
     
-    /*init?(json : AnyObject) {
-        if let dict = json as? [String: AnyObject]{
-            
-        } else {
-            return nil
-        }
-    }*/
+    convenience init?(dict : NSDictionary) {
+        let name = dict["name"] as! String?
+        let startDate = dict["startDate"] as! String?
+        let endDate = dict["endDate"] as! String?
+        let location = "Mars"
+        let description = dict["description"] as! String?
+        
+        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description)
+    }
 
 }

@@ -9,34 +9,32 @@
 import Foundation
 
 class DBUtils {
-    /*static func loadResources(collectionName : String, tableView : UITableView, curList : NSArray, constructor : (AnyObject) -> AnyObject) {
-        print("this happened")
-        //CruDBClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(collectionName, tableView, curList, constructor))
+    static func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
+        DBClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter))
     }
     
-    static func curryDisplayResources(tableView : UITableView, var curList : [AnyObject], constructor : (AnyObject) -> AnyObject) {
+    static func curryDisplayResources(inserter : (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
     
         return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
                 let jsonList = jsonResponse as! NSArray
-                
-                var indexPaths : [NSIndexPath] = []
-                for sm in jsonList {
-                    indexPaths.append(NSIndexPath(forItem: curList.count, inSection: 0))
-                    curList.append(constructor(sm))
-                    
+                if data != nil {
+                    dispatch_async(dispatch_get_main_queue(), {
+                        for sm in jsonList {
+                            if let dict = sm as? [String: AnyObject]{
+                                inserter(dict)
+                            }
+                        }
+                    })
                 }
-                tableView.insertRowsAtIndexPaths(indexPaths, withRowAnimation: .Automatic)
-                tableView.reloadData()
-                
-                print("this happened too")
                 
             } catch {
                 print("Something went wrong with http request...")
             }
         }
-    }*/
+    }
+    
     
     class func dateFromString(dateStr : String) -> NSDateComponents? {
         let dateFormatter = NSDateFormatter()
