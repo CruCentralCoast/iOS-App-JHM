@@ -24,6 +24,7 @@ class Event {
     var endMinute: Int?
     var location: String?
     var description: String?
+    var facebookURL: String?
     
     
     //MARK: Initialization

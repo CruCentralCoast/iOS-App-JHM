@@ -17,6 +17,10 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
+    
+    @IBAction func facebookLinkButton(sender: UIButton) {
+        
+    }
     /*
     This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
     or constructed as part of adding a new meal.
@@ -72,6 +76,7 @@ class EventDetailsViewController: UIViewController {
             let monthLong = months[event.month!-1]
             dateLabel.text = monthLong + " " + String(event.startDay!)
         }
+        
     }
     
     func insertEvent(store: EKEventStore) {
@@ -80,110 +85,58 @@ class EventDetailsViewController: UIViewController {
         var cruCalendarCreated = false
         
         for searchCalendar in calendars {
+            print(searchCalendar.title)
             if searchCalendar.title == "Cru" {
                 cruCalendarCreated = true
+                print("Calendar was previously created")
             }
         }
         
-        if cruCalendarCreated == false {
-            //Create Cru Calendar
-            let newCalendar = EKCalendar(forEntityType: EKEntityType.Event, eventStore: eventStore)
-            newCalendar.title = "Cru"
-            
-            //Thanks to Andrew Bancroft for this next bit of code
-            
-            // Access list of available sources from the Event Store
-            let sourcesInEventStore = eventStore.sources as! [EKSource]
-            // Filter the available sources and select the "Local" source to assign to the new calendar's
-            // source property
-            newCalendar.source = sourcesInEventStore.filter{
-                (source: EKSource) -> Bool in
-                source.sourceType == EKSourceType.Local
-                }.first!
-            
-            // Save Event in Calendar
-            var saveError: NSError?
-            let result: Bool
-            do {
-                try eventStore.saveCalendar(newCalendar, commit: true)
-                result = true
-            } catch let error as NSError{
-                saveError = error
-                result = false
-            } catch {
-                fatalError()
-            }
-            
-            // Handle situation if the calendar could not be saved
-            if result == false {
-                let alert = UIAlertController(title: "Calendar could not save", message: saveError?.localizedDescription, preferredStyle: .Alert)
-                let OKAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-                alert.addAction(OKAction)
-                
-                self.presentViewController(alert, animated: true, completion: nil)
-            } else {
-                NSUserDefaults.standardUserDefaults().setObject(newCalendar.calendarIdentifier, forKey: "EventTrackerPrimaryCalendar")
-            }
-        }
-        //Get a list of new calendars (including new Cru calendar)
-        calendars = store.calendarsForEntityType(EKEntityType.Event)
         
-        for calendar in calendars {
-            // 2
-            if calendar.title == "Cru" {
-                // 3
-                
-                let start = NSDateComponents()
-                start.day = event!.startDay!
-                start.month = event!.month!
-                start.minute = event!.startMinute!
-                start.hour = event!.startHour!
-                start.year = event!.year!
-                
-                let end = NSDateComponents()
-                end.day = event!.endDay!
-                end.month = event!.month!
-                end.minute = event!.endMinute!
-                end.hour = event!.endHour!
-                end.year = event!.year!
-                
-                let userCalendar = NSCalendar.currentCalendar()
-                
-                let startDate = userCalendar.dateFromComponents(start)
-                let endDate = userCalendar.dateFromComponents(end)
-                
-                
-                // 4
-                // Create Event
-                let newEvent = EKEvent(eventStore: store)
-                newEvent.calendar = calendar
-                
-                newEvent.title = event!.name!
-                newEvent.startDate = startDate!
-                newEvent.endDate = endDate!
-                newEvent.location = event!.location
-                
-                // 5
-                // Save Event in Calendar
-                var saveError: NSError?
-                let result: Bool
-                do {
-                    try store.saveEvent(newEvent, span: .ThisEvent, commit: true)
-                    result = true
-                } catch let error as NSError{
-                    saveError = error
-                    result = false
-                } catch {
-                    fatalError()
-                }
-                
-                
-                if result == false {
-                    print("An error occured \(saveError)")
-                }
-            }
-            
+        
+        //Let's try it on the default calendar
+        let start = NSDateComponents()
+        start.day = event!.startDay!
+        start.month = event!.month!
+        start.minute = event!.startMinute!
+        start.hour = event!.startHour!
+        start.year = event!.year!
+        
+        let end = NSDateComponents()
+        end.day = event!.endDay!
+        end.month = event!.month!
+        end.minute = event!.endMinute!
+        end.hour = event!.endHour!
+        end.year = event!.year!
+        
+        let userCalendar = NSCalendar.currentCalendar()
+        
+        let startDate = userCalendar.dateFromComponents(start)
+        let endDate = userCalendar.dateFromComponents(end)
+        
+        
+        // 4
+        // Create Event
+        let newEvent = EKEvent(eventStore: store)
+        newEvent.calendar = store.defaultCalendarForNewEvents
+        
+        newEvent.title = event!.name!
+        newEvent.startDate = startDate!
+        newEvent.endDate = endDate!
+        newEvent.location = event!.location
+        
+        // 5
+        // Save Event in Calendar
+        var saveError: NSError?
+        let result: Bool
+        do {
+            result = Bool(try store.saveEvent(newEvent, span: .ThisEvent, commit: true))
+        } catch let error as NSError{
+            saveError = error
+        } catch {
+            fatalError()
         }
+        
     }
 
 
