@@ -47,6 +47,7 @@ class MapViewController: UIViewController {
                 dropPin.coordinate = initialLocation.coordinate
                 dropPin.title = self.query
                 
+                
                 self.centerMapOnLocation(initialLocation)
                 self.mapView.addAnnotation(dropPin)
             }
