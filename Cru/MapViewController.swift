@@ -40,9 +40,14 @@ class MapViewController: UIViewController {
             for item in response.mapItems {
                 
                 initialLocation = item.placemark.location!
-                print(item)
+                //print(item)
             }
         }
+        
+        print("lat \(initialLocation.coordinate.latitude)")
+        print("long \(initialLocation.coordinate.longitude)")
+        print("loc \(initialLocation.coordinate)")
+        
         
         initialLocation = CLLocation(latitude: 35.28564100, longitude: -120.66179700)
         centerMapOnLocation(initialLocation)
