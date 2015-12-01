@@ -29,7 +29,7 @@
                                 <animations/>
                                 <state key="normal" title="See on map"/>
                                 <connections>
-                                    <segue destination="JAh-6A-hvA" kind="show" id="QzL-im-xmK"/>
+                                    <segue destination="JAh-6A-hvA" kind="show" identifier="mapSegue" id="QzL-im-xmK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -47,6 +47,7 @@
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="uCf-4J-qcQ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="location" destination="SbA-r5-WVm" id="eQ3-qh-iHM"/>
                         <outlet property="menuButton" destination="uCf-4J-qcQ" id="rBr-qk-HXQ"/>
                     </connections>
                 </viewController>
@@ -74,9 +75,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="YLo-lH-OAQ" firstAttribute="leading" secondItem="gNu-4D-qAB" secondAttribute="leading" id="0pZ-Ai-vuh"/>
-                            <constraint firstItem="YLo-lH-OAQ" firstAttribute="top" secondItem="3HJ-OZ-LhF" secondAttribute="bottom" id="IcM-4X-LV2"/>
-                            <constraint firstItem="YLo-lH-OAQ" firstAttribute="bottom" secondItem="omO-x9-cOs" secondAttribute="top" id="LZ5-oZ-6Cy"/>
+                            <constraint firstItem="YLo-lH-OAQ" firstAttribute="centerX" secondItem="gNu-4D-qAB" secondAttribute="centerX" id="Byv-3Z-VFI"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="YLo-lH-OAQ" secondAttribute="trailing" constant="-20" id="Nj1-Zc-IiH"/>
+                            <constraint firstItem="YLo-lH-OAQ" firstAttribute="centerY" secondItem="gNu-4D-qAB" secondAttribute="centerY" id="QGR-pG-WJc"/>
+                            <constraint firstItem="YLo-lH-OAQ" firstAttribute="leading" secondItem="gNu-4D-qAB" secondAttribute="leadingMargin" constant="-20" id="QZ6-QL-vj2"/>
                         </constraints>
                     </view>
                     <connections>

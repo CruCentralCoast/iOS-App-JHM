@@ -10,7 +10,18 @@ import UIKit
 
 class RideSharingViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
+    @IBOutlet weak var location: UITextField!
     
+
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "mapSegue") {
+            //Checking identifier is crucial as there might be multiple
+            // segues attached to same view
+            let destVC = segue.destinationViewController as! MapViewController;
+            destVC.query = location.text
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 

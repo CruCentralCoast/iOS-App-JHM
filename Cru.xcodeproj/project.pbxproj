@@ -33,6 +33,7 @@
 		502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */; };
 		503E1DBF1C0D6882004D8AB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */; };
 		50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
+		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50ED8FD31C0508F0002C9E30 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */; };
 		50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE01C052B80002C9E30 /* home.storyboard */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
@@ -106,6 +107,7 @@
 		5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusesTableViewController.swift; sourceTree = "<group>"; };
 		503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		50ED8FE11C052B80002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/home.storyboard; sourceTree = "<group>"; };
 		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -155,6 +158,7 @@
 		0F8CEF141BEC0E13008FC70D = {
 			isa = PBXGroup;
 			children = (
+				50D8B6DC1C0E323A001127D5 /* MapKit.framework */,
 				0F8CEF1F1BEC0E13008FC70D /* Cru */,
 				0F8CEF371BEC0E14008FC70D /* CruTests */,
 				0F8CEF421BEC0E14008FC70D /* CruUITests */,
@@ -399,6 +403,11 @@
 					0F8CEF1C1BEC0E13008FC70D = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 55E3ZU82Z7;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0F8CEF331BEC0E14008FC70D = {
 						CreatedOnToolsVersion = 7.1;

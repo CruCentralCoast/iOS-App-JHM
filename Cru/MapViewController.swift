@@ -11,7 +11,8 @@ import MapKit
 
 class MapViewController: UIViewController {
     @IBOutlet weak var mapView: MKMapView!
-
+    var query: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupMap()
@@ -28,6 +29,9 @@ class MapViewController: UIViewController {
         var initialLocation = CLLocation()
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = "1128 Peach San Luis Obispo"
+        if(request.naturalLanguageQuery != nil){
+            request.naturalLanguageQuery = query
+        }
         request.region = mapView.region
 
         let search = MKLocalSearch(request: request)
@@ -38,19 +42,15 @@ class MapViewController: UIViewController {
             }
             
             for item in response.mapItems {
-                
                 initialLocation = item.placemark.location!
-                //print(item)
+                let dropPin = MKPointAnnotation()
+                dropPin.coordinate = initialLocation.coordinate
+                dropPin.title = self.query
+                
+                self.centerMapOnLocation(initialLocation)
+                self.mapView.addAnnotation(dropPin)
             }
         }
-        
-        print("lat \(initialLocation.coordinate.latitude)")
-        print("long \(initialLocation.coordinate.longitude)")
-        print("loc \(initialLocation.coordinate)")
-        
-        
-        initialLocation = CLLocation(latitude: 35.28564100, longitude: -120.66179700)
-        centerMapOnLocation(initialLocation)
     }
 
     
