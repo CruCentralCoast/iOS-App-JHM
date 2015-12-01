@@ -13,28 +13,32 @@ class CampusesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        DBUtils.loadResources("campus", inserter: insertCampus)
         
-        campuses.append(Campus(name: "Cal Poly"))
-        campuses.append(Campus(name: "Slo High"))
-        campuses.append(Campus(name: "Cuesta"))
         
-        if (loadCampuses() != nil){
-            let enabledCampuses = loadCampuses()!
-            for camp in enabledCampuses{
-                if(campuses.contains(camp)){
-                    let ndx = campuses.indexOf(camp)
-                    campuses.removeAtIndex(ndx!)
-                    campuses.insert(camp, atIndex: ndx!)
-                }
-            }
-            print(loadCampuses())
-        }
+        
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func insertCampus(dict : NSDictionary) {
+        self.tableView.beginUpdates()
+        let curCamp = Campus(name: dict["name"] as! String)
+        if (loadCampuses() != nil){
+            let enabledCampuses = loadCampuses()!
+            if(enabledCampuses.contains(curCamp)){
+                curCamp.feedEnabled = true
+            }
+        }
+    
+        campuses.insert(curCamp, atIndex: 0)
+        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.tableView.endUpdates()
     }
     
     override func viewWillDisappear(animated: Bool) {
