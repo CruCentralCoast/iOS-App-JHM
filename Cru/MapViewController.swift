@@ -24,6 +24,7 @@ class MapViewController: UIViewController {
     }
     
     func setupMap(){
+        
         var initialLocation = CLLocation()
         let request = MKLocalSearchRequest()
         request.naturalLanguageQuery = "1128 Peach San Luis Obispo"
