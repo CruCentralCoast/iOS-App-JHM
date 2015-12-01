@@ -11,16 +11,10 @@ import UIKit
 class GetInvolvedViewController: UIViewController {
     //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
-    
-    struct Constants {
-        static let userKey = "user"
-    }
-    var user: User?
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadUserInfo()
 
         if(self.revealViewController() != nil){
             menuButton.target = self.revealViewController()
@@ -35,26 +29,29 @@ class GetInvolvedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    
     //MARK: Actions
-    
-    
-    //function for saving a user's information if they are inputting it for the first time
-    func saveUserInfo() {
-        let defaults = NSUserDefaults()
+    @IBAction func goToCommunityGroup(sender: UIButton) {
+        var view: UIViewController
         
-        defaults.setObject(user, forKey: Constants.userKey)
+        if let user = loadUserInfo() {
+            view = self.storyboard!.instantiateViewControllerWithIdentifier("communityGroupsLoadedView")
+        }
+        else {
+            view = self.storyboard!.instantiateViewControllerWithIdentifier("communityGroupsUnloadedView")
+        }
+        
+        self.showViewController(view, sender: self)
     }
     
     //function for loading the user's information if it exists
-    func loadUserInfo() {
+    func loadUserInfo() -> User? {
         let defaults = NSUserDefaults()
         
-        if let user = defaults.objectForKey(Constants.userKey) {
-            print(user)
+        if let user = defaults.objectForKey("user") {
+            return user as? User
         }
         else {
-            print("No User data stored")
+            return nil
         }
     }
     
