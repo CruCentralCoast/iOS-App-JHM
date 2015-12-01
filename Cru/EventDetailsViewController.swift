@@ -19,6 +19,8 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionView: UITextView!
     
     
+    @IBOutlet weak var fbButton: UIButton!
+    
     /*
     This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
     or constructed as part of adding a new meal.
@@ -28,7 +30,11 @@ class EventDetailsViewController: UIViewController {
     
     //MARK: Actions
     @IBAction func facebookLinkButton(sender: UIButton) {
-        UIApplication.sharedApplication().openURL(NSURL(string: (event?.facebookURL)!)!)
+       UIApplication.sharedApplication().openURL(NSURL(string: (event?.facebookURL)!)!)
+    }
+    
+    @IBAction func rideShareButton(sender: UIButton) {
+        //self.performSegueWithIdentifier("", sender: nil)
     }
     
     @IBAction func saveToCalendar(sender: UIButton) {
@@ -80,6 +86,11 @@ class EventDetailsViewController: UIViewController {
             let monthLong = months[event.month!-1]
             dateLabel.text = monthLong + " " + String(event.startDay!)
         }
+        
+        if event?.facebookURL == "" {
+            fbButton.hidden = true
+        }
+        
         
     }
     

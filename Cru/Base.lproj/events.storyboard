@@ -157,6 +157,9 @@
                                                         <include reference="XQF-GH-3sD"/>
                                                     </mask>
                                                 </variation>
+                                                <connections>
+                                                    <action selector="rideShareButton:" destination="QR0-2a-cn2" eventType="touchUpInside" id="fWg-y5-DP8"/>
+                                                </connections>
                                             </button>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pHK-lL-rrC">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -289,7 +292,8 @@
                                                 <exclude reference="zAo-xR-Q1T"/>
                                             </mask>
                                         </variation>
-                                        <variation key="heightClass=regular">
+                                        <variation key="heightClass=regular" misplaced="YES">
+                                            <rect key="frame" x="173" y="-176" width="600" height="736"/>
                                             <mask key="subviews">
                                                 <include reference="oTM-ls-w9P"/>
                                                 <include reference="WPs-GO-e8T"/>
@@ -403,6 +407,7 @@
                     <connections>
                         <outlet property="dateLabel" destination="WPs-GO-e8T" id="1Ge-yE-bvF"/>
                         <outlet property="descriptionView" destination="moh-yg-Yh4" id="ADI-lG-Wgo"/>
+                        <outlet property="fbButton" destination="gIf-hO-iG2" id="pbv-w2-utf"/>
                         <outlet property="image" destination="pHK-lL-rrC" id="njV-YX-1L7"/>
                         <outlet property="nameLabel" destination="oTM-ls-w9P" id="aQ0-8l-3FJ"/>
                         <outlet property="timeLabel" destination="uBe-HM-dI7" id="2jw-8o-1KY"/>
