@@ -22,7 +22,16 @@ class EventTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //loadSampleEvents()
-        loadEvents()
+        
+        DBUtils.loadResources("event", inserter: insertEvent)
+        //loadEvents()
+    }
+    
+    func insertEvent(dict : NSDictionary) {
+        self.tableView.beginUpdates()
+        events.insert(Event(dict: dict)!, atIndex: 0)
+        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.tableView.endUpdates()
     }
     
     func loadSampleEvents()
@@ -39,42 +48,6 @@ class EventTableViewController: UITableViewController {
         let event3 = Event(name: "Sophomore Social", image: photo3, startDate: "2015-10-15T19:00:00.000Z", endDate: "2015-10-17T12:00:00.000Z", location: "233 Patricia Drive, San Luis Obispo, CA", description: descriptionSample)!
         
         events += [event1, event2, event3]
-    }
-    
-    func loadEvents() {
-        print("this happened")
-        DBClient.displayListInfo("event", completionHandler: displayEvents)
-    }
-    
-    func displayEvents(data : NSData?, response : NSURLResponse?, error : NSError?) {
-        do {
-            if data != nil {
-                let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                let jsonList = jsonResponse as! NSArray
-                
-                dispatch_async(dispatch_get_main_queue(), {
-                    for sm in jsonList {
-                        if let dict = sm as? [String: AnyObject]{
-                            //let id = dict["_id"] as! String
-                            let name = dict["name"] as! String?
-                            
-                            let startDate = dict["startDate"] as! String?
-                            let endDate = dict["endDate"] as! String?
-                            let location = "Mars"
-                            let description = dict["description"] as! String?
-                            
-                            self.tableView.beginUpdates()
-                            self.events.insert(Event(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description)!, atIndex: 0)
-                            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-                            self.tableView.endUpdates()
-                        }
-                    }
-                })
-            }
-            
-        } catch {
-            print("Something went wrong with http request...")
-        }
     }
 
     override func didReceiveMemoryWarning() {

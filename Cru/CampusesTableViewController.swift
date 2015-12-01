@@ -9,17 +9,40 @@
 import UIKit
 
 class CampusesTableViewController: UITableViewController {
-    var campusNames: [String] = ["Cal Poly", "Slo High"]
-    var checked: [Bool] = [false, false]
-    
+    var campuses = [Campus]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        DBUtils.loadResources("campus", inserter: insertCampus)
+        
+        
+        
+        
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func insertCampus(dict : NSDictionary) {
+        self.tableView.beginUpdates()
+        let curCamp = Campus(name: dict["name"] as! String)
+        if (loadCampuses() != nil){
+            let enabledCampuses = loadCampuses()!
+            if(enabledCampuses.contains(curCamp)){
+                curCamp.feedEnabled = true
+            }
+        }
+    
+        campuses.insert(curCamp, atIndex: 0)
+        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.tableView.endUpdates()
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        saveCampuses(campuses)
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,16 +59,16 @@ class CampusesTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return campusNames.count
+        return campuses.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("campusCell", forIndexPath: indexPath)
-        cell.textLabel?.text = campusNames[indexPath.row]
+        cell.textLabel?.text = campuses[indexPath.row].name
 
         
-        if(checked[indexPath.row] == true){
+        if(campuses[indexPath.row].feedEnabled == true){
             cell.accessoryType = .Checkmark
         }
         else{
@@ -59,18 +82,40 @@ class CampusesTableViewController: UITableViewController {
         if let cell = tableView.cellForRowAtIndexPath(indexPath){
             if(cell.accessoryType == .Checkmark){
                 cell.accessoryType = .None
-                checked[indexPath.row] = false
+                campuses[indexPath.row].feedEnabled = false
             }
             else{
                 cell.accessoryType = .Checkmark
-                checked[indexPath.row] = true
+                campuses[indexPath.row].feedEnabled = true
             }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
     
+    func saveCampuses(campuses:[Campus]) {
+        var enabledCampuses = [Campus]()
+        
+        for camp in campuses{
+            if(camp.feedEnabled == true){
+                enabledCampuses.append(camp)
+            }
+        }
+        
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledCampuses as NSArray)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(archivedObject, forKey: "campusKey")
+        defaults.synchronize()
+    }
+    
+    func loadCampuses() -> [Campus]? {
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("campusKey") as? NSData {
+            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Campus]
+        }
+        return nil
+    }
+
     
     
     /*
