@@ -21,7 +21,8 @@ class EventTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        loadSampleEvents()
+        //loadSampleEvents()
+        loadEvents()
     }
     
     func loadSampleEvents()
@@ -35,9 +36,45 @@ class EventTableViewController: UITableViewController {
         let event2 = Event(name: "Crossroads", image: photo2, month: 1, year: 2016, startDay: 20, startHour: 16, startMinute: 0, endDay: 21, endHour: 0, endMinute: 0, location: "Hyatt Westlake Village", description: descriptionSample)!
         
         let photo3 = UIImage(named: "event3")!
-        let event3 = Event(name: "Sophomore Social", image: photo3, month: 2, year: 2016, startDay: 9, startHour: 18, startMinute: 0, endDay: 9, endHour: 21, endMinute: 0, location: "233 Patricia Drive, San Luis Obispo, CA", description: descriptionSample)!
+        let event3 = Event(name: "Sophomore Social", image: photo3, startDate: "2015-10-15T19:00:00.000Z", endDate: "2015-10-17T12:00:00.000Z", location: "233 Patricia Drive, San Luis Obispo, CA", description: descriptionSample)!
         
         events += [event1, event2, event3]
+    }
+    
+    func loadEvents() {
+        print("this happened")
+        DBClient.displayListInfo("event", completionHandler: displayEvents)
+    }
+    
+    func displayEvents(data : NSData?, response : NSURLResponse?, error : NSError?) {
+        do {
+            if data != nil {
+                let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                let jsonList = jsonResponse as! NSArray
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    for sm in jsonList {
+                        if let dict = sm as? [String: AnyObject]{
+                            //let id = dict["_id"] as! String
+                            let name = dict["name"] as! String?
+                            
+                            let startDate = dict["startDate"] as! String?
+                            let endDate = dict["endDate"] as! String?
+                            let location = "Mars"
+                            let description = dict["description"] as! String?
+                            
+                            self.tableView.beginUpdates()
+                            self.events.insert(Event(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description)!, atIndex: 0)
+                            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+                            self.tableView.endUpdates()
+                        }
+                    }
+                })
+            }
+            
+        } catch {
+            print("Something went wrong with http request...")
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -69,11 +106,11 @@ class EventTableViewController: UITableViewController {
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         
         let months = dateFormatter.shortMonthSymbols
-        let monthShort = months[event.month-1]
+        let monthShort = months[event.month!-1]
         
         cell.monthLabel.text = monthShort.uppercaseString
         
-        cell.dateLabel.text = String(event.startDay)
+        cell.dateLabel.text = String(event.startDay!)
         cell.nameLabel.text = event.name
         
         return cell
@@ -88,7 +125,7 @@ class EventTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -96,9 +133,10 @@ class EventTableViewController: UITableViewController {
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
+            tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }    
     }
-    */
+
 
     /*
     // Override to support rearranging the table view.
