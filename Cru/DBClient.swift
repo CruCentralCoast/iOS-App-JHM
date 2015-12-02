@@ -10,7 +10,7 @@ import Foundation
 
 
 class DBClient {
-    static var serverUrl = "http://pcp078937pcs.wireless.calpoly.edu:3000/"
+    static var serverUrl = "http://pcp079120pcs.wireless.calpoly.edu:3000/"
     //static var serverUrl = "http://pcp129516pcs.wireless.calpoly.edu:3000/"
 
     class func displayListInfo(col : String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {

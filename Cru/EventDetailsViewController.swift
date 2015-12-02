@@ -12,13 +12,15 @@ import EventKit
 class EventDetailsViewController: UIViewController {
 
     //MARK: Properties
+    
     @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
+    
+    
     @IBOutlet weak var descriptionView: UITextView!
     
-    
+    @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var fbButton: UIButton!
     
     /*
@@ -33,9 +35,6 @@ class EventDetailsViewController: UIViewController {
        UIApplication.sharedApplication().openURL(NSURL(string: (event?.facebookURL)!)!)
     }
     
-    @IBAction func rideShareButton(sender: UIButton) {
-        //self.performSegueWithIdentifier("", sender: nil)
-    }
     
     @IBAction func saveToCalendar(sender: UIButton) {
         // 1
@@ -75,7 +74,7 @@ class EventDetailsViewController: UIViewController {
             
             
             navigationItem.title = "Details"
-            nameLabel.text = event.name
+            titleLabel.text = event.name
             //image.image = event.image
             //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             descriptionView.text = event.description
@@ -84,7 +83,7 @@ class EventDetailsViewController: UIViewController {
             
             let months = dateFormatter.monthSymbols
             let monthLong = months[event.month!-1]
-            dateLabel.text = monthLong + " " + String(event.startDay!)
+            timeLabel.text = monthLong + " " + String(event.startDay!)
         }
         
         if event?.facebookURL == "" {
