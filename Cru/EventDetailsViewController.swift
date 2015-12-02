@@ -74,8 +74,13 @@ class EventDetailsViewController: UIViewController {
             
             
             navigationItem.title = "Details"
+<<<<<<< HEAD
             titleLabel.text = event.name
             //image.image = event.image
+=======
+            nameLabel.text = event.name
+            image.image = event.image
+>>>>>>> 05f2e2de52a00925013a12858fc86ec0db13fa31
             //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             descriptionView.text = event.description
             

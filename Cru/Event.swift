@@ -45,7 +45,7 @@ class Event {
         self.description = description
     }
     
-    init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, location: String?, description: String?, url: String?)
+    init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, location: String?, description: String?, url: String?, imageUrl: String?)
     {
         self.id = "boo"
         self.name = name
@@ -66,6 +66,12 @@ class Event {
         self.location = location
         self.description = description
         self.facebookURL = url
+        
+        if (imageUrl != nil) {
+            let cloudUrl = NSURL(string: imageUrl!)
+            let imageData = NSData(contentsOfURL: cloudUrl!)
+            self.image = UIImage(data: imageData!)
+        }
     }
     
     convenience init?(dict : NSDictionary) {
@@ -75,8 +81,9 @@ class Event {
         let location = "Mars"
         let description = dict["description"] as! String?
         let url = dict["url"] as! String
+        let imageUrl = dict["image"]?.objectForKey("secure_url") as? String
         
-        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description, url: url)
+        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description, url: url, imageUrl: imageUrl)
     }
 
 }
