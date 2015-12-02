@@ -10,18 +10,45 @@ import Foundation
 
 
 class DBClient {
-    //static var serverUrl = "http://pcp078937pcs.wireless.calpoly.edu:3000/"
-    static var serverUrl = "http://localhost:3000/"
-
     class func displayListInfo(col : String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
-        let requestUrl = serverUrl + "api/" + col + "/list";
-        sendHttpRequest(requestUrl, reqMethod: "GET", completionHandler: completionHandler)
+        let requestUrl = Config.serverUrl + "api/" + col + "/list";
+        sendHttpGetRequest(requestUrl, completionHandler: completionHandler)
     }
     
-    class func sendHttpRequest(reqUrl : String, reqMethod : String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    class func sendSmsText(phone: String, message: String) {
+        let requestUrl = Config.serverUrl + "api/send-sms";
+        let params = ["phone":phone, "message":message]
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            sendHttpPostRequest(requestUrl, body: body, completionHandler: blankCompletionHandler)
+        } catch {
+            print("Error sending sms text")
+        }
+    }
+    
+    class func blankCompletionHandler(data : NSData?, response : NSURLResponse?, error : NSError?) {
+        
+    }
+    
+    class func sendHttpGetRequest(reqUrl : String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
         let requestUrl = NSURL(string: reqUrl)
         let request = NSMutableURLRequest(URL: requestUrl!)
-        request.HTTPMethod = reqMethod
+        request.HTTPMethod = "GET"
+        
+        let session = NSURLSession.sharedSession()
+        let task = session.dataTaskWithRequest(request, completionHandler : completionHandler)
+        
+        task.resume()
+        
+        return task
+    }
+    
+    class func sendHttpPostRequest(reqUrl : String, body : NSData, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+        let requestUrl = NSURL(string: reqUrl)
+        let request = NSMutableURLRequest(URL: requestUrl!)
+        request.HTTPMethod = "POST"
+        request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        request.HTTPBody = body
         
         let session = NSURLSession.sharedSession()
         let task = session.dataTaskWithRequest(request, completionHandler : completionHandler)

@@ -54,6 +54,7 @@
 		850EBAEB1C0BEEB800D5B794 /* DBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* DBUtils.swift */; };
 		85C6D11B1C0BD5F4006A4F9F /* DBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1171C0BD5F4006A4F9F /* DBClient.swift */; };
 		85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
+		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,6 +128,7 @@
 		850EBAEA1C0BEEB800D5B794 /* DBUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtils.swift; sourceTree = "<group>"; };
 		85C6D1171C0BD5F4006A4F9F /* DBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBClient.swift; sourceTree = "<group>"; };
 		85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilsTest.swift; sourceTree = "<group>"; };
+		85EAB8191C0ECC8A005C7658 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,6 +181,7 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				85EAB8181C0ECC40005C7658 /* Config */,
 				85C6D1161C0BD5CD006A4F9F /* DBClient */,
 				6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */,
 				50ED8FF21C05358F002C9E30 /* Campus/Ministry */,
@@ -332,6 +335,14 @@
 				85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */,
 			);
 			name = DBClient;
+			sourceTree = "<group>";
+		};
+		85EAB8181C0ECC40005C7658 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				85EAB8191C0ECC8A005C7658 /* Config.swift */,
+			);
+			name = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -504,6 +515,7 @@
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
 				0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */,
+				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */,
 				501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */,
 				501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */,

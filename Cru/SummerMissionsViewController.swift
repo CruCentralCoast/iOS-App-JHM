@@ -20,6 +20,7 @@ class SummerMissionsViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         // Do any additional setup after loading the view.
+        DBClient.sendSmsText("19252127242", message: "Sent from the summer missions page...")
     }
 
     override func didReceiveMemoryWarning() {

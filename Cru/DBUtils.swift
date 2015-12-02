@@ -9,26 +9,24 @@
 import Foundation
 
 class DBUtils {
-    static func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
+    class func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
         DBClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter))
     }
     
-    static func curryDisplayResources(inserter : (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
+    class func curryDisplayResources(inserter : (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
     
         return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 if (data != nil) {
                     let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
                     let jsonList = jsonResponse as! NSArray
-                    if data != nil {
-                        dispatch_async(dispatch_get_main_queue(), {
-                            for sm in jsonList {
-                                if let dict = sm as? [String: AnyObject]{
-                                    inserter(dict)
-                                }
+                    dispatch_async(dispatch_get_main_queue(), {
+                        for sm in jsonList {
+                            if let dict = sm as? [String: AnyObject]{
+                                inserter(dict)
                             }
-                        })
-                    }
+                        }
+                    })
                 } else {
                     // TODO: display message for user
                     print("Failed to get stuff from database")
@@ -38,7 +36,6 @@ class DBUtils {
             }
         }
     }
-    
     
     class func dateFromString(dateStr : String) -> NSDateComponents? {
         let dateFormatter = NSDateFormatter()
