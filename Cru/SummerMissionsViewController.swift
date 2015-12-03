@@ -32,6 +32,7 @@ class SummerMissionsViewController: UIViewController {
     
     @IBAction func textButtonPressed(sender: AnyObject) {
         
+        
         DBClient.sendSmsText(phoneNumber, message: textField.text!)
         print("sent sms to # \(phoneNumber) with content \(textField.text!)")
     }
