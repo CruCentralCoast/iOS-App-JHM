@@ -9,8 +9,10 @@
 import UIKit
 
 class SummerMissionsViewController: UIViewController {
+    @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var menuButton: UIBarButtonItem!
-
+    var phoneNumber = "17074546433"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,7 @@ class SummerMissionsViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         // Do any additional setup after loading the view.
-        DBClient.sendSmsText("19252127242", message: "Sent from the summer missions page...")
+        //DBClient.sendSmsText("19252127242", message: "Sent from the summer missions page...")
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,6 +30,11 @@ class SummerMissionsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func textButtonPressed(sender: AnyObject) {
+        
+        DBClient.sendSmsText(phoneNumber, message: textField.text!)
+        print("sent sms to # \(phoneNumber) with content \(textField.text!)")
+    }
 
     /*
     // MARK: - Navigation

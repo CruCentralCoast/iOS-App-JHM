@@ -54,7 +54,7 @@
 		850EBAEB1C0BEEB800D5B794 /* DBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* DBUtils.swift */; };
 		85C6D11B1C0BD5F4006A4F9F /* DBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1171C0BD5F4006A4F9F /* DBClient.swift */; };
 		85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
-		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; settings = {ASSET_TAGS = (); }; };
+		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -413,7 +413,7 @@
 				TargetAttributes = {
 					0F8CEF1C1BEC0E13008FC70D = {
 						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 55E3ZU82Z7;
+						DevelopmentTeam = HB9T8NTZLA;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
 								enabled = 1;
