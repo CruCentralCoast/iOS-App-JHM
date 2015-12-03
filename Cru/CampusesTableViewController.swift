@@ -8,15 +8,24 @@
 
 import UIKit
 
-class CampusesTableViewController: UITableViewController {
+class CampusesTableViewController: UITableViewController, UISearchResultsUpdating {
     var campuses = [Campus]()
-
+    var resultSearchController: UISearchController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DBUtils.loadResources("campus", inserter: insertCampus)
         
         
-        
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        self.resultSearchController.hidesNavigationBarDuringPresentation = false
+
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+
+        self.tableView.reloadData()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -25,6 +34,13 @@ class CampusesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        let searchText = searchController.searchBar.text
+        print("searchText is \(searchText)")
+    }
+    
+    
     
     func insertCampus(dict : NSDictionary) {
         self.tableView.beginUpdates()

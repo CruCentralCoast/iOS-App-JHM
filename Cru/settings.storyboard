@@ -137,7 +137,7 @@
             <objects>
                 <tableViewController id="bJN-X4-sJv" customClass="CampusesTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yeW-5o-0ts">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="351"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -163,10 +163,10 @@
             </objects>
             <point key="canvasLocation" x="2926" y="3908.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Campuses View Controller-->
         <scene sceneID="ask-ET-VZF">
             <objects>
-                <viewController id="mkA-SJ-ZBb" sceneMemberID="viewController">
+                <viewController id="mkA-SJ-ZBb" customClass="CampusesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Qj-zu-7ul"/>
                         <viewControllerLayoutGuide type="bottom" id="kge-fL-VfI"/>
@@ -175,8 +175,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="80F-Mz-sW9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="351"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80F-Mz-sW9">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
                                 <animations/>
                                 <connections>
                                     <segue destination="bJN-X4-sJv" kind="embed" id="pgp-f9-o32"/>
@@ -186,8 +186,10 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="80F-Mz-sW9" secondAttribute="trailing" constant="-20" id="I7V-eP-Fgk"/>
-                            <constraint firstItem="80F-Mz-sW9" firstAttribute="leading" secondItem="OFB-Rh-fdE" secondAttribute="leadingMargin" constant="-20" id="K95-Vl-la4"/>
+                            <constraint firstAttribute="trailing" secondItem="80F-Mz-sW9" secondAttribute="trailing" id="Uek-wS-J7d"/>
+                            <constraint firstItem="80F-Mz-sW9" firstAttribute="top" secondItem="7Qj-zu-7ul" secondAttribute="bottom" id="ZVn-bE-DEA"/>
+                            <constraint firstItem="80F-Mz-sW9" firstAttribute="bottom" secondItem="kge-fL-VfI" secondAttribute="top" id="ZzA-nb-Yiq"/>
+                            <constraint firstItem="80F-Mz-sW9" firstAttribute="leading" secondItem="OFB-Rh-fdE" secondAttribute="leading" id="dTN-5R-E97"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gb4-1F-XMK"/>
