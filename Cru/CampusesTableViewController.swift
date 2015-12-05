@@ -38,11 +38,16 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
         self.filteredCampuses.removeAll(keepCapacity: false)
-
+        let query = searchController.searchBar.text!.lowercaseString
+        
         for campy in campuses{
-            if(campy.name.containsString(searchController.searchBar.text!)){
+            if(campy.name.lowercaseString.containsString(query)){
                 filteredCampuses.append(campy)
             }
+        }
+        
+        if(query == ""){
+            filteredCampuses = campuses
         }
         
         self.tableView.reloadData()
