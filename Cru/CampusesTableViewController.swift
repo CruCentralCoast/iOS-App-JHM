@@ -10,6 +10,7 @@ import UIKit
 
 class CampusesTableViewController: UITableViewController, UISearchResultsUpdating {
     var campuses = [Campus]()
+    var filteredCampuses = [Campus]()
     var resultSearchController: UISearchController!
     
     override func viewDidLoad() {
@@ -36,8 +37,15 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     func updateSearchResultsForSearchController(searchController: UISearchController) {
-        let searchText = searchController.searchBar.text
-        print("searchText is \(searchText)")
+        self.filteredCampuses.removeAll(keepCapacity: false)
+
+        for campy in campuses{
+            if(campy.name.containsString(searchController.searchBar.text!)){
+                filteredCampuses.append(campy)
+            }
+        }
+        
+        self.tableView.reloadData()
     }
     
     
@@ -74,21 +82,35 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return campuses.count
+        if self.resultSearchController.active{
+            return self.filteredCampuses.count
+        }
+        else{
+            return self.campuses.count
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("campusCell", forIndexPath: indexPath)
-        cell.textLabel?.text = campuses[indexPath.row].name
-
         
-        if(campuses[indexPath.row].feedEnabled == true){
-            cell.accessoryType = .Checkmark
+        if self.resultSearchController.active{
+            cell.textLabel?.text = filteredCampuses[indexPath.row].name
+            if(filteredCampuses[indexPath.row].feedEnabled == true){
+                cell.accessoryType = .Checkmark
+            }
+            else{
+                cell.accessoryType = .None
+            }
         }
         else{
-            cell.accessoryType = .None
+            cell.textLabel?.text = campuses[indexPath.row].name
+            if(campuses[indexPath.row].feedEnabled == true){
+                cell.accessoryType = .Checkmark
+            }
+            else{
+                cell.accessoryType = .None
+            }
         }
         
         return cell
