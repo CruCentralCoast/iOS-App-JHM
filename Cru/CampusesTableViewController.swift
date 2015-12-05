@@ -17,7 +17,6 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         super.viewDidLoad()
         DBUtils.loadResources("campus", inserter: insertCampus)
         
-        
         self.resultSearchController = UISearchController(searchResultsController: nil)
         self.resultSearchController.searchResultsUpdater = self
         self.resultSearchController.dimsBackgroundDuringPresentation = false
@@ -66,7 +65,9 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
     
         campuses.insert(curCamp, atIndex: 0)
+        campuses.sortInPlace()
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.tableView.reloadData()
         self.tableView.endUpdates()
     }
     
