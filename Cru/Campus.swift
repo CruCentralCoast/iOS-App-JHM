@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Campus: NSObject, NSCoding {
+class Campus: NSObject, NSCoding, Comparable{
     let name: String!
     var feedEnabled: Bool!
     
@@ -40,4 +40,9 @@ class Campus: NSObject, NSCoding {
             return false
         }
     }
+
+}
+
+func  <(lCampus: Campus, rCampus: Campus) -> Bool{
+    return lCampus.name < rCampus.name
 }

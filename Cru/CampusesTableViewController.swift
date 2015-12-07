@@ -8,15 +8,24 @@
 
 import UIKit
 
-class CampusesTableViewController: UITableViewController {
+class CampusesTableViewController: UITableViewController, UISearchResultsUpdating {
     var campuses = [Campus]()
-
+    var filteredCampuses = [Campus]()
+    var resultSearchController: UISearchController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DBUtils.loadResources("campus", inserter: insertCampus)
         
-        
-        
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        self.resultSearchController.hidesNavigationBarDuringPresentation = false
+
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+
+        self.tableView.reloadData()
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -25,6 +34,25 @@ class CampusesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        self.filteredCampuses.removeAll(keepCapacity: false)
+        let query = searchController.searchBar.text!.lowercaseString
+        
+        for campy in campuses{
+            if(campy.name.lowercaseString.containsString(query)){
+                filteredCampuses.append(campy)
+            }
+        }
+        
+        if(query == ""){
+            filteredCampuses = campuses
+        }
+        
+        self.tableView.reloadData()
+    }
+    
+    
     
     func insertCampus(dict : NSDictionary) {
         self.tableView.beginUpdates()
@@ -37,7 +65,9 @@ class CampusesTableViewController: UITableViewController {
         }
     
         campuses.insert(curCamp, atIndex: 0)
+        campuses.sortInPlace()
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.tableView.reloadData()
         self.tableView.endUpdates()
     }
     
@@ -58,21 +88,35 @@ class CampusesTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return campuses.count
+        if self.resultSearchController.active{
+            return self.filteredCampuses.count
+        }
+        else{
+            return self.campuses.count
+        }
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("campusCell", forIndexPath: indexPath)
-        cell.textLabel?.text = campuses[indexPath.row].name
-
         
-        if(campuses[indexPath.row].feedEnabled == true){
-            cell.accessoryType = .Checkmark
+        if self.resultSearchController.active{
+            cell.textLabel?.text = filteredCampuses[indexPath.row].name
+            if(filteredCampuses[indexPath.row].feedEnabled == true){
+                cell.accessoryType = .Checkmark
+            }
+            else{
+                cell.accessoryType = .None
+            }
         }
         else{
-            cell.accessoryType = .None
+            cell.textLabel?.text = campuses[indexPath.row].name
+            if(campuses[indexPath.row].feedEnabled == true){
+                cell.accessoryType = .Checkmark
+            }
+            else{
+                cell.accessoryType = .None
+            }
         }
         
         return cell
