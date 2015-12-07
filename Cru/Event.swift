@@ -30,22 +30,6 @@ class Event {
     
     
     //MARK: Initialization
-    init?(name: String, image: UIImage?, month: Int, year: Int, startDay: Int, startHour: Int, startMinute: Int, endDay: Int, endHour: Int, endMinute: Int, location: String, description: String)
-    {
-        self.id = "boo"
-        self.name = name
-        self.image = image
-        self.month = month
-        self.year = year
-        self.startDay = startDay
-        self.startHour = startHour
-        self.startMinute = startMinute
-        self.endDay = endDay
-        self.endHour = endHour
-        self.endMinute = endMinute
-        self.location = location
-        self.description = description
-    }
     
     init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, location: String?, description: String?, url: String?, imageUrl: String?)
     {
