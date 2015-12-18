@@ -55,6 +55,7 @@
 		85C6D11B1C0BD5F4006A4F9F /* DBClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1171C0BD5F4006A4F9F /* DBClient.swift */; };
 		85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
 		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
+		CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103605C6F44AE29021FA1E17 /* Pods_Cru.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -94,6 +95,7 @@
 		0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		103605C6F44AE29021FA1E17 /* Pods_Cru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501085A91BFBDAF000849CED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		501085AB1BFBDB4100849CED /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		501085AD1BFBDB6700849CED /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
@@ -129,6 +131,8 @@
 		85C6D1171C0BD5F4006A4F9F /* DBClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBClient.swift; sourceTree = "<group>"; };
 		85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilsTest.swift; sourceTree = "<group>"; };
 		85EAB8191C0ECC8A005C7658 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.debug.xcconfig"; sourceTree = "<group>"; };
+		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */,
+				CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -165,6 +170,8 @@
 				0F8CEF371BEC0E14008FC70D /* CruTests */,
 				0F8CEF421BEC0E14008FC70D /* CruUITests */,
 				0F8CEF1E1BEC0E13008FC70D /* Products */,
+				494AFB3CABBE1E5418A73F5C /* Pods */,
+				AD126AABCC946387D506699A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -224,6 +231,15 @@
 				0F8CEF451BEC0E14008FC70D /* Info.plist */,
 			);
 			path = CruUITests;
+			sourceTree = "<group>";
+		};
+		494AFB3CABBE1E5418A73F5C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */,
+				CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		501085B71BFBE52700849CED /* SWRevealController */ = {
@@ -345,6 +361,14 @@
 			name = Config;
 			sourceTree = "<group>";
 		};
+		AD126AABCC946387D506699A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				103605C6F44AE29021FA1E17 /* Pods_Cru.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -352,9 +376,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F8CEF481BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "Cru" */;
 			buildPhases = (
+				B50E5DB8F8134D15019D5AF2 /* Check Pods Manifest.lock */,
 				0F8CEF191BEC0E13008FC70D /* Sources */,
 				0F8CEF1A1BEC0E13008FC70D /* Frameworks */,
 				0F8CEF1B1BEC0E13008FC70D /* Resources */,
+				11613E4FE54B8EA98CDD49CC /* Embed Pods Frameworks */,
+				BF48549276203C9B3D0040AC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -487,6 +514,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		11613E4FE54B8EA98CDD49CC /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cru/Pods-Cru-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B50E5DB8F8134D15019D5AF2 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BF48549276203C9B3D0040AC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cru/Pods-Cru-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		0F8CEF191BEC0E13008FC70D /* Sources */ = {
@@ -680,6 +755,7 @@
 		};
 		0F8CEF491BEC0E14008FC70D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -699,6 +775,7 @@
 		};
 		0F8CEF4A1BEC0E14008FC70D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

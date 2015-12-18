@@ -1,0 +1,10 @@
+PODS:
+  - Swift-YouTube-Player (0.2)
+
+DEPENDENCIES:
+  - Swift-YouTube-Player (~> 0.2)
+
+SPEC CHECKSUMS:
+  Swift-YouTube-Player: f6d8e930a3e0bcdf78b2b798d22261718ad477d8
+
+COCOAPODS: 0.39.0
