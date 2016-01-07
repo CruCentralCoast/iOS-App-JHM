@@ -16,7 +16,7 @@
 		0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C41C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift */; };
 		0F7B72C71C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C61C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift */; };
 		0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */; };
-		0F8CEF231BEC0E13008FC70D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF221BEC0E13008FC70D /* ViewController.swift */; };
+		0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF221BEC0E13008FC70D /* MainViewController.swift */; };
 		0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF241BEC0E13008FC70D /* Main.storyboard */; };
 		0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF271BEC0E13008FC70D /* Cru.xcdatamodeld */; };
 		0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */; };
@@ -81,7 +81,7 @@
 		0F7B72C61C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupsUnLoadedViewController.swift; sourceTree = "<group>"; };
 		0F8CEF1D1BEC0E13008FC70D /* Cru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0F8CEF221BEC0E13008FC70D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		0F8CEF221BEC0E13008FC70D /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		0F8CEF251BEC0E13008FC70D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0F8CEF281BEC0E13008FC70D /* Cru.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cru.xcdatamodel; sourceTree = "<group>"; };
 		0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -191,7 +191,7 @@
 				50ED8FDB1C052AFB002C9E30 /* Settings */,
 				50ED8FCF1C05063D002C9E30 /* RideSharing */,
 				0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */,
-				0F8CEF221BEC0E13008FC70D /* ViewController.swift */,
+				0F8CEF221BEC0E13008FC70D /* MainViewController.swift */,
 				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
 				0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */,
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
@@ -545,7 +545,7 @@
 				50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */,
 				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
 				0F7B72C71C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift in Sources */,
-				0F8CEF231BEC0E13008FC70D /* ViewController.swift in Sources */,
+				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
 				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,
 				0F74A3101C0BB9D300401377 /* User.swift in Sources */,

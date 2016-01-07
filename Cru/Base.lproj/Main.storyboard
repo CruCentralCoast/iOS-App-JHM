@@ -16,13 +16,13 @@
         <!--View Controller-->
         <scene sceneID="Pmt-Nq-gRG">
             <objects>
-                <viewController id="SOu-VK-CUe" sceneMemberID="viewController">
+                <viewController id="SOu-VK-CUe" customClass="ViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jzh-Dj-qAf"/>
                         <viewControllerLayoutGuide type="bottom" id="xWF-zG-gFR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5bq-z4-v2i">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMv-QR-7wC">
@@ -56,7 +56,7 @@
             <objects>
                 <navigationController storyboardIdentifier="homeStoryboard" automaticallyAdjustsScrollViewInsets="NO" id="JJo-8X-4Mg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="k0X-Ia-IU1">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="k0X-Ia-IU1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
