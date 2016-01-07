@@ -22,20 +22,17 @@
 		0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */; };
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
-		501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085A91BFBDAF000849CED /* HomeViewController.swift */; };
+		0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */; };
 		501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AB1BFBDB4100849CED /* EventsViewController.swift */; };
 		501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
 		501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AF1BFBDB7900849CED /* RideSharingViewController.swift */; };
 		501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */; };
 		501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; };
-		501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 501085BA1BFBE56A00849CED /* SWRevealViewController.m */; };
 		5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094D1C066C780019E97C /* CampusesViewController.swift */; };
 		502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */; };
 		503E1DBF1C0D6882004D8AB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */; };
 		50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
-		50ED8FD31C0508F0002C9E30 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */; };
-		50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE01C052B80002C9E30 /* home.storyboard */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE51C052BF9002C9E30 /* events.storyboard */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
@@ -95,24 +92,19 @@
 		0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
 		103605C6F44AE29021FA1E17 /* Pods_Cru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		501085A91BFBDAF000849CED /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		501085AB1BFBDB4100849CED /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		501085AD1BFBDB6700849CED /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		501085AF1BFBDB7900849CED /* RideSharingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideSharingViewController.swift; sourceTree = "<group>"; };
 		501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInvolvedViewController.swift; sourceTree = "<group>"; };
 		501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionsViewController.swift; sourceTree = "<group>"; };
 		501085B51BFBDCCE00849CED /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
-		501085B81BFBE56A00849CED /* Cru-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; lineEnding = 0; path = "Cru-Bridging-Header.h"; sourceTree = "<group>"; };
-		501085B91BFBE56A00849CED /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
-		501085BA1BFBE56A00849CED /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		5026094D1C066C780019E97C /* CampusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusesViewController.swift; sourceTree = "<group>"; };
 		5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusesTableViewController.swift; sourceTree = "<group>"; };
 		503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
-		50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		50ED8FE11C052B80002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/home.storyboard; sourceTree = "<group>"; };
 		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		50ED8FE61C052BF9002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/events.storyboard; sourceTree = "<group>"; };
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
@@ -188,11 +180,10 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				0FC8E39B1C3EF2FF007A7208 /* SideMenu */,
 				85EAB8181C0ECC40005C7658 /* Config */,
 				85C6D1161C0BD5CD006A4F9F /* DBClient */,
 				6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */,
-				50ED8FF21C05358F002C9E30 /* Campus/Ministry */,
-				50ED8FDA1C052AEF002C9E30 /* Home */,
 				50ED8FDF1C052B3C002C9E30 /* Summer Missions */,
 				50ED8FDE1C052B09002C9E30 /* Resources */,
 				50ED8FDD1C052B03002C9E30 /* Get Involved */,
@@ -205,11 +196,9 @@
 				0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */,
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
 				0F8CEF271BEC0E13008FC70D /* Cru.xcdatamodeld */,
-				50ED8FD21C0508F0002C9E30 /* MenuTableViewController.swift */,
 				6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */,
 				6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */,
 				6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */,
-				501085B71BFBE52700849CED /* SWRevealController */,
 			);
 			path = Cru;
 			sourceTree = "<group>";
@@ -233,6 +222,14 @@
 			path = CruUITests;
 			sourceTree = "<group>";
 		};
+		0FC8E39B1C3EF2FF007A7208 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */,
+			);
+			name = SideMenu;
+			sourceTree = "<group>";
+		};
 		494AFB3CABBE1E5418A73F5C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,16 +237,6 @@
 				CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		501085B71BFBE52700849CED /* SWRevealController */ = {
-			isa = PBXGroup;
-			children = (
-				501085B91BFBE56A00849CED /* SWRevealViewController.h */,
-				501085BA1BFBE56A00849CED /* SWRevealViewController.m */,
-				501085B81BFBE56A00849CED /* Cru-Bridging-Header.h */,
-			);
-			name = SWRevealController;
 			sourceTree = "<group>";
 		};
 		50ED8FCF1C05063D002C9E30 /* RideSharing */ = {
@@ -260,15 +247,6 @@
 				503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */,
 			);
 			name = RideSharing;
-			sourceTree = "<group>";
-		};
-		50ED8FDA1C052AEF002C9E30 /* Home */ = {
-			isa = PBXGroup;
-			children = (
-				501085A91BFBDAF000849CED /* HomeViewController.swift */,
-				50ED8FE01C052B80002C9E30 /* home.storyboard */,
-			);
-			name = Home;
 			sourceTree = "<group>";
 		};
 		50ED8FDB1C052AFB002C9E30 /* Settings */ = {
@@ -327,13 +305,6 @@
 				501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */,
 			);
 			name = "Summer Missions";
-			sourceTree = "<group>";
-		};
-		50ED8FF21C05358F002C9E30 /* Campus/Ministry */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Campus/Ministry;
 			sourceTree = "<group>";
 		};
 		85C6D1161C0BD5CD006A4F9F /* DBClient */ = {
@@ -484,11 +455,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */,
-				50ED8FE21C052B80002C9E30 /* home.storyboard in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
 				50F8251F1C0BB965005396BC /* resources.storyboard in Resources */,
 				50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
+				0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */,
 				50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,
 				0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */,
@@ -568,9 +539,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				501085AA1BFBDAF000849CED /* HomeViewController.swift in Sources */,
 				501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */,
-				50ED8FD31C0508F0002C9E30 /* MenuTableViewController.swift in Sources */,
 				0F0C221F1C0D783B002850DF /* ResourceVideoTableViewCell.swift in Sources */,
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
 				50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */,
@@ -593,7 +562,6 @@
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */,
 				501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */,
-				501085BB1BFBE56A00849CED /* SWRevealViewController.m in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 				0F7B72C31C0D3C3100539B33 /* MinistryTeamsViewController.swift in Sources */,
 				501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */,
@@ -641,14 +609,6 @@
 				0F8CEF251BEC0E13008FC70D /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		50ED8FE01C052B80002C9E30 /* home.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50ED8FE11C052B80002C9E30 /* Base */,
-			);
-			name = home.storyboard;
 			sourceTree = "<group>";
 		};
 		50ED8FE51C052BF9002C9E30 /* events.storyboard */ = {
@@ -767,7 +727,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -787,7 +747,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.Cru;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

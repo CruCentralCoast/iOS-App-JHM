@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SideMenu-SideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>YouTubePlayer.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -17,12 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>92BE1D7B3DAE5C9E54FC38735E7E53D1</key>
+		<key>3F9BC2E4F642A32B5119955FC04DF89D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A15512D831F970FAC772BD841D8EB77F</key>
+		<key>5CE4C96C3E5660F3F86EB2C88C6F087E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>86E44E3A4BF36C6CDF17EFB809DCD83D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF28399BC71D4D10A79C895F96994B86</key>
 		<dict>
 			<key>primary</key>
 			<true/>

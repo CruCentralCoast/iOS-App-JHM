@@ -4,7 +4,8 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'Cru' do
-    pod 'YouTubePlayer'
+    pod 'YouTubePlayer', '~> 0.3'
+    pod 'SideMenu', '~> 0.1'
 end
 
 target 'CruTests' do

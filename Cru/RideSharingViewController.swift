@@ -12,8 +12,6 @@ class RideSharingViewController: UIViewController {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var location: UITextField!
     
-
-    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if (segue.identifier == "mapSegue") {
             //Checking identifier is crucial as there might be multiple
@@ -24,17 +22,6 @@ class RideSharingViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        if(self.revealViewController() != nil){
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        else{
-            print("view controller is nil brah")
-        }
-        
-        
         // Do any additional setup after loading the view.
     }
 
