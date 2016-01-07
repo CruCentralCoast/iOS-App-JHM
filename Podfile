@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target 'Cru' do
-    pod 'Swift-YouTube-Player', '~> 0.2'
+    pod 'YouTubePlayer'
 end
 
 target 'CruTests' do

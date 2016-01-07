@@ -84,8 +84,8 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-Cru/Swift_YouTube_Player.framework"
+  install_framework "Pods-Cru/YouTubePlayer.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-Cru/Swift_YouTube_Player.framework"
+  install_framework "Pods-Cru/YouTubePlayer.framework"
 fi

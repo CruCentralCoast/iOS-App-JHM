@@ -1,10 +1,10 @@
 PODS:
-  - Swift-YouTube-Player (0.2)
+  - YouTubePlayer (0.3.0)
 
 DEPENDENCIES:
-  - Swift-YouTube-Player (~> 0.2)
+  - YouTubePlayer
 
 SPEC CHECKSUMS:
-  Swift-YouTube-Player: f6d8e930a3e0bcdf78b2b798d22261718ad477d8
+  YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
 
 COCOAPODS: 0.39.0
