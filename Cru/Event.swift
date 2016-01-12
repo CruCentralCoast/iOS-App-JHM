@@ -12,8 +12,7 @@ import Foundation
 class Event {
     // MARK: Properties
     
-    //DENIZ DON'T DELETE MY SHIT
-    var id: String
+    var id: String?
     var name: String?
     var image: UIImage?
     var month: Int?

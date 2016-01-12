@@ -23,6 +23,7 @@
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
 		0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */; };
+		0FC8E39F1C4566C7007A7208 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39E1C4566C7007A7208 /* test.storyboard */; };
 		501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AB1BFBDB4100849CED /* EventsViewController.swift */; };
 		501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
 		501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AF1BFBDB7900849CED /* RideSharingViewController.swift */; };
@@ -93,6 +94,7 @@
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
+		0FC8E39E1C4566C7007A7208 /* test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		103605C6F44AE29021FA1E17 /* Pods_Cru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501085AB1BFBDB4100849CED /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		501085AD1BFBDB6700849CED /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 				6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */,
 				6D76CA781C06AAF800F8B007 /* EventTableViewCell.swift */,
 				6D76CA7D1C06AF9E00F8B007 /* EventTableViewController.swift */,
+				0FC8E39E1C4566C7007A7208 /* test.storyboard */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
 				0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */,
+				0FC8E39F1C4566C7007A7208 /* test.storyboard in Resources */,
 				50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,
 				0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */,

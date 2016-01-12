@@ -16,10 +16,7 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    
-    
     @IBOutlet weak var descriptionView: UITextView!
-    
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var fbButton: UIButton!
     
@@ -95,7 +92,7 @@ class EventDetailsViewController: UIViewController {
     
     func insertEvent(store: EKEventStore) {
         // 1
-        var calendars = store.calendarsForEntityType(EKEntityType.Event)
+        let calendars = store.calendarsForEntityType(EKEntityType.Event)
         var cruCalendarCreated = false
         
         for searchCalendar in calendars {
