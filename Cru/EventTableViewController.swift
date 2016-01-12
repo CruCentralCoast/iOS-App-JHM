@@ -24,7 +24,7 @@ class EventTableViewController: UITableViewController {
         //loadSampleEvents()
         
         DBUtils.loadResources("event", inserter: insertEvent)
-        loadSampleEvents()
+        //loadSampleEvents()
     }
     
     func insertEvent(dict : NSDictionary) {

@@ -9,6 +9,5 @@
 import Foundation
 
 class Config {
-    //static let serverUrl = "http://pcp129515pcs.wireless.calpoly.edu:3000/"
-    static let serverUrl = "http://localhost:3000/"
+    static let serverUrl = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/"
 }

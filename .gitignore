@@ -1,5 +1,28 @@
-Cru.xcodeproj/xcuserdata/
-Cru.xcodeproj/*/xcuserdata/
+# Xcode
+# Build
 .DS_Store
 build/
-Cru.xcodeproj/project.xcworkspace/xcuserdata/pgodkin.xcuserdatad/UserInterfaceState.xcuserstate
+
+# Settings
+*.pbxuser
+!default.pbxuser
+*.mode1v3
+!default.mode1v3
+*.mode2v3
+!default.mode2v3
+*.perspectivev3
+!default.perspectivev3
+xcuserdata
+
+# Other
+*.xccheckout
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+
+# Swift specific
+*.hmap
+*.ipa
+
+# Swift package manager
+.build/
