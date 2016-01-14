@@ -9,17 +9,17 @@
 /* Begin PBXBuildFile section */
 		1F50F2A88E38955B5CB73E47229A3CC1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
 		441A6D516AD0AD45C7E53ED2CFB2448D /* Pods-Cru-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 2DC400BF46D3EB06336EF6390896829A /* Pods-Cru-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5838EC221606AAA609743A58C91C183F /* YouTubePlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C1FA6A22C43423A155D1862E6DB4AAC /* YouTubePlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5C2AEB02A1B097426DA23F2626F6A00D /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BFADBF9F90F426A6F86BC61D823250 /* SideMenuManager.swift */; };
-		5F50DEEE6CE092C48E9D0B2CC83C2CAF /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F3AE5A948933453155B2FA0C7BBA6F3B /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6C40494BE91CF424C76C0D142F983D81 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84F85F62FD9CFEBEF03060BFFC11E04F /* YouTubePlayer.swift */; };
-		88B3EED695277C3C51587CFCE64C4E4D /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 266E1F7229C74321A3AEE931D4C3C689 /* SideMenu-dummy.m */; };
+		5838EC221606AAA609743A58C91C183F /* YouTubePlayer-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC859C293AFE9D00469D000C5EBC0728 /* YouTubePlayer-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5C2AEB02A1B097426DA23F2626F6A00D /* SideMenuManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 556746BAF21F15B1263BD76ABD8915E1 /* SideMenuManager.swift */; };
+		5F50DEEE6CE092C48E9D0B2CC83C2CAF /* SideMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = D46AE7BBA3A59D541033D55CAA2EC73C /* SideMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		6C40494BE91CF424C76C0D142F983D81 /* YouTubePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0F71ABB1EC74F9AD7B1A40F28F7ECCB /* YouTubePlayer.swift */; };
+		88B3EED695277C3C51587CFCE64C4E4D /* SideMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 10610C53587F4AAF3D748823EB48375D /* SideMenu-dummy.m */; };
 		9110A37B066A005D2806612BF214F03B /* Pods-Cru-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0EF1929F39796C90E692B55AAA91AB35 /* Pods-Cru-dummy.m */; };
-		9DEB765A8D40C6AAD8D697A7A0A3E347 /* YouTubePlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0ED4E3C437B3F893F512F07DFF89BE /* YouTubePlayer-dummy.m */; };
+		9DEB765A8D40C6AAD8D697A7A0A3E347 /* YouTubePlayer-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A08DA4643B29300143FF3F4C6A0B01A1 /* YouTubePlayer-dummy.m */; };
 		BD50C2D4C6DB6036ACBF009E21BB9513 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		CC94150506D256B008531327AB09603C /* YTPlayer.html in Sources */ = {isa = PBXBuildFile; fileRef = 121AEE0DB7BF84BF3F246164A054D02A /* YTPlayer.html */; };
+		CC94150506D256B008531327AB09603C /* YTPlayer.html in Sources */ = {isa = PBXBuildFile; fileRef = 54B75528CCEA1747AD8ED98ED02B31EE /* YTPlayer.html */; };
 		EA8781693CC33E076CB74793974CB752 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		EBD35EE419303C68B3772F9C18796A9E /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 121AEE0DB7BF84BF3F246164A054D02A /* YTPlayer.html */; };
+		EBD35EE419303C68B3772F9C18796A9E /* YTPlayer.html in Resources */ = {isa = PBXBuildFile; fileRef = 54B75528CCEA1747AD8ED98ED02B31EE /* YTPlayer.html */; };
 		F7925E849A95AD95674338E501F20228 /* SideMenu.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 70A9710476B097B133B4FAF121AEC454 /* SideMenu.bundle */; };
 /* End PBXBuildFile section */
 
@@ -48,37 +48,86 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		02DAA2D0A947B9E9FD5BC9370FC1E98E /* YouTubePlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = YouTubePlayer.modulemap; sourceTree = "<group>"; };
-		06BFADBF9F90F426A6F86BC61D823250 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		01E913A58430FBDAADAD55E3BB3BEEC7 /* GCMReceiverDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMReceiverDelegate.h; path = Headers/Public/GCMReceiverDelegate.h; sourceTree = "<group>"; };
+		0A7DDBA8FA4E13858B53DDD8A90CD33F /* Core.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Core.h; path = Headers/GGLCore/Public/Core.h; sourceTree = "<group>"; };
+		0DBFFF3252779AEF3F2148CC0B7A0CC6 /* GGLInstanceIDDelegate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDDelegate.h; path = Headers/Public/GGLInstanceIDDelegate.h; sourceTree = "<group>"; };
 		0EF1929F39796C90E692B55AAA91AB35 /* Pods-Cru-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cru-dummy.m"; sourceTree = "<group>"; };
-		121AEE0DB7BF84BF3F246164A054D02A /* YTPlayer.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = YTPlayer.html; path = YouTubePlayer/YouTubePlayer/YTPlayer.html; sourceTree = "<group>"; };
-		15D2F0D1A0BE64C25E65FC37569809D6 /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
+		10610C53587F4AAF3D748823EB48375D /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
 		17186B1DB755AA6CFACC78704BA8FA4E /* Pods-Cru-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cru-acknowledgements.plist"; sourceTree = "<group>"; };
-		266E1F7229C74321A3AEE931D4C3C689 /* SideMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SideMenu-dummy.m"; sourceTree = "<group>"; };
+		17BF5143E9F001F77AF393059F84D1B5 /* libGTMStackTrace.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMStackTrace.a; path = Libraries/libGTMStackTrace.a; sourceTree = "<group>"; };
+		193520FCA698195872786E75EEED2B31 /* GGLConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLConfiguration.h; path = Headers/GGLCore/Public/GGLConfiguration.h; sourceTree = "<group>"; };
+		1A50BC95EB525AB2BD66260F2641A518 /* libGTM_NSDictionary+URLArguments.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSDictionary+URLArguments.a"; path = "Libraries/libGTM_NSDictionary+URLArguments.a"; sourceTree = "<group>"; };
+		2432D64EEE9B57474A029D3085B03D05 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SideMenu.modulemap; sourceTree = "<group>"; };
 		27C49EC303E8F4F647AE79085EA1517F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		28236978C501841031F49394C8E66A5B /* SideMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-prefix.pch"; sourceTree = "<group>"; };
 		2DC400BF46D3EB06336EF6390896829A /* Pods-Cru-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cru-umbrella.h"; sourceTree = "<group>"; };
-		2F7359EDCAF3EC928CB61B3A1B8CF892 /* YouTubePlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubePlayer-prefix.pch"; sourceTree = "<group>"; };
-		34272447A059F0AE077B33AE4C181DED /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		35687CB48FE9F64F93411945B2EAA7F7 /* Pods-Cru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cru.debug.xcconfig"; sourceTree = "<group>"; };
 		36D6C39B568F215A710045E5FCF76B65 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
-		3E323B7D136CB63650832BF721CD93B8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B55EDBE00701D0A987D0174FB23069D /* libGTM_StringEncoding.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_StringEncoding.a; path = Libraries/libGTM_StringEncoding.a; sourceTree = "<group>"; };
 		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		419BD4ACD5ADAB7E9DBB26E959535815 /* libGcmLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGcmLib.a; path = Libraries/libGcmLib.a; sourceTree = "<group>"; };
 		43CB36595B2CC30158DACC1BE6F2135B /* Pods-Cru.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Cru.modulemap"; sourceTree = "<group>"; };
-		4C1FA6A22C43423A155D1862E6DB4AAC /* YouTubePlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubePlayer-umbrella.h"; sourceTree = "<group>"; };
+		47A7DB87AF6497407C0ED2101F0D617E /* libGIP_Reachability.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGIP_Reachability.a; path = Libraries/libGIP_Reachability.a; sourceTree = "<group>"; };
+		485DB53498BCE5EEB6899222B572B20A /* SignIn-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SignIn-Module.h"; path = "Headers/ModuleHeaders/SignIn-Module.h"; sourceTree = "<group>"; };
+		4CA0BAD2089AF2CC172565D7EA043669 /* libGTM_SystemVersion.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_SystemVersion.a; path = Libraries/libGTM_SystemVersion.a; sourceTree = "<group>"; };
+		4D8860144969FA48EF299166F0FBEDE1 /* libGTM_NSScannerJSON.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSScannerJSON.a; path = Libraries/libGTM_NSScannerJSON.a; sourceTree = "<group>"; };
+		4E71550FE24B1E1714716FBA986E038B /* CloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = CloudMessaging.h; path = Headers/GGLCloudMessaging/Public/CloudMessaging.h; sourceTree = "<group>"; };
+		4F3A365BC891247315EBE6D0CEEC53F2 /* GMRConfiguration.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GMRConfiguration.h; path = Headers/GGLCore/Public/GMRConfiguration.h; sourceTree = "<group>"; };
 		513BDAEFBDEC62E5087025F656F480E6 /* YouTubePlayer.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = YouTubePlayer.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E0ED4E3C437B3F893F512F07DFF89BE /* YouTubePlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YouTubePlayer-dummy.m"; sourceTree = "<group>"; };
+		54B75528CCEA1747AD8ED98ED02B31EE /* YTPlayer.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; name = YTPlayer.html; path = YouTubePlayer/YouTubePlayer/YTPlayer.html; sourceTree = "<group>"; };
+		556746BAF21F15B1263BD76ABD8915E1 /* SideMenuManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SideMenuManager.swift; path = Pod/Classes/SideMenuManager.swift; sourceTree = "<group>"; };
+		55D125D003E8ADE532768B53386430FA /* libProtocolBuffers.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libProtocolBuffers.a; path = Libraries/libProtocolBuffers.a; sourceTree = "<group>"; };
+		59537849906796F84CD5BAEB98B96515 /* libGGLCore.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCore.a; path = Libraries/libGGLCore.a; sourceTree = "<group>"; };
+		5D6B781F0B159F5AD0F11C6AF5EAEE2B /* GGLInstanceIDHeaders.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDHeaders.h; path = Headers/Public/GGLInstanceIDHeaders.h; sourceTree = "<group>"; };
+		6306FE7DEF22D3BD0F8F99F67AB6A00C /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6344F902DD26B13D85C7DD63CCBE927C /* GGLContext+CloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "GGLContext+CloudMessaging.h"; path = "Headers/GGLCloudMessaging/Public/GGLContext+CloudMessaging.h"; sourceTree = "<group>"; };
+		6503EE654821F5D9439928AA49A34E1A /* libGGLCloudMessaging.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLCloudMessaging.a; path = Libraries/libGGLCloudMessaging.a; sourceTree = "<group>"; };
+		6E665B9490AD99A0166868950B0E3340 /* libGGLInstanceIDLib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGGLInstanceIDLib.a; path = Libraries/libGGLInstanceIDLib.a; sourceTree = "<group>"; };
 		70A9710476B097B133B4FAF121AEC454 /* SideMenu.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SideMenu.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C9AF49BF3409F2DC5DFA965B83BFB2 /* Pods_Cru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		84A58DED72AFEA579D53D03671162DB9 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
-		84F85F62FD9CFEBEF03060BFFC11E04F /* YouTubePlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YouTubePlayer.swift; path = YouTubePlayer/YouTubePlayer/YouTubePlayer.swift; sourceTree = "<group>"; };
-		9BA200A7B7E2D1BE45C56EFB3FA73C20 /* SideMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SideMenu.modulemap; sourceTree = "<group>"; };
-		AABC7518FF1E530419B343C9E4341BEA /* YouTubePlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YouTubePlayer.xcconfig; sourceTree = "<group>"; };
+		7460044122FEA361C77D8CB584BE7D81 /* GoogleCloudMessaging.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GoogleCloudMessaging.h; path = Headers/Public/GoogleCloudMessaging.h; sourceTree = "<group>"; };
+		74EE4B2FC41EEDD7849DB6C0C793382F /* AppInvite-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AppInvite-Module.h"; path = "Headers/ModuleHeaders/AppInvite-Module.h"; sourceTree = "<group>"; };
+		768E2B658DF5BD96A6AEB5E9B9C1E762 /* libGTMSessionFetcher_full.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_full.a; path = Libraries/libGTMSessionFetcher_full.a; sourceTree = "<group>"; };
+		7B8EC3714FCF38313DACB6BA072F83FF /* libGTM_NSStringXML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringXML.a; path = Libraries/libGTM_NSStringXML.a; sourceTree = "<group>"; };
+		827B079DD743EBA12107F25A023638E0 /* libGTM_RoundedRectPath.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_RoundedRectPath.a; path = Libraries/libGTM_RoundedRectPath.a; sourceTree = "<group>"; };
+		8BECB026680ACC82236698767BF2FB12 /* GGLInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceID.h; path = Headers/Public/GGLInstanceID.h; sourceTree = "<group>"; };
+		8F8B90A922A612904B38587451C43E18 /* AdMob-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "AdMob-Module.h"; path = "Headers/ModuleHeaders/AdMob-Module.h"; sourceTree = "<group>"; };
+		918CDF4D7F7364BC627CA6709B967602 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		920C6B287D9B2ABE0EE336AB9E8CE680 /* Analytics-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Analytics-Module.h"; path = "Headers/ModuleHeaders/Analytics-Module.h"; sourceTree = "<group>"; };
+		9462A8666A998FE70022A8FA254E39F6 /* GGLInstanceIDConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLInstanceIDConfig.h; path = Headers/Public/GGLInstanceIDConfig.h; sourceTree = "<group>"; };
+		9750A980D63EBC81F890EE0AA3784190 /* YouTubePlayer.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = YouTubePlayer.modulemap; sourceTree = "<group>"; };
+		A08DA4643B29300143FF3F4C6A0B01A1 /* YouTubePlayer-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "YouTubePlayer-dummy.m"; sourceTree = "<group>"; };
+		A0F71ABB1EC74F9AD7B1A40F28F7ECCB /* YouTubePlayer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = YouTubePlayer.swift; path = YouTubePlayer/YouTubePlayer/YouTubePlayer.swift; sourceTree = "<group>"; };
+		A46100F4858E9C769F4A239A33583E6B /* libGTM_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_core.a; path = Libraries/libGTM_core.a; sourceTree = "<group>"; };
+		A6D54AA5E339EC16E6D5464FDADA11CF /* GGLContext.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLContext.h; path = Headers/GGLCore/Public/GGLContext.h; sourceTree = "<group>"; };
+		AE36287859559AC08D1BCEAB4CE07570 /* libGIP_Locale.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGIP_Locale.a; path = Libraries/libGIP_Locale.a; sourceTree = "<group>"; };
 		B1C719381B50A56D24C9FFA94A7D89D8 /* Pods-Cru-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cru-resources.sh"; sourceTree = "<group>"; };
+		B5A4E024B82EBCE1C5B88BA3F9100A89 /* libGSDK_Overload.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGSDK_Overload.a; path = Libraries/libGSDK_Overload.a; sourceTree = "<group>"; };
+		B5E15373B05C945E8FEF4650D8DA41D6 /* libGTM_AddressBook.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_AddressBook.a; path = Libraries/libGTM_AddressBook.a; sourceTree = "<group>"; };
 		BA25735D0B7DA407D60B8663DFCA1777 /* SideMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SideMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		BD62F2942EA1601377C82BB4714F37DC /* GGLErrorCode.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GGLErrorCode.h; path = Headers/GGLCore/Public/GGLErrorCode.h; sourceTree = "<group>"; };
+		BE736DCCB21A08F69482F7EDF52292D3 /* libGTM_DebugUtils.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_DebugUtils.a; path = Libraries/libGTM_DebugUtils.a; sourceTree = "<group>"; };
+		BFAB66102AB2ABF14AD14DF274362CB9 /* libGTM_NSData+zlib.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_NSData+zlib.a"; path = "Libraries/libGTM_NSData+zlib.a"; sourceTree = "<group>"; };
+		C08726B1BFDABB8B82386B3DD7A76813 /* libGTMSessionFetcher_core.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTMSessionFetcher_core.a; path = Libraries/libGTMSessionFetcher_core.a; sourceTree = "<group>"; };
+		C88930230FC1E8B8EED659ECFFD3932E /* libGTM_iPhone.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_iPhone.a; path = Libraries/libGTM_iPhone.a; sourceTree = "<group>"; };
+		C8AD98A26528DFFE44712C2B91CFBB50 /* CloudMessaging-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "CloudMessaging-Module.h"; path = "Headers/ModuleHeaders/CloudMessaging-Module.h"; sourceTree = "<group>"; };
+		C8FC32E268706E90A62A67C5D9D1397B /* libGTM_KVO.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_KVO.a; path = Libraries/libGTM_KVO.a; sourceTree = "<group>"; };
+		CD8C809EF0D887A9D0400FAB1A85D264 /* libGTM_Regex.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_Regex.a; path = Libraries/libGTM_Regex.a; sourceTree = "<group>"; };
+		CF73EA3B1BA2F95F4EDFE78205107107 /* GCMService.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMService.h; path = Headers/Public/GCMService.h; sourceTree = "<group>"; };
+		D15D50C2027A6E38651167C42ACA81F9 /* YouTubePlayer.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = YouTubePlayer.xcconfig; sourceTree = "<group>"; };
+		D1ECC21104AB0B9948A49F8E720EE80F /* libGTM_NSStringHTML.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_NSStringHTML.a; path = Libraries/libGTM_NSStringHTML.a; sourceTree = "<group>"; };
+		D46AE7BBA3A59D541033D55CAA2EC73C /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		D6EA8995D6B34F53D786E46B4D92BDEA /* libGTM_GTMURLBuilder.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = libGTM_GTMURLBuilder.a; path = Libraries/libGTM_GTMURLBuilder.a; sourceTree = "<group>"; };
 		E089D7DD7AD94994D0AB4479F2191FCF /* Pods-Cru-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cru-acknowledgements.markdown"; sourceTree = "<group>"; };
+		E40DE19775A4AFEB65CD4F4F9534F2E7 /* SideMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SideMenu.xcconfig; sourceTree = "<group>"; };
 		E6149CCDD97B02ED6D68E1CC8AA7A0A4 /* Pods-Cru-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Cru-frameworks.sh"; sourceTree = "<group>"; };
-		F3AE5A948933453155B2FA0C7BBA6F3B /* SideMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SideMenu-umbrella.h"; sourceTree = "<group>"; };
+		E719A44C2789DCF2FA0F496D56C40480 /* libGTM_UIFont+LineHeight.a */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = archive.ar; name = "libGTM_UIFont+LineHeight.a"; path = "Libraries/libGTM_UIFont+LineHeight.a"; sourceTree = "<group>"; };
+		EC859C293AFE9D00469D000C5EBC0728 /* YouTubePlayer-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubePlayer-umbrella.h"; sourceTree = "<group>"; };
+		F78F00CF43ADDFCC458E7513545A0166 /* GCMPubSub.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMPubSub.h; path = Headers/Public/GCMPubSub.h; sourceTree = "<group>"; };
+		FB782F482F960A4F30F7E6E915D95873 /* YouTubePlayer-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "YouTubePlayer-prefix.pch"; sourceTree = "<group>"; };
+		FBFCF4CEB82D37E5F122CDF2EC7E58D2 /* Core-Module.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "Core-Module.h"; path = "Headers/ModuleHeaders/Core-Module.h"; sourceTree = "<group>"; };
+		FDD1212BB57661EC7C3991DCEB4B4117 /* GCMConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = GCMConfig.h; path = Headers/Public/GCMConfig.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,15 +165,66 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0D9EDCDA43C487531788889BD853CF21 /* YouTubePlayer */ = {
+		02872B83E8935A8A3AC40E7876D5B81B /* YouTubePlayer */ = {
 			isa = PBXGroup;
 			children = (
-				84F85F62FD9CFEBEF03060BFFC11E04F /* YouTubePlayer.swift */,
-				121AEE0DB7BF84BF3F246164A054D02A /* YTPlayer.html */,
-				6E98B3A76AD217ABD452383F8BC2635B /* Resources */,
-				D8E9E077B854DD4CEED5F1D7FC7AE77F /* Support Files */,
+				A0F71ABB1EC74F9AD7B1A40F28F7ECCB /* YouTubePlayer.swift */,
+				54B75528CCEA1747AD8ED98ED02B31EE /* YTPlayer.html */,
+				1C91554A9BCF51A16493F758992C8650 /* Resources */,
+				65D952AB6889AC8051CF95843943D504 /* Support Files */,
 			);
 			path = YouTubePlayer;
+			sourceTree = "<group>";
+		};
+		0F112B6DFF2AB640A6B55CCD045A74FA /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				8F8B90A922A612904B38587451C43E18 /* AdMob-Module.h */,
+				920C6B287D9B2ABE0EE336AB9E8CE680 /* Analytics-Module.h */,
+				74EE4B2FC41EEDD7849DB6C0C793382F /* AppInvite-Module.h */,
+				C8AD98A26528DFFE44712C2B91CFBB50 /* CloudMessaging-Module.h */,
+				0A7DDBA8FA4E13858B53DDD8A90CD33F /* Core.h */,
+				FBFCF4CEB82D37E5F122CDF2EC7E58D2 /* Core-Module.h */,
+				193520FCA698195872786E75EEED2B31 /* GGLConfiguration.h */,
+				A6D54AA5E339EC16E6D5464FDADA11CF /* GGLContext.h */,
+				BD62F2942EA1601377C82BB4714F37DC /* GGLErrorCode.h */,
+				4F3A365BC891247315EBE6D0CEEC53F2 /* GMRConfiguration.h */,
+				485DB53498BCE5EEB6899222B572B20A /* SignIn-Module.h */,
+				7360DD7F72644529EA232FCEE53F5DC3 /* Frameworks */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		1623239F0D6EA5BB61E19B5788894F86 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				556746BAF21F15B1263BD76ABD8915E1 /* SideMenuManager.swift */,
+				60B95C8E390B9CB9864BC6C24ABC5EE4 /* Support Files */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		196342881E0571A8FE2C6163A1E2178C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				55D125D003E8ADE532768B53386430FA /* libProtocolBuffers.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1C91554A9BCF51A16493F758992C8650 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		266BA51EA56F8388B86A307FAB0CD639 /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				D9299F9B76C3386978E600DFCE45A83D /* Frameworks */,
+			);
+			path = GoogleNetworkingUtilities;
 			sourceTree = "<group>";
 		};
 		27B69613DB36F9C4FD2FDCAD000151B3 /* Pods-Cru */ = {
@@ -145,43 +245,78 @@
 			path = "Target Support Files/Pods-Cru";
 			sourceTree = "<group>";
 		};
-		579FE867524ABC34FCECA4D4384EBE2B /* SideMenu */ = {
+		344A8C200943F90F63A7E75B4177DF24 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				06BFADBF9F90F426A6F86BC61D823250 /* SideMenuManager.swift */,
-				6B47D4C7A55865F9CE43A63CDA5EC4F1 /* Support Files */,
+				AE36287859559AC08D1BCEAB4CE07570 /* libGIP_Locale.a */,
+				47A7DB87AF6497407C0ED2101F0D617E /* libGIP_Reachability.a */,
 			);
-			path = SideMenu;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6B47D4C7A55865F9CE43A63CDA5EC4F1 /* Support Files */ = {
+		3FEF09765F3C814AACB42F7DFB46CE72 /* Google */ = {
 			isa = PBXGroup;
 			children = (
-				34272447A059F0AE077B33AE4C181DED /* Info.plist */,
-				9BA200A7B7E2D1BE45C56EFB3FA73C20 /* SideMenu.modulemap */,
-				84A58DED72AFEA579D53D03671162DB9 /* SideMenu.xcconfig */,
-				266E1F7229C74321A3AEE931D4C3C689 /* SideMenu-dummy.m */,
-				15D2F0D1A0BE64C25E65FC37569809D6 /* SideMenu-prefix.pch */,
-				F3AE5A948933453155B2FA0C7BBA6F3B /* SideMenu-umbrella.h */,
+				BD3F84AF516E0CA0B972E82F9A112CC1 /* CloudMessaging */,
+				0F112B6DFF2AB640A6B55CCD045A74FA /* Core */,
+			);
+			path = Google;
+			sourceTree = "<group>";
+		};
+		479F256417A83A201F34E8A0D4B0E906 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6E665B9490AD99A0166868950B0E3340 /* libGGLInstanceIDLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4CDE4797979F4E80ABA9F6736B3D9A7A /* GGLInstanceID */ = {
+			isa = PBXGroup;
+			children = (
+				8BECB026680ACC82236698767BF2FB12 /* GGLInstanceID.h */,
+				9462A8666A998FE70022A8FA254E39F6 /* GGLInstanceIDConfig.h */,
+				0DBFFF3252779AEF3F2148CC0B7A0CC6 /* GGLInstanceIDDelegate.h */,
+				5D6B781F0B159F5AD0F11C6AF5EAEE2B /* GGLInstanceIDHeaders.h */,
+				479F256417A83A201F34E8A0D4B0E906 /* Frameworks */,
+			);
+			path = GGLInstanceID;
+			sourceTree = "<group>";
+		};
+		60B95C8E390B9CB9864BC6C24ABC5EE4 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				918CDF4D7F7364BC627CA6709B967602 /* Info.plist */,
+				2432D64EEE9B57474A029D3085B03D05 /* SideMenu.modulemap */,
+				E40DE19775A4AFEB65CD4F4F9534F2E7 /* SideMenu.xcconfig */,
+				10610C53587F4AAF3D748823EB48375D /* SideMenu-dummy.m */,
+				28236978C501841031F49394C8E66A5B /* SideMenu-prefix.pch */,
+				D46AE7BBA3A59D541033D55CAA2EC73C /* SideMenu-umbrella.h */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/SideMenu";
 			sourceTree = "<group>";
 		};
-		6E98B3A76AD217ABD452383F8BC2635B /* Resources */ = {
+		65D952AB6889AC8051CF95843943D504 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
+				6306FE7DEF22D3BD0F8F99F67AB6A00C /* Info.plist */,
+				9750A980D63EBC81F890EE0AA3784190 /* YouTubePlayer.modulemap */,
+				D15D50C2027A6E38651167C42ACA81F9 /* YouTubePlayer.xcconfig */,
+				A08DA4643B29300143FF3F4C6A0B01A1 /* YouTubePlayer-dummy.m */,
+				FB782F482F960A4F30F7E6E915D95873 /* YouTubePlayer-prefix.pch */,
+				EC859C293AFE9D00469D000C5EBC0728 /* YouTubePlayer-umbrella.h */,
 			);
-			name = Resources;
+			name = "Support Files";
+			path = "../Target Support Files/YouTubePlayer";
 			sourceTree = "<group>";
 		};
-		6FA736412FAFEB991053C0CEB072D00F /* Pods */ = {
+		7360DD7F72644529EA232FCEE53F5DC3 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				579FE867524ABC34FCECA4D4384EBE2B /* SideMenu */,
-				0D9EDCDA43C487531788889BD853CF21 /* YouTubePlayer */,
+				59537849906796F84CD5BAEB98B96515 /* libGGLCore.a */,
 			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7B2A600E70E01EB0897C2C8F59B78CE0 /* Targets Support Files */ = {
@@ -197,10 +332,18 @@
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				6FA736412FAFEB991053C0CEB072D00F /* Pods */,
+				D1BF1BB3B976D3701ABF32E72428F1EC /* Pods */,
 				9B2600D7E847A8F84223EC40D1B1A4FB /* Products */,
 				7B2A600E70E01EB0897C2C8F59B78CE0 /* Targets Support Files */,
 			);
+			sourceTree = "<group>";
+		};
+		872638AC00ECF74076E39E18E2AFB554 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5A4E024B82EBCE1C5B88BA3F9100A89 /* libGSDK_Overload.a */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		9B2600D7E847A8F84223EC40D1B1A4FB /* Products */ = {
@@ -214,12 +357,46 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		AE339671B523120227624AEA8FA8BC36 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5E15373B05C945E8FEF4650D8DA41D6 /* libGTM_AddressBook.a */,
+				A46100F4858E9C769F4A239A33583E6B /* libGTM_core.a */,
+				BE736DCCB21A08F69482F7EDF52292D3 /* libGTM_DebugUtils.a */,
+				D6EA8995D6B34F53D786E46B4D92BDEA /* libGTM_GTMURLBuilder.a */,
+				C88930230FC1E8B8EED659ECFFD3932E /* libGTM_iPhone.a */,
+				C8FC32E268706E90A62A67C5D9D1397B /* libGTM_KVO.a */,
+				BFAB66102AB2ABF14AD14DF274362CB9 /* libGTM_NSData+zlib.a */,
+				1A50BC95EB525AB2BD66260F2641A518 /* libGTM_NSDictionary+URLArguments.a */,
+				4D8860144969FA48EF299166F0FBEDE1 /* libGTM_NSScannerJSON.a */,
+				D1ECC21104AB0B9948A49F8E720EE80F /* libGTM_NSStringHTML.a */,
+				7B8EC3714FCF38313DACB6BA072F83FF /* libGTM_NSStringXML.a */,
+				CD8C809EF0D887A9D0400FAB1A85D264 /* libGTM_Regex.a */,
+				827B079DD743EBA12107F25A023638E0 /* libGTM_RoundedRectPath.a */,
+				3B55EDBE00701D0A987D0174FB23069D /* libGTM_StringEncoding.a */,
+				4CA0BAD2089AF2CC172565D7EA043669 /* libGTM_SystemVersion.a */,
+				E719A44C2789DCF2FA0F496D56C40480 /* libGTM_UIFont+LineHeight.a */,
+				17BF5143E9F001F77AF393059F84D1B5 /* libGTMStackTrace.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BD3F84AF516E0CA0B972E82F9A112CC1 /* CloudMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				4E71550FE24B1E1714716FBA986E038B /* CloudMessaging.h */,
+				6344F902DD26B13D85C7DD63CCBE927C /* GGLContext+CloudMessaging.h */,
+				F3BE2A3A02380EE7C14EA758535F1324 /* Frameworks */,
+			);
+			name = CloudMessaging;
 			sourceTree = "<group>";
 		};
 		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
@@ -230,18 +407,91 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		D8E9E077B854DD4CEED5F1D7FC7AE77F /* Support Files */ = {
+		C22CD75201B4D34B8022E44F339D43ED /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				3E323B7D136CB63650832BF721CD93B8 /* Info.plist */,
-				02DAA2D0A947B9E9FD5BC9370FC1E98E /* YouTubePlayer.modulemap */,
-				AABC7518FF1E530419B343C9E4341BEA /* YouTubePlayer.xcconfig */,
-				5E0ED4E3C437B3F893F512F07DFF89BE /* YouTubePlayer-dummy.m */,
-				2F7359EDCAF3EC928CB61B3A1B8CF892 /* YouTubePlayer-prefix.pch */,
-				4C1FA6A22C43423A155D1862E6DB4AAC /* YouTubePlayer-umbrella.h */,
+				872638AC00ECF74076E39E18E2AFB554 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/YouTubePlayer";
+			path = GoogleSymbolUtilities;
+			sourceTree = "<group>";
+		};
+		D1BF1BB3B976D3701ABF32E72428F1EC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4CDE4797979F4E80ABA9F6736B3D9A7A /* GGLInstanceID */,
+				3FEF09765F3C814AACB42F7DFB46CE72 /* Google */,
+				DE3E46E3873F55CFED863C0B94CC4AA9 /* GoogleCloudMessaging */,
+				FB065287F62C19828F340701A495201B /* GoogleInterchangeUtilities */,
+				F9CA43834B1412F559B5CEB08F8BFF4E /* GoogleIPhoneUtilities */,
+				266BA51EA56F8388B86A307FAB0CD639 /* GoogleNetworkingUtilities */,
+				C22CD75201B4D34B8022E44F339D43ED /* GoogleSymbolUtilities */,
+				FC8DCC99F9B5696361E14081102CF5F3 /* GoogleUtilities */,
+				1623239F0D6EA5BB61E19B5788894F86 /* SideMenu */,
+				02872B83E8935A8A3AC40E7876D5B81B /* YouTubePlayer */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D9299F9B76C3386978E600DFCE45A83D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C08726B1BFDABB8B82386B3DD7A76813 /* libGTMSessionFetcher_core.a */,
+				768E2B658DF5BD96A6AEB5E9B9C1E762 /* libGTMSessionFetcher_full.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DE3E46E3873F55CFED863C0B94CC4AA9 /* GoogleCloudMessaging */ = {
+			isa = PBXGroup;
+			children = (
+				FDD1212BB57661EC7C3991DCEB4B4117 /* GCMConfig.h */,
+				F78F00CF43ADDFCC458E7513545A0166 /* GCMPubSub.h */,
+				01E913A58430FBDAADAD55E3BB3BEEC7 /* GCMReceiverDelegate.h */,
+				CF73EA3B1BA2F95F4EDFE78205107107 /* GCMService.h */,
+				7460044122FEA361C77D8CB584BE7D81 /* GoogleCloudMessaging.h */,
+				EC543A8A73B22F5B67386BA8D3683D2A /* Frameworks */,
+			);
+			path = GoogleCloudMessaging;
+			sourceTree = "<group>";
+		};
+		EC543A8A73B22F5B67386BA8D3683D2A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				419BD4ACD5ADAB7E9DBB26E959535815 /* libGcmLib.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F3BE2A3A02380EE7C14EA758535F1324 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6503EE654821F5D9439928AA49A34E1A /* libGGLCloudMessaging.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F9CA43834B1412F559B5CEB08F8BFF4E /* GoogleIPhoneUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				344A8C200943F90F63A7E75B4177DF24 /* Frameworks */,
+			);
+			path = GoogleIPhoneUtilities;
+			sourceTree = "<group>";
+		};
+		FB065287F62C19828F340701A495201B /* GoogleInterchangeUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				196342881E0571A8FE2C6163A1E2178C /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		FC8DCC99F9B5696361E14081102CF5F3 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				AE339671B523120227624AEA8FA8BC36 /* Frameworks */,
+			);
+			path = GoogleUtilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -493,7 +743,7 @@
 		};
 		39AA196C46D47127C0A7B1085C40112B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84A58DED72AFEA579D53D03671162DB9 /* SideMenu.xcconfig */;
+			baseConfigurationReference = E40DE19775A4AFEB65CD4F4F9534F2E7 /* SideMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -520,7 +770,7 @@
 		};
 		6B53762E218D0FC5136417B12BAF93E7 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AABC7518FF1E530419B343C9E4341BEA /* YouTubePlayer.xcconfig */;
+			baseConfigurationReference = D15D50C2027A6E38651167C42ACA81F9 /* YouTubePlayer.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -578,7 +828,7 @@
 		};
 		9C0D83FEF07347FB46EE77F8C05D8A12 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84A58DED72AFEA579D53D03671162DB9 /* SideMenu.xcconfig */;
+			baseConfigurationReference = E40DE19775A4AFEB65CD4F4F9534F2E7 /* SideMenu.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = SideMenu;
@@ -629,7 +879,7 @@
 		};
 		C59BA7A8545EEC70548FE10E3EBA7AF6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84A58DED72AFEA579D53D03671162DB9 /* SideMenu.xcconfig */;
+			baseConfigurationReference = E40DE19775A4AFEB65CD4F4F9534F2E7 /* SideMenu.xcconfig */;
 			buildSettings = {
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				PRODUCT_NAME = SideMenu;
@@ -641,7 +891,7 @@
 		};
 		D1D058747423C82EDB6B3469B5D284EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = AABC7518FF1E530419B343C9E4341BEA /* YouTubePlayer.xcconfig */;
+			baseConfigurationReference = D15D50C2027A6E38651167C42ACA81F9 /* YouTubePlayer.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -669,7 +919,7 @@
 		};
 		D5BA43670D3A0AEE775741228C60329B /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84A58DED72AFEA579D53D03671162DB9 /* SideMenu.xcconfig */;
+			baseConfigurationReference = E40DE19775A4AFEB65CD4F4F9534F2E7 /* SideMenu.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
