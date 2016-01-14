@@ -24,6 +24,18 @@
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
 		0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */; };
 		0FC8E39F1C4566C7007A7208 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39E1C4566C7007A7208 /* test.storyboard */; };
+		0FC8E3A21C45E9C6007A7208 /* IntroDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A11C45E9C6007A7208 /* IntroDescriptionViewController.swift */; };
+		0FC8E3A31C45E9C6007A7208 /* IntroDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A11C45E9C6007A7208 /* IntroDescriptionViewController.swift */; };
+		0FC8E3A41C45E9C6007A7208 /* IntroDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A11C45E9C6007A7208 /* IntroDescriptionViewController.swift */; };
+		0FC8E3A61C45EB1A007A7208 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */; };
+		0FC8E3A71C45EB1A007A7208 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */; };
+		0FC8E3A81C45EB1A007A7208 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */; };
+		0FC8E3AA1C460421007A7208 /* IntroCampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A91C460421007A7208 /* IntroCampusesViewController.swift */; };
+		0FC8E3AB1C460421007A7208 /* IntroCampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A91C460421007A7208 /* IntroCampusesViewController.swift */; };
+		0FC8E3AC1C460421007A7208 /* IntroCampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A91C460421007A7208 /* IntroCampusesViewController.swift */; };
+		0FC8E3AE1C46042F007A7208 /* IntroMinistriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3AD1C46042F007A7208 /* IntroMinistriesViewController.swift */; };
+		0FC8E3AF1C46042F007A7208 /* IntroMinistriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3AD1C46042F007A7208 /* IntroMinistriesViewController.swift */; };
+		0FC8E3B01C46042F007A7208 /* IntroMinistriesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC8E3AD1C46042F007A7208 /* IntroMinistriesViewController.swift */; };
 		501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AB1BFBDB4100849CED /* EventsViewController.swift */; };
 		501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
 		501085B01BFBDB7900849CED /* RideSharingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AF1BFBDB7900849CED /* RideSharingViewController.swift */; };
@@ -95,6 +107,10 @@
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
 		0FC8E39E1C4566C7007A7208 /* test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
+		0FC8E3A11C45E9C6007A7208 /* IntroDescriptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroDescriptionViewController.swift; sourceTree = "<group>"; };
+		0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
+		0FC8E3A91C460421007A7208 /* IntroCampusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroCampusesViewController.swift; sourceTree = "<group>"; };
+		0FC8E3AD1C46042F007A7208 /* IntroMinistriesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IntroMinistriesViewController.swift; sourceTree = "<group>"; };
 		103605C6F44AE29021FA1E17 /* Pods_Cru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		501085AB1BFBDB4100849CED /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		501085AD1BFBDB6700849CED /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +198,7 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				0FC8E3A01C45E99E007A7208 /* Introduction */,
 				0FC8E39B1C3EF2FF007A7208 /* SideMenu */,
 				85EAB8181C0ECC40005C7658 /* Config */,
 				85C6D1161C0BD5CD006A4F9F /* DBClient */,
@@ -230,6 +247,17 @@
 				0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */,
 			);
 			name = SideMenu;
+			sourceTree = "<group>";
+		};
+		0FC8E3A01C45E99E007A7208 /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				0FC8E3A11C45E9C6007A7208 /* IntroDescriptionViewController.swift */,
+				0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */,
+				0FC8E3A91C460421007A7208 /* IntroCampusesViewController.swift */,
+				0FC8E3AD1C46042F007A7208 /* IntroMinistriesViewController.swift */,
+			);
+			name = Introduction;
 			sourceTree = "<group>";
 		};
 		494AFB3CABBE1E5418A73F5C /* Pods */ = {
@@ -471,6 +499,7 @@
 				6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */,
 				6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */,
 				50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */,
+				0FC8E3A61C45EB1A007A7208 /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -478,6 +507,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC8E3A71C45EB1A007A7208 /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +515,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC8E3A81C45EB1A007A7208 /* Intro.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -552,9 +583,11 @@
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
 				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,
+				0FC8E3AE1C46042F007A7208 /* IntroMinistriesViewController.swift in Sources */,
 				0F74A3101C0BB9D300401377 /* User.swift in Sources */,
 				85C6D11B1C0BD5F4006A4F9F /* DBClient.swift in Sources */,
 				6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */,
+				0FC8E3AA1C460421007A7208 /* IntroCampusesViewController.swift in Sources */,
 				503E1DBF1C0D6882004D8AB3 /* MapViewController.swift in Sources */,
 				6D76CA791C06AAF800F8B007 /* EventTableViewCell.swift in Sources */,
 				6D76CA7E1C06AF9E00F8B007 /* EventTableViewController.swift in Sources */,
@@ -565,6 +598,7 @@
 				0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */,
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */,
+				0FC8E3A21C45E9C6007A7208 /* IntroDescriptionViewController.swift in Sources */,
 				501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 				0F7B72C31C0D3C3100539B33 /* MinistryTeamsViewController.swift in Sources */,
@@ -580,6 +614,9 @@
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
+				0FC8E3AB1C460421007A7208 /* IntroCampusesViewController.swift in Sources */,
+				0FC8E3AF1C46042F007A7208 /* IntroMinistriesViewController.swift in Sources */,
+				0FC8E3A31C45E9C6007A7208 /* IntroDescriptionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,6 +624,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FC8E3B01C46042F007A7208 /* IntroMinistriesViewController.swift in Sources */,
+				0FC8E3A41C45E9C6007A7208 /* IntroDescriptionViewController.swift in Sources */,
+				0FC8E3AC1C460421007A7208 /* IntroCampusesViewController.swift in Sources */,
 				0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

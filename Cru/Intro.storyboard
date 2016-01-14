@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <scenes>
+        <!--Intro Description View Controller-->
+        <scene sceneID="i7N-mZ-E0z">
+            <objects>
+                <viewController storyboardIdentifier="introStoryboard" modalPresentationStyle="overCurrentContext" id="qbM-kU-jKL" customClass="IntroDescriptionViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="rbO-xT-OHr"/>
+                        <viewControllerLayoutGuide type="bottom" id="yX2-Lk-Ia1"/>
+                    </layoutGuides>
+                    <view key="view" opaque="NO" contentMode="scaleToFill" id="Y6D-sL-3rw">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="moD-fM-j4Q">
+                                <rect key="frame" x="143" y="136" width="314" height="327"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Cru!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a2r-dm-Iqv">
+                                        <rect key="frame" x="8" y="8" width="128" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bR5-lp-Pmd">
+                                        <rect key="frame" x="142" y="289" width="32" height="30"/>
+                                        <state key="normal" title="Next"/>
+                                        <connections>
+                                            <action selector="dismissIntroModal:" destination="qbM-kU-jKL" eventType="touchUpInside" id="yBp-FQ-g55"/>
+                                            <action selector="presentNextModal:" destination="qbM-kU-jKL" eventType="touchUpInside" id="1dW-re-h4s"/>
+                                        </connections>
+                                    </button>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="K0E-qC-P1k">
+                                        <rect key="frame" x="8" y="37" width="298" height="244"/>
+                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="314" id="0Rv-Sa-unM"/>
+                                    <constraint firstItem="K0E-qC-P1k" firstAttribute="centerX" secondItem="moD-fM-j4Q" secondAttribute="centerX" id="1Cj-Ih-msh"/>
+                                    <constraint firstAttribute="bottom" secondItem="bR5-lp-Pmd" secondAttribute="bottom" constant="8" id="8oF-PP-wy5"/>
+                                    <constraint firstItem="bR5-lp-Pmd" firstAttribute="centerX" secondItem="moD-fM-j4Q" secondAttribute="centerX" id="MLo-Jr-eai"/>
+                                    <constraint firstAttribute="height" constant="327" id="WHo-Wj-QDo"/>
+                                    <constraint firstAttribute="trailing" secondItem="K0E-qC-P1k" secondAttribute="trailing" constant="8" id="XvA-T9-TVn"/>
+                                    <constraint firstItem="K0E-qC-P1k" firstAttribute="top" secondItem="a2r-dm-Iqv" secondAttribute="bottom" constant="8" id="nHo-VN-UNV"/>
+                                    <constraint firstItem="K0E-qC-P1k" firstAttribute="leading" secondItem="moD-fM-j4Q" secondAttribute="leading" constant="8" id="oDp-VJ-TyI"/>
+                                    <constraint firstItem="a2r-dm-Iqv" firstAttribute="leading" secondItem="moD-fM-j4Q" secondAttribute="leading" constant="8" id="oph-4T-Rt5"/>
+                                    <constraint firstItem="a2r-dm-Iqv" firstAttribute="top" secondItem="moD-fM-j4Q" secondAttribute="top" constant="8" id="yxb-la-jDN"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="moD-fM-j4Q" firstAttribute="centerY" secondItem="Y6D-sL-3rw" secondAttribute="centerY" id="A6f-Ny-4Ds"/>
+                            <constraint firstItem="moD-fM-j4Q" firstAttribute="centerX" secondItem="Y6D-sL-3rw" secondAttribute="centerX" id="Rff-X2-4qP"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
+                    <connections>
+                        <outlet property="modalBackground" destination="Y6D-sL-3rw" id="tFs-PY-xMC"/>
+                        <outlet property="modalWindow" destination="moD-fM-j4Q" id="r6O-8o-feC"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lgy-vt-Pwu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="203"/>
+        </scene>
+        <!--Intro Campuses View Controller-->
+        <scene sceneID="Ohr-Bo-OKd">
+            <objects>
+                <viewController id="aSL-XU-Giy" customClass="IntroCampusesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ddl-dG-85m"/>
+                        <viewControllerLayoutGuide type="bottom" id="uUH-3T-bjZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="CUh-uf-ALi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vlu-AF-fAn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="840" y="203"/>
+        </scene>
+        <!--Intro Ministries View Controller-->
+        <scene sceneID="GAx-Mw-nH3">
+            <objects>
+                <viewController id="2T7-8P-lfo" customClass="IntroMinistriesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5Mz-vx-niB"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ho9-d4-fDC"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="vC9-Kb-9wz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rR9-WI-Rgm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1526" y="203"/>
+        </scene>
+    </scenes>
+</document>

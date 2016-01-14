@@ -13,10 +13,10 @@
             </objects>
             <point key="canvasLocation" x="1411.5" y="998"/>
         </scene>
-        <!--View Controller-->
+        <!--Main View Controller-->
         <scene sceneID="Pmt-Nq-gRG">
             <objects>
-                <viewController id="SOu-VK-CUe" customClass="ViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="SOu-VK-CUe" customClass="MainViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jzh-Dj-qAf"/>
                         <viewControllerLayoutGuide type="bottom" id="xWF-zG-gFR"/>
@@ -46,10 +46,21 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="MNi-Vs-6pf" kind="presentation" identifier="introSegue" modalPresentationStyle="overCurrentContext" id="yFA-dx-Xvz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNr-AS-kQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="928" y="1180"/>
+        </scene>
+        <!--introStoryboard-->
+        <scene sceneID="ye5-nY-CZT">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="introModal" storyboardName="Intro" referencedIdentifier="introStoryboard" id="MNi-Vs-6pf" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5ug-SA-KJV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.5" y="1646"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="WqH-2i-VWp">
