@@ -1,6 +1,8 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  Cru
+//
+//  This view controller represents the main controller for the home view and the launch screen of the Cru Central Coast Application
 //
 //  Created by Deniz Tumer on 11/5/15.
 //  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
@@ -15,11 +17,20 @@ class MainViewController: UIViewController {
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    /* This function acts after the view is loaded and appears on the phone. */
     override func viewDidAppear(animated: Bool) {
-        if hasAppLaunchedBefore() {
-            print("Create modal for intro")
-            
+        if !hasAppLaunchedBefore() {
             self.performSegueWithIdentifier("introSegue", sender: self)
+            self.navigationItem.leftBarButtonItem?.enabled = false
+        }
+    }
+    
+    // prepare for segue
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "introSegue" {
+            if let introViewController = segue.destinationViewController as? IntroViewController {
+                introViewController.mainViewController = sender as? MainViewController
+            }
         }
     }
 
@@ -29,7 +40,7 @@ class MainViewController: UIViewController {
     }
     
     //Helper function for determining if the application has been launched before
-    func hasAppLaunchedBefore() -> Bool {
+    private func hasAppLaunchedBefore() -> Bool {
         let defaultSettings = NSUserDefaults.standardUserDefaults()
         
         if let _ = defaultSettings.stringForKey("hasLaunchedBefore") {

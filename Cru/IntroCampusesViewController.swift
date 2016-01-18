@@ -10,16 +10,26 @@ import UIKit
 
 class IntroCampusesViewController: UIViewController {
 
+    @IBOutlet weak var modalWindow: UIView!
+    @IBOutlet var modalBackground: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        modalBackground.backgroundColor = UIColor(white: 0, alpha: 0.7)
+        modalWindow.layer.cornerRadius = 15.0
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    @IBAction func dismissCampuses(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     
 
     /*

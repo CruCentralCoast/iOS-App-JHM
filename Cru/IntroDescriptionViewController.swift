@@ -9,15 +9,13 @@
 import UIKit
 
 class IntroDescriptionViewController: UIViewController {
-
-    @IBOutlet weak var modalWindow: UIView!
-    @IBOutlet var modalBackground: UIView!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        modalWindow.layer.cornerRadius = 15.0
+        print(self.parentViewController)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,16 +23,6 @@ class IntroDescriptionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func presentNextModal(sender: AnyObject) {
-        self.presentViewController(IntroCampusesViewController(), animated: true, completion: nil)
-    }
-    
-    @IBAction func dismissIntroModal(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
-    }
-    
-    
-
     /*
     // MARK: - Navigation
 
