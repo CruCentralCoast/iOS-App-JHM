@@ -37,6 +37,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         let settings: UIUserNotificationSettings =
         UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         application.registerUserNotificationSettings(settings)
+        application.registerForRemoteNotifications()
         
         let gcmConfig = GCMConfig.defaultConfig()
         gcmConfig.receiverDelegate = self
