@@ -34,21 +34,7 @@ class EventTableViewController: UITableViewController {
         self.tableView.endUpdates()
     }
     
-    func loadSampleEvents()
-    {
-        let descriptionSample = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
     
-        let photo1 = UIImage(named: "event1")
-        let event1 = Event(name: "Dinners for 8", image: photo1, startDate: "2016-1-20T19:00:00.000Z", endDate: "2016-1-20T21:00:00.000Z", location: "Various students' houses", description: descriptionSample, url: "", imageUrl: nil)
-        
-        let photo2 = UIImage(named: "event2")
-        let event2 = Event(name: "Crossroads", image: photo2, startDate: "2016-1-13T10:00:00.000Z", endDate: "2016-1-14T08:00:00.000Z", location: "Hyatt Westlake Village", description: descriptionSample, url: "", imageUrl: nil)
-        
-        let photo3 = UIImage(named: "event3")!
-        let event3 = Event(name: "Sophomore Social", image: photo3, startDate: "2015-10-15T19:00:00.000Z", endDate: "2015-10-17T12:00:00.000Z", location: "233 Patricia Drive, San Luis Obispo, CA", description: descriptionSample, url: "", imageUrl: nil)
-        
-        events += [event1!, event2!, event3!]
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

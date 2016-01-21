@@ -26,11 +26,14 @@ class Event {
     var location: String?
     var description: String?
     var facebookURL: String?
+    var street: String?
+    var suburb: String?
+    var postcode: String?
     
     
     //MARK: Initialization
     
-    init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, location: String?, description: String?, url: String?, imageUrl: String?)
+    init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, street: String?, suburb: String?, postcode: String?, description: String?, url: String?, imageUrl: String?)
     {
         self.id = "boo"
         self.name = name
@@ -48,7 +51,9 @@ class Event {
         self.endDay = endComps.day
         self.endHour = endComps.hour
         self.endMinute = endComps.minute
-        self.location = location
+        self.street = street
+        self.suburb = suburb
+        self.postcode = postcode
         self.description = description
         self.facebookURL = url
         
@@ -63,12 +68,15 @@ class Event {
         let name = dict["name"] as! String?
         let startDate = dict["startDate"] as! String?
         let endDate = dict["endDate"] as! String?
-        let location = "Mars"
+        let street = dict["location"]?.objectForKey("street1") as! String?
+        let suburb = dict["location"]?.objectForKey("suburb") as! String?
+        let postcode = dict["location"]?.objectForKey("postcode") as! String?
         let description = dict["description"] as! String?
-        let url = dict["url"] as! String
-        let imageUrl = dict["image"]?.objectForKey("secure_url") as? String
+        let url = dict["url"] as! String?
+        let imageUrl = dict["image"]?.objectForKey("secure_url") as! String?
         
-        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, location: location, description: description, url: url, imageUrl: imageUrl)
+        
+        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, street: street, suburb: suburb, postcode: postcode, description: description, url: url, imageUrl: imageUrl)
     }
 
 }

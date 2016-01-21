@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "add-to-calendar@1x.png",
+      "filename" : "rideshare@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "add-to-calendar@2x.png",
+      "filename" : "rideshare@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "add-to-calendar@3x.png",
+      "filename" : "rideshare@3x.png",
       "scale" : "3x"
     }
   ],

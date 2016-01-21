@@ -32,7 +32,6 @@ class EventDetailsViewController: UIViewController {
        UIApplication.sharedApplication().openURL(NSURL(string: (event?.facebookURL)!)!)
     }
     
-    
     @IBAction func saveToCalendar(sender: UIButton) {
         // 1
         eventStore = EKEventStore()
@@ -60,19 +59,18 @@ class EventDetailsViewController: UIViewController {
         }
     }
     
-    
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         if let event = event {
             
-            
             navigationItem.title = "Details"
             titleLabel.text = event.name
             image.image = event.image
+            if(event.street != nil) {
+                locationLabel.text = event.street! + ", " + event.suburb! + ", " + event.postcode!
+            }
             //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             descriptionView.text = event.description
             
@@ -86,8 +84,6 @@ class EventDetailsViewController: UIViewController {
         if event?.facebookURL == "" {
             fbButton.hidden = true
         }
-        
-        
     }
     
     func insertEvent(store: EKEventStore) {
@@ -102,8 +98,6 @@ class EventDetailsViewController: UIViewController {
                 print("Calendar was previously created")
             }
         }
-        
-        
         
         //Let's try it on the default calendar
         let start = NSDateComponents()
@@ -125,12 +119,14 @@ class EventDetailsViewController: UIViewController {
         let startDate = userCalendar.dateFromComponents(start)
         let endDate = userCalendar.dateFromComponents(end)
         
+        print("Parsed event info: minute-\(startDate) hour-\(start.hour) day-\(start.day) month-\(start.month)" )
+        
         
         // 4
         // Create Event
         let newEvent = EKEvent(eventStore: store)
         newEvent.calendar = store.defaultCalendarForNewEvents
-        
+        newEvent.location = event!.street
         newEvent.title = event!.name!
         newEvent.startDate = startDate!
         newEvent.endDate = endDate!
@@ -147,16 +143,12 @@ class EventDetailsViewController: UIViewController {
         } catch {
             fatalError()
         }
-        
     }
-
-
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     // MARK: - Navigation
 
@@ -164,6 +156,4 @@ class EventDetailsViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
     }
-    
-
 }
