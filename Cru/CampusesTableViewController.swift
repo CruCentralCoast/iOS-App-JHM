@@ -56,9 +56,13 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     
     func insertCampus(dict : NSDictionary) {
         self.tableView.beginUpdates()
-        let curCamp = Campus(name: dict["name"] as! String)
-        if (loadCampuses() != nil){
-            let enabledCampuses = loadCampuses()!
+        
+        let campusName = dict["name"] as! String
+        let campusId = dict["_id"] as! String
+        
+        let curCamp = Campus(name: campusName, id: campusId)
+        if (SubscriptionManager.loadCampuses() != nil){
+            let enabledCampuses = SubscriptionManager.loadCampuses()!
             if(enabledCampuses.contains(curCamp)){
                 curCamp.feedEnabled = true
             }
@@ -72,7 +76,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     override func viewWillDisappear(animated: Bool) {
-        saveCampuses(campuses)
+        SubscriptionManager.saveCampuses(campuses)
     }
 
     override func didReceiveMemoryWarning() {
@@ -138,27 +142,8 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
     }
     
-    func saveCampuses(campuses:[Campus]) {
-        var enabledCampuses = [Campus]()
-        
-        for camp in campuses{
-            if(camp.feedEnabled == true){
-                enabledCampuses.append(camp)
-            }
-        }
-        
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledCampuses as NSArray)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: "campusKey")
-        defaults.synchronize()
-    }
+
     
-    func loadCampuses() -> [Campus]? {
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("campusKey") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Campus]
-        }
-        return nil
-    }
 
     
     

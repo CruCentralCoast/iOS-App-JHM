@@ -184,7 +184,12 @@ class IntroViewController: UIViewController {
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         
+        if(introModals[nextNdx] == ministriesModal){
+            MinistryTableViewController.loadCampuses()
+            
+        }
         displayModal(introModals[nextNdx], fromModal: currentModal)
+        
     }
     
 

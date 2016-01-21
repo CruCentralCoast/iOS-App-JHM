@@ -8,32 +8,32 @@
 
 import Foundation
 
-class Campus: NSObject, NSCoding, Comparable{
+class Ministry: NSObject, NSCoding, Comparable{
     let name: String!
-    let id: String!
+    let campusIds: [String]!
     var feedEnabled: Bool!
     
     required init?(coder aDecoder: NSCoder) {
         name = aDecoder.decodeObjectForKey("name") as! String
-        id = aDecoder.decodeObjectForKey("id") as! String
+        campusIds = aDecoder.decodeObjectForKey("campusIds") as! [String]
         feedEnabled = aDecoder.decodeObjectForKey("feedEnabled") as! Bool
     }
     
     func encodeWithCoder(aCoder: NSCoder) {
         aCoder.encodeObject(name, forKey: "name")
-        aCoder.encodeObject(id, forKey: "id")
+        aCoder.encodeObject(campusIds, forKey: "campusIds")
         aCoder.encodeObject(feedEnabled, forKey: "feedEnabled")
     }
-
-    init(name: String, id: String, feedEnabled: Bool){
+    
+    init(name: String, campusIds: [String], feedEnabled: Bool){
         self.name = name
-        self.id = id
+        self.campusIds = campusIds
         self.feedEnabled = feedEnabled
     }
     
-    init(name: String, id: String){
+    init(name: String, campusIds: [String]){
         self.name = name
-        self.id = id
+        self.campusIds = campusIds
         self.feedEnabled = false
     }
     
@@ -45,9 +45,9 @@ class Campus: NSObject, NSCoding, Comparable{
             return false
         }
     }
-
+    
 }
 
-func  <(lCampus: Campus, rCampus: Campus) -> Bool{
+func  <(lCampus: Ministry, rCampus: Ministry) -> Bool{
     return lCampus.name < rCampus.name
 }
