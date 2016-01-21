@@ -133,11 +133,11 @@
                                                 <rect key="frame" x="8" y="355" width="584" height="128"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-il-7OQ">
-                                                        <rect key="frame" x="70" y="27" width="135" height="77"/>
+                                                        <rect key="frame" x="109" y="36" width="96" height="55"/>
                                                         <animations/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="135" id="OTA-cs-IgV"/>
-                                                            <constraint firstAttribute="height" constant="77" id="u3h-9n-SQI"/>
+                                                            <constraint firstAttribute="width" constant="96" id="OTA-cs-IgV"/>
+                                                            <constraint firstAttribute="height" constant="55" id="u3h-9n-SQI"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="saveToCalendarIcon"/>
                                                         <connections>
@@ -145,30 +145,30 @@
                                                         </connections>
                                                     </button>
                                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-wO-gTI">
-                                                        <rect key="frame" x="240" y="32" width="105" height="75"/>
+                                                        <rect key="frame" x="254" y="36" width="77" height="55"/>
                                                         <animations/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="105" id="N5z-Wl-fzG"/>
-                                                            <constraint firstAttribute="height" constant="75" id="eRL-PQ-j19"/>
+                                                            <constraint firstAttribute="width" constant="77" id="N5z-Wl-fzG"/>
+                                                            <constraint firstAttribute="height" constant="55" id="eRL-PQ-j19"/>
                                                         </constraints>
                                                         <state key="normal" title="Ridesharing" image="event-rideshare"/>
                                                     </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ehe-vS-Zoo">
+                                                        <rect key="frame" x="0.0" y="0.0" width="584" height="19"/>
+                                                        <animations/>
+                                                    </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-AB-fyb">
-                                                        <rect key="frame" x="387" y="26" width="107" height="83"/>
+                                                        <rect key="frame" x="387" y="36" width="70" height="55"/>
                                                         <animations/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" constant="107" id="QKW-g2-izm"/>
-                                                            <constraint firstAttribute="height" constant="83" id="y7U-ks-yFQ"/>
+                                                            <constraint firstAttribute="width" constant="70" id="QKW-g2-izm"/>
+                                                            <constraint firstAttribute="height" constant="55" id="y7U-ks-yFQ"/>
                                                         </constraints>
                                                         <state key="normal" title="Button" image="facebookIcon"/>
                                                         <connections>
                                                             <action selector="facebookLinkButton:" destination="wSV-ke-WyD" eventType="touchUpInside" id="jYh-uu-Xkc"/>
                                                         </connections>
                                                     </button>
-                                                    <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="separator" translatesAutoresizingMaskIntoConstraints="NO" id="Ehe-vS-Zoo">
-                                                        <rect key="frame" x="0.0" y="0.0" width="584" height="19"/>
-                                                        <animations/>
-                                                    </imageView>
                                                 </subviews>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -177,13 +177,20 @@
                                                     <constraint firstItem="AZc-AB-fyb" firstAttribute="leading" secondItem="Ghp-wO-gTI" secondAttribute="trailing" constant="42" id="GfK-mG-mFt"/>
                                                     <constraint firstItem="Ghp-wO-gTI" firstAttribute="top" secondItem="Ehe-vS-Zoo" secondAttribute="bottom" constant="13" id="KCM-0D-qYN"/>
                                                     <constraint firstItem="Ghp-wO-gTI" firstAttribute="centerX" secondItem="AtE-hq-7cy" secondAttribute="centerX" id="Ltx-1G-3UD"/>
+                                                    <constraint firstItem="Ghp-wO-gTI" firstAttribute="centerY" secondItem="AtE-hq-7cy" secondAttribute="centerY" id="Vec-y8-1bu"/>
                                                     <constraint firstItem="Ghp-wO-gTI" firstAttribute="leading" secondItem="pwr-il-7OQ" secondAttribute="trailing" constant="35" id="Za8-S1-BLy"/>
-                                                    <constraint firstItem="Ghp-wO-gTI" firstAttribute="centerY" secondItem="AtE-hq-7cy" secondAttribute="centerY" id="oZm-lV-eFl"/>
+                                                    <constraint firstItem="AZc-AB-fyb" firstAttribute="centerY" secondItem="AtE-hq-7cy" secondAttribute="centerY" id="kcj-GL-UFt"/>
                                                     <constraint firstItem="Ehe-vS-Zoo" firstAttribute="leading" secondItem="AtE-hq-7cy" secondAttribute="leading" constant="8" id="psw-Le-xYW"/>
                                                     <constraint firstAttribute="trailing" secondItem="Ehe-vS-Zoo" secondAttribute="trailing" constant="8" id="th0-yQ-k3W"/>
-                                                    <constraint firstItem="AZc-AB-fyb" firstAttribute="centerY" secondItem="AtE-hq-7cy" secondAttribute="centerY" id="ufM-ck-aF3"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQp-EO-h5U">
+                                                <rect key="frame" x="121" y="161" width="80" height="21"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -197,12 +204,16 @@
                                             <constraint firstItem="AtE-hq-7cy" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="8" id="GWa-jz-Ym3"/>
                                             <constraint firstItem="aEf-UI-Hk1" firstAttribute="top" secondItem="0OO-sc-rJO" secondAttribute="bottom" constant="8" id="JJM-7a-rvU"/>
                                             <constraint firstItem="bW7-Fr-sMB" firstAttribute="top" secondItem="aEf-UI-Hk1" secondAttribute="bottom" constant="8" id="K0M-TL-j1w"/>
+                                            <constraint firstItem="HQp-EO-h5U" firstAttribute="leading" secondItem="aEf-UI-Hk1" secondAttribute="trailing" constant="34" id="KfT-6H-Eby"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ehe-vS-Zoo" secondAttribute="trailing" constant="8" id="LZg-7L-Kaq"/>
                                             <constraint firstItem="0OO-sc-rJO" firstAttribute="top" secondItem="n6P-F9-53s" secondAttribute="bottom" constant="8" id="Ot9-Hn-XWN"/>
                                             <constraint firstItem="0OO-sc-rJO" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="Qub-wc-6La"/>
                                             <constraint firstItem="WYR-HW-5q5" firstAttribute="top" secondItem="bW7-Fr-sMB" secondAttribute="bottom" constant="8" id="STk-5p-2gF"/>
                                             <constraint firstAttribute="trailing" secondItem="n6P-F9-53s" secondAttribute="trailing" id="eK1-Kd-vOF"/>
+                                            <constraint firstItem="Ehe-vS-Zoo" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="8" id="jNW-Je-Sof"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="WYR-HW-5q5" secondAttribute="trailing" constant="8" id="kUy-Dz-bcn"/>
                                             <constraint firstItem="bW7-Fr-sMB" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="pUi-O1-myk"/>
+                                            <constraint firstItem="HQp-EO-h5U" firstAttribute="centerY" secondItem="aEf-UI-Hk1" secondAttribute="centerY" id="pgv-IU-2k7"/>
                                             <constraint firstItem="n6P-F9-53s" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" id="ugS-L6-LHZ"/>
                                         </constraints>
                                     </view>
@@ -229,6 +240,7 @@
                     </view>
                     <connections>
                         <outlet property="descriptionView" destination="WYR-HW-5q5" id="okn-dY-wvY"/>
+                        <outlet property="eventTimeLabel" destination="HQp-EO-h5U" id="nzD-FW-3xh"/>
                         <outlet property="fbButton" destination="pwr-il-7OQ" id="ndk-PT-kOF"/>
                         <outlet property="image" destination="n6P-F9-53s" id="uOH-gz-cJD"/>
                         <outlet property="locationLabel" destination="bW7-Fr-sMB" id="xTk-rl-HOw"/>

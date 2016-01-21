@@ -19,6 +19,8 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var fbButton: UIButton!
+    @IBOutlet weak var eventTimeLabel: UILabel!
+    
     
     /*
     This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
@@ -73,6 +75,9 @@ class EventDetailsViewController: UIViewController {
             }
             //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             descriptionView.text = event.description
+            
+           
+            eventTimeLabel.text = String(event.startHour!) + ":" + String(event.startMinute!) + " — " + String(event.endHour!) + ":" + String(event.startMinute!)
             
             let dateFormatter: NSDateFormatter = NSDateFormatter()
             
