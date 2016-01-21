@@ -10,13 +10,16 @@ import UIKit
 
 class MinistryTableViewController: UITableViewController {
     var ministries = [Ministry]()
-    static var campuses = [Campus]()
+    var campuses = [Campus]()
     
+    override func viewDidAppear(animated: Bool) {
+        print("table appeared")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DBUtils.loadResources("ministry", inserter: insertMinistry)
-        MinistryTableViewController.campuses = SubscriptionManager.loadCampuses()!
+        campuses = SubscriptionManager.loadCampuses()!
         self.tableView.reloadData()
         
         
@@ -27,8 +30,13 @@ class MinistryTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    static func loadCampuses(){
+    func reloadCampuses(){
+        super.viewDidLoad()
+        ministries.removeAll()
+        DBUtils.loadResources("ministry", inserter: insertMinistry)
         campuses = SubscriptionManager.loadCampuses()!
+        self.tableView.reloadData()
+        print("reloaded campuses")
     }
     
     
@@ -37,8 +45,8 @@ class MinistryTableViewController: UITableViewController {
         let campusIds = dict["campuses"] as! [String]
         let newMinistry = Ministry(name: ministryName, campusIds: campusIds)
         
-        ("there are currently \(MinistryTableViewController.campuses.count) campuses")
-        for campus in MinistryTableViewController.campuses{
+        //("there are currently \(MinistryTableViewController.campuses.count) campuses")
+        for campus in campuses{
             
             if(SubscriptionManager.campusContainsMinistry(campus, ministry: newMinistry)){
                 self.tableView.beginUpdates()

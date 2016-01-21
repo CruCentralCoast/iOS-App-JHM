@@ -51,7 +51,7 @@
                                         <rect key="frame" x="0.0" y="55" width="314" height="215"/>
                                         <animations/>
                                         <connections>
-                                            <segue destination="dqf-2e-9DN" kind="embed" id="34a-oS-cHC"/>
+                                            <segue destination="dqf-2e-9DN" kind="embed" identifier="ministrySegue" id="34a-oS-cHC"/>
                                         </connections>
                                     </containerView>
                                 </subviews>

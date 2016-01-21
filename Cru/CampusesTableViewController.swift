@@ -140,6 +140,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
+        SubscriptionManager.saveCampuses(campuses)
     }
     
 
