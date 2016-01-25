@@ -191,26 +191,14 @@ class IntroViewController: UIViewController {
         
         if(introModals[nextNdx] == ministriesModal){
             embeddedMinistryViewController.reloadCampuses()
-//            let navController = ministriesModal.window?.rootViewController as! UINavigationController
-//            print("There are \(navController.viewControllers.count) vcs")
-//            print("\(navController.viewControllers)")
-//            for viewController in navController.viewControllers{
-//                if(viewController.isKindOfClass(MinistryTableViewController)){
-//                    let ministryTVC = viewController as! MinistryTableViewController
-//                    ministryTVC.reloadCampuses()    
-//                }
-//            }
-            
         }
         displayModal(introModals[nextNdx], fromModal: currentModal)
         
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         if let vc = segue.destinationViewController as? MinistryTableViewController where segue.identifier == "ministrySegue" {
-            print("I happened") 
-            self.embeddedMinistryViewController = vc
+            embeddedMinistryViewController = vc
         }
     }
     
