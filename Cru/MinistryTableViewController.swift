@@ -11,6 +11,7 @@ import UIKit
 class MinistryTableViewController: UITableViewController {
     var ministries = [Ministry]()
     var campuses = [Campus]()
+    var ministryMap = [Campus: [Ministry]]()
     
     override func viewDidAppear(animated: Bool) {
         print("table appeared")
@@ -18,8 +19,8 @@ class MinistryTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        DBUtils.loadResources("ministry", inserter: insertMinistry)
         campuses = SubscriptionManager.loadCampuses()!
+        DBUtils.loadResources("ministry", inserter: insertMinistry)
         self.tableView.reloadData()
         
         
@@ -32,11 +33,32 @@ class MinistryTableViewController: UITableViewController {
     
     func reloadCampuses(){
         super.viewDidLoad()
-        ministries.removeAll()
-        DBUtils.loadResources("ministry", inserter: insertMinistry)
+        
+        
+//        ministries.removeAll()
+        
         campuses = SubscriptionManager.loadCampuses()!
+        refreshMinistryMap()
+        //DBUtils.loadResources("ministry", inserter: insertMinistry)
+        
         self.tableView.reloadData()
         print("reloaded campuses")
+    }
+    
+    func refreshMinistryMap() {
+        ministryMap.removeAll()
+        for ministry in ministries {
+            for campus in campuses {
+                if(SubscriptionManager.campusContainsMinistry(campus, ministry: ministry)) {
+                    if (ministryMap[campus] == nil){
+                        ministryMap[campus] = [ministry]
+                    }
+                    else{
+                        ministryMap[campus]!.insert(ministry, atIndex: 0)
+                    }
+                }
+            }
+        }
     }
     
     
@@ -44,34 +66,11 @@ class MinistryTableViewController: UITableViewController {
         let ministryName = dict["name"] as! String
         let campusIds = dict["campuses"] as! [String]
         let newMinistry = Ministry(name: ministryName, campusIds: campusIds)
-        
-        //("there are currently \(MinistryTableViewController.campuses.count) campuses")
-        for campus in campuses{
-            
-            if(SubscriptionManager.campusContainsMinistry(campus, ministry: newMinistry)){
-                self.tableView.beginUpdates()
-
-                if (SubscriptionManager.getAllMinistry() != nil){
-                    let enabledCampuses = SubscriptionManager.getAllMinistry()!
-                    if(enabledCampuses.contains(newMinistry)){
-                        newMinistry.feedEnabled = true
-                    }
-                }
-                
-                ministries.insert(newMinistry, atIndex: 0)
-                ministries.sortInPlace()
-                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-                self.tableView.reloadData()
-                self.tableView.endUpdates()
-            }
-        }
-        
-        
-       
+        ministries.insert(newMinistry, atIndex: 0)
     }
     
     override func viewWillDisappear(animated: Bool) {
-        SubscriptionManager.saveMinistrys(ministries)
+        //SubscriptionManager.saveMinistrys(ministries)
     }
     
     override func didReceiveMemoryWarning() {
@@ -83,20 +82,45 @@ class MinistryTableViewController: UITableViewController {
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return campuses.count
+    }
+    
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return campuses[section].name
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            return self.ministries.count
-
+        let campus = campuses[section]
+        return ministryMap[campus] == nil ? 0 : ministryMap[campus]!.count
+        
+//        let campus = campuses[section]
+//        var count = 0
+//        
+//        for ministry in ministries{
+//            for campusId in ministry.campusIds{
+//                if(campusId == campus.id){
+//                    count++
+//                }
+//            }
+//        }
+//        
+//        print("\(count) rows for campus \(campus.name)")
+//        return count
+        //return ministries.count
     }
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ministryCell", forIndexPath: indexPath)
-
-            cell.textLabel?.text = ministries[indexPath.row].name
-            if(ministries[indexPath.row].feedEnabled == true){
+            let cell = tableView.dequeueReusableCellWithIdentifier("ministryCell", forIndexPath: indexPath)
+        
+            let row = indexPath.row
+            let section = indexPath.section
+        
+            let ministry = ministryMap[campuses[section]]![row]
+            cell.textLabel?.text = ministry.name
+        
+            //cell.textLabel?.text = ministries[indexPath.row].name
+            if(ministry.feedEnabled == true){
                 cell.accessoryType = .Checkmark
             }
             else{
@@ -109,14 +133,14 @@ class MinistryTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath){
-            if(cell.accessoryType == .Checkmark){
-                cell.accessoryType = .None
-                ministries[indexPath.row].feedEnabled = false
-            }
-            else{
-                cell.accessoryType = .Checkmark
-                ministries[indexPath.row].feedEnabled = true
-            }
+//            if(cell.accessoryType == .Checkmark){
+//                cell.accessoryType = .None
+//                ministries[indexPath.row].feedEnabled = false
+//            }
+//            else{
+//                cell.accessoryType = .Checkmark
+//                ministries[indexPath.row].feedEnabled = true
+//            }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
