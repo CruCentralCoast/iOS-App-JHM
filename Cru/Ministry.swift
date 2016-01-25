@@ -38,7 +38,7 @@ class Ministry: NSObject, NSCoding, Comparable{
     }
     
     override func isEqual(object: AnyObject?) -> Bool {
-        if let obj = object as? Campus{
+        if let obj = object as? Ministry{
             return obj.name == self.name
         }
         else{

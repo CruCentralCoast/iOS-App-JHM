@@ -26,14 +26,14 @@ class SubscriptionManager{
                 enabledCampuses.append(camp)
             }
         }
-        
+        //TODO: Ensure that unsubscribing from a campus will unsubscribe the associate ministries
         let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledCampuses as NSArray)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(archivedObject, forKey: "campusKey")
         defaults.synchronize()
     }
     
-    static func getAllMinistry() -> [Ministry]? {
+    static func loadMinistries() -> [Ministry]? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("ministryKey") as? NSData {
             return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Ministry]
         }

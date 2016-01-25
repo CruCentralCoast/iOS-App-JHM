@@ -76,6 +76,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     override func viewWillDisappear(animated: Bool) {
+        print("i only get called once ; (")
         SubscriptionManager.saveCampuses(campuses)
     }
 
@@ -140,6 +141,8 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
+        
+        //TODO - Make is so this doesn't have to be called everytime didSelectRowAtIndexPath is called
         SubscriptionManager.saveCampuses(campuses)
     }
     
