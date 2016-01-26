@@ -10,11 +10,16 @@ import Foundation
 
 class DBUtils {
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
-        DBClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter))
+        loadResources(collectionName, inserter: inserter, afterFunc: {() in })
     }
     
-    class func curryDisplayResources(inserter : (NSDictionary) -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
+    class func loadResources(collectionName : String, inserter : (NSDictionary) -> (),
+        afterFunc : () -> ()) {
+        DBClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter, afterFunc: afterFunc))
+    }
     
+    
+    class func curryDisplayResources(inserter : (NSDictionary) -> (), afterFunc : () -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
         return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 if (data != nil) {
@@ -26,6 +31,7 @@ class DBUtils {
                                 inserter(dict)
                             }
                         }
+                        afterFunc()
                     })
                 } else {
                     // TODO: display message for user
