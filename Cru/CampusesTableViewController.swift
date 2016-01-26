@@ -13,47 +13,17 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     var subbedMinistries = [Ministry]()
     var filteredCampuses = [Campus]()
     var resultSearchController: UISearchController!
-    var lastTappedPath: NSIndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DBUtils.loadResources("campus", inserter: insertCampus)
         subbedMinistries = SubscriptionManager.loadMinistries()! 
         
-        self.resultSearchController = UISearchController(searchResultsController: nil)
-        self.resultSearchController.searchResultsUpdater = self
-        self.resultSearchController.dimsBackgroundDuringPresentation = false
-        self.resultSearchController.searchBar.sizeToFit()
-        self.resultSearchController.hidesNavigationBarDuringPresentation = false
-
-        self.tableView.tableHeaderView = self.resultSearchController.searchBar
-
+        //setupSearchBar()
         self.tableView.reloadData()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        self.filteredCampuses.removeAll(keepCapacity: false)
-        let query = searchController.searchBar.text!.lowercaseString
-        
-        for campy in campuses{
-            if(campy.name.lowercaseString.containsString(query)){
-                filteredCampuses.append(campy)
-            }
-        }
-        
-        if(query == ""){
-            filteredCampuses = campuses
-        }
-        
-        self.tableView.reloadData()
-    }
+    
     
     func refreshSubbedMinistries(){
         subbedMinistries = SubscriptionManager.loadMinistries()! 
@@ -99,7 +69,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.resultSearchController.active{
+        if (self.resultSearchController != nil && self.resultSearchController.active){
             return self.filteredCampuses.count
         }
         else{
@@ -111,7 +81,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("campusCell", forIndexPath: indexPath)
         
-        if self.resultSearchController.active{
+        if (self.resultSearchController != nil && self.resultSearchController.active){
             cell.textLabel?.text = filteredCampuses[indexPath.row].name
             if(filteredCampuses[indexPath.row].feedEnabled == true){
                 cell.accessoryType = .Checkmark
@@ -138,12 +108,9 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             if(cell.accessoryType == .Checkmark){
                 let theCampus = campuses[indexPath.row]
                 
-                if(!willAffectMinistrySubscription(theCampus)){
+                if(!willAffectMinistrySubscription(theCampus, indexPath: indexPath, cell: cell)){
                     cell.accessoryType = .None
                     theCampus.feedEnabled = false
-                }
-                else{
-                    lastTappedPath = indexPath
                 }
             }
             else{
@@ -160,7 +127,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     
-    func willAffectMinistrySubscription(campus: Campus)->Bool{
+    func willAffectMinistrySubscription(campus: Campus, indexPath: NSIndexPath, cell: UITableViewCell)->Bool{
         var associatedMinistries = [Ministry]()
         
         for ministry in subbedMinistries{
@@ -181,7 +148,9 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             
             let alert = UIAlertController(title: "Are you sure?", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-            alert.addAction(UIAlertAction(title: "Confirm", style: .Destructive, handler: handleConfirmUnsubscribe))
+            alert.addAction(UIAlertAction(title: "Confirm", style: .Destructive, handler:{ action in
+                self.handleConfirmUnsubscribe(action, associatedMinistries: associatedMinistries, campus: campus, cell: cell)
+            }))
             presentViewController(alert, animated: true, completion: nil)
             
             return true
@@ -191,15 +160,46 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
     }
     
-    func handleConfirmUnsubscribe(action: UIAlertAction){
-        //TODO: get last tapped path in a less hacky way
-        if(lastTappedPath != nil){
-            if let cell = tableView.cellForRowAtIndexPath(lastTappedPath){
-                let theCampus = campuses[lastTappedPath.row]
-                cell.accessoryType = .None
-                theCampus.feedEnabled = false
+    func handleConfirmUnsubscribe(action: UIAlertAction, associatedMinistries: [Ministry], campus: Campus, cell: UITableViewCell){
+        campus.feedEnabled = false
+        cell.accessoryType = .None
+        
+        //Actually unsubscribes the user from the associated ministries
+        //subbedMinistries = subbedMinistries.filter{ (minist) in !associatedMinistries.contains(minist)}
+        for ministry in subbedMinistries{
+            if(associatedMinistries.contains(ministry)){
+                ministry.feedEnabled = false
+                //print("disabled ministry feed for \(ministry.name)")
             }
         }
-        //TODO: Actual unsubscribe the user from the associated ministries
+        
+        SubscriptionManager.saveMinistrys(subbedMinistries)
+        SubscriptionManager.saveCampuses(campuses)
+    }
+    
+    func setupSearchBar(){
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        self.resultSearchController.hidesNavigationBarDuringPresentation = false
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
+    }
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        self.filteredCampuses.removeAll(keepCapacity: false)
+        let query = searchController.searchBar.text!.lowercaseString
+        
+        for campy in campuses{
+            if(campy.name.lowercaseString.containsString(query)){
+                filteredCampuses.append(campy)
+            }
+        }
+        
+        if(query == ""){
+            filteredCampuses = campuses
+        }
+        
+        self.tableView.reloadData()
     }
 }

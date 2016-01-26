@@ -16,7 +16,7 @@ class MinistryTableViewController: UITableViewController {
     
     
     override func viewWillAppear(animated: Bool) {
-        reloadCampuses()
+        reloadData()
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,16 +31,24 @@ class MinistryTableViewController: UITableViewController {
             prevMinistries = tempMinistries!
         }
 
-        DBUtils.loadResources(Config.ministryCollection, inserter: insertMinistry, afterFunc: reloadCampuses)
+        DBUtils.loadResources(Config.ministryCollection, inserter: insertMinistry, afterFunc: reloadData)
         self.tableView.reloadData()
     }
     
-    func reloadCampuses(){
+    func reloadData(){
         super.viewDidLoad()
         subscribedCampuses = SubscriptionManager.loadCampuses()!
+        prevMinistries = SubscriptionManager.loadMinistries()!
+                
         refreshMinistryMap()
         self.tableView.reloadData()
         
+        
+        for (key, value) in ministryMap{
+            for ministry in value{
+                print("\(key.name) - \(ministry.name) - \(ministry.feedEnabled)")
+            }
+        }
     }
     
     
@@ -49,12 +57,21 @@ class MinistryTableViewController: UITableViewController {
         for ministry in ministries {
             for campus in subscribedCampuses {
                 if(SubscriptionManager.campusContainsMinistry(campus, ministry: ministry)) {
+                    if(prevMinistries.contains(ministry)){
+                        ministry.feedEnabled = true
+                    }
+                    else{
+                        ministry.feedEnabled = false
+                    }
+                    
+                    
                     if (ministryMap[campus] == nil){
                         ministryMap[campus] = [ministry]
                     }
                     else{
                         ministryMap[campus]!.insert(ministry, atIndex: 0)
                     }
+                    
                 }
             }
         }

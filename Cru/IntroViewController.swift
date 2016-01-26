@@ -192,7 +192,7 @@ class IntroViewController: UIViewController {
         }
         
         if(introModals[nextNdx] == ministriesModal){
-            embeddedMinistryViewController.reloadCampuses()
+            embeddedMinistryViewController.reloadData()
         }
         else if(introModals[nextNdx] == campusesModal){
             embeddedCampusesViewController.refreshSubbedMinistries()
