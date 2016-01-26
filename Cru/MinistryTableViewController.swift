@@ -110,7 +110,6 @@ class MinistryTableViewController: UITableViewController {
         
             cell.textLabel?.text = ministry.name
         
-            print("feed for \(ministry.name) is \(ministry.feedEnabled)")
             if(ministry.feedEnabled == true){
                 cell.accessoryType = .Checkmark
             }
@@ -138,6 +137,7 @@ class MinistryTableViewController: UITableViewController {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
+        SubscriptionManager.saveMinistrys(ministries)
     }
     
     

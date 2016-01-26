@@ -39,6 +39,8 @@ class IntroViewController: UIViewController {
     var mainViewController: MainViewController!
     // reference to ministry table view controller
     var embeddedMinistryViewController: MinistryTableViewController!
+    // reference to campus table view controller
+    var embeddedCampusesViewController: CampusesTableViewController!
 
     // MARK: Overriden UIViewController Methods
     override func viewDidLoad() {
@@ -192,6 +194,9 @@ class IntroViewController: UIViewController {
         if(introModals[nextNdx] == ministriesModal){
             embeddedMinistryViewController.reloadCampuses()
         }
+        else if(introModals[nextNdx] == campusesModal){
+            embeddedCampusesViewController.refreshSubbedMinistries()
+        }
         
         displayModal(introModals[nextNdx], fromModal: currentModal)
         
@@ -200,6 +205,9 @@ class IntroViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? MinistryTableViewController where segue.identifier == "ministrySegue" {
             embeddedMinistryViewController = vc
+        }
+        if let vc = segue.destinationViewController as? CampusesTableViewController where segue.identifier == "campusSegue" {
+            embeddedCampusesViewController = vc
         }
     }
     

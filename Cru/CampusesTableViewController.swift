@@ -10,12 +10,15 @@ import UIKit
 
 class CampusesTableViewController: UITableViewController, UISearchResultsUpdating {
     var campuses = [Campus]()
+    var subbedMinistries = [Ministry]()
     var filteredCampuses = [Campus]()
     var resultSearchController: UISearchController!
+    var lastTappedPath: NSIndexPath!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DBUtils.loadResources("campus", inserter: insertCampus)
+        subbedMinistries = SubscriptionManager.loadMinistries()! 
         
         self.resultSearchController = UISearchController(searchResultsController: nil)
         self.resultSearchController.searchResultsUpdater = self
@@ -52,6 +55,10 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         self.tableView.reloadData()
     }
     
+    func refreshSubbedMinistries(){
+        subbedMinistries = SubscriptionManager.loadMinistries()! 
+    }
+    
     
     
     func insertCampus(dict : NSDictionary) {
@@ -76,7 +83,6 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     override func viewWillDisappear(animated: Bool) {
-        print("i only get called once ; (")
         SubscriptionManager.saveCampuses(campuses)
     }
 
@@ -130,8 +136,15 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath){
             if(cell.accessoryType == .Checkmark){
-                cell.accessoryType = .None
-                campuses[indexPath.row].feedEnabled = false
+                let theCampus = campuses[indexPath.row]
+                
+                if(!willAffectMinistrySubscription(theCampus)){
+                    cell.accessoryType = .None
+                    theCampus.feedEnabled = false
+                }
+                else{
+                    lastTappedPath = indexPath
+                }
             }
             else{
                 cell.accessoryType = .Checkmark
@@ -146,54 +159,46 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         SubscriptionManager.saveCampuses(campuses)
     }
     
-
     
-
+    func willAffectMinistrySubscription(campus: Campus)->Bool{
+        var associatedMinistries = [Ministry]()
+        
+        for ministry in subbedMinistries{
+            if(SubscriptionManager.campusContainsMinistry(campus, ministry: ministry)){
+                associatedMinistries.append(ministry)
+            }
+        }
+        
+        if(associatedMinistries.isEmpty == false){
+            var alertMessage = "Unsubscribing from " + campus.name + " will also unsubscribe you from the following ministries: "
+            
+            for ministry in associatedMinistries{
+                alertMessage += ministry.name + ", "
+            }
+            
+            let index: String.Index = alertMessage.startIndex.advancedBy(alertMessage.characters.count - 2)
+            alertMessage = alertMessage.substringToIndex(index)
+            
+            let alert = UIAlertController(title: "Are you sure?", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Confirm", style: .Destructive, handler: handleConfirmUnsubscribe))
+            presentViewController(alert, animated: true, completion: nil)
+            
+            return true
+        }
+        else{
+            return false
+        }
+    }
     
-    
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func handleConfirmUnsubscribe(action: UIAlertAction){
+        if(lastTappedPath != nil){
+            if let cell = tableView.cellForRowAtIndexPath(lastTappedPath){
+                let theCampus = campuses[lastTappedPath.row]
+                cell.accessoryType = .None
+                theCampus.feedEnabled = false
+            }
+        }
+        //TODO: Actual unsubscribe the user from the associated ministries
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

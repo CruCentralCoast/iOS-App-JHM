@@ -63,4 +63,5 @@ class SubscriptionManager{
         }
         return false
     }
+
 }

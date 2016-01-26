@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="55" width="314" height="215"/>
                                         <animations/>
                                         <connections>
-                                            <segue destination="0nA-tD-f49" kind="embed" id="cz9-av-l5j"/>
+                                            <segue destination="0nA-tD-f49" kind="embed" identifier="campusSegue" id="cz9-av-l5j"/>
                                         </connections>
                                     </containerView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome to Cru Central Coast!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc4-wf-PGc">
