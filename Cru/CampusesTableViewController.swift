@@ -10,55 +10,36 @@ import UIKit
 
 class CampusesTableViewController: UITableViewController, UISearchResultsUpdating {
     var campuses = [Campus]()
+    var subbedMinistries = [Ministry]()
     var filteredCampuses = [Campus]()
     var resultSearchController: UISearchController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         DBUtils.loadResources("campus", inserter: insertCampus)
+        subbedMinistries = SubscriptionManager.loadMinistries()! 
         
-        self.resultSearchController = UISearchController(searchResultsController: nil)
-        self.resultSearchController.searchResultsUpdater = self
-        self.resultSearchController.dimsBackgroundDuringPresentation = false
-        self.resultSearchController.searchBar.sizeToFit()
-        self.resultSearchController.hidesNavigationBarDuringPresentation = false
-
-        self.tableView.tableHeaderView = self.resultSearchController.searchBar
-
+        //setupSearchBar()
         self.tableView.reloadData()
-        
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    func updateSearchResultsForSearchController(searchController: UISearchController) {
-        self.filteredCampuses.removeAll(keepCapacity: false)
-        let query = searchController.searchBar.text!.lowercaseString
-        
-        for campy in campuses{
-            if(campy.name.lowercaseString.containsString(query)){
-                filteredCampuses.append(campy)
-            }
-        }
-        
-        if(query == ""){
-            filteredCampuses = campuses
-        }
-        
-        self.tableView.reloadData()
+    
+    
+    func refreshSubbedMinistries(){
+        subbedMinistries = SubscriptionManager.loadMinistries()! 
     }
     
     
     
     func insertCampus(dict : NSDictionary) {
         self.tableView.beginUpdates()
-        let curCamp = Campus(name: dict["name"] as! String)
-        if (loadCampuses() != nil){
-            let enabledCampuses = loadCampuses()!
+        
+        let campusName = dict["name"] as! String
+        let campusId = dict["_id"] as! String
+        
+        let curCamp = Campus(name: campusName, id: campusId)
+        if (SubscriptionManager.loadCampuses() != nil){
+            let enabledCampuses = SubscriptionManager.loadCampuses()!
             if(enabledCampuses.contains(curCamp)){
                 curCamp.feedEnabled = true
             }
@@ -72,7 +53,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     override func viewWillDisappear(animated: Bool) {
-        saveCampuses(campuses)
+        SubscriptionManager.saveCampuses(campuses)
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +69,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if self.resultSearchController.active{
+        if (self.resultSearchController != nil && self.resultSearchController.active){
             return self.filteredCampuses.count
         }
         else{
@@ -100,7 +81,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("campusCell", forIndexPath: indexPath)
         
-        if self.resultSearchController.active{
+        if (self.resultSearchController != nil && self.resultSearchController.active){
             cell.textLabel?.text = filteredCampuses[indexPath.row].name
             if(filteredCampuses[indexPath.row].feedEnabled == true){
                 cell.accessoryType = .Checkmark
@@ -125,8 +106,12 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath){
             if(cell.accessoryType == .Checkmark){
-                cell.accessoryType = .None
-                campuses[indexPath.row].feedEnabled = false
+                let theCampus = campuses[indexPath.row]
+                
+                if(!willAffectMinistrySubscription(theCampus, indexPath: indexPath, cell: cell)){
+                    cell.accessoryType = .None
+                    theCampus.feedEnabled = false
+                }
             }
             else{
                 cell.accessoryType = .Checkmark
@@ -136,75 +121,85 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
+        
+        //TODO - Make is so this doesn't have to be called everytime didSelectRowAtIndexPath is called
+        SubscriptionManager.saveCampuses(campuses)
     }
     
-    func saveCampuses(campuses:[Campus]) {
-        var enabledCampuses = [Campus]()
+    
+    func willAffectMinistrySubscription(campus: Campus, indexPath: NSIndexPath, cell: UITableViewCell)->Bool{
+        var associatedMinistries = [Ministry]()
         
-        for camp in campuses{
-            if(camp.feedEnabled == true){
-                enabledCampuses.append(camp)
+        for ministry in subbedMinistries{
+            if(SubscriptionManager.campusContainsMinistry(campus, ministry: ministry)){
+                associatedMinistries.append(ministry)
             }
         }
         
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledCampuses as NSArray)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: "campusKey")
-        defaults.synchronize()
-    }
-    
-    func loadCampuses() -> [Campus]? {
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("campusKey") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Campus]
+        if(associatedMinistries.isEmpty == false){
+            var alertMessage = "Unsubscribing from " + campus.name + " will also unsubscribe you from the following ministries: "
+            
+            for ministry in associatedMinistries{
+                alertMessage += ministry.name + ", "
+            }
+            
+            let index: String.Index = alertMessage.startIndex.advancedBy(alertMessage.characters.count - 2)
+            alertMessage = alertMessage.substringToIndex(index)
+            
+            let alert = UIAlertController(title: "Are you sure?", message: alertMessage, preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            alert.addAction(UIAlertAction(title: "Confirm", style: .Destructive, handler:{ action in
+                self.handleConfirmUnsubscribe(action, associatedMinistries: associatedMinistries, campus: campus, cell: cell)
+            }))
+            presentViewController(alert, animated: true, completion: nil)
+            
+            return true
         }
-        return nil
+        else{
+            return false
+        }
     }
-
     
+    func handleConfirmUnsubscribe(action: UIAlertAction, associatedMinistries: [Ministry], campus: Campus, cell: UITableViewCell){
+        campus.feedEnabled = false
+        cell.accessoryType = .None
+        
+        //Actually unsubscribes the user from the associated ministries
+        //subbedMinistries = subbedMinistries.filter{ (minist) in !associatedMinistries.contains(minist)}
+        for ministry in subbedMinistries{
+            if(associatedMinistries.contains(ministry)){
+                ministry.feedEnabled = false
+                //print("disabled ministry feed for \(ministry.name)")
+            }
+        }
+        
+        SubscriptionManager.saveMinistrys(subbedMinistries)
+        SubscriptionManager.saveCampuses(campuses)
+    }
     
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
+    func setupSearchBar(){
+        self.resultSearchController = UISearchController(searchResultsController: nil)
+        self.resultSearchController.searchResultsUpdater = self
+        self.resultSearchController.dimsBackgroundDuringPresentation = false
+        self.resultSearchController.searchBar.sizeToFit()
+        self.resultSearchController.hidesNavigationBarDuringPresentation = false
+        self.tableView.tableHeaderView = self.resultSearchController.searchBar
     }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        self.filteredCampuses.removeAll(keepCapacity: false)
+        let query = searchController.searchBar.text!.lowercaseString
+        
+        for campy in campuses{
+            if(campy.name.lowercaseString.containsString(query)){
+                filteredCampuses.append(campy)
+            }
+        }
+        
+        if(query == ""){
+            filteredCampuses = campuses
+        }
+        
+        self.tableView.reloadData()
     }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
