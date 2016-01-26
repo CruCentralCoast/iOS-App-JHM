@@ -192,6 +192,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     func handleConfirmUnsubscribe(action: UIAlertAction){
+        //TODO: get last tapped path in a less hacky way
         if(lastTappedPath != nil){
             if let cell = tableView.cellForRowAtIndexPath(lastTappedPath){
                 let theCampus = campuses[lastTappedPath.row]
