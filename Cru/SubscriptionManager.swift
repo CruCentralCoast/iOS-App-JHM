@@ -15,7 +15,7 @@ class SubscriptionManager{
             //print("getting \(campuses?.count) campuses")
             return campuses
         }
-        return nil
+        return [Campus]()
     }
     
     static func saveCampuses(campuses:[Campus]) {
@@ -37,7 +37,7 @@ class SubscriptionManager{
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("ministryKey") as? NSData {
             return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Ministry]
         }
-        return nil
+        return [Ministry]()
     }
     
     static func saveMinistrys(ministrys:[Ministry]) {
