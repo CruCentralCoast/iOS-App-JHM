@@ -4,6 +4,7 @@ This README would normally document whatever steps are necessary to get your app
 
 ### What is this repository for? ###
 
+![Alt text](http://wesleyecarter.files.wordpress.com/2015/07/steak-holder.jpg)
 * Quick summary
 * Version
 * [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
