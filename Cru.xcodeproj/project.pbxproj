@@ -37,6 +37,9 @@
 		501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; };
 		5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094D1C066C780019E97C /* CampusesViewController.swift */; };
 		502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */; };
+		503547871C5ABC6900418A92 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
+		503547881C5ABC6900418A92 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
+		503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
 		503E1DBF1C0D6882004D8AB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */; };
 		50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
@@ -122,6 +125,7 @@
 		501085B51BFBDCCE00849CED /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		5026094D1C066C780019E97C /* CampusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusesViewController.swift; sourceTree = "<group>"; };
 		5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusesTableViewController.swift; sourceTree = "<group>"; };
+		503547861C5ABC6900418A92 /* RidesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidesTableViewController.swift; sourceTree = "<group>"; };
 		503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
@@ -280,6 +284,7 @@
 				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
 				50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */,
 				503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */,
+				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
 			);
 			name = RideSharing;
 			sourceTree = "<group>";
@@ -609,6 +614,7 @@
 				6D76CA7E1C06AF9E00F8B007 /* EventTableViewController.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				850EBAEB1C0BEEB800D5B794 /* DBUtils.swift in Sources */,
+				503547871C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
 				0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */,
@@ -627,6 +633,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */,
+				503547881C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50FE4D401C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
@@ -642,6 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50FE4D451C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
+				503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */,
 				50FE4D411C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				0FC8E3B41C48750A007A7208 /* IntroViewController.swift in Sources */,
