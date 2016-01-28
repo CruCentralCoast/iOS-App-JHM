@@ -1,35 +1,28 @@
 //
-//  RideSharingViewController.swift
+//  OfferRideViewController.swift
 //  Cru
 //
-//  Created by Max Crane on 11/17/15.
-//  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
+//  Created by Max Crane on 1/28/16.
+//  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
 import UIKit
 
-class RideSharingViewController: UIViewController {
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var location: UITextField!
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "mapSegue") {
-            //Checking identifier is crucial as there might be multiple
-            // segues attached to same view
-            let destVC = segue.destinationViewController as! MapViewController;
-            destVC.query = location.text
-        }
-    }
+class OfferRideViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationItem.title = "Something"
     }
     
 

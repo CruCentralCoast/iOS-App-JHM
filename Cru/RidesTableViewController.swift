@@ -21,6 +21,10 @@ class RidesTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        navigationItem.title = "Rides"
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -49,6 +53,25 @@ class RidesTableViewController: UITableViewController {
         return cell
     }
 
+    @IBAction func addRideSelected(sender: AnyObject) {
+        let newRideAlert = UIAlertController(title: "New Ride", message: "select ride type", preferredStyle: UIAlertControllerStyle.Alert)
+        newRideAlert.addAction(UIAlertAction(title: "Offer Ride", style: .Default, handler: handleOfferRide))
+        newRideAlert.addAction(UIAlertAction(title: "Get Ride", style: .Default, handler: nil))
+        newRideAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+        
+        self.presentViewController(newRideAlert, animated: true, completion: nil)
+        
+        //print("adding ride!")
+    }
+    
+    func handleOfferRide(action: UIAlertAction){
+        //let sb: UIStoryboard = UIStoryboard(name: "offerride", bundle: nil)
+        //let seg:
+        //let vc: UIViewController = sb.instantiateViewControllerWithIdentifier("giveRide") as UIViewController
+        //self.presentViewController(vc, animated: true, completion: nil)
+        self.performSegueWithIdentifier("offerridesegue", sender: self)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
