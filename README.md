@@ -19,8 +19,7 @@ This README would normally document whatever steps are necessary to get your app
 
 ### Contribution guidelines ###
 
-* Writing tests
-We don't write tests!
+* Writing tests - We don't write tests!
 * Code review
 * Other guidelines
 
