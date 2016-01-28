@@ -19,7 +19,7 @@ class MainViewController: UIViewController {
     
     /* This function acts after the view is loaded and appears on the phone. */
     override func viewDidAppear(animated: Bool) {
-        if hasAppLaunchedBefore() {
+        if !hasAppLaunchedBefore() {
             self.performSegueWithIdentifier("introSegue", sender: self)
             self.navigationItem.leftBarButtonItem?.enabled = false
         }
