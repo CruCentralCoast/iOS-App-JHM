@@ -52,6 +52,9 @@
 		503A06D21C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		503E1DBF1C0D6882004D8AB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */; };
 		50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
+		50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */; };
+		50A38FEA1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */; };
+		50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE51C052BF9002C9E30 /* events.storyboard */; };
@@ -141,6 +144,7 @@
 		503A06CF1C5F08E200DAD10E /* findride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = findride.storyboard; sourceTree = "<group>"; };
 		503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
+		50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewCell.swift; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		50ED8FE61C052BF9002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/events.storyboard; sourceTree = "<group>"; };
@@ -307,6 +311,7 @@
 		50ED8FDB1C052AFB002C9E30 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */,
 				501085B51BFBDCCE00849CED /* SettingsViewController.swift */,
 				5026094D1C066C780019E97C /* CampusesViewController.swift */,
 				50ED8FED1C052C65002C9E30 /* settings.storyboard */,
@@ -640,6 +645,7 @@
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
 				0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */,
+				50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */,
@@ -657,6 +663,7 @@
 				50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */,
 				503547901C5AD32B00418A92 /* OfferRideViewController.swift in Sources */,
 				503547881C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
+				50A38FEA1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				50FE4D401C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
@@ -671,6 +678,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				50FE4D451C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */,
