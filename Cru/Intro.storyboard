@@ -78,7 +78,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Yq-mn-96w" firstAttribute="centerX" secondItem="2f9-1B-IYG" secondAttribute="centerX" id="JH0-qd-b9s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Yq-mn-96w" secondAttribute="trailing" constant="10" id="M1r-oN-hoQ"/>
                             <constraint firstItem="8Yq-mn-96w" firstAttribute="centerY" secondItem="2f9-1B-IYG" secondAttribute="centerY" id="bEg-rk-fx8"/>
+                            <constraint firstItem="8Yq-mn-96w" firstAttribute="leading" secondItem="2f9-1B-IYG" secondAttribute="leadingMargin" constant="10" id="pEY-8U-nNd"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
