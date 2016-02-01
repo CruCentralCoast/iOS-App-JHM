@@ -42,13 +42,6 @@ class MinistryTableViewController: UITableViewController {
                 
         refreshMinistryMap()
         self.tableView.reloadData()
-        
-        
-        for (key, value) in ministryMap{
-            for ministry in value{
-                print("\(key.name) - \(ministry.name) - \(ministry.feedEnabled)")
-            }
-        }
     }
     
     

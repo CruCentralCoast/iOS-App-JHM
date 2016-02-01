@@ -22,6 +22,9 @@
 		0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */; };
 		0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF381BEC0E14008FC70D /* CruTests.swift */; };
 		0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF431BEC0E14008FC70D /* CruUITests.swift */; };
+		0FC0B9DE1C5F0F9400D1524C /* ministrytable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */; };
+		0FC0B9DF1C5F0F9400D1524C /* ministrytable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */; };
+		0FC0B9E01C5F0F9400D1524C /* ministrytable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */; };
 		0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */; };
 		0FC8E39F1C4566C7007A7208 /* test.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39E1C4566C7007A7208 /* test.storyboard */; };
 		0FC8E3A61C45EB1A007A7208 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */; };
@@ -124,6 +127,7 @@
 		0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ministrytable.storyboard; sourceTree = "<group>"; };
 		0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
 		0FC8E39E1C4566C7007A7208 /* test.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = test.storyboard; sourceTree = "<group>"; };
 		0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -280,6 +284,7 @@
 			isa = PBXGroup;
 			children = (
 				0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */,
+				0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */,
 				0FC8E3B11C48750A007A7208 /* IntroViewController.swift */,
 			);
 			name = Introduction;
@@ -540,6 +545,7 @@
 				503A06CA1C5F080200DAD10E /* ridesharing.storyboard in Resources */,
 				6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */,
 				6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */,
+				0FC0B9DE1C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
 				50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */,
 				0FC8E3A61C45EB1A007A7208 /* Intro.storyboard in Resources */,
 			);
@@ -551,6 +557,7 @@
 			files = (
 				0FC8E3A71C45EB1A007A7208 /* Intro.storyboard in Resources */,
 				503A06D11C5F08E200DAD10E /* findride.storyboard in Resources */,
+				0FC0B9DF1C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
 				503A06CD1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -561,6 +568,7 @@
 			files = (
 				0FC8E3A81C45EB1A007A7208 /* Intro.storyboard in Resources */,
 				503A06D21C5F08E200DAD10E /* findride.storyboard in Resources */,
+				0FC0B9E01C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
 				503A06CE1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
