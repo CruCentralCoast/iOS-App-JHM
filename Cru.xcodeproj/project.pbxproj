@@ -40,19 +40,22 @@
 		503547871C5ABC6900418A92 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
 		503547881C5ABC6900418A92 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
 		503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
-		5035478B1C5AC3F300418A92 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5035478A1C5AC3F300418A92 /* offerride.storyboard */; };
-		5035478C1C5AC3F300418A92 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5035478A1C5AC3F300418A92 /* offerride.storyboard */; };
-		5035478D1C5AC3F300418A92 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5035478A1C5AC3F300418A92 /* offerride.storyboard */; };
 		5035478F1C5AD32B00418A92 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035478E1C5AD32B00418A92 /* OfferRideViewController.swift */; };
 		503547901C5AD32B00418A92 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035478E1C5AD32B00418A92 /* OfferRideViewController.swift */; };
 		503547911C5AD32B00418A92 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5035478E1C5AD32B00418A92 /* OfferRideViewController.swift */; };
+		503A06CA1C5F080200DAD10E /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06C91C5F080200DAD10E /* ridesharing.storyboard */; };
+		503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
+		503A06CD1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
+		503A06CE1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
+		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
+		503A06D11C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
+		503A06D21C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		503E1DBF1C0D6882004D8AB3 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */; };
 		50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE51C052BF9002C9E30 /* events.storyboard */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
-		50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */; };
 		50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251C1C0BB8DF005396BC /* summermissions.storyboard */; };
 		50F8251F1C0BB965005396BC /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */; };
@@ -132,15 +135,16 @@
 		5026094D1C066C780019E97C /* CampusesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusesViewController.swift; sourceTree = "<group>"; };
 		5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CampusesTableViewController.swift; sourceTree = "<group>"; };
 		503547861C5ABC6900418A92 /* RidesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidesTableViewController.swift; sourceTree = "<group>"; };
-		5035478A1C5AC3F300418A92 /* offerride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = offerride.storyboard; sourceTree = "<group>"; };
 		5035478E1C5AD32B00418A92 /* OfferRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRideViewController.swift; sourceTree = "<group>"; };
+		503A06C91C5F080200DAD10E /* ridesharing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ridesharing.storyboard; sourceTree = "<group>"; };
+		503A06CB1C5F08CC00DAD10E /* offerride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = offerride.storyboard; sourceTree = "<group>"; };
+		503A06CF1C5F08E200DAD10E /* findride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = findride.storyboard; sourceTree = "<group>"; };
 		503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		50ED8FE61C052BF9002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/events.storyboard; sourceTree = "<group>"; };
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
-		50ED8FF01C052D04002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/ridesharing.storyboard; sourceTree = "<group>"; };
 		50F8251C1C0BB8DF005396BC /* summermissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = summermissions.storyboard; sourceTree = "<group>"; };
 		50F8251E1C0BB965005396BC /* resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = resources.storyboard; sourceTree = "<group>"; };
 		50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewController.swift; sourceTree = "<group>"; };
@@ -290,9 +294,10 @@
 			isa = PBXGroup;
 			children = (
 				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
-				50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */,
+				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
+				503A06CF1C5F08E200DAD10E /* findride.storyboard */,
+				503A06CB1C5F08CC00DAD10E /* offerride.storyboard */,
 				5035478E1C5AD32B00418A92 /* OfferRideViewController.swift */,
-				5035478A1C5AC3F300418A92 /* offerride.storyboard */,
 				503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */,
 				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
 			);
@@ -515,18 +520,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */,
+				503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
 				857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */,
 				50F8251F1C0BB965005396BC /* resources.storyboard in Resources */,
-				50ED8FF11C052D04002C9E30 /* ridesharing.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
 				0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */,
-				5035478B1C5AC3F300418A92 /* offerride.storyboard in Resources */,
 				0FC8E39F1C4566C7007A7208 /* test.storyboard in Resources */,
+				503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 				50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,
 				0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */,
 				0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */,
+				503A06CA1C5F080200DAD10E /* ridesharing.storyboard in Resources */,
 				6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */,
 				6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */,
 				50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */,
@@ -539,7 +545,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC8E3A71C45EB1A007A7208 /* Intro.storyboard in Resources */,
-				5035478C1C5AC3F300418A92 /* offerride.storyboard in Resources */,
+				503A06D11C5F08E200DAD10E /* findride.storyboard in Resources */,
+				503A06CD1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,7 +555,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FC8E3A81C45EB1A007A7208 /* Intro.storyboard in Resources */,
-				5035478D1C5AC3F300418A92 /* offerride.storyboard in Resources */,
+				503A06D21C5F08E200DAD10E /* findride.storyboard in Resources */,
+				503A06CE1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -703,14 +711,6 @@
 				50ED8FE61C052BF9002C9E30 /* Base */,
 			);
 			name = events.storyboard;
-			sourceTree = "<group>";
-		};
-		50ED8FEF1C052D04002C9E30 /* ridesharing.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				50ED8FF01C052D04002C9E30 /* Base */,
-			);
-			name = ridesharing.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

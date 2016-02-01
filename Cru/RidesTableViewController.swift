@@ -56,7 +56,7 @@ class RidesTableViewController: UITableViewController {
     @IBAction func addRideSelected(sender: AnyObject) {
         let newRideAlert = UIAlertController(title: "New Ride", message: "select ride type", preferredStyle: UIAlertControllerStyle.Alert)
         newRideAlert.addAction(UIAlertAction(title: "Offer Ride", style: .Default, handler: handleOfferRide))
-        newRideAlert.addAction(UIAlertAction(title: "Get Ride", style: .Default, handler: nil))
+        newRideAlert.addAction(UIAlertAction(title: "Get Ride", style: .Default, handler: handleFindRide))
         newRideAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         
         self.presentViewController(newRideAlert, animated: true, completion: nil)
@@ -65,12 +65,12 @@ class RidesTableViewController: UITableViewController {
     }
     
     func handleOfferRide(action: UIAlertAction){
-        //let sb: UIStoryboard = UIStoryboard(name: "offerride", bundle: nil)
-        //let seg:
-        //let vc: UIViewController = sb.instantiateViewControllerWithIdentifier("giveRide") as UIViewController
-        //self.presentViewController(vc, animated: true, completion: nil)
         self.performSegueWithIdentifier("offerridesegue", sender: self)
         
+    }
+    
+    func handleFindRide(action: UIAlertAction){
+        self.performSegueWithIdentifier("findridesegue", sender: self)
     }
 
     /*
