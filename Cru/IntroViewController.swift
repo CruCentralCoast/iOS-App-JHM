@@ -2,6 +2,8 @@
 //  IntroViewController.swift
 //  Cru
 //
+//  Description: View controller for showing the introduction modals. It only shows up once when the app first launches.
+//
 //  Created by Deniz Tumer on 1/14/16.
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
@@ -113,7 +115,7 @@ class IntroViewController: UIViewController {
             let nextButtonX = (backgroundModal.frame.size.width / 2) - (nextButtonWidth / 2)
             initializeButton("Next", buttonWidth: nextButtonWidth, buttonX: nextButtonX)
             
-            titleLabel.text = "Description:"
+            titleLabel.text = ""
         }
         else if (currentModal == campusesModal) {
             let backButtonWidth = currentModal.frame.size.width / 2
@@ -204,6 +206,7 @@ class IntroViewController: UIViewController {
         
     }
     
+    // 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? MinistryTableViewController where segue.identifier == "ministrySegue" {
             embeddedMinistryViewController = vc
@@ -212,16 +215,4 @@ class IntroViewController: UIViewController {
             embeddedCampusesViewController = vc
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }

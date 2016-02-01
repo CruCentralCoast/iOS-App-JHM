@@ -121,11 +121,14 @@ class MinistryTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-            let cell = tableView.dequeueReusableCellWithIdentifier("ministryCell", forIndexPath: indexPath)
+            let cell = tableView.dequeueReusableCellWithIdentifier("ministryCell", forIndexPath: indexPath) as! MinistryTableViewCell
         
             let ministry = getMinistryAtIndexPath(indexPath)
+            cell.ministryNameLabel.text = ministry.name
         
-            cell.textLabel?.text = ministry.name
+            //display add-ons
+            cell.ministryNameLabel.font = UIFont(name: "FreightSans Pro", size: 17)
+            cell.ministryNameLabel.textColor = Config.introModalContentTextColor
         
             if(ministry.feedEnabled == true){
                 cell.accessoryType = .Checkmark

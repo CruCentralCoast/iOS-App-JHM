@@ -2,9 +2,11 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
@@ -76,7 +78,9 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="8Yq-mn-96w" firstAttribute="centerX" secondItem="2f9-1B-IYG" secondAttribute="centerX" id="JH0-qd-b9s"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Yq-mn-96w" secondAttribute="trailing" constant="10" id="M1r-oN-hoQ"/>
                             <constraint firstItem="8Yq-mn-96w" firstAttribute="centerY" secondItem="2f9-1B-IYG" secondAttribute="centerY" id="bEg-rk-fx8"/>
+                            <constraint firstItem="8Yq-mn-96w" firstAttribute="leading" secondItem="2f9-1B-IYG" secondAttribute="leadingMargin" constant="10" id="pEY-8U-nNd"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -98,18 +102,20 @@
         <scene sceneID="VwV-qG-WnW">
             <objects>
                 <tableViewController id="0nA-tD-f49" customClass="CampusesTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lFM-25-y5T">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lFM-25-y5T">
                         <rect key="frame" x="0.0" y="0.0" width="314" height="215"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="campusCell" id="xkE-RB-WNR">
                                 <rect key="frame" x="0.0" y="28" width="314" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkE-RB-WNR" id="qCh-Em-9P8">
-                                    <rect key="frame" x="0.0" y="0.0" width="314" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="314" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -126,18 +132,44 @@
         <scene sceneID="NTv-CR-3Tc">
             <objects>
                 <tableViewController id="dqf-2e-9DN" customClass="MinistryTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" id="GP9-yu-DsE">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" sectionHeaderHeight="40" sectionFooterHeight="28" id="GP9-yu-DsE">
                         <rect key="frame" x="0.0" y="0.0" width="314" height="215"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ministryCell" id="AjL-hs-hlS">
-                                <rect key="frame" x="0.0" y="28" width="314" height="60"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ministryCell" id="AjL-hs-hlS" customClass="MinistryTableViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="40" width="314" height="60"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AjL-hs-hlS" id="Fbc-h0-Ja6">
                                     <rect key="frame" x="0.0" y="0.0" width="314" height="60"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event2" translatesAutoresizingMaskIntoConstraints="NO" id="Qhh-hA-6Vz">
+                                            <rect key="frame" x="1" y="0.0" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="DCi-kF-e3q"/>
+                                                <constraint firstAttribute="height" constant="60" id="fzM-3B-ixu"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ministry Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xd2-hq-2hT">
+                                            <rect key="frame" x="69" y="8" width="176" height="44"/>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="xd2-hq-2hT" firstAttribute="centerY" secondItem="Fbc-h0-Ja6" secondAttribute="centerY" id="bk3-Px-Eg4"/>
+                                        <constraint firstItem="Qhh-hA-6Vz" firstAttribute="centerY" secondItem="Fbc-h0-Ja6" secondAttribute="centerY" id="gX4-eH-Mfw"/>
+                                        <constraint firstItem="Qhh-hA-6Vz" firstAttribute="leading" secondItem="Fbc-h0-Ja6" secondAttribute="leadingMargin" constant="-7" id="zDU-HU-WtS"/>
+                                        <constraint firstItem="xd2-hq-2hT" firstAttribute="leading" secondItem="Qhh-hA-6Vz" secondAttribute="trailing" constant="8" id="zkA-m4-PG9"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="ministryNameLabel" destination="xd2-hq-2hT" id="ORh-a7-bxm"/>
+                                    <outlet property="minstryImage" destination="Qhh-hA-6Vz" id="Gjf-3S-1Q9"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -185,4 +217,7 @@
             <point key="canvasLocation" x="113" y="212.5"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="event2" width="300" height="150"/>
+    </resources>
 </document>

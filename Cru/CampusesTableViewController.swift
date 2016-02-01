@@ -92,6 +92,11 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
         else{
             cell.textLabel?.text = campuses[indexPath.row].name
+            
+            //display add-ons
+            cell.textLabel?.font = UIFont(name: "FreightSans Pro", size: 20)
+            cell.textLabel?.textColor = Config.introModalContentTextColor
+            
             if(campuses[indexPath.row].feedEnabled == true){
                 cell.accessoryType = .Checkmark
             }
