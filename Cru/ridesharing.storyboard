@@ -137,6 +137,8 @@
                     <connections>
                         <segue destination="XEe-PU-cXZ" kind="show" identifier="offerridesegue" id="9Gu-Kt-ZVM"/>
                         <segue destination="Raw-86-Ixp" kind="show" identifier="findridesegue" id="7Nt-3r-NsF"/>
+                        <segue destination="EdM-eZ-2sr" kind="show" identifier="riderdetailsegue" id="wxx-Ym-3uy"/>
+                        <segue destination="HcF-jr-Y8U" kind="show" identifier="driverdetailsegue" id="EWo-vS-yLr"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VSy-nU-fT1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,7 +195,7 @@
                 <viewControllerPlaceholder storyboardName="offerride" id="XEe-PU-cXZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXr-0p-OIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="78"/>
+            <point key="canvasLocation" x="1422" y="37"/>
         </scene>
         <!--findride-->
         <scene sceneID="5db-Do-1Rw">
@@ -201,7 +203,23 @@
                 <viewControllerPlaceholder storyboardName="findride" id="Raw-86-Ixp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-BT-4Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="251"/>
+            <point key="canvasLocation" x="1419" y="113"/>
+        </scene>
+        <!--riderdetail-->
+        <scene sceneID="7SG-JI-fyO">
+            <objects>
+                <viewControllerPlaceholder storyboardName="riderdetail" id="EdM-eZ-2sr" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7RF-wR-93K" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1426.5" y="205"/>
+        </scene>
+        <!--driverdetail-->
+        <scene sceneID="OIi-3y-uuo">
+            <objects>
+                <viewControllerPlaceholder storyboardName="driverdetail" id="HcF-jr-Y8U" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TwL-94-omf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1430" y="314"/>
         </scene>
     </scenes>
     <resources>

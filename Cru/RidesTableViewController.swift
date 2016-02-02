@@ -9,17 +9,41 @@
 import UIKit
 
 class RidesTableViewController: UITableViewController {
-    let rides: [String] = ["ride1", "ride2", "ride3"]
+    //let rides: [String] = ["driving", "riding"]
+    var rides = [Ride]()
     
-    
+    //TODO: Get name of user from device
+    let myName = "Daniel Toy"
+     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        DBUtils.loadResources("ride", inserter: insertRide)
+        //TODO: Get rides from http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/api/ride/list
 
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+    }
+    
+    func insertRide(dict : NSDictionary) {
+        self.tableView.beginUpdates()
+        
+        let rideId = dict["_id"] as! String
+        let driverName = dict["driverName"] as! String
+        
+        let newRide = Ride(id: rideId, driverName: driverName)
+        rides.insert(newRide!, atIndex: 0)
+        
+        //campuses.sortInPlace()
+        
+        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.tableView.reloadData()
+        self.tableView.endUpdates()
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -47,7 +71,7 @@ class RidesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath)
 
-        cell.textLabel?.text = rides[indexPath.row]
+        cell.textLabel?.text = rides[indexPath.row].driverName
         // Configure the cell...
 
         return cell
@@ -71,6 +95,19 @@ class RidesTableViewController: UITableViewController {
     
     func handleFindRide(action: UIAlertAction){
         self.performSegueWithIdentifier("findridesegue", sender: self)
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        if let cell = tableView.cellForRowAtIndexPath(indexPath){
+            if(cell.textLabel?.text == myName){
+                self.performSegueWithIdentifier("driverdetailsegue", sender: self)
+            }
+            else{
+                self.performSegueWithIdentifier("riderdetailsegue", sender: self)
+            }
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
     }
 
     /*
