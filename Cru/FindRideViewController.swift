@@ -1,14 +1,14 @@
 //
-//  OfferRideViewController.swift
+//  FindRideViewController.swift
 //  Cru
 //
-//  Created by Max Crane on 1/28/16.
+//  Created by Deniz Tumer on 2/2/16.
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
 import UIKit
 
-class OfferRideViewController: UIViewController {
+class FindRideViewController: CreateRideViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,10 +19,6 @@ class OfferRideViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        navigationItem.title = "Something"
     }
     
 
