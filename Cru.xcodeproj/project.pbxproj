@@ -72,6 +72,8 @@
 		50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
 		50B37B5B1C63584C000399E4 /* driver.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B5A1C63584C000399E4 /* driver.png */; };
 		50B37B5D1C635862000399E4 /* rider.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B5C1C635862000399E4 /* rider.png */; };
+		50B37B5F1C636133000399E4 /* arrowright.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B5E1C636133000399E4 /* arrowright.png */; };
+		50B37B611C6361B0000399E4 /* both.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B601C6361B0000399E4 /* both.png */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE51C052BF9002C9E30 /* events.storyboard */; };
@@ -169,6 +171,8 @@
 		50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
 		50B37B5A1C63584C000399E4 /* driver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = driver.png; sourceTree = "<group>"; };
 		50B37B5C1C635862000399E4 /* rider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rider.png; sourceTree = "<group>"; };
+		50B37B5E1C636133000399E4 /* arrowright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowright.png; sourceTree = "<group>"; };
+		50B37B601C6361B0000399E4 /* both.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = both.png; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		50ED8FE61C052BF9002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/events.storyboard; sourceTree = "<group>"; };
@@ -324,7 +328,9 @@
 			children = (
 				50B37B5A1C63584C000399E4 /* driver.png */,
 				50B37B5C1C635862000399E4 /* rider.png */,
+				50B37B5E1C636133000399E4 /* arrowright.png */,
 				509DA91C1C6172FC0050CE26 /* Ride.swift */,
+				50B37B601C6361B0000399E4 /* both.png */,
 				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
 				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
@@ -557,9 +563,11 @@
 			files = (
 				50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */,
 				503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */,
+				50B37B5F1C636133000399E4 /* arrowright.png in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
 				50B37B5B1C63584C000399E4 /* driver.png in Resources */,
 				857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */,
+				50B37B611C6361B0000399E4 /* both.png in Resources */,
 				50F8251F1C0BB965005396BC /* resources.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
 				509DA9151C616BE60050CE26 /* riderdetail.storyboard in Resources */,

@@ -14,6 +14,8 @@ class RideTableViewCell: UITableViewCell {
     @IBOutlet weak var eventTitle: UILabel!
     @IBOutlet weak var date: UILabel!
     @IBOutlet weak var time: UILabel!
+    @IBOutlet weak var tripIcon: UIImageView!
+    @IBOutlet weak var rideDirection: UILabel!
 
     override func awakeFromNib() {
         super.awakeFromNib()
