@@ -18,7 +18,7 @@ class TempEventTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DBUtils.loadResources("event", inserter: insertEvent)
+        ServerUtils.loadResources("event", inserter: insertEvent)
     }
     
     func insertEvent(dict : NSDictionary) {
