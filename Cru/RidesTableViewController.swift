@@ -37,10 +37,8 @@ class RidesTableViewController: UITableViewController {
     
     func insertRide(dict : NSDictionary) {
         let newRide = Ride(dict: dict)
+        
         rides.insert(newRide!, atIndex: 0)
-        
-        //campuses.sortInPlace()
-        
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
         
     }
