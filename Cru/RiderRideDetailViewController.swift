@@ -21,7 +21,6 @@ class RiderRideDetailViewController: UIViewController {
     @IBOutlet weak var rideTypeIcon: UIImageView!
     
     @IBOutlet weak var driverName: UILabel!
-    
     @IBOutlet weak var numSeatLabel: UILabel!
     
     
