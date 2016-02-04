@@ -67,6 +67,13 @@
 		50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */; };
 		50A38FEA1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */; };
 		50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */; };
+		50AA7CCB1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
+		50AA7CCC1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
+		50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
+		50B37B5B1C63584C000399E4 /* driver.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B5A1C63584C000399E4 /* driver.png */; };
+		50B37B5D1C635862000399E4 /* rider.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B5C1C635862000399E4 /* rider.png */; };
+		50B37B5F1C636133000399E4 /* arrowright.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B5E1C636133000399E4 /* arrowright.png */; };
+		50B37B611C6361B0000399E4 /* both.png in Resources */ = {isa = PBXBuildFile; fileRef = 50B37B601C6361B0000399E4 /* both.png */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE51C052BF9002C9E30 /* events.storyboard */; };
@@ -161,6 +168,11 @@
 		509DA91C1C6172FC0050CE26 /* Ride.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ride.swift; sourceTree = "<group>"; };
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewCell.swift; sourceTree = "<group>"; };
+		50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
+		50B37B5A1C63584C000399E4 /* driver.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = driver.png; sourceTree = "<group>"; };
+		50B37B5C1C635862000399E4 /* rider.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rider.png; sourceTree = "<group>"; };
+		50B37B5E1C636133000399E4 /* arrowright.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrowright.png; sourceTree = "<group>"; };
+		50B37B601C6361B0000399E4 /* both.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = both.png; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		50ED8FE61C052BF9002C9E30 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/events.storyboard; sourceTree = "<group>"; };
@@ -314,7 +326,11 @@
 		50ED8FCF1C05063D002C9E30 /* RideSharing */ = {
 			isa = PBXGroup;
 			children = (
+				50B37B5A1C63584C000399E4 /* driver.png */,
+				50B37B5C1C635862000399E4 /* rider.png */,
+				50B37B5E1C636133000399E4 /* arrowright.png */,
 				509DA91C1C6172FC0050CE26 /* Ride.swift */,
+				50B37B601C6361B0000399E4 /* both.png */,
 				501085AF1BFBDB7900849CED /* RideSharingViewController.swift */,
 				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
@@ -324,6 +340,7 @@
 				5035478E1C5AD32B00418A92 /* OfferRideViewController.swift */,
 				503E1DBE1C0D6882004D8AB3 /* MapViewController.swift */,
 				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
+				50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */,
 			);
 			name = RideSharing;
 			sourceTree = "<group>";
@@ -546,13 +563,17 @@
 			files = (
 				50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */,
 				503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */,
+				50B37B5F1C636133000399E4 /* arrowright.png in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
+				50B37B5B1C63584C000399E4 /* driver.png in Resources */,
 				857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */,
+				50B37B611C6361B0000399E4 /* both.png in Resources */,
 				50F8251F1C0BB965005396BC /* resources.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
 				509DA9151C616BE60050CE26 /* riderdetail.storyboard in Resources */,
 				0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */,
 				0FC8E39F1C4566C7007A7208 /* test.storyboard in Resources */,
+				50B37B5D1C635862000399E4 /* rider.png in Resources */,
 				503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 				50ED8FE71C052BF9002C9E30 /* events.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,
@@ -660,6 +681,7 @@
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
 				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,
+				50AA7CCB1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 				0F74A3101C0BB9D300401377 /* User.swift in Sources */,
 				85C6D11B1C0BD5F4006A4F9F /* DBClient.swift in Sources */,
 				6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */,
@@ -702,6 +724,7 @@
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				0FC8E3B31C48750A007A7208 /* IntroViewController.swift in Sources */,
+				50AA7CCC1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -710,6 +733,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
+				50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 				50FE4D451C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */,

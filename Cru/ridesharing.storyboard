@@ -12,7 +12,7 @@
                 <viewControllerPlaceholder storyboardName="sideMenu" referencedIdentifier="sideMenuStoryboard" id="TAh-oS-QRU" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rh2-Th-yA7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1458.5" y="-102"/>
+            <point key="canvasLocation" x="1458.5" y="-82"/>
         </scene>
         <!--Ride Sharing View Controller-->
         <scene sceneID="Ie7-WI-8Rw">
@@ -77,6 +77,9 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="YLo-lH-OAQ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <animations/>
+                                <variation key="heightClass=regular-widthClass=compact" ambiguous="YES" misplaced="YES">
+                                    <rect key="frame" x="0.0" y="0.0" width="400" height="536"/>
+                                </variation>
                             </mapView>
                         </subviews>
                         <animations/>
@@ -100,21 +103,75 @@
         <scene sceneID="GeN-7s-Fwy">
             <objects>
                 <tableViewController id="Bt0-Ge-2Fb" customClass="RidesTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="cTo-gG-MmX">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" id="cTo-gG-MmX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ride" id="a9a-oi-14e">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ride" rowHeight="75" id="a9a-oi-14e" customClass="RideTableViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="92" width="600" height="75"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="a9a-oi-14e" id="tNf-GI-xll">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twoway" translatesAutoresizingMaskIntoConstraints="NO" id="cUx-LV-TPr">
+                                            <rect key="frame" x="88" y="0.0" width="51" height="44"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max's Golf Lessons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-Tj-hv5">
+                                            <rect key="frame" x="168" y="8" width="187" height="36"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="round-trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23v-W4-paO">
+                                            <rect key="frame" x="74" y="45" width="78" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5:00pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAC-q7-yMb">
+                                            <rect key="frame" x="168" y="45" width="79" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="driver" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-c5-BTu">
+                                            <rect key="frame" x="8" y="0.0" width="51" height="44"/>
+                                            <animations/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-Mu-Qci">
+                                            <rect key="frame" x="8" y="45" width="53" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/16/16 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gON-aL-NiY">
+                                            <rect key="frame" x="255" y="45" width="69" height="21"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <animations/>
                                 </tableViewCellContentView>
                                 <animations/>
+                                <connections>
+                                    <outlet property="date" destination="gON-aL-NiY" id="YDa-zv-yx5"/>
+                                    <outlet property="eventTitle" destination="uSu-Tj-hv5" id="KgX-fN-Zvc"/>
+                                    <outlet property="icon" destination="fm3-c5-BTu" id="KVu-4Y-HXT"/>
+                                    <outlet property="rideDirection" destination="23v-W4-paO" id="hpK-qY-1ee"/>
+                                    <outlet property="rideType" destination="XNX-Mu-Qci" id="Mvg-Kf-7gf"/>
+                                    <outlet property="time" destination="dAC-q7-yMb" id="eQh-j9-kpB"/>
+                                    <outlet property="tripIcon" destination="cUx-LV-TPr" id="VKS-Ta-563"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -195,7 +252,7 @@
                 <viewControllerPlaceholder storyboardName="offerride" id="XEe-PU-cXZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXr-0p-OIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1422" y="37"/>
+            <point key="canvasLocation" x="1495" y="-15"/>
         </scene>
         <!--findride-->
         <scene sceneID="5db-Do-1Rw">
@@ -203,7 +260,7 @@
                 <viewControllerPlaceholder storyboardName="findride" id="Raw-86-Ixp" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2E1-BT-4Ru" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="113"/>
+            <point key="canvasLocation" x="1498" y="83"/>
         </scene>
         <!--riderdetail-->
         <scene sceneID="7SG-JI-fyO">
@@ -211,7 +268,7 @@
                 <viewControllerPlaceholder storyboardName="riderdetail" id="EdM-eZ-2sr" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7RF-wR-93K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1426.5" y="205"/>
+            <point key="canvasLocation" x="1490.5" y="169"/>
         </scene>
         <!--driverdetail-->
         <scene sceneID="OIi-3y-uuo">
@@ -219,10 +276,12 @@
                 <viewControllerPlaceholder storyboardName="driverdetail" id="HcF-jr-Y8U" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwL-94-omf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1430" y="314"/>
+            <point key="canvasLocation" x="1487" y="261"/>
         </scene>
     </scenes>
     <resources>
+        <image name="driver" width="512" height="512"/>
         <image name="menuIcon" width="27" height="18"/>
+        <image name="twoway" width="512" height="512"/>
     </resources>
 </document>

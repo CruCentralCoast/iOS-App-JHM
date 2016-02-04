@@ -33,6 +33,11 @@ class Event {
     
     //MARK: Initialization
     
+    init?(name: String?, id: String){
+        self.name = name
+        self.id = id
+    }
+    
     init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, street: String?, suburb: String?, postcode: String?, description: String?, url: String?, imageUrl: String?)
     {
         self.id = "boo"

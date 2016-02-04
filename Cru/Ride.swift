@@ -11,6 +11,8 @@ import Foundation
 class Ride {
     let id: String
     let driverName: String
+    let eventId: String
+    let direcction: String
     
     //MARK: Properties
 
@@ -34,8 +36,10 @@ class Ride {
 //        self.roundTrip = roundTrip
 //    }
     
-    init?(id: String, driverName: String){
+    init?(id: String, driverName: String, eventId: String, direction: String){
         self.id = id
         self.driverName = driverName
+        self.eventId = eventId
+        self.direcction = direction
     }
 }

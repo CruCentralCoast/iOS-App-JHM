@@ -8,9 +8,11 @@
 
 import UIKit
 
+
 class RidesTableViewController: UITableViewController {
     //let rides: [String] = ["driving", "riding"]
     var rides = [Ride]()
+    var events = [Event]()
     
     //TODO: Get name of user from device
     let myName = "Daniel Toy"
@@ -20,6 +22,7 @@ class RidesTableViewController: UITableViewController {
         
         
         DBUtils.loadResources("ride", inserter: insertRide)
+        DBUtils.loadResources("event", inserter: insertEvent)
         //TODO: Get rides from http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/api/ride/list
 
         
@@ -36,7 +39,22 @@ class RidesTableViewController: UITableViewController {
         let rideId = dict["_id"] as! String
         let driverName = dict["driverName"] as! String
         
-        let newRide = Ride(id: rideId, driverName: driverName)
+        var eventId = "max's gold lessons"
+        var direction = "round-trip"
+        
+        if (dict.objectForKey("event") != nil){
+            eventId = dict.objectForKey("event") as! String
+        }
+        
+        if (dict.objectForKey("direction") != nil){
+            direction = dict.objectForKey("direction") as! String
+            
+            if(direction == "both"){
+                direction = "round-trip"
+            }
+        }
+        
+        let newRide = Ride(id: rideId, driverName: driverName, eventId: eventId, direction:  direction)
         rides.insert(newRide!, atIndex: 0)
         
         //campuses.sortInPlace()
@@ -44,6 +62,37 @@ class RidesTableViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
         self.tableView.reloadData()
         self.tableView.endUpdates()
+    }
+    
+    func insertEvent(dict : NSDictionary) {
+        var name = "max's golfing"
+        var id = "563b11135e926d03001ac15c"
+        
+        if (dict.objectForKey("_id") != nil){
+            id = dict.objectForKey("_id") as! String
+        }
+        
+        if (dict.objectForKey("name") != nil){
+            name = dict.objectForKey("name") as! String
+        }
+        
+        
+        
+        events.insert(Event(name: name, id: id)!, atIndex: 0)
+        self.tableView.reloadData() 
+    }
+    
+    func getEventNameForEventId(id : String)->String{
+        for event in events{
+            if(event.id != nil && event.id == id){
+                return event.name!
+            }
+        
+     
+        }
+        
+        
+        return "Max's Golf Lessons"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,18 +118,49 @@ class RidesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath) as! RideTableViewCell
 
-        cell.textLabel?.text = rides[indexPath.row].driverName
+        //cell.textLabel?.text = rides[indexPath.row].driverName
         // Configure the cell...
-
+        let ride = rides[indexPath.row]
+        
+        if(ride.driverName == myName){
+            cell.rideType.text = "driver"
+            cell.icon.image  = UIImage(named: "driver")
+            
+        }
+        else
+        {
+            cell.rideType.text = "rider"
+            cell.icon.image = UIImage(named: "rider")
+        }
+        
+        
+        if(ride.direcction == "round-trip"){
+            cell.tripIcon.image = UIImage(named: "both")
+            cell.rideDirection.text = "round-trip"
+        }
+        else if(ride.direcction == "from"){
+            cell.tripIcon.image = UIImage(named: "arrowright")
+            cell.rideDirection.text = "from event"
+            cell.tripIcon.transform = CGAffineTransformMakeScale(-1, 1)
+        }
+        else{
+            cell.tripIcon.image = UIImage(named: "arrowright")
+            cell.rideDirection.text = "to event"
+        }
+        
+        cell.eventTitle.text = getEventNameForEventId(ride.eventId)
+        
+        
+        
         return cell
     }
 
     @IBAction func addRideSelected(sender: AnyObject) {
-        let newRideAlert = UIAlertController(title: "New Ride", message: "select ride type", preferredStyle: UIAlertControllerStyle.Alert)
+        let newRideAlert = UIAlertController(title: "New Ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         newRideAlert.addAction(UIAlertAction(title: "Offer Ride", style: .Default, handler: handleOfferRide))
-        newRideAlert.addAction(UIAlertAction(title: "Get Ride", style: .Default, handler: handleFindRide))
+        newRideAlert.addAction(UIAlertAction(title: "Find a Ride", style: .Default, handler: handleFindRide))
         newRideAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
         
         self.presentViewController(newRideAlert, animated: true, completion: nil)
@@ -98,8 +178,10 @@ class RidesTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        if let cell = tableView.cellForRowAtIndexPath(indexPath){
-            if(cell.textLabel?.text == myName){
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath) as! RideTableViewCell
+        
+            if(cell.rideType?.text == "driver"){
                 self.performSegueWithIdentifier("driverdetailsegue", sender: self)
             }
             else{
@@ -107,7 +189,7 @@ class RidesTableViewController: UITableViewController {
             }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        }
+        
     }
 
     /*
