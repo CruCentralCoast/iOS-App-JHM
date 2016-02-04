@@ -31,8 +31,8 @@ class MinistryTableViewController: UITableViewController {
             prevMinistries = tempMinistries!
         }
 
-        DBUtils.loadResources(Config.ministryCollection, inserter: insertMinistry, afterFunc: reloadData)
-        self.tableView.reloadData()
+        ServerUtils.loadResources(Config.ministryCollection, inserter: insertMinistry, afterFunc: reloadData)
+        self.tableView.reloadData()	
     }
     
     func reloadData(){
