@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RidesTableViewController: UITableViewController {
     //let rides: [String] = ["driving", "riding"]
     var rides = [Ride]()
@@ -37,9 +38,14 @@ class RidesTableViewController: UITableViewController {
         
         let rideId = dict["_id"] as! String
         let driverName = dict["driverName"] as! String
-        let event = dict["event"] as! String
         
-        let newRide = Ride(id: rideId, driverName: driverName)
+        var eventId = "max's gold lessons"
+        
+        if (dict.objectForKey("event") != nil){
+            eventId = dict.objectForKey("event") as! String
+        }
+        
+        let newRide = Ride(id: rideId, driverName: driverName, eventId: eventId)
         rides.insert(newRide!, atIndex: 0)
         
         //campuses.sortInPlace()
@@ -50,7 +56,35 @@ class RidesTableViewController: UITableViewController {
     }
     
     func insertEvent(dict : NSDictionary) {
-        events.insert(Event(dict: dict)!, atIndex: 0)
+        var name = "max's golfing"
+        var id = "563b11135e926d03001ac15c"
+        
+        if (dict.objectForKey("_id") != nil){
+            id = dict.objectForKey("_id") as! String
+        }
+        
+        if (dict.objectForKey("name") != nil){
+            name = dict.objectForKey("name") as! String
+        }
+        
+        
+        
+        events.insert(Event(name: name, id: id)!, atIndex: 0)
+    }
+    
+    func getEventNameForEventId(id : String)->String{
+        print("id is \(id)")
+        
+        for event in events{
+            if(event.id != nil && event.id == id){
+                return event.name!
+            }
+        
+     
+        }
+        
+        
+        return "Max's Golf Lessons"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -80,16 +114,20 @@ class RidesTableViewController: UITableViewController {
 
         //cell.textLabel?.text = rides[indexPath.row].driverName
         // Configure the cell...
-
-        if(rides[indexPath.row].driverName == myName){
+        let ride = rides[indexPath.row]
+        
+        if(ride.driverName == myName){
             cell.rideType.text = "driver"
-            cell.icon = UIImageView(image: UIImage(named: "driver"))
+            cell.icon.image  = UIImage(named: "driver")
+            
         }
         else
         {
             cell.rideType.text = "rider"
-            cell.icon = UIImageView(image: UIImage(named: "rider"))
+            cell.icon.image = UIImage(named: "rider")
         }
+        
+        cell.eventTitle.text = getEventNameForEventId(ride.eventId)
         
         return cell
     }
