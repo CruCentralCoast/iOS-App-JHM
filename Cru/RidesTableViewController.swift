@@ -11,6 +11,7 @@ import UIKit
 class RidesTableViewController: UITableViewController {
     //let rides: [String] = ["driving", "riding"]
     var rides = [Ride]()
+    var events = [Event]()
     
     //TODO: Get name of user from device
     let myName = "Daniel Toy"
@@ -20,6 +21,7 @@ class RidesTableViewController: UITableViewController {
         
         
         DBUtils.loadResources("ride", inserter: insertRide)
+        DBUtils.loadResources("event", inserter: insertEvent)
         //TODO: Get rides from http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/api/ride/list
 
         
@@ -35,6 +37,7 @@ class RidesTableViewController: UITableViewController {
         
         let rideId = dict["_id"] as! String
         let driverName = dict["driverName"] as! String
+        let event = dict["event"] as! String
         
         let newRide = Ride(id: rideId, driverName: driverName)
         rides.insert(newRide!, atIndex: 0)
@@ -44,6 +47,10 @@ class RidesTableViewController: UITableViewController {
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
         self.tableView.reloadData()
         self.tableView.endUpdates()
+    }
+    
+    func insertEvent(dict : NSDictionary) {
+        events.insert(Event(dict: dict)!, atIndex: 0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -69,11 +76,21 @@ class RidesTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath) as! RideTableViewCell
 
-        cell.textLabel?.text = rides[indexPath.row].driverName
+        //cell.textLabel?.text = rides[indexPath.row].driverName
         // Configure the cell...
 
+        if(rides[indexPath.row].driverName == myName){
+            cell.rideType.text = "driver"
+            cell.icon = UIImageView(image: UIImage(named: "driver"))
+        }
+        else
+        {
+            cell.rideType.text = "rider"
+            cell.icon = UIImageView(image: UIImage(named: "rider"))
+        }
+        
         return cell
     }
 
