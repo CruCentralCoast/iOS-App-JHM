@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bcj-tP-HvM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bcj-tP-HvM">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--sideMenuStoryboard-->
         <scene sceneID="4MF-6R-Ljd">
@@ -11,12 +16,12 @@
                 <viewControllerPlaceholder storyboardName="sideMenu" referencedIdentifier="sideMenuStoryboard" id="pmy-s6-qgY" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="d2s-vp-UDH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478.5" y="2390"/>
+            <point key="canvasLocation" x="2388.5" y="2587"/>
         </scene>
-        <!--Summer Missions View Controller-->
+        <!--Summer Missions-->
         <scene sceneID="fq2-UI-axU">
             <objects>
-                <viewController id="nro-Lg-aR0" customClass="SummerMissionsViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="nro-Lg-aR0" customClass="SummerMissionViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dGA-R1-OC9"/>
                         <viewControllerLayoutGuide type="bottom" id="aJL-Ho-Hig"/>
@@ -25,27 +30,16 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LvN-0S-LCa">
-                                <rect key="frame" x="264" y="253" width="72" height="30"/>
-                                <state key="normal" title="Text Deniz"/>
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-HE-TCP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <connections>
-                                    <action selector="textButtonPressed:" destination="nro-Lg-aR0" eventType="touchUpInside" id="FzT-xE-l8f"/>
+                                    <segue destination="ElO-TB-0lg" kind="embed" id="z2O-AQ-fNh"/>
                                 </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="enter text content" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="czI-EW-SA3">
-                                <rect key="frame" x="96" y="146" width="409" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="LvN-0S-LCa" firstAttribute="top" secondItem="czI-EW-SA3" secondAttribute="bottom" constant="77" id="CzJ-hY-6u8"/>
-                            <constraint firstItem="LvN-0S-LCa" firstAttribute="centerY" secondItem="hqc-V9-r50" secondAttribute="centerY" id="I8z-gK-yr3"/>
-                            <constraint firstItem="LvN-0S-LCa" firstAttribute="centerX" secondItem="hqc-V9-r50" secondAttribute="centerX" id="hIC-rr-V9X"/>
-                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="MfI-0V-6RI">
+                    <navigationItem key="navigationItem" title="Summer Missions" id="MfI-0V-6RI">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="xtu-yh-A8L">
                             <connections>
                                 <segue destination="pmy-s6-qgY" kind="presentation" id="z73-5h-Q71"/>
@@ -54,12 +48,11 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="xtu-yh-A8L" id="enf-BZ-P9a"/>
-                        <outlet property="textField" destination="czI-EW-SA3" id="0si-Lb-bET"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9dX-1H-6Pb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1672" y="2807"/>
+            <point key="canvasLocation" x="1742" y="2587"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="hc3-Jw-czQ">
@@ -82,7 +75,46 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sd-mP-dfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="970" y="2807"/>
+            <point key="canvasLocation" x="964" y="2587"/>
+        </scene>
+        <!--Summer Mission Table View Controller-->
+        <scene sceneID="HTi-pc-yrd">
+            <objects>
+                <tableViewController id="ElO-TB-0lg" customClass="SummerMissionTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="DFN-ku-RdA">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SummerMissionTableViewCell" rowHeight="150" id="cUw-lt-FbJ" customClass="SummerMissionTableViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="150"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cUw-lt-FbJ" id="Bxz-pL-TrX">
+                                    <rect key="frame" x="0.0" y="0.0" width="567" height="149"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summer Mission Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrx-X9-KL9" userLabel="locationLabel">
+                                            <rect key="frame" x="40" y="55" width="552" height="40"/>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="28"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="nameLabel" destination="lrx-X9-KL9" id="dRR-sS-J04"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="ElO-TB-0lg" id="d4d-l8-a6r"/>
+                            <outlet property="delegate" destination="ElO-TB-0lg" id="AQa-bY-eOF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yt6-sr-GzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742" y="3286"/>
         </scene>
     </scenes>
     <resources>
