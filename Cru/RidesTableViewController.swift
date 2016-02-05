@@ -23,10 +23,10 @@ class RidesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        DBUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInsertRides)
-        DBUtils.loadResources("event", inserter: insertEvent)
+        ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInsertRides)
+        ServerUtils.loadResources("event", inserter: insertEvent)
         //TODO: Get rides from http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/api/ride/list
-
+	
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

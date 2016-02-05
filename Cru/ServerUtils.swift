@@ -8,14 +8,14 @@
 
 import Foundation
 
-class DBUtils {
+class ServerUtils {
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
         loadResources(collectionName, inserter: inserter, afterFunc: {() in })
     }
     
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> (),
         afterFunc : () -> ()) {
-        DBClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter, afterFunc: afterFunc))
+        ServerClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter, afterFunc: afterFunc))
     }
     
     
