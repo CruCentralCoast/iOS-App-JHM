@@ -23,7 +23,7 @@ class EventTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         //loadSampleEvents()
         
-        DBUtils.loadResources("event", inserter: insertEvent)
+        ServerUtils.loadResources("event", inserter: insertEvent)
         //loadSampleEvents()
     }
     

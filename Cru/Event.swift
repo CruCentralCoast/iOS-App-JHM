@@ -44,7 +44,7 @@ class Event {
         self.name = name
         self.image = image
         
-        let startComps = DBUtils.dateFromString(startDate!)!
+        let startComps = ServerUtils.dateFromString(startDate!)!
         self.month = startComps.month
         self.year = startComps.year
         self.startDay = startComps.day
@@ -52,7 +52,7 @@ class Event {
         self.startMinute = startComps.minute
         
         
-        let endComps = DBUtils.dateFromString(endDate!)!
+        let endComps = ServerUtils.dateFromString(endDate!)!
         self.endDay = endComps.day
         self.endHour = endComps.hour
         self.endMinute = endComps.minute
