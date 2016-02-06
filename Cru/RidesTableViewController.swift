@@ -29,8 +29,8 @@ class RidesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         
-        ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInsertRides)
-        ServerUtils.loadResources("event", inserter: insertEvent)
+        ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInserting)
+        ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
         //TODO: Get rides from http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/api/ride/list
 	
         
