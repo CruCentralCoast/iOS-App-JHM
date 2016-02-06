@@ -38,9 +38,9 @@ class Event {
         self.id = id
     }
     
-    init?(name: String?, image: UIImage?, startDate: String?, endDate: String?, street: String?, suburb: String?, postcode: String?, description: String?, url: String?, imageUrl: String?)
+    init?(id: String?, name: String?, image: UIImage?, startDate: String?, endDate: String?, street: String?, suburb: String?, postcode: String?, description: String?, url: String?, imageUrl: String?)
     {
-        self.id = "boo"
+        self.id = id
         self.name = name
         self.image = image
         
@@ -70,6 +70,7 @@ class Event {
     }
     
     convenience init?(dict : NSDictionary) {
+        let id = dict["_id"] as! String?
         let name = dict["name"] as! String?
         let startDate = dict["startDate"] as! String?
         let endDate = dict["endDate"] as! String?
@@ -81,7 +82,7 @@ class Event {
         let imageUrl = dict["image"]?.objectForKey("secure_url") as! String?
         
         
-        self.init(name: name, image: nil, startDate: startDate, endDate: endDate, street: street, suburb: suburb, postcode: postcode, description: description, url: url, imageUrl: imageUrl)
+        self.init(id: id, name: name, image: nil, startDate: startDate, endDate: endDate, street: street, suburb: suburb, postcode: postcode, description: description, url: url, imageUrl: imageUrl)
     }
 
 }
