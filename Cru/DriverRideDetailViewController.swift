@@ -1,31 +1,24 @@
 //
-//  RideSharingViewController.swift
+//  DriverRideDetailViewController.swift
 //  Cru
 //
-//  Created by Max Crane on 11/17/15.
-//  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
+//  Created by Max Crane on 2/4/16.
+//  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
 import UIKit
 
-class RideSharingViewController: UIViewController {
-    @IBOutlet weak var menuButton: UIBarButtonItem!
-    @IBOutlet weak var location: UITextField!
+class DriverRideDetailViewController: UIViewController {
+    var event: Event?
+    var ride: Ride?
     
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if (segue.identifier == "mapSegue") {
-            //Checking identifier is crucial as there might be multiple
-            // segues attached to same view
-            let destVC = segue.destinationViewController as! MapViewController;
-            destVC.query = location.text
-        }
-    }
+    @IBOutlet weak var rideName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        rideName.text = event!.name!
         // Do any additional setup after loading the view.
     }
-    
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

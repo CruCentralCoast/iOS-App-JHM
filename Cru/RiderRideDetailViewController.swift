@@ -11,6 +11,7 @@ import UIKit
 class RiderRideDetailViewController: UIViewController {
     var event: Event?
     var ride: Ride?
+    
     @IBOutlet weak var rideDirectionLabel: UILabel!
     
     @IBOutlet weak var rideTime: UILabel!
