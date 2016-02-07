@@ -76,8 +76,6 @@ class EventDetailsViewController: UIViewController {
             //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             
             //Set up UITextView description
-            //Change color ov textview to show off how the size is fucked up
-            descriptionView.backgroundColor = UIColor.grayColor()
             descriptionView.text = event.description
             
            
