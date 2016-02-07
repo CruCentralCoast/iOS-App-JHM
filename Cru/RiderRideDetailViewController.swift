@@ -30,7 +30,7 @@ class RiderRideDetailViewController: UIViewController {
 
         eventName.text = event!.name
         driverName.text = ride!.driverName + " is driving"
-        numSeatLabel.text = "1/" + ride!.seats + " seats are available"
+        numSeatLabel.text = "1/5 seats"  //ride!.seats + " seats are available"
         
         // Do any additional setup after loading the view.
     }

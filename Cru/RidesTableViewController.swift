@@ -107,6 +107,14 @@ class RidesTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath) as! RideTableViewCell
         let ride = rides[indexPath.row]
 
+        
+        
+        cell.day.text = String(ride.day)
+        
+        let dateFormatter: NSDateFormatter = NSDateFormatter()
+        let months = dateFormatter.shortMonthSymbols
+        cell.month.text = months[ride.month - 1].uppercaseString
+        
         //TODO: Change this to check against GCM id not driver name
         if(ride.driverName == myName){
             cell.rideType.text = driver
@@ -119,21 +127,21 @@ class RidesTableViewController: UITableViewController {
         }
         
         
-        if(ride.direction == roundTripDirection){
-            cell.tripIcon.image = UIImage(named: "twoway")
-            cell.rideDirection.text = roundTrip
-        }
-        else if(ride.direction == "from"){
-            cell.tripIcon.image = UIImage(named: "oneway")
-            cell.rideDirection.text = fromEvent
-            
-            //mirrors arrow
-            cell.tripIcon.transform = CGAffineTransformMakeScale(-1, 1)
-        }
-        else if (ride.direction == "to"){
-            cell.tripIcon.image = UIImage(named: "oneway")
-            cell.rideDirection.text = toEvent
-        }
+//        if(ride.direction == roundTripDirection){
+//            cell.tripIcon.image = UIImage(named: "twoway")
+//            cell.rideDirection.text = roundTrip
+//        }
+//        else if(ride.direction == "from"){
+//            cell.tripIcon.image = UIImage(named: "oneway")
+//            cell.rideDirection.text = fromEvent
+//            
+//            //mirrors arrow
+//            cell.tripIcon.transform = CGAffineTransformMakeScale(-1, 1)
+//        }
+//        else if (ride.direction == "to"){
+//            cell.tripIcon.image = UIImage(named: "oneway")
+//            cell.rideDirection.text = toEvent
+//        }
         
         
         cell.eventTitle.text = getEventNameForEventId(ride.eventId)
