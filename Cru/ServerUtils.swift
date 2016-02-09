@@ -51,4 +51,18 @@ class ServerUtils {
         let unitFlags: NSCalendarUnit = [.Minute, .Hour, .Day, .Month, .Year]
         return NSCalendar.currentCalendar().components(unitFlags, fromDate: date!)
     }
+    
+    // TODO: add real gcm_id, location, time, radius, direction and handler error better
+    class func postRideOffer(eventId : String, name : String , phone : String, seats : Int) {
+        let requestUrl = Config.serverUrl + "api/ride/create";
+        let params = ["event":eventId, "driverName":name, "driverNumber":phone, "gcm_id":"who knows",
+            "seats":seats]
+        
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            ServerClient.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerClient.blankCompletionHandler);
+        } catch {
+            print("Error sending ride offer!")
+        }
+    }
 }
