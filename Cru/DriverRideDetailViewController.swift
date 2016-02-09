@@ -1,28 +1,28 @@
 //
-//  OfferRideViewController.swift
+//  DriverRideDetailViewController.swift
 //  Cru
 //
-//  Created by Max Crane on 1/28/16.
+//  Created by Max Crane on 2/4/16.
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
 import UIKit
 
-class OfferRideViewController: UIViewController {
-
+class DriverRideDetailViewController: UIViewController {
+    var event: Event?
+    var ride: Ride?
+    
+    @IBOutlet weak var rideName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        rideName.text = event!.name!
         // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        navigationItem.title = "Something"
     }
     
 

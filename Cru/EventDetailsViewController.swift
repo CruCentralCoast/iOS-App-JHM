@@ -74,6 +74,8 @@ class EventDetailsViewController: UIViewController {
                 locationLabel.text = event.street! + ", " + event.suburb! + ", " + event.postcode!
             }
             //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
+            
+            //Set up UITextView description
             descriptionView.text = event.description
             
            
@@ -94,12 +96,10 @@ class EventDetailsViewController: UIViewController {
     func insertEvent(store: EKEventStore) {
         // 1
         let calendars = store.calendarsForEntityType(EKEntityType.Event)
-        var cruCalendarCreated = false
         
         for searchCalendar in calendars {
             print(searchCalendar.title)
             if searchCalendar.title == "Cru" {
-                cruCalendarCreated = true
                 print("Calendar was previously created")
             }
         }
@@ -140,12 +140,15 @@ class EventDetailsViewController: UIViewController {
         // 5
         // Save Event in Calendar
         var saveError: NSError?
-        let result: Bool
+        
         do {
-            result = Bool(try store.saveEvent(newEvent, span: .ThisEvent, commit: true))
-        } catch let error as NSError{
+            try store.saveEvent(newEvent, span: .ThisEvent, commit: true)
+        }
+        catch let error as NSError{
             saveError = error
-        } catch {
+            print(saveError)
+        }
+        catch {
             fatalError()
         }
     }
