@@ -12,25 +12,46 @@ class RiderRideDetailViewController: UIViewController {
     var event: Event?
     var ride: Ride?
     
-    @IBOutlet weak var rideDirectionLabel: UILabel!
     
-    @IBOutlet weak var rideTime: UILabel!
-    @IBOutlet weak var rideDate: UILabel!
-    @IBOutlet weak var eventName: UILabel!
-    @IBOutlet weak var rideDirectionIcon: UIImageView!
-    @IBOutlet weak var rideTypeLabel: UILabel!
-    @IBOutlet weak var rideTypeIcon: UIImageView!
+    @IBOutlet weak var eventTitle: UILabel!
+    
+    @IBOutlet weak var departureTime: UILabel!
+    @IBOutlet weak var departureMonth: UILabel!
+    @IBOutlet weak var departureDay: UILabel!
+    @IBOutlet weak var pickupAddress: UILabel!
+    
+    @IBOutlet weak var direction: UILabel!
+    @IBOutlet weak var directionIcon: UIImageView!
     
     @IBOutlet weak var driverName: UILabel!
-    @IBOutlet weak var numSeatLabel: UILabel!
+    
+    @IBOutlet weak var driverNumber: UITextView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        eventName.text = event!.name
-        driverName.text = ride!.driverName + " is driving"
-        numSeatLabel.text = "1/5 seats"  //ride!.seats + " seats are available"
+        
+        navigationItem.title = "Ride Details"
+        
+        eventTitle.text = event!.name
+        departureTime.text = ride!.time
+        departureMonth.text = String(ride!.month)
+        departureDay.text = String(ride!.day)
+        
+        pickupAddress.sizeToFit()
+        
+        //pickupAddress =
+        //direction = 
+        //directionIcon
+        driverName.text = ride!.driverName
+        
+        driverNumber.text = ride!.driverNumber
+        driverNumber.editable = false
+        driverNumber.dataDetectorTypes = UIDataDetectorTypes.PhoneNumber
+        
+//        eventName.text = event!.name
+//        driverName.text = ride!.driverName + " is driving"
+//        numSeatLabel.text = "1/5 seats"  //ride!.seats + " seats are available"
         
         // Do any additional setup after loading the view.
     }

@@ -3,6 +3,23 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Rider Ride Detail View Controller-->
         <scene sceneID="9Ga-qe-kjg">
@@ -16,61 +33,99 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJM-0q-wmc">
-                                <rect key="frame" x="20" y="127" width="56" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="round trip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5P-lO-6sT">
+                                <rect key="frame" x="176" y="332" width="90" height="21"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="driver" translatesAutoresizingMaskIntoConstraints="NO" id="a5H-Px-JeJ">
-                                <rect key="frame" x="20" y="72" width="56" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max's Golf Lessons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaP-kM-iIj">
+                                <rect key="frame" x="15" y="72" width="296" height="37"/>
                                 <animations/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="round trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I5P-lO-6sT">
-                                <rect key="frame" x="101" y="127" width="90" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="30"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="NOV" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDh-bv-SSV" userLabel="Ride Month">
+                                <rect key="frame" x="176" y="136" width="43" height="26"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bobby McBobby" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1w-Cq-ENi">
+                                <rect key="frame" x="176" y="384" width="197" height="23"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5:00 pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZG-lF-e0J">
+                                <rect key="frame" x="272" y="136" width="96" height="37"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Driver:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kzb-1G-IIn">
+                                <rect key="frame" x="15" y="381" width="95" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="14" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jug-cD-DzZ">
+                                <rect key="frame" x="176" y="149" width="43" height="42"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="31"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Departure Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E3D-S6-Ppd">
+                                <rect key="frame" x="15" y="138" width="135" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Pickup location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rBl-cJ-Kpi">
+                                <rect key="frame" x="15" y="209" width="135" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Direction:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MDI-Je-TKk">
+                                <rect key="frame" x="15" y="332" width="119" height="21"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twoway" translatesAutoresizingMaskIntoConstraints="NO" id="fBV-N7-wB8">
-                                <rect key="frame" x="101" y="72" width="57" height="47"/>
+                                <rect key="frame" x="272" y="319" width="57" height="47"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max's Golf Lessons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BaP-kM-iIj">
-                                <rect key="frame" x="204" y="72" width="206" height="37"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZX-3a-k3W">
+                                <rect key="frame" x="15" y="434" width="95" height="26"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/16/16" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDh-bv-SSV">
-                                <rect key="frame" x="204" y="124" width="102" height="26"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="3106666666" translatesAutoresizingMaskIntoConstraints="NO" id="nUj-xn-1rj">
+                                <rect key="frame" x="173" y="434" width="126" height="41"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/5 seats available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkf-6d-pXX">
-                                <rect key="frame" x="20" y="209" width="270" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="TopLeft" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1 Grand Ave. San Luis Obispo" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Puz-bv-TuR">
+                                <rect key="frame" x="176" y="209" width="270" height="32"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Bobby is driving" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1w-Cq-ENi">
-                                <rect key="frame" x="20" y="178" width="262" height="23"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5:00pm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rZG-lF-e0J">
-                                <rect key="frame" x="293" y="119" width="96" height="37"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -81,15 +136,15 @@
                         <color key="barTintColor" red="0.72628045080000003" green="0.72629773620000004" blue="0.72628843779999996" alpha="1" colorSpace="deviceRGB"/>
                     </simulatedNavigationBarMetrics>
                     <connections>
-                        <outlet property="driverName" destination="n1w-Cq-ENi" id="NJN-au-cGr"/>
-                        <outlet property="eventName" destination="BaP-kM-iIj" id="Ghc-is-Y6U"/>
-                        <outlet property="numSeatLabel" destination="bkf-6d-pXX" id="WtF-ac-N9Q"/>
-                        <outlet property="rideDate" destination="rDh-bv-SSV" id="gUR-0a-fUv"/>
-                        <outlet property="rideDirectionIcon" destination="fBV-N7-wB8" id="Dgh-An-gGY"/>
-                        <outlet property="rideDirectionLabel" destination="I5P-lO-6sT" id="S1a-pR-twf"/>
-                        <outlet property="rideTime" destination="rZG-lF-e0J" id="SO1-0B-6cv"/>
-                        <outlet property="rideTypeIcon" destination="SJM-0q-wmc" id="JAq-Ld-isb"/>
-                        <outlet property="rideTypeLabel" destination="SJM-0q-wmc" id="mW9-oI-4Yl"/>
+                        <outlet property="departureDay" destination="Jug-cD-DzZ" id="620-m4-QPL"/>
+                        <outlet property="departureMonth" destination="rDh-bv-SSV" id="3kB-jm-BR1"/>
+                        <outlet property="departureTime" destination="rZG-lF-e0J" id="sfV-eO-DB1"/>
+                        <outlet property="direction" destination="I5P-lO-6sT" id="3fT-FX-Aiu"/>
+                        <outlet property="directionIcon" destination="fBV-N7-wB8" id="CoV-G8-IMT"/>
+                        <outlet property="driverName" destination="n1w-Cq-ENi" id="4c7-du-J9f"/>
+                        <outlet property="driverNumber" destination="nUj-xn-1rj" id="0p5-VS-Nf8"/>
+                        <outlet property="eventTitle" destination="BaP-kM-iIj" id="fzF-Dh-fnh"/>
+                        <outlet property="pickupAddress" destination="Puz-bv-TuR" id="diA-FW-2k8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akl-L1-KLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -98,7 +153,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="driver" width="512" height="512"/>
         <image name="twoway" width="512" height="512"/>
     </resources>
 </document>

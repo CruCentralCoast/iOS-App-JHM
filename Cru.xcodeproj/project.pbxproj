@@ -342,12 +342,12 @@
 				5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */,
 				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
-				509DA9141C616BE60050CE26 /* riderdetail.storyboard */,
 				503A06CF1C5F08E200DAD10E /* findride.storyboard */,
 				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
 				50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */,
-				509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */,
 				5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */,
+				509DA9141C616BE60050CE26 /* riderdetail.storyboard */,
+				509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */,
 			);
 			name = RideSharing;
 			sourceTree = "<group>";

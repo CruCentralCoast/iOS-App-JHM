@@ -110,10 +110,8 @@ class RidesTableViewController: UITableViewController {
         
         
         cell.day.text = String(ride.day)
+        cell.month.text = ride.month
         
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
-        let months = dateFormatter.shortMonthSymbols
-        cell.month.text = months[ride.month - 1].uppercaseString
         
         //TODO: Change this to check against GCM id not driver name
         if(ride.driverName == myName){
