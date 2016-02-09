@@ -4,6 +4,16 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>DatePickerCell.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>LocationPicker.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Cru.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -19,30 +29,30 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>YouTubePlayer.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>3F9BC2E4F642A32B5119955FC04DF89D</key>
+		<key>2EC2E426136E79755292CD06D863C0E2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5CE4C96C3E5660F3F86EB2C88C6F087E</key>
+		<key>34A45237F872A980EE4768CE71193556</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86E44E3A4BF36C6CDF17EFB809DCD83D</key>
+		<key>733206DFBBCC49D3502AE07C330E98E6</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FF28399BC71D4D10A79C895F96994B86</key>
+		<key>787F90EE7A798FA89036E7FD103A63FF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F3FE54F441A4BAEBF1DDF3B2CB9FB299</key>
 		<dict>
 			<key>primary</key>
 			<true/>

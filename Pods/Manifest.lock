@@ -1,4 +1,5 @@
 PODS:
+  - DatePickerCell (1.0.4)
   - GGLInstanceID (1.1.5):
     - GoogleIPhoneUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
@@ -29,15 +30,17 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
+  - LocationPicker (0.5.3)
   - SideMenu (0.1.4)
-  - YouTubePlayer (0.3.0)
 
 DEPENDENCIES:
+  - DatePickerCell
   - Google/CloudMessaging
+  - LocationPicker
   - SideMenu (~> 0.1)
-  - YouTubePlayer (~> 0.3)
 
 SPEC CHECKSUMS:
+  DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
   GGLInstanceID: 4be9a86f27e87f8cedc9694f521f12949813a7ba
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleCloudMessaging: faa057e30845e7300da31de3777060420b2f6579
@@ -46,7 +49,7 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  LocationPicker: 37edad09cefccd0a266e4abfbf5787995b133d54
   SideMenu: 09bc4ab16e392aea64caf052074efd63ef726b6a
-  YouTubePlayer: 88713a96c356f2c88da8925eb61438eda88bcd57
 
 COCOAPODS: 0.39.0

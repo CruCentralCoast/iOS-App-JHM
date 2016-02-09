@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import DatePickerCell
 
 class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
     @IBOutlet weak var numSeatsInCar: UITextField!
@@ -26,14 +27,35 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         super.viewDidLoad()
         
         //set up delegate for testing if fields have changed
-        fullName.delegate = self
-        fullName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+//        fullName.delegate = self
+//        fullName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+//        
+//        phoneNumber.delegate = self
+//        phoneNumber.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
         
-        phoneNumber.delegate = self
-        phoneNumber.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+//        numSeatsInCar.delegate = self
+//        numSeatsInCar.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+    }
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath)
         
-        numSeatsInCar.delegate = self
-        numSeatsInCar.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        if (cell.isKindOfClass(DatePickerCell)) {
+            return (cell as! DatePickerCell).datePickerHeight()
+        }
+    
+        return super.tableView(tableView, heightForRowAtIndexPath: indexPath)
+    }
+    
+    // Override of table view for creating a date picker cell in the appropriate location
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath)
+        
+        if cell.isKindOfClass(DatePickerCell) {
+            let datePickerTableViewCell = cell as! DatePickerCell
+            datePickerTableViewCell.selectedInTableView(tableView)
+            self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        }
     }
     
     // Handler for changing "did edit form" flag inherited from CreateRideViewController to true
