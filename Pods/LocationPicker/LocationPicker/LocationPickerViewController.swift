@@ -44,7 +44,7 @@ public class LocationPickerViewController: UIViewController {
 		} else { return .whiteColor() }
 	}()
 	
-	public var mapType: MKMapType = .Hybrid {
+	public var mapType: MKMapType = .Standard {
 		didSet {
 			if isViewLoaded() {
 				mapView.mapType = mapType

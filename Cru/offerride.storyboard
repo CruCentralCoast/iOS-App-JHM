@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="ZEB-gb-Pba">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="FreigSanProBook.otf">
@@ -17,7 +18,7 @@
         <scene sceneID="5Aj-cU-KJI">
             <objects>
                 <tableViewController id="ZEB-gb-Pba" customClass="OfferRideTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ovJ-cL-WKi">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ovJ-cL-WKi">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -34,7 +35,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Full Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Csg-vx-pdo">
                                                     <rect key="frame" x="15" y="0.0" width="570" height="44"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -52,7 +53,7 @@
                                                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TDn-Y4-tjk">
                                                     <rect key="frame" x="15" y="-1" width="570" height="44"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits"/>
+                                                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
                                                 </textField>
                                             </subviews>
                                             <constraints>
@@ -67,14 +68,29 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8qA-D1-ROD">
-                                                    <rect key="frame" x="15" y="-1" width="570" height="44"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Available Seats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JbO-Jv-W3g">
+                                                    <rect key="frame" x="17" y="11" width="122" height="26"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="XUd-4J-vwC">
+                                                    <rect key="frame" x="491" y="7" width="94" height="29"/>
+                                                    <connections>
+                                                        <action selector="availableSeatsStepperChanged:" destination="ZEB-gb-Pba" eventType="valueChanged" id="wb3-Wy-ihg"/>
+                                                    </connections>
+                                                </stepper>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rgv-sp-ynN">
+                                                    <rect key="frame" x="147" y="14" width="30" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="8qA-D1-ROD" firstAttribute="height" secondItem="TJc-5m-Pfx" secondAttribute="height" id="vrQ-H2-Tte"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="XUd-4J-vwC" secondAttribute="trailing" constant="7" id="SjV-cn-gck"/>
+                                                <constraint firstItem="Rgv-sp-ynN" firstAttribute="leading" secondItem="JbO-Jv-W3g" secondAttribute="trailing" constant="8" id="h1m-ha-X7y"/>
+                                                <constraint firstItem="JbO-Jv-W3g" firstAttribute="leading" secondItem="TJc-5m-Pfx" secondAttribute="leadingMargin" constant="9" id="yvN-cF-g02"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -117,7 +133,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="l3A-Fl-hJQ" detailTextLabel="hrw-3S-Gtd" style="IBUITableViewCellStyleValue1" id="jZN-iR-uTa">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="pickup" textLabel="l3A-Fl-hJQ" detailTextLabel="hrw-3S-Gtd" style="IBUITableViewCellStyleValue1" id="jZN-iR-uTa">
                                         <rect key="frame" x="0.0" y="276" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="jZN-iR-uTa" id="bc1-W6-Bnw">
@@ -140,9 +156,6 @@
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="VHD-iV-Mv5" kind="show" id="ODc-f4-Fpj"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -158,6 +171,9 @@
                                                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsf-lv-izM">
                                                     <rect key="frame" x="276" y="8" width="49" height="27.5"/>
                                                     <state key="normal" title="Submit"/>
+                                                    <connections>
+                                                        <action selector="submitOfferRideForm:" destination="ZEB-gb-Pba" eventType="touchUpInside" id="iPO-0T-941"/>
+                                                    </connections>
                                                 </button>
                                             </subviews>
                                             <constraints>
@@ -168,19 +184,6 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle=" " id="LbE-hm-RLq">
-                                <cells>
-                                    <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="181" id="o4h-hQ-asM">
-                                        <rect key="frame" x="0.0" y="420" width="600" height="181"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o4h-hQ-asM" id="nQg-9V-KaD">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="180.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
                         </sections>
                         <connections>
                             <outlet property="dataSource" destination="ZEB-gb-Pba" id="dIx-7I-YHK"/>
@@ -188,30 +191,18 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="availableSeatsStepper" destination="XUd-4J-vwC" id="Ii1-Sz-RGz"/>
                         <outlet property="eventNameLabel" destination="hW3-Yc-A28" id="E9d-Nn-ciy"/>
+                        <outlet property="fullName" destination="Csg-vx-pdo" id="zHM-T9-eqP"/>
+                        <outlet property="locationAddressLabel" destination="hrw-3S-Gtd" id="vNf-dz-iVV"/>
+                        <outlet property="numAvailableSeatsLabel" destination="Rgv-sp-ynN" id="Hd2-hl-ifU"/>
+                        <outlet property="phoneNumber" destination="TDn-Y4-tjk" id="STd-uH-qCG"/>
+                        <outlet property="pickupDateTimePicker" destination="lYx-Qc-1Du" id="d1a-iz-oWl"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7KE-nC-TwI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2600" y="-336"/>
-        </scene>
-        <!--Location Picker View Controller-->
-        <scene sceneID="l9i-7J-giD">
-            <objects>
-                <viewController id="VHD-iV-Mv5" customClass="LocationPickerViewController" customModule="LocationPicker" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Qfe-wW-EvV"/>
-                        <viewControllerLayoutGuide type="bottom" id="zgn-Sx-yZB"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="1RZ-hY-UF2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uOv-7f-TkR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3364" y="-749"/>
         </scene>
         <!--Choose Event-->
         <scene sceneID="oc7-O9-vWz">

@@ -8,13 +8,18 @@
 
 import UIKit
 import DatePickerCell
+import MapKit
+import LocationPicker
 
 class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegate {
     
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
-    @IBOutlet weak var numSeatsInCar: UITextField!
+    @IBOutlet weak var numAvailableSeatsLabel: UILabel!
     @IBOutlet weak var eventNameLabel: UILabel!
+    @IBOutlet weak var locationAddressLabel: UILabel!
+    @IBOutlet weak var availableSeatsStepper: UIStepper!
+    @IBOutlet weak var pickupDateTimePicker: DatePickerCell!
     
     var event: Event! {
         didSet {
@@ -22,19 +27,55 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
             self.formHasBeenEdited = true
         }
     }
+    var location: Location! {
+        didSet {
+            locationAddressLabel.text? = location.address
+            self.formHasBeenEdited = true
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //set up delegate for testing if fields have changed
-//        fullName.delegate = self
-//        fullName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
-//        
-//        phoneNumber.delegate = self
-//        phoneNumber.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+//        configureTapGestureForKeyboardDismissal()
+        configureAvailableSeatsStepper()
         
-//        numSeatsInCar.delegate = self
-//        numSeatsInCar.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        //set up delegate for testing if fields have changed
+        fullName.delegate = self
+        fullName.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        phoneNumber.delegate = self
+        phoneNumber.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+    }
+    
+    private func configureAvailableSeatsStepper() {
+        availableSeatsStepper.wraps = true
+        availableSeatsStepper.autorepeat = true
+        availableSeatsStepper.maximumValue = 100
+    }
+    
+//    private func configureTapGestureForKeyboardDismissal() {
+//        let gestureRec = UITapGestureRecognizer()
+//        gestureRec.addTarget(self, action: "didTapView:")
+//        self.view.addGestureRecognizer(gestureRec)
+////    }
+//    
+//    //resigns responder for keyboards
+//    func didTapView(sender: UIView) {
+//        if fullName.isFirstResponder() {
+//            fullName.resignFirstResponder()
+//        }
+//        
+//        if phoneNumber.isFirstResponder() {
+//            phoneNumber.resignFirstResponder()
+//        }
+//    }
+    
+    //implements delegate method for returning text field
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
     }
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
@@ -55,6 +96,22 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
             let datePickerTableViewCell = cell as! DatePickerCell
             datePickerTableViewCell.selectedInTableView(tableView)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            print(datePickerTableViewCell.date)
+        }
+        
+        //check for index of location picker
+        if cell.reuseIdentifier == "pickup" {
+            let locationPicker = LocationPickerViewController()
+            
+            if self.location != nil {
+                locationPicker.location = self.location
+            }
+            
+            locationPicker.completion = { location in
+                self.location = location
+            }
+            
+            navigationController?.pushViewController(locationPicker, animated: true)
         }
     }
     
@@ -69,5 +126,15 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         if let eventPickerViewController = segue.sourceViewController as? TempEventTableViewController, selectedEvent = eventPickerViewController.selectedEvent {
             event = selectedEvent
         }
+    }
+    
+    // Action for adding/subtracting from the available seats
+    @IBAction func availableSeatsStepperChanged(sender: UIStepper) {
+        numAvailableSeatsLabel.text = Int(sender.value).description
+    }
+    
+    // Action for submitting an offer for a ride
+    @IBAction func submitOfferRideForm(sender: AnyObject) {
+        //verify form is correct and submit it through the API
     }
 }
