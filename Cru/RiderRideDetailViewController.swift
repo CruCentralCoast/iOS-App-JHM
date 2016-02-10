@@ -20,7 +20,7 @@ class RiderRideDetailViewController: UIViewController {
     var event: Event?
     var ride: Ride?
     
-    @IBOutlet weak var eventTitle: UILabel!
+    @IBOutlet weak var eventButton: UIButton!
     @IBOutlet weak var direction: UILabel!
     @IBOutlet weak var directionIcon: UIImageView!
     @IBOutlet weak var driverName: UILabel!
@@ -35,7 +35,7 @@ class RiderRideDetailViewController: UIViewController {
         
         navigationItem.title = "Ride Details"
         
-        eventTitle.text = event!.name
+        eventButton.setTitle(event!.name, forState: UIControlState.Normal)
         date.text = String(ride!.month) + "   " + String(ride!.day) + "   " + ride!.time
         
         //TODO: get address from ride 
@@ -65,6 +65,18 @@ class RiderRideDetailViewController: UIViewController {
             direction.text = toEvent
         }
         
+    }
+    
+    @IBAction func eventLabelPressed(sender: AnyObject) {
+        self.performSegueWithIdentifier("eventDetailSegue", sender: self)
+        print("go to event!")
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "eventDetailSegue"){
+            let vc = segue.destinationViewController as! EventDetailsViewController
+            vc.event = self.event
+        }
     }
     
     func setupMap(){
