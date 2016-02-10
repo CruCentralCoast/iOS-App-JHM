@@ -1,8 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iNM-Bt-tgs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iNM-Bt-tgs">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Driver Ride Detail View Controller-->
         <scene sceneID="7KB-Ej-gOn">
@@ -16,25 +25,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxr-bU-jWp">
-                                <rect key="frame" x="172" y="180" width="158" height="21"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="1YJ-In-cY3">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xWS-SD-Xhe">
+                                        <rect key="frame" x="0.0" y="-1" width="600" height="537"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="full car" translatesAutoresizingMaskIntoConstraints="NO" id="m47-VJ-jL6">
+                                                <rect key="frame" x="152" y="20" width="281" height="162"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="event name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pxr-bU-jWp">
+                                                <rect key="frame" x="34" y="190" width="158" height="21"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="25"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure date / time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yU-Uc-yPJ">
+                                                <rect key="frame" x="34" y="221" width="181" height="32"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Departure Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxr-5D-JdO">
+                                                <rect key="frame" x="28" y="287" width="181" height="39"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kai-El-QZC">
+                                                <rect key="frame" x="0.0" y="498" width="600" height="40"/>
+                                                <color key="backgroundColor" red="0.72942708333333339" green="0.0" blue="0.0068287180404468188" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="uZU-mj-d1a"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <state key="normal" title="Cancel Ride">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                </state>
+                                            </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yi-OS-ac5">
+                                                <rect key="frame" x="28" y="343" width="148" height="28"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="22"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="kai-El-QZC" firstAttribute="leading" secondItem="xWS-SD-Xhe" secondAttribute="leading" id="0jf-fH-fWZ"/>
+                                            <constraint firstItem="m47-VJ-jL6" firstAttribute="centerX" secondItem="xWS-SD-Xhe" secondAttribute="centerX" id="634-OZ-Etc"/>
+                                            <constraint firstAttribute="trailing" secondItem="kai-El-QZC" secondAttribute="trailing" id="N41-eu-wbd"/>
+                                            <constraint firstItem="gxr-5D-JdO" firstAttribute="top" secondItem="0yU-Uc-yPJ" secondAttribute="bottom" constant="34" id="VUt-q4-8DI"/>
+                                            <constraint firstItem="Pxr-bU-jWp" firstAttribute="top" secondItem="m47-VJ-jL6" secondAttribute="bottom" constant="8" id="c5N-g1-iis"/>
+                                            <constraint firstItem="8Yi-OS-ac5" firstAttribute="top" secondItem="gxr-5D-JdO" secondAttribute="bottom" constant="17" id="fgV-31-S1y"/>
+                                            <constraint firstItem="m47-VJ-jL6" firstAttribute="top" secondItem="xWS-SD-Xhe" secondAttribute="top" constant="20" id="gd4-pK-17h"/>
+                                            <constraint firstItem="0yU-Uc-yPJ" firstAttribute="top" secondItem="Pxr-bU-jWp" secondAttribute="bottom" constant="10" id="jWM-UF-7pG"/>
+                                            <constraint firstItem="kai-El-QZC" firstAttribute="top" secondItem="8Yi-OS-ac5" secondAttribute="bottom" constant="20" id="py3-XD-itn"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="xWS-SD-Xhe" firstAttribute="top" secondItem="1YJ-In-cY3" secondAttribute="top" id="2WG-sV-wcG"/>
+                                    <constraint firstAttribute="trailing" secondItem="xWS-SD-Xhe" secondAttribute="trailing" id="4Wg-Yl-SJH"/>
+                                    <constraint firstItem="xWS-SD-Xhe" firstAttribute="leading" secondItem="1YJ-In-cY3" secondAttribute="leading" id="51B-db-7CS"/>
+                                    <constraint firstAttribute="bottom" secondItem="xWS-SD-Xhe" secondAttribute="bottom" id="AC5-kJ-AEC"/>
+                                    <constraint firstItem="xWS-SD-Xhe" firstAttribute="height" secondItem="1YJ-In-cY3" secondAttribute="height" id="CU5-co-lYQ"/>
+                                    <constraint firstItem="xWS-SD-Xhe" firstAttribute="centerY" secondItem="1YJ-In-cY3" secondAttribute="centerY" id="Fm0-8q-bcn"/>
+                                    <constraint firstItem="xWS-SD-Xhe" firstAttribute="centerX" secondItem="1YJ-In-cY3" secondAttribute="centerX" id="Xg0-wA-2Zu"/>
+                                </constraints>
+                            </scrollView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Pxr-bU-jWp" firstAttribute="centerY" secondItem="IQJ-GA-ijx" secondAttribute="centerY" id="LUY-b4-Uar"/>
-                            <constraint firstItem="Pxr-bU-jWp" firstAttribute="centerX" secondItem="IQJ-GA-ijx" secondAttribute="centerX" id="ZmH-Jg-cgl"/>
+                            <constraint firstItem="1YJ-In-cY3" firstAttribute="width" secondItem="IQJ-GA-ijx" secondAttribute="width" id="Jhf-zq-SEW"/>
+                            <constraint firstItem="1YJ-In-cY3" firstAttribute="height" secondItem="IQJ-GA-ijx" secondAttribute="height" id="Pdu-JV-fXI"/>
+                            <constraint firstItem="1YJ-In-cY3" firstAttribute="centerX" secondItem="IQJ-GA-ijx" secondAttribute="centerX" id="Wzh-zN-lnx"/>
+                            <constraint firstItem="1YJ-In-cY3" firstAttribute="centerY" secondItem="IQJ-GA-ijx" secondAttribute="centerY" id="Yeo-6P-YQy"/>
                         </constraints>
                     </view>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO">
                         <color key="barTintColor" red="0.72628045080000003" green="0.72629773620000004" blue="0.72628843779999996" alpha="1" colorSpace="deviceRGB"/>
                     </simulatedNavigationBarMetrics>
                     <connections>
+                        <outlet property="carImage" destination="m47-VJ-jL6" id="PDm-GG-NbM"/>
                         <outlet property="rideName" destination="Pxr-bU-jWp" id="K1N-67-sd3"/>
                     </connections>
                 </viewController>
@@ -43,4 +118,7 @@
             <point key="canvasLocation" x="1679" y="588"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="full car" width="381" height="332"/>
+    </resources>
 </document>

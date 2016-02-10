@@ -9,15 +9,38 @@
 import UIKit
 
 class DriverRideDetailViewController: UIViewController {
-    var event: Event?
-    var ride: Ride?
+    var event: Event!
+    var ride: Ride!
     
     @IBOutlet weak var rideName: UILabel!
+    @IBOutlet weak var carImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rideName.text = event!.name!
         // Do any additional setup after loading the view.
+        
+        //Change the image depending on the number of passengers
+        if(Int(ride.seats) == 2){
+            carImage.image = UIImage(named: "car-2")
+        }
+        else if(Int(ride.seats) == 3){
+            carImage.image = UIImage(named: "car-3")
+        }
+        else if(Int(ride.seats) == 4){
+            carImage.image = UIImage(named: "car-4")
+        }
+        else if(Int(ride.seats) == 4){
+            carImage.image = UIImage(named: "car-5")
+        }
+        else {
+            carImage.image = UIImage(named: "car-full")
+        }
+        
+        
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
