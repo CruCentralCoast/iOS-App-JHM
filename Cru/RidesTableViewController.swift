@@ -110,10 +110,8 @@ class RidesTableViewController: UITableViewController {
         
         
         cell.day.text = String(ride.day)
+        cell.month.text = ride.month
         
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
-        let months = dateFormatter.shortMonthSymbols
-        cell.month.text = months[ride.month - 1].uppercaseString
         
         //TODO: Change this to check against GCM id not driver name
         if(ride.driverName == myName){
@@ -126,22 +124,6 @@ class RidesTableViewController: UITableViewController {
             cell.icon.image = UIImage(named: rider)
         }
         
-        
-//        if(ride.direction == roundTripDirection){
-//            cell.tripIcon.image = UIImage(named: "twoway")
-//            cell.rideDirection.text = roundTrip
-//        }
-//        else if(ride.direction == "from"){
-//            cell.tripIcon.image = UIImage(named: "oneway")
-//            cell.rideDirection.text = fromEvent
-//            
-//            //mirrors arrow
-//            cell.tripIcon.transform = CGAffineTransformMakeScale(-1, 1)
-//        }
-//        else if (ride.direction == "to"){
-//            cell.tripIcon.image = UIImage(named: "oneway")
-//            cell.rideDirection.text = toEvent
-//        }
         
         
         cell.eventTitle.text = getEventNameForEventId(ride.eventId)

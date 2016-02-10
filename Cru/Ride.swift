@@ -20,7 +20,7 @@ class Ride {
     var time: String
     var passengers: [String]
     var day = 3
-    var month = 3
+    var month = "JAN"
     var hour = 3
     var minute = 3
     
@@ -35,7 +35,7 @@ class Ride {
         driverNumber = "123456789"
         driverName = "Max crane"
         eventId = "3432432414"
-        time = "5:00"
+        time = "5:00 pm"
         passengers = [String]()
         
         if (dict.objectForKey("_id") != nil){
@@ -67,13 +67,42 @@ class Ride {
             
             let components = ServerUtils.dateFromString(time)!
             self.day = components.day
-            self.month = components.month
+            let monthNum = components.month
             self.hour = components.hour
             self.minute = components.minute
+            
+            self.time = Ride.createTime(self.hour, minute: self.minute)
+            
+            //get month symbol from number
+            let dateFormatter: NSDateFormatter = NSDateFormatter()
+            let months = dateFormatter.shortMonthSymbols
+            self.month = months[monthNum - 1].uppercaseString
         }
         if (dict.objectForKey("passengers") != nil){
             passengers = dict.objectForKey("passengers") as! [String]
         }
 
+    }
+    
+    static func createTime(hour: Int, minute: Int)->String{
+        var period = "am"
+        var newHour = hour
+        var minuteAsString = ""
+        
+        
+        if(hour > 12){
+            period = "pm"
+            newHour = hour - 12
+        }
+        
+        if(minute < 10){
+            minuteAsString = "0" + String(minute)
+        }
+        else{
+            minuteAsString = String(minute)
+        }
+        
+        
+        return String(newHour) + ":" + minuteAsString + " " + period
     }
 }
