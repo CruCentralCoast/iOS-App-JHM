@@ -24,24 +24,24 @@ class RidesTableViewController: UITableViewController {
     
     //TODO: Get gcm id associated with device and only populate rides associated with that id
     let myName = "Daniel Toy"
+    var gcmId = "1234567"
      
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInserting)
-        ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
-        //TODO: Get rides from http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/api/ride/list
-	
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+        gcmId = SubscriptionManager.loadGCMToken()
 
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
+            
+        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertRide)
+        //ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInserting)
+        ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
     }
     
     func insertRide(dict : NSDictionary) {
+        print("inserting a ride")
+        
         //create ride
         let newRide = Ride(dict: dict)
         
@@ -85,7 +85,9 @@ class RidesTableViewController: UITableViewController {
             }
         }
 
-        return Event(name: "Max's Golf Lessons", id: "notarealid")!
+        return Event(id: "123", name: "Erica's Golf Lessons", image: nil, startDate: "mon", endDate: "sat", street: "1123 Crap St.", suburb: "LA", postcode: "93401", description: "Come learn how to golf", url: "google.com", imageUrl: "idk.com")!
+        //return Event(name: "Max's Golf Lessons", id: "notarealid")!
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -114,7 +116,8 @@ class RidesTableViewController: UITableViewController {
         
         
         //TODO: Change this to check against GCM id not driver name
-        if(ride.driverName == myName){
+        //if(ride.driverName == myName){
+        if(ride.gcmId == self.gcmId){
             cell.rideType.text = driver
             cell.icon.image  = UIImage(named: driver)
         }
