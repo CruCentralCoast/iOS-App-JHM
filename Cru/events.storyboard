@@ -56,7 +56,7 @@
         <!--Event Details View Controller-->
         <scene sceneID="K7c-mT-sON">
             <objects>
-                <viewController id="wSV-ke-WyD" customClass="EventDetailsViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="eventDetail" id="wSV-ke-WyD" customClass="EventDetailsViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CX0-Zb-ZPp"/>
                         <viewControllerLayoutGuide type="bottom" id="y2c-A1-M5Z"/>

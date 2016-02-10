@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -39,27 +41,20 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max's Golf Lessons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-Tj-hv5">
-                                            <rect key="frame" x="55" y="17" width="464" height="36"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAC-q7-yMb" userLabel="Month">
+                                            <rect key="frame" x="8" y="17" width="47" height="22"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="25"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nov" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAC-q7-yMb" userLabel="Month">
-                                            <rect key="frame" x="8" y="8" width="47" height="22"/>
-                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="47" id="V9A-DV-ggc"/>
+                                            </constraints>
                                             <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gON-aL-NiY" userLabel="Day">
-                                            <rect key="frame" x="8" y="18" width="39" height="39"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gON-aL-NiY" userLabel="Day">
+                                            <rect key="frame" x="8" y="32" width="47" height="34"/>
                                             <animations/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="39" id="HUk-lN-pL9"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="38"/>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="32"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -77,27 +72,34 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max's Golf Lessons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-Tj-hv5">
+                                            <rect key="frame" x="63" y="17" width="443" height="36"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="25"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <animations/>
                                     <constraints>
-                                        <constraint firstItem="gON-aL-NiY" firstAttribute="leading" secondItem="tNf-GI-xll" secondAttribute="leadingMargin" id="47N-ab-gsv"/>
-                                        <constraint firstItem="dAC-q7-yMb" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" id="Ayb-Z0-SGX"/>
-                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="top" secondItem="dAC-q7-yMb" secondAttribute="top" id="Geh-By-NpW"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="fm3-c5-BTu" secondAttribute="bottom" constant="14" id="HEX-dU-huc"/>
-                                        <constraint firstItem="uSu-Tj-hv5" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="9" id="Ixv-2I-6EA"/>
-                                        <constraint firstItem="gON-aL-NiY" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="10" id="LCE-se-IKp"/>
-                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="40" id="Qtf-ar-vCi"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="XNX-Mu-Qci" secondAttribute="bottom" constant="-3" id="YAs-JV-RG7"/>
-                                        <constraint firstItem="gON-aL-NiY" firstAttribute="centerY" secondItem="tNf-GI-xll" secondAttribute="centerY" id="dBa-kR-Pka"/>
-                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="leading" secondItem="fm3-c5-BTu" secondAttribute="leading" id="ep8-Qk-lsr"/>
-                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="trailing" secondItem="XNX-Mu-Qci" secondAttribute="trailing" id="fCY-Pg-che"/>
-                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="trailing" secondItem="tNf-GI-xll" secondAttribute="trailingMargin" id="iBw-KM-7dP"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="uSu-Tj-hv5" secondAttribute="bottom" constant="13" id="jjD-kl-yMd"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="dAC-q7-yMb" secondAttribute="bottom" constant="36" id="la8-ic-aUt"/>
-                                        <constraint firstItem="gON-aL-NiY" firstAttribute="leading" secondItem="dAC-q7-yMb" secondAttribute="leading" id="mvl-BL-ZSG"/>
-                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="leading" secondItem="uSu-Tj-hv5" secondAttribute="trailing" constant="22" id="qcS-bq-crr"/>
-                                        <constraint firstItem="uSu-Tj-hv5" firstAttribute="leading" secondItem="gON-aL-NiY" secondAttribute="trailing" constant="8" symbolic="YES" id="tDL-Ej-KGL"/>
-                                        <constraint firstItem="uSu-Tj-hv5" firstAttribute="leading" secondItem="dAC-q7-yMb" secondAttribute="trailing" id="xzU-29-QzI"/>
+                                        <constraint firstItem="uSu-Tj-hv5" firstAttribute="leading" secondItem="dAC-q7-yMb" secondAttribute="trailing" constant="8" symbolic="YES" id="0ba-sh-1dn"/>
+                                        <constraint firstItem="dAC-q7-yMb" firstAttribute="leading" secondItem="gON-aL-NiY" secondAttribute="leading" id="1TS-YL-DL8"/>
+                                        <constraint firstItem="gON-aL-NiY" firstAttribute="leading" secondItem="tNf-GI-xll" secondAttribute="leadingMargin" id="1Vs-lc-G8y"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="40" id="4jD-Ie-gSW"/>
+                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" id="5yp-x0-2cm"/>
+                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="leading" secondItem="uSu-Tj-hv5" secondAttribute="trailing" constant="35" id="7kC-t0-bzf"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="trailing" secondItem="fm3-c5-BTu" secondAttribute="trailing" id="A0y-pR-LjN"/>
+                                        <constraint firstItem="dAC-q7-yMb" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="9" id="CBL-D4-HQh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dAC-q7-yMb" secondAttribute="bottom" constant="27" id="I2W-MR-fVu"/>
+                                        <constraint firstItem="dAC-q7-yMb" firstAttribute="top" secondItem="uSu-Tj-hv5" secondAttribute="top" id="NWI-v1-86g"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uSu-Tj-hv5" secondAttribute="bottom" constant="13" id="TXZ-bi-5Vq"/>
+                                        <constraint firstItem="gON-aL-NiY" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="24" id="X78-H5-st6"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="leading" secondItem="fm3-c5-BTu" secondAttribute="leading" id="bmD-K6-N4X"/>
+                                        <constraint firstItem="uSu-Tj-hv5" firstAttribute="leading" secondItem="gON-aL-NiY" secondAttribute="trailing" constant="8" symbolic="YES" id="cfk-zA-bwN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fm3-c5-BTu" secondAttribute="bottom" constant="14" id="iAE-ke-asH"/>
+                                        <constraint firstItem="gON-aL-NiY" firstAttribute="bottom" secondItem="tNf-GI-xll" secondAttribute="bottomMargin" id="rdi-Un-Htx"/>
+                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="trailing" secondItem="tNf-GI-xll" secondAttribute="trailingMargin" id="x9J-vC-8yg"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="baseline" secondItem="gON-aL-NiY" secondAttribute="firstBaseline" id="yDd-nc-Zkv"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
