@@ -11,57 +11,33 @@ import Foundation
 class Ride {
     var id: String
     var direction: String
-    var seats: String
-    var radius: String
+    var seats: Int
+    var radius: Int
     var gcmId: String
     var driverNumber: String
     var driverName: String
     var eventId: String
     var time: String
+    var passengers: [String]
+    var day = 3
+    var month = "JAN"
+    var hour = 3
+    var minute = 3
     
     
-    //MARK: Properties
-
-//    var driver:User
-//    var passengers:[User]?
-//    var seats:Int
-//    var event:Event
-//    var departureTime:String
-//    var departureAddress:String
-//    var roundTrip:Bool
-//    
-//    
-//    //MARK: Initialization
-//
-//    init?(driver:User, seats:Int, event:Event, departureTime:String, departureAddress:String, roundTrip:Bool) {
-//        self.driver = driver
-//        self.seats = seats
-//        self.event = event
-//        self.departureTime = departureTime
-//        self.departureAddress = departureAddress
-//        self.roundTrip = roundTrip
-//    }
-    
-    
-    
-//    init?(id: String, driverName: String, eventId: String, direction: String){
-//        self.id = id
-//        self.driverName = driverName
-//        self.eventId = eventId
-//        self.direction = direction
-//    }
     
     init?(dict: NSDictionary){
         id = "blah"
         direction = "both"
-        seats = "3"
-        radius = "1"
+        seats = 3
+        radius = 1
         gcmId = "blah"
         driverNumber = "123456789"
         driverName = "Max crane"
         eventId = "3432432414"
-        time = "5:00"
-
+        time = "5:00 pm"
+        passengers = [String]()
+        
         if (dict.objectForKey("_id") != nil){
             id = dict.objectForKey("_id") as! String
         }
@@ -69,10 +45,10 @@ class Ride {
             direction = dict.objectForKey("direction") as! String
         }
         if (dict.objectForKey("seats") != nil){
-            //seats = dict.objectForKey("seats") as! NSNumber
+            seats = dict.objectForKey("seats") as! Int
         }
         if (dict.objectForKey("radius") != nil){
-            //radius = dict.objectForKey("radius") as! String
+            radius = dict.objectForKey("radius") as! Int
         }
         if (dict.objectForKey("gcm_id") != nil){
             gcmId = dict.objectForKey("gcm_id") as! String
@@ -88,10 +64,45 @@ class Ride {
         }
         if (dict.objectForKey("time") != nil){
             time = dict.objectForKey("time") as! String
+            
+            let components = ServerUtils.dateFromString(time)!
+            self.day = components.day
+            let monthNum = components.month
+            self.hour = components.hour
+            self.minute = components.minute
+            
+            self.time = Ride.createTime(self.hour, minute: self.minute)
+            
+            //get month symbol from number
+            let dateFormatter: NSDateFormatter = NSDateFormatter()
+            let months = dateFormatter.shortMonthSymbols
+            self.month = months[monthNum - 1].uppercaseString
+        }
+        if (dict.objectForKey("passengers") != nil){
+            passengers = dict.objectForKey("passengers") as! [String]
         }
 
-
+    }
+    
+    static func createTime(hour: Int, minute: Int)->String{
+        var period = "am"
+        var newHour = hour
+        var minuteAsString = ""
         
-
+        
+        if(hour > 12){
+            period = "pm"
+            newHour = hour - 12
+        }
+        
+        if(minute < 10){
+            minuteAsString = "0" + String(minute)
+        }
+        else{
+            minuteAsString = String(minute)
+        }
+        
+        
+        return String(newHour) + ":" + minuteAsString + " " + period
     }
 }

@@ -3,10 +3,12 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="FreigSanProBook.otf">
-            <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
@@ -39,61 +41,74 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="74"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="twoway" translatesAutoresizingMaskIntoConstraints="NO" id="cUx-LV-TPr">
-                                            <rect key="frame" x="88" y="0.0" width="51" height="44"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="NOV" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAC-q7-yMb" userLabel="Month">
+                                            <rect key="frame" x="8" y="17" width="47" height="22"/>
                                             <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="47" id="V9A-DV-ggc"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gON-aL-NiY" userLabel="Day">
+                                            <rect key="frame" x="8" y="32" width="47" height="34"/>
+                                            <animations/>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="32"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="driver" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-c5-BTu">
+                                            <rect key="frame" x="541" y="8" width="51" height="44"/>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="51" id="vZD-ve-8GE"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Max's Golf Lessons" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-Tj-hv5">
-                                            <rect key="frame" x="168" y="8" width="187" height="36"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="round-trip" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23v-W4-paO">
-                                            <rect key="frame" x="74" y="45" width="78" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="driving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-Mu-Qci">
+                                            <rect key="frame" x="541" y="48" width="51" height="21"/>
                                             <animations/>
                                             <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="5:00pm" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dAC-q7-yMb">
-                                            <rect key="frame" x="168" y="45" width="79" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max's Golf Lessons" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uSu-Tj-hv5">
+                                            <rect key="frame" x="63" y="17" width="443" height="36"/>
                                             <animations/>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="driver" translatesAutoresizingMaskIntoConstraints="NO" id="fm3-c5-BTu">
-                                            <rect key="frame" x="8" y="0.0" width="51" height="44"/>
-                                            <animations/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="driving" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XNX-Mu-Qci">
-                                            <rect key="frame" x="8" y="45" width="53" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1/16/16 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gON-aL-NiY">
-                                            <rect key="frame" x="242" y="45" width="69" height="21"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="25"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <animations/>
+                                    <constraints>
+                                        <constraint firstItem="uSu-Tj-hv5" firstAttribute="leading" secondItem="dAC-q7-yMb" secondAttribute="trailing" constant="8" symbolic="YES" id="0ba-sh-1dn"/>
+                                        <constraint firstItem="dAC-q7-yMb" firstAttribute="leading" secondItem="gON-aL-NiY" secondAttribute="leading" id="1TS-YL-DL8"/>
+                                        <constraint firstItem="gON-aL-NiY" firstAttribute="leading" secondItem="tNf-GI-xll" secondAttribute="leadingMargin" id="1Vs-lc-G8y"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="40" id="4jD-Ie-gSW"/>
+                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" id="5yp-x0-2cm"/>
+                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="leading" secondItem="uSu-Tj-hv5" secondAttribute="trailing" constant="35" id="7kC-t0-bzf"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="trailing" secondItem="fm3-c5-BTu" secondAttribute="trailing" id="A0y-pR-LjN"/>
+                                        <constraint firstItem="dAC-q7-yMb" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="9" id="CBL-D4-HQh"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="dAC-q7-yMb" secondAttribute="bottom" constant="27" id="I2W-MR-fVu"/>
+                                        <constraint firstItem="dAC-q7-yMb" firstAttribute="top" secondItem="uSu-Tj-hv5" secondAttribute="top" id="NWI-v1-86g"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="uSu-Tj-hv5" secondAttribute="bottom" constant="13" id="TXZ-bi-5Vq"/>
+                                        <constraint firstItem="gON-aL-NiY" firstAttribute="top" secondItem="tNf-GI-xll" secondAttribute="topMargin" constant="24" id="X78-H5-st6"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="leading" secondItem="fm3-c5-BTu" secondAttribute="leading" id="bmD-K6-N4X"/>
+                                        <constraint firstItem="uSu-Tj-hv5" firstAttribute="leading" secondItem="gON-aL-NiY" secondAttribute="trailing" constant="8" symbolic="YES" id="cfk-zA-bwN"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="fm3-c5-BTu" secondAttribute="bottom" constant="14" id="iAE-ke-asH"/>
+                                        <constraint firstItem="gON-aL-NiY" firstAttribute="bottom" secondItem="tNf-GI-xll" secondAttribute="bottomMargin" id="rdi-Un-Htx"/>
+                                        <constraint firstItem="fm3-c5-BTu" firstAttribute="trailing" secondItem="tNf-GI-xll" secondAttribute="trailingMargin" id="x9J-vC-8yg"/>
+                                        <constraint firstItem="XNX-Mu-Qci" firstAttribute="baseline" secondItem="gON-aL-NiY" secondAttribute="firstBaseline" id="yDd-nc-Zkv"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <animations/>
                                 <connections>
-                                    <outlet property="date" destination="gON-aL-NiY" id="YDa-zv-yx5"/>
+                                    <outlet property="day" destination="gON-aL-NiY" id="MPE-fH-fxu"/>
                                     <outlet property="eventTitle" destination="uSu-Tj-hv5" id="KgX-fN-Zvc"/>
                                     <outlet property="icon" destination="fm3-c5-BTu" id="KVu-4Y-HXT"/>
-                                    <outlet property="rideDirection" destination="23v-W4-paO" id="hpK-qY-1ee"/>
+                                    <outlet property="month" destination="dAC-q7-yMb" id="aig-gZ-eik"/>
                                     <outlet property="rideType" destination="XNX-Mu-Qci" id="Mvg-Kf-7gf"/>
-                                    <outlet property="time" destination="dAC-q7-yMb" id="eQh-j9-kpB"/>
-                                    <outlet property="tripIcon" destination="cUx-LV-TPr" id="VKS-Ta-563"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -181,6 +196,5 @@
     <resources>
         <image name="driver" width="512" height="512"/>
         <image name="menuIcon" width="27" height="18"/>
-        <image name="twoway" width="512" height="512"/>
     </resources>
 </document>
