@@ -42,7 +42,7 @@ class ServerUtils {
                         print("\(rideIds)")
         
                         let inQuery = ["$in": rideIds]
-                        let query = ["_id": inQuery]
+                        let query = ["passengers": inQuery]
                         
                         let body = try NSJSONSerialization.dataWithJSONObject(query, options: NSJSONWritingOptions.PrettyPrinted)
                         let string1 = NSString(data: body, encoding: NSUTF8StringEncoding)

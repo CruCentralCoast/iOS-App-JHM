@@ -160,7 +160,7 @@ class RidesTableViewController: UITableViewController {
             tappedEvent = getEventForEventId((tappedRide?.eventId)!)
         
         
-            if(tappedRide?.driverName == myName){
+            if(tappedRide?.gcmId == self.gcmId){
                 self.performSegueWithIdentifier("driverdetailsegue", sender: self)
             }
             else{
