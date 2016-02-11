@@ -18,6 +18,52 @@
             </objects>
             <point key="canvasLocation" x="2388.5" y="2587"/>
         </scene>
+        <!--Summer Mission Collection View Controller-->
+        <scene sceneID="Bvq-ZM-bAb">
+            <objects>
+                <collectionViewController id="vyg-d7-iVR" customClass="SummerMissionCollectionViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="L8H-Oj-sMG">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZCT-2J-qAc">
+                            <size key="itemSize" width="280" height="280"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MissionCell" id="2F6-cV-QoF" customClass="SummerMissionCollectionViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDC-xn-eE8" userLabel="nameLabel">
+                                            <rect key="frame" x="40" y="95" width="200" height="90"/>
+                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="32"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <connections>
+                                    <outlet property="nameLabel" destination="uDC-xn-eE8" id="rah-vE-V2L"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="vyg-d7-iVR" id="rLi-ub-PVA"/>
+                            <outlet property="delegate" destination="vyg-d7-iVR" id="FZv-sf-wpP"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jil-5p-Sk0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1742" y="3254"/>
+        </scene>
         <!--Summer Missions-->
         <scene sceneID="fq2-UI-axU">
             <objects>
@@ -33,7 +79,7 @@
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QDT-HE-TCP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <connections>
-                                    <segue destination="ElO-TB-0lg" kind="embed" id="z2O-AQ-fNh"/>
+                                    <segue destination="vyg-d7-iVR" kind="embed" id="HUF-0H-SmR"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -76,45 +122,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sd-mP-dfv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="964" y="2587"/>
-        </scene>
-        <!--Summer Mission Table View Controller-->
-        <scene sceneID="HTi-pc-yrd">
-            <objects>
-                <tableViewController id="ElO-TB-0lg" customClass="SummerMissionTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" sectionHeaderHeight="28" sectionFooterHeight="28" id="DFN-ku-RdA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SummerMissionTableViewCell" rowHeight="150" id="cUw-lt-FbJ" customClass="SummerMissionTableViewCell" customModule="Cru" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="600" height="150"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="cUw-lt-FbJ" id="Bxz-pL-TrX">
-                                    <rect key="frame" x="0.0" y="0.0" width="567" height="149"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Summer Mission Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lrx-X9-KL9" userLabel="locationLabel">
-                                            <rect key="frame" x="40" y="55" width="552" height="40"/>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="28"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                </tableViewCellContentView>
-                                <connections>
-                                    <outlet property="nameLabel" destination="lrx-X9-KL9" id="dRR-sS-J04"/>
-                                </connections>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="ElO-TB-0lg" id="d4d-l8-a6r"/>
-                            <outlet property="delegate" destination="ElO-TB-0lg" id="AQa-bY-eOF"/>
-                        </connections>
-                    </tableView>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yt6-sr-GzJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1742" y="3286"/>
         </scene>
     </scenes>
     <resources>

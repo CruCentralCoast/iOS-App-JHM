@@ -1,5 +1,5 @@
 //
-//  SummerMissionTableViewController.swift
+//  SummerMissionCollectioneViewController.swift
 //  Cru
 //
 //  Created by Quan Tran on 2/2/16.
@@ -9,35 +9,21 @@
 import Foundation
 import UIKit
 
-class SummerMissionTableViewController: UITableViewController {
+class SummerMissionCollectionViewController: UICollectionViewController {
     //MARK: Properties
-    var missions = [SummerMission]()
-    
+    private let reuseIdentifier = "MissionCell"
+    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
+    private var missions: [SummerMission] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        //DBUtils.loadResources("event", inserter: insertEvent)
-        loadSampleMissions()
+        print("ofsadgkn")
+        //delegate = nil
+        ServerUtils.loadResources("summermission", inserter: insertMission)
     }
     
-    func loadSampleMissions() {
-        self.tableView.beginUpdates()
-
-        missions.insert(SummerMission(location: "Thailand or some shit", url: "google.com", description: "Stuff's happening", cost: 9001.00)!, atIndex: 0)
-        
-        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-        
-        missions.insert(SummerMission(location: "honestly who gives a fuck", url: "google.com", description: "Stuff's happening", cost: 9001.00)!, atIndex: 0)
-        
-        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-        
-        self.tableView.endUpdates()
+    func insertMission(dict : NSDictionary) {
+        self.missions.insert(SummerMission(dict: dict)!, atIndex: 0)
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,11 +33,12 @@ class SummerMissionTableViewController: UITableViewController {
     
     
     // MARK: - Table view data source
-    
+    /*
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
     }
-    
+*/
+    /*
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return missions.count
     }
@@ -60,7 +47,7 @@ class SummerMissionTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cellIdentifier = "SummerMissionTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SummerMissionTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! SummerMissionCollectionViewCell
         
         // Fetches the appropriate meal for the data source layout.
         let mission = missions[indexPath.row]
@@ -76,10 +63,11 @@ class SummerMissionTableViewController: UITableViewController {
         
         cell.dateLabel.text = String(event.startDay!)
         */
-        cell.nameLabel.text = mission.location
+        cell.nameLabel.text = mission.name
         
         return cell
     }
+    */
     
     /*
     // Override to support conditional editing of the table view.
@@ -89,7 +77,7 @@ class SummerMissionTableViewController: UITableViewController {
     }
     */
     
-    
+    /*
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
@@ -100,7 +88,7 @@ class SummerMissionTableViewController: UITableViewController {
             tableView.insertRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
     }
-    
+    */
     
     /*
     // Override to support rearranging the table view.
@@ -131,5 +119,51 @@ class SummerMissionTableViewController: UITableViewController {
         */
         
     }
+}
 
+// UICollectionViewDelegateFlowLayout conformance
+extension SummerMissionCollectionViewController {
+    //1
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
+            /*
+            let flickrPhoto =  photoForIndexPath(indexPath)
+            //2
+            if var size = flickrPhoto.thumbnail?.size {
+                size.width += 10
+                size.height += 10
+                return size
+            }
+*/
+            return CGSize(width: 200, height: 100)
+    }
+    
+    //3
+    func collectionView(collectionView: UICollectionView,
+        layout collectionViewLayout: UICollectionViewLayout,
+        insetForSectionAtIndex section: Int) -> UIEdgeInsets {
+            return sectionInsets
+    }
+}
+
+// UICollectionViewDataSource conformance
+extension SummerMissionCollectionViewController {
+    //1
+    override func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return missions.count
+    }
+    
+    //2
+    override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return missions.count
+    }
+    
+    //3
+    override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(reuseIdentifier, forIndexPath: indexPath) as! SummerMissionCollectionViewCell
+        cell.backgroundColor = UIColor.whiteColor()
+        // Configure the cell
+        return cell
+    }
 }

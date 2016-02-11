@@ -11,39 +11,62 @@ import Foundation
 class SummerMission {
     
     //MARK: Properties
-    var id: String
-    var startDate: NSDate!
-    var endDate: NSDate!
-    var url: String
-    var location: String?
-    var image: UIImage!
-    var description: String
-    var leaders: [User]!
-    var cost: Double
+    var id: String?
+    var slug: String?
+    var description: String?
+    var name: String?
+    var url: String?
+    var cost: Double?
+    var leaders: String?
+    var startDate: (Int, Int, Int)?
+    var endDate: (Int, Int, Int)?
+    var state: String?
+    var suburb: String?
+    var street: String?
+    var country: String?
+    var image: UIImage?
     
     
     //MARK: Initialization
-    init?(startDate: NSDate, endDate: NSDate, location: String, url: String, image: UIImage,description: String, leaders: [User], cost: Double) {
-        self.id = "ID GOES HERE"
-        self.startDate = startDate
-        self.endDate = endDate
-        self.url = url
-        self.location = location
-        self.image = image
+    init?(id: String?, slug: String?, description: String?, name: String?, url: String?, cost: Double?, leaders: String?, startDate: String?, endDate: String?, state: String?, suburb: String?, street: String?, imageUrl: String?) {
+        self.id = id
+        self.slug = slug
         self.description = description
-        self.leaders = leaders
+        self.name = name
+        self.url = url
         self.cost = cost
+        self.leaders = leaders
+        let start = ServerUtils.dateFromString(startDate!)!
+        self.startDate = (start.month, start.year, start.day)
+        let end = ServerUtils.dateFromString(endDate!)!
+        self.endDate = (end.month, end.year, end.day)
+        self.state = state
+        self.suburb = suburb
+        self.street = street
+        
+        if (imageUrl != nil) {
+            let cloudURL = NSURL(string: imageUrl!)
+            let imageData = NSData(contentsOfURL: cloudURL!)
+            self.image = UIImage(data: imageData!)
+        }
     }
     
-    init?(location: String, url: String, description: String, cost: Double) {
-        self.id = "ID GOES HERE"
-        self.startDate = nil
-        self.endDate = nil
-        self.url = url
-        self.location = location
-        self.image = nil
-        self.description = description
-        self.leaders = nil
-        self.cost = cost
+    convenience init?(dict : NSDictionary) {
+        let id = dict["_id"] as! String?
+        let slug = dict["slug"] as! String?
+        let description = dict["description"] as! String?
+        let name = dict["name"] as! String?
+        let url = dict["url"] as! String?
+        let cost = dict[""] as! Double?
+        let leaders = dict["startDate"] as! String?
+        let startDate = dict["startDate"] as! String?
+        let endDate = dict["endDate"] as! String?
+        let state = dict["location"]?.objectForKey("state") as! String?
+        let suburb = dict["location"]?.objectForKey("suburb") as! String?
+        let street = dict["location"]?.objectForKey("street1") as! String?
+        let imageUrl = dict["image"]?.objectForKey("secure_url") as! String?
+        
+
+        self.init(id: id, slug: slug, description: description, name: name, url: url, cost: cost, leaders: leaders, startDate: startDate, endDate: endDate, state: state, suburb:suburb, street: street, imageUrl: imageUrl)
     }
 }
