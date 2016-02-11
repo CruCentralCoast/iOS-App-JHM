@@ -116,14 +116,15 @@ class ServerUtils {
         return NSCalendar.currentCalendar().components(unitFlags, fromDate: date!)
     }
     
-    // TODO: add real gcm_id, location, time, radius, direction and handler error better
-    class func postRideOffer(eventId : String, name : String , phone : String, seats : Int) {
+    // TODO:handler error better
+    class func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
+        location: NSDictionary, radius: Int, direction: String) {
         
         let gcmToken = SubscriptionManager.loadGCMToken()
         
         let requestUrl = Config.serverUrl + "api/ride/create";
-        let params = ["event":eventId, "driverName":name, "driverNumber":phone,
-            "seats":seats, "gcm_id": gcmToken]
+        let params = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
+            "gcm_id": gcmToken, "location":location, "radius":radius, "direction":direction]
         
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)

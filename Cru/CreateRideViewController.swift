@@ -16,7 +16,6 @@ class CreateRideViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //ServerUtils.postRideOffer("565e03cc47bc97c10ba6352d", name : "Nick Cage", phone : "12345", seats : 1)
 
         // Do any additional setup after loading the view.
         let newBackButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "handleCancelRide:")
