@@ -17,7 +17,7 @@ class RiderRideDetailViewController: UIViewController {
     let driver = "driver"
     let rider = "rider"
     
-    var event: Event?
+    var event: Event!
     var ride: Ride?
     
     @IBOutlet weak var eventButton: UIButton!
