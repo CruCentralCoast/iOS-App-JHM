@@ -50,6 +50,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         // If the app has a registration token and is connected to GCM, proceed to subscribe to the
         // topic
         if(registrationToken != nil && connectedToGCM) {
+            
+            SubscriptionManager.saveGCMToken(registrationToken!)
+            
             GCMPubSub.sharedInstance().subscribeWithToken(self.registrationToken, topic: subscriptionTopic,
                 options: nil, handler: {(NSError error) -> Void in
                     if (error != nil) {

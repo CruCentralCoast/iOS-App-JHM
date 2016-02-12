@@ -9,6 +9,23 @@
 import Foundation
 
 class SubscriptionManager{
+    
+    static func saveGCMToken(token: String){
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(token)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(archivedObject, forKey: "GCM")
+        defaults.synchronize()
+    }
+    
+    static func loadGCMToken()->String{
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("GCM") as? NSData {
+            let token = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? String
+            return token!
+        }
+        return ""
+    }
+    
+    
     static func loadCampuses() -> [Campus]? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("campusKey") as? NSData {
             let campuses = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Campus]
