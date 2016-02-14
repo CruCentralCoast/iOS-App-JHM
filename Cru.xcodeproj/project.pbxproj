@@ -92,6 +92,15 @@
 		50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
+		6D4B78AE1C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
+		6D4B78AF1C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
+		6D4B78B01C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
+		6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
+		6D4B78B31C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
+		6D4B78B41C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
+		6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B51C702FDF00F643CB /* Resource.swift */; };
+		6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B51C702FDF00F643CB /* Resource.swift */; };
+		6D4B78B81C702FDF00F643CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B51C702FDF00F643CB /* Resource.swift */; };
 		6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */; };
 		6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */; };
 		6D76CA791C06AAF800F8B007 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA781C06AAF800F8B007 /* EventTableViewCell.swift */; };
@@ -184,6 +193,9 @@
 		50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		50FE4D461C50D37C00EA9042 /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
 		6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableViewController.swift; sourceTree = "<group>"; };
+		6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
+		6D4B78B51C702FDF00F643CB /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman 3.otf"; sourceTree = "<group>"; };
 		6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
 		6D76CA781C06AAF800F8B007 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -403,6 +415,9 @@
 				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
 				0F0C221C1C0D77D9002850DF /* ResourceVideoTableViewController.swift */,
 				0F0C221E1C0D783B002850DF /* ResourceVideoTableViewCell.swift */,
+				6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */,
+				6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */,
+				6D4B78B51C702FDF00F643CB /* Resource.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -693,6 +708,7 @@
 				85C6D11B1C0BD5F4006A4F9F /* ServerClient.swift in Sources */,
 				6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */,
 				0FC8E3B21C48750A007A7208 /* IntroViewController.swift in Sources */,
+				6D4B78AE1C70245400F643CB /* ResourceTableViewController.swift in Sources */,
 				5095272B1C63E6D000E4F7B6 /* TempEventTableViewController.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				6D76CA791C06AAF800F8B007 /* EventTableViewCell.swift in Sources */,
@@ -702,6 +718,7 @@
 				509527281C63E6BC00E4F7B6 /* OfferRideTableViewController.swift in Sources */,
 				850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */,
 				503547871C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
+				6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
 				0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */,
@@ -710,6 +727,7 @@
 				E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */,
 				50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */,
+				6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */,
 				501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */,
 				5095272C1C63E6D000E4F7B6 /* TempEventTableViewCell.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
@@ -729,6 +747,7 @@
 				50FE4D401C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */,
+				6D4B78AF1C70245400F643CB /* ResourceTableViewController.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
@@ -736,6 +755,8 @@
 				0FC8E3B31C48750A007A7208 /* IntroViewController.swift in Sources */,
 				509527251C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				50AA7CCC1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
+				6D4B78B31C7024C900F643CB /* CardTableViewCell.swift in Sources */,
+				6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -744,16 +765,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
+				6D4B78B01C70245400F643CB /* ResourceTableViewController.swift in Sources */,
 				50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 				509527261C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				50FE4D451C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */,
 				5094897F1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
+				6D4B78B41C7024C900F643CB /* CardTableViewCell.swift in Sources */,
 				50FE4D411C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				509DA91F1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0FC8E3B41C48750A007A7208 /* IntroViewController.swift in Sources */,
 				0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */,
+				6D4B78B81C702FDF00F643CB /* Resource.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
