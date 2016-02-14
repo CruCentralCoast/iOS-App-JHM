@@ -56,8 +56,8 @@ class DriverRideDetailViewController: UIViewController {
         if(ride.passengers.count > 0) {
             passengerList.text = ""
             for item in ride.passengers {
-                passengerList.text = passengerList.text + ride.passengers + "\n"
-                
+                passengerList.text.appendContentsOf(String(item))
+                passengerList.text.appendContentsOf("\n")
             }
         }
         
