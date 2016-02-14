@@ -45,10 +45,9 @@ class ServerUtils {
                         let query = ["passengers": inQuery]
                         
                         let body = try NSJSONSerialization.dataWithJSONObject(query, options: NSJSONWritingOptions.PrettyPrinted)
-                        let string1 = NSString(data: body, encoding: NSUTF8StringEncoding)
-                        print(string1)
                         
-                        
+                        //let string1 = NSString(data: body, encoding: NSUTF8StringEncoding)
+                        //print(string1)
                         //print("\(body)")
                         
                         ServerClient.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : curryDisplayResources(inserter, afterFunc: {() in }))
