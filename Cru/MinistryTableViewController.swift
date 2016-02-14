@@ -8,19 +8,31 @@
 
 import UIKit
 
+
 class MinistryTableViewController: UITableViewController {
     var ministries = [Ministry]()            //list of ALL ministries
     var subscribedCampuses = [Campus]()      //list of subscribed campuses
     var ministryMap = [Campus: [Ministry]]() //map of all subscribed campsuses to their respective ministries
     var prevMinistries = [Ministry]()        //list of previously subscribed ministries (saved on device)
-    
+    var totalMegsUsed = 0.0
+    var viewWasLoaded = false
     
     override func viewWillAppear(animated: Bool) {
-        reloadData()
+
+        if(viewWasLoaded){
+            self.reloadData()
+        }//
+        //viewDidLoad()
     }
+    
+    override func didReceiveMemoryWarning() {
+        print("MEMORY OVERLOAD")
+        super.didReceiveMemoryWarning()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewWasLoaded = true
         let campuses = SubscriptionManager.loadCampuses()
         if(campuses != nil){
             subscribedCampuses = campuses!
@@ -36,7 +48,7 @@ class MinistryTableViewController: UITableViewController {
     }
     
     func reloadData(){
-        super.viewDidLoad()
+        //super.viewDidLoad()
         subscribedCampuses = SubscriptionManager.loadCampuses()!
         prevMinistries = SubscriptionManager.loadMinistries()!
                 
@@ -74,7 +86,18 @@ class MinistryTableViewController: UITableViewController {
     func insertMinistry(dict : NSDictionary) {
         let ministryName = dict[Config.name] as! String
         let campusIds = dict[Config.campusIds] as! [String]
-        let newMinistry = Ministry(name: ministryName, campusIds: campusIds)
+        var imgUrl = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1453505468/sxgmbetwbbvozk385a7j.jpg"
+        
+        if (dict.objectForKey("image") != nil){
+            let imageDict = dict.objectForKey("image") as! NSDictionary
+            
+            if(imageDict.objectForKey("url") != nil){
+                imgUrl = imageDict.objectForKey("url") as! String
+            }
+        }
+        
+        
+        let newMinistry = Ministry(name: ministryName, campusIds: campusIds, imgUrl: imgUrl)
         
         if(prevMinistries.contains(newMinistry)){
             newMinistry.feedEnabled = true
@@ -123,6 +146,13 @@ class MinistryTableViewController: UITableViewController {
             cell.ministryNameLabel.font = UIFont(name: "FreightSans Pro", size: 17)
             cell.ministryNameLabel.textColor = Config.introModalContentTextColor
         
+  
+            //let url = NSURL(string: ministry.imageUrl)
+            //let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
+            //downloadImage(url!, imageView: cell.minstryImage) //UIImage(data: data!)
+        
+            asyncLoadMinistryImage(ministry, imageView: cell.minstryImage)
+        
             if(ministry.feedEnabled == true){
                 cell.accessoryType = .Checkmark
             }
@@ -148,16 +178,108 @@ class MinistryTableViewController: UITableViewController {
             }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
+            //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
         SubscriptionManager.saveMinistrys(ministries)
     }
     
+    override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)
+    {
+        let header = view as! UITableViewHeaderFooterView
+        header.textLabel?.font = UIFont(name: "FreightSans Pro", size: 20)!
+        header.textLabel?.textColor = UIColor.blackColor()
+    }
     
     func getMinistryAtIndexPath(indexPath: NSIndexPath)->Ministry{
         let row = indexPath.row
         let section = indexPath.section
         return ministryMap[subscribedCampuses[section]]![row]
     }
+    
+    
+    
+    func asyncLoadMinistryImage(min: Ministry, imageView: UIImageView){
+        //let downloadQueue = dispatch_queue_create("com.cru.downloadImage", nil)
+        
+        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            if(min.imageData == nil){
+                //let stream = NSInputStream(URL: NSURL(string: min.imageUrl)!)
+                
+                let data = NSData(contentsOfURL: NSURL(string: min.imageUrl)!)
+                self.totalMegsUsed += Double(data!.length)/1024.0/1024.0
+                //    print("got it .... yiiissss \(Double(data!.length)/1024.0/1024.0)")
+                //print("total: \(self.totalMegsUsed)")
+                var image : UIImage?
+                
+                if data != nil{
+                    min.imageData = data
+                    image = UIImage(data: data!)!
+                }
+                
+                dispatch_async(dispatch_get_main_queue(), {
+                    imageView.contentMode = .ScaleAspectFit
+                    
+                    //alternate method of setting the image
+                    //imageView.image = self.smallerImage(image!)
+                    imageView.image = self.resizeImage(image!, newWidth: 150.0)
+                })
+            }
+            
+            
+            
+        })
+        
+    }
+//    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
+//        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+//            completion(data: data, response: response, error: error)
+//            }.resume()
+//    }
+//    
+//    func downloadImage(url: NSURL, imageView: UIImageView){
+//        //print("Download Started")
+//        //print("lastPathComponent: " + (url.lastPathComponent ?? ""))
+//        getDataFromUrl(url) { (data, response, error)  in
+//            dispatch_async(dispatch_get_main_queue()) { () -> Void in
+//                guard let data = data where error == nil else { return }
+//                //print(response?.suggestedFilename ?? "")
+//                //print("Download Finished")
+//                imageView.image = self.resizeImage(UIImage(data: data)!, newWidth: 50.0)
+//            }
+//        }
+//    }
+//    
+    
+    func smallerImage(image: UIImage)->UIImage{
+        let size = CGSizeApplyAffineTransform(image.size, CGAffineTransformMakeScale(0.1, 0.1))
+        let hasAlpha = false
+        let scale: CGFloat = 0.0 // Automatically use scale factor of main screen
+        
+        UIGraphicsBeginImageContextWithOptions(size, !hasAlpha, scale)
+        image.drawInRect(CGRect(origin: CGPointZero, size: size))
+        
+        let scaledImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return scaledImage
+    }
+    
+    
+    func resizeImage(image: UIImage, newWidth: CGFloat) -> UIImage {
+        
+        let scale = newWidth / image.size.width
+        let oldWidth = image.size.width
+        let newHeight = image.size.height * scale
+        UIGraphicsBeginImageContext(CGSizeMake(newWidth, newHeight))
+        image.drawInRect(CGRectMake(0, 0, newWidth, newHeight))
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        //print("resized image: from \(oldWidth) to \(newWidth)")
+        return newImage
+    }
+    
+    
     
 }
