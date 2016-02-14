@@ -5,6 +5,13 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--sideMenuStoryboard-->
         <scene sceneID="5CH-RN-r9K">
@@ -76,7 +83,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -99,7 +106,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -122,7 +129,7 @@
                                                     <rect key="frame" x="15" y="0.0" width="550" height="43"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
