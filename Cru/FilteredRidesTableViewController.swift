@@ -51,7 +51,13 @@ class FilteredRidesTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
-            vc.ride = selectedRide
+            print("ride was assigned")
+            if(selectedRide != nil) {
+                vc.ride = selectedRide!
+                
+            }
+            
+            //vc.details.text = selectedRide?.getDescription()
         }
     }
     
@@ -68,6 +74,11 @@ class FilteredRidesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         selectedRide = filteredRides[indexPath.row]
+        performSegueWithIdentifier("joinSegue", sender: self)
+//        let destinationVC = JoinRideViewController()
+//        destinationVC.ride = selectedRide
+//        
+//        destinationVC.performSegueWithIdentifier("joinSegue", sender: self)
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
