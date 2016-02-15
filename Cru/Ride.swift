@@ -34,7 +34,7 @@ class Ride {
         gcmId = "blah"
         driverNumber = "123456789"
         driverName = "Max crane"
-        eventId = "3432432414"
+        eventId = "563b11135e926d03001ac15c"
         time = "5:00 pm"
         passengers = [String]()
         
@@ -104,5 +104,27 @@ class Ride {
         
         
         return String(newHour) + ":" + minuteAsString + " " + period
+    }
+    
+    func hasSeats()->Bool{
+        return (self.seats - passengers.count)  != 0
+    }
+    
+    func seatsLeft()->String{
+        return String(self.seats - self.passengers.count) + "/"  + String(self.seats)
+    }
+    
+    func getDate()->String{
+        var dayS = String(self.day)
+        if(self.day < 10){
+            dayS = "0" + String(self.day)
+        }
+
+
+        return String(self.month.lowercaseString) + "/" + dayS
+    }
+    
+    func getDescription()->String{
+        return Ride.createTime(self.hour, minute: self.minute)  + "    " + self.getDate() + "   " + self.seatsLeft() + " left"
     }
 }
