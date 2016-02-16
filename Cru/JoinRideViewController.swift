@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class JoinRideViewController: UIViewController {
+class JoinRideViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var details: UILabel!
     @IBOutlet weak var address: UITextView!
@@ -36,16 +36,30 @@ class JoinRideViewController: UIViewController {
             details.text = ""
         }
         
+        number.keyboardType = .NumberPad
+//        self.number.delegate = self
+//        self.name.delegate = self
+        
         setupMap()
         //dateTimeLabel.text = ride?.getDescription()
         // Do any additional setup after loading the view.
     }
+
+    @IBAction func dismissKeyboard(sender: AnyObject) {
+        self.resignFirstResponder()
+    }
+
+    
     @IBAction func joinRidePressed(sender: AnyObject) {
         let phoneNumber = number.text
         let nameString = name.text
         
         print("\(validate(phoneNumber!))")
         
+    }
+    
+    override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        self.view.endEditing(true)
     }
     
     func validate(value: String) -> Bool {

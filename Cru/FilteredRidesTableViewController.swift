@@ -12,6 +12,7 @@ class FilteredRidesTableViewController: UITableViewController {
     var filteredRides = [Ride]()
     var allRides = [Ride]()
     var selectedRide: Ride?
+    var parentTVC: FindRideTableTableViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,15 +51,15 @@ class FilteredRidesTableViewController: UITableViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
-            print("ride was assigned")
-            if(selectedRide != nil) {
-                vc.ride = selectedRide!
-                
-            }
-            
-            //vc.details.text = selectedRide?.getDescription()
-        }
+//        if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
+//            print("ride was assigned")
+//            if(selectedRide != nil) {
+//                vc.ride = selectedRide!
+//                
+//            }
+//            
+//            //vc.details.text = selectedRide?.getDescription()
+//        }
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -74,7 +75,11 @@ class FilteredRidesTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         selectedRide = filteredRides[indexPath.row]
-        performSegueWithIdentifier("joinSegue", sender: self)
+        if(parentTVC != nil){
+            parentTVC?.performSegueWithIdentifier("joinSegue", sender: parentTVC)
+        }
+        
+        //performSegueWithIdentifier("joinSegue", sender: self)
 //        let destinationVC = JoinRideViewController()
 //        destinationVC.ride = selectedRide
 //        

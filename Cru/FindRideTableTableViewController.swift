@@ -23,7 +23,7 @@ class FindRideTableTableViewController: UITableViewController, UIPickerViewDeleg
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ServerUtils.loadResources("event", inserter: insertEvent)
+        ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: loadRides)
         
         
         // Uncomment the following line to preserve selection between presentations
@@ -36,6 +36,12 @@ class FindRideTableTableViewController: UITableViewController, UIPickerViewDeleg
     func insertEvent(dict: NSDictionary){
         events.append(Event(dict: dict)!)
         picker.reloadAllComponents()    
+    }
+    
+    func loadRides(){
+        if(rideTVC != nil){
+            rideTVC?.filterRidesByEventId(events[0].id!)
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,6 +99,10 @@ class FindRideTableTableViewController: UITableViewController, UIPickerViewDeleg
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? FilteredRidesTableViewController where segue.identifier == "filterSegue" {
             rideTVC = vc
+            vc.parentTVC = self
+        }
+        if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
+            vc.ride = rideTVC?.selectedRide
         }
     }
 
