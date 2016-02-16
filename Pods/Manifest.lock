@@ -30,12 +30,14 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
+  - IQKeyboardManagerSwift (3.3.4)
   - LocationPicker (0.5.3)
   - SideMenu (0.1.4)
 
 DEPENDENCIES:
   - DatePickerCell
   - Google/CloudMessaging
+  - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
   - SideMenu (~> 0.1)
 
@@ -49,6 +51,7 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   LocationPicker: 37edad09cefccd0a266e4abfbf5787995b133d54
   SideMenu: 09bc4ab16e392aea64caf052074efd63ef726b6a
 

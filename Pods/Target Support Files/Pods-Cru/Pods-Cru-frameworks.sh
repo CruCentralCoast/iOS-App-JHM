@@ -85,11 +85,13 @@ strip_invalid_archs() {
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Cru/DatePickerCell.framework"
+  install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
   install_framework "Pods-Cru/SideMenu.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Cru/DatePickerCell.framework"
+  install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
   install_framework "Pods-Cru/SideMenu.framework"
 fi

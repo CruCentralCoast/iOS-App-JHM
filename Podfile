@@ -9,6 +9,7 @@ target 'Cru' do
     pod 'Google/CloudMessaging'
     pod 'DatePickerCell'
     pod 'LocationPicker'
+    pod 'IQKeyboardManagerSwift', '3.3.4'
 end
 
 target 'CruTests' do
