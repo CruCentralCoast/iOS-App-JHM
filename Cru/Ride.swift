@@ -106,6 +106,10 @@ class Ride {
         return String(newHour) + ":" + minuteAsString + " " + period
     }
     
+    func getTime()->String{
+        return Ride.createTime(self.hour, minute: self.minute)
+    }
+    
     func hasSeats()->Bool{
         return (self.seats - passengers.count)  != 0
     }

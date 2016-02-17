@@ -33,6 +33,7 @@ PODS:
   - IQKeyboardManagerSwift (3.3.4)
   - LocationPicker (0.5.3)
   - SideMenu (0.1.4)
+  - SwiftValidator (3.0.3)
 
 DEPENDENCIES:
   - DatePickerCell
@@ -40,6 +41,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
   - SideMenu (~> 0.1)
+  - SwiftValidator
 
 SPEC CHECKSUMS:
   DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
@@ -54,5 +56,6 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   LocationPicker: 37edad09cefccd0a266e4abfbf5787995b133d54
   SideMenu: 09bc4ab16e392aea64caf052074efd63ef726b6a
+  SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
 COCOAPODS: 0.39.0

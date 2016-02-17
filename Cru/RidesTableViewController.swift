@@ -30,7 +30,7 @@ class RidesTableViewController: UITableViewController {
         super.viewDidLoad()
         
         gcmId = SubscriptionManager.loadGCMToken()
-
+        gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
         
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
             

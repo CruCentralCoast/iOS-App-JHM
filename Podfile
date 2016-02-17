@@ -10,6 +10,7 @@ target 'Cru' do
     pod 'DatePickerCell'
     pod 'LocationPicker'
     pod 'IQKeyboardManagerSwift', '3.3.4'
+    pod 'SwiftValidator'
 end
 
 target 'CruTests' do

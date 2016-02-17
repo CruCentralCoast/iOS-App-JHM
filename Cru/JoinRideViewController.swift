@@ -8,19 +8,26 @@
 
 import UIKit
 import MapKit
+import SwiftValidator
 
-class JoinRideViewController: UIViewController, UITextFieldDelegate {
+class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
 
-    @IBOutlet weak var details: UILabel!
+    @IBOutlet weak var time: UILabel!
+  
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var number: UITextField!
     
+    @IBOutlet weak var numberError: UILabel!
+    @IBOutlet weak var nameError: UILabel!
     @IBOutlet weak var map: MKMapView!
     
+    @IBOutlet weak var seats: UILabel!
+    @IBOutlet weak var date: UILabel!
+    let validator = Validator()
     
     var ride: Ride?
-    let dummyAddress = "1 Grand Ave. San Luis Obispo"
+    let dummyAddress = "1 Grand Avenue San Luis Obispo 93401 California"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,17 +35,25 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate {
         print("trying to load ride")
         if(ride != nil){
             print("ride was loadede")
-            details.text = ride?.getDescription()
+            date.text = ride?.getDate()
+            time.text = ride?.getTime()
+            seats.text = (ride?.seatsLeft())! + " left"
             address.text = dummyAddress
             
         }
         else{
-            details.text = ""
+            date.text = ""
+            time.text = ""
+            seats.text = ""
+            address.text = ""
         }
         
         number.keyboardType = .NumberPad
-//        self.number.delegate = self
-//        self.name.delegate = self
+        nameError.text = ""
+        numberError.text = ""
+        
+        validator.registerField(name, errorLabel: nameError, rules: [RequiredRule(), FullNameRule()])
+        validator.registerField(number, errorLabel: numberError, rules: [RequiredRule(), PhoneNumberRule()])
         
         setupMap()
         //dateTimeLabel.text = ride?.getDescription()
@@ -48,13 +63,47 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate {
     @IBAction func dismissKeyboard(sender: AnyObject) {
         self.resignFirstResponder()
     }
+    
+    func validationSuccessful() {
+        // submit the form
+        let phoneNumber = number.text
+        let nameString = name.text
+    }
+    
+    func validationFailed(errors:[UITextField:ValidationError]) {
+        var numValid = true
+        var nameValid = true
+        
+        // turn the fields to red
+        for (field, error) in validator.errors {
+            field.layer.borderColor = UIColor.redColor().CGColor
+            field.layer.borderWidth = 1.0
+            error.errorLabel?.text = error.errorMessage // works if you added labels
+            error.errorLabel?.hidden = false
+            
+            if(field == name){
+                nameValid = false
+            }
+            if(field == number){
+                numValid = false
+            }
+        }
+        
+        if(nameValid){
+            name.layer.borderColor = UIColor.clearColor().CGColor
+            name.layer.borderWidth = 0.0
+            nameError.text = ""
+        }
+        if(numValid){
+            number.layer.borderColor = UIColor.clearColor().CGColor
+            number.layer.borderWidth = 0.0
+            numberError.text = ""
+        }
+    }
 
     
     @IBAction func joinRidePressed(sender: AnyObject) {
-        let phoneNumber = number.text
-        let nameString = name.text
-        
-        print("\(validate(phoneNumber!))")
+        validator.validate(self)
         
     }
     
@@ -62,18 +111,6 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate {
         self.view.endEditing(true)
     }
     
-    func validate(value: String) -> Bool {
-        
-        let PHONE_REGEX = "^\\d{3}-\\d{3}-\\d{4}$"
-        
-        var phoneTest = NSPredicate(format: "SELF MATCHES %@", PHONE_REGEX)
-        
-
-        var result =  phoneTest.evaluateWithObject(value)
-        
-        return result
-        
-    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
