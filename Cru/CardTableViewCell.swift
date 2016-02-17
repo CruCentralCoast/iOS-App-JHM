@@ -11,15 +11,15 @@ import UIKit
 class CardTableViewCell: UITableViewCell {
 
     // MARK: Properties
-    @IBOutlet weak var cardImage: UIImageView!
+    /*@IBOutlet weak var cardImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var cardView: UIView!
+    @IBOutlet weak var cardView: UIView! */
     
     // MARK: Functions
     func cardSetup() {
         //Set up the shadows of the card and set the image boundaries
-        let path = UIBezierPath.init(rect: cardView.bounds)
+        /*let path = UIBezierPath.init(rect: cardView.bounds)
         
         cardView.alpha = 1
         cardView.layer.masksToBounds = false
@@ -31,7 +31,7 @@ class CardTableViewCell: UITableViewCell {
         
         cardImage.contentMode = UIViewContentMode.ScaleAspectFit
         cardImage.clipsToBounds = true
-        
+        */
     }
     override func awakeFromNib() {
         super.awakeFromNib()

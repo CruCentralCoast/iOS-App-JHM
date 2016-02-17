@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <segue destination="gW7-6a-T85" kind="embed" id="7YG-M2-qhp"/>
+                                    <segue destination="e8k-8d-siH" kind="embed" id="BaC-bp-5Vp"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -114,16 +114,45 @@
             </objects>
             <point key="canvasLocation" x="1273.5999999999999" y="2483.1066666666666"/>
         </scene>
+        <!--Card Table View Controller-->
+        <scene sceneID="VD2-73-0wl">
+            <objects>
+                <tableViewController id="e8k-8d-siH" customClass="CardTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="wMC-Oy-1kU">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="sectionIndexBackgroundColor" red="0.87058823529999996" green="0.87058823529999996" blue="0.87058823529999996" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CardTableViewCell" rowHeight="90" id="YAV-oV-PRX" customClass="CardTableViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YAV-oV-PRX" id="Znv-02-tAr">
+                                    <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="e8k-8d-siH" id="UOs-T0-Cuq"/>
+                            <outlet property="delegate" destination="e8k-8d-siH" id="vns-Pz-NId"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FJr-CR-ErQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="831" y="3284"/>
+        </scene>
         <!--Resource Table View Controller-->
         <scene sceneID="gEu-Is-h9E">
             <objects>
                 <tableViewController id="gW7-6a-T85" customClass="ResourceTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xbM-oQ-gYg">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CardCell" rowHeight="200" id="lHB-pq-veP" customClass="CardTableViewCell" customModule="Cru" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="CardTableViewCell" rowHeight="200" id="lHB-pq-veP" customClass="CardTableViewCell" customModule="Cru" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="200"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lHB-pq-veP" id="z4z-9B-T2i">

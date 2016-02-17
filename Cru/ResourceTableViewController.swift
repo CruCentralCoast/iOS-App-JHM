@@ -29,12 +29,12 @@ class ResourceTableViewController: UITableViewController {
     
     func loadSampleResources() {
         //Create first sample resource (video)
-        let photo1 = UIImage(named: "fall-retreat-still")
-        let resource1 = Resource(title: "Fall Retreat Video 2015", url: "https://www.youtube.com/watch?v=fRh_vgS2dFE", type: "video", date: "2016-02-13", tags: ["tag1", "tag2"], photo1)
+        let photo1 = "fall-retreat-still"
+        let resource1 = Resource(title: "Fall Retreat Video 2015", url: "https://www.youtube.com/watch?v=fRh_vgS2dFE", type: "video", date: "2016-02-13", tags: ["tag1", "tag2"], imageName: photo1)
         
         //Create second sample resource (tool)
-        let photo2 = UIImage(named: "tool")
-        let resource2 = Resource(title: "Tool", url: "https://www.youtube.com/watch?v=fRh_vgS2dFE", type: "tool", date: "2016-02-13", tags: ["tag1", "tag2"], photo2)
+        let photo2 = "tool"
+        let resource2 = Resource(title: "Tool", url: "https://www.youtube.com/watch?v=fRh_vgS2dFE", type: "tool", date: "2016-02-13", tags: ["tag1", "tag2"], imageName: photo2)
         
         resources += [resource1, resource2]
     }
@@ -63,23 +63,13 @@ class ResourceTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CardTableViewCell
         let resource = resources[indexPath.row]
         
-        cell.titleLabel.text = resource.title
-        cell.timeLabel.text = resource.date.timeIntervalSinceDate(anotherDate: NSDate())
-        if(resource.image != nil) {
-              cell.imageView!.image = resource.image
-        }
+        //cell.titleLabel.text = resource.title
+        //cell.timeLabel.text = resource.date
+        /*if(resource.imageName != "") {
+            cell.imageView!.image = UIImage(named: resource.imageName)
+        }*/
 
         return cell
-    }
-    
-    func calculateTimePassed() {
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components(.CalendarUnitHour | .CalendarUnitMinute, fromDate: date)
-        let hour = components.hour
-        let minutes = components.minute
-        
-        
     }
 
     /*

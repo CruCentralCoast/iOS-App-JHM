@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import WildcardSDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
@@ -42,6 +43,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         let gcmConfig = GCMConfig.defaultConfig()
         gcmConfig.receiverDelegate = self
         GCMService.sharedInstance().startWithConfig(gcmConfig)
+        
+        //Initialize WildcardSDK with Cru API key for Resources
+        WildcardSDK.initializeWithApiKey("4f154853-1955-4422-9aa3-f1fbd89d3403")
         
         return true
     }
