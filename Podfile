@@ -11,6 +11,7 @@ target 'Cru' do
     pod 'LocationPicker'
     pod 'IQKeyboardManagerSwift', '3.3.4'
     pod 'SwiftValidator'
+    pod 'FlatUIKit'
 end
 
 target 'CruTests' do

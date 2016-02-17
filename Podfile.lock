@@ -1,5 +1,6 @@
 PODS:
   - DatePickerCell (1.0.4)
+  - FlatUIKit (1.6.2)
   - GGLInstanceID (1.1.5):
     - GoogleIPhoneUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
@@ -37,6 +38,7 @@ PODS:
 
 DEPENDENCIES:
   - DatePickerCell
+  - FlatUIKit
   - Google/CloudMessaging
   - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
@@ -45,6 +47,7 @@ DEPENDENCIES:
 
 SPEC CHECKSUMS:
   DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
+  FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   GGLInstanceID: 4be9a86f27e87f8cedc9694f521f12949813a7ba
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleCloudMessaging: faa057e30845e7300da31de3777060420b2f6579

@@ -2,6 +2,8 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="UF2-aw-Wvu">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -40,7 +42,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <containerView key="tableFooterView" opaque="NO" contentMode="scaleToFill" id="6wN-Uu-7KL">
-                            <rect key="frame" x="0.0" y="144" width="600" height="456"/>
+                            <rect key="frame" x="0.0" y="144" width="600" height="322"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                             <animations/>
                             <connections>
@@ -113,142 +115,146 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3bD-Kl-vAR">
                                         <rect key="frame" x="0.0" y="-50" width="600" height="850"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6/6/6" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8g1-xg-ACg">
-                                                <rect key="frame" x="194" y="816" width="94" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6/6/6" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8g1-xg-ACg">
+                                                <rect key="frame" x="161" y="816" width="94" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="bowling" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-9F-R20">
-                                                <rect key="frame" x="194" y="749" width="94" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bowling" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-9F-R20">
+                                                <rect key="frame" x="161" y="749" width="94" height="26"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="94" id="1sX-dR-s0G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7:00pm   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWR-4z-BoD">
+                                                <rect key="frame" x="162" y="348" width="405" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="7:00pm   " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kWR-4z-BoD">
-                                                <rect key="frame" x="183" y="339" width="405" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="departure time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-zS-4ny">
+                                                <rect key="frame" x="16" y="334" width="145" height="54"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="departure time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QmT-zS-4ny">
-                                                <rect key="frame" x="37" y="325" width="145" height="54"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMN-SD-gnW">
+                                                <rect key="frame" x="16" y="751" width="94" height="25"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="25" id="6DF-Cw-HMb"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="departure date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73n-NA-iBd">
+                                                <rect key="frame" x="16" y="382" width="123" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="name:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMN-SD-gnW">
-                                                <rect key="frame" x="49" y="751" width="94" height="25"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="departure date:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="73n-NA-iBd">
-                                                <rect key="frame" x="37" y="373" width="123" height="26"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Event Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKz-8y-Dfn">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CKz-8y-Dfn">
                                                 <rect key="frame" x="8" y="722" width="559" height="26"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="26" id="sIQ-b4-bV6"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ride Signup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-ar-T4H">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride Signup" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-ar-T4H">
                                                 <rect key="frame" x="8" y="80" width="559" height="32"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ride Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmG-XF-waT">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ride Details" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmG-XF-waT">
                                                 <rect key="frame" x="8" y="299" width="560" height="32"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-M4-ThC">
-                                                <rect key="frame" x="49" y="813" width="106" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1AG-M4-ThC">
+                                                <rect key="frame" x="16" y="813" width="106" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6/16/16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRx-Vu-xxi">
-                                                <rect key="frame" x="183" y="373" width="405" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6/16/16" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MRx-Vu-xxi">
+                                                <rect key="frame" x="162" y="382" width="405" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="2/5 available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNz-QS-VeK">
-                                                <rect key="frame" x="183" y="399" width="122" height="40"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2/5 available" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WNz-QS-VeK">
+                                                <rect key="frame" x="162" y="408" width="122" height="40"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="122" id="bkQ-D3-xGw"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" scrollEnabled="NO" editable="NO" text="1 Grand Ave. San Luis Obispo 93405" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qAq-nK-Tmr">
-                                                <rect key="frame" x="178" y="437" width="401" height="96"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="1 Grand Ave. San Luis Obispo 93405" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="qAq-nK-Tmr">
+                                                <rect key="frame" x="157" y="446" width="435" height="96"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="96" id="EHw-Zn-tcP"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" address="YES"/>
                                             </textView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="seats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-sS-oBK">
-                                                <rect key="frame" x="37" y="413" width="94" height="24"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xha-oH-TyY">
+                                                <rect key="frame" x="16" y="784" width="94" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="departure address:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-7q-P6O">
-                                                <rect key="frame" x="37" y="437" width="94" height="56"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEy-TL-3SA">
+                                                <rect key="frame" x="16" y="130" width="125" height="21"/>
                                                 <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="125" id="yyT-c6-ERX"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xha-oH-TyY">
-                                                <rect key="frame" x="49" y="784" width="94" height="26"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qEy-TL-3SA">
-                                                <rect key="frame" x="37" y="130" width="104" height="21"/>
-                                                <animations/>
-                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBN-WS-xtR">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBN-WS-xtR">
                                                 <rect key="frame" x="136" y="130" width="459" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="15"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wM9-Zc-Img">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="error" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wM9-Zc-Img">
                                                 <rect key="frame" x="137" y="199" width="458" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="15"/>
                                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first last" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBZ-x8-gCc">
-                                                <rect key="frame" x="37" y="159" width="530" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="first last" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wBZ-x8-gCc">
+                                                <rect key="frame" x="16" y="159" width="551" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
@@ -256,27 +262,27 @@
                                                     <action selector="dismissKeyboard:" destination="7Jh-iN-Kgk" eventType="editingDidEndOnExit" id="DOd-Af-N7F"/>
                                                 </connections>
                                             </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxxxxxxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-Sr-2cX">
-                                                <rect key="frame" x="37" y="231" width="530" height="30"/>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="xxxxxxxxxx" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YXu-Sr-2cX">
+                                                <rect key="frame" x="16" y="231" width="551" height="30"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRR-tE-iLN">
-                                                <rect key="frame" x="37" y="197" width="104" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FRR-tE-iLN">
+                                                <rect key="frame" x="18" y="194" width="104" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="6:66pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIw-9H-7PY">
-                                                <rect key="frame" x="194" y="783" width="94" height="26"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="6:66pm" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QIw-9H-7PY">
+                                                <rect key="frame" x="161" y="783" width="94" height="26"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-fF-7wX">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ljp-fF-7wX" customClass="FUIButton">
                                                 <rect key="frame" x="262" y="269" width="63" height="30"/>
                                                 <animations/>
                                                 <state key="normal" title="Join Ride"/>
@@ -284,23 +290,116 @@
                                                     <action selector="joinRidePressed:" destination="7Jh-iN-Kgk" eventType="touchUpInside" id="P6b-t3-8Jc"/>
                                                 </connections>
                                             </button>
-                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zqb-be-kHM">
+                                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Zqb-be-kHM">
                                                 <rect key="frame" x="0.0" y="541" width="600" height="160"/>
                                                 <animations/>
                                             </mapView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="departure address:" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGy-7q-P6O">
+                                                <rect key="frame" x="16" y="446" width="100" height="56"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="100" id="2DR-lB-4Sh"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="seats:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG9-sS-oBK">
+                                                <rect key="frame" x="19" y="416" width="94" height="24"/>
+                                                <animations/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="qAq-nK-Tmr" firstAttribute="leading" secondItem="TGy-7q-P6O" secondAttribute="trailing" constant="47" id="AyQ-qT-Hlo"/>
-                                            <constraint firstAttribute="trailing" secondItem="qAq-nK-Tmr" secondAttribute="trailing" constant="21" id="FK1-Dy-Me4"/>
+                                            <constraint firstItem="8g1-xg-ACg" firstAttribute="bottom" secondItem="3bD-Kl-vAR" secondAttribute="bottomMargin" id="1PN-9q-AvG"/>
+                                            <constraint firstItem="YXu-Sr-2cX" firstAttribute="top" secondItem="FRR-tE-iLN" secondAttribute="bottom" constant="11" id="3Gh-9A-W2x"/>
+                                            <constraint firstItem="nmG-XF-waT" firstAttribute="top" secondItem="Ljp-fF-7wX" secondAttribute="bottom" id="57d-v2-fVw"/>
+                                            <constraint firstItem="WNz-QS-VeK" firstAttribute="top" secondItem="MRx-Vu-xxi" secondAttribute="bottom" id="6BL-dL-RzD"/>
+                                            <constraint firstItem="TGy-7q-P6O" firstAttribute="top" secondItem="EG9-sS-oBK" secondAttribute="bottom" constant="6" id="7o0-QB-uXa"/>
+                                            <constraint firstItem="QmT-zS-4ny" firstAttribute="top" secondItem="nmG-XF-waT" secondAttribute="bottom" constant="3" id="7py-k9-JvH"/>
+                                            <constraint firstItem="QmT-zS-4ny" firstAttribute="leading" secondItem="YXu-Sr-2cX" secondAttribute="leading" id="87D-q8-PxI"/>
+                                            <constraint firstItem="CKz-8y-Dfn" firstAttribute="trailing" secondItem="MRx-Vu-xxi" secondAttribute="trailing" id="8V5-T1-lNA"/>
+                                            <constraint firstAttribute="trailing" secondItem="MBN-WS-xtR" secondAttribute="trailing" constant="5" id="8sE-D4-qPQ"/>
+                                            <constraint firstItem="7jG-ar-T4H" firstAttribute="centerX" secondItem="nmG-XF-waT" secondAttribute="centerX" id="9bw-mr-7Sx"/>
+                                            <constraint firstItem="qAq-nK-Tmr" firstAttribute="leading" secondItem="TGy-7q-P6O" secondAttribute="trailing" constant="41" id="AyQ-qT-Hlo"/>
+                                            <constraint firstItem="YMN-SD-gnW" firstAttribute="trailing" secondItem="xha-oH-TyY" secondAttribute="trailing" id="BFL-7t-oJx"/>
+                                            <constraint firstItem="8g1-xg-ACg" firstAttribute="top" secondItem="QIw-9H-7PY" secondAttribute="bottom" constant="7" id="BrS-WO-T8O"/>
+                                            <constraint firstItem="YMN-SD-gnW" firstAttribute="trailing" secondItem="EG9-sS-oBK" secondAttribute="trailing" constant="-3" id="CNC-eH-DCt"/>
+                                            <constraint firstItem="7jG-ar-T4H" firstAttribute="top" secondItem="3bD-Kl-vAR" secondAttribute="top" constant="80" id="ELP-DR-nBM"/>
+                                            <constraint firstItem="7jG-ar-T4H" firstAttribute="trailing" secondItem="wBZ-x8-gCc" secondAttribute="trailing" id="Eoh-UO-dYB"/>
+                                            <constraint firstAttribute="trailing" secondItem="qAq-nK-Tmr" secondAttribute="trailing" constant="8" id="FK1-Dy-Me4"/>
+                                            <constraint firstItem="xha-oH-TyY" firstAttribute="leading" secondItem="YMN-SD-gnW" secondAttribute="leading" id="FLc-Dj-LlV"/>
+                                            <constraint firstItem="FRR-tE-iLN" firstAttribute="top" secondItem="wBZ-x8-gCc" secondAttribute="bottom" constant="5" id="FpZ-Y7-c2U"/>
+                                            <constraint firstItem="kWR-4z-BoD" firstAttribute="leading" secondItem="QmT-zS-4ny" secondAttribute="trailing" constant="1" id="GkN-tb-WA7"/>
+                                            <constraint firstItem="TGy-7q-P6O" firstAttribute="leading" secondItem="YMN-SD-gnW" secondAttribute="leading" id="HhD-uM-0IV"/>
+                                            <constraint firstItem="kWR-4z-BoD" firstAttribute="top" secondItem="nmG-XF-waT" secondAttribute="bottom" constant="17" id="I6f-fU-foG"/>
+                                            <constraint firstItem="TGy-7q-P6O" firstAttribute="leading" secondItem="3bD-Kl-vAR" secondAttribute="leading" constant="16" id="IBe-Nt-2zc"/>
+                                            <constraint firstItem="Ljp-fF-7wX" firstAttribute="top" secondItem="YXu-Sr-2cX" secondAttribute="bottom" constant="8" symbolic="YES" id="JjA-aS-1EH"/>
+                                            <constraint firstItem="EG9-sS-oBK" firstAttribute="top" secondItem="73n-NA-iBd" secondAttribute="bottom" constant="8" id="Kzx-mA-s81"/>
+                                            <constraint firstItem="wBZ-x8-gCc" firstAttribute="leading" secondItem="qEy-TL-3SA" secondAttribute="leading" id="LQC-hJ-sPT"/>
+                                            <constraint firstItem="MBN-WS-xtR" firstAttribute="top" secondItem="qEy-TL-3SA" secondAttribute="top" id="LpE-87-VG6"/>
+                                            <constraint firstItem="nmG-XF-waT" firstAttribute="leading" secondItem="7jG-ar-T4H" secondAttribute="leading" id="Lxy-vA-xnq"/>
+                                            <constraint firstItem="ki3-9F-R20" firstAttribute="top" secondItem="CKz-8y-Dfn" secondAttribute="bottom" constant="1" id="MRE-TS-czB"/>
+                                            <constraint firstItem="wM9-Zc-Img" firstAttribute="centerX" secondItem="MBN-WS-xtR" secondAttribute="centerX" id="OsV-v8-4od"/>
+                                            <constraint firstItem="8g1-xg-ACg" firstAttribute="trailing" secondItem="QIw-9H-7PY" secondAttribute="trailing" id="QDp-Pr-Q1x"/>
+                                            <constraint firstItem="xha-oH-TyY" firstAttribute="top" secondItem="YMN-SD-gnW" secondAttribute="bottom" constant="8" symbolic="YES" id="QN5-lv-I56"/>
+                                            <constraint firstItem="QmT-zS-4ny" firstAttribute="leading" secondItem="73n-NA-iBd" secondAttribute="leading" id="RGp-dJ-4n8"/>
+                                            <constraint firstItem="FRR-tE-iLN" firstAttribute="leading" secondItem="3bD-Kl-vAR" secondAttribute="leading" constant="18" id="Sxp-ZP-M8s"/>
+                                            <constraint firstItem="1AG-M4-ThC" firstAttribute="top" secondItem="xha-oH-TyY" secondAttribute="bottom" constant="3" id="UiT-3U-pJz"/>
+                                            <constraint firstItem="MRx-Vu-xxi" firstAttribute="baseline" secondItem="73n-NA-iBd" secondAttribute="baseline" id="Vom-nv-15r"/>
+                                            <constraint firstItem="wBZ-x8-gCc" firstAttribute="top" secondItem="MBN-WS-xtR" secondAttribute="bottom" constant="8" symbolic="YES" id="VxD-Vp-fJf"/>
+                                            <constraint firstItem="WNz-QS-VeK" firstAttribute="leading" secondItem="EG9-sS-oBK" secondAttribute="trailing" constant="49" id="W2l-i6-1Td"/>
+                                            <constraint firstItem="ki3-9F-R20" firstAttribute="trailing" secondItem="QIw-9H-7PY" secondAttribute="trailing" id="XEq-q4-abi"/>
+                                            <constraint firstItem="qEy-TL-3SA" firstAttribute="top" secondItem="7jG-ar-T4H" secondAttribute="bottom" constant="18" id="XcT-yV-8rQ"/>
+                                            <constraint firstItem="kWR-4z-BoD" firstAttribute="leading" secondItem="MRx-Vu-xxi" secondAttribute="leading" id="aT1-Hk-KsJ"/>
+                                            <constraint firstItem="8g1-xg-ACg" firstAttribute="leading" secondItem="1AG-M4-ThC" secondAttribute="trailing" constant="39" id="bP9-WB-c7L"/>
+                                            <constraint firstItem="QIw-9H-7PY" firstAttribute="leading" secondItem="8g1-xg-ACg" secondAttribute="leading" id="bUA-CA-Itr"/>
+                                            <constraint firstItem="YXu-Sr-2cX" firstAttribute="leading" secondItem="wBZ-x8-gCc" secondAttribute="leading" id="c29-oW-czh"/>
+                                            <constraint firstItem="ki3-9F-R20" firstAttribute="leading" secondItem="YMN-SD-gnW" secondAttribute="trailing" constant="51" id="c76-g7-aqh"/>
+                                            <constraint firstItem="QIw-9H-7PY" firstAttribute="top" secondItem="ki3-9F-R20" secondAttribute="bottom" constant="8" symbolic="YES" id="cFs-a3-kQF"/>
+                                            <constraint firstItem="QmT-zS-4ny" firstAttribute="centerY" secondItem="kWR-4z-BoD" secondAttribute="centerY" id="dzy-Fp-hZO"/>
+                                            <constraint firstItem="kWR-4z-BoD" firstAttribute="trailing" secondItem="MRx-Vu-xxi" secondAttribute="trailing" id="eK1-fK-mYC"/>
+                                            <constraint firstItem="wM9-Zc-Img" firstAttribute="leading" secondItem="FRR-tE-iLN" secondAttribute="trailing" constant="15" id="eUT-qn-Ax1"/>
+                                            <constraint firstItem="QIw-9H-7PY" firstAttribute="leading" secondItem="ki3-9F-R20" secondAttribute="leading" id="fBC-vO-Vxe"/>
+                                            <constraint firstItem="nmG-XF-waT" firstAttribute="leading" secondItem="3bD-Kl-vAR" secondAttribute="leadingMargin" id="fQ6-8M-VMy"/>
+                                            <constraint firstItem="qAq-nK-Tmr" firstAttribute="top" secondItem="TGy-7q-P6O" secondAttribute="top" id="gX7-9A-KtF"/>
+                                            <constraint firstItem="CKz-8y-Dfn" firstAttribute="top" secondItem="Zqb-be-kHM" secondAttribute="bottom" constant="21" id="gcn-Nf-V5V"/>
+                                            <constraint firstItem="MRx-Vu-xxi" firstAttribute="leading" secondItem="73n-NA-iBd" secondAttribute="trailing" constant="23" id="gzm-7L-ezm"/>
+                                            <constraint firstItem="73n-NA-iBd" firstAttribute="leading" secondItem="EG9-sS-oBK" secondAttribute="leading" constant="-3" id="hZ7-Ho-FRK"/>
+                                            <constraint firstItem="WNz-QS-VeK" firstAttribute="baseline" secondItem="EG9-sS-oBK" secondAttribute="firstBaseline" constant="6" id="hur-BN-J0o"/>
+                                            <constraint firstItem="FRR-tE-iLN" firstAttribute="baseline" secondItem="wM9-Zc-Img" secondAttribute="firstBaseline" id="iz7-ME-pAu"/>
+                                            <constraint firstItem="EG9-sS-oBK" firstAttribute="leading" secondItem="TGy-7q-P6O" secondAttribute="leading" constant="3" id="j4b-pE-7U7"/>
                                             <constraint firstItem="TGy-7q-P6O" firstAttribute="leading" secondItem="3bD-Kl-vAR" secondAttribute="leading" constant="37" id="kgz-qM-D4n"/>
+                                            <constraint firstItem="Zqb-be-kHM" firstAttribute="leading" secondItem="3bD-Kl-vAR" secondAttribute="leading" id="l91-yH-n90"/>
+                                            <constraint firstItem="MRx-Vu-xxi" firstAttribute="top" secondItem="kWR-4z-BoD" secondAttribute="bottom" constant="8" symbolic="YES" id="mY8-zn-vtj"/>
+                                            <constraint firstItem="CKz-8y-Dfn" firstAttribute="leading" secondItem="nmG-XF-waT" secondAttribute="leading" id="mlB-UW-DtR"/>
+                                            <constraint firstItem="wBZ-x8-gCc" firstAttribute="top" secondItem="qEy-TL-3SA" secondAttribute="bottom" constant="8" symbolic="YES" id="nUe-Bw-z3M"/>
                                             <constraint firstAttribute="trailing" secondItem="wBZ-x8-gCc" secondAttribute="trailing" constant="33" id="oVS-do-BbW"/>
+                                            <constraint firstItem="wM9-Zc-Img" firstAttribute="trailing" secondItem="MBN-WS-xtR" secondAttribute="trailing" id="pNS-lk-dwg"/>
+                                            <constraint firstItem="YXu-Sr-2cX" firstAttribute="trailing" secondItem="kWR-4z-BoD" secondAttribute="trailing" id="pQ0-6P-VdQ"/>
+                                            <constraint firstItem="Zqb-be-kHM" firstAttribute="top" secondItem="WNz-QS-VeK" secondAttribute="bottom" constant="93" id="rVD-3n-ob3"/>
+                                            <constraint firstItem="xha-oH-TyY" firstAttribute="leading" secondItem="1AG-M4-ThC" secondAttribute="leading" id="sRt-5q-Lbe"/>
+                                            <constraint firstItem="wM9-Zc-Img" firstAttribute="bottom" secondItem="FRR-tE-iLN" secondAttribute="bottom" id="sUu-sg-OgO"/>
+                                            <constraint firstItem="qAq-nK-Tmr" firstAttribute="top" secondItem="MRx-Vu-xxi" secondAttribute="bottom" constant="38" id="sYL-6q-O9z"/>
                                             <constraint firstAttribute="height" constant="850" id="shJ-VB-Q4D"/>
-                                            <constraint firstItem="Ljp-fF-7wX" firstAttribute="centerX" secondItem="3bD-Kl-vAR" secondAttribute="centerX" id="wpG-7t-D0m"/>
+                                            <constraint firstItem="Zqb-be-kHM" firstAttribute="top" secondItem="TGy-7q-P6O" secondAttribute="bottom" constant="39" id="uwQ-yb-pZ8"/>
+                                            <constraint firstItem="1AG-M4-ThC" firstAttribute="trailing" secondItem="FRR-tE-iLN" secondAttribute="trailing" id="vUO-Y4-R7R"/>
+                                            <constraint firstItem="MRx-Vu-xxi" firstAttribute="leading" secondItem="WNz-QS-VeK" secondAttribute="leading" id="w3F-O9-Gwf"/>
+                                            <constraint firstItem="Ljp-fF-7wX" firstAttribute="centerX" secondItem="3bD-Kl-vAR" secondAttribute="centerX" constant="-6.5" id="wpG-7t-D0m"/>
                                             <constraint firstAttribute="trailing" secondItem="YXu-Sr-2cX" secondAttribute="trailing" constant="33" id="xpF-1X-LbB"/>
                                             <constraint firstItem="Zqb-be-kHM" firstAttribute="width" secondItem="3bD-Kl-vAR" secondAttribute="width" id="xw1-IN-TAT"/>
+                                            <constraint firstItem="YMN-SD-gnW" firstAttribute="top" secondItem="CKz-8y-Dfn" secondAttribute="bottom" constant="3" id="zEL-HL-CrI"/>
+                                            <constraint firstItem="qEy-TL-3SA" firstAttribute="baseline" secondItem="MBN-WS-xtR" secondAttribute="firstBaseline" id="zV3-n5-tc5"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="kgz-qM-D4n"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -329,12 +428,16 @@
                     <size key="freeformSize" width="600" height="850"/>
                     <connections>
                         <outlet property="address" destination="qAq-nK-Tmr" id="Mpy-Eu-3i5"/>
-                        <outlet property="date" destination="MRx-Vu-xxi" id="ZBy-SW-r6R"/>
+                        <outlet property="eventDate" destination="8g1-xg-ACg" id="AzU-kV-Hf3"/>
+                        <outlet property="eventName" destination="ki3-9F-R20" id="SBN-sx-fCj"/>
+                        <outlet property="eventTime" destination="QIw-9H-7PY" id="9Zv-iL-VE1"/>
+                        <outlet property="join" destination="Ljp-fF-7wX" id="Zm6-my-tE0"/>
                         <outlet property="map" destination="Zqb-be-kHM" id="T3h-gd-9bw"/>
                         <outlet property="name" destination="wBZ-x8-gCc" id="xH2-Qv-Kri"/>
                         <outlet property="nameError" destination="MBN-WS-xtR" id="u0o-bF-9R9"/>
                         <outlet property="number" destination="YXu-Sr-2cX" id="LpJ-sS-yZV"/>
                         <outlet property="numberError" destination="wM9-Zc-Img" id="QiD-P7-XUm"/>
+                        <outlet property="rideDate" destination="MRx-Vu-xxi" id="LBX-2p-DgF"/>
                         <outlet property="seats" destination="WNz-QS-VeK" id="D2t-4d-dvq"/>
                         <outlet property="time" destination="kWR-4z-BoD" id="V4y-qZ-8lk"/>
                     </connections>
@@ -348,7 +451,7 @@
             <objects>
                 <tableViewController id="UPQ-Qo-s9Z" customClass="FilteredRidesTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="LfV-uh-GoB">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="456"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="322"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

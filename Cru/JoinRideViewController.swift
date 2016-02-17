@@ -9,9 +9,11 @@
 import UIKit
 import MapKit
 import SwiftValidator
+import FlatUIKit
 
 class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
 
+    @IBOutlet weak var join: FUIButton!
     @IBOutlet weak var time: UILabel!
   
     @IBOutlet weak var address: UITextView!
@@ -22,20 +24,28 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     @IBOutlet weak var nameError: UILabel!
     @IBOutlet weak var map: MKMapView!
     
+    @IBOutlet weak var rideDate: UILabel!
+    @IBOutlet weak var eventTime: UILabel!
+    @IBOutlet weak var eventName: UILabel!
+    @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var seats: UILabel!
     @IBOutlet weak var date: UILabel!
     let validator = Validator()
     
     var ride: Ride?
+    var event: Event?
+    
     let dummyAddress = "1 Grand Avenue San Luis Obispo 93401 California"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = "Join Ride"
+        ServerUtils.findEventById(ride!.eventId, inserter: insertEvent)
         
         print("trying to load ride")
         if(ride != nil){
             print("ride was loadede")
-            date.text = ride?.getDate()
+            rideDate.text = ride?.getDate()
             time.text = ride?.getTime()
             seats.text = (ride?.seatsLeft())! + " left"
             address.text = dummyAddress
@@ -52,6 +62,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         nameError.text = ""
         numberError.text = ""
         
+        makeButtonPretty()
         validator.registerField(name, errorLabel: nameError, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(number, errorLabel: numberError, rules: [RequiredRule(), PhoneNumberRule()])
         
@@ -62,6 +73,29 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
 
     @IBAction func dismissKeyboard(sender: AnyObject) {
         self.resignFirstResponder()
+    }
+    
+    func makeButtonPretty(){
+        join.buttonColor = UIColor.turquoiseColor()
+        join.shadowColor = UIColor.greenSeaColor()
+        join.shadowHeight = 3.0
+        join.cornerRadius = 6.0
+        join.titleLabel!.font = UIFont.boldFlatFontOfSize(16)
+        join.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
+        join.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
+        
+    }
+    
+    func insertEvent(dict: NSDictionary){
+        let event = Event(dict: dict)
+        eventName.text = event!.name
+        eventTime.text = String(event!.startHour)
+//        if(event!.startDay != nil){
+//        date.text = String(event!.startDay)
+//        }
+//        else{
+//           date.text = "mondee"
+//        }
     }
     
     func validationSuccessful() {

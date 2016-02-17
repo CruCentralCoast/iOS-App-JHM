@@ -21,8 +21,9 @@ class FindRideTableTableViewController: UITableViewController, UIPickerViewDeleg
     
     
     override func viewDidLoad() {
-        super.viewDidLoad()
         
+        super.viewDidLoad()
+        navigationItem.title = "Available Rides"
         ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: loadRides)
         
         
