@@ -21,6 +21,7 @@ class Ride: Comparable, Equatable {
     var passengers: [String]
     var day = 3
     var month = "JAN"
+    var monthNum = 1
     var hour = 3
     var minute = 3
     
@@ -67,7 +68,7 @@ class Ride: Comparable, Equatable {
             
             let components = ServerUtils.dateFromString(time)!
             self.day = components.day
-            let monthNum = components.month
+            let monthNumber = components.month
             self.hour = components.hour
             self.minute = components.minute
             
@@ -76,7 +77,8 @@ class Ride: Comparable, Equatable {
             //get month symbol from number
             let dateFormatter: NSDateFormatter = NSDateFormatter()
             let months = dateFormatter.shortMonthSymbols
-            self.month = months[monthNum - 1].uppercaseString
+            self.month = months[monthNumber - 1].uppercaseString
+            self.monthNum = monthNumber
         }
         if (dict.objectForKey("passengers") != nil){
             passengers = dict.objectForKey("passengers") as! [String]
@@ -142,7 +144,34 @@ class Ride: Comparable, Equatable {
 }
 
 func  <(lRide: Ride, rRide: Ride) -> Bool{
-    return lRide.id < rRide.id
+    if(lRide.month < rRide.month){
+        return true
+    }
+    else if(lRide.month > rRide.month){
+        return false
+    }
+    
+    if(lRide.day < rRide.day){
+        return true
+    }
+    else if(lRide.day > rRide.day){
+        return false
+    }
+    
+    if(lRide.hour < rRide.hour){
+        return true
+    }
+    else if(lRide.hour > rRide.hour){
+        return false
+    }
+    if(lRide.minute < rRide.minute){
+        return true
+    }
+    else if(lRide.minute > rRide.minute){
+        return false
+    }
+    
+    return lRide.month < rRide.month
 }
 func  ==(lRide: Ride, rRide: Ride) -> Bool{
     return lRide.id == rRide.id

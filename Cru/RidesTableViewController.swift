@@ -30,6 +30,13 @@ class RidesTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 20)!]
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
+        
+        self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
+        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         gcmId = SubscriptionManager.loadGCMToken()
@@ -38,8 +45,7 @@ class RidesTableViewController: UITableViewController {
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertRide, afterFunc: {() in })
-        //ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInserting)
+        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
     }
     
@@ -50,6 +56,30 @@ class RidesTableViewController: UITableViewController {
 
         
     }
+    
+    func finishRideInsert(){
+        rides.sortInPlace({ (lRide: Ride, rRide: Ride) -> Bool in
+        
+            if(lRide.monthNum < rRide.monthNum){
+            return true
+            }
+            else if(lRide.monthNum > rRide.monthNum){
+            return false
+            }
+            
+            if(lRide.day < rRide.day){
+            return true
+            }
+            else if(lRide.day > rRide.day){
+            return false
+            }
+            return false
+        })
+    
+        self.tableView.reloadData()
+    }
+ 
+    
     
     func finishRefresh(){
         self.tableView.reloadData()
@@ -62,14 +92,12 @@ class RidesTableViewController: UITableViewController {
         //if there is no ride...add it
         if(!rides.contains(newRide!)){
             self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-            print("new")
         }
         //else remove the old one and put in the new one
         //which may contain updated ride data
         else{
             let index = rides.indexOf(newRide!)
             rides.removeAtIndex(index!)
-            print("old")
         }
         
         //in either case we insert the ride
@@ -84,13 +112,34 @@ class RidesTableViewController: UITableViewController {
         //insert into ride array
         rides.insert(newRide!, atIndex: 0)
         
+        rides.sortInPlace({ (lRide: Ride, rRide: Ride) -> Bool in
+            
+            if(lRide.monthNum < rRide.monthNum){
+                return true
+            }
+            else if(lRide.monthNum > rRide.monthNum){
+                return false
+            }
+            
+            if(lRide.day < rRide.day){
+                return true
+            }
+            else if(lRide.day > rRide.day){
+                return false
+            }
+            return false
+        })
+        
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
     }
     
     
     func finishInserting(){
-        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         self.tableView.beginUpdates()
+        
+        
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        
         self.tableView.reloadData()
         self.tableView.endUpdates()
     }
