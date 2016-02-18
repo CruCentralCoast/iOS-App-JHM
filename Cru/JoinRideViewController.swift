@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 import SwiftValidator
 import FlatUIKit
+import MRProgress
 
 class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
 
@@ -76,7 +77,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     }
     
     func makeButtonPretty(){
-        join.buttonColor = UIColor.turquoiseColor()
+        join.buttonColor = UIColor(red: 0, green:  0.427, blue: 0.118, alpha: 1.0)
         join.shadowColor = UIColor.greenSeaColor()
         join.shadowHeight = 3.0
         join.cornerRadius = 6.0
@@ -99,9 +100,36 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     }
     
     func validationSuccessful() {
+        
         // submit the form
         let phoneNumber = number.text
         let nameString = name.text
+        
+        resetLabel(name, error: nameError)
+        resetLabel(number, error: numberError)
+        
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+        ServerUtils.joinRide(nameString!, phone: phoneNumber!, direction: "both",  rideId: (ride?.id)!, handler: successfulJoin)
+        
+    }
+    
+    func successfulJoin(){
+        let success = UIAlertController(title: "Join Successful", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        success.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
+            
+            
+            self.presentViewController(success, animated: true, completion: nil)
+        })
+        
+        
+    }
+    
+    func resetLabel(field: UITextField, error: UILabel){
+        field.layer.borderColor = UIColor.clearColor().CGColor
+        field.layer.borderWidth = 0.0
+        error.text = ""
     }
     
     func validationFailed(errors:[UITextField:ValidationError]) {
@@ -124,19 +152,16 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         }
         
         if(nameValid){
-            name.layer.borderColor = UIColor.clearColor().CGColor
-            name.layer.borderWidth = 0.0
-            nameError.text = ""
+            resetLabel(name, error: nameError)
         }
         if(numValid){
-            number.layer.borderColor = UIColor.clearColor().CGColor
-            number.layer.borderWidth = 0.0
-            numberError.text = ""
+            resetLabel(number, error: numberError)
         }
     }
 
     
     @IBAction func joinRidePressed(sender: AnyObject) {
+        self.view.endEditing(true)
         validator.validate(self)
         
     }

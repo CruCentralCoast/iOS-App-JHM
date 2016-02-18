@@ -29,6 +29,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         //as their delegate and data source
         rideTable.delegate = self
         rideTable.dataSource = self
+        
         eventPicker.delegate = self
         eventPicker.dataSource = self
         
@@ -69,6 +70,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         for ride in allRides{
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
+                print("\(ride.id)")
             }
         }
         
