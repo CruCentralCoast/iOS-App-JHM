@@ -51,6 +51,9 @@
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		503A06D11C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		503A06D21C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
+		5049DF571C75518A00FDC571 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */; };
+		5049DF581C75518A00FDC571 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */; };
+		5049DF591C75518A00FDC571 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */; };
 		50518AED1C71899900D83B5F /* FilteredRidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50518AEC1C71899900D83B5F /* FilteredRidesTableViewController.swift */; };
 		50518AEE1C71899900D83B5F /* FilteredRidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50518AEC1C71899900D83B5F /* FilteredRidesTableViewController.swift */; };
 		50518AEF1C71899900D83B5F /* FilteredRidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50518AEC1C71899900D83B5F /* FilteredRidesTableViewController.swift */; };
@@ -172,6 +175,7 @@
 		503A06C91C5F080200DAD10E /* ridesharing.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ridesharing.storyboard; sourceTree = "<group>"; };
 		503A06CB1C5F08CC00DAD10E /* offerride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = offerride.storyboard; sourceTree = "<group>"; };
 		503A06CF1C5F08E200DAD10E /* findride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = findride.storyboard; sourceTree = "<group>"; };
+		5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByEventViewController.swift; sourceTree = "<group>"; };
 		50518AEC1C71899900D83B5F /* FilteredRidesTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilteredRidesTableViewController.swift; sourceTree = "<group>"; };
 		5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverRideDetailViewController.swift; sourceTree = "<group>"; };
 		509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderRideDetailViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +359,7 @@
 				509A1A3D1C714E6D00B46AAF /* FindRideTableTableViewController.swift */,
 				50C89BBE1C719D4300D0CBEE /* JoinRideViewController.swift */,
 				503A06CF1C5F08E200DAD10E /* findride.storyboard */,
+				5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */,
 			);
 			name = FindRide;
 			sourceTree = "<group>";
@@ -701,6 +706,7 @@
 			files = (
 				5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				509DA91D1C6172FC0050CE26 /* Ride.swift in Sources */,
+				5049DF571C75518A00FDC571 /* FilterByEventViewController.swift in Sources */,
 				0F0C221F1C0D783B002850DF /* ResourceVideoTableViewCell.swift in Sources */,
 				50FE4D431C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
@@ -758,6 +764,7 @@
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				509A1A3F1C714E6D00B46AAF /* FindRideTableTableViewController.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
+				5049DF581C75518A00FDC571 /* FilterByEventViewController.swift in Sources */,
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
 				50C89BC01C719D4300D0CBEE /* JoinRideViewController.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
@@ -779,6 +786,7 @@
 				50FE4D451C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50518AEF1C71899900D83B5F /* FilteredRidesTableViewController.swift in Sources */,
+				5049DF591C75518A00FDC571 /* FilterByEventViewController.swift in Sources */,
 				509A1A401C714E6D00B46AAF /* FindRideTableTableViewController.swift in Sources */,
 				50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */,
 				5094897F1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
