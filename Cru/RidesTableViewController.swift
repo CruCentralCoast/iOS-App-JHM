@@ -57,21 +57,27 @@ class RidesTableViewController: UITableViewController {
     }
     
     func insertNewRide(dict : NSDictionary){
-        //create ride
         let newRide = Ride(dict: dict)
         
+        //if there is no ride...add it
         if(!rides.contains(newRide!)){
-            //insert into ride array
-            rides.insert(newRide!, atIndex: 0)
             self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+            print("new")
+        }
+        //else remove the old one and put in the new one
+        //which may contain updated ride data
+        else{
+            let index = rides.indexOf(newRide!)
+            rides.removeAtIndex(index!)
+            print("old")
         }
         
+        //in either case we insert the ride
+        rides.insert(newRide!, atIndex: 0)
         
     }
     
     func insertRide(dict : NSDictionary) {
-        print("inserting a ride")
-        
         //create ride
         let newRide = Ride(dict: dict)
         
@@ -123,6 +129,7 @@ class RidesTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         navigationItem.title = "Rides"
+        
     }
 
 
@@ -223,6 +230,16 @@ class RidesTableViewController: UITableViewController {
         
         
     }
-
+        
+        
 
 }
+
+//    extension Array where Element: Equatable{
+//        mutating func removeObject(object: Element){
+//            if let index = self.indexOf(object){
+//                self.removeAtIndex(index)
+//            }
+//        }
+//    }
+

@@ -12,40 +12,48 @@ import SwiftValidator
 import FlatUIKit
 import MRProgress
 
-class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
+struct JoinRideConstants{
+    static let NAME = "Join Ride"
+}
 
+class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
+    //Buttons, labels, a map
     @IBOutlet weak var join: FUIButton!
     @IBOutlet weak var time: UILabel!
-  
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var number: UITextField!
-    
     @IBOutlet weak var numberError: UILabel!
     @IBOutlet weak var nameError: UILabel!
     @IBOutlet weak var map: MKMapView!
-    
     @IBOutlet weak var rideDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var seats: UILabel!
     @IBOutlet weak var date: UILabel!
+    
+    //for validating user input
     let validator = Validator()
     
+    //sources of data to be displayed
     var ride: Ride?
     var event: Event?
-    
     let dummyAddress = "1 Grand Avenue San Luis Obispo 93401 California"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Join Ride"
-        ServerUtils.findEventById(ride!.eventId, inserter: insertEvent)
+
         
-        print("trying to load ride")
+        navigationItem.title = JoinRideConstants.NAME
+        setupMap()
+        
+        //load events
+        ServerUtils.findEventById(ride!.eventId, inserter: insertEvent)
+
+        
         if(ride != nil){
-            print("ride was loadede")
             rideDate.text = ride?.getDate()
             time.text = ride?.getTime()
             seats.text = (ride?.seatsLeft())! + " left"
@@ -63,13 +71,12 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         nameError.text = ""
         numberError.text = ""
         
+        //initalize validation things
         makeButtonPretty()
         validator.registerField(name, errorLabel: nameError, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(number, errorLabel: numberError, rules: [RequiredRule(), PhoneNumberRule()])
+
         
-        setupMap()
-        //dateTimeLabel.text = ride?.getDescription()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func dismissKeyboard(sender: AnyObject) {
@@ -91,12 +98,6 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         let event = Event(dict: dict)
         eventName.text = event!.name
         eventTime.text = String(event!.startHour)
-//        if(event!.startDay != nil){
-//        date.text = String(event!.startDay)
-//        }
-//        else{
-//           date.text = "mondee"
-//        }
     }
     
     func validationSuccessful() {
@@ -116,7 +117,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     func successfulJoin(){
         let success = UIAlertController(title: "Join Successful", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         success.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
-        
+
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
             
             
@@ -130,6 +131,12 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
             navController.popViewControllerAnimated(true)
+            
+            for vc in navController.viewControllers{
+                if let tvc = vc as? RidesTableViewController {
+                    tvc.refresh(1)
+                }
+            }
         }
     }
     

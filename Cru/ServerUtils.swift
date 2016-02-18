@@ -76,7 +76,7 @@ class ServerUtils {
                             rideIds.append(passenger["_id"] as! String)
                         }
                         
-                        print("\(rideIds)")
+                        //print("\(rideIds)")
         
                         let inQuery = ["$in": rideIds]
                         let query = ["passengers": inQuery]
@@ -212,8 +212,8 @@ class ServerUtils {
         
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            let sexybody = NSString(data: body, encoding: NSUTF8StringEncoding)
-            print(sexybody)
+//            let sexybody = NSString(data: body, encoding: NSUTF8StringEncoding)
+//            print(sexybody)
             ServerClient.sendHttpPostRequest(requestUrl, body: body, completionHandler : handler)
         } catch {
             print("Error sending ride offer!")
@@ -229,8 +229,8 @@ class ServerUtils {
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
             
-            let sexybody = NSString(data: body, encoding: NSUTF8StringEncoding)
-            print(sexybody)
+//            let sexybody = NSString(data: body, encoding: NSUTF8StringEncoding)
+//            print(sexybody)
             
             ServerClient.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerClient.blankCompletionHandler);
         } catch {
