@@ -149,6 +149,14 @@ class EventDetailsViewController: UIViewController {
         }
     }
 
+    @IBAction func linkToRideShare(sender: AnyObject) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        //self.presentViewController(vc, animated: true, completion: nil)
+        vc.loadEvents({ vc.selectVal(self.event)})
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

@@ -9,7 +9,7 @@
 import UIKit
 import Foundation
 
-class Event {
+class Event: Equatable {
     // MARK: Properties
     
     var id: String?
@@ -90,4 +90,8 @@ class Event {
         self.init(id: id, name: name, image: nil, startDate: startDate, endDate: endDate, street: street, suburb: suburb, postcode: postcode, description: description, url: url, imageUrl: imageUrl)
     }
 
+}
+
+func  ==(lEvent: Event, rEvent: Event) -> Bool{
+    return lEvent.id == rEvent.id
 }

@@ -40,20 +40,28 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
 
+    func loadEvents(afterFunc: ()->Void){
+        ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: afterFunc)
+    }
+    
     func loadRides(){
         ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: showRides)
     }
     
     func showRides(){
-        if(events.count != 0){
+        if(events.count != 0 && self.selectedEvent == nil){
             filterRidesByEventId(events[0].id!)
             self.selectedEvent  = events[0]
-            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+        }
+        else if(events.count != 0){
+            filterRidesByEventId(self.selectedEvent!.id!)
         }
         else{
             print("this shouldn't happen")
         }
         
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
     func insertEvent(dict: NSDictionary){
@@ -70,7 +78,6 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         for ride in allRides{
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
-                print("\(ride.id)")
             }
         }
         
@@ -119,6 +126,13 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    func selectVal(event: Event){
+        let ndx = events.indexOf(event)
+        eventPicker.selectRow(ndx!, inComponent: 0, animated: true)
+        filterRidesByEventId(events[ndx!].id!)
+        self.selectedEvent = events[ndx!]
+        self.rideTable.reloadData()
+    }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         

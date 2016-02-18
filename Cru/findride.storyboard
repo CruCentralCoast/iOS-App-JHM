@@ -41,7 +41,7 @@
         <!--Filter By Event View Controller-->
         <scene sceneID="All-xW-VyS">
             <objects>
-                <viewController id="pWi-Mg-59H" customClass="FilterByEventViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ridesByEvent" id="pWi-Mg-59H" customClass="FilterByEventViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yRh-MN-6kb"/>
                         <viewControllerLayoutGuide type="bottom" id="5Es-qN-4Qw"/>
