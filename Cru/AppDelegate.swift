@@ -9,6 +9,7 @@
 import UIKit
 import CoreData
 import WildcardSDK
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
@@ -46,6 +47,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
         //Initialize WildcardSDK with Cru API key for Resources
         WildcardSDK.initializeWithApiKey("4f154853-1955-4422-9aa3-f1fbd89d3403")
+        
+        //IQKeyboardManager makes keyboards play nicely with textfields usually covered by keyboard
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }

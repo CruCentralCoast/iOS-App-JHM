@@ -9,6 +9,43 @@
 import Foundation
 
 class ServerUtils {
+    
+    static func findEventById(id: String, inserter : (NSDictionary) -> ()){
+        var requestUrl = Config.serverUrl + "api/event/find"
+        var params = ["_id": id]
+        
+        do {
+            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            ServerClient.sendHttpPostRequest(requestUrl, body: body, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
+                do {
+                    if (data != nil) {
+                        let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                        
+                        let event = jsonResponse as! NSArray
+
+                        if(event.count != 0){
+                        inserter(event[0] as! NSDictionary)
+                        }
+                        else
+                        {
+                            print("couldn't find event for id")
+                        }
+                        
+                    }
+                    else {
+                        // TODO: display message for user
+                        print("Failed to get stuff from database")
+                    }
+                }
+                catch {
+                    print("Something went wrong with http request...")
+                }})
+        }
+        catch {
+            print("Error getting ride for GCM token!")
+        }
+    }
+    
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
         loadResources(collectionName, inserter: inserter, afterFunc: {() in })
     }
@@ -45,10 +82,9 @@ class ServerUtils {
                         let query = ["passengers": inQuery]
                         
                         let body = try NSJSONSerialization.dataWithJSONObject(query, options: NSJSONWritingOptions.PrettyPrinted)
-                        let string1 = NSString(data: body, encoding: NSUTF8StringEncoding)
-                        print(string1)
                         
-                        
+                        //let string1 = NSString(data: body, encoding: NSUTF8StringEncoding)
+                        //print(string1)
                         //print("\(body)")
                         
                         ServerClient.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : curryDisplayResources(inserter, afterFunc: {() in }))
