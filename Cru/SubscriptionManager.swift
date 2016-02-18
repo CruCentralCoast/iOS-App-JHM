@@ -57,7 +57,7 @@ class SubscriptionManager{
         return [Ministry]()
     }
     
-    static func saveMinistrys(ministrys:[Ministry]) {
+    static func saveMinistrys(ministrys:[Ministry], updateGCM: Bool) {
         
         var enabledMinistries = [Ministry]()
         
@@ -67,23 +67,28 @@ class SubscriptionManager{
             }
         }
         
-        // unsubcribe from ministries you are no longer in
-        // and subscribe to ones that you just joined
-        let oldMinistries = loadMinistries()
-        if (oldMinistries != nil) {
-            for min in oldMinistries! {
-                if (!enabledMinistries.contains(min)) {
-                    unSubscribeToTopic("/topics/" + min.id)
+        print("updating device ministry data")
+        
+        if(updateGCM){
+            print("updating gcm")
+            // unsubcribe from ministries you are no longer in
+            // and subscribe to ones that you just joined
+            let oldMinistries = loadMinistries()
+            if (oldMinistries != nil) {
+                for min in oldMinistries! {
+                    if (!enabledMinistries.contains(min)) {
+                        unSubscribeToTopic("/topics/" + min.id)
+                    }
                 }
-            }
-            for min in enabledMinistries {
-                if (!oldMinistries!.contains(min)) {
+                for min in enabledMinistries {
+                    if (!oldMinistries!.contains(min)) {
+                        subscribeToTopic("/topics/" + min.id)
+                    }
+                }
+            } else {
+                for min in enabledMinistries {
                     subscribeToTopic("/topics/" + min.id)
                 }
-            }
-        } else {
-            for min in enabledMinistries {
-                subscribeToTopic("/topics/" + min.id)
             }
         }
         

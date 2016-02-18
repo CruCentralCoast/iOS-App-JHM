@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import MRProgress
 
 class MinistryTableViewController: UITableViewController {
     var ministries = [Ministry]()            //list of ALL ministries
@@ -94,19 +94,36 @@ class MinistryTableViewController: UITableViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         var subscribedMinistries = [Ministry]()
         
         for campus in subscribedCampuses{
             let campusMinistries = ministryMap[campus]
             if (campusMinistries != nil) {
                 for ministry in campusMinistries! {
-                    if(ministry.feedEnabled == true){
-                        subscribedMinistries.append(ministry)
-                    }
+                    subscribedMinistries.append(ministry)
                 }
             }
         }
-        SubscriptionManager.saveMinistrys(subscribedMinistries)
+        
+        SubscriptionManager.saveMinistrys(subscribedMinistries, updateGCM: true)
+        
+        //TODO: Move this to place that's called when done subscribing
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+    }
+    
+    func saveMinistriesToDevice(){
+        var subscribedMinistries = [Ministry]()
+        
+        for campus in subscribedCampuses{
+            let campusMinistries = ministryMap[campus]
+            if (campusMinistries != nil) {
+                for ministry in campusMinistries! {
+                    subscribedMinistries.append(ministry)
+                }
+            }
+        }
+        SubscriptionManager.saveMinistrys(subscribedMinistries, updateGCM: false)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -167,7 +184,7 @@ class MinistryTableViewController: UITableViewController {
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
-        SubscriptionManager.saveMinistrys(ministries)
+        
     }
     
     override func tableView(tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int)

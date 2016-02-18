@@ -178,7 +178,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             }
         }
         
-        SubscriptionManager.saveMinistrys(subbedMinistries)
+        SubscriptionManager.saveMinistrys(subbedMinistries, updateGCM: true)
         SubscriptionManager.saveCampuses(campuses)
     }
     

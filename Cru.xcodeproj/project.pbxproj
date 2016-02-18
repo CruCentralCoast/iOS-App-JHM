@@ -109,6 +109,8 @@
 		50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
+		6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
+		6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
 		6D4B78AE1C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
 		6D4B78AF1C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
 		6D4B78B01C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
@@ -123,8 +125,6 @@
 		6D4B78C21C70ECC300F643CB /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */; };
 		6D4B78C31C70ECC300F643CB /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */; };
 		6D4B78C41C70ECC300F643CB /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */; };
-		6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
-		6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
 		6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */; };
 		6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */; };
 		6D76CA791C06AAF800F8B007 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA781C06AAF800F8B007 /* EventTableViewCell.swift */; };
@@ -250,12 +250,12 @@
 		50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		50FE4D461C50D37C00EA9042 /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
 		6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableViewController.swift; sourceTree = "<group>"; };
 		6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		6D4B78B51C702FDF00F643CB /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WildcardSDK.framework; sourceTree = "<group>"; };
 		6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
-		6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman 3.otf"; sourceTree = "<group>"; };
 		6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
 		6D76CA781C06AAF800F8B007 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
