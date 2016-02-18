@@ -29,6 +29,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         //as their delegate and data source
         rideTable.delegate = self
         rideTable.dataSource = self
+        
         eventPicker.delegate = self
         eventPicker.dataSource = self
         
@@ -69,6 +70,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         for ride in allRides{
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
+                print("\(ride.id)")
             }
         }
         
@@ -84,11 +86,27 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("rideCell")
+        var cell = tableView.dequeueReusableCellWithIdentifier("rideCell") as! OfferedRideTableViewCell
         
-        cell?.textLabel!.text = filteredRides[indexPath.row].getDescription()
+        let thisRide = filteredRides[indexPath.row]
+        cell.month.text = thisRide.month
+        cell.day.text = String(thisRide.day)
+        cell.time.text = thisRide.time
         
-        return cell!
+        cell.seatsLeft.text = thisRide.seatsLeft() + " seats left"
+        
+        if(thisRide.seatsLeft() == 1){
+            cell.seatsLeft.textColor = UIColor(red: 0.729, green: 0, blue: 0.008, alpha: 1.0)
+ 
+        }
+        else if(thisRide.seatsLeft() == 2){
+            cell.seatsLeft.textColor = UIColor(red: 0.976, green: 0.714, blue: 0.145, alpha: 1.0)
+        }
+        else{
+            cell.seatsLeft.textColor = UIColor(red: 0, green:  0.427, blue: 0.118, alpha: 1.0)
+        }
+        
+        return cell
     }
     
     

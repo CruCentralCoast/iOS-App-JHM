@@ -115,8 +115,14 @@ class Ride {
     }
     
     func seatsLeft()->String{
-        return String(self.seats - self.passengers.count) + "/"  + String(self.seats)
+        return String(self.seats - self.passengers.count)
     }
+    
+    func seatsLeft()->Int{
+        return self.seats - self.passengers.count
+    }
+    
+    
     
     func getDate()->String{
         var dayS = String(self.day)
