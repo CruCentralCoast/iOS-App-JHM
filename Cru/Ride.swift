@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Ride {
+class Ride: Comparable, Equatable {
     var id: String
     var direction: String
     var seats: Int
@@ -137,4 +137,13 @@ class Ride {
     func getDescription()->String{
         return Ride.createTime(self.hour, minute: self.minute)  + "    " + self.getDate() + "   " + self.seatsLeft() + " left"
     }
+    
+    
+}
+
+func  <(lRide: Ride, rRide: Ride) -> Bool{
+    return lRide.id < rRide.id
+}
+func  ==(lRide: Ride, rRide: Ride) -> Bool{
+    return lRide.id == rRide.id
 }

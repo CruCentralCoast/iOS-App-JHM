@@ -9,7 +9,6 @@
 import UIKit
 import MRProgress
 
-
 class RidesTableViewController: UITableViewController {
     let roundTrip = "round-trip"
     let roundTripDirection = "both"
@@ -17,7 +16,7 @@ class RidesTableViewController: UITableViewController {
     let toEvent = "to event"
     let driver = "driver"
     let rider = "rider"
-
+    
     var rides = [Ride]()
     var events = [Event]()
     var tappedRide = Ride?()
@@ -26,19 +25,48 @@ class RidesTableViewController: UITableViewController {
     //TODO: Get gcm id associated with device and only populate rides associated with that id
     let myName = "Daniel Toy"
     var gcmId = "1234567"
-     
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+
         gcmId = SubscriptionManager.loadGCMToken()
         gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
         
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertRide)
+        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertRide, afterFunc: {() in })
         //ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInserting)
         ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
+    }
+    
+    func refresh(sender:AnyObject)
+    {
+        // Updating your data here...
+        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertNewRide, afterFunc: finishRefresh)
+
+        
+    }
+    
+    func finishRefresh(){
+        self.tableView.reloadData()
+        self.refreshControl?.endRefreshing()
+    }
+    
+    func insertNewRide(dict : NSDictionary){
+        //create ride
+        let newRide = Ride(dict: dict)
+        
+        if(!rides.contains(newRide!)){
+            //insert into ride array
+            rides.insert(newRide!, atIndex: 0)
+            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        }
+        
+        
     }
     
     func insertRide(dict : NSDictionary) {

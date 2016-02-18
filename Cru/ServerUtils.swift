@@ -55,7 +55,7 @@ class ServerUtils {
         ServerClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter, afterFunc: afterFunc))
     }
     
-    class func getRidesByGCMToken(token: String, inserter: (NSDictionary) -> ()) {
+    class func getRidesByGCMToken(token: String, inserter: (NSDictionary) -> (), afterFunc: ()->Void) {
         
         //gets rides you are receiving
         var requestUrl = Config.serverUrl + "api/passenger/find"
@@ -87,7 +87,7 @@ class ServerUtils {
                         //print(string1)
                         //print("\(body)")
                         
-                        ServerClient.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : curryDisplayResources(inserter, afterFunc: {() in }))
+                        ServerClient.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : curryDisplayResources(inserter, afterFunc: afterFunc))
                         
                     }
                     else {
