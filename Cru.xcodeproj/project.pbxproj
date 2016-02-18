@@ -92,6 +92,9 @@
 		50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
+		6D2A2C611C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
+		6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
+		6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
 		6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */; };
 		6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */; };
 		6D76CA791C06AAF800F8B007 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA781C06AAF800F8B007 /* EventTableViewCell.swift */; };
@@ -100,6 +103,18 @@
 		6D76CA7E1C06AF9E00F8B007 /* EventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7D1C06AF9E00F8B007 /* EventTableViewController.swift */; };
 		6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
 		6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */; };
+		6DBD7B8C1C756D1000D11FFA /* GlobalCruColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */; };
+		6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */; };
+		6DBD7B8E1C756D1000D11FFA /* GlobalCruColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */; };
+		6DBD7B901C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */; };
+		6DBD7B911C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */; };
+		6DBD7B921C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */; };
+		6DBD7B941C75742A00D11FFA /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */; };
+		6DBD7B951C75742A00D11FFA /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */; };
+		6DBD7B971C75746300D11FFA /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */; };
+		6DBD7B981C75746300D11FFA /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */; };
+		6DBD7B9A1C75747C00D11FFA /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */; };
+		6DBD7B9B1C75747C00D11FFA /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */; };
 		850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
 		857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */; };
 		85C6D11B1C0BD5F4006A4F9F /* ServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1171C0BD5F4006A4F9F /* ServerClient.swift */; };
@@ -184,6 +199,7 @@
 		50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		50FE4D461C50D37C00EA9042 /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
 		6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman 3.otf"; sourceTree = "<group>"; };
 		6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
 		6D76CA781C06AAF800F8B007 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
@@ -191,6 +207,11 @@
 		6D76CA7D1C06AF9E00F8B007 /* EventTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewController.swift; sourceTree = "<group>"; };
 		6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
 		6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBook.otf; sourceTree = "<group>"; };
+		6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCruColors.swift; sourceTree = "<group>"; };
+		6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLigIt.otf; sourceTree = "<group>"; };
+		6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMed.otf; sourceTree = "<group>"; };
+		6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMedIt.otf; sourceTree = "<group>"; };
+		6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
 		850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUtils.swift; sourceTree = "<group>"; };
 		857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85C6D1171C0BD5F4006A4F9F /* ServerClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerClient.swift; sourceTree = "<group>"; };
@@ -272,9 +293,14 @@
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
 				857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */,
 				0F8CEF271BEC0E13008FC70D /* Cru.xcdatamodeld */,
+				6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */,
 				6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */,
+				6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */,
+				6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */,
 				6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */,
+				6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */,
 				6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */,
+				6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */,
 			);
 			path = Cru;
 			sourceTree = "<group>";
@@ -344,6 +370,7 @@
 				5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */,
 				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
+				6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */,
 				503A06CF1C5F08E200DAD10E /* findride.storyboard */,
 				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
 				50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */,
@@ -573,6 +600,7 @@
 				50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */,
 				503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
+				6DBD7B941C75742A00D11FFA /* FreigSanProMed.otf in Resources */,
 				857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */,
 				50F8251F1C0BB965005396BC /* resources.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
@@ -582,8 +610,11 @@
 				501D0ABF1C68588700BF243A /* events.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,
 				0F8CEF2B1BEC0E13008FC70D /* Assets.xcassets in Resources */,
+				6DBD7B971C75746300D11FFA /* FreigSanProMedIt.otf in Resources */,
+				6DBD7B9A1C75747C00D11FFA /* FreigSanProSem.otf in Resources */,
 				0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */,
 				503A06CA1C5F080200DAD10E /* ridesharing.storyboard in Resources */,
+				6DBD7B901C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */,
 				6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */,
 				6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */,
 				0FC0B9DE1C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
@@ -601,6 +632,7 @@
 				509DA9161C616BE60050CE26 /* riderdetail.storyboard in Resources */,
 				503A06D11C5F08E200DAD10E /* findride.storyboard in Resources */,
 				0FC0B9DF1C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
+				6DBD7B911C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */,
 				501D0AC01C68588700BF243A /* events.storyboard in Resources */,
 				503A06CD1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 				509DA91A1C616C840050CE26 /* driverdetail.storyboard in Resources */,
@@ -613,10 +645,14 @@
 			files = (
 				0FC8E3A81C45EB1A007A7208 /* Intro.storyboard in Resources */,
 				509DA9171C616BE60050CE26 /* riderdetail.storyboard in Resources */,
+				6DBD7B9B1C75747C00D11FFA /* FreigSanProSem.otf in Resources */,
 				503A06D21C5F08E200DAD10E /* findride.storyboard in Resources */,
 				0FC0B9E01C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
+				6DBD7B921C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */,
+				6DBD7B951C75742A00D11FFA /* FreigSanProMed.otf in Resources */,
 				501D0AC11C68588700BF243A /* events.storyboard in Resources */,
 				503A06CE1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
+				6DBD7B981C75746300D11FFA /* FreigSanProMedIt.otf in Resources */,
 				509DA91B1C616C840050CE26 /* driverdetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -696,6 +732,7 @@
 				5095272B1C63E6D000E4F7B6 /* TempEventTableViewController.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				6D76CA791C06AAF800F8B007 /* EventTableViewCell.swift in Sources */,
+				6DBD7B8C1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				50FE4D471C50D37C00EA9042 /* Ministry.swift in Sources */,
 				6D76CA7E1C06AF9E00F8B007 /* EventTableViewController.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
@@ -706,6 +743,7 @@
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
 				0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */,
 				50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
+				6D2A2C611C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */,
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */,
 				50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
@@ -724,6 +762,7 @@
 			files = (
 				50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */,
 				503547881C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
+				6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */,
 				50A38FEA1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				5094897E1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				50FE4D401C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
@@ -734,6 +773,7 @@
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				0FC8E3B31C48750A007A7208 /* IntroViewController.swift in Sources */,
+				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				509527251C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				50AA7CCC1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 			);
@@ -745,8 +785,10 @@
 			files = (
 				50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
+				6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */,
 				509527261C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				50FE4D451C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
+				6DBD7B8E1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */,
 				5094897F1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
