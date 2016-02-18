@@ -10,8 +10,10 @@ import UIKit
 import DatePickerCell
 import MapKit
 import LocationPicker
+import SwiftValidator
+import MRProgress
 
-class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegate {
+class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegate, ValidationDelegate {
     
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
@@ -20,6 +22,9 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     @IBOutlet weak var locationAddressLabel: UILabel!
     @IBOutlet weak var availableSeatsStepper: UIStepper!
     @IBOutlet weak var pickupDateTimePicker: DatePickerCell!
+    
+    //validator object
+    let validator = Validator()
     
     var event: Event! {
         didSet {
@@ -50,6 +55,10 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         
         phoneNumber.delegate = self
         phoneNumber.addTarget(self, action: "textFieldDidChange:", forControlEvents: UIControlEvents.EditingChanged)
+        
+        self.pickupDateTimePicker.leftLabel.text = "Pickup Date"
+        validator.registerField(fullName, rules: [RequiredRule(), FullNameRule()])
+        validator.registerField(phoneNumber, rules: [RequiredRule(), PhoneNumberRule()])
     }
     
     private func configureAvailableSeatsStepper() {
@@ -100,7 +109,6 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
             let datePickerTableViewCell = cell as! DatePickerCell
             datePickerTableViewCell.selectedInTableView(tableView)
             self.tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            print(datePickerTableViewCell.date)
         }
         
         //check for index of location picker
@@ -140,6 +148,47 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     // Action for submitting an offer for a ride
     @IBAction func submitOfferRideForm(sender: AnyObject) {
         //verify form is correct and submit it through the API
+        validator.validate(self)
+    }
+    
+    func validationSuccessful() {
+        if isFormFilledOut() {
+            MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+            ServerUtils.postRideOffer(event.id!, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: "to")
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+            let cancelRideAlert = UIAlertController(title: "Ride Offered", message: "Thank you your offered ride has been created!", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: performBackAction))
+            presentViewController(cancelRideAlert, animated: true, completion: nil)
+        }
+        else {
+            let cancelRideAlert = UIAlertController(title: "Error", message: "Ride offer form has not been completely filled out. Please fill out the entire form.", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(cancelRideAlert, animated: true, completion: nil)
+        }
+    }
+    
+    func validationFailed(errors: [UITextField : ValidationError]) {
+        for (field, error) in validator.errors {
+            field.layer.borderColor = UIColor.redColor().CGColor
+            field.layer.borderWidth = 1.0
+            error.errorLabel?.text = error.errorMessage // works if you added labels
+            error.errorLabel?.hidden = false
+        }
+    }
+    
+    //Method for determining if the form has been completely filled out
+    private func isFormFilledOut() -> Bool {
+        if (self.event == nil ||
+            self.location == nil ||
+            Int(self.numAvailableSeatsLabel.text!)! <= 0) {
+                
+            return false
+        }
+        
+        return true
     }
 }
 
@@ -151,5 +200,14 @@ extension NSDate {
         dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
         let d = dateStringFormatter.dateFromString(dateString)!
         self.init(timeInterval:0, sinceDate:d)
+    }
+}
+
+extension Location {
+    func getLocationAsDict(loc: Location) -> NSDictionary {
+        print(loc.address)
+        return [
+            "address": loc.address
+        ]
     }
 }

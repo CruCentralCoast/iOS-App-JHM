@@ -156,7 +156,11 @@ class ServerUtils {
     class func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
         location: NSDictionary, radius: Int, direction: String) {
         
-        let gcmToken = SubscriptionManager.loadGCMToken()
+        var gcmToken = SubscriptionManager.loadGCMToken()
+        
+        if gcmToken == "" {
+            gcmToken = "emulator-id-hey-whats-up-hello"
+        }
         
         let requestUrl = Config.serverUrl + "api/ride/create";
         let params = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
