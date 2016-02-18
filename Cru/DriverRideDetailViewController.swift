@@ -18,10 +18,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
 
     @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var departureTime: UILabel!
-    @IBOutlet weak var departureLoc: UILabel!
+    @IBOutlet weak var departureLoc: UITextView!
     @IBOutlet weak var rideName: UILabel!
-    @IBOutlet weak var carImage: UIImageView!
-    @IBOutlet weak var departureLocLabel: UILabel!
     @IBOutlet weak var passengerTable: UITableView!
     
     override func viewDidLoad() {
@@ -40,7 +38,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         passengers += ["Erica Solum", "Max Crane", "Pete Godkin", "Deniz Tumer", "Quan Tran"]
         
         //Change the image depending on the number of passengers
-        if(ride.passengers.count == 0){
+        /*if(ride.passengers.count == 0){
             carImage.image = UIImage(named: "car-empty")
         }
         else if(ride.passengers.count == 1){
@@ -61,11 +59,13 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         }
         else {
             carImage.image = UIImage(named: "car-full")
-        }
+        }*/
         
         departureTime.text = ride.time
         departureDate.text = String("\(ride.month) \(ride.day)")
         departureLoc.text = String("1 Grand Avenue, San Luis Obispo, CA 93410")
+        
+        passengerTable.backgroundColor = UIColor.clearColor()
         
     }
     
@@ -122,11 +122,13 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     // Reload the data every time we come back to this view controller
     override func viewDidAppear(animated: Bool) {
         passengerTable.reloadData()
+        self.navigationItem.title = "Ride Details"
     }
     
     // MARK: - Navigation
     override func preferredStatusBarStyle() -> UIStatusBarStyle {
         return UIStatusBarStyle.LightContent
+        
     }
     
     /*
