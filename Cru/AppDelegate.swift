@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
@@ -42,6 +43,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         let gcmConfig = GCMConfig.defaultConfig()
         gcmConfig.receiverDelegate = self
         GCMService.sharedInstance().startWithConfig(gcmConfig)
+        
+        
+        //IQKeyboardManager makes keyboards play nicely with textfields usually covered by keyboard
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }

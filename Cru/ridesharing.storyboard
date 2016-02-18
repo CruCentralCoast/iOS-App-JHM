@@ -119,11 +119,13 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="5Ox-nb-Dz7">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="FA1-hI-7rc">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="TAh-oS-QRU" kind="presentation" id="MIC-Ht-fkf"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="+" id="xQn-tF-2yk">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="xQn-tF-2yk">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <action selector="addRideSelected:" destination="Bt0-Ge-2Fb" id="Vlb-wN-EaR"/>
                             </connections>

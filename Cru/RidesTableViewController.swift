@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MRProgress
 
 
 class RidesTableViewController: UITableViewController {
@@ -33,7 +34,8 @@ class RidesTableViewController: UITableViewController {
         gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
         
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
-            
+        
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         ServerUtils.getRidesByGCMToken(gcmId, inserter: insertRide)
         //ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: finishInserting)
         ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
@@ -53,6 +55,7 @@ class RidesTableViewController: UITableViewController {
     
     
     func finishInserting(){
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         self.tableView.beginUpdates()
         self.tableView.reloadData()
         self.tableView.endUpdates()

@@ -58,6 +58,7 @@ class SubscriptionManager{
     }
     
     static func saveMinistrys(ministrys:[Ministry]) {
+        
         var enabledMinistries = [Ministry]()
         
         for camp in ministrys{

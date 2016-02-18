@@ -72,7 +72,7 @@ class Event {
     convenience init?(dict : NSDictionary) {
         let id = dict["_id"] as! String?
         let name = dict["name"] as! String?
-        let startDate = dict["startDate"] as! String?
+        var startDate = dict["startDate"] as! String?
         let endDate = dict["endDate"] as! String?
         let street = dict["location"]?.objectForKey("street1") as! String?
         let suburb = dict["location"]?.objectForKey("suburb") as! String?
@@ -81,6 +81,11 @@ class Event {
         let url = dict["url"] as! String?
         let imageUrl = dict["image"]?.objectForKey("secure_url") as! String?
         
+        
+        if(startDate == nil){
+            startDate = "2015-11-19T10:00:00.000Z"
+        }
+
         
         self.init(id: id, name: name, image: nil, startDate: startDate, endDate: endDate, street: street, suburb: suburb, postcode: postcode, description: description, url: url, imageUrl: imageUrl)
     }
