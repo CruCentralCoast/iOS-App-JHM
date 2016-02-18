@@ -26,19 +26,19 @@ class EventDetailsViewController: UIViewController {
     This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
     or constructed as part of adding a new meal.
     */
-    var event: Event?
+    var event: Event!
     var eventStore: EKEventStore!
     
     //MARK: Actions
     @IBAction func facebookLinkButton(sender: UIButton) {
-       UIApplication.sharedApplication().openURL(NSURL(string: (event?.facebookURL)!)!)
+       UIApplication.sharedApplication().openURL(NSURL(string: (event.facebookURL)!)!)
     }
     
     @IBAction func saveToCalendar(sender: UIButton) {
-        // 1
+        // 1 Make Event Store object
         eventStore = EKEventStore()
         
-        // 2
+        // 2 Get Authorization
         switch EKEventStore.authorizationStatusForEntityType(EKEntityType.Event) {
         case .Authorized:
             insertEvent(eventStore)
@@ -46,7 +46,7 @@ class EventDetailsViewController: UIViewController {
         case .Denied:
             print("Access denied")
         case .NotDetermined:
-            // 3
+            // 3 Insert Event
             eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {
                 granted, error in
                 
@@ -73,7 +73,6 @@ class EventDetailsViewController: UIViewController {
             if(event.street != nil) {
                 locationLabel.text = event.street! + ", " + event.suburb! + ", " + event.postcode!
             }
-            //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             
             //Set up UITextView description
             descriptionView.text = event.description
@@ -88,7 +87,7 @@ class EventDetailsViewController: UIViewController {
             timeLabel.text = monthLong + " " + String(event.startDay!)
         }
         
-        if event?.facebookURL == "" {
+        if event.facebookURL == "" {
             fbButton.hidden = true
         }
     }
@@ -106,53 +105,58 @@ class EventDetailsViewController: UIViewController {
         
         //Let's try it on the default calendar
         let start = NSDateComponents()
-        start.day = event!.startDay!
-        start.month = event!.month!
-        start.minute = event!.startMinute!
-        start.hour = event!.startHour!
-        start.year = event!.year!
+        start.day = event.startDay!
+        start.month = event.month!
+        start.minute = event.startMinute!
+        start.hour = event.startHour!
+        start.year = event.year!
         
         let end = NSDateComponents()
-        end.day = event!.endDay!
-        end.month = event!.month!
-        end.minute = event!.endMinute!
-        end.hour = event!.endHour!
-        end.year = event!.year!
+        end.day = event.endDay!
+        end.month = event.month!
+        end.minute = event.endMinute!
+        end.hour = event.endHour!
+        end.year = event.year!
         
         let userCalendar = NSCalendar.currentCalendar()
         
         let startDate = userCalendar.dateFromComponents(start)
         let endDate = userCalendar.dateFromComponents(end)
         
-        print("Parsed event info: minute-\(startDate) hour-\(start.hour) day-\(start.day) month-\(start.month)" )
         
         
         // 4
         // Create Event
         let newEvent = EKEvent(eventStore: store)
         newEvent.calendar = store.defaultCalendarForNewEvents
-        newEvent.location = event!.street
-        newEvent.title = event!.name!
+        newEvent.location = event.street
+        newEvent.title = event.name!
         newEvent.startDate = startDate!
         newEvent.endDate = endDate!
-        newEvent.location = event!.location
+        newEvent.location = event.location
         
         // 5
         // Save Event in Calendar
-        var saveError: NSError?
         
         do {
             try store.saveEvent(newEvent, span: .ThisEvent, commit: true)
         }
         catch let error as NSError{
-            saveError = error
-            print(saveError)
+            print(error)
         }
         catch {
             fatalError()
         }
     }
 
+    @IBAction func linkToRideShare(sender: AnyObject) {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController
+        
+        self.navigationController?.pushViewController(vc, animated: true)
+        //self.presentViewController(vc, animated: true, completion: nil)
+        vc.loadEvents({ vc.selectVal(self.event)})
+        
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

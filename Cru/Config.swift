@@ -14,6 +14,7 @@ struct Config {
     static let name = "name"
     static let campusIds = "campuses"
     static let campusCollection = "campus"
+    static let globalTopic = "/topics/global"
     
     
     // Modal header and footer text color

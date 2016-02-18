@@ -131,6 +131,11 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <refreshControl key="refreshControl" opaque="NO" multipleTouchEnabled="YES" contentMode="center" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="BaB-er-aI1">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
+                        <attributedString key="attributedTitle"/>
+                    </refreshControl>
                     <connections>
                         <segue destination="XEe-PU-cXZ" kind="show" identifier="offerridesegue" id="9Gu-Kt-ZVM"/>
                         <segue destination="Raw-86-Ixp" kind="show" identifier="findridesegue" id="7Nt-3r-NsF"/>

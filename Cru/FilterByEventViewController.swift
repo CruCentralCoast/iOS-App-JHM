@@ -29,6 +29,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         //as their delegate and data source
         rideTable.delegate = self
         rideTable.dataSource = self
+        
         eventPicker.delegate = self
         eventPicker.dataSource = self
         
@@ -39,20 +40,28 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         
     }
 
+    func loadEvents(afterFunc: ()->Void){
+        ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: afterFunc)
+    }
+    
     func loadRides(){
         ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: showRides)
     }
     
     func showRides(){
-        if(events.count != 0){
+        if(events.count != 0 && self.selectedEvent == nil){
             filterRidesByEventId(events[0].id!)
             self.selectedEvent  = events[0]
-            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+        }
+        else if(events.count != 0){
+            filterRidesByEventId(self.selectedEvent!.id!)
         }
         else{
             print("this shouldn't happen")
         }
         
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
     func insertEvent(dict: NSDictionary){
@@ -84,11 +93,27 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("rideCell")
+        var cell = tableView.dequeueReusableCellWithIdentifier("rideCell") as! OfferedRideTableViewCell
         
-        cell?.textLabel!.text = filteredRides[indexPath.row].getDescription()
+        let thisRide = filteredRides[indexPath.row]
+        cell.month.text = thisRide.month
+        cell.day.text = String(thisRide.day)
+        cell.time.text = thisRide.time
         
-        return cell!
+        cell.seatsLeft.text = thisRide.seatsLeft() + " seats left"
+        
+        if(thisRide.seatsLeft() == 1){
+            cell.seatsLeft.textColor = UIColor(red: 0.729, green: 0, blue: 0.008, alpha: 1.0)
+ 
+        }
+        else if(thisRide.seatsLeft() == 2){
+            cell.seatsLeft.textColor = UIColor(red: 0.976, green: 0.714, blue: 0.145, alpha: 1.0)
+        }
+        else{
+            cell.seatsLeft.textColor = UIColor(red: 0, green:  0.427, blue: 0.118, alpha: 1.0)
+        }
+        
+        return cell
     }
     
     
@@ -101,6 +126,13 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
+    func selectVal(event: Event){
+        let ndx = events.indexOf(event)
+        eventPicker.selectRow(ndx!, inComponent: 0, animated: true)
+        filterRidesByEventId(events[ndx!].id!)
+        self.selectedEvent = events[ndx!]
+        self.rideTable.reloadData()
+    }
     
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         

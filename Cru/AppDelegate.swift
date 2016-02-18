@@ -24,7 +24,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     
     let registrationKey = "onRegistrationCompleted"
     let messageKey = "onMessageReceived"
-    let subscriptionTopic = "/topics/global"
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -54,30 +53,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         return true
     }
     
-    func subscribeToTopic() {
-        // If the app has a registration token and is connected to GCM, proceed to subscribe to the
-        // topic
-        if(registrationToken != nil && connectedToGCM) {
-            
-            SubscriptionManager.saveGCMToken(registrationToken!)
-            
-            GCMPubSub.sharedInstance().subscribeWithToken(self.registrationToken, topic: subscriptionTopic,
-                options: nil, handler: {(NSError error) -> Void in
-                    if (error != nil) {
-                        // Treat the "already subscribed" error more gently
-                        if error.code == 3001 {
-                            print("Already subscribed to \(self.subscriptionTopic)")
-                        } else {
-                            print("Subscription failed: \(error.localizedDescription)");
-                        }
-                    } else {
-                        self.subscribedToTopic = true;
-                        NSLog("Subscribed to \(self.subscriptionTopic)");
-                    }
-            })
-        }
-    }
-    
     func applicationDidBecomeActive( application: UIApplication) {
         // Connect to the GCM server to receive non-APNS notifications
         GCMService.sharedInstance().connectWithHandler({
@@ -87,7 +62,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             } else {
                 self.connectedToGCM = true
                 print("Connected to GCM")
-                self.subscribeToTopic()
+                if(self.registrationToken != nil) {
+                    SubscriptionManager.saveGCMToken(self.registrationToken!)
+                    SubscriptionManager.subscribeToTopic(Config.globalTopic)
+                }
             }
         })
     }
@@ -143,9 +121,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     
     func registrationHandler(registrationToken: String!, error: NSError!) {
         if (registrationToken != nil) {
+            SubscriptionManager.saveGCMToken(registrationToken)
             self.registrationToken = registrationToken
             print("Registration Token: \(registrationToken)")
-            self.subscribeToTopic()
+            if (connectedToGCM) {
+                SubscriptionManager.subscribeToTopic(Config.globalTopic)
+            }
             let userInfo = ["registrationToken": registrationToken]
             NSNotificationCenter.defaultCenter().postNotificationName(
                 self.registrationKey, object: nil, userInfo: userInfo)

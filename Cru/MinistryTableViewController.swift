@@ -84,20 +84,7 @@ class MinistryTableViewController: UITableViewController {
     
     
     func insertMinistry(dict : NSDictionary) {
-        let ministryName = dict[Config.name] as! String
-        let campusIds = dict[Config.campusIds] as! [String]
-        var imgUrl = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1453505468/sxgmbetwbbvozk385a7j.jpg"
-        
-        if (dict.objectForKey("image") != nil){
-            let imageDict = dict.objectForKey("image") as! NSDictionary
-            
-            if(imageDict.objectForKey("url") != nil){
-                imgUrl = imageDict.objectForKey("url") as! String
-            }
-        }
-        
-        
-        let newMinistry = Ministry(name: ministryName, campusIds: campusIds, imgUrl: imgUrl)
+        let newMinistry = Ministry(dict: dict)
         
         if(prevMinistries.contains(newMinistry)){
             newMinistry.feedEnabled = true

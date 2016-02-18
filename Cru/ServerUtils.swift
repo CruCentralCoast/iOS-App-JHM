@@ -9,7 +9,7 @@
 import Foundation
 
 class ServerUtils {
-    
+
     static func findEventById(id: String, inserter : (NSDictionary) -> ()){
         var requestUrl = Config.serverUrl + "api/event/find"
         var params = ["_id": id]
@@ -55,7 +55,7 @@ class ServerUtils {
         ServerClient.displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter, afterFunc: afterFunc))
     }
     
-    class func getRidesByGCMToken(token: String, inserter: (NSDictionary) -> ()) {
+    class func getRidesByGCMToken(token: String, inserter: (NSDictionary) -> (), afterFunc: ()->Void) {
         
         //gets rides you are receiving
         var requestUrl = Config.serverUrl + "api/passenger/find"
@@ -76,7 +76,7 @@ class ServerUtils {
                             rideIds.append(passenger["_id"] as! String)
                         }
                         
-                        print("\(rideIds)")
+                        //print("\(rideIds)")
         
                         let inQuery = ["$in": rideIds]
                         let query = ["passengers": inQuery]
@@ -87,7 +87,7 @@ class ServerUtils {
                         //print(string1)
                         //print("\(body)")
                         
-                        ServerClient.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : curryDisplayResources(inserter, afterFunc: {() in }))
+                        ServerClient.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : curryDisplayResources(inserter, afterFunc: afterFunc))
                         
                     }
                     else {
@@ -174,7 +174,7 @@ class ServerUtils {
         }
     }
     
-    class func joinRide(name: String, phone: String, direction: String,  rideId: String){
+    class func joinRide(name: String, phone: String, direction: String,  rideId: String, handler: ()->Void){
         createPassenger(name, phone: phone, direction: direction, handler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
             do {
                 if (data != nil) {
@@ -186,7 +186,7 @@ class ServerUtils {
                     let passengerId = post["_id"] as! String
                 
                     addPassengerToRide(rideId, passengerId: passengerId)
-                    
+                    handler()
                 }
                 else {
                     // TODO: display message for user
@@ -203,14 +203,17 @@ class ServerUtils {
     
     
     class func createPassenger(name: String, phone: String, direction: String, handler: (NSData?, NSURLResponse?, NSError?) -> Void){
-        let gcmToken = SubscriptionManager.loadGCMToken()
+        let gcmToken = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"//SubscriptionManager.loadGCMToken()
         
         let requestUrl = Config.serverUrl + "api/passenger/create";
         let params = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken]
         
         
+        
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+//            let sexybody = NSString(data: body, encoding: NSUTF8StringEncoding)
+//            print(sexybody)
             ServerClient.sendHttpPostRequest(requestUrl, body: body, completionHandler : handler)
         } catch {
             print("Error sending ride offer!")
@@ -225,6 +228,10 @@ class ServerUtils {
         
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            
+//            let sexybody = NSString(data: body, encoding: NSUTF8StringEncoding)
+//            print(sexybody)
+            
             ServerClient.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerClient.blankCompletionHandler);
         } catch {
             print("Error sending ride offer!")

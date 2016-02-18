@@ -114,6 +114,9 @@
                                                     <constraint firstAttribute="height" constant="53" id="eRL-PQ-j19"/>
                                                 </constraints>
                                                 <state key="normal" title="Ridesharing" image="event-rideshare"/>
+                                                <connections>
+                                                    <action selector="linkToRideShare:" destination="wSV-ke-WyD" eventType="touchUpInside" id="fMG-d1-UzL"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQp-EO-h5U">
                                                 <rect key="frame" x="134" y="172" width="80" height="20"/>

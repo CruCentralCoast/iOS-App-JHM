@@ -10,41 +10,50 @@ import UIKit
 import MapKit
 import SwiftValidator
 import FlatUIKit
+import MRProgress
+
+struct JoinRideConstants{
+    static let NAME = "Join Ride"
+}
 
 class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
-
+    //Buttons, labels, a map
     @IBOutlet weak var join: FUIButton!
     @IBOutlet weak var time: UILabel!
-  
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var number: UITextField!
-    
     @IBOutlet weak var numberError: UILabel!
     @IBOutlet weak var nameError: UILabel!
     @IBOutlet weak var map: MKMapView!
-    
     @IBOutlet weak var rideDate: UILabel!
     @IBOutlet weak var eventTime: UILabel!
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var seats: UILabel!
     @IBOutlet weak var date: UILabel!
+    
+    //for validating user input
     let validator = Validator()
     
+    //sources of data to be displayed
     var ride: Ride?
     var event: Event?
-    
     let dummyAddress = "1 Grand Avenue San Luis Obispo 93401 California"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        navigationItem.title = "Join Ride"
-        ServerUtils.findEventById(ride!.eventId, inserter: insertEvent)
+
         
-        print("trying to load ride")
+        navigationItem.title = JoinRideConstants.NAME
+        setupMap()
+        
+        //load events
+        //ServerUtils.findEventById(ride!.eventId, inserter: insertEvent)
+
+        
         if(ride != nil){
-            print("ride was loadede")
             rideDate.text = ride?.getDate()
             time.text = ride?.getTime()
             seats.text = (ride?.seatsLeft())! + " left"
@@ -52,23 +61,33 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
             
         }
         else{
-            date.text = ""
+            rideDate.text = ""
             time.text = ""
             seats.text = ""
             address.text = ""
+        }
+        
+        if(event != nil){
+            eventName.text = event!.name
+            let dateFormatter: NSDateFormatter = NSDateFormatter()
+            
+            let months = dateFormatter.shortMonthSymbols
+            let monthShort = months[event!.month!-1]
+            
+            eventDate.text =  monthShort.lowercaseString +  "/" + String(event!.startDay!)
+            eventTime.text = Ride.createTime(event!.startHour!, minute: event!.startMinute!)
         }
         
         number.keyboardType = .NumberPad
         nameError.text = ""
         numberError.text = ""
         
+        //initalize validation things
         makeButtonPretty()
         validator.registerField(name, errorLabel: nameError, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(number, errorLabel: numberError, rules: [RequiredRule(), PhoneNumberRule()])
+
         
-        setupMap()
-        //dateTimeLabel.text = ride?.getDescription()
-        // Do any additional setup after loading the view.
     }
 
     @IBAction func dismissKeyboard(sender: AnyObject) {
@@ -76,7 +95,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     }
     
     func makeButtonPretty(){
-        join.buttonColor = UIColor.turquoiseColor()
+        join.buttonColor = UIColor(red: 0, green:  0.427, blue: 0.118, alpha: 1.0)
         join.shadowColor = UIColor.greenSeaColor()
         join.shadowHeight = 3.0
         join.cornerRadius = 6.0
@@ -89,19 +108,54 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     func insertEvent(dict: NSDictionary){
         let event = Event(dict: dict)
         eventName.text = event!.name
+        eventDate.text = "3/11/16"
         eventTime.text = String(event!.startHour)
-//        if(event!.startDay != nil){
-//        date.text = String(event!.startDay)
-//        }
-//        else{
-//           date.text = "mondee"
-//        }
     }
     
     func validationSuccessful() {
+        
         // submit the form
         let phoneNumber = number.text
         let nameString = name.text
+        
+        resetLabel(name, error: nameError)
+        resetLabel(number, error: numberError)
+        
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+        ServerUtils.joinRide(nameString!, phone: phoneNumber!, direction: "both",  rideId: (ride?.id)!, handler: successfulJoin)
+        
+    }
+    
+    func successfulJoin(){
+        let success = UIAlertController(title: "Join Successful", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        success.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
+
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
+            
+            
+            self.presentViewController(success, animated: true, completion: nil)
+        })
+        
+        
+    }
+    
+    func unwindToRideList(action: UIAlertAction){
+        if let navController = self.navigationController {
+            navController.popViewControllerAnimated(true)
+            navController.popViewControllerAnimated(true)
+            
+            for vc in navController.viewControllers{
+                if let tvc = vc as? RidesTableViewController {
+                    tvc.refresh(1)
+                }
+            }
+        }
+    }
+    
+    func resetLabel(field: UITextField, error: UILabel){
+        field.layer.borderColor = UIColor.clearColor().CGColor
+        field.layer.borderWidth = 0.0
+        error.text = ""
     }
     
     func validationFailed(errors:[UITextField:ValidationError]) {
@@ -124,19 +178,16 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         }
         
         if(nameValid){
-            name.layer.borderColor = UIColor.clearColor().CGColor
-            name.layer.borderWidth = 0.0
-            nameError.text = ""
+            resetLabel(name, error: nameError)
         }
         if(numValid){
-            number.layer.borderColor = UIColor.clearColor().CGColor
-            number.layer.borderWidth = 0.0
-            numberError.text = ""
+            resetLabel(number, error: numberError)
         }
     }
 
     
     @IBAction func joinRidePressed(sender: AnyObject) {
+        self.view.endEditing(true)
         validator.validate(self)
         
     }
