@@ -33,6 +33,34 @@ PODS:
     - GoogleSymbolUtilities (~> 1.0.0)
   - IQKeyboardManagerSwift (3.3.4)
   - LocationPicker (0.5.3)
+  - MRProgress (0.8.3):
+    - MRProgress/ActivityIndicator (= 0.8.3)
+    - MRProgress/Blur (= 0.8.3)
+    - MRProgress/Circular (= 0.8.3)
+    - MRProgress/Icons (= 0.8.3)
+    - MRProgress/NavigationBarProgress (= 0.8.3)
+    - MRProgress/Overlay (= 0.8.3)
+  - MRProgress/ActivityIndicator (0.8.3):
+    - MRProgress/Stopable
+  - MRProgress/Blur (0.8.3):
+    - MRProgress/Helper
+  - MRProgress/Circular (0.8.3):
+    - MRProgress/Helper
+    - MRProgress/ProgressBaseClass
+    - MRProgress/Stopable
+  - MRProgress/Helper (0.8.3)
+  - MRProgress/Icons (0.8.3)
+  - MRProgress/NavigationBarProgress (0.8.3):
+    - MRProgress/ProgressBaseClass
+  - MRProgress/Overlay (0.8.3):
+    - MRProgress/ActivityIndicator
+    - MRProgress/Blur
+    - MRProgress/Circular
+    - MRProgress/Helper
+    - MRProgress/Icons
+  - MRProgress/ProgressBaseClass (0.8.3)
+  - MRProgress/Stopable (0.8.3):
+    - MRProgress/Helper
   - SideMenu (0.1.4)
   - SwiftValidator (3.0.3)
 
@@ -42,6 +70,7 @@ DEPENDENCIES:
   - Google/CloudMessaging
   - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
+  - MRProgress
   - SideMenu (~> 0.1)
   - SwiftValidator
 
@@ -58,6 +87,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   LocationPicker: 37edad09cefccd0a266e4abfbf5787995b133d54
+  MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
   SideMenu: 09bc4ab16e392aea64caf052074efd63ef726b6a
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
