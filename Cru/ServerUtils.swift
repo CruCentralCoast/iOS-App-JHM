@@ -9,7 +9,7 @@
 import Foundation
 
 class ServerUtils {
-    
+
     static func findEventById(id: String, inserter : (NSDictionary) -> ()){
         var requestUrl = Config.serverUrl + "api/event/find"
         var params = ["_id": id]
