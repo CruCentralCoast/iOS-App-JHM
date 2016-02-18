@@ -8,6 +8,9 @@
         <mutableArray key="FreigSanProBook.otf">
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProLig.otf">
             <string>FreightSansProLight-Regular</string>
@@ -76,13 +79,13 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-UI-Hk1">
                                                 <rect key="frame" x="20" y="172" width="80" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW7-Fr-sMB">
-                                                <rect key="frame" x="20" y="201" width="66" height="21"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <rect key="frame" x="20" y="201" width="560" height="21"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -94,10 +97,10 @@
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-il-7OQ">
-                                                <rect key="frame" x="117" y="295" width="96" height="55"/>
+                                                <rect key="frame" x="123" y="295" width="90" height="52"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="96" id="OTA-cs-IgV"/>
-                                                    <constraint firstAttribute="height" constant="55" id="u3h-9n-SQI"/>
+                                                    <constraint firstAttribute="width" constant="90" id="OTA-cs-IgV"/>
+                                                    <constraint firstAttribute="height" constant="52" id="u3h-9n-SQI"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="saveToCalendarIcon"/>
                                                 <connections>
@@ -105,16 +108,16 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-wO-gTI">
-                                                <rect key="frame" x="262" y="295" width="77" height="55"/>
+                                                <rect key="frame" x="263" y="295" width="74" height="53"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="77" id="N5z-Wl-fzG"/>
-                                                    <constraint firstAttribute="height" constant="55" id="eRL-PQ-j19"/>
+                                                    <constraint firstAttribute="width" constant="74" id="N5z-Wl-fzG"/>
+                                                    <constraint firstAttribute="height" constant="53" id="eRL-PQ-j19"/>
                                                 </constraints>
                                                 <state key="normal" title="Ridesharing" image="event-rideshare"/>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HQp-EO-h5U">
                                                 <rect key="frame" x="134" y="172" width="80" height="20"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -135,10 +138,10 @@
                                                 </constraints>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-AB-fyb">
-                                                <rect key="frame" x="388" y="295" width="70" height="55"/>
+                                                <rect key="frame" x="388" y="295" width="67" height="52"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="70" id="QKW-g2-izm"/>
-                                                    <constraint firstAttribute="height" constant="55" id="y7U-ks-yFQ"/>
+                                                    <constraint firstAttribute="width" constant="67" id="QKW-g2-izm"/>
+                                                    <constraint firstAttribute="height" constant="52" id="y7U-ks-yFQ"/>
                                                 </constraints>
                                                 <state key="normal" title="Button" image="facebookIcon"/>
                                                 <connections>
@@ -166,6 +169,7 @@
                                             <constraint firstItem="0OO-sc-rJO" firstAttribute="top" secondItem="n6P-F9-53s" secondAttribute="bottom" constant="8" id="Ot9-Hn-XWN"/>
                                             <constraint firstItem="cXx-rm-aET" firstAttribute="top" secondItem="bW7-Fr-sMB" secondAttribute="bottom" constant="13" id="Qsa-sK-Uc4"/>
                                             <constraint firstItem="AZc-AB-fyb" firstAttribute="leading" secondItem="Ghp-wO-gTI" secondAttribute="trailing" constant="25" id="XUc-1V-cGg"/>
+                                            <constraint firstAttribute="trailing" secondItem="bW7-Fr-sMB" secondAttribute="trailing" constant="20" id="bsu-Nb-BCw"/>
                                             <constraint firstAttribute="trailing" secondItem="n6P-F9-53s" secondAttribute="trailing" id="eK1-Kd-vOF"/>
                                             <constraint firstAttribute="trailing" secondItem="2Ah-5N-RBw" secondAttribute="trailing" constant="20" id="gHs-6W-GdY"/>
                                             <constraint firstItem="2Ah-5N-RBw" firstAttribute="top" secondItem="WYR-HW-5q5" secondAttribute="bottom" constant="8" id="k7k-n8-nfk"/>

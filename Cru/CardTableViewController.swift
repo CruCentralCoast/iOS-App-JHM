@@ -23,6 +23,8 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
         
         self.tableView.separatorColor = UIColor.clearColor()
         loadSampleResources()
+        self.tableView.reloadData()
+        
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50
@@ -35,10 +37,16 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
+    /*func insertResource(dict : NSDictionary) {
+        self.tableView.beginUpdates()
+        resources.insert(Resource(dict: dict)!, atIndex: 0)
+        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.tableView.endUpdates()
+    }*/
+    
     func loadSampleResources() {
         
         let videoURL = NSURL.init(string: "https://www.youtube.com/watch?v=EgRqJTHJNKQ")
-        //let videoCard = Card.init(webUrl: videoURL, cardType: "video")
         
         Card.getFromUrl(videoURL) {
             (card: Card?, error: NSError?) in
@@ -51,8 +59,6 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
                 print("\nNum card views: \(self.cardViews.count)\n")
                 
                 self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-                
-                
             }
             else {
                 print("\nYOYOYO\n")
@@ -60,17 +66,17 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
             
         }
         
-        let articleURL = NSURL.init(string: "http://nyti.ms/1nQjGab")
+        let videoURL2 = NSURL.init(string: "https://www.youtube.com/watch?v=j62bxcmWJX4")
         //let videoCard = Card.init(webUrl: videoURL, cardType: "video")
         
-        Card.getFromUrl(articleURL) {
+        Card.getFromUrl(videoURL2) {
             (card: Card?, error: NSError?) in
             
             if(card != nil) {
                 print("\nCard was created from URL\n")
-                let articleCardView = CardView.createCardView(card!, layout: .ArticleCardShort)
-                articleCardView!.delegate = self
-                self.cardViews += [articleCardView!]
+                let videoCardView2 = CardView.createCardView(card!, layout: .VideoCardShortFull)
+                videoCardView2!.delegate = self
+                self.cardViews += [videoCardView2!]
                 print("\nNum card views: \(self.cardViews.count)\n")
                 
                 self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
@@ -79,6 +85,27 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
             }
             
         }
+        
+        let videoURL3 = NSURL.init(string: "https://www.youtube.com/watch?v=w1CePmWyCKU")
+        //let videoCard = Card.init(webUrl: videoURL, cardType: "video")
+        
+        Card.getFromUrl(videoURL3) {
+            (card: Card?, error: NSError?) in
+            
+            if(card != nil) {
+                print("\nCard was created from URL\n")
+                let videoCardView3 = CardView.createCardView(card!, layout: .VideoCardShortFull)
+                videoCardView3!.delegate = self
+                self.cardViews += [videoCardView3!]
+                print("\nNum card views: \(self.cardViews.count)\n")
+                
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+                
+            }
+            
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

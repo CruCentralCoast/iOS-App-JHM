@@ -13,7 +13,7 @@
             </objects>
             <point key="canvasLocation" x="793.86666666666667" y="2100.6533333333332"/>
         </scene>
-        <!--Resources View Controller-->
+        <!--Resources-->
         <scene sceneID="Erz-N0-Mtg">
             <objects>
                 <viewController id="M8g-nZ-a69" customClass="ResourcesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
@@ -31,7 +31,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="cax-rf-stk">
+                    <navigationItem key="navigationItem" title="Resources" id="cax-rf-stk">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="18u-6D-tuA">
                             <connections>
                                 <segue destination="sH4-e1-kEW" kind="modal" id="XO4-SX-cTm"/>
