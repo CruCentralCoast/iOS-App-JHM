@@ -52,7 +52,7 @@ class ServerUtils {
         
         do {
             let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            ServerClient.sendHttpPostRequest(requestUrl, body: body, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
+            sendHttpPostRequest(requestUrl, body: body, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
                 do {
                     if (data != nil) {
                         let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
