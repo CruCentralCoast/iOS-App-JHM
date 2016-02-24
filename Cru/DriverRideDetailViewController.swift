@@ -13,6 +13,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     //MARK: Properties
     var event: Event!
     var ride: Ride!
+    var thePassengers = [Passenger]()
     var passengers = [String]()
     
 
@@ -35,7 +36,13 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         //Set the ride name
         rideName.text = event!.name!
         
-        passengers += ["Erica Solum", "Max Crane", "Pete Godkin", "Deniz Tumer", "Quan Tran"]
+        //passengers += ["Erica Solum", "Max Crane", "Pete Godkin", "Deniz Tumer", "Quan Tran"]
+        for pass in ride.passengers{
+            ServerUtils.findPassengerById(pass, inserter: insertPassenger)
+        }
+        
+        
+        
         
         //Change the image depending on the number of passengers
         /*if(ride.passengers.count == 0){
@@ -69,6 +76,13 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         
     }
     
+    func insertPassenger(dict: NSDictionary){
+        let newPassenger = Passenger(dict: dict)
+        thePassengers.append(newPassenger)
+        //print("found new pass named \(newPassenger.name)")
+        self.passengerTable.reloadData()
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -81,14 +95,16 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return passengers.count
+        return thePassengers.count
     }
     //Set up the cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "PassengerTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PassengerTableViewCell
         
-        cell.nameLabel!.text = passengers[indexPath.row]
+        cell.nameLabel!.text = thePassengers[indexPath.row].name
+        cell.phoneLabel!.text = thePassengers[indexPath.row].phone
+        
         if(ride.direction == "to event") {
             cell.tripIndicator!.image = UIImage(named: "toEvent")
         }

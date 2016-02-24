@@ -39,8 +39,8 @@ class RidesTableViewController: UITableViewController {
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
-        gcmId = SubscriptionManager.loadGCMToken()
-        gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
+        //gcmId = SubscriptionManager.loadGCMToken()
+        //gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
         
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
         
@@ -238,7 +238,7 @@ class RidesTableViewController: UITableViewController {
     func handleFindRide(action: UIAlertAction){
         self.performSegueWithIdentifier("findridesegue", sender: self)
     }
-    
+     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
             let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath) as! RideTableViewCell
         
@@ -274,9 +274,8 @@ class RidesTableViewController: UITableViewController {
             
             yourNextViewController.ride = tappedRide
             yourNextViewController.event = tappedEvent
-            yourNextViewController.passengers = tappedRide!.passengers
+            //yourNextViewController.passengers = tappedRide!.passengers
         }
-        
         
     }
         
