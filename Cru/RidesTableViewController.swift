@@ -45,14 +45,14 @@ class RidesTableViewController: UITableViewController {
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertRide, afterFunc: finishRideInsert)
+        RideUtils.getRidesByGCMToken(gcmId, inserter: insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
     }
     
     func refresh(sender:AnyObject)
     {
         // Updating your data here...
-        ServerUtils.getRidesByGCMToken(gcmId, inserter: insertNewRide, afterFunc: finishRefresh)
+        RideUtils.getRidesByGCMToken(gcmId, inserter: insertNewRide, afterFunc: finishRefresh)
 
         
     }

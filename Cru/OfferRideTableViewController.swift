@@ -154,7 +154,7 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     func validationSuccessful() {
         if isFormFilledOut() {
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-            ServerUtils.postRideOffer(event.id!, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: "to")
+            RideUtils.postRideOffer(event.id!, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: "to")
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             
             let cancelRideAlert = UIAlertController(title: "Ride Offered", message: "Thank you your offered ride has been created!", preferredStyle: UIAlertControllerStyle.Alert)

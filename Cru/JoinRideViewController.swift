@@ -122,7 +122,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         resetLabel(number, error: numberError)
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        ServerUtils.joinRide(nameString!, phone: phoneNumber!, direction: "both",  rideId: (ride?.id)!, handler: successfulJoin)
+        RideUtils.joinRide(nameString!, phone: phoneNumber!, direction: "both",  rideId: (ride?.id)!, handler: successfulJoin)
         
     }
     
