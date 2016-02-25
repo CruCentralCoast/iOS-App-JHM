@@ -24,8 +24,7 @@ class RidesTableViewController: UITableViewController {
     
     //TODO: Get gcm id associated with device and only populate rides associated with that id
     let myName = "Daniel Toy"
-    var gcmId = "1234567"
-    
+    var gcmId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +38,10 @@ class RidesTableViewController: UITableViewController {
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
-        //gcmId = SubscriptionManager.loadGCMToken()
+        gcmId = SubscriptionManager.loadGCMToken()
+        if gcmId == "" {
+            gcmId = Config.emulatorGcmId
+        }
         //gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
         
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")

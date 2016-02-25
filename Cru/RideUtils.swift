@@ -81,7 +81,7 @@ class RideUtils {
             var gcmToken = SubscriptionManager.loadGCMToken()
             
             if gcmToken == "" {
-                gcmToken = "emulator-id-hey-whats-up-hello"
+                gcmToken = Config.emulatorGcmId
             }
             
             let requestUrl = Config.serverUrl + "api/ride/create";

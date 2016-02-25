@@ -157,12 +157,31 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="100" id="OmL-oZ-DT8">
+                                        <rect key="frame" x="0.0" y="320" width="600" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OmL-oZ-DT8" id="7uz-aG-yYe">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tR5-ez-rj1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="600" height="100"/>
+                                                </pickerView>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <constraints>
+                                            <constraint firstItem="tR5-ez-rj1" firstAttribute="centerX" secondItem="OmL-oZ-DT8" secondAttribute="centerX" id="JCr-Zm-3gz"/>
+                                            <constraint firstItem="tR5-ez-rj1" firstAttribute="centerY" secondItem="OmL-oZ-DT8" secondAttribute="centerY" id="PLB-6z-f6Q"/>
+                                            <constraint firstItem="tR5-ez-rj1" firstAttribute="height" secondItem="OmL-oZ-DT8" secondAttribute="height" id="Pdd-nu-VOt"/>
+                                            <constraint firstItem="tR5-ez-rj1" firstAttribute="width" secondItem="OmL-oZ-DT8" secondAttribute="width" id="nSY-gg-ceZ"/>
+                                        </constraints>
+                                    </tableViewCell>
                                 </cells>
                             </tableViewSection>
                             <tableViewSection headerTitle=" " id="6of-sC-1sd">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="v9D-hX-P1j">
-                                        <rect key="frame" x="0.0" y="348" width="600" height="44"/>
+                                        <rect key="frame" x="0.0" y="448" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="v9D-hX-P1j" id="841-gl-APY">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
@@ -192,6 +211,7 @@
                     </tableView>
                     <connections>
                         <outlet property="availableSeatsStepper" destination="XUd-4J-vwC" id="Ii1-Sz-RGz"/>
+                        <outlet property="driverDirectionPickerView" destination="tR5-ez-rj1" id="kGU-bI-obK"/>
                         <outlet property="eventNameLabel" destination="hW3-Yc-A28" id="E9d-Nn-ciy"/>
                         <outlet property="fullName" destination="Csg-vx-pdo" id="zHM-T9-eqP"/>
                         <outlet property="locationAddressLabel" destination="hrw-3S-Gtd" id="vNf-dz-iVV"/>

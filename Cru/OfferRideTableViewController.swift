@@ -13,7 +13,7 @@ import LocationPicker
 import SwiftValidator
 import MRProgress
 
-class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegate, ValidationDelegate {
+class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegate, ValidationDelegate, UIPickerViewDelegate, UIPickerViewDataSource {
     
     @IBOutlet weak var fullName: UITextField!
     @IBOutlet weak var phoneNumber: UITextField!
@@ -22,6 +22,10 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     @IBOutlet weak var locationAddressLabel: UILabel!
     @IBOutlet weak var availableSeatsStepper: UIStepper!
     @IBOutlet weak var pickupDateTimePicker: DatePickerCell!
+    @IBOutlet weak var driverDirectionPickerView: UIPickerView!
+    
+    let directions = ["To Event", "From Event", "Both"]
+    var selectedDirection: String = "To Event"
     
     //validator object
     let validator = Validator()
@@ -46,6 +50,8 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        driverDirectionPickerView.delegate = self
+        driverDirectionPickerView.dataSource = self
 //        configureTapGestureForKeyboardDismissal()
         configureAvailableSeatsStepper()
         
@@ -90,6 +96,26 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         
         return true
     }
+    
+    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        
+        if(row < directions.count){
+            self.selectedDirection = directions[row]
+        }
+    }
+    
+    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int{
+        return 1
+    }
+    
+    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int{
+        return directions.count
+    }
+    
+    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String?{
+        return directions[row]
+    }
+
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         let cell = self.tableView(tableView, cellForRowAtIndexPath: indexPath)
@@ -154,28 +180,64 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     func validationSuccessful() {
         if isFormFilledOut() {
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-            RideUtils.postRideOffer(event.id!, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: "to")
+            RideUtils.postRideOffer(event.id!, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection())
+            
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             
+            //display confirmation alert
+            displayAlert(1, displayMessageAddOns: [])
+        }
+        else {
+            displayAlert(0, displayMessageAddOns: ["None"])
+        }
+    }
+    
+    func validationFailed(errors: [UITextField : ValidationError]) {
+        for (field, _) in validator.errors {
+                //something here
+        }
+        
+        displayAlert(0, displayMessageAddOns: ["FIELDS"])
+    }
+    
+    private func displayAlert(displayCode: Int, displayMessageAddOns: [String]) {
+        //display code 0 is an error in filling out the form
+        if displayCode == 0 {
+            let cancelRideAlert = UIAlertController(title: "Error", message: "Ride offer form has not been completely filled out. Please fill out the following fields: \n" + concatenateAllMessages(displayMessageAddOns), preferredStyle: UIAlertControllerStyle.Alert)
+            
+            cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(cancelRideAlert, animated: true, completion: nil)
+        }
+        //display code 1 means the form was filled out correctly
+        else {
             let cancelRideAlert = UIAlertController(title: "Ride Offered", message: "Thank you your offered ride has been created!", preferredStyle: UIAlertControllerStyle.Alert)
             
             cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: performBackAction))
             presentViewController(cancelRideAlert, animated: true, completion: nil)
         }
-        else {
-            let cancelRideAlert = UIAlertController(title: "Error", message: "Ride offer form has not been completely filled out. Please fill out the entire form.", preferredStyle: UIAlertControllerStyle.Alert)
-            
-            cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(cancelRideAlert, animated: true, completion: nil)
-        }
     }
     
-    func validationFailed(errors: [UITextField : ValidationError]) {
-        for (field, error) in validator.errors {
-            field.layer.borderColor = UIColor.redColor().CGColor
-            field.layer.borderWidth = 1.0
-            error.errorLabel?.text = error.errorMessage // works if you added labels
-            error.errorLabel?.hidden = false
+    //Concatenate all messages together in a string of messages
+    private func concatenateAllMessages(messages: [String]) -> String {
+        var finalMessage = ""
+        
+        for message in messages {
+            finalMessage += message + "\n"
+        }
+        
+        return finalMessage
+    }
+    
+    // Function for returning a direction based off of what is picked in the diriver direction picker
+    private func getDirection() -> String {
+        if selectedDirection == "To Event" {
+            return "to"
+        }
+        else if selectedDirection == "From Event" {
+            return "from"
+        }
+        else {
+            return "both"
         }
     }
     

@@ -15,6 +15,7 @@ struct Config {
     static let campusIds = "campuses"
     static let campusCollection = "campus"
     static let globalTopic = "/topics/global"
+    static let emulatorGcmId = "emulator-id-hey-whats-up-hello"
     
     
     // Modal header and footer text color
