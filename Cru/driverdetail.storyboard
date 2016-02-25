@@ -103,14 +103,6 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1 Grand Avenue, San Luis Obispo, CA 93410" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-9r-eTp">
-                                                <rect key="frame" x="214" y="132" width="366" height="45"/>
-                                                <animations/>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
-                                            </textView>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-6g-fgH">
                                                 <rect key="frame" x="20" y="224" width="560" height="321"/>
                                                 <animations/>
@@ -170,6 +162,14 @@
                                                     <outlet property="delegate" destination="iNM-Bt-tgs" id="9mR-Tl-6Fa"/>
                                                 </connections>
                                             </tableView>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1 Grand Avenue, San Luis Obispo, CA 93410" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-9r-eTp">
+                                                <rect key="frame" x="214" y="132" width="366" height="45"/>
+                                                <animations/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                                            </textView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,8 +183,8 @@
                                             <constraint firstItem="0yU-Uc-yPJ" firstAttribute="leading" secondItem="q5f-i7-czX" secondAttribute="trailing" constant="13" id="ROQ-6S-HHN"/>
                                             <constraint firstItem="8Yi-OS-ac5" firstAttribute="leading" secondItem="xWS-SD-Xhe" secondAttribute="leading" constant="20" id="WRd-eA-dDA"/>
                                             <constraint firstItem="Pxr-bU-jWp" firstAttribute="top" secondItem="xWS-SD-Xhe" secondAttribute="top" constant="20" id="aQ3-00-wUA"/>
-                                            <constraint firstItem="8Yi-OS-ac5" firstAttribute="top" secondItem="zWK-9r-eTp" secondAttribute="bottom" constant="17" id="aRD-tV-Hz4"/>
-                                            <constraint firstItem="zWK-9r-eTp" firstAttribute="top" secondItem="5Sj-i2-ve2" secondAttribute="bottom" constant="8" id="cpg-LD-TTB"/>
+                                            <constraint firstItem="8Yi-OS-ac5" firstAttribute="top" secondItem="zWK-9r-eTp" secondAttribute="bottom" constant="11" id="aRD-tV-Hz4"/>
+                                            <constraint firstItem="zWK-9r-eTp" firstAttribute="top" secondItem="5Sj-i2-ve2" secondAttribute="bottom" constant="2" id="cpg-LD-TTB"/>
                                             <constraint firstItem="gxr-5D-JdO" firstAttribute="leading" secondItem="xWS-SD-Xhe" secondAttribute="leading" constant="20" id="d5o-UF-gZK"/>
                                             <constraint firstItem="q5f-i7-czX" firstAttribute="top" secondItem="Pxr-bU-jWp" secondAttribute="bottom" constant="8" id="f0U-uk-o5c"/>
                                             <constraint firstAttribute="trailing" secondItem="7jG-6g-fgH" secondAttribute="trailing" constant="20" id="fqq-Ie-0iA"/>
