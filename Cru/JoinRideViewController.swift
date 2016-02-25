@@ -57,8 +57,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
             rideDate.text = ride?.getDate()
             time.text = ride?.getTime()
             seats.text = (ride?.seatsLeft())! + " left"
-            address.text = dummyAddress
-            
+            address.text = ride!.getCompleteAddress()            
         }
         else{
             rideDate.text = ""
@@ -209,7 +208,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         request.naturalLanguageQuery = dummyAddress
         
         if(request.naturalLanguageQuery != nil){
-            request.naturalLanguageQuery = self.address.text
+            request.naturalLanguageQuery = ride!.getCompleteAddress()
         }
         
         request.region = map.region

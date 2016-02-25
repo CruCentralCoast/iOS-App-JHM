@@ -25,6 +25,10 @@ class Ride: Comparable, Equatable {
     var hour = 3
     var minute = 3
     
+    var postcode: String = ""
+    var state: String = ""
+    var suburb: String = ""
+    var street: String = ""
     
     
     init?(dict: NSDictionary){
@@ -39,6 +43,22 @@ class Ride: Comparable, Equatable {
         time = "5:00 pm"
         passengers = [String]()
         
+        if (dict.objectForKey("location") != nil){
+            let loc = dict.objectForKey("location") as! NSDictionary
+            
+            if (loc["postcode"] != nil){
+                postcode = loc["postcode"] as! String
+            }
+            if (loc["state"] != nil){
+                state = loc["state"] as! String
+            }
+            if (loc["suburb"] != nil){
+                suburb = loc["suburb"] as! String
+            }
+            if (loc["street1"] != nil){
+                street = loc["street1"] as! String
+            }
+        }
         if (dict.objectForKey("_id") != nil){
             id = dict.objectForKey("_id") as! String
         }
@@ -84,6 +104,10 @@ class Ride: Comparable, Equatable {
             passengers = dict.objectForKey("passengers") as! [String]
         }
 
+    }
+    
+    func getCompleteAddress()->String{
+        return street + ", " + postcode + ", " + suburb + ", " + state
     }
     
     static func createTime(hour: Int, minute: Int)->String{
