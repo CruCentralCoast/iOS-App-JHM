@@ -1,14 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bcj-tP-HvM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="FreigSanProBook.otf">
-            <string>FreightSansProBook-Regular</string>
-        </mutableArray>
-    </customFonts>
     <scenes>
         <!--sideMenuStoryboard-->
         <scene sceneID="4MF-6R-Ljd">
@@ -18,45 +13,52 @@
             </objects>
             <point key="canvasLocation" x="2388.5" y="2587"/>
         </scene>
-        <!--Summer Mission Collection View Controller-->
+        <!--Summer Mission Controller-->
         <scene sceneID="Bvq-ZM-bAb">
             <objects>
-                <collectionViewController id="vyg-d7-iVR" customClass="SummerMissionCollectionViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="vyg-d7-iVR" customClass="SummerMissionController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="L8H-Oj-sMG">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="ZCT-2J-qAc">
-                            <size key="itemSize" width="280" height="280"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
+                        <collectionViewLayout key="collectionViewLayout" id="L18-zc-hqa" customClass="UltravisualLayout" customModule="Cru" customModuleProvider="target"/>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="MissionCell" id="2F6-cV-QoF" customClass="SummerMissionCollectionViewCell" customModule="Cru" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SummerMissionCell" id="2F6-cV-QoF" customClass="SummerMissionCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="2" y="0.0" width="597" height="278"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="280" height="280"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="597" height="278"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Location" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDC-xn-eE8" userLabel="nameLabel">
-                                            <rect key="frame" x="40" y="95" width="200" height="90"/>
-                                            <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="32"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mb3-oG-TDX">
+                                            <rect key="frame" x="0.0" y="0.0" width="597" height="272"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uDC-xn-eE8" userLabel="nameLabel">
+                                            <rect key="frame" x="8" y="8" width="581" height="60"/>
+                                            <attributedString key="attributedText">
+                                                <fragment content="Location">
+                                                    <attributes>
+                                                        <color key="NSColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <font key="NSFont" size="32" name="FreightSansProBold-Regular"/>
+                                                        <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                    </attributes>
+                                                </fragment>
+                                            </attributedString>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <size key="customSize" width="597" height="278"/>
                                 <connections>
-                                    <outlet property="nameLabel" destination="uDC-xn-eE8" id="rah-vE-V2L"/>
+                                    <outlet property="imageView" destination="mb3-oG-TDX" id="V4P-Sl-m51"/>
+                                    <outlet property="nameLabel" destination="uDC-xn-eE8" id="7zc-kT-Al2"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
-                            <outlet property="dataSource" destination="vyg-d7-iVR" id="rLi-ub-PVA"/>
-                            <outlet property="delegate" destination="vyg-d7-iVR" id="FZv-sf-wpP"/>
+                            <outlet property="dataSource" destination="vyg-d7-iVR" id="xYH-IC-rO2"/>
+                            <outlet property="delegate" destination="vyg-d7-iVR" id="WV7-Xs-GWa"/>
                         </connections>
                     </collectionView>
                 </collectionViewController>

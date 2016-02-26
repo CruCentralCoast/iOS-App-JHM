@@ -11,43 +11,44 @@ import Foundation
 class SummerMission {
     
     //MARK: Properties
-    var id: String?
-    var slug: String?
-    var description: String?
-    var name: String?
-    var url: String?
-    var cost: Double?
-    var leaders: String?
-    var startDate: (Int, Int, Int)?
-    var endDate: (Int, Int, Int)?
-    var state: String?
-    var suburb: String?
-    var street: String?
-    var country: String?
+    var id: String
+    var slug: String
+    var description: String
+    var name: String
+    var url: String
+    var cost: Double
+    var leaders: String
+    var startDate: NSDateComponents
+    var endDate: NSDateComponents
+    var state: String
+    var suburb: String
+    var street: String
     var image: UIImage?
-    
-    
+
     //MARK: Initialization
     init?(id: String?, slug: String?, description: String?, name: String?, url: String?, cost: Double?, leaders: String?, startDate: String?, endDate: String?, state: String?, suburb: String?, street: String?, imageUrl: String?) {
-        self.id = id
-        self.slug = slug
-        self.description = description
-        self.name = name
-        self.url = url
-        self.cost = cost
-        self.leaders = leaders
-        let start = ServerUtils.dateFromString(startDate!)!
-        self.startDate = (start.month, start.year, start.day)
-        let end = ServerUtils.dateFromString(endDate!)!
-        self.endDate = (end.month, end.year, end.day)
-        self.state = state
-        self.suburb = suburb
-        self.street = street
+        self.id = id!
+        self.slug = slug!
+        self.description = description!
+        self.name = name!
+        self.url = url!
+        if (cost != nil) {
+            self.cost = cost!
+        }
+        else {
+            self.cost = 9001.0
+        }
+        self.leaders = leaders!
+        self.startDate = ServerUtils.dateFromString(startDate!)!
+        self.endDate = ServerUtils.dateFromString(endDate!)!
+        self.state = state!
+        self.suburb = suburb!
+        self.street = street!
         
         if (imageUrl != nil) {
             let cloudURL = NSURL(string: imageUrl!)
             let imageData = NSData(contentsOfURL: cloudURL!)
-            self.image = UIImage(data: imageData!)
+            self.image = UIImage(data: imageData!)!
         }
     }
     
@@ -56,8 +57,8 @@ class SummerMission {
         let slug = dict["slug"] as! String?
         let description = dict["description"] as! String?
         let name = dict["name"] as! String?
-        let url = dict["url"] as! String?
-        let cost = dict[""] as! Double?
+        let url = dict["url"] == nil ? "" : dict["url"] as! String?
+        let cost = dict["cost"] as! Double?
         let leaders = dict["startDate"] as! String?
         let startDate = dict["startDate"] as! String?
         let endDate = dict["endDate"] as! String?
