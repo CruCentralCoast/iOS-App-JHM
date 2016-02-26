@@ -20,6 +20,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var departureLoc: UITextView!
+
     @IBOutlet weak var rideName: UILabel!
     @IBOutlet weak var passengerTable: UITableView!
     
@@ -43,8 +44,12 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         
         departureTime.text = ride.time
         departureDate.text = String("\(ride.month) \(ride.day)")
+        
+        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
+        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
+        departureLoc.text = nil
         departureLoc.text = ride.getCompleteAddress()
-        //print("no its here \(ride.getCompleteAddress())")
+
         
         passengerTable.backgroundColor = UIColor.clearColor()
         
