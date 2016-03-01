@@ -3,7 +3,19 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Table View Controller-->
         <scene sceneID="tGw-QS-Scv">
@@ -28,18 +40,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MJ-Ri-qZZ">
-                                                    <rect key="frame" x="277" y="14" width="46" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MJ-Ri-qZZ">
+                                                    <rect key="frame" x="8" y="14" width="42" height="22"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
+                                                <constraint firstAttribute="leadingMargin" secondItem="2MJ-Ri-qZZ" secondAttribute="leading" id="RHe-k1-zVZ"/>
                                                 <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="centerY" secondItem="70i-33-HfU" secondAttribute="centerY" id="WfW-Yd-Qml"/>
-                                                <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="centerX" secondItem="70i-33-HfU" secondAttribute="centerX" id="ghV-GJ-AYX"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -54,17 +66,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summer Missions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yN-A0-5Km">
-                                                    <rect key="frame" x="232" y="14" width="136" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summer Missions" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3yN-A0-5Km">
+                                                    <rect key="frame" x="8" y="14" width="119" height="22"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="3yN-A0-5Km" firstAttribute="centerX" secondItem="Mba-Gc-PSX" secondAttribute="centerX" id="L28-uz-d4O"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="3yN-A0-5Km" secondAttribute="leading" id="PaR-di-cYO"/>
                                                 <constraint firstItem="3yN-A0-5Km" firstAttribute="centerY" secondItem="Mba-Gc-PSX" secondAttribute="centerY" id="fnY-zr-0dF"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -80,17 +92,17 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resources" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-Dq-QBz">
-                                                    <rect key="frame" x="260" y="14" width="81" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-Dq-QBz">
+                                                    <rect key="frame" x="8" y="14" width="70" height="22"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="ek6-Dq-QBz" firstAttribute="centerX" secondItem="1Jx-33-gEV" secondAttribute="centerX" id="L1j-Ko-cdk"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="ek6-Dq-QBz" secondAttribute="leading" id="1pn-p7-5tx"/>
                                                 <constraint firstItem="ek6-Dq-QBz" firstAttribute="centerY" secondItem="1Jx-33-gEV" secondAttribute="centerY" id="Ql6-pu-RKg"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -107,16 +119,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Involved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLD-jC-IC0">
-                                                    <rect key="frame" x="252" y="14" width="96" height="21"/>
+                                                    <rect key="frame" x="8" y="14" width="85" height="22"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="sLD-jC-IC0" firstAttribute="centerX" secondItem="YMD-uy-FH2" secondAttribute="centerX" id="drM-8o-Bpj"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="sLD-jC-IC0" secondAttribute="leading" id="fVq-ta-Wp3"/>
                                                 <constraint firstItem="sLD-jC-IC0" firstAttribute="centerY" secondItem="YMD-uy-FH2" secondAttribute="centerY" id="vvU-hx-8pd"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -133,16 +145,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNG-XR-5eB">
-                                                    <rect key="frame" x="274" y="14" width="52" height="21"/>
+                                                    <rect key="frame" x="8" y="14" width="45" height="22"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="fNG-XR-5eB" firstAttribute="centerX" secondItem="UQL-Zu-DIg" secondAttribute="centerX" id="I43-mH-POb"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="fNG-XR-5eB" secondAttribute="leading" id="ikk-ML-sdS"/>
                                                 <constraint firstItem="fNG-XR-5eB" firstAttribute="centerY" secondItem="UQL-Zu-DIg" secondAttribute="centerY" id="yXU-27-rxO"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -159,16 +171,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RideSharing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32o-RX-Lnb">
-                                                    <rect key="frame" x="254" y="14" width="93" height="21"/>
+                                                    <rect key="frame" x="8" y="14" width="80" height="22"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="32o-RX-Lnb" firstAttribute="centerX" secondItem="1do-HL-Wse" secondAttribute="centerX" id="IXA-Tw-PL7"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="32o-RX-Lnb" secondAttribute="leading" id="APC-c5-eWz"/>
                                                 <constraint firstItem="32o-RX-Lnb" firstAttribute="centerY" secondItem="1do-HL-Wse" secondAttribute="centerY" id="Lg9-5O-RGu"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -185,16 +197,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqu-4X-ZSL">
-                                                    <rect key="frame" x="268" y="14" width="64" height="21"/>
+                                                    <rect key="frame" x="8" y="14" width="55" height="22"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="yqu-4X-ZSL" firstAttribute="centerX" secondItem="tgg-p4-fvh" secondAttribute="centerX" id="XTG-TH-G6R"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="yqu-4X-ZSL" secondAttribute="leading" id="Vok-f5-pSZ"/>
                                                 <constraint firstItem="yqu-4X-ZSL" firstAttribute="centerY" secondItem="tgg-p4-fvh" secondAttribute="centerY" id="fDn-Vx-dEU"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -218,7 +230,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xJz-cW-Mqm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="610" y="244"/>
+            <point key="canvasLocation" x="607" y="244"/>
         </scene>
         <!--homeStoryboard-->
         <scene sceneID="qWM-K8-lA5">
