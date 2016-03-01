@@ -39,7 +39,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         
         
         for pass in ride.passengers{
-            ServerUtils.findPassengerById(pass, inserter: insertPassenger)
+            RideUtils.getPassengerById(pass, inserter: insertPassenger)
+            //ServerUtils.findPassengerById(pass, inserter: insertPassenger)
         }
         
         departureTime.text = ride.time
@@ -55,10 +56,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         
     }
     
-    func insertPassenger(dict: NSDictionary){
-        let newPassenger = Passenger(dict: dict)
+    func insertPassenger(newPassenger: Passenger){
         thePassengers.append(newPassenger)
-        //print("found new pass named \(newPassenger.name)")
         self.passengerTable.reloadData()
     }
     

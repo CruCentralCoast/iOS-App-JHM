@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (3.2.1)
   - DatePickerCell (1.0.4)
   - FlatUIKit (1.6.2)
   - GGLInstanceID (1.1.5):
@@ -65,6 +66,7 @@ PODS:
   - SwiftValidator (3.0.3)
 
 DEPENDENCIES:
+  - Alamofire (~> 3.0)
   - DatePickerCell
   - FlatUIKit
   - Google/CloudMessaging
@@ -75,6 +77,7 @@ DEPENDENCIES:
   - SwiftValidator
 
 SPEC CHECKSUMS:
+  Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
   DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
   FlatUIKit: 1b41f0d4952ce8d970d8479ce79df54a960242c4
   GGLInstanceID: 4be9a86f27e87f8cedc9694f521f12949813a7ba

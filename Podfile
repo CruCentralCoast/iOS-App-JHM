@@ -13,6 +13,7 @@ target 'Cru' do
     pod 'SwiftValidator'
     pod 'FlatUIKit'
     pod 'MRProgress'
+    pod 'Alamofire', '~> 3.0'
 end
 
 target 'CruTests' do
