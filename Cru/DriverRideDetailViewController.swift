@@ -20,6 +20,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var departureLoc: UITextView!
+
     @IBOutlet weak var rideName: UILabel!
     @IBOutlet weak var passengerTable: UITableView!
     
@@ -36,41 +37,19 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         //Set the ride name
         rideName.text = event!.name!
         
-        //passengers += ["Erica Solum", "Max Crane", "Pete Godkin", "Deniz Tumer", "Quan Tran"]
+        
         for pass in ride.passengers{
             ServerUtils.findPassengerById(pass, inserter: insertPassenger)
         }
         
-        
-        
-        
-        //Change the image depending on the number of passengers
-        /*if(ride.passengers.count == 0){
-            carImage.image = UIImage(named: "car-empty")
-        }
-        else if(ride.passengers.count == 1){
-            carImage.image = UIImage(named: "car-1")
-            
-        }
-        else if(ride.passengers.count == 2){
-            carImage.image = UIImage(named: "car-2")
-        }
-        else if(ride.passengers.count == 3){
-            carImage.image = UIImage(named: "car-3")
-        }
-        else if(ride.passengers.count == 4){
-            carImage.image = UIImage(named: "car-4")
-        }
-        else if(ride.passengers.count == 5){
-            carImage.image = UIImage(named: "car-5")
-        }
-        else {
-            carImage.image = UIImage(named: "car-full")
-        }*/
-        
         departureTime.text = ride.time
         departureDate.text = String("\(ride.month) \(ride.day)")
-        departureLoc.text = String("1 Grand Avenue, San Luis Obispo, CA 93410")
+        
+        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
+        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
+        departureLoc.text = nil
+        departureLoc.text = ride.getCompleteAddress()
+
         
         passengerTable.backgroundColor = UIColor.clearColor()
         

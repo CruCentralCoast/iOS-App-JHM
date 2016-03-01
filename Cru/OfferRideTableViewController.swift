@@ -180,6 +180,7 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     func validationSuccessful() {
         if isFormFilledOut() {
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+            
             RideUtils.postRideOffer(event.id!, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection())
             
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
@@ -267,9 +268,11 @@ extension NSDate {
 
 extension Location {
     func getLocationAsDict(loc: Location) -> NSDictionary {
-        print(loc.address)
         return [
-            "address": loc.address
+            "street1": loc.placemark.addressDictionary!["Street"]!,
+            "state": loc.placemark.addressDictionary!["State"]!,
+            "postcode": loc.placemark.addressDictionary!["ZIP"]!,
+            "suburb": loc.placemark.addressDictionary!["SubAdministrativeArea"]!
         ]
     }
 }

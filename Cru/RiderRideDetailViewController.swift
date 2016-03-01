@@ -83,7 +83,7 @@ class RiderRideDetailViewController: UIViewController {
         
         var initialLocation = CLLocation()
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = self.address.text//"1128 Peach San Luis Obispo"
+        request.naturalLanguageQuery = ride!.getCompleteAddress()//self.address.text//"1128 Peach San Luis Obispo"
         
         if(request.naturalLanguageQuery != nil){
             request.naturalLanguageQuery = self.address.text
