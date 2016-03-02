@@ -125,6 +125,18 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         
     }
     
+    @IBAction func cancelPressed(sender: AnyObject) {
+        Cancler.confirmCancel(self, handler: cancelConfirmed)
+    }
+    
+    func cancelConfirmed(action: UIAlertAction){
+        RideUtils.leaveRideDriver(ride.id, handler: handleCancelResult)
+    }
+    
+    func handleCancelResult(result: Bool){
+        
+    }
+    
     /*
     // MARK: - Navigation
 

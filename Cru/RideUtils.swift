@@ -124,6 +124,7 @@ class RideUtils {
         }
     }
     
+    
     static func findIdByGCMInRide(gcm: String, ride: Ride, handler: (String, String)->()){
         
         for pass in ride.passengers{
@@ -145,6 +146,24 @@ class RideUtils {
             }
         }
         
+    }
+    
+    static func leaveRideDriver(rideid: String, handler: (Bool)->()){
+        let params = ["ride_id":rideid]
+        let url = Config.serverUrl + "api/ride/dropRide"
+        
+        Alamofire.request(.POST, url, parameters: params)
+            .responseJSON { response in
+                //print(response.request)  // original URL request
+                //print("RESPONSE IS... \(response.response)") // URL response
+                
+                print(" data is ... \(response.data)")     // server data
+                print("response is... \(response.result)")   // result of response serialization
+
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
+                }
+        }
     }
     
 }
