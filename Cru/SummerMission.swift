@@ -20,13 +20,14 @@ class SummerMission {
     var leaders: String
     var startDate: NSDateComponents
     var endDate: NSDateComponents
+    var country: String
     var state: String
     var suburb: String
     var street: String
     var image: UIImage?
 
     //MARK: Initialization
-    init?(id: String?, slug: String?, description: String?, name: String?, url: String?, cost: Double?, leaders: String?, startDate: String?, endDate: String?, state: String?, suburb: String?, street: String?, imageUrl: String?) {
+    init?(id: String?, slug: String?, description: String?, name: String?, url: String?, cost: Double?, leaders: String?, startDate: String?, endDate: String?, country: String?, state: String?, suburb: String?, street: String?, imageUrl: String?) {
         self.id = id!
         self.slug = slug!
         self.description = description!
@@ -41,6 +42,7 @@ class SummerMission {
         self.leaders = leaders!
         self.startDate = ServerUtils.dateFromString(startDate!)!
         self.endDate = ServerUtils.dateFromString(endDate!)!
+        self.country = country!
         self.state = state!
         self.suburb = suburb!
         self.street = street!
@@ -62,12 +64,13 @@ class SummerMission {
         let leaders = dict["startDate"] as! String?
         let startDate = dict["startDate"] as! String?
         let endDate = dict["endDate"] as! String?
+        let country = dict["location"]?.objectForKey("country") as! String?
         let state = dict["location"]?.objectForKey("state") as! String?
         let suburb = dict["location"]?.objectForKey("suburb") as! String?
         let street = dict["location"]?.objectForKey("street1") as! String?
         let imageUrl = dict["image"]?.objectForKey("secure_url") as! String?
         
 
-        self.init(id: id, slug: slug, description: description, name: name, url: url, cost: cost, leaders: leaders, startDate: startDate, endDate: endDate, state: state, suburb:suburb, street: street, imageUrl: imageUrl)
+        self.init(id: id, slug: slug, description: description, name: name, url: url, cost: cost, leaders: leaders, startDate: startDate, endDate: endDate, country: country, state: state, suburb:suburb, street: street, imageUrl: imageUrl)
     }
 }

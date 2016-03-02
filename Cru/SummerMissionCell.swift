@@ -22,11 +22,12 @@ class SummerMissionCell: UICollectionViewCell {
             if let mission = mission {
                 imageView.image = mission.image
                 nameLabel.text = mission.name
+                nameLabel.font = nameLabel.font.fontWithSize(22)
             }
         }
     }
     
-    // Dynamically adjusts the size of cells as the user scrolls
+    // Dynamically adjusts the clarity  of cells as the user scrolls
     override func applyLayoutAttributes(layoutAttributes: (UICollectionViewLayoutAttributes!)) {
         super.applyLayoutAttributes(layoutAttributes)
         
@@ -34,14 +35,23 @@ class SummerMissionCell: UICollectionViewCell {
         let featuredHeight = UltravisualLayoutConstants.Cell.featuredHeight
         
         // 2
-        let delta = 1 - ((featuredHeight - CGRectGetHeight(frame)) / (featuredHeight - standardHeight))
+        let height = CGRectGetHeight(frame)
+        
+        //let delta = height < featuredHeight ? 1 - ((featuredHeight - height) / (featuredHeight - standardHeight)) : ((featuredHeight - CGRectGetMinY(frame)) / (featuredHeight - standardHeight))
+        
+        let delta = 1 - ((featuredHeight - height) / (featuredHeight - standardHeight))
+        
+        if let name = mission?.name {
+            print("mission " + name + " at " + String(CGRectGetMinY(frame)))
+        }
         
         // 3
-        let minAlpha: CGFloat = 0.1
+        let minAlpha: CGFloat = 0.25
         let maxAlpha: CGFloat = 0.75
         
         if let imageCoverView = self.imageCoverView {
             imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
+            imageCoverView.sizeToFit()
         }
     }
 }

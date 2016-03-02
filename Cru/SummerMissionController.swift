@@ -38,7 +38,7 @@ class SummerMissionController: UICollectionViewController {
     
     // Creates and inserts a SummerMission into this collection view from the given dictionary.
     func insertMission(dict : NSDictionary) {
-        self.missions.insert(SummerMission(dict: dict)!, atIndex: 0)
+        self.missions.append(SummerMission(dict: dict)!)
     }
     
     // Signals the collection view to reload data.

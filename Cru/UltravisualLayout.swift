@@ -12,11 +12,11 @@ import UIKit
 struct UltravisualLayoutConstants {
     struct Cell {
         /* The height of the non-featured cell */
-        static let standardHeight: CGFloat = 100
+        static let standardHeight: CGFloat = 120
         /* The height of the first visible cell */
-        static let featuredHeight: CGFloat = 400
+        static let featuredHeight: CGFloat = 300
         /* The height of the phone display */
-        static let screenHeight: CGFloat = UIScreen.mainScreen().bounds.height
+        static let screenHeight: CGFloat = CGFloat(UIScreen.mainScreen().bounds.height)
     }
 }
 
@@ -25,7 +25,7 @@ class UltravisualLayout: UICollectionViewLayout {
     // MARK: Properties and Variables
     
     /* The amount the user needs to scroll before the featured cell changes */
-    let dragOffset: CGFloat = 300.0
+    let dragOffset: CGFloat = 200.0
     
     var cache = [UICollectionViewLayoutAttributes]()
     
@@ -78,7 +78,8 @@ class UltravisualLayout: UICollectionViewLayout {
         
         let standardHeight = UltravisualLayoutConstants.Cell.standardHeight
         let featuredHeight = UltravisualLayoutConstants.Cell.featuredHeight
-        
+        let screenHeight = UltravisualLayoutConstants.Cell.screenHeight
+
         var frame = CGRectZero
         var y:CGFloat = 0
         
@@ -91,25 +92,22 @@ class UltravisualLayout: UICollectionViewLayout {
             // 2
             attributes.zIndex = item
             var height = standardHeight
-            
             // 3
+            
             if indexPath.item == featuredItemIndex {
-                if featuredItemIndex == numberOfItems - 1 {
-                    // 4
-                    let yOffset = standardHeight * nextItemPercentageOffset
-                    y = collectionView!.contentOffset.y - yOffset
-                    height = featuredHeight + yOffset
-                } else {
-                    // 5
-                    let yOffset = standardHeight * nextItemPercentageOffset
-                    y = collectionView!.contentOffset.y - yOffset
-                    height = featuredHeight
-                }
+                // 4
+                let yOffset = standardHeight * nextItemPercentageOffset
+                y = collectionView!.contentOffset.y - yOffset
+                height = featuredHeight
             } else if indexPath.item == (featuredItemIndex + 1) && indexPath.item != numberOfItems {
-                // 6
+                // 5
                 let maxY = y + standardHeight
                 height = standardHeight + max((featuredHeight - standardHeight) * nextItemPercentageOffset, 0)
                 y = maxY - height
+            }
+            
+            if indexPath.item == numberOfItems - 1 {
+                height = self.height
             }
             
             // 7
