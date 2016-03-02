@@ -53,6 +53,8 @@ class RidesTableViewController: UITableViewController {
     
     func refresh(sender:AnyObject)
     {
+        rides.removeAll()
+        self.tableView.reloadData()
         // Updating your data here...
         RideUtils.getRidesByGCMToken(gcmId, inserter: insertNewRide, afterFunc: finishRefresh)
 
@@ -90,19 +92,8 @@ class RidesTableViewController: UITableViewController {
     
     func insertNewRide(dict : NSDictionary){
         let newRide = Ride(dict: dict)
-        
-        //if there is no ride...add it
-        if(!rides.contains(newRide!)){
-            rides.insert(newRide!, atIndex: 0)
-            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-        }
-        //else remove the old one and put in the new one
-        //which may contain updated ride data
-        else{
-            let index = rides.indexOf(newRide!)
-            rides.removeAtIndex(index!)
-            rides.insert(newRide!, atIndex: 0)
-        }
+        rides.insert(newRide!, atIndex: 0)
+        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
     }
     
     func insertRide(dict : NSDictionary) {

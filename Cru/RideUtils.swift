@@ -107,4 +107,44 @@ class RideUtils {
         ServerUtils.sendHttpPostRequest(requestUrl, body: body);
     }
     
+    static func leaveRide(passid: String, rideid: String, handler: (Bool)->()){
+        let url = Config.serverUrl + "api/ride/dropPassenger"
+        let params = ["passenger_id":passid, "ride_id":rideid]
+        Alamofire.request(.POST, url, parameters: params)
+            .responseJSON { response in
+                handler(true)
+//                print(response.request)  // original URL request
+//                print(response.response) // URL response
+//                print(response.data)     // server data
+//                print(response.result)   // result of response serialization
+//                
+//                if let JSON = response.result.value {
+//                    print("JSON: \(JSON)")
+//                }
+        }
+    }
+    
+    static func findIdByGCMInRide(gcm: String, ride: Ride, handler: (String, String)->()){
+        
+        for pass in ride.passengers{
+            let url = Config.serverUrl + "api/passenger/" + pass
+            Alamofire.request(.GET, url, parameters: nil)
+                .responseJSON { response in
+                    if let JSON = response.result.value {
+                        if let DICT = JSON as? NSDictionary{
+                            if let theirGCM = DICT["gcm_id"] as? String{
+                                if(gcm ==  theirGCM){
+                                    if let passid = DICT["_id"] as? String{
+                                        handler(passid, ride.id)
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+            }
+        }
+        
+    }
+    
 }

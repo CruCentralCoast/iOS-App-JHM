@@ -125,6 +125,33 @@ class RiderRideDetailViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func cancelPressed(sender: AnyObject) {
+        let cancelAlert = UIAlertController(title: "Are you sure you want to leave this ride?", message: "This action is permanent", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        cancelAlert.addAction(UIAlertAction(title: "Confirm", style: .Destructive, handler: cancelConfirmed))
+        cancelAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
+        self.presentViewController(cancelAlert, animated: true, completion: nil)
+    }
+    
+    func cancelConfirmed(action: UIAlertAction){
+        var passId = RideUtils.findIdByGCMInRide(Config.emulatorGcmId, ride: ride!, handler: leaveRide)
+    }
+    
+    func leaveRide(passid: String, rideid: String){
+        RideUtils.leaveRide(passid,rideid: rideid, handler: { success in
+        
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+                
+                for vc in navController.viewControllers{
+                    if let tvc = vc as? RidesTableViewController {
+                        tvc.refresh(1)
+                    }
+                }
+            }
+        })
+    }
+    
 
     /*
     // MARK: - Navigation

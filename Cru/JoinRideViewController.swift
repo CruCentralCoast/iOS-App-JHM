@@ -145,11 +145,8 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         let success = UIAlertController(title: "Join Successful", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         success.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
 
-        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
-            
-            
-            self.presentViewController(success, animated: true, completion: nil)
-        })
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        self.presentViewController(success, animated: true, completion: nil)
         
         
     }
@@ -157,7 +154,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     func unwindToRideList(action: UIAlertAction){
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
-            navController.popViewControllerAnimated(true)
+            //navController.popViewControllerAnimated(true)
             
             for vc in navController.viewControllers{
                 if let tvc = vc as? RidesTableViewController {
