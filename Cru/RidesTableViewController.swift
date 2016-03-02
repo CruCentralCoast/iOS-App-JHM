@@ -39,9 +39,9 @@ class RidesTableViewController: UITableViewController {
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
         gcmId = SubscriptionManager.loadGCMToken()
-        if gcmId == "" {
+        //if gcmId == "" {
             gcmId = Config.emulatorGcmId
-        }
+        //}
         //gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
         
         //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
@@ -93,6 +93,7 @@ class RidesTableViewController: UITableViewController {
         
         //if there is no ride...add it
         if(!rides.contains(newRide!)){
+            rides.insert(newRide!, atIndex: 0)
             self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
         }
         //else remove the old one and put in the new one
@@ -100,11 +101,8 @@ class RidesTableViewController: UITableViewController {
         else{
             let index = rides.indexOf(newRide!)
             rides.removeAtIndex(index!)
+            rides.insert(newRide!, atIndex: 0)
         }
-        
-        //in either case we insert the ride
-        rides.insert(newRide!, atIndex: 0)
-        
     }
     
     func insertRide(dict : NSDictionary) {
