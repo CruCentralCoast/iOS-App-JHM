@@ -110,8 +110,8 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     }
     
     func makeButtonPretty(){
-        join.buttonColor = UIColor(red: 0, green:  0.427, blue: 0.118, alpha: 1.0)
-        join.shadowColor = UIColor.greenSeaColor()
+        join.buttonColor = Colors.green
+        join.shadowColor = Colors.darkerGreen
         join.shadowHeight = 3.0
         join.cornerRadius = 6.0
         join.titleLabel!.font = UIFont.boldFlatFontOfSize(16)
