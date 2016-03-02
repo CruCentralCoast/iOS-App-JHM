@@ -105,11 +105,11 @@ class UltravisualLayout: UICollectionViewLayout {
                 height = standardHeight + max((featuredHeight - standardHeight) * nextItemPercentageOffset, 0)
                 y = maxY - height
             }
-            
+            /*
             if indexPath.item == numberOfItems - 1 {
                 height = self.height
             }
-            
+            */
             // 7
             frame = CGRect(x: 0, y: y, width: width, height: height)
             attributes.frame = frame
