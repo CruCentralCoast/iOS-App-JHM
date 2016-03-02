@@ -13,26 +13,15 @@ class RideUtils {
     
     static func getPassengerById(id: String, inserter: (Passenger)->()){
         let url = Config.serverUrl + "api/passenger/" + id
-        var pass: Passenger?
         
         Alamofire.request(.GET, url, parameters: nil)
             .responseJSON { response in
                 if let JSON = response.result.value {
-                    
-                    
-                    let passArr = JSON as! NSArray
-                    
-                    if(passArr.count != 0){
-                        pass = Passenger(dict: passArr[0] as! NSDictionary)
-                        inserter(pass!)
-                    }
-                    else
-                    {
-                        print("couldn't find passenger for id")
+                    if let DICT = JSON as? NSDictionary{
+                        inserter(Passenger(dict:DICT))
                     }
                 }
         }
-
     }
     
     class func getRidesByGCMToken(token: String, inserter: (NSDictionary) -> (), afterFunc: ()->Void) {
