@@ -32,6 +32,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var seats: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var tripType: UILabel!
     
     //for validating user input
     let validator = Validator()
