@@ -14,6 +14,12 @@ import MRProgress
 
 struct JoinRideConstants{
     static let NAME = "Join Ride"
+    static let ROUND_TRIP = "Both"
+    static let TO_EVENT = "To"
+    static let FROM_EVENT = "From"
+    static let DIR_ROUND_TRIP = "Round Trip"
+    static let DIR_TO = "To Event"
+    static let DIR_FROM = "From Event"
 }
 
 class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
@@ -50,15 +56,24 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         navigationItem.title = JoinRideConstants.NAME
         setupMap()
         
-        //load events
-        //ServerUtils.findEventById(ride!.eventId, inserter: insertEvent)
 
         
         if(ride != nil){
             rideDate.text = ride?.getDate()
             time.text = ride?.getTime()
             seats.text = (ride?.seatsLeft())! + " left"
-            address.text = ride!.getCompleteAddress()            
+            address.text = ride!.getCompleteAddress()
+            
+            print(ride!.direction)
+            if(ride!.direction.caseInsensitiveCompare(JoinRideConstants.ROUND_TRIP) == NSComparisonResult.OrderedSame){
+                tripType.text = JoinRideConstants.DIR_ROUND_TRIP
+            }
+            else if(ride!.direction.caseInsensitiveCompare(JoinRideConstants.TO_EVENT) == NSComparisonResult.OrderedSame){
+                tripType.text = JoinRideConstants.DIR_TO
+            }
+            else if(ride!.direction.caseInsensitiveCompare(JoinRideConstants.FROM_EVENT) == NSComparisonResult.OrderedSame){
+                tripType.text = JoinRideConstants.DIR_FROM
+            }
         }
         else{
             rideDate.text = ""
