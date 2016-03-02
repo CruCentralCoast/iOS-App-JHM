@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MRProgress
 
 class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     
@@ -130,11 +131,28 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     func cancelConfirmed(action: UIAlertAction){
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         RideUtils.leaveRideDriver(ride.id, handler: handleCancelResult)
     }
     
-    func handleCancelResult(result: Bool){
-        
+    func handleCancelResult(success: Bool){
+        if(success){
+            Cancler.showCancelSuccess(self, handler: { action in
+                if let navController = self.navigationController {
+                    navController.popViewControllerAnimated(true)
+                    
+                    for vc in navController.viewControllers{
+                        if let tvc = vc as? RidesTableViewController {
+                            tvc.refresh(1)
+                        }
+                    }
+                }
+            })
+        }
+        else{
+            Cancler.showCancelFailure(self)
+        }
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
     /*

@@ -112,15 +112,12 @@ class RideUtils {
         let params = ["passenger_id":passid, "ride_id":rideid]
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in
-                handler(true)
-//                print(response.request)  // original URL request
-//                print(response.response) // URL response
-//                print(response.data)     // server data
-//                print(response.result)   // result of response serialization
-//                
-//                if let JSON = response.result.value {
-//                    print("JSON: \(JSON)")
-//                }
+                if(response.result.isSuccess){
+                    handler(true)
+                }
+                else{
+                    handler(false)
+                }
         }
     }
     
@@ -154,14 +151,11 @@ class RideUtils {
         
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in
-                //print(response.request)  // original URL request
-                //print("RESPONSE IS... \(response.response)") // URL response
-                
-                print(" data is ... \(response.data)")     // server data
-                print("response is... \(response.result)")   // result of response serialization
-
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
+                if(response.result.isSuccess){
+                    handler(true)
+                }
+                else{
+                    handler(false)
                 }
         }
     }

@@ -17,4 +17,20 @@ class Cancler {
         cancelAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
         view.presentViewController(cancelAlert, animated: true, completion: nil)
     }
+    
+    static func showCancelSuccess(view: UIViewController, handler: (UIAlertAction)->()){
+        let cancelAlert = UIAlertController(title: "Ride Cancelled Successfully", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        cancelAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: handler))
+
+        view.presentViewController(cancelAlert, animated: true, completion: nil)
+    }
+    
+    static func showCancelFailure(view: UIViewController){
+        let cancelAlert = UIAlertController(title: "Could Not Cancel Ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        cancelAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+        
+        view.presentViewController(cancelAlert, animated: true, completion: nil)
+    }
 }

@@ -126,11 +126,6 @@ class RiderRideDetailViewController: UIViewController {
     }
     
     @IBAction func cancelPressed(sender: AnyObject) {
-//        let cancelAlert = UIAlertController(title: "Are you sure you want to leave this ride?", message: "This action is permanent", preferredStyle: UIAlertControllerStyle.Alert)
-//        
-//        cancelAlert.addAction(UIAlertAction(title: "Confirm", style: .Destructive, handler: cancelConfirmed))
-//        cancelAlert.addAction(UIAlertAction(title: "Cancel", style: .Default, handler: nil))
-//        self.presentViewController(cancelAlert, animated: true, completion: nil)
         Cancler.confirmCancel(self, handler: cancelConfirmed)
     }
     
