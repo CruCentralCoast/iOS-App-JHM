@@ -29,22 +29,17 @@ class LoginViewController: UIViewController, ValidationDelegate {
         let password = passwordField.text
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        LoginUtils.login(username!, password: password!, completionHandler : {(response : NSDictionary) in
+        LoginUtils.login(username!, password: password!, completionHandler : {(success : Bool) in
             
-            var title = ""
-            if (response["success"] as! Bool && response["session"] as! Bool) {
-                title = "Login Successful"
-            } else {
-                title = "Login Failed"
-            }
+            let title = success ? "Login Successful" : "Login Failed"
             
-            let success = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-            success.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
                 
                 
-                self.presentViewController(success, animated: true, completion: nil)
+                self.presentViewController(alert, animated: true, completion: nil)
             })
         })
     }
