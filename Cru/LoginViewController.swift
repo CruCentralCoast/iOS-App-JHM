@@ -32,7 +32,7 @@ class LoginViewController: UIViewController, ValidationDelegate {
         LoginUtils.login(username!, password: password!, completionHandler : {(response : NSDictionary) in
             
             var title = ""
-            if (response["success"] as! Bool) {
+            if (response["success"] as! Bool && response["session"] as! Bool) {
                 title = "Login Successful"
             } else {
                 title = "Login Failed"
