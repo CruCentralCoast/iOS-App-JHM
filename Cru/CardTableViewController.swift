@@ -22,12 +22,14 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
         
         
         self.tableView.separatorColor = UIColor.clearColor()
-        loadSampleResources()
+        //loadSampleResources()
         self.tableView.reloadData()
         
         
         self.tableView.rowHeight = UITableViewAutomaticDimension
         self.tableView.estimatedRowHeight = 50
+        
+        
         
 
         // Uncomment the following line to preserve selection between presentations
@@ -37,12 +39,12 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    /*func insertResource(dict : NSDictionary) {
+    func insertResource(dict : NSDictionary) {
         self.tableView.beginUpdates()
         resources.insert(Resource(dict: dict)!, atIndex: 0)
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
         self.tableView.endUpdates()
-    }*/
+    }
     
     func loadSampleResources() {
         
@@ -61,9 +63,8 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
                 self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
             }
             else {
-                print("\nYOYOYO\n")
+                print("\nYoyoyo Didn't get a card? \n")
             }
-            
         }
         
         let videoURL2 = NSURL.init(string: "https://www.youtube.com/watch?v=j62bxcmWJX4")
@@ -140,6 +141,9 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
         cardView.constrainBottomToSuperView(10)
         cardView.constrainRightToSuperView(10)
         cardView.constrainLeftToSuperView(10)
+        
+        
+        
         //cell.contentView.superview?.superview?.superview?.superview?.constrainToSuperViewEdges()
         //self.tableView.superview?.superview?.superview?.constrainToSuperViewEdges()
         
@@ -150,6 +154,20 @@ class CardTableViewController: UITableViewController, CardViewDelegate {
         }*/
 
         return cell
+    }
+    override func viewDidAppear(animated: Bool) {
+        print("SADFLK;ADSFADF")
+        for subview in self.tableView.subviews {
+            if (NSStringFromClass(subview.dynamicType) == "UITableViewWrapperView")
+            {
+                print("Things")
+                tableView.bounds.size.width = UIScreen.mainScreen().bounds.size.width
+                subview.frame = CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height);
+                print("\nTable view bbounds: \(UIScreen.mainScreen().bounds.size.width)")
+            }
+        }
+        
+        
     }
     
 

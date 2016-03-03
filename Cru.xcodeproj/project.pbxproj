@@ -493,12 +493,12 @@
 			isa = PBXGroup;
 			children = (
 				50F8251E1C0BB965005396BC /* resources.storyboard */,
+				6D4B78B51C702FDF00F643CB /* Resource.swift */,
 				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
 				0F0C221C1C0D77D9002850DF /* ResourceVideoTableViewController.swift */,
 				0F0C221E1C0D783B002850DF /* ResourceVideoTableViewCell.swift */,
 				6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */,
 				6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */,
-				6D4B78B51C702FDF00F643CB /* Resource.swift */,
 				6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */,
 			);
 			name = Resources;

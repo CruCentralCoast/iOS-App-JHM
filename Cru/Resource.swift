@@ -10,32 +10,33 @@ import UIKit
 
 class Resource {
     // MARK: Properties
-    var title: String
-    var url: String
-    var type: String
-    var date: String
-    var tags: [String]
-    var imageName: String
+    var title: String!
+    var id: String!
+    var url: String!
+    var type: String!
+    var date: NSDateComponents!
+    var tags: [String]!
     
-    init(title: String, url: String, type: String, date: String, tags: [String], imageName: String) {
+    init?(id: String?, title: String?, url: String?, type: String?, date: String?, tags: [String]?) {
         // Initialize properties
+        self.id = id
         self.title = title
         self.url = url
         self.type = type
-        self.date = date
+        self.date = ServerUtils.dateFromString(date!)!
         self.tags = tags
-        self.imageName = imageName
+    }
+    
+    convenience init?(dict : NSDictionary) {
+        let id = dict["_id"] as! String?
+        let title = dict["title"] as! String?
+        let type = dict["type"] as! String?
+        let url = dict["url"] as! String?
+        let date = dict["date"] as! String?
+        let tags = dict["tags"] as! [String]?
+        
+        
+        
+        self.init(id: id, title: title, url: url, type: type, date: date, tags: tags)
     }
 }
-
-//Temporary extension (Should move this later)
-/*extension NSDate
-{
-    convenience init(dateString:String) {
-        let dateStringFormatter = NSDateFormatter()
-        dateStringFormatter.dateFormat = "yyyy-MM-dd"
-        dateStringFormatter.locale = NSLocale(localeIdentifier: "en_US_POSIX")
-        let d = dateStringFormatter.dateFromString(dateString)!
-        self.init(timeInterval:0, sinceDate:d)
-    }
-} */
