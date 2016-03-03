@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="FreigSanProMed.otf">
+            <string>FreightSansProMedium-Regular</string>
+        </mutableArray>
+        <mutableArray key="FreigSanProSem.otf">
+            <string>FreightSansProSemibold-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Ministry Teams Collection View Controller-->
+        <scene sceneID="uwx-fU-G3N">
+            <objects>
+                <collectionViewController storyboardIdentifier="MinistryTeamsCollectionViewController" id="5n8-J9-Awi" customClass="MinistryTeamsCollectionViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cRk-pP-Yuk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewLayout key="collectionViewLayout" id="UHl-8U-RRs" customClass="UltravisualLayout" customModule="Cru" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ministryteam" id="awr-2L-iue" customClass="MinistryTeamsCollectionViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-dd-stK">
+                                            <rect key="frame" x="0.0" y="-40" width="200" height="280"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="280" id="jc3-Kx-bPQ"/>
+                                            </constraints>
+                                        </imageView>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ezm-ui-uPJ">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minitry Team Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0C-t2-fI3">
+                                            <rect key="frame" x="8" y="8" width="155" height="26"/>
+                                            <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="20"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-Iu-KUK">
+                                            <rect key="frame" x="8" y="33" width="184" height="159"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Ezm-ui-uPJ" secondAttribute="trailing" id="ESv-ZY-blj"/>
+                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="top" secondItem="Q0C-t2-fI3" secondAttribute="bottom" constant="-1" id="Js6-2p-rGH"/>
+                                    <constraint firstItem="TQB-dd-stK" firstAttribute="centerY" secondItem="awr-2L-iue" secondAttribute="centerY" id="K4F-Vj-HwY"/>
+                                    <constraint firstAttribute="trailing" secondItem="TQB-dd-stK" secondAttribute="trailing" id="LIa-V4-QSv"/>
+                                    <constraint firstItem="TQB-dd-stK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leading" id="YyN-U0-ynv"/>
+                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" id="bdB-qK-qLZ"/>
+                                    <constraint firstItem="Ezm-ui-uPJ" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leading" id="bef-pd-rol"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ezm-ui-uPJ" secondAttribute="bottom" id="cJu-hz-SGr"/>
+                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" id="j02-xI-Js4"/>
+                                    <constraint firstItem="Ezm-ui-uPJ" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="top" id="nyc-rV-NBZ"/>
+                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="topMargin" id="rfw-2Q-zLZ"/>
+                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="trailing" secondItem="awr-2L-iue" secondAttribute="trailingMargin" id="vO2-It-tbn"/>
+                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="bottom" secondItem="awr-2L-iue" secondAttribute="bottomMargin" id="xdY-5x-l72"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="200"/>
+                                <connections>
+                                    <outlet property="descriptionTextView" destination="SdQ-Iu-KUK" id="aOK-JN-Zxx"/>
+                                    <outlet property="imageCoverView" destination="Ezm-ui-uPJ" id="aJe-tj-TKp"/>
+                                    <outlet property="ministryTeamImageView" destination="TQB-dd-stK" id="yju-fE-r14"/>
+                                    <outlet property="ministryTeamLabel" destination="Q0C-t2-fI3" id="aC2-dP-STb"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5n8-J9-Awi" id="apK-Bu-65m"/>
+                            <outlet property="delegate" destination="5n8-J9-Awi" id="tjX-xx-uJu"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="dli-23-NtB"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Deo-DF-lnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1707" y="142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EqF-hQ-GIi">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FIx-eN-Ksa" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iL-yQ-cO1">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5n8-J9-Awi" kind="relationship" relationship="rootViewController" id="jsk-Zj-9hU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kMg-J5-pCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="895" y="142"/>
+        </scene>
+    </scenes>
+</document>
