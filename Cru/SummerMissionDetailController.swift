@@ -13,16 +13,18 @@ class SummerMissionDetailController: UIViewController {
     
     //MARK: Properties
     
-    @IBOutlet weak var image: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var descriptionView: UITextView!
-    @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var fbButton: UIButton!
-    @IBOutlet weak var eventTimeLabel: UILabel!
+    @IBOutlet private weak var image: UIImageView!
+    @IBOutlet private weak var topCoverView: UIView!
+    @IBOutlet private weak var titleLabel: UILabel!
+    @IBOutlet private weak var datesLabel: UILabel!
+    @IBOutlet private weak var descriptionView: UITextView!
+    @IBOutlet private weak var locationLabel: UILabel!
+    @IBOutlet private weak var fbButton: UIButton!
+    @IBOutlet private weak var eventTimeLabel: UILabel!
     
+    private let COVER_ALPHA: CGFloat = 0.35
     
-    var mission: SummerMission?
+    var mission: SummerMission!
     
     //MARK: Actions
     
@@ -31,27 +33,20 @@ class SummerMissionDetailController: UIViewController {
         
         // Do any additional setup after loading the view.
         if let mission = mission {
-            
             navigationItem.title = "Details"
-            titleLabel.text = mission.name
+            
             image.image = mission.image
+            
+            titleLabel.text = mission.name
+            
+            datesLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.startDate.formatMonthDayYear()
             
             locationLabel.text = mission.country //mission.street! + ", " + event.suburb! + ", " + event.postcode!
             
-            //timeLabel.text = event.startTime + event.startamORpm + " - " + event.endTime + event.endamORpm
             
-            //Set up UITextView description
             descriptionView.text = mission.description
             
-            
-            //eventTimeLabel.text = String(event.startHour!) + ":" + String(event.startMinute!) + " — " + String(event.endHour!) + ":" + String(event.startMinute!)
-            
-            let dateFormatter: NSDateFormatter = NSDateFormatter()
-            /*
-            let months = dateFormatter.monthSymbols
-            let monthLong = months[mission.month!-1]
-            timeLabel.text = monthLong + " " + String(event.startDay!)\
-            */
+            topCoverView.alpha = COVER_ALPHA
         }
         
     }

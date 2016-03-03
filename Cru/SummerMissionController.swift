@@ -54,19 +54,16 @@ class SummerMissionController: UICollectionViewController {
     
     // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Sets up the mission detail view when selected
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        /*
-        this don't work yet
-        
-        let eventDetailViewController = segue.destinationViewController as! EventDetailsViewController
-        if let selectedEventCell = sender as? EventTableViewCell {
-            let indexPath = tableView.indexPathForCell(selectedEventCell)!
-            let selectedEvent = events[indexPath.row]
-            eventDetailViewController.event = selectedEvent
+        let detailViewController = segue.destinationViewController as! SummerMissionDetailController
+        if let selectedCell = sender as? SummerMissionCell {
+            if let collectionView = collectionView {
+                let indexPath = collectionView.indexPathForCell(selectedCell)!
+                let selectedMission = missions[indexPath.row]
+                detailViewController.mission = selectedMission
+            }
         }
-        */
-        
     }
 }
 
