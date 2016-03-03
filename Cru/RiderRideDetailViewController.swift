@@ -39,7 +39,7 @@ class RiderRideDetailViewController: UIViewController {
         date.text = String(ride!.month) + "   " + String(ride!.day) + "   " + ride!.time
         
         //TODO: get address from ride 
-        address.text = "1 Grand Ave. 93405 San Luis Obispo"
+        address.text = ride!.getCompleteAddress()
         //address.sizeToFit()
 
         setupMap()
@@ -83,7 +83,7 @@ class RiderRideDetailViewController: UIViewController {
         
         var initialLocation = CLLocation()
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = ride!.getCompleteAddress()//self.address.text//"1128 Peach San Luis Obispo"
+        request.naturalLanguageQuery = ride!.getCompleteAddress()
         
         if(request.naturalLanguageQuery != nil){
             request.naturalLanguageQuery = self.address.text
@@ -123,6 +123,29 @@ class RiderRideDetailViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func cancelPressed(sender: AnyObject) {
+        Cancler.confirmCancel(self, handler: cancelConfirmed)
+    }
+    
+    func cancelConfirmed(action: UIAlertAction){
+        RideUtils.findIdByGCMInRide(Config.emulatorGcmId, ride: ride!, handler: leaveRide)
+    }
+    
+    func leaveRide(passid: String, rideid: String){
+        RideUtils.leaveRide(passid,rideid: rideid, handler: { success in
+        
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+                
+                for vc in navController.viewControllers{
+                    if let tvc = vc as? RidesTableViewController {
+                        tvc.refresh(1)
+                    }
+                }
+            }
+        })
     }
     
 

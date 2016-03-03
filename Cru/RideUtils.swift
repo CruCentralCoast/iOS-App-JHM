@@ -13,89 +13,47 @@ class RideUtils {
     
     static func getPassengerById(id: String, inserter: (Passenger)->()){
         let url = Config.serverUrl + "api/passenger/" + id
-        var pass: Passenger?
         
         Alamofire.request(.GET, url, parameters: nil)
             .responseJSON { response in
                 if let JSON = response.result.value {
-                    
-                    
-                    let passArr = JSON as! NSArray
-                    
-                    if(passArr.count != 0){
-                        pass = Passenger(dict: passArr[0] as! NSDictionary)
-                        inserter(pass!)
-                    }
-                    else
-                    {
-                        print("couldn't find passenger for id")
+                    if let DICT = JSON as? NSDictionary{
+                        inserter(Passenger(dict:DICT))
                     }
                 }
         }
-
     }
     
     class func getRidesByGCMToken(token: String, inserter: (NSDictionary) -> (), afterFunc: ()->Void) {
         
         //gets rides you are receiving
         var requestUrl = Config.serverUrl + "api/passenger/find"
-        var params = ["gcm_id": token]
-        
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
-                do {
-                    if (data != nil) {
-                        let rideRequestUrl = Config.serverUrl + "api/ride/find"
-                        let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                        
-                        let passengerList = jsonResponse as! NSArray
-                        var rideIds = [String]()
-                        
-                        for passenger in passengerList{
-                            rideIds.append(passenger["_id"] as! String)
-                        }
-                        
-                        //print("\(rideIds)")
-                        
-                        let inQuery = ["$in": rideIds]
-                        let query = ["passengers": inQuery]
-                        
-                        let body = try NSJSONSerialization.dataWithJSONObject(query, options: NSJSONWritingOptions.PrettyPrinted)
-                        
-                        //let string1 = NSString(data: body, encoding: NSUTF8StringEncoding)
-                        //print(string1)
-                        //print("\(body)")
-                        
-                        ServerUtils.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : ServerUtils.curryDisplayResources(inserter, afterFunc: afterFunc))
-                        
-                    }
-                    else {
-                        // TODO: display message for user
-                        print("Failed to get stuff from database")
-                    }
-                }
-                catch {
-                    print("Something went wrong with http request...")
-                }})
+        let params = ["gcm_id": token]
+
+        Alamofire.request(.POST, requestUrl, parameters: params).responseJSON { response in
+            let rideRequestUrl = Config.serverUrl + "api/ride/search"
+
+            let passengerList = response.result.value as! NSArray
+            var rideIds = [String]()
+            
+            for passenger in passengerList{
+                rideIds.append(passenger["_id"] as! String)
+            }
+            
+            //print("\(rideIds)")
+            
+            let cond = ["passengers": ["$in": rideIds]]
+            let body = ["conditions": cond, "projection": "", "options": [:]]
+            
+            ServerUtils.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : ServerUtils.insertResources(inserter, afterFunc: afterFunc))
         }
-        catch {
-            print("Error getting ride for GCM token!")
-        }
-        
         
         
         //gets rides you are giving
         requestUrl = Config.serverUrl + "api/ride/find"
-        params = ["gcm_id": token]
+        let body = ["gcm_id": token]
         
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerUtils.curryDisplayResources(inserter, afterFunc: {() in }))
-        }
-        catch {
-            print("Error getting ride for GCM token!")
-        }
+        ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerUtils.insertResources(inserter, afterFunc: {() in }))
     }
 
     
@@ -110,76 +68,95 @@ class RideUtils {
             }
             
             let requestUrl = Config.serverUrl + "api/ride/create";
-            let params = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
+            let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
                 "gcm_id": gcmToken, "location":location, "radius":radius, "direction":direction]
-            
-            do {
-                let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-                ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerUtils.blankCompletionHandler);
-            } catch {
-                print("Error sending ride offer!")
-            }
+
+            ServerUtils.sendHttpPostRequest(requestUrl, body: body);
     }
     
     class func joinRide(name: String, phone: String, direction: String,  rideId: String, handler: ()->Void){
-        createPassenger(name, phone: phone, direction: direction, handler: {(data : NSData?, response : NSURLResponse?, error : NSError?) in
-            do {
-                if (data != nil) {
-                    let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                    let jsonStruct = jsonResponse as! NSDictionary
-                    
-                    let post = jsonStruct["post"] as! NSDictionary
-                    
-                    let passengerId = post["_id"] as! String
-                    
-                    addPassengerToRide(rideId, passengerId: passengerId)
-                    handler()
-                }
-                else {
-                    // TODO: display message for user
-                    print("Failed to get stuff from database")
-                }
-            }
-            catch {
-                print("Something went wrong with http request...")
-            }
+        createPassenger(name, phone: phone, direction: direction, handler: {(response : AnyObject) in
+            let jsonStruct = response as! NSDictionary
+            
+            let post = jsonStruct["post"] as! NSDictionary
+            
+            let passengerId = post["_id"] as! String
+            
+            addPassengerToRide(rideId, passengerId: passengerId)
+            handler()
         })
     }
     
     
     
     
-    private class func createPassenger(name: String, phone: String, direction: String, handler: (NSData?, NSURLResponse?, NSError?) -> Void){
-        let gcmToken = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"//SubscriptionManager.loadGCMToken()
+    private class func createPassenger(name: String, phone: String, direction: String, handler: (AnyObject) -> Void){
+        let gcmToken = Config.emulatorGcmId
         
         let requestUrl = Config.serverUrl + "api/passenger/create";
-        let params = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken]
+        let body = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken]
         
-        
-        
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : handler)
-        } catch {
-            print("Error sending ride offer!")
-        }
+        ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : handler)
     }
     
     
     
     private class func addPassengerToRide(rideId: String, passengerId: String){
         let requestUrl = Config.serverUrl + "api/ride/addPassenger";
-        let params = ["ride_id": rideId,"passenger_id": passengerId]
+        let body = ["ride_id": rideId,"passenger_id": passengerId]
+        ServerUtils.sendHttpPostRequest(requestUrl, body: body);
+    }
+    
+    static func leaveRide(passid: String, rideid: String, handler: (Bool)->()){
+        let url = Config.serverUrl + "api/ride/dropPassenger"
+        let params = ["passenger_id":passid, "ride_id":rideid]
+        Alamofire.request(.POST, url, parameters: params)
+            .responseJSON { response in
+                if(response.result.isSuccess){
+                    handler(true)
+                }
+                else{
+                    handler(false)
+                }
+        }
+    }
+    
+    
+    static func findIdByGCMInRide(gcm: String, ride: Ride, handler: (String, String)->()){
         
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            
-            //            let sexybody = NSString(data: body, encoding: NSUTF8StringEncoding)
-            //            print(sexybody)
-            
-            ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerUtils.blankCompletionHandler);
-        } catch {
-            print("Error sending ride offer!")
+        for pass in ride.passengers{
+            let url = Config.serverUrl + "api/passenger/" + pass
+            Alamofire.request(.GET, url, parameters: nil)
+                .responseJSON { response in
+                    if let JSON = response.result.value {
+                        if let DICT = JSON as? NSDictionary{
+                            if let theirGCM = DICT["gcm_id"] as? String{
+                                if(gcm ==  theirGCM){
+                                    if let passid = DICT["_id"] as? String{
+                                        handler(passid, ride.id)
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+            }
+        }
+        
+    }
+    
+    static func leaveRideDriver(rideid: String, handler: (Bool)->()){
+        let params = ["ride_id":rideid]
+        let url = Config.serverUrl + "api/ride/dropRide"
+        
+        Alamofire.request(.POST, url, parameters: params)
+            .responseJSON { response in
+                if(response.result.isSuccess){
+                    handler(true)
+                }
+                else{
+                    handler(false)
+                }
         }
     }
     

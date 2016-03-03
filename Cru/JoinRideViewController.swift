@@ -14,6 +14,12 @@ import MRProgress
 
 struct JoinRideConstants{
     static let NAME = "Join Ride"
+    static let ROUND_TRIP = "Both"
+    static let TO_EVENT = "To"
+    static let FROM_EVENT = "From"
+    static let DIR_ROUND_TRIP = "Round Trip"
+    static let DIR_TO = "To Event"
+    static let DIR_FROM = "From Event"
 }
 
 class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
@@ -32,6 +38,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     @IBOutlet weak var eventDate: UILabel!
     @IBOutlet weak var seats: UILabel!
     @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var tripType: UILabel!
     
     //for validating user input
     let validator = Validator()
@@ -49,15 +56,24 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         navigationItem.title = JoinRideConstants.NAME
         setupMap()
         
-        //load events
-        //ServerUtils.findEventById(ride!.eventId, inserter: insertEvent)
 
         
         if(ride != nil){
             rideDate.text = ride?.getDate()
             time.text = ride?.getTime()
             seats.text = (ride?.seatsLeft())! + " left"
-            address.text = ride!.getCompleteAddress()            
+            address.text = ride!.getCompleteAddress()
+            
+            print(ride!.direction)
+            if(ride!.direction.caseInsensitiveCompare(JoinRideConstants.ROUND_TRIP) == NSComparisonResult.OrderedSame){
+                tripType.text = JoinRideConstants.DIR_ROUND_TRIP
+            }
+            else if(ride!.direction.caseInsensitiveCompare(JoinRideConstants.TO_EVENT) == NSComparisonResult.OrderedSame){
+                tripType.text = JoinRideConstants.DIR_TO
+            }
+            else if(ride!.direction.caseInsensitiveCompare(JoinRideConstants.FROM_EVENT) == NSComparisonResult.OrderedSame){
+                tripType.text = JoinRideConstants.DIR_FROM
+            }
         }
         else{
             rideDate.text = ""
@@ -94,8 +110,8 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     }
     
     func makeButtonPretty(){
-        join.buttonColor = UIColor(red: 0, green:  0.427, blue: 0.118, alpha: 1.0)
-        join.shadowColor = UIColor.greenSeaColor()
+        join.buttonColor = Colors.green
+        join.shadowColor = Colors.darkerGreen
         join.shadowHeight = 3.0
         join.cornerRadius = 6.0
         join.titleLabel!.font = UIFont.boldFlatFontOfSize(16)
@@ -129,11 +145,8 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         let success = UIAlertController(title: "Join Successful", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         success.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
 
-        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
-            
-            
-            self.presentViewController(success, animated: true, completion: nil)
-        })
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        self.presentViewController(success, animated: true, completion: nil)
         
         
     }
@@ -141,7 +154,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     func unwindToRideList(action: UIAlertAction){
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
-            navController.popViewControllerAnimated(true)
+            //navController.popViewControllerAnimated(true)
             
             for vc in navController.viewControllers{
                 if let tvc = vc as? RidesTableViewController {

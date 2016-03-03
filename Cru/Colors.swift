@@ -1,0 +1,14 @@
+//
+//  Colors.swift
+//  Cru
+//
+//  Created by Max Crane on 3/1/16.
+//  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
+//
+
+import Foundation
+
+class Colors {
+    static let green = UIColor(red: 0.0, green: 0.6, blue: 0.2, alpha: 1.0)
+    static let darkerGreen = UIColor(red: 0.0, green: 0.4, blue: 0.13, alpha: 1.0)
+}

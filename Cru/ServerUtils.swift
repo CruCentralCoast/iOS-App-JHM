@@ -11,75 +11,11 @@ import Foundation
 class ServerUtils {
 
     static func findEventById(id: String, inserter : (NSDictionary) -> ()){
-        let requestUrl = Config.serverUrl + "api/event/find"
-        let params = ["_id": id]
+        let requestUrl = Config.serverUrl + "api/event/" + id
         
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            sendHttpPostRequest(requestUrl, body: body, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
-                do {
-                    if (data != nil) {
-                        let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                        
-                        let event = jsonResponse as! NSArray
-
-                        if(event.count != 0){
-                        inserter(event[0] as! NSDictionary)
-                        }
-                        else
-                        {
-                            print("couldn't find event for id")
-                        }
-                        
-                    }
-                    else {
-                        // TODO: display message for user
-                        print("Failed to get stuff from database")
-                    }
-                }
-                catch {
-                    print("Something went wrong with http request...")
-                }})
-        }
-        catch {
-            print("Error getting ride for GCM token!")
-        }
-    }
-    
-    static func findPassengerById(id: String, inserter : (NSDictionary) -> ()){
-        var requestUrl = Config.serverUrl + "api/passenger/find"
-        var params = ["_id": id]
-        
-        do {
-            let body = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            sendHttpPostRequest(requestUrl, body: body, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
-                do {
-                    if (data != nil) {
-                        let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                        
-                        let event = jsonResponse as! NSArray
-                        
-                        if(event.count != 0){
-                            inserter(event[0] as! NSDictionary)
-                        }
-                        else
-                        {
-                            print("couldn't find passenger for id")
-                        }
-                        
-                    }
-                    else {
-                        // TODO: display message for user
-                        print("Failed to get stuff from database")
-                    }
-                }
-                catch {
-                    print("Something went wrong with http request...")
-                }})
-        }
-        catch {
-            print("Error getting ride for GCM token!")
-        }
+        sendHttpGetRequest(requestUrl, completionHandler : {(response : AnyObject) in
+            inserter(response as! NSDictionary)
+        })
     }
     
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
@@ -88,30 +24,20 @@ class ServerUtils {
     
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> (),
         afterFunc : () -> ()) {
-        displayListInfo(collectionName, completionHandler: curryDisplayResources(inserter, afterFunc: afterFunc))
+        displayListInfo(collectionName, completionHandler: insertResources(inserter, afterFunc: afterFunc))
     }
     
-    class func curryDisplayResources(inserter : (NSDictionary) -> (), afterFunc : () -> ()) -> (NSData?, NSURLResponse?, NSError?)-> () {
-        return {(data : NSData?, response : NSURLResponse?, error : NSError?) in
-            do {
-                if (data != nil) {
-                    let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
-                    let jsonList = jsonResponse as! NSArray
-                    dispatch_async(dispatch_get_main_queue(), {
-                        for sm in jsonList {
-                            if let dict = sm as? [String: AnyObject]{
-                                inserter(dict)
-                            }
-                        }
-                        afterFunc()
-                    })
-                } else {
-                    // TODO: display message for user
-                    print("Failed to get stuff from database")
+    class func insertResources(inserter : (NSDictionary) -> (), afterFunc : () -> ()) -> (AnyObject)-> () {
+        return {(response : AnyObject) in
+            let jsonList = response as! NSArray
+            dispatch_async(dispatch_get_main_queue(), {
+                for sm in jsonList {
+                    if let dict = sm as? [String: AnyObject]{
+                        inserter(dict)
+                    }
                 }
-            } catch {
-                print("Something went wrong with http request...")
-            }
+                afterFunc()
+            })
         }
     }
     
@@ -124,38 +50,72 @@ class ServerUtils {
         return NSCalendar.currentCalendar().components(unitFlags, fromDate: date!)
     }
     
-    class func displayListInfo(col : String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) {
+    class func displayListInfo(col : String, completionHandler : (AnyObject) -> Void) {
         let requestUrl = Config.serverUrl + "api/" + col + "/list";
         sendHttpGetRequest(requestUrl, completionHandler: completionHandler)
     }
     
-    
-    class func blankCompletionHandler(data : NSData?, response : NSURLResponse?, error : NSError?) {
-        
-    }
-    
-    class func sendHttpGetRequest(reqUrl : String, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    class func sendHttpGetRequest(reqUrl : String, completionHandler : (AnyObject) -> Void) -> NSURLSessionDataTask {
         let requestUrl = NSURL(string: reqUrl)
         let request = NSMutableURLRequest(URL: requestUrl!)
         request.HTTPMethod = "GET"
         
         let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request, completionHandler : completionHandler)
+        let task = session.dataTaskWithRequest(request, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
+            do {
+                if (data != nil) {
+                    let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                    completionHandler(jsonResponse)
+                }
+                else {
+                    // TODO: display message for user
+                    print("Failed to get stuff from database")
+                }
+            }
+            catch {
+                print("Something went wrong with http request...")
+            }
+        })
         
         task.resume()
         
         return task
     }
     
-    class func sendHttpPostRequest(reqUrl : String, body : NSData, completionHandler : (NSData?, NSURLResponse?, NSError?) -> Void) -> NSURLSessionDataTask {
+    class func sendHttpPostRequest(reqUrl : String, body : NSDictionary) -> NSURLSessionDataTask {
+        return sendHttpPostRequest(reqUrl, body: body, completionHandler : {(response : AnyObject) in ()})
+    }
+    
+    class func sendHttpPostRequest(reqUrl : String, body : NSDictionary, completionHandler : (AnyObject) -> Void) -> NSURLSessionDataTask {
         let requestUrl = NSURL(string: reqUrl)
         let request = NSMutableURLRequest(URL: requestUrl!)
         request.HTTPMethod = "POST"
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        request.HTTPBody = body
+        do {
+            request.HTTPBody = try NSJSONSerialization.dataWithJSONObject(body, options: NSJSONWritingOptions.PrettyPrinted)
+            let string1 = NSString(data: request.HTTPBody!, encoding: NSUTF8StringEncoding)
+            print(string1)
+        } catch {
+            print("Error writing json body")
+        }
+        
         
         let session = NSURLSession.sharedSession()
-        let task = session.dataTaskWithRequest(request, completionHandler : completionHandler)
+        let task = session.dataTaskWithRequest(request, completionHandler : {(data : NSData?, response : NSURLResponse?, error : NSError?) in
+            do {
+                if (data != nil) {
+                    let jsonResponse = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers)
+                    completionHandler(jsonResponse)
+                }
+                else {
+                    // TODO: display message for user
+                    print("Failed to get stuff from database")
+                }
+            }
+            catch {
+                print("Something went wrong with http request...")
+            }
+        })
         
         task.resume()
         
