@@ -39,7 +39,7 @@ class RiderRideDetailViewController: UIViewController {
         date.text = String(ride!.month) + "   " + String(ride!.day) + "   " + ride!.time
         
         //TODO: get address from ride 
-        address.text = "1 Grand Ave. 93405 San Luis Obispo"
+        address.text = ride!.getCompleteAddress()
         //address.sizeToFit()
 
         setupMap()
@@ -83,7 +83,7 @@ class RiderRideDetailViewController: UIViewController {
         
         var initialLocation = CLLocation()
         let request = MKLocalSearchRequest()
-        request.naturalLanguageQuery = ride!.getCompleteAddress()//self.address.text//"1128 Peach San Luis Obispo"
+        request.naturalLanguageQuery = ride!.getCompleteAddress()
         
         if(request.naturalLanguageQuery != nil){
             request.naturalLanguageQuery = self.address.text
