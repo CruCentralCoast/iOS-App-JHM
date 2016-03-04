@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Alamofire
 
 class ServerUtils {
 
@@ -121,5 +122,17 @@ class ServerUtils {
         
         return task
     }
-
+    
+    //send push notification if possible, otherwise send text
+    class func joinMinistryTeam(ministryTeamId: String, callback: (NSArray) -> Void) {
+        let url = Config.serverUrl + "api/minstryteam/join/" + ministryTeamId
+        
+        Alamofire.request(.POST, url, parameters: nil).responseJSON {
+            response in
+            
+            //let leaders = response.result.value as! NSArray
+            let leaders = [String]()
+            callback(leaders)
+        }
+    }
 }
