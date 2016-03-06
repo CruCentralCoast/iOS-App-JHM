@@ -15,74 +15,33 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     var event: Event!
     var ride: Ride!
     var passengers = [Passenger]()
-    
+    let cellHeight = CGFloat(60)
     
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
-    var cellHeight = CGFloat(60)
-    
     @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var departureLoc: UITextView!
-
     @IBOutlet weak var rideName: UILabel!
     @IBOutlet weak var passengerTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
         self.contentViewHeight.constant = CGFloat(600)
-        //print("VIEW HEIGHT: \(self.view.frame.height)")
         adjustPageConstraints()
-        //Declare the delegate
         self.passengerTable.delegate = self
         passengerTable.scrollEnabled = false;
-        
-        
-        //Set the ride name
         rideName.text = event!.name!
-        
-        
         RideUtils.getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {
-//            print("THERE ARE \(self.thePassengers.count) PASSENGERS")
-//            let tvHeight = (CGFloat(self.thePassengers.count) * self.cellHeight)
-//            var heightExpansion  = CGFloat(0)
-//            
-//            if(tvHeight > self.passengerTableHeight.constant){
-//                heightExpansion = tvHeight - self.passengerTableHeight.constant
-//            }
-//            
-//            let newHeight = self.view.frame.size.height + heightExpansion
-//            let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
-//            self.view.frame = newFrame
-//            self.passengerTableHeight.constant = tvHeight
-//            self.contentViewHeight.constant = newHeight
-//            print("tv height \(tvHeight)")
-//            print("newHeight")
         })
-        
-        
-//        for pass in ride.passengers{
-//            RideUtils.getPassengerById(pass, inserter: insertPassenger)
-//            //ServerUtils.findPassengerById(pass, inserter: insertPassenger)
-//        }
-        
         departureTime.text = ride.time
         departureDate.text = String("\(ride.month) \(ride.day)")
-        
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
         departureLoc.text = nil
         departureLoc.text = ride.getCompleteAddress()
-
-        
         passengerTable.backgroundColor = UIColor.clearColor()
-        
-        
-        
-        
-        
     }
     
     func insertPassenger(newPassenger: Passenger){
@@ -206,14 +165,4 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
