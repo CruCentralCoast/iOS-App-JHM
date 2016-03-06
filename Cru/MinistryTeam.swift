@@ -53,7 +53,7 @@ class MinistryTeam {
         }
         if (dImage != nil) {
             if let imageUrl = dImage?.objectForKey("secure_url") {
-                self.image = getImageFromUrl(imageUrl as! String)
+                self.image = GlobalUtils.getImageFromUrl(imageUrl as! String)
             }
             else {
                 print("error: no image to display")
@@ -65,13 +65,5 @@ class MinistryTeam {
         if (dLeaders != nil) {
             self.leaders = dLeaders as! [String]
         }
-    }
-    
-    // gets UIImage from cloudinary URL's
-    private func getImageFromUrl(imageUrl: String) -> UIImage {
-        let cloudUrl = NSURL(string: imageUrl)
-        let imageData = NSData(contentsOfURL: cloudUrl!)
-        
-        return UIImage(data: imageData!)!
     }
 }

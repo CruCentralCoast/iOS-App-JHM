@@ -146,8 +146,8 @@ class RidesTableViewController: UITableViewController {
     func getEventNameForEventId(id : String)->String{
         
         for event in events{
-            if(event.id != nil && event.id == id){
-                return event.name!
+            if(event.id != "" && event.id == id){
+                return event.name
             }
         }
 
@@ -157,14 +157,12 @@ class RidesTableViewController: UITableViewController {
     func getEventForEventId(id : String)->Event{
         
         for event in events{
-            if(event.id != nil && event.id == id){
+            if(event.id != "" && event.id == id){
                 return event
             }
         }
-
-        return Event(id: "123", name: "Erica's Golf Lessons", image: nil, startDate: "mon", endDate: "sat", street: "1123 Crap St.", suburb: "LA", postcode: "93401", description: "Come learn how to golf", url: "google.com", imageUrl: "idk.com")!
-        //return Event(name: "Max's Golf Lessons", id: "notarealid")!
         
+        return Event()!
     }
     
     override func viewWillAppear(animated: Bool) {

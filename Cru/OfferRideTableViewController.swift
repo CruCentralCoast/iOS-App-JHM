@@ -32,11 +32,11 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     
     var event: Event! {
         didSet {
-            eventNameLabel.text? = event.name!
+            eventNameLabel.text? = event.name
             self.formHasBeenEdited = true
             
             // Set date/time of ride to event date/time
-            let date = "\(event.year!)-\(event.month!)-\(event.startDay!)"
+            let date = "\(event.startDateYear)-\(event.startDateMonth)-\(event.startDateDay)"
             pickupDateTimePicker.date = NSDate(dateString: date)
         }
     }
@@ -181,7 +181,7 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         if isFormFilledOut() {
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
             
-            RideUtils.postRideOffer(event.id!, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection())
+            RideUtils.postRideOffer(event.id, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection())
             
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             
