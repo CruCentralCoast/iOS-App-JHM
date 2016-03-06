@@ -11,7 +11,7 @@ import Alamofire
 
 class RideUtils {
     
-    static func getPassengerById(id: String, inserter: (Passenger)->()){
+    static func getPassengerById(id: String, inserter: (Passenger)->(), afterFunc: ()->Void){
         let url = Config.serverUrl + "api/passenger/" + id
         
         Alamofire.request(.GET, url, parameters: nil)
@@ -19,6 +19,7 @@ class RideUtils {
                 if let JSON = response.result.value {
                     if let DICT = JSON as? NSDictionary{
                         inserter(Passenger(dict:DICT))
+                        afterFunc()
                     }
                 }
         }
@@ -158,6 +159,34 @@ class RideUtils {
                     handler(false)
                 }
         }
+    }
+    
+    static func getPassengersByIds(ids : [String], inserter : (Passenger) -> (), afterFunc: ()->Void){
+        
+//        let params = ["$in":rideid]
+//        let url = Config.serverUrl + "api/passenger/find"
+//        
+//        Alamofire.request(.POST, url, parameters: params)
+//            .responseJSON { response in
+//                if(response.result.isSuccess){
+//                    handler(true)
+//                }
+//                else{
+//                    handler(false)
+//                }
+//        }
+        
+        var count = 1
+        for pass in ids{
+            if(count == ids.count){
+                RideUtils.getPassengerById(pass, inserter: inserter, afterFunc: afterFunc)
+            }
+            else{
+                RideUtils.getPassengerById(pass, inserter: inserter, afterFunc: {() in})
+            }
+            count += 1
+        }
+        
     }
     
 }

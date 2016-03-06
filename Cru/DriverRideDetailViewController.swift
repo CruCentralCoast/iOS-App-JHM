@@ -14,10 +14,13 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     //MARK: Properties
     var event: Event!
     var ride: Ride!
-    var thePassengers = [Passenger]()
-    var passengers = [String]()
+    var passengers = [Passenger]()
     
-
+    
+    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+    @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
+    var cellHeight = CGFloat(60)
+    
     @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var departureLoc: UITextView!
@@ -39,10 +42,29 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         rideName.text = event!.name!
         
         
-        for pass in ride.passengers{
-            RideUtils.getPassengerById(pass, inserter: insertPassenger)
-            //ServerUtils.findPassengerById(pass, inserter: insertPassenger)
-        }
+        RideUtils.getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {
+//            print("THERE ARE \(self.thePassengers.count) PASSENGERS")
+//            let tvHeight = (CGFloat(self.thePassengers.count) * self.cellHeight)
+//            var heightExpansion  = CGFloat(0)
+//            
+//            if(tvHeight > self.passengerTableHeight.constant){
+//                heightExpansion = tvHeight - self.passengerTableHeight.constant
+//            }
+//            
+//            let newHeight = self.view.frame.size.height + heightExpansion
+//            let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
+//            self.view.frame = newFrame
+//            self.passengerTableHeight.constant = tvHeight
+//            self.contentViewHeight.constant = newHeight
+//            print("tv height \(tvHeight)")
+//            print("newHeight")
+        })
+        
+        
+//        for pass in ride.passengers{
+//            RideUtils.getPassengerById(pass, inserter: insertPassenger)
+//            //ServerUtils.findPassengerById(pass, inserter: insertPassenger)
+//        }
         
         departureTime.text = ride.time
         departureDate.text = String("\(ride.month) \(ride.day)")
@@ -55,11 +77,34 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         
         passengerTable.backgroundColor = UIColor.clearColor()
         
+        
+        
+        
+        
     }
     
     func insertPassenger(newPassenger: Passenger){
-        thePassengers.append(newPassenger)
+        print("loaded pass")
+        passengers.append(newPassenger)
         self.passengerTable.reloadData()
+        
+        if(self.passengers.count > 5){
+            print("THERE ARE \(self.passengers.count) PASSENGERS")
+            let tvHeight = (CGFloat(self.passengers.count) * self.cellHeight)
+            var heightExpansion  = CGFloat(0)
+            
+            if(tvHeight > self.passengerTableHeight.constant){
+                heightExpansion = tvHeight - self.passengerTableHeight.constant
+            }
+            
+            let newHeight = self.view.frame.size.height + heightExpansion
+            let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
+            self.view.frame = newFrame
+            self.passengerTableHeight.constant = tvHeight
+            self.contentViewHeight.constant = newHeight
+            print("tv height \(tvHeight)")
+            print("newHeight \(newHeight)")
+        }
     }
     
 
@@ -74,15 +119,15 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return thePassengers.count
+        return passengers.count
     }
     //Set up the cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "PassengerTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PassengerTableViewCell
         
-        cell.nameLabel!.text = thePassengers[indexPath.row].name
-        cell.phoneLabel!.text = thePassengers[indexPath.row].phone
+        cell.nameLabel!.text = passengers[indexPath.row].name
+        cell.phoneLabel!.text = passengers[indexPath.row].phone
         
         if(ride.direction == "to event") {
             cell.tripIndicator!.image = UIImage(named: "toEvent")
