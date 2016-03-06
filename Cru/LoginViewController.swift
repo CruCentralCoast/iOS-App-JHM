@@ -20,6 +20,8 @@ class LoginViewController: UIViewController, ValidationDelegate {
         usernameError.text = ""
         passwordError.text = ""
         
+        usernameField.text = SubscriptionManager.loadString(Config.username)
+        
         validator.registerField(usernameField, errorLabel: usernameError, rules: [RequiredRule(), EmailRule()])
         validator.registerField(passwordField, errorLabel: passwordError, rules: [RequiredRule()])
     }
@@ -34,12 +36,17 @@ class LoginViewController: UIViewController, ValidationDelegate {
             let title = success ? "Login Successful" : "Login Failed"
             
             let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {(alertAction) in
+                if (success) {
+                    if let navController = self.navigationController {
+                        navController.popViewControllerAnimated(true)
+                    }
+                }
+            }))
             
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
-                
-                
                 self.presentViewController(alert, animated: true, completion: nil)
+                
             })
         })
     }

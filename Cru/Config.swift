@@ -17,6 +17,7 @@ struct Config {
     static let globalTopic = "/topics/global"
     static let emulatorGcmId = "emulator-id-hey-whats-up-hello"
     static let leaderApiKey = "LeaderAPIKey"
+    static let username = "username"
     
     /* Configurations for Ministry Teams */
     //reuse identifier for collection cells in Ministry Teams

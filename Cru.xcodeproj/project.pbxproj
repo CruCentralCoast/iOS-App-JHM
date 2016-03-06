@@ -166,6 +166,10 @@
 		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
 		C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
+		C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
+		C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */; };
+		C1D9078F1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */; };
+		C1D907901C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */; };
 		C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1DCEC481C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
@@ -300,6 +304,8 @@
 		ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.debug.xcconfig"; sourceTree = "<group>"; };
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
+		C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		C1DCEC451C7681E1009FACE0 /* RideUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtils.swift; sourceTree = "<group>"; };
 		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
 		E96367931C6D3B8D00B9DBBE /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -487,12 +493,14 @@
 				501085B51BFBDCCE00849CED /* SettingsViewController.swift */,
 				5026094D1C066C780019E97C /* CampusesViewController.swift */,
 				50ED8FED1C052C65002C9E30 /* settings.storyboard */,
+				C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */,
 				5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */,
 				50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */,
 				50A341CD1C0C10F3006B73DB /* Campus.swift */,
 				50FE4D461C50D37C00EA9042 /* Ministry.swift */,
 				50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */,
 				C151D9B31C7D2D870067A29E /* LoginViewController.swift */,
+				C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -843,6 +851,7 @@
 				0F7B72C71C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				5095272E1C63E6F600E4F7B6 /* CreateRideViewController.swift in Sources */,
+				C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
 				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,
 				C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */,
@@ -868,6 +877,7 @@
 				850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */,
 				503547871C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
+				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
 				6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */,
 				6D4B78C21C70ECC300F643CB /* CardTableViewController.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
@@ -899,6 +909,7 @@
 				6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0FAEB97D1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
+				C1D9078F1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				50A38FEA1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				50EF26E41C7592EF0055F480 /* FilterByEventViewController.swift in Sources */,
 				5094897E1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
@@ -958,6 +969,7 @@
 				50FE4D411C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				509DA91F1C6172FC0050CE26 /* Ride.swift in Sources */,
 				504742481C759823003F276E /* OfferedRideTableViewCell.swift in Sources */,
+				C1D907901C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				0FC8E3B41C48750A007A7208 /* IntroViewController.swift in Sources */,
 				0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */,
 				6D4B78B81C702FDF00F643CB /* Resource.swift in Sources */,
