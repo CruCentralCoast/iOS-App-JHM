@@ -32,7 +32,9 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        
+        self.contentViewHeight.constant = CGFloat(600)
+        //print("VIEW HEIGHT: \(self.view.frame.height)")
+        adjustPageConstraints()
         //Declare the delegate
         self.passengerTable.delegate = self
         passengerTable.scrollEnabled = false;
@@ -84,12 +86,16 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     func insertPassenger(newPassenger: Passenger){
-        print("loaded pass")
         passengers.append(newPassenger)
         self.passengerTable.reloadData()
+        adjustPageConstraints()
         
+    }
+    
+    func adjustPageConstraints(){
+        //we don't want to expand the table/view size unless there is more than 5 passengers
+        //because the table can already hold 5 when the page loads
         if(self.passengers.count > 5){
-            print("THERE ARE \(self.passengers.count) PASSENGERS")
             let tvHeight = (CGFloat(self.passengers.count) * self.cellHeight)
             var heightExpansion  = CGFloat(0)
             
@@ -99,11 +105,11 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
             
             let newHeight = self.view.frame.size.height + heightExpansion
             let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
+            
+            //set view frame, tableheight, and content view height
             self.view.frame = newFrame
             self.passengerTableHeight.constant = tvHeight
             self.contentViewHeight.constant = newHeight
-            print("tv height \(tvHeight)")
-            print("newHeight \(newHeight)")
         }
     }
     

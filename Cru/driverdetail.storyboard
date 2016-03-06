@@ -119,7 +119,7 @@
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kai-El-QZC">
-                                                <rect key="frame" x="0.0" y="559" width="600" height="41"/>
+                                                <rect key="frame" x="0.0" y="564" width="600" height="41"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="0.72941176470588232" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
@@ -132,7 +132,7 @@
                                                     <action selector="cancelPressed:" destination="iNM-Bt-tgs" eventType="touchUpInside" id="H6I-Hd-Vc7"/>
                                                 </connections>
                                             </button>
-                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-6g-fgH">
+                                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-6g-fgH">
                                                 <rect key="frame" x="24" y="258" width="553" height="300"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -204,7 +204,9 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="7jG-6g-fgH" secondAttribute="trailing" constant="23" id="1KS-Jk-8sc"/>
+                                            <constraint firstAttribute="bottom" secondItem="kai-El-QZC" secondAttribute="bottom" constant="-5" id="3Iq-J2-B1O"/>
                                             <constraint firstItem="0yU-Uc-yPJ" firstAttribute="leading" secondItem="5Sj-i2-ve2" secondAttribute="leading" id="5Ve-3T-tjf"/>
+                                            <constraint firstAttribute="bottom" secondItem="kai-El-QZC" secondAttribute="bottom" id="87x-Ys-lla"/>
                                             <constraint firstItem="8Yi-OS-ac5" firstAttribute="top" secondItem="gxr-5D-JdO" secondAttribute="bottom" constant="35" id="DDD-36-JFN"/>
                                             <constraint firstItem="q5f-i7-czX" firstAttribute="top" secondItem="Pxr-bU-jWp" secondAttribute="bottom" constant="8" symbolic="YES" id="DNG-lE-dQF"/>
                                             <constraint firstItem="q5f-i7-czX" firstAttribute="trailing" secondItem="1Gn-8p-a1d" secondAttribute="trailing" id="Dnn-2g-Nvf"/>
@@ -236,6 +238,13 @@
                                             <constraint firstAttribute="height" constant="600" id="z1E-Se-eO5"/>
                                             <constraint firstItem="7jG-6g-fgH" firstAttribute="top" secondItem="zWK-9r-eTp" secondAttribute="bottom" constant="21" id="z2u-YX-v1f"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="87x-Ys-lla"/>
+                                                <exclude reference="Ey6-Ah-EQ1"/>
+                                                <exclude reference="LVN-70-IFq"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <animations/>
@@ -259,8 +268,6 @@
                         </constraints>
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
-                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="contentViewHeight" destination="z1E-Se-eO5" id="WUQ-ix-YiN"/>
                         <outlet property="departureDate" destination="0yU-Uc-yPJ" id="4UH-tp-GJQ"/>
