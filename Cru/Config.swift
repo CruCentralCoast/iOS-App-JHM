@@ -19,6 +19,12 @@ struct Config {
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
     
+    /* Configureations for Events */
+    //reuse identifier for event collection cells
+    static let eventReuseIdentifier = "event"
+    //resourse loader key for events
+    static let eventResourceLoaderKey = "event"
+    
     /* Configurations for Ministry Teams */
     //reuse identifier for collection cells in Ministry Teams
     static let ministryTeamReuseIdentifier = "ministryteam"

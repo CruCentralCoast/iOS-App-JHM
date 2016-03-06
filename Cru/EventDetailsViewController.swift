@@ -20,6 +20,7 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var eventTimeLabel: UILabel!
+    @IBOutlet weak var detailsScroller: UIScrollView!
     
     
     /*
@@ -31,7 +32,7 @@ class EventDetailsViewController: UIViewController {
     
     //MARK: Actions
     @IBAction func facebookLinkButton(sender: UIButton) {
-       UIApplication.sharedApplication().openURL(NSURL(string: (event.facebookURL)!)!)
+       UIApplication.sharedApplication().openURL(NSURL(string: (event.url))!)
     }
     
     @IBAction func saveToCalendar(sender: UIButton) {
@@ -63,32 +64,43 @@ class EventDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+////        detailsScroller.contentSize = CGSizeMake(400, 2300)
+////        detailsScroller.showsHorizontalScrollIndicator = true
+////        detailsScroller.scrollEnabled = true
+//        self.detailsScroller.contentSize = CGSizeMake(2000, 2000)
+        
+        
         // Do any additional setup after loading the view.
         if let event = event {
             
             navigationItem.title = "Details"
             titleLabel.text = event.name
             image.image = event.image
-            if(event.street != nil) {
-                locationLabel.text = event.street! + ", " + event.suburb! + ", " + event.postcode!
+            
+            if let location = event.location {
+                let street = location.objectForKey("street1") as! String
+                let suburb = location.objectForKey("suburb") as! String
+                let postcode = location.objectForKey("postcode") as! String
+
+                locationLabel.text = street + ", " + suburb + ", " + postcode
             }
             
             //Set up UITextView description
             descriptionView.text = event.description
             
            
-            eventTimeLabel.text = String(event.startHour!) + ":" + String(event.startMinute!) + " — " + String(event.endHour!) + ":" + String(event.startMinute!)
+            eventTimeLabel.text = String(event.startDateHour) + ":" + String(event.startDateMinute) + " — " + String(event.endDateHour) + ":" + String(event.startDateMinute)
             
             let dateFormatter: NSDateFormatter = NSDateFormatter()
             
             let months = dateFormatter.monthSymbols
-            let monthLong = months[event.month!-1]
-            timeLabel.text = monthLong + " " + String(event.startDay!)
-        }
-        
-        if event.facebookURL == "" {
-            fbButton.hidden = true
+            let monthLong = months[event.startDateMonth-1]
+            timeLabel.text = monthLong + " " + String(event.startDateDay)
+            
+            if event.url == "" {
+                fbButton.hidden = true
+            }
         }
     }
     
@@ -105,18 +117,18 @@ class EventDetailsViewController: UIViewController {
         
         //Let's try it on the default calendar
         let start = NSDateComponents()
-        start.day = event.startDay!
-        start.month = event.month!
-        start.minute = event.startMinute!
-        start.hour = event.startHour!
-        start.year = event.year!
+        start.day = event.startDateDay
+        start.month = event.startDateMonth
+        start.minute = event.startDateMinute
+        start.hour = event.startDateHour
+        start.year = event.startDateYear
         
         let end = NSDateComponents()
-        end.day = event.endDay!
-        end.month = event.month!
-        end.minute = event.endMinute!
-        end.hour = event.endHour!
-        end.year = event.year!
+        end.day = event.endDateDay
+        end.month = event.endDateMonth
+        end.minute = event.endDateMinute
+        end.hour = event.endDateHour
+        end.year = event.endDateYear
         
         let userCalendar = NSCalendar.currentCalendar()
         
@@ -129,11 +141,10 @@ class EventDetailsViewController: UIViewController {
         // Create Event
         let newEvent = EKEvent(eventStore: store)
         newEvent.calendar = store.defaultCalendarForNewEvents
-        newEvent.location = event.street
-        newEvent.title = event.name!
+        //newEvent.location = event.location
+        newEvent.title = event.name
         newEvent.startDate = startDate!
         newEvent.endDate = endDate!
-        newEvent.location = event.location
         
         // 5
         // Save Event in Calendar

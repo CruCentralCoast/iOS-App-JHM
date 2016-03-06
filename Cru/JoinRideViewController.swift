@@ -87,10 +87,10 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
             let dateFormatter: NSDateFormatter = NSDateFormatter()
             
             let months = dateFormatter.shortMonthSymbols
-            let monthShort = months[event!.month!-1]
+            let monthShort = months[event!.startDateMonth-1]
             
-            eventDate.text =  monthShort.lowercaseString +  "/" + String(event!.startDay!)
-            eventTime.text = Ride.createTime(event!.startHour!, minute: event!.startMinute!)
+            eventDate.text =  monthShort.lowercaseString +  "/" + String(event!.startDateDay)
+            eventTime.text = Ride.createTime(event!.startDateHour, minute: event!.startDateMinute)
         }
         
         number.keyboardType = .NumberPad
@@ -124,7 +124,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         let event = Event(dict: dict)
         eventName.text = event!.name
         eventDate.text = "3/11/16"
-        eventTime.text = String(event!.startHour)
+        eventTime.text = String(event!.startDateHour)
     }
     
     func validationSuccessful() {

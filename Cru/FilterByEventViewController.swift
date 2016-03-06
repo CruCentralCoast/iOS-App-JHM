@@ -50,12 +50,12 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     
     func showRides(){
         if(events.count != 0 && self.selectedEvent == nil){
-            filterRidesByEventId(events[0].id!)
+            filterRidesByEventId(events[0].id)
             self.selectedEvent  = events[0]
             
         }
         else if(events.count != 0){
-            filterRidesByEventId(self.selectedEvent!.id!)
+            filterRidesByEventId(self.selectedEvent!.id)
         }
         else{
             print("this shouldn't happen")
@@ -129,7 +129,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     func selectVal(event: Event){
         let ndx = events.indexOf(event)
         eventPicker.selectRow(ndx!, inComponent: 0, animated: true)
-        filterRidesByEventId(events[ndx!].id!)
+        filterRidesByEventId(events[ndx!].id)
         self.selectedEvent = events[ndx!]
         self.rideTable.reloadData()
     }
@@ -137,7 +137,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if(row < events.count){
-            self.filterRidesByEventId(events[row].id!)
+            self.filterRidesByEventId(events[row].id)
             self.selectedEvent = events[row]
         }
     }
