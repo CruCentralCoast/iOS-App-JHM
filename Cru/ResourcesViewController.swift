@@ -8,6 +8,8 @@
 
 import UIKit
 import WildcardSDK
+import AVFoundation
+import Alamofire
 
 class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CardViewDelegate {
     //MARK: Properties
@@ -84,6 +86,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
        
         let url = NSURL.init(string: res.url)
         
+        
         Card.getFromUrl(url) {
             (card: Card?, error: NSError?) in
                 
@@ -91,6 +94,42 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                     
                     //Format card as an article
                     if (res.type == "article") {
+                        //NEW CODE STARTS HERE
+                        /*let articleURL = url
+                        let articleData:NSMutableDictionary = NSMutableDictionary()
+                        let articleBaseData:NSMutableDictionary = NSMutableDictionary()
+                        articleData["htmlContent"] = "<div>Some Content</div>"
+                        articleData["publicationDate"] = NSNumber(longLong: 1429063354000)
+                        let articleMedia:NSMutableDictionary = NSMutableDictionary()
+                        articleMedia["imageUrl"] =  "http://i2.cdn.turner.com/money/dam/assets/150414182846-high-there-image-1024x576.jpeg"
+                        articleMedia["type"] = "image"
+                        articleData["media"] = articleMedia
+                        articleBaseData["article"] = articleData
+                        
+                        articleCard = ArticleCard(title: "The surprising backstory of Tinder for pot smokers", abstractContent: "That's what co-founder Todd Mitchem hopes to create with High There -- \"a social connection app for cannabis consumers.\" Users can look for dates or simply other like-minded people. But for those used to dating apps like Tinder or OkCupid, the questions will probably be a bit unfamiliar.", url: articleURL, creator: cnn, data: articleBaseData)
+                        */
+                        
+                        //let aCard = card as! ArticleCard
+                        //print("\nHTML: \(aCard.html)\n")
+                        
+                        /*
+                        let dataArray = aCard.media!
+                        print("Data items count: \(dataArray.count)\n")
+
+                        for (key, value) in dataArray {
+                            print("Property: \(key as! String)\n")
+                            if value is NSNull {
+                                print("Value: Null\n")
+                            }
+                            else {
+                                print("Value: \(value as! String)\n")
+                            }
+                        }*/
+                        
+                        
+                        //NEW CODE ENDS HERE
+                        
+                        
                         let articleCardView = CardView.createCardView(card!, layout: .ArticleCardTall)
                         if(articleCardView != nil) {
                             articleCardView!.delegate = self
@@ -161,7 +200,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                         
                         //Format card as an audio file
                     else if (res.type == "audio") {
-                        let audioCardView = CardView.createCardView(card!, layout: .SummaryCardTall)
+                        
+                        
+                        //START OLD CO
+                        let audioCardView = CardView.createCardView(card!, layout: .VideoCardShort)
                         if(audioCardView != nil) {
                             audioCardView!.delegate = self
                             //self.cardViews.append(audioCardView!)
@@ -183,6 +225,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                     print("\nERROR: Card view not created\n")
                 }
             }
+        
         return cell
     }
     override func viewDidAppear(animated: Bool) {

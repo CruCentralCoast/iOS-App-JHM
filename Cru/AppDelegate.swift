@@ -44,8 +44,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         gcmConfig.receiverDelegate = self
         GCMService.sharedInstance().startWithConfig(gcmConfig)
         
-        //Initialize WildcardSDK with Cru API key for Resources
+        //Initialize WildcardSDK with Cru API key for Resources and change font
         WildcardSDK.initializeWithApiKey("4f154853-1955-4422-9aa3-f1fbd89d3403")
+        WildcardSDK.cardTitleFont = UIFont(name: "FreightSansProMedium-Regular", size: 18.0)!
+        WildcardSDK.cardDescriptionFont = UIFont(name: "FreightSansProBook-Regular", size: 13.0)!
+        WildcardSDK.cardActionButtonFont = UIFont(name: "FreightSansProBook-Regular", size: 12.0)!
+        WildcardSDK.cardKickerFont = UIFont(name: "FreightSansProMedium-Regular", size: 11.0)!
         
         //IQKeyboardManager makes keyboards play nicely with textfields usually covered by keyboard
         IQKeyboardManager.sharedManager().enable = true

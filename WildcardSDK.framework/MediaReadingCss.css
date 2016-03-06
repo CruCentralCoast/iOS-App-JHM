@@ -2,9 +2,8 @@
 
 /* Custom tags */
 #customWildcardHeader {
-    font-family:'Tiempos', 'Garamond', serif;
-    font-size:24px;
-    font-weight:bold;
+    font-family:'FreightSansProMedium-Regular', 'FreightSans Pro', sans-serif;
+    font-size:26px;
     padding-top:0px;
     padding-left:0px;
     padding-right:0px;
@@ -12,7 +11,7 @@
 }
 
 #customWildcardKicker {
-    font-family:'Tiempos', 'Garamond', serif;
+    font-family:'Leitura-Roman3', 'Times New Roman', serif;
     font-size:13px;
     padding-top:6px;
     padding-left:0px;
@@ -43,7 +42,7 @@
 
 #viewOnWeb{
     display:inline;
-    font-family:'Arial', serif;
+    font-family:'FreightSansProMedium-Regular', sans-serif;
     color:rgb(76,180,255);
     border-bottom-style: solid;
     border-bottom-width: 1px;
@@ -54,7 +53,7 @@
 
 #openInApp{
     display:inline-block;
-    font-family:'Arial', serif;
+    font-family:'FreightSansProMedium-Regular', sans-serif;
     color:rgb(76,180,255);
     padding-bottom: 0px;
     text-decoration: none;
@@ -80,8 +79,8 @@
 /* General CSS */
 
 body{
-    font-family:'Tiempos', 'Garamond', serif;
-    font-weight:400;
+    font-family:'FreightSansProBook-Regular', 'FreightSans Pro', sans-serif;
+    /*font-weight:400;*/
     font-size:18px;
     line-height:24px;
     color:rgb(40,47,60);
@@ -113,6 +112,7 @@ figcaption {
 
 img{
     margin:0px auto;
+    padding-bottom: 20px;
     width:100%%;
     display:block;
     border-radius:4px;
@@ -150,7 +150,7 @@ ul, ol{
 }
 
 li{
-    font-family:'Tiempos', 'Georgia', serif;
+    font-family:'FreightSansProBook-Regular', sans-serif;
     font-weight:400;
     font-size:15px;
 }
