@@ -8,6 +8,7 @@
     <customFonts key="customFonts">
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
+            <string>FreightSansProMedium-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProSem.otf">
             <string>FreightSansProSemibold-Regular</string>
@@ -31,7 +32,7 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-dd-stK">
-                                            <rect key="frame" x="0.0" y="-40" width="200" height="280"/>
+                                            <rect key="frame" x="0.0" y="-40" width="195" height="280"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="280" id="jc3-Kx-bPQ"/>
                                             </constraints>
@@ -40,44 +41,74 @@
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minitry Team Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0C-t2-fI3">
-                                            <rect key="frame" x="8" y="8" width="155" height="26"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0C-t2-fI3">
+                                            <rect key="frame" x="13" y="10" width="163.5" height="26"/>
                                             <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-Iu-KUK">
-                                            <rect key="frame" x="8" y="33" width="184" height="159"/>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="of2-U4-ncP">
+                                            <rect key="frame" x="13" y="46" width="169" height="1"/>
+                                            <color key="backgroundColor" red="0.8666666666666667" green="0.49019607843137253" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="JGB-Fc-DgY"/>
+                                                <constraint firstAttribute="height" constant="1" id="zFO-2O-1du"/>
+                                            </constraints>
+                                        </view>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-Iu-KUK">
+                                            <rect key="frame" x="10" y="51" width="187" height="107"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM0-nI-FzP">
+                                            <rect key="frame" x="30" y="163" width="140" height="25"/>
+                                            <color key="backgroundColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="140" id="6dQ-RW-KDd"/>
+                                                <constraint firstAttribute="height" constant="25" id="B2Z-Wq-yaw"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="15"/>
+                                            <state key="normal" title="Sign-up Here">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="ministryTeamSignUp:" destination="awr-2L-iue" eventType="touchUpInside" id="eeV-sT-I9x"/>
+                                            </connections>
+                                        </button>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="5" id="0GK-r8-rL0"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="SdQ-Iu-KUK" secondAttribute="trailing" constant="-5" id="1vU-l3-N90"/>
+                                    <constraint firstItem="HM0-nI-FzP" firstAttribute="top" secondItem="SdQ-Iu-KUK" secondAttribute="bottom" constant="5" id="5aw-p4-qMS"/>
+                                    <constraint firstItem="TQB-dd-stK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="-8" id="9C3-ly-zib"/>
+                                    <constraint firstItem="of2-U4-ncP" firstAttribute="top" secondItem="Q0C-t2-fI3" secondAttribute="bottom" constant="10" id="E23-Go-GeT"/>
                                     <constraint firstAttribute="trailing" secondItem="Ezm-ui-uPJ" secondAttribute="trailing" id="ESv-ZY-blj"/>
-                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="top" secondItem="Q0C-t2-fI3" secondAttribute="bottom" constant="-1" id="Js6-2p-rGH"/>
-                                    <constraint firstItem="TQB-dd-stK" firstAttribute="centerY" secondItem="awr-2L-iue" secondAttribute="centerY" id="K4F-Vj-HwY"/>
-                                    <constraint firstAttribute="trailing" secondItem="TQB-dd-stK" secondAttribute="trailing" id="LIa-V4-QSv"/>
-                                    <constraint firstItem="TQB-dd-stK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leading" id="YyN-U0-ynv"/>
-                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" id="bdB-qK-qLZ"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="of2-U4-ncP" secondAttribute="trailing" constant="10" id="F87-hk-aoj"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="SdQ-Iu-KUK" secondAttribute="bottom" constant="34" id="FLL-b4-WV6"/>
+                                    <constraint firstItem="of2-U4-ncP" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="5" id="HwM-2l-aIf"/>
+                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="topMargin" constant="2" id="KBl-Vi-ctw"/>
+                                    <constraint firstItem="HM0-nI-FzP" firstAttribute="centerX" secondItem="awr-2L-iue" secondAttribute="centerX" id="PcM-09-U1X"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="TQB-dd-stK" secondAttribute="trailing" constant="-3" id="R2T-g1-091"/>
                                     <constraint firstItem="Ezm-ui-uPJ" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leading" id="bef-pd-rol"/>
                                     <constraint firstAttribute="bottom" secondItem="Ezm-ui-uPJ" secondAttribute="bottom" id="cJu-hz-SGr"/>
-                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" id="j02-xI-Js4"/>
+                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="2" id="eg9-zi-jDe"/>
+                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="top" secondItem="of2-U4-ncP" secondAttribute="bottom" constant="4" id="epF-Qv-8Gm"/>
+                                    <constraint firstItem="TQB-dd-stK" firstAttribute="centerY" secondItem="awr-2L-iue" secondAttribute="centerY" id="fdZ-Uz-gmL"/>
                                     <constraint firstItem="Ezm-ui-uPJ" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="top" id="nyc-rV-NBZ"/>
-                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="topMargin" id="rfw-2Q-zLZ"/>
-                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="trailing" secondItem="awr-2L-iue" secondAttribute="trailingMargin" id="vO2-It-tbn"/>
-                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="bottom" secondItem="awr-2L-iue" secondAttribute="bottomMargin" id="xdY-5x-l72"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="descriptionTextView" destination="SdQ-Iu-KUK" id="aOK-JN-Zxx"/>
                                     <outlet property="imageCoverView" destination="Ezm-ui-uPJ" id="aJe-tj-TKp"/>
+                                    <outlet property="joinButton" destination="HM0-nI-FzP" id="tCi-c4-7gM"/>
                                     <outlet property="ministryTeamImageView" destination="TQB-dd-stK" id="yju-fE-r14"/>
                                     <outlet property="ministryTeamLabel" destination="Q0C-t2-fI3" id="aC2-dP-STb"/>
+                                    <outlet property="separator" destination="of2-U4-ncP" id="JaD-kK-8iu"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -86,7 +117,13 @@
                             <outlet property="delegate" destination="5n8-J9-Awi" id="tjX-xx-uJu"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="dli-23-NtB"/>
+                    <navigationItem key="navigationItem" id="dli-23-NtB">
+                        <barButtonItem key="rightBarButtonItem" title="Reset Info" id="omx-su-9mY">
+                            <connections>
+                                <action selector="resetSignUp:" destination="5n8-J9-Awi" id="dpr-Hf-xVV"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deo-DF-lnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

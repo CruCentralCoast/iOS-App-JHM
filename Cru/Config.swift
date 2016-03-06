@@ -18,6 +18,14 @@ struct Config {
     static let emulatorGcmId = "emulator-id-hey-whats-up-hello"
     static let leaderApiKey = "LeaderAPIKey"
     
+    /* Configurations for Ministry Teams */
+    //reuse identifier for collection cells in Ministry Teams
+    static let ministryTeamReuseIdentifier = "ministryteam"
+    //identifier for ministry team resource loading
+    static let ministryTeamResourceLoaderKey = "ministryteam"
+    //configuration key for NSUserDefaults ministry teams
+    static let ministryTeamNSDefaultsKey = "ministryTeams"
+    
     
     // Modal header and footer text color
     static let textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1.0)

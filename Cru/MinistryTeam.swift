@@ -15,6 +15,8 @@ class MinistryTeam {
     var ministryName: String
     var image: UIImage!
     var teamImage: UIImage!
+    var leaders: [String]
+    var userIsPartOf: Bool
     
     init?(dict: NSDictionary) {
         //required initialization of variables
@@ -24,6 +26,8 @@ class MinistryTeam {
         self.description = ""
         self.image = nil
         self.teamImage = nil
+        self.leaders = [String]()
+        self.userIsPartOf = false
         
         //grabbing dictionary values
         let dId = dict.objectForKey("_id")
@@ -32,6 +36,7 @@ class MinistryTeam {
         let dMinistryName = dict.objectForKey("name")
         let dImage = dict.objectForKey("image")
 //        let dTeamImage = dict.objectForKey("teamImage")
+        let dLeaders = dict.objectForKey("leaders")
         
         //set up object
         if (dId != nil) {
@@ -56,6 +61,9 @@ class MinistryTeam {
         }
         else {
             self.image = UIImage(named: "fall-retreat-still")
+        }
+        if (dLeaders != nil) {
+            self.leaders = dLeaders as! [String]
         }
     }
     

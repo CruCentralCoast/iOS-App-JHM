@@ -382,7 +382,6 @@
 				6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */,
 				6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */,
 				6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */,
-				6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */,
 			);
 			path = Cru;
 			sourceTree = "<group>";
@@ -578,6 +577,7 @@
 			children = (
 				85EAB8191C0ECC8A005C7658 /* Config.swift */,
 				50DD51471C86B85900752777 /* Colors.swift */,
+				6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */,
 			);
 			name = Config;
 			sourceTree = "<group>";
