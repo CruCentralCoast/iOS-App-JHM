@@ -32,7 +32,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         //tableView.reloadData()
         
-        
+        tableView.backgroundColor = UIColor(red: 0.871, green: 0.871, blue: 0.871, alpha: 1.0)
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
         
@@ -70,7 +70,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print("\nNum card views in the thing: \(cardViews.count)\n")
-        
+        print("\nNum Resources: \(resources.count)\n")
         return resources.count
     }
     
@@ -101,10 +101,23 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                             cell.contentView.backgroundColor = UIColor(red: 0.871, green: 0.871, blue: 0.871, alpha: 1.0)
                             articleCardView!.translatesAutoresizingMaskIntoConstraints = false
                             articleCardView!.horizontallyCenterToSuperView(0)
-                            articleCardView!.constrainTopToSuperView(10)
-                            articleCardView!.constrainBottomToSuperView(10)
-                            articleCardView!.constrainRightToSuperView(10)
-                            articleCardView!.constrainLeftToSuperView(10)
+                            
+                            if(indexPath.row == 0) {
+                                articleCardView!.constrainTopToSuperView(15)
+                            }
+                            else {
+                                articleCardView!.constrainTopToSuperView(7)
+                            }
+                            
+                            if(indexPath.row == self.resources.count-1) {
+                                articleCardView!.constrainBottomToSuperView(15)
+                            }
+                            else {
+                                articleCardView!.constrainBottomToSuperView(8)
+                            }
+                            
+                            articleCardView!.constrainRightToSuperView(15)
+                            articleCardView!.constrainLeftToSuperView(15)
                             
                         }
                         
@@ -112,7 +125,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                         
                         //Format card as an video
                     else if (res.type == "video") {
-                        let videoCardView = CardView.createCardView(card!, layout: .VideoCardShortFull)
+                        let videoCardView = CardView.createCardView(card!, layout: .SummaryCardTall)
                         if(videoCardView != nil) {
                             videoCardView!.delegate = self
                             //self.cardViews.append(videoCardView!)
@@ -122,10 +135,25 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                             cell.contentView.backgroundColor = UIColor(red: 0.871, green: 0.871, blue: 0.871, alpha: 1.0)
                             videoCardView!.translatesAutoresizingMaskIntoConstraints = false
                             videoCardView!.horizontallyCenterToSuperView(0)
-                            videoCardView!.constrainTopToSuperView(10)
-                            videoCardView!.constrainBottomToSuperView(10)
-                            videoCardView!.constrainRightToSuperView(10)
-                            videoCardView!.constrainLeftToSuperView(10)
+                            
+                            if(indexPath.row == 0) {
+                                videoCardView!.constrainTopToSuperView(15)
+                            }
+                            else {
+                                videoCardView!.constrainTopToSuperView(7)
+                            }
+                            
+                            if(indexPath.row == self.resources.count-1) {
+                                videoCardView!.constrainBottomToSuperView(15)
+                            }
+                            else {
+                                videoCardView!.constrainBottomToSuperView(8)
+                            }
+                            
+                            //videoCardView!.constrainTopToSuperView(15)
+                            //videoCardView!.constrainBottomToSuperView(7)
+                            videoCardView!.constrainRightToSuperView(15)
+                            videoCardView!.constrainLeftToSuperView(15)
                             
                         }
                         
@@ -133,7 +161,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                         
                         //Format card as an audio file
                     else if (res.type == "audio") {
-                        let audioCardView = CardView.createCardView(card!, layout: .VideoCardShortFull)
+                        let audioCardView = CardView.createCardView(card!, layout: .SummaryCardTall)
                         if(audioCardView != nil) {
                             audioCardView!.delegate = self
                             //self.cardViews.append(audioCardView!)
@@ -155,37 +183,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                     print("\nERROR: Card view not created\n")
                 }
             }
-        
-        
-        
-        
-        
-        
-        //cell.contentView.superview?.superview?.superview?.superview?.constrainToSuperViewEdges()
-        //self.tableView.superview?.superview?.superview?.constrainToSuperViewEdges()
-        
-        /*cell.titleLabel.text = resource.title
-        cell.timeLabel.text = resource.date
-        if(resource.imageName != "") {
-        cell.imageView!.image = UIImage(named: resource.imageName)
-        }*/
-        
         return cell
     }
     override func viewDidAppear(animated: Bool) {
-        /*self.tableView.beginUpdates()
-        tableView.insertRowsAtIndexPaths([
-            NSIndexPath(forRow: cardViews.count-1, inSection: 0)
-            ], withRowAnimation: .Automatic)
-        
-        self.tableView.endUpdates()
-        
-        tableView.reloadData()*/
-        
-        
-        
-        
-        for subview in self.tableView.subviews {
+        /*for subview in self.tableView.subviews {
             if (NSStringFromClass(subview.dynamicType) == "UITableViewWrapperView")
             {
                 print("Things")
@@ -193,12 +194,17 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 subview.frame = CGRectMake(0, 0, tableView.bounds.size.width, tableView.bounds.size.height);
                 print("\nTable view bounds: \(UIScreen.mainScreen().bounds.size.width)")
             }
-        }
+        }*/
     }
     
     
     
-    //action function for changing the segmented view
+    // MARK: Actions
+    func cardViewRequestedAction(cardView: CardView, action: CardViewAction) {
+        
+        // Let Wildcard handle the Card Action
+        handleCardAction(cardView, action: action)
+    }
     
 
     /*

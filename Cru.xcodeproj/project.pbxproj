@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C221C1C0D77D9002850DF /* ResourceVideoTableViewController.swift */; };
-		0F0C221F1C0D783B002850DF /* ResourceVideoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F0C221E1C0D783B002850DF /* ResourceVideoTableViewCell.swift */; };
 		0F74A3101C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3111C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
@@ -129,9 +127,6 @@
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
 		6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
 		6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
-		6D4B78AE1C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
-		6D4B78AF1C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
-		6D4B78B01C70245400F643CB /* ResourceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */; };
 		6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
 		6D4B78B31C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
 		6D4B78B41C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
@@ -208,8 +203,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		0F0C221C1C0D77D9002850DF /* ResourceVideoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceVideoTableViewController.swift; sourceTree = "<group>"; };
-		0F0C221E1C0D783B002850DF /* ResourceVideoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceVideoTableViewCell.swift; sourceTree = "<group>"; };
 		0F74A30F1C0BB9D300401377 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7B72C21C0D3C3100539B33 /* MinistryTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamsViewController.swift; sourceTree = "<group>"; };
 		0F7B72C41C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupsLoadedViewController.swift; sourceTree = "<group>"; };
@@ -281,7 +274,6 @@
 		50FE4D461C50D37C00EA9042 /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
 		6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
-		6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourceTableViewController.swift; sourceTree = "<group>"; };
 		6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		6D4B78B51C702FDF00F643CB /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WildcardSDK.framework; sourceTree = "<group>"; };
@@ -536,9 +528,6 @@
 				50F8251E1C0BB965005396BC /* resources.storyboard */,
 				6D4B78B51C702FDF00F643CB /* Resource.swift */,
 				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
-				0F0C221C1C0D77D9002850DF /* ResourceVideoTableViewController.swift */,
-				0F0C221E1C0D783B002850DF /* ResourceVideoTableViewCell.swift */,
-				6D4B78AD1C70245400F643CB /* ResourceTableViewController.swift */,
 				6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */,
 				6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */,
 			);
@@ -840,7 +829,6 @@
 			files = (
 				5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				509DA91D1C6172FC0050CE26 /* Ride.swift in Sources */,
-				0F0C221F1C0D783B002850DF /* ResourceVideoTableViewCell.swift in Sources */,
 				C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				50FE4D431C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
@@ -859,7 +847,6 @@
 				6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */,
 				0FC8E3B21C48750A007A7208 /* IntroViewController.swift in Sources */,
 				5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
-				6D4B78AE1C70245400F643CB /* ResourceTableViewController.swift in Sources */,
 				5095272B1C63E6D000E4F7B6 /* TempEventTableViewController.swift in Sources */,
 				0FAEB9881C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
@@ -880,7 +867,6 @@
 				6D4B78C21C70ECC300F643CB /* CardTableViewController.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
-				0F0C221D1C0D77D9002850DF /* ResourceVideoTableViewController.swift in Sources */,
 				50E0E1881C87796D000023F1 /* Cancler.swift in Sources */,
 				50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
@@ -916,7 +902,6 @@
 				50601A891C75660200BB9FB9 /* OfferedRideTableViewCell.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */,
-				6D4B78AF1C70245400F643CB /* ResourceTableViewController.swift in Sources */,
 				0FAEB9891C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
 				50EF26EC1C75930A0055F480 /* JoinRideViewController.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
@@ -946,7 +931,6 @@
 				50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				0FAEB97E1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
 				500A37B21C7D6587007D6A3B /* Passenger.swift in Sources */,
-				6D4B78B01C70245400F643CB /* ResourceTableViewController.swift in Sources */,
 				50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 				6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */,
 				509527261C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
