@@ -9,7 +9,7 @@ class LogoutViewController: UIViewController {
     
     
     override func viewDidLoad() {
-        loggedInLabel.text = "You are alredy logged in as " + SubscriptionManager.loadString(Config.username)
+        loggedInLabel.text = "You are alredy logged in as " + GlobalUtils.loadString(Config.username)
     }
     
     

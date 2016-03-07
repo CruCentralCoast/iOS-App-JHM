@@ -20,7 +20,7 @@ class LoginViewController: UIViewController, ValidationDelegate {
         usernameError.text = ""
         passwordError.text = ""
         
-        usernameField.text = SubscriptionManager.loadString(Config.username)
+        usernameField.text = GlobalUtils.loadString(Config.username)
         
         validator.registerField(usernameField, errorLabel: usernameError, rules: [RequiredRule(), EmailRule()])
         validator.registerField(passwordField, errorLabel: passwordError, rules: [RequiredRule()])

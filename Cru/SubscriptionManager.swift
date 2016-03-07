@@ -11,27 +11,11 @@ import Foundation
 class SubscriptionManager{
     
     static func saveGCMToken(token: String){
-        saveString("GCM", value: token)
+        GlobalUtils.saveString("GCM", value: token)
     }
     
     static func loadGCMToken()->String{
-        return loadString("GCM")
-    }
-    
-    
-    static func saveString(key: String, value: String){
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(value)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: key)
-        defaults.synchronize()
-    }
-    
-    static func loadString(key: String)->String{
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(key) as? NSData {
-            let token = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? String
-            return token!
-        }
-        return ""
+        return GlobalUtils.loadString("GCM")
     }
     
     static func loadCampuses() -> [Campus]? {

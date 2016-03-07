@@ -13,8 +13,8 @@ class LoginUtils {
                 var success : Bool = false
                 if let body = response.result.value as! NSDictionary? {
                     if (body["success"] as! Bool) {
-                        SubscriptionManager.saveString(Config.leaderApiKey, value: body[Config.leaderApiKey] as! String)
-                        SubscriptionManager.saveString(Config.username, value: username)
+                        GlobalUtils.saveString(Config.leaderApiKey, value: body[Config.leaderApiKey] as! String)
+                        GlobalUtils.saveString(Config.username, value: username)
                         success = true
                     }
                 }
@@ -25,7 +25,7 @@ class LoginUtils {
 
     class func logout() {
         let url = Config.serverUrl + "api/signout"
-        SubscriptionManager.saveString(Config.leaderApiKey, value: "")
+        GlobalUtils.saveString(Config.leaderApiKey, value: "")
         Alamofire.request(.POST, url, parameters: nil)
             .responseJSON { response in }
     }
