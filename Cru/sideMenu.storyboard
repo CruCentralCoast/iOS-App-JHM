@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -24,6 +24,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="static" style="plain" separatorStyle="none" rowHeight="53" sectionHeaderHeight="39" sectionFooterHeight="28" id="R0O-PJ-6i6">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="sectionIndexColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -41,19 +42,22 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Home" translatesAutoresizingMaskIntoConstraints="NO" id="37I-h6-Q7Z">
                                                     <rect key="frame" x="285" y="6" width="30" height="30"/>
+                                                    <animations/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="NYO-w2-Qir"/>
                                                         <constraint firstAttribute="width" constant="30" id="ezL-Ud-mU2"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MJ-Ri-qZZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MJ-Ri-qZZ">
                                                     <rect key="frame" x="280" y="34" width="42" height="22"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="centerX" secondItem="70i-33-HfU" secondAttribute="centerX" id="2er-4U-rtV"/>
                                                 <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="leading" secondItem="70i-33-HfU" secondAttribute="leadingMargin" constant="37" id="HKi-OU-T4W"/>
@@ -75,6 +79,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <segue destination="Sks-H4-kOZ" kind="show" id="71o-kV-tvs"/>
                                         </connections>
@@ -88,18 +93,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNG-XR-5eB">
                                                     <rect key="frame" x="277" y="34" width="45" height="22"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Events" translatesAutoresizingMaskIntoConstraints="NO" id="Fvv-g4-29B">
                                                     <rect key="frame" x="285" y="6" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="I0E-Ro-mKb"/>
                                                         <constraint firstAttribute="width" constant="30" id="j4T-zC-UeE"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="Fvv-g4-29B" firstAttribute="centerX" secondItem="Mba-Gc-PSX" secondAttribute="centerX" id="4MB-Nu-vfS"/>
                                                 <constraint firstItem="Fvv-g4-29B" firstAttribute="leading" secondItem="Mba-Gc-PSX" secondAttribute="leadingMargin" constant="43" id="6fa-M2-73B"/>
@@ -115,6 +123,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <segue destination="FyY-u7-6s3" kind="show" id="S1v-Zp-ROw"/>
                                         </connections>
@@ -128,18 +137,21 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Resources" translatesAutoresizingMaskIntoConstraints="NO" id="GQ0-sg-VMr">
                                                     <rect key="frame" x="285" y="6" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="6l9-mk-fgQ"/>
                                                         <constraint firstAttribute="width" constant="30" id="Vg9-Fa-2hX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-Dq-QBz">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-Dq-QBz">
                                                     <rect key="frame" x="266" y="34" width="70" height="22"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="GQ0-sg-VMr" firstAttribute="top" secondItem="1Jx-33-gEV" secondAttribute="topMargin" constant="-2" id="0XX-2G-CAG"/>
                                                 <constraint firstItem="GQ0-sg-VMr" firstAttribute="centerX" secondItem="1Jx-33-gEV" secondAttribute="centerX" id="17N-aZ-dde"/>
@@ -155,6 +167,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <segue destination="qrP-j6-Ygg" kind="show" id="T1z-4C-t2X"/>
                                         </connections>
@@ -167,19 +180,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RideSharing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32o-RX-Lnb">
-                                                    <rect key="frame" x="260" y="37" width="80" height="21.5"/>
+                                                    <rect key="frame" x="260" y="37" width="80" height="22"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RideSharing" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-Mn-YoG">
                                                     <rect key="frame" x="285" y="9" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="fcq-Kr-Ivv"/>
                                                         <constraint firstAttribute="width" constant="30" id="nuC-zJ-13j"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="32o-RX-Lnb" firstAttribute="leading" secondItem="YMD-uy-FH2" secondAttribute="leadingMargin" constant="21" id="1rk-wa-1xu"/>
                                                 <constraint firstItem="4EF-Mn-YoG" firstAttribute="top" secondItem="YMD-uy-FH2" secondAttribute="topMargin" constant="1" id="DP0-Mj-nbv"/>
@@ -195,6 +211,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <segue destination="ZQn-Wd-N3J" kind="show" id="aST-ys-ceG"/>
                                         </connections>
@@ -207,19 +224,22 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Involved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLD-jC-IC0">
-                                                    <rect key="frame" x="257" y="37" width="84.5" height="21.5"/>
+                                                    <rect key="frame" x="257" y="37" width="85" height="22"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Get Involved" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-Yn-bxV">
                                                     <rect key="frame" x="285" y="9" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="2v0-gQ-qN8"/>
                                                         <constraint firstAttribute="width" constant="30" id="EOF-cX-wsU"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="Pw4-Yn-bxV" firstAttribute="centerX" secondItem="UQL-Zu-DIg" secondAttribute="centerX" id="1fZ-Pi-gSi"/>
                                                 <constraint firstItem="Pw4-Yn-bxV" firstAttribute="leading" secondItem="UQL-Zu-DIg" secondAttribute="leadingMargin" constant="35" id="A57-rt-xwi"/>
@@ -235,6 +255,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <segue destination="YfA-rx-awN" kind="show" id="j7q-Ec-1Ik"/>
                                         </connections>
@@ -248,6 +269,7 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Summer Missions" translatesAutoresizingMaskIntoConstraints="NO" id="pLZ-kw-hNj">
                                                     <rect key="frame" x="285" y="9" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="30" id="CC0-Va-FrR"/>
                                                         <constraint firstAttribute="height" constant="30" id="nc4-am-gBX"/>
@@ -255,11 +277,13 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summer Missions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5g-Fg-IVG">
                                                     <rect key="frame" x="247" y="37" width="105" height="19"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="R5g-Fg-IVG" firstAttribute="centerX" secondItem="1do-HL-Wse" secondAttribute="centerX" id="5qr-Qw-SDF"/>
                                                 <constraint firstItem="pLZ-kw-hNj" firstAttribute="centerX" secondItem="1do-HL-Wse" secondAttribute="centerX" id="8TU-hb-uKM"/>
@@ -275,6 +299,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <segue destination="5BN-Zn-eGs" kind="show" id="wMR-6c-yWc"/>
                                         </connections>
@@ -288,18 +313,21 @@
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqu-4X-ZSL">
                                                     <rect key="frame" x="272" y="36" width="55" height="22"/>
+                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-Br-0CM">
                                                     <rect key="frame" x="285" y="5" width="30" height="30"/>
+                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="JbX-YM-3mA"/>
                                                         <constraint firstAttribute="width" constant="30" id="krI-Ao-CzW"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
+                                            <animations/>
                                             <constraints>
                                                 <constraint firstItem="Bny-Br-0CM" firstAttribute="centerX" secondItem="tgg-p4-fvh" secondAttribute="centerX" id="54h-vj-hHE"/>
                                                 <constraint firstItem="yqu-4X-ZSL" firstAttribute="top" secondItem="Bny-Br-0CM" secondAttribute="bottom" constant="1" id="G4u-3B-wA7"/>
@@ -319,6 +347,7 @@
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
+                                        <animations/>
                                         <connections>
                                             <segue destination="dz8-4B-V3A" kind="show" id="CQ1-NE-KZi"/>
                                         </connections>
@@ -406,6 +435,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="R3Y-NV-OWv">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="backgroundColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -416,6 +446,7 @@
                     <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="jod-E0-FKM">
                         <rect key="frame" x="0.0" y="556" width="600" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                     </toolbar>
                     <userDefinedRuntimeAttributes>
                         <userDefinedRuntimeAttribute type="boolean" keyPath="leftSide" value="YES"/>

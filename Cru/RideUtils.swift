@@ -87,15 +87,10 @@ class RideUtils {
     class func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
         location: NSDictionary, radius: Int, direction: String) {
             
-            var gcmToken = SubscriptionManager.loadGCMToken()
-            
-            if gcmToken == "" {
-                gcmToken = Config.emulatorGcmId
-            }
             
             let requestUrl = Config.serverUrl + "api/ride/create";
             let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
-                "gcm_id": gcmToken, "location":location, "radius":radius, "direction":direction]
+                "gcm_id": Config.gcmId, "location":location, "radius":radius, "direction":direction]
 
             ServerUtils.sendHttpPostRequest(requestUrl, body: body);
     }
@@ -117,7 +112,7 @@ class RideUtils {
     
     
     private class func createPassenger(name: String, phone: String, direction: String, handler: (AnyObject) -> Void){
-        let gcmToken = Config.emulatorGcmId
+        let gcmToken = Config.gcmId
         
         let requestUrl = Config.serverUrl + "api/passenger/create";
         let body = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken]

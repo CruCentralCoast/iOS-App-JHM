@@ -45,7 +45,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func loadRides(){
-        RideUtils.getRidesNotDriving(Config.emulatorGcmId, inserter: insertRide, afterFunc: showRides)
+        RideUtils.getRidesNotDriving(Config.gcmId, inserter: insertRide, afterFunc: showRides)
     }
     
     func showRides(){

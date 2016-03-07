@@ -15,7 +15,7 @@ struct Config {
     static let campusIds = "campuses"
     static let campusCollection = "campus"
     static let globalTopic = "/topics/global"
-    static var emulatorGcmId: String{
+    static var gcmId: String{
         get{
             if(simulatorMode){
                 return "emulator-id-hey-whats-up-hello"

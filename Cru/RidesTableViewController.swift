@@ -24,7 +24,6 @@ class RidesTableViewController: UITableViewController {
     
     //TODO: Get gcm id associated with device and only populate rides associated with that id
     let myName = "Daniel Toy"
-    var gcmId = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,14 +37,10 @@ class RidesTableViewController: UITableViewController {
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
-        gcmId = SubscriptionManager.loadGCMToken()
-        //if gcmId == "" {
-            gcmId = Config.emulatorGcmId
-        //}
 
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.getRidesByGCMToken(gcmId, inserter: insertRide, afterFunc: finishRideInsert)
+        RideUtils.getRidesByGCMToken(Config.gcmId, inserter: insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
     }
     
@@ -54,7 +49,7 @@ class RidesTableViewController: UITableViewController {
         rides.removeAll()
         self.tableView.reloadData()
         // Updating your data here...
-        RideUtils.getRidesByGCMToken(gcmId, inserter: insertNewRide, afterFunc: finishRefresh)
+        RideUtils.getRidesByGCMToken(Config.gcmId, inserter: insertNewRide, afterFunc: finishRefresh)
 
         
     }
@@ -158,7 +153,7 @@ class RidesTableViewController: UITableViewController {
         
         //TODO: Change this to check against GCM id not driver name
         //if(ride.driverName == myName){
-        if(ride.gcmId == self.gcmId){
+        if(ride.gcmId == Config.gcmId){
             cell.rideType.text = driver
             cell.icon.image  = UIImage(named: driver)
         }
@@ -201,7 +196,7 @@ class RidesTableViewController: UITableViewController {
             tappedEvent = getEventForEventId((tappedRide?.eventId)!)
         
         
-            if(tappedRide?.gcmId == self.gcmId){
+            if(tappedRide?.gcmId == Config.gcmId){
                 self.performSegueWithIdentifier("driverdetailsegue", sender: self)
             }
             else{
