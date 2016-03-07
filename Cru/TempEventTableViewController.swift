@@ -49,13 +49,13 @@ class TempEventTableViewController: UITableViewController {
         //Creating the abbreviated version of the month to be displayed
         let dateFormatter: NSDateFormatter = NSDateFormatter()
         
-        let months = dateFormatter.shortMonthSymbols
-        let monthShort = months[event.month!-1]
-        
-        cell.monthLabel.text = monthShort.uppercaseString
-        
-        cell.dateLabel.text = String(event.startDay!)
-        cell.nameLabel.text = event.name
+//        let months = dateFormatter.shortMonthSymbols
+//        let monthShort = months[event.month!-1]
+//        
+//        cell.monthLabel.text = monthShort.uppercaseString
+//        
+//        cell.dateLabel.text = String(event.startDay!)
+//        cell.nameLabel.text = event.name
         
         return cell
     }

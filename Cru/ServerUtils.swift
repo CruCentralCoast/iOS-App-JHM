@@ -42,15 +42,6 @@ class ServerUtils {
         }
     }
     
-    class func dateFromString(dateStr : String) -> NSDateComponents? {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let date = dateFormatter.dateFromString(dateStr)
-        let unitFlags: NSCalendarUnit = [.Minute, .Hour, .Day, .Month, .Year]
-        return NSCalendar.currentCalendar().components(unitFlags, fromDate: date!)
-    }
-    
     class func displayListInfo(col : String, completionHandler : (AnyObject) -> Void) {
         let requestUrl = Config.serverUrl + "api/" + col + "/list";
         sendHttpGetRequest(requestUrl, completionHandler: completionHandler)
