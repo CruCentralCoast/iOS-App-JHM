@@ -213,7 +213,20 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         else {
             let cancelRideAlert = UIAlertController(title: "Ride Offered", message: "Thank you your offered ride has been created!", preferredStyle: UIAlertControllerStyle.Alert)
             
-            cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: performBackAction))
+            cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
+                action in
+                
+                if let navController = self.navigationController {
+                    navController.popViewControllerAnimated(true)
+                    //navController.popViewControllerAnimated(true)
+                    
+                    for vc in navController.viewControllers{
+                        if let tvc = vc as? RidesTableViewController {
+                            tvc.refresh(1)
+                        }
+                    }
+                }
+            }))
             presentViewController(cancelRideAlert, animated: true, completion: nil)
         }
     }

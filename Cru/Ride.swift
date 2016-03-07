@@ -168,10 +168,10 @@ class Ride: Comparable, Equatable {
 }
 
 func  <(lRide: Ride, rRide: Ride) -> Bool{
-    if(lRide.month < rRide.month){
+    if(lRide.monthNum < rRide.monthNum){
         return true
     }
-    else if(lRide.month > rRide.month){
+    else if(lRide.monthNum > rRide.monthNum){
         return false
     }
     
@@ -181,21 +181,35 @@ func  <(lRide: Ride, rRide: Ride) -> Bool{
     else if(lRide.day > rRide.day){
         return false
     }
-    
-    if(lRide.hour < rRide.hour){
-        return true
-    }
-    else if(lRide.hour > rRide.hour){
-        return false
-    }
-    if(lRide.minute < rRide.minute){
-        return true
-    }
-    else if(lRide.minute > rRide.minute){
-        return false
-    }
-    
-    return lRide.month < rRide.month
+    return false
+//    if(lRide.month < rRide.month){
+//        return true
+//    }
+//    else if(lRide.month > rRide.month){
+//        return false
+//    }
+//    
+//    if(lRide.day < rRide.day){
+//        return true
+//    }
+//    else if(lRide.day > rRide.day){
+//        return false
+//    }
+//    
+//    if(lRide.hour < rRide.hour){
+//        return true
+//    }
+//    else if(lRide.hour > rRide.hour){
+//        return false
+//    }
+//    if(lRide.minute < rRide.minute){
+//        return true
+//    }
+//    else if(lRide.minute > rRide.minute){
+//        return false
+//    }
+//    
+//    return lRide.month < rRide.month
 }
 func  ==(lRide: Ride, rRide: Ride) -> Bool{
     return lRide.id == rRide.id

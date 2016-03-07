@@ -76,7 +76,6 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         filteredRides.removeAll()
         
         for ride in allRides{
-            print("ride id \(ride.id)")
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
             }
@@ -138,7 +137,6 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if(row < events.count){
-            print("filtering for even with id \(events[row].id)")
             self.filterRidesByEventId(events[row].id)
             self.selectedEvent = events[row]
         }
