@@ -169,7 +169,7 @@ public class SideMenuManager: UIPercentDrivenInteractiveTransition, UIViewContro
     public static var menuPresentMode:MenuPresentMode = .MenuSlideIn
     public static var menuAllowPushOfSameClassTwice = true
     public static var menuAllowPopIfPossible = false
-    public static var menuWidth: CGFloat = max(round(min(UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height) * 0), 150)
+    public static var menuWidth: CGFloat = max(round(min(UIScreen.mainScreen().bounds.width, UIScreen.mainScreen().bounds.height) * 0), 120)
     public static var menuAnimationPresentDuration = 0.35
     public static var menuAnimationDismissDuration = 0.35
     public static var menuAnimationFadeStrength: CGFloat = 0
