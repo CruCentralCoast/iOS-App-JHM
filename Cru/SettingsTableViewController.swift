@@ -39,8 +39,7 @@ class SettingsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if (indexPath.row == 2) {
-            let leaderApiKey = SubscriptionManager.loadString(Config.leaderApiKey)
-            if (leaderApiKey == "") {
+            if (GlobalUtils.loadString(Config.leaderApiKey) == "") {
                 self.performSegueWithIdentifier("LoginSegue", sender: self)
             } else {
                 self.performSegueWithIdentifier("LogoutSegue", sender: self)

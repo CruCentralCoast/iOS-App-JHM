@@ -29,8 +29,11 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         //loadSampleResources()
         
         //tableView.beginUpdates()
-        ServerUtils.loadResources("resource", inserter: insertResource, afterFunc: formatResources)
-        
+        if (GlobalUtils.loadString(Config.leaderApiKey) == "") {
+            ServerUtils.loadResources("resource", inserter: insertResource, afterFunc: formatResources)
+        } else {
+            ServerUtils.loadSpecialResources("resource", inserter: insertResource, afterFunc: formatResources)
+        }
         
         //tableView.reloadData()
         

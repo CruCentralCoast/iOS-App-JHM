@@ -69,7 +69,7 @@ class RideUtils {
             //print("\(rideIds)")
             
             let cond = ["passengers": ["$in": rideIds]]
-            let body = ["conditions": cond, "projection": "", "options": [:]]
+            let body : [String : AnyObject] = ["conditions": cond, "projection": "", "options": [:]]
             
             ServerUtils.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : ServerUtils.insertResources(inserter, afterFunc: afterFunc))
         }
@@ -77,7 +77,7 @@ class RideUtils {
         
         //gets rides you are giving
         requestUrl = Config.serverUrl + "api/ride/find"
-        let body = ["gcm_id": token]
+        let body : [String : AnyObject] = ["gcm_id": token]
         
         ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerUtils.insertResources(inserter, afterFunc: {() in }))
     }

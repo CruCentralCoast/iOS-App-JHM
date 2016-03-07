@@ -25,4 +25,19 @@ class GlobalUtils {
         let unitFlags: NSCalendarUnit = [.Minute, .Hour, .Day, .Month, .Year]
         return NSCalendar.currentCalendar().components(unitFlags, fromDate: date!)
     }
+    
+    class func saveString(key: String, value: String){
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(value)
+        let defaults = NSUserDefaults.standardUserDefaults()
+        defaults.setObject(archivedObject, forKey: key)
+        defaults.synchronize()
+    }
+    
+    class func loadString(key: String)->String{
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(key) as? NSData {
+            let token = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? String
+            return token!
+        }
+        return ""
+    }
 }
