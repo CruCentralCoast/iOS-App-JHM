@@ -284,8 +284,8 @@ extension Location {
         return [
             "street1": loc.placemark.addressDictionary!["Street"]!,
             "state": loc.placemark.addressDictionary!["State"]!,
-            "postcode": loc.placemark.addressDictionary!["ZIP"]!,
-            "suburb": loc.placemark.addressDictionary!["SubAdministrativeArea"]!
+            "postcode": loc.placemark.addressDictionary!["ZIP"]!
+            //"suburb": loc.placemark.addressDictionary!["SubAdministrativeArea"]!
         ]
     }
 }

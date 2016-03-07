@@ -15,7 +15,17 @@ struct Config {
     static let campusIds = "campuses"
     static let campusCollection = "campus"
     static let globalTopic = "/topics/global"
-    static let emulatorGcmId = "emulator-id-hey-whats-up-hello"
+    static var emulatorGcmId: String{
+        get{
+            if(simulatorMode){
+                return "emulator-id-hey-whats-up-hello"
+            }
+            else{
+                return SubscriptionManager.loadGCMToken()
+            }
+        }
+    }
+    static let simulatorMode = false
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
     
