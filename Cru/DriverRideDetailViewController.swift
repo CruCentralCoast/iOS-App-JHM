@@ -32,7 +32,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         adjustPageConstraints()
         self.passengerTable.delegate = self
         passengerTable.scrollEnabled = false;
-        rideName.text = event!.name!
+        rideName.text = event!.name
         RideUtils.getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {
         })
         departureTime.text = ride.time

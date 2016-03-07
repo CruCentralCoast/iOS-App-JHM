@@ -45,7 +45,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func loadRides(){
-        ServerUtils.loadResources("ride", inserter: insertRide, afterFunc: showRides)
+        RideUtils.getRidesNotDriving(Config.emulatorGcmId, inserter: insertRide, afterFunc: showRides)
     }
     
     func showRides(){
@@ -76,6 +76,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         filteredRides.removeAll()
         
         for ride in allRides{
+            print("ride id \(ride.id)")
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
             }
@@ -137,6 +138,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         
         if(row < events.count){
+            print("filtering for even with id \(events[row].id)")
             self.filterRidesByEventId(events[row].id)
             self.selectedEvent = events[row]
         }
@@ -160,16 +162,8 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
                 if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
-//                    print("ride was assigned")
-//                    if(selectedRide != nil) {
-//                        vc.ride = selectedRide!
-//        
-//                    }
                     vc.ride = self.selectedRide
                     vc.event = self.selectedEvent
-                    
-        
-                    //vc.details.text = selectedRide?.getDescription()
                 }
     }
 
