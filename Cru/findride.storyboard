@@ -260,10 +260,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bowling" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ki3-9F-R20">
-                                                <rect key="frame" x="161" y="891" width="94" height="26"/>
+                                                <rect key="frame" x="161" y="891" width="431" height="26"/>
                                                 <animations/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="94" id="is3-JS-X3u"/>
+                                                    <constraint firstAttribute="width" constant="431" id="is3-JS-X3u"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -439,7 +439,7 @@
                                             <constraint firstItem="qEy-TL-3SA" firstAttribute="top" secondItem="7jG-ar-T4H" secondAttribute="bottom" constant="19" id="8E1-lX-b39"/>
                                             <constraint firstItem="EG9-sS-oBK" firstAttribute="top" secondItem="73n-NA-iBd" secondAttribute="bottom" constant="14" id="9SQ-5q-9O7"/>
                                             <constraint firstItem="wM9-Zc-Img" firstAttribute="leading" secondItem="FRR-tE-iLN" secondAttribute="trailing" id="AXi-r3-i5e"/>
-                                            <constraint firstItem="QIw-9H-7PY" firstAttribute="trailing" secondItem="ki3-9F-R20" secondAttribute="trailing" id="Aef-Eq-keF"/>
+                                            <constraint firstItem="QIw-9H-7PY" firstAttribute="trailing" secondItem="ki3-9F-R20" secondAttribute="trailing" constant="-337" id="Aef-Eq-keF"/>
                                             <constraint firstAttribute="trailing" secondItem="kWR-4z-BoD" secondAttribute="trailing" constant="30" id="C0I-QJ-6jV"/>
                                             <constraint firstItem="qAq-nK-Tmr" firstAttribute="leading" secondItem="5fC-QN-Yyb" secondAttribute="leading" id="CG1-MN-oFB"/>
                                             <constraint firstItem="YMN-SD-gnW" firstAttribute="top" secondItem="CKz-8y-Dfn" secondAttribute="bottom" constant="3" id="CQI-ky-bqw"/>
@@ -495,6 +495,7 @@
                                             <constraint firstItem="FRR-tE-iLN" firstAttribute="leading" secondItem="YXu-Sr-2cX" secondAttribute="leading" id="p10-jc-DaH"/>
                                             <constraint firstItem="CKz-8y-Dfn" firstAttribute="leading" secondItem="3bD-Kl-vAR" secondAttribute="leadingMargin" id="pBF-Mw-D1m"/>
                                             <constraint firstItem="73n-NA-iBd" firstAttribute="top" secondItem="QmT-zS-4ny" secondAttribute="bottom" constant="14" id="qDD-Mp-Qy2"/>
+                                            <constraint firstItem="QIw-9H-7PY" firstAttribute="top" secondItem="ki3-9F-R20" secondAttribute="bottom" constant="8" id="r9F-GH-XLr"/>
                                             <constraint firstItem="73n-NA-iBd" firstAttribute="trailing" secondItem="QmT-zS-4ny" secondAttribute="trailing" id="ren-cg-Q9x"/>
                                             <constraint firstItem="7jG-ar-T4H" firstAttribute="leading" secondItem="3bD-Kl-vAR" secondAttribute="leading" constant="10" id="s3y-Yb-nLn"/>
                                             <constraint firstItem="wBZ-x8-gCc" firstAttribute="top" secondItem="qEy-TL-3SA" secondAttribute="bottom" constant="5" id="tzd-J6-gid"/>
