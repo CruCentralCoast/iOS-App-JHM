@@ -94,22 +94,7 @@ class MinistryTableViewController: UITableViewController {
     }
     
     override func viewWillDisappear(animated: Bool) {
-        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        var subscribedMinistries = [Ministry]()
-        
-        for campus in subscribedCampuses{
-            let campusMinistries = ministryMap[campus]
-            if (campusMinistries != nil) {
-                for ministry in campusMinistries! {
-                    subscribedMinistries.append(ministry)
-                }
-            }
-        }
-        
-        SubscriptionManager.saveMinistrys(subscribedMinistries, updateGCM: true)
-        
-        //TODO: Move this to place that's called when done subscribing
-        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        saveMinistriesToDevice()
     }
     
     func saveMinistriesToDevice(){
@@ -175,10 +160,36 @@ class MinistryTableViewController: UITableViewController {
             if(cell.accessoryType == .Checkmark){
                 cell.accessoryType = .None
                 ministry.feedEnabled = false
+                
+                MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+                SubscriptionManager.unsubscribeToTopic("/topics/" + ministry.id, handler: {(success) in
+                    
+                    let title = success ? "Successfully unsubscribed" : "Failed to unsubscribe"
+                    
+                    let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                    
+                    MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    })
+                })
             }
             else{
                 cell.accessoryType = .Checkmark
                 ministry.feedEnabled = true
+                
+                MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+                SubscriptionManager.subscribeToTopic("/topics/" + ministry.id, handler: {(success) in
+                    
+                    let title = success ? "Successfully subscribed" : "Failed to subscribe"
+                    
+                    let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                    alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                    
+                    MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
+                        self.presentViewController(alert, animated: true, completion: nil)
+                    })
+                })
             }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)

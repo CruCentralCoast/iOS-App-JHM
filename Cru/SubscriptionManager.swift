@@ -69,7 +69,7 @@ class SubscriptionManager{
             if (oldMinistries != nil) {
                 for min in oldMinistries! {
                     if (!enabledMinistries.contains(min)) {
-                        unSubscribeToTopic("/topics/" + min.id)
+                        unsubscribeToTopic("/topics/" + min.id)
                     }
                 }
                 for min in enabledMinistries {
@@ -101,41 +101,53 @@ class SubscriptionManager{
     
     
     // REALLY BAD RACE CONDITIONS EXIST FOR NOW!!!!
+    
     class func subscribeToTopic(topic: String) {
+        subscribeToTopic(topic, handler : {(success) in })
+    }
+    
+    class func subscribeToTopic(topic: String, handler: (Bool) -> Void) {
         // If the app has a registration token and is connected to GCM, proceed to subscribe to the
         // topic
         let gcmToken = SubscriptionManager.loadGCMToken()
-        dispatch_async(dispatch_get_main_queue(), {
-            GCMPubSub.sharedInstance().subscribeWithToken(gcmToken, topic: topic,
-                options: nil, handler: {(NSError error) -> Void in
-                    if (error != nil) {
-                        // Treat the "already subscribed" error more gently
-                        if error.code == 3001 {
-                            print("Already subscribed to \(topic)")
-                        } else {
-                            print("Subscription failed: \(error.localizedDescription)");
-                        }
+        GCMPubSub.sharedInstance().subscribeWithToken(gcmToken, topic: topic,
+            options: nil, handler: {(NSError error) -> Void in
+                var success : Bool = false
+                if (error != nil) {
+                    // Treat the "already subscribed" error more gently
+                    if error.code == 3001 {
+                        print("Already subscribed to \(topic)")
                     } else {
-                        NSLog("Subscribed to \(topic)");
+                        print("Subscription failed: \(error.localizedDescription)");
                     }
-            })
+                } else {
+                    success = true
+                    NSLog("Subscribed to \(topic)");
+                }
+                handler(success)
         })
     }
     
-    class func unSubscribeToTopic(topic: String) {
+    class func unsubscribeToTopic(topic: String) {
+        unsubscribeToTopic(topic, handler : {(success) in })
+    }
+
+    class func unsubscribeToTopic(topic: String, handler: (Bool) -> Void) {
         // If the app has a registration token and is connected to GCM, proceed to subscribe to the
         // topic
+        
         let gcmToken = SubscriptionManager.loadGCMToken()
         
-        dispatch_async(dispatch_get_main_queue(), {
-            GCMPubSub.sharedInstance().unsubscribeWithToken(gcmToken, topic: topic,
-                options: nil, handler: {(NSError error) -> Void in
-                    if (error != nil) {
-                        print("Failed to unsubscribe: \(error.localizedDescription)")
-                    } else {
-                        NSLog("Unsubscribed to \(topic)")
-                    }
-            })
+        GCMPubSub.sharedInstance().unsubscribeWithToken(gcmToken, topic: topic,
+            options: nil, handler: {(NSError error) -> Void in
+                var success : Bool = false
+                if (error != nil) {
+                    print("Failed to unsubscribe: \(error.localizedDescription)")
+                } else {
+                    success = true
+                    NSLog("Unsubscribed to \(topic)")
+                }
+                handler(success)
         })
     }
 }
