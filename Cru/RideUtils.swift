@@ -11,6 +11,31 @@ import Alamofire
 
 class RideUtils {
     
+    static func getRidesNotDriving(gcmid: String, inserter : (NSDictionary) -> (),
+        afterFunc : () -> ()){
+            
+        let url = Config.serverUrl + "api/ride/find"
+        let gcmArray: [String] = [gcmid]
+            let params: [String: AnyObject] =  ["gcm_id": ["$nin" : gcmArray]]
+            
+        Alamofire.request(.POST, url, parameters: params)
+            .responseJSON { response in
+
+                if let JSON = response.result.value {
+                    if let RIDES = JSON as? NSArray{
+                        for ride in RIDES{
+                            if let rideDict = ride as? NSDictionary{
+                                inserter(rideDict)
+                                afterFunc()
+                            }
+                        }
+                    }
+                }
+        }
+        
+    }
+    
+    
     static func getPassengerById(id: String, inserter: (Passenger)->(), afterFunc: ()->Void){
         let url = Config.serverUrl + "api/passenger/" + id
         
