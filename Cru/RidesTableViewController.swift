@@ -42,9 +42,7 @@ class RidesTableViewController: UITableViewController {
         //if gcmId == "" {
             gcmId = Config.emulatorGcmId
         //}
-        //gcmId = "kH-biM4oppg:APA91bF1PlmRURQSi1UWB49ZRUIB0G2vfsyHcAqqOxX5WG5RdsZQnezCyPT4GPbJ9yQPYxDFTVMGpHbygnrEf9UrcEZITCfE6MCLQJwAr7p0sRklVp8vwjZAjvVSOdEIkLPydiJ_twtL"
-        
-        //ServerUtils.joinRide("Max Crane", phone: "3103103100", direction: "both",  rideId: "56aa9943507b61d912aad125")
+
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         RideUtils.getRidesByGCMToken(gcmId, inserter: insertRide, afterFunc: finishRideInsert)
@@ -62,24 +60,7 @@ class RidesTableViewController: UITableViewController {
     }
     
     func finishRideInsert(){
-        rides.sortInPlace({ (lRide: Ride, rRide: Ride) -> Bool in
-        
-            if(lRide.monthNum < rRide.monthNum){
-            return true
-            }
-            else if(lRide.monthNum > rRide.monthNum){
-            return false
-            }
-            
-            if(lRide.day < rRide.day){
-            return true
-            }
-            else if(lRide.day > rRide.day){
-            return false
-            }
-            return false
-        })
-    
+        rides.sortInPlace()
         self.tableView.reloadData()
     }
  
@@ -103,23 +84,7 @@ class RidesTableViewController: UITableViewController {
         //insert into ride array
         rides.insert(newRide!, atIndex: 0)
         
-        rides.sortInPlace({ (lRide: Ride, rRide: Ride) -> Bool in
-            
-            if(lRide.monthNum < rRide.monthNum){
-                return true
-            }
-            else if(lRide.monthNum > rRide.monthNum){
-                return false
-            }
-            
-            if(lRide.day < rRide.day){
-                return true
-            }
-            else if(lRide.day > rRide.day){
-                return false
-            }
-            return false
-        })
+        rides.sortInPlace()
         
         self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
     }
