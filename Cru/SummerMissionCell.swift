@@ -20,11 +20,6 @@ class SummerMissionCell: UICollectionViewCell {
     @IBOutlet private weak var imageCoverView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
-    @IBOutlet private weak var descriptionLabel: UILabel!
-    
-    private var descX:CGFloat!
-    private var descY:CGFloat!
-    
     
     var mission: SummerMission? {
         didSet {
@@ -34,9 +29,7 @@ class SummerMissionCell: UICollectionViewCell {
                 nameLabel.text = mission.name
                 nameLabel.sizeToFit()
                 
-                dateLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.startDate.formatMonthDayYear()
-                
-                descriptionLabel.text = mission.description
+                dateLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.endDate.formatMonthDayYear()
             }
         }
     }

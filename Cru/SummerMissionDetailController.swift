@@ -17,6 +17,7 @@ class SummerMissionDetailController: UIViewController {
     @IBOutlet private weak var topCoverView: UIView!
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet private weak var datesLabel: UILabel!
+    @IBOutlet private weak var scrollingView: UIView!
     @IBOutlet private weak var descriptionView: UITextView!
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var fbButton: UIButton!
@@ -45,6 +46,8 @@ class SummerMissionDetailController: UIViewController {
             
             
             descriptionView.text = mission.description
+            descriptionView.sizeToFit()
+            //scrollingView.sizeToFit()
             
             topCoverView.alpha = COVER_ALPHA
         }
