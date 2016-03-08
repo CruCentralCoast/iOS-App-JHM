@@ -85,14 +85,15 @@ class RideUtils {
     
     // TODO:handler error better
     class func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
-        location: NSDictionary, radius: Int, direction: String) {
-            
-            
+        location: NSDictionary, radius: Int, direction: String, handler: (Bool)->()) {
             let requestUrl = Config.serverUrl + "api/ride/create";
             let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
                 "gcm_id": Config.gcmId, "location":location, "radius":radius, "direction":direction]
-
-            ServerUtils.sendHttpPostRequest(requestUrl, body: body);
+            
+            Alamofire.request(.POST, requestUrl, parameters: body)
+                .responseJSON { response in
+                    handler(response.result.isSuccess)
+            }
     }
     
     class func joinRide(name: String, phone: String, direction: String,  rideId: String, handler: ()->Void){

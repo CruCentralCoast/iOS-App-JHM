@@ -1,5 +1,5 @@
 //
-//  RideTest.swift
+//  RideUtilsTest.swift
 //  Cru
 //
 //  Created by Max Crane on 3/8/16.
@@ -8,10 +8,8 @@
 
 import XCTest
 
-class RideTest: XCTestCase {
-    let rideDict = ["location": ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."],"_id": "blah", "direction": "both", "seats": 3, "radius": 2, "gcm_id": "blah", "driverNumber": "1234567890", "driverName": "Joe Schmo", "event": "replacethis", "time": "2016-03-06T16:10:41.000Z", "passengers":[]]
-    
-    
+class RideUtilsTest: XCTestCase {
+
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -22,16 +20,19 @@ class RideTest: XCTestCase {
         super.tearDown()
     }
 
-    func testRideHasSeats() {
-        let ride = Ride(dict: rideDict)
-        XCTAssert(ride!.hasSeats())
-    }
+    func testPostOffer() {
     
-    func testRideNumSeatsLeft(){
-        let ride = Ride(dict: rideDict)
-        XCTAssertEqual(ride!.seatsLeft(), 3)
+        let readyExpectation = self.expectationWithDescription("post a ride")
+        
+        RideUtils.postRideOffer("563b11135e926d03001ac15c", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ success in
+            XCTAssert(success)
+            readyExpectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(5) {error in
+            XCTAssertNil(error, "Error")
+        }
     }
-    
     
 
     func testPerformanceExample() {

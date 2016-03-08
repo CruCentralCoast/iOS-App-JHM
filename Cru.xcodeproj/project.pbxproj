@@ -13,7 +13,6 @@
 		0F1959C91C8E5B0400A783BA /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
 		0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
 		0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
-		0F1959D31C8E5B2300A783BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
 		0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
 		0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
@@ -34,8 +33,6 @@
 		0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB97F1C8795D0005C0B4C /* MinistryTeam.swift */; };
 		0FAEB9841C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB9831C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift */; };
 		0FAEB9881C87A39D005C0B4C /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB9871C87A39D005C0B4C /* UltravisualLayout.swift */; };
-		0FAEB9891C87A39D005C0B4C /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB9871C87A39D005C0B4C /* UltravisualLayout.swift */; };
-		0FAEB98A1C87A39D005C0B4C /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB9871C87A39D005C0B4C /* UltravisualLayout.swift */; };
 		0FB811851C8F47C600883951 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		0FB811861C8F47E200883951 /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
 		0FC0B9DE1C5F0F9400D1524C /* ministrytable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */; };
@@ -60,6 +57,7 @@
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
 		507086831C8F5F9D006C5215 /* RideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507086821C8F5F9D006C5215 /* RideTest.swift */; };
+		507086851C8F62BA006C5215 /* RideUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507086841C8F62BA006C5215 /* RideUtilsTest.swift */; };
 		5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
 		509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */; };
 		509527281C63E6BC00E4F7B6 /* OfferRideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */; };
@@ -107,7 +105,6 @@
 		857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */; };
 		85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
 		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
-		8E2A3D85D8413DE2B627C667 /* Pods_CruUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360BFA33208E012224F0CAD5 /* Pods_CruUITests.framework */; };
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
 		C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
 		C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
@@ -121,13 +118,6 @@
 
 /* Begin PBXContainerItemProxy section */
 		0F8CEF351BEC0E14008FC70D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 0F8CEF151BEC0E13008FC70D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 0F8CEF1C1BEC0E13008FC70D;
-			remoteInfo = Cru;
-		};
-		0F8CEF401BEC0E14008FC70D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 0F8CEF151BEC0E13008FC70D /* Project object */;
 			proxyType = 1;
@@ -165,7 +155,6 @@
 		0F8CEF341BEC0E14008FC70D /* CruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF381BEC0E14008FC70D /* CruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruTests.swift; sourceTree = "<group>"; };
 		0F8CEF3A1BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0FAEB9791C86C1D1005C0B4C /* ministryteam.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ministryteam.storyboard; sourceTree = "<group>"; };
@@ -199,6 +188,10 @@
 		504742451C759823003F276E /* OfferedRideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRideTableViewCell.swift; sourceTree = "<group>"; };
 		504742491C75988E003F276E /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		507086821C8F5F9D006C5215 /* RideTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTest.swift; sourceTree = "<group>"; };
+		507086841C8F62BA006C5215 /* RideUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtilsTest.swift; sourceTree = "<group>"; };
+		507086861C8F69DB006C5215 /* Pods_Cru.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Cru.framework; path = "Pods/../build/Debug-iphoneos/Pods_Cru.framework"; sourceTree = "<group>"; };
+		507086881C8F69ED006C5215 /* Pods_CruUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CruUITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_CruUITests.framework"; sourceTree = "<group>"; };
+		5070868A1C8F6A0E006C5215 /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationPicker.framework; path = "Pods/../build/Debug-iphoneos/LocationPicker.framework"; sourceTree = "<group>"; };
 		5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverRideDetailViewController.swift; sourceTree = "<group>"; };
 		509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderRideDetailViewController.swift; sourceTree = "<group>"; };
 		509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRideTableViewController.swift; sourceTree = "<group>"; };
@@ -274,14 +267,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F8CEF3C1BEC0E14008FC70D /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8E2A3D85D8413DE2B627C667 /* Pods_CruUITests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -304,7 +289,6 @@
 			children = (
 				0F8CEF1D1BEC0E13008FC70D /* Cru.app */,
 				0F8CEF341BEC0E14008FC70D /* CruTests.xctest */,
-				0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -419,6 +403,7 @@
 			isa = PBXGroup;
 			children = (
 				507086821C8F5F9D006C5215 /* RideTest.swift */,
+				507086841C8F62BA006C5215 /* RideUtilsTest.swift */,
 			);
 			name = Ridesharing;
 			sourceTree = "<group>";
@@ -554,6 +539,9 @@
 		AD126AABCC946387D506699A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				5070868A1C8F6A0E006C5215 /* LocationPicker.framework */,
+				507086881C8F69ED006C5215 /* Pods_CruUITests.framework */,
+				507086861C8F69DB006C5215 /* Pods_Cru.framework */,
 				103605C6F44AE29021FA1E17 /* Pods_Cru.framework */,
 				E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */,
 				360BFA33208E012224F0CAD5 /* Pods_CruUITests.framework */,
@@ -606,26 +594,6 @@
 			productReference = 0F8CEF341BEC0E14008FC70D /* CruTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		0F8CEF3E1BEC0E14008FC70D /* CruUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 0F8CEF4E1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruUITests" */;
-			buildPhases = (
-				68FF55BBF8C12FE03759BA3F /* Check Pods Manifest.lock */,
-				0F8CEF3B1BEC0E14008FC70D /* Sources */,
-				0F8CEF3C1BEC0E14008FC70D /* Frameworks */,
-				0F8CEF3D1BEC0E14008FC70D /* Resources */,
-				99548A4B981B5084A250112D /* Copy Pods Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				0F8CEF411BEC0E14008FC70D /* PBXTargetDependency */,
-			);
-			name = CruUITests;
-			productName = CruUITests;
-			productReference = 0F8CEF3F1BEC0E14008FC70D /* CruUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -655,11 +623,6 @@
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 55E3ZU82Z7;
 					};
-					0F8CEF3E1BEC0E14008FC70D = {
-						CreatedOnToolsVersion = 7.1;
-						DevelopmentTeam = 55E3ZU82Z7;
-						TestTargetID = 0F8CEF1C1BEC0E13008FC70D;
-					};
 				};
 			};
 			buildConfigurationList = 0F8CEF181BEC0E13008FC70D /* Build configuration list for PBXProject "Cru" */;
@@ -677,7 +640,6 @@
 			targets = (
 				0F8CEF1C1BEC0E13008FC70D /* Cru */,
 				0F8CEF331BEC0E14008FC70D /* CruTests */,
-				0F8CEF3E1BEC0E14008FC70D /* CruUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -722,13 +684,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F8CEF3D1BEC0E14008FC70D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -762,21 +717,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruTests/Pods-CruTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		68FF55BBF8C12FE03759BA3F /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		826A1931001405333AEF0D9D /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -805,21 +745,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		99548A4B981B5084A250112D /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruUITests/Pods-CruUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B50E5DB8F8134D15019D5AF2 /* Check Pods Manifest.lock */ = {
@@ -930,7 +855,7 @@
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */,
-				0FAEB9891C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
+				507086851C8F62BA006C5215 /* RideUtilsTest.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				507086831C8F5F9D006C5215 /* RideTest.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
@@ -946,15 +871,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		0F8CEF3B1BEC0E14008FC70D /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0F1959D31C8E5B2300A783BA /* User.swift in Sources */,
-				0FAEB98A1C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -962,11 +878,6 @@
 			isa = PBXTargetDependency;
 			target = 0F8CEF1C1BEC0E13008FC70D /* Cru */;
 			targetProxy = 0F8CEF351BEC0E14008FC70D /* PBXContainerItemProxy */;
-		};
-		0F8CEF411BEC0E14008FC70D /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 0F8CEF1C1BEC0E13008FC70D /* Cru */;
-			targetProxy = 0F8CEF401BEC0E14008FC70D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1150,42 +1061,6 @@
 			};
 			name = Release;
 		};
-		0F8CEF4F1BEC0E14008FC70D /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 51A90E0DC654B19B9DAAA708 /* Pods-CruUITests.debug.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = CruUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Cru;
-				USES_XCTRUNNER = YES;
-			};
-			name = Debug;
-		};
-		0F8CEF501BEC0E14008FC70D /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3FA1C54C63B73B3E4C37362D /* Pods-CruUITests.release.xcconfig */;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)",
-				);
-				INFOPLIST_FILE = CruUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_TARGET_NAME = Cru;
-				USES_XCTRUNNER = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1212,15 +1087,6 @@
 			buildConfigurations = (
 				0F8CEF4C1BEC0E14008FC70D /* Debug */,
 				0F8CEF4D1BEC0E14008FC70D /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		0F8CEF4E1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0F8CEF4F1BEC0E14008FC70D /* Debug */,
-				0F8CEF501BEC0E14008FC70D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

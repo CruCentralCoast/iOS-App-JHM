@@ -25,7 +25,7 @@ struct Config {
             }
         }
     }
-    static let simulatorMode = false
+    static let simulatorMode = true
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
     
