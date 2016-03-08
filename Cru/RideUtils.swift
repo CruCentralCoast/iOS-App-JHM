@@ -85,13 +85,33 @@ class RideUtils {
     
     // TODO:handler error better
     class func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
-        location: NSDictionary, radius: Int, direction: String, handler: (Bool)->()) {
+        location: NSDictionary, radius: Int, direction: String, handler: (Bool)->(), idhandler: (String)->()) {
             let requestUrl = Config.serverUrl + "api/ride/create";
             let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
                 "gcm_id": Config.gcmId, "location":location, "radius":radius, "direction":direction]
             
+            
             Alamofire.request(.POST, requestUrl, parameters: body)
                 .responseJSON { response in
+                    print(response.request)  // original URL request
+                    print(response.response) // URL response
+                    print(response.data)     // server data
+                    print(response.result)   // result of response serialization
+                    
+                    if let JSON = response.result.value {
+                        print("JSON: \(JSON)")
+                    }
+                    
+                    if let JSON = response.result.value {
+                        if let dict = JSON as? NSDictionary {
+                            if let postDict = dict["post"] as? NSDictionary{
+                                if let rideid = postDict["_id"] as? String {
+                                    print("rideid: \(rideid)")
+                                    idhandler(rideid)
+                                }
+                            }
+                        }
+                    }
                     handler(response.result.isSuccess)
             }
     }
@@ -140,6 +160,7 @@ class RideUtils {
                 else{
                     handler(false)
                 }
+                
         }
     }
     
@@ -173,11 +194,14 @@ class RideUtils {
         
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in
-                if(response.result.isSuccess){
-                    handler(true)
-                }
-                else{
-                    handler(false)
+                handler(response.result.isSuccess)
+                print(response.request)  // original URL request
+                print(response.response) // URL response
+                print(response.data)     // server data
+                print(response.result)   // result of response serialization
+                
+                if let JSON = response.result.value {
+                    print("JSON: \(JSON)")
                 }
         }
     }

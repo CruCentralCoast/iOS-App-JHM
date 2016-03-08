@@ -181,7 +181,7 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         if isFormFilledOut() {
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
             
-            RideUtils.postRideOffer(event.id, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
+            RideUtils.postRideOffer(event.id, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult, idhandler: {id in})
             
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             
