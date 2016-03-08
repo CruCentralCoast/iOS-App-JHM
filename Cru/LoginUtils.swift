@@ -29,4 +29,8 @@ class LoginUtils {
         Alamofire.request(.POST, url, parameters: nil)
             .responseJSON { response in }
     }
+    
+    class func isLoggedIn() -> Bool {
+        return GlobalUtils.loadString(Config.leaderApiKey) != ""
+    }
 }

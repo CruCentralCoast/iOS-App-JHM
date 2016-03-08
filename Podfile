@@ -14,6 +14,7 @@ target 'Cru' do
     pod 'FlatUIKit'
     pod 'MRProgress'
     pod 'Alamofire', '~> 3.0'
+    pod 'FilterBar', '~>2.0.0'
 end
 
 target 'CruTests' do
