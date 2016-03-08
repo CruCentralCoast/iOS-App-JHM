@@ -65,9 +65,7 @@ class RideUtils {
             for passenger in passengerList{
                 rideIds.append(passenger["_id"] as! String)
             }
-            
-            //print("\(rideIds)")
-            
+                        
             let cond = ["passengers": ["$in": rideIds]]
             let body : [String : AnyObject] = ["conditions": cond, "projection": "", "options": [:]]
             
@@ -93,20 +91,10 @@ class RideUtils {
             
             Alamofire.request(.POST, requestUrl, parameters: body)
                 .responseJSON { response in
-                    print(response.request)  // original URL request
-                    print(response.response) // URL response
-                    print(response.data)     // server data
-                    print(response.result)   // result of response serialization
-                    
-                    if let JSON = response.result.value {
-                        print("JSON: \(JSON)")
-                    }
-                    
                     if let JSON = response.result.value {
                         if let dict = JSON as? NSDictionary {
                             if let postDict = dict["post"] as? NSDictionary{
                                 if let rideid = postDict["_id"] as? String {
-                                    print("rideid: \(rideid)")
                                     idhandler(rideid)
                                 }
                             }
@@ -195,14 +183,6 @@ class RideUtils {
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in
                 handler(response.result.isSuccess)
-                print(response.request)  // original URL request
-                print(response.response) // URL response
-                print(response.data)     // server data
-                print(response.result)   // result of response serialization
-                
-                if let JSON = response.result.value {
-                    print("JSON: \(JSON)")
-                }
         }
     }
     
