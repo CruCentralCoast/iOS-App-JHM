@@ -31,7 +31,7 @@ class RidesTableViewController: UITableViewController {
         
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 20)!]
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationController!.navigationBar.titleTextAttributes = titleDict as! [String : AnyObject]
+        self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
         
         self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
         self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()

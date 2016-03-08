@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import WildcardSDK
 import IQKeyboardManagerSwift
+import Google
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {

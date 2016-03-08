@@ -6,7 +6,7 @@
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Colors {
     static let green = UIColor(red: 0.0, green: 0.6, blue: 0.2, alpha: 1.0)

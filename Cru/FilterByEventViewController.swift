@@ -9,7 +9,6 @@
 import UIKit
 import MRProgress
 
-
 class FilterByEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDelegate, UIPickerViewDataSource {
     //var rides = ["ride1", "ride2"]
     var events = [Event]()

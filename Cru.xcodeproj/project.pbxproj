@@ -7,6 +7,67 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
+		0F1959B71C8E59DE00A783BA /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
+		0F1959B81C8E59EF00A783BA /* CreateRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */; };
+		0F1959B91C8E59EF00A783BA /* CreateRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */; };
+		0F1959BA1C8E5ACE00A783BA /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
+		0F1959BB1C8E5AD600A783BA /* OfferRideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */; };
+		0F1959BC1C8E5AD700A783BA /* OfferRideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */; };
+		0F1959BD1C8E5ADA00A783BA /* TempEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527291C63E6D000E4F7B6 /* TempEventTableViewController.swift */; };
+		0F1959BE1C8E5ADA00A783BA /* TempEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527291C63E6D000E4F7B6 /* TempEventTableViewController.swift */; };
+		0F1959BF1C8E5ADD00A783BA /* TempEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095272A1C63E6D000E4F7B6 /* TempEventTableViewCell.swift */; };
+		0F1959C01C8E5ADD00A783BA /* TempEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095272A1C63E6D000E4F7B6 /* TempEventTableViewCell.swift */; };
+		0F1959C11C8E5AEB00A783BA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF221BEC0E13008FC70D /* MainViewController.swift */; };
+		0F1959C21C8E5AEB00A783BA /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF221BEC0E13008FC70D /* MainViewController.swift */; };
+		0F1959C31C8E5AF000A783BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */; };
+		0F1959C41C8E5AF000A783BA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */; };
+		0F1959C51C8E5AFB00A783BA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
+		0F1959C61C8E5AFB00A783BA /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
+		0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
+		0F1959C81C8E5AFF00A783BA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
+		0F1959C91C8E5B0400A783BA /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
+		0F1959CA1C8E5B0400A783BA /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
+		0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
+		0F1959CC1C8E5B0700A783BA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
+		0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
+		0F1959CE1C8E5B0D00A783BA /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
+		0F1959CF1C8E5B1400A783BA /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */; };
+		0F1959D01C8E5B1500A783BA /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */; };
+		0F1959D11C8E5B1C00A783BA /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
+		0F1959D21C8E5B1C00A783BA /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
+		0F1959D31C8E5B2300A783BA /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
+		0F1959D41C8E5B2500A783BA /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
+		0F1959D51C8E5B2600A783BA /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
+		0F1959D61C8E5B2900A783BA /* MinistryTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C21C0D3C3100539B33 /* MinistryTeamsViewController.swift */; };
+		0F1959D71C8E5B2900A783BA /* MinistryTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C21C0D3C3100539B33 /* MinistryTeamsViewController.swift */; };
+		0F1959D81C8E5B3600A783BA /* CommunityGroupsUnLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C61C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift */; };
+		0F1959D91C8E5B3700A783BA /* CommunityGroupsUnLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C61C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift */; };
+		0F1959DA1C8E5B3900A783BA /* CommunityGroupsLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C41C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift */; };
+		0F1959DB1C8E5B3A00A783BA /* CommunityGroupsLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C41C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift */; };
+		0F1959DC1C8E5B4100A783BA /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7A1C06AB6900F8B007 /* Event.swift */; };
+		0F1959DF1C8E5B5A00A783BA /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
+		0F1959E01C8E5B5A00A783BA /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
+		0F1959E11C8E5B6300A783BA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; };
+		0F1959E21C8E5B6300A783BA /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; };
+		0F1959E31C8E5B6600A783BA /* CampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094D1C066C780019E97C /* CampusesViewController.swift */; };
+		0F1959E41C8E5B6600A783BA /* CampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094D1C066C780019E97C /* CampusesViewController.swift */; };
+		0F1959E51C8E5B6B00A783BA /* CampusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */; };
+		0F1959E61C8E5B6C00A783BA /* CampusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */; };
+		0F1959E71C8E5B6F00A783BA /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
+		0F1959E81C8E5B7100A783BA /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
+		0F1959E91C8E5B7600A783BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
+		0F1959EA1C8E5B7600A783BA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
+		0F1959EB1C8E5B7800A783BA /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
+		0F1959EC1C8E5B7900A783BA /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
+		0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
+		0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
+		0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
+		0F1959F11C8E626800A783BA /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
+		0F25C7601C8E7D410025C508 /* WildcardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */; };
+		0F25C7611C8E7D5A0025C508 /* WildcardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */; };
+		0F25C7621C8E7E3C0025C508 /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
+		0F25C7631C8E7E3C0025C508 /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
 		0F74A3101C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3111C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
@@ -55,13 +116,10 @@
 		500A37B01C7D6587007D6A3B /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A37AF1C7D6587007D6A3B /* Passenger.swift */; };
 		500A37B11C7D6587007D6A3B /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A37AF1C7D6587007D6A3B /* Passenger.swift */; };
 		500A37B21C7D6587007D6A3B /* Passenger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500A37AF1C7D6587007D6A3B /* Passenger.swift */; };
-		501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AB1BFBDB4100849CED /* EventsViewController.swift */; };
 		501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
 		501085B41BFBDB9400849CED /* SummerMissionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */; };
 		501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B51BFBDCCE00849CED /* SettingsViewController.swift */; };
 		501D0ABF1C68588700BF243A /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501D0ABE1C68588700BF243A /* events.storyboard */; };
-		501D0AC01C68588700BF243A /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501D0ABE1C68588700BF243A /* events.storyboard */; };
-		501D0AC11C68588700BF243A /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501D0ABE1C68588700BF243A /* events.storyboard */; };
 		5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094D1C066C780019E97C /* CampusesViewController.swift */; };
 		502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */; };
 		503547871C5ABC6900418A92 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
@@ -74,16 +132,10 @@
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		503A06D11C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		503A06D21C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
-		504742461C759823003F276E /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
-		504742471C759823003F276E /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
 		504742481C759823003F276E /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
 		5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
 		5047424B1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
 		5047424C1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
-		5049DF581C75518A00FDC571 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */; };
-		5049DF591C75518A00FDC571 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */; };
-		50601A891C75660200BB9FB9 /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601A871C75660200BB9FB9 /* OfferedRideTableViewCell.swift */; };
-		50601A8A1C75660200BB9FB9 /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50601A871C75660200BB9FB9 /* OfferedRideTableViewCell.swift */; };
 		5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
 		5094897E1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
 		5094897F1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
@@ -110,18 +162,12 @@
 		50AA7CCB1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
 		50AA7CCC1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
 		50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
-		50C89BC01C719D4300D0CBEE /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C89BBE1C719D4300D0CBEE /* JoinRideViewController.swift */; };
-		50C89BC11C719D4300D0CBEE /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C89BBE1C719D4300D0CBEE /* JoinRideViewController.swift */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50DD51481C86B85900752777 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
 		50E0E1881C87796D000023F1 /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
-		50EF26E31C7592EF0055F480 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
 		50EF26E41C7592EF0055F480 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
-		50EF26EB1C75930A0055F480 /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
-		50EF26EC1C75930A0055F480 /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
-		50EF26ED1C75930A0055F480 /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
 		50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251C1C0BB8DF005396BC /* summermissions.storyboard */; };
 		50F8251F1C0BB965005396BC /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */; };
@@ -134,8 +180,6 @@
 		50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
-		6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
-		6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */; };
 		6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
 		6D4B78B31C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
 		6D4B78B41C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
@@ -169,6 +213,7 @@
 		857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */; };
 		85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
 		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
+		8E2A3D85D8413DE2B627C667 /* Pods_CruUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 360BFA33208E012224F0CAD5 /* Pods_CruUITests.framework */; };
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
 		C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
 		C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
@@ -180,6 +225,7 @@
 		C1DCEC481C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103605C6F44AE29021FA1E17 /* Pods_Cru.framework */; };
 		E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
+		ECA244F33222A58BB52BB6DF /* Pods_CruTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -244,8 +290,10 @@
 		0FF87D9F1C8A20A200D56C4E /* EventsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FF87DA31C8A268D00D56C4E /* GlobalUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtils.swift; sourceTree = "<group>"; };
 		103605C6F44AE29021FA1E17 /* Pods_Cru.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cru.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		277D1AE905C50EF27C022201 /* Pods-CruTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruTests/Pods-CruTests.release.xcconfig"; sourceTree = "<group>"; };
+		360BFA33208E012224F0CAD5 /* Pods_CruUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3FA1C54C63B73B3E4C37362D /* Pods-CruUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CruUITests/Pods-CruUITests.release.xcconfig"; sourceTree = "<group>"; };
 		500A37AF1C7D6587007D6A3B /* Passenger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Passenger.swift; sourceTree = "<group>"; };
-		501085AB1BFBDB4100849CED /* EventsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsViewController.swift; sourceTree = "<group>"; };
 		501085AD1BFBDB6700849CED /* ResourcesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewController.swift; sourceTree = "<group>"; };
 		501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetInvolvedViewController.swift; sourceTree = "<group>"; };
 		501085B31BFBDB9400849CED /* SummerMissionsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionsViewController.swift; sourceTree = "<group>"; };
@@ -259,8 +307,6 @@
 		503A06CF1C5F08E200DAD10E /* findride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = findride.storyboard; sourceTree = "<group>"; };
 		504742451C759823003F276E /* OfferedRideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRideTableViewCell.swift; sourceTree = "<group>"; };
 		504742491C75988E003F276E /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
-		5049DF561C75518A00FDC571 /* FilterByEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByEventViewController.swift; sourceTree = "<group>"; };
-		50601A871C75660200BB9FB9 /* OfferedRideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRideTableViewCell.swift; sourceTree = "<group>"; };
 		5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverRideDetailViewController.swift; sourceTree = "<group>"; };
 		509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderRideDetailViewController.swift; sourceTree = "<group>"; };
 		509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRideTableViewController.swift; sourceTree = "<group>"; };
@@ -273,7 +319,6 @@
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewCell.swift; sourceTree = "<group>"; };
 		50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
-		50C89BBE1C719D4300D0CBEE /* JoinRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinRideViewController.swift; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50DD51471C86B85900752777 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50E0E1871C87796D000023F1 /* Cancler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancler.swift; sourceTree = "<group>"; };
@@ -286,8 +331,8 @@
 		50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewController.swift; sourceTree = "<group>"; };
 		50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		50FE4D461C50D37C00EA9042 /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
+		51A90E0DC654B19B9DAAA708 /* Pods-CruUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruUITests/Pods-CruUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		6D4B78B51C702FDF00F643CB /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WildcardSDK.framework; sourceTree = "<group>"; };
@@ -302,6 +347,7 @@
 		6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMed.otf; sourceTree = "<group>"; };
 		6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMedIt.otf; sourceTree = "<group>"; };
 		6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
+		7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruTests/Pods-CruTests.debug.xcconfig"; sourceTree = "<group>"; };
 		850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUtils.swift; sourceTree = "<group>"; };
 		857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilsTest.swift; sourceTree = "<group>"; };
@@ -313,6 +359,7 @@
 		C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		C1DCEC451C7681E1009FACE0 /* RideUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtils.swift; sourceTree = "<group>"; };
 		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
+		E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96367931C6D3B8D00B9DBBE /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -331,6 +378,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F25C7601C8E7D410025C508 /* WildcardSDK.framework in Frameworks */,
+				ECA244F33222A58BB52BB6DF /* Pods_CruTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -338,6 +387,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F25C7611C8E7D5A0025C508 /* WildcardSDK.framework in Frameworks */,
+				8E2A3D85D8413DE2B627C667 /* Pods_CruUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -465,6 +516,10 @@
 			children = (
 				ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */,
 				CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */,
+				7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */,
+				277D1AE905C50EF27C022201 /* Pods-CruTests.release.xcconfig */,
+				51A90E0DC654B19B9DAAA708 /* Pods-CruUITests.debug.xcconfig */,
+				3FA1C54C63B73B3E4C37362D /* Pods-CruUITests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -479,7 +534,6 @@
 				5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */,
 				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
-				6D2A2C601C74D70400D1CD79 /* PassengerTableViewCell.swift */,
 				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
 				50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */,
 				5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */,
@@ -515,7 +569,6 @@
 			children = (
 				501D0ABE1C68588700BF243A /* events.storyboard */,
 				6D76CA7A1C06AB6900F8B007 /* Event.swift */,
-				501085AB1BFBDB4100849CED /* EventsViewController.swift */,
 				6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */,
 				0FF87D9B1C8A1EF800D56C4E /* EventsCollectionViewController.swift */,
 				0FF87D9F1C8A20A200D56C4E /* EventsCollectionViewCell.swift */,
@@ -603,6 +656,8 @@
 			isa = PBXGroup;
 			children = (
 				103605C6F44AE29021FA1E17 /* Pods_Cru.framework */,
+				E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */,
+				360BFA33208E012224F0CAD5 /* Pods_CruUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -635,9 +690,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F8CEF4B1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruTests" */;
 			buildPhases = (
+				8E80494421EC14DD844D7D91 /* Check Pods Manifest.lock */,
 				0F8CEF301BEC0E14008FC70D /* Sources */,
 				0F8CEF311BEC0E14008FC70D /* Frameworks */,
 				0F8CEF321BEC0E14008FC70D /* Resources */,
+				826A1931001405333AEF0D9D /* Embed Pods Frameworks */,
+				504932C069CD2E0D3A9F4A29 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -653,9 +711,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 0F8CEF4E1BEC0E14008FC70D /* Build configuration list for PBXNativeTarget "CruUITests" */;
 			buildPhases = (
+				68FF55BBF8C12FE03759BA3F /* Check Pods Manifest.lock */,
 				0F8CEF3B1BEC0E14008FC70D /* Sources */,
 				0F8CEF3C1BEC0E14008FC70D /* Frameworks */,
 				0F8CEF3D1BEC0E14008FC70D /* Resources */,
+				99548A4B981B5084A250112D /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -765,7 +825,6 @@
 				503A06D11C5F08E200DAD10E /* findride.storyboard in Resources */,
 				0FC0B9DF1C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
 				6DBD7B911C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */,
-				501D0AC01C68588700BF243A /* events.storyboard in Resources */,
 				503A06CD1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 				509DA91A1C616C840050CE26 /* driverdetail.storyboard in Resources */,
 			);
@@ -782,7 +841,6 @@
 				0FC0B9E01C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
 				6DBD7B921C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */,
 				6DBD7B951C75742A00D11FFA /* FreigSanProMed.otf in Resources */,
-				501D0AC11C68588700BF243A /* events.storyboard in Resources */,
 				503A06CE1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 				6DBD7B981C75746300D11FFA /* FreigSanProMedIt.otf in Resources */,
 				509DA91B1C616C840050CE26 /* driverdetail.storyboard in Resources */,
@@ -805,6 +863,81 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Cru/Pods-Cru-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		504932C069CD2E0D3A9F4A29 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruTests/Pods-CruTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		68FF55BBF8C12FE03759BA3F /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		826A1931001405333AEF0D9D /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruTests/Pods-CruTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8E80494421EC14DD844D7D91 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		99548A4B981B5084A250112D /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruUITests/Pods-CruUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B50E5DB8F8134D15019D5AF2 /* Check Pods Manifest.lock */ = {
@@ -844,6 +977,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */,
+				0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */,
+				0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */,
 				5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				509DA91D1C6172FC0050CE26 /* Ride.swift in Sources */,
 				C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */,
@@ -851,7 +987,6 @@
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
 				50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */,
 				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
-				50EF26EB1C75930A0055F480 /* JoinRideViewController.swift in Sources */,
 				0F7B72C71C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				5095272E1C63E6F600E4F7B6 /* CreateRideViewController.swift in Sources */,
@@ -891,8 +1026,6 @@
 				50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */,
-				504742461C759823003F276E /* OfferedRideTableViewCell.swift in Sources */,
-				50EF26E31C7592EF0055F480 /* FilterByEventViewController.swift in Sources */,
 				50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
 				0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */,
 				6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */,
@@ -900,7 +1033,6 @@
 				5095272C1C63E6D000E4F7B6 /* TempEventTableViewCell.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 				0F7B72C31C0D3C3100539B33 /* MinistryTeamsViewController.swift in Sources */,
-				501085AC1BFBDB4100849CED /* EventsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -908,41 +1040,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F1959B81C8E59EF00A783BA /* CreateRideViewController.swift in Sources */,
+				0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */,
+				0F1959D61C8E5B2900A783BA /* MinistryTeamsViewController.swift in Sources */,
 				0FAEB9851C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift in Sources */,
 				50FE4D481C50D37C00EA9042 /* Ministry.swift in Sources */,
 				503547881C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
-				6D2A2C621C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */,
+				0F1959DA1C8E5B3900A783BA /* CommunityGroupsLoadedViewController.swift in Sources */,
+				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0FAEB97D1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
+				0F1959BD1C8E5ADA00A783BA /* TempEventTableViewController.swift in Sources */,
 				C1D9078F1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				50A38FEA1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
+				0F1959F11C8E626800A783BA /* OfferedRideTableViewCell.swift in Sources */,
+				0F1959E11C8E5B6300A783BA /* SettingsViewController.swift in Sources */,
 				50EF26E41C7592EF0055F480 /* FilterByEventViewController.swift in Sources */,
+				0F1959C51C8E5AFB00A783BA /* Config.swift in Sources */,
 				5094897E1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
+				0F1959E51C8E5B6B00A783BA /* CampusesTableViewController.swift in Sources */,
+				0F1959BB1C8E5AD600A783BA /* OfferRideTableViewController.swift in Sources */,
 				50FE4D401C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
-				50601A891C75660200BB9FB9 /* OfferedRideTableViewCell.swift in Sources */,
+				0F1959D11C8E5B1C00A783BA /* ResourcesViewController.swift in Sources */,
+				0F1959E91C8E5B7600A783BA /* LoginViewController.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
+				0F1959E31C8E5B6600A783BA /* CampusesViewController.swift in Sources */,
+				0F25C7621C8E7E3C0025C508 /* JoinRideViewController.swift in Sources */,
 				85C6D1211C0BE87B006A4F9F /* DBUtilsTest.swift in Sources */,
+				0F1959C31C8E5AF000A783BA /* AppDelegate.swift in Sources */,
 				0FAEB9891C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
-				50EF26EC1C75930A0055F480 /* JoinRideViewController.swift in Sources */,
+				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0FF87DA11C8A20A200D56C4E /* EventsCollectionViewCell.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
-				504742471C759823003F276E /* OfferedRideTableViewCell.swift in Sources */,
-				5049DF581C75518A00FDC571 /* FilterByEventViewController.swift in Sources */,
 				5047424B1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
+				0F1959BF1C8E5ADD00A783BA /* TempEventTableViewCell.swift in Sources */,
 				0F8CEF391BEC0E14008FC70D /* CruTests.swift in Sources */,
-				50C89BC01C719D4300D0CBEE /* JoinRideViewController.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
+				0F1959CF1C8E5B1400A783BA /* SummerMissionsViewController.swift in Sources */,
 				0FF87D9D1C8A1EF800D56C4E /* EventsCollectionViewController.swift in Sources */,
 				0FC8E3B31C48750A007A7208 /* IntroViewController.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				500A37B11C7D6587007D6A3B /* Passenger.swift in Sources */,
+				0F1959DF1C8E5B5A00A783BA /* EventDetailsViewController.swift in Sources */,
+				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
+				0F1959C11C8E5AEB00A783BA /* MainViewController.swift in Sources */,
+				0F1959D41C8E5B2500A783BA /* GetInvolvedViewController.swift in Sources */,
 				509527251C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				50AA7CCC1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 				6D4B78B31C7024C900F643CB /* CardTableViewCell.swift in Sources */,
+				0F1959C91C8E5B0400A783BA /* ServerUtils.swift in Sources */,
 				6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */,
+				0F1959E71C8E5B6F00A783BA /* Campus.swift in Sources */,
 				0FF87DA51C8A268D00D56C4E /* GlobalUtils.swift in Sources */,
+				0F1959D81C8E5B3600A783BA /* CommunityGroupsUnLoadedViewController.swift in Sources */,
+				0F1959EB1C8E5B7800A783BA /* LogoutViewController.swift in Sources */,
 				6D4B78C31C70ECC300F643CB /* CardTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -951,38 +1104,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50C89BC11C719D4300D0CBEE /* JoinRideViewController.swift in Sources */,
 				0FF87DA21C8A20A200D56C4E /* EventsCollectionViewCell.swift in Sources */,
+				0F1959D31C8E5B2300A783BA /* User.swift in Sources */,
 				50A38FEB1C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				0FAEB97E1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
 				500A37B21C7D6587007D6A3B /* Passenger.swift in Sources */,
+				0F1959DB1C8E5B3A00A783BA /* CommunityGroupsLoadedViewController.swift in Sources */,
+				0F1959D91C8E5B3700A783BA /* CommunityGroupsUnLoadedViewController.swift in Sources */,
+				0F1959C21C8E5AEB00A783BA /* MainViewController.swift in Sources */,
 				50AA7CCD1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
-				6D2A2C631C74D70400D1CD79 /* PassengerTableViewCell.swift in Sources */,
 				509527261C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				50FE4D451C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
+				0F1959DC1C8E5B4100A783BA /* Event.swift in Sources */,
 				0FAEB98A1C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
+				0F1959B91C8E59EF00A783BA /* CreateRideViewController.swift in Sources */,
 				C1DCEC481C7681E1009FACE0 /* RideUtils.swift in Sources */,
+				0F1959D21C8E5B1C00A783BA /* ResourcesViewController.swift in Sources */,
+				0F1959E81C8E5B7100A783BA /* Campus.swift in Sources */,
+				0F1959D71C8E5B2900A783BA /* MinistryTeamsViewController.swift in Sources */,
 				6DBD7B8E1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
+				0F1959CE1C8E5B0D00A783BA /* LoginUtils.swift in Sources */,
 				503547891C5ABC6900418A92 /* RidesTableViewController.swift in Sources */,
 				0FF87DA61C8A268D00D56C4E /* GlobalUtils.swift in Sources */,
+				0F1959D01C8E5B1500A783BA /* SummerMissionsViewController.swift in Sources */,
 				5047424C1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
-				5049DF591C75518A00FDC571 /* FilterByEventViewController.swift in Sources */,
+				0F1959BE1C8E5ADA00A783BA /* TempEventTableViewController.swift in Sources */,
+				0F1959BC1C8E5AD700A783BA /* OfferRideTableViewController.swift in Sources */,
 				50FE4D491C50D37C00EA9042 /* Ministry.swift in Sources */,
-				50EF26ED1C75930A0055F480 /* JoinRideViewController.swift in Sources */,
+				0F1959C41C8E5AF000A783BA /* AppDelegate.swift in Sources */,
 				0FAEB9861C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift in Sources */,
 				0FAEB9821C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
+				0F1959C81C8E5AFF00A783BA /* Colors.swift in Sources */,
+				0F1959EA1C8E5B7600A783BA /* LoginViewController.swift in Sources */,
 				5094897F1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				6D4B78C41C70ECC300F643CB /* CardTableViewController.swift in Sources */,
 				6D4B78B41C7024C900F643CB /* CardTableViewCell.swift in Sources */,
-				50601A8A1C75660200BB9FB9 /* OfferedRideTableViewCell.swift in Sources */,
+				0F1959E61C8E5B6C00A783BA /* CampusesTableViewController.swift in Sources */,
+				0F1959EC1C8E5B7900A783BA /* LogoutViewController.swift in Sources */,
+				0F1959D51C8E5B2600A783BA /* GetInvolvedViewController.swift in Sources */,
 				50FE4D411C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
+				0F1959E41C8E5B6600A783BA /* CampusesViewController.swift in Sources */,
 				509DA91F1C6172FC0050CE26 /* Ride.swift in Sources */,
+				0F1959BA1C8E5ACE00A783BA /* FilterByEventViewController.swift in Sources */,
+				0F25C7631C8E7E3C0025C508 /* JoinRideViewController.swift in Sources */,
+				0F1959B71C8E59DE00A783BA /* Cancler.swift in Sources */,
 				0FF87D9E1C8A1EF800D56C4E /* EventsCollectionViewController.swift in Sources */,
 				504742481C759823003F276E /* OfferedRideTableViewCell.swift in Sources */,
 				C1D907901C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				0FC8E3B41C48750A007A7208 /* IntroViewController.swift in Sources */,
 				0F8CEF441BEC0E14008FC70D /* CruUITests.swift in Sources */,
+				0F1959CC1C8E5B0700A783BA /* DateExtension.swift in Sources */,
+				0F1959CA1C8E5B0400A783BA /* ServerUtils.swift in Sources */,
+				0F1959C61C8E5AFB00A783BA /* Config.swift in Sources */,
+				0F1959E01C8E5B5A00A783BA /* EventDetailsViewController.swift in Sources */,
 				6D4B78B81C702FDF00F643CB /* Resource.swift in Sources */,
+				0F1959C01C8E5ADD00A783BA /* TempEventTableViewCell.swift in Sources */,
+				0F1959E21C8E5B6300A783BA /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1151,8 +1328,13 @@
 		};
 		0F8CEF4C1BEC0E14008FC70D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CruTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
@@ -1162,8 +1344,13 @@
 		};
 		0F8CEF4D1BEC0E14008FC70D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 277D1AE905C50EF27C022201 /* Pods-CruTests.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CruTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
@@ -1173,7 +1360,12 @@
 		};
 		0F8CEF4F1BEC0E14008FC70D /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 51A90E0DC654B19B9DAAA708 /* Pods-CruUITests.debug.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CruUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1186,7 +1378,12 @@
 		};
 		0F8CEF501BEC0E14008FC70D /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3FA1C54C63B73B3E4C37362D /* Pods-CruUITests.release.xcconfig */;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = CruUITests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

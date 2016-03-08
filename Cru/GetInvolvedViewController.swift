@@ -31,7 +31,7 @@ class GetInvolvedViewController: UIViewController {
     @IBAction func goToCommunityGroup(sender: UIButton) {
         var view: UIViewController
         
-        if let user = loadUserInfo() {
+        if let _ = loadUserInfo() {
             view = self.storyboard!.instantiateViewControllerWithIdentifier("communityGroupsLoadedView")
         }
         else {

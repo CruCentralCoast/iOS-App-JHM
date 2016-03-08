@@ -6,7 +6,7 @@
 //  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 struct Config {
     static let serverUrl = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/"

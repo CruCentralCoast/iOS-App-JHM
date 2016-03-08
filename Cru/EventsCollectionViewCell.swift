@@ -42,7 +42,7 @@ class EventsCollectionViewCell: UICollectionViewCell {
         let maxAlpha: CGFloat = 0.85
         imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
-        let scale = max(delta, 0.9)
+        //let scale = max(delta, 0.9)
         //ministryTeamLabel.transform = CGAffineTransformMakeScale(scale, scale)
         
         //descriptionTextView.alpha = delta

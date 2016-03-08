@@ -124,7 +124,7 @@ class Event: Equatable {
             self.endDateMinute = startDateComponents.minute
         }
         if let dLocation = dict["location"] {
-            self.location = dLocation as! NSDictionary
+            self.location = dLocation as? NSDictionary
         }
         if let dImage = dict["image"] {
             if let imageUrl = dImage.objectForKey("secure_url") {

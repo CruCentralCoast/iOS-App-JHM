@@ -6,7 +6,7 @@
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class CruColors {
     static let yellow = UIColor(red: 0.976, green: 0.714, blue: 0.145, alpha: 1.0)

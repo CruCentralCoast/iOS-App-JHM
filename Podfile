@@ -4,7 +4,7 @@ platform :ios, '8.0'
 # Uncomment this line if you're using Swift
 use_frameworks!
 
-target 'Cru' do
+def cru_pods
     pod 'SideMenu', '~> 0.1'
     pod 'Google/CloudMessaging'
     pod 'DatePickerCell'
@@ -15,12 +15,17 @@ target 'Cru' do
     pod 'MRProgress'
     pod 'Alamofire', '~> 3.0'
 end
+    
+
+target 'Cru' do
+    cru_pods
+end
 
 target 'CruTests' do
-
+    cru_pods
 end
 
 target 'CruUITests' do
-
+    cru_pods
 end
 
