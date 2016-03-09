@@ -386,6 +386,7 @@
 		0FFCBC2D1C63F689000B4E18 /* OfferRide */ = {
 			isa = PBXGroup;
 			children = (
+				5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */,
 				509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */,
 				509527291C63E6D000E4F7B6 /* TempEventTableViewController.swift */,
 				5095272A1C63E6D000E4F7B6 /* TempEventTableViewCell.swift */,
@@ -416,22 +417,45 @@
 			name = Ridesharing;
 			sourceTree = "<group>";
 		};
+		508258FE1C9013E7008BAD6F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				509DA91C1C6172FC0050CE26 /* Ride.swift */,
+				500A37AF1C7D6587007D6A3B /* Passenger.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		508258FF1C901427008BAD6F /* Driver */ = {
+			isa = PBXGroup;
+			children = (
+				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
+				5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */,
+				504742491C75988E003F276E /* PassengerTableViewCell.swift */,
+			);
+			name = Driver;
+			sourceTree = "<group>";
+		};
+		508259001C90145A008BAD6F /* Rider */ = {
+			isa = PBXGroup;
+			children = (
+				509DA9141C616BE60050CE26 /* riderdetail.storyboard */,
+				509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */,
+			);
+			name = Rider;
+			sourceTree = "<group>";
+		};
 		50ED8FCF1C05063D002C9E30 /* RideSharing */ = {
 			isa = PBXGroup;
 			children = (
+				508258FE1C9013E7008BAD6F /* Models */,
+				508259001C90145A008BAD6F /* Rider */,
+				508258FF1C901427008BAD6F /* Driver */,
 				50EF26E11C7592D20055F480 /* FindRide */,
 				0FFCBC2D1C63F689000B4E18 /* OfferRide */,
-				509DA91C1C6172FC0050CE26 /* Ride.swift */,
-				500A37AF1C7D6587007D6A3B /* Passenger.swift */,
-				5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */,
 				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
-				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
 				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
 				50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */,
-				5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */,
-				504742491C75988E003F276E /* PassengerTableViewCell.swift */,
-				509DA9141C616BE60050CE26 /* riderdetail.storyboard */,
-				509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */,
 				50E0E1871C87796D000023F1 /* Cancler.swift */,
 			);
 			name = RideSharing;
