@@ -59,7 +59,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
 
         
         if(ride != nil){
-            rideDate.text = ride?.getDate()
+            rideDate.text = ride?.getTime()
             time.text = ride?.getTime()
             seats.text = (ride?.seatsLeft())! + " left"
             address.text = ride!.getCompleteAddress()

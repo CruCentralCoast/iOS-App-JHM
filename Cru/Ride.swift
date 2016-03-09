@@ -24,7 +24,8 @@ class Ride: Comparable, Equatable {
     var monthNum = 1
     var hour = 3
     var minute = 3
-    
+    var year = 2016
+    var date : NSDate?
     var postcode: String = ""
     var state: String = ""
     var suburb: String = ""
@@ -42,6 +43,7 @@ class Ride: Comparable, Equatable {
         eventId = "563b11135e926d03001ac15c"
         time = "5:00 pm"
         passengers = [String]()
+        
         
         if (dict.objectForKey("location") != nil){
             let loc = dict.objectForKey("location") as! NSDictionary
@@ -85,14 +87,15 @@ class Ride: Comparable, Equatable {
         }
         if (dict.objectForKey("time") != nil){
             time = dict.objectForKey("time") as! String
+            self.date = GlobalUtils.dateFromString(time)
             
             let components = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(time))!
             self.day = components.day
             let monthNumber = components.month
             self.hour = components.hour
             self.minute = components.minute
-            
-            self.time = Ride.createTime(self.hour, minute: self.minute)
+            self.year = components.year
+            self.time = getTime()//Ride.createTime(self.hour, minute: self.minute)
             
             //get month symbol from number
             let dateFormatter: NSDateFormatter = NSDateFormatter()
@@ -107,35 +110,29 @@ class Ride: Comparable, Equatable {
     }
     
     func getCompleteAddress()->String{
-        return street + ", " + postcode + ", " + suburb + ", " + state
-    }
-    
-    static func createTime(hour: Int, minute: Int)->String{
-        var period = "am"
-        var newHour = hour
-        var minuteAsString = ""
+        var address: String = ""
         
-        
-        if(hour > 12){
-            period = "pm"
-            newHour = hour - 12
+        if(street != ""){
+            address += street
+        }
+        if(postcode != ""){
+            address += ", " + postcode
+        }
+        if(suburb != ""){
+            address += ", " + suburb
+        }
+        if(state != ""){
+            address += ", " + state
         }
         
-        if(minute < 10){
-            minuteAsString = "0" + String(minute)
-        }
-        else{
-            minuteAsString = String(minute)
-        }
-        
-        
-        return String(newHour) + ":" + minuteAsString + " " + period
+        return address
     }
     
     func getTime()->String{
-        return Ride.createTime(self.hour, minute: self.minute)
+        let dFormat = "h:mm a MMMM d, yyyy"
+        return GlobalUtils.stringFromDate(self.date!, format: dFormat)
     }
-    
+        
     func hasSeats()->Bool{
         return (self.seats - passengers.count)  != 0
     }
@@ -147,27 +144,15 @@ class Ride: Comparable, Equatable {
     func seatsLeft()->Int{
         return self.seats - self.passengers.count
     }
-    
-    
-    
-    func getDate()->String{
-        var dayS = String(self.day)
-        if(self.day < 10){
-            dayS = "0" + String(self.day)
-        }
-
-
-        return String(self.month.lowercaseString) + "/" + dayS
-    }
-    
-    func getDescription()->String{
-        return Ride.createTime(self.hour, minute: self.minute)  + "    " + self.getDate() + "   " + self.seatsLeft() + " left"
-    }
-    
-    
 }
 
 func  <(lRide: Ride, rRide: Ride) -> Bool{
+    if(lRide.year < rRide.year){
+        return true
+    }
+    else if(lRide.year > rRide.year){
+        return false
+    }
     if(lRide.monthNum < rRide.monthNum){
         return true
     }
@@ -182,34 +167,6 @@ func  <(lRide: Ride, rRide: Ride) -> Bool{
         return false
     }
     return false
-//    if(lRide.month < rRide.month){
-//        return true
-//    }
-//    else if(lRide.month > rRide.month){
-//        return false
-//    }
-//    
-//    if(lRide.day < rRide.day){
-//        return true
-//    }
-//    else if(lRide.day > rRide.day){
-//        return false
-//    }
-//    
-//    if(lRide.hour < rRide.hour){
-//        return true
-//    }
-//    else if(lRide.hour > rRide.hour){
-//        return false
-//    }
-//    if(lRide.minute < rRide.minute){
-//        return true
-//    }
-//    else if(lRide.minute > rRide.minute){
-//        return false
-//    }
-//    
-//    return lRide.month < rRide.month
 }
 func  ==(lRide: Ride, rRide: Ride) -> Bool{
     return lRide.id == rRide.id
