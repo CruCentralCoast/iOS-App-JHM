@@ -86,7 +86,7 @@ class Ride: Comparable, Equatable {
         if (dict.objectForKey("time") != nil){
             time = dict.objectForKey("time") as! String
             
-            let components = GlobalUtils.dateFromString(time)!
+            let components = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(time))!
             self.day = components.day
             let monthNumber = components.month
             self.hour = components.hour

@@ -36,8 +36,7 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
             self.formHasBeenEdited = true
             
             // Set date/time of ride to event date/time
-            let date = "\(event.startDateYear)-\(event.startDateMonth)-\(event.startDateDay)"
-            pickupDateTimePicker.date = NSDate(dateString: date)
+            pickupDateTimePicker.date = event.startNSDate
         }
     }
     var location: Location! {

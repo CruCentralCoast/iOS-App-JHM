@@ -6,7 +6,6 @@
 //  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
-import Foundation
 import Alamofire
 
 class ServerUtils {
