@@ -101,13 +101,6 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twoway" translatesAutoresizingMaskIntoConstraints="NO" id="fBV-N7-wB8">
-                                                <rect key="frame" x="298" y="181" width="57" height="40"/>
-                                                <animations/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="57" id="jNJ-dN-1cg"/>
-                                                </constraints>
-                                            </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZX-3a-k3W">
                                                 <rect key="frame" x="35" y="150" width="95" height="26"/>
                                                 <animations/>
@@ -182,6 +175,13 @@
                                                     <action selector="cancelPressed:" destination="aaX-gX-cpJ" eventType="touchUpInside" id="zgV-Lk-Aur"/>
                                                 </connections>
                                             </button>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="twoway" translatesAutoresizingMaskIntoConstraints="NO" id="fBV-N7-wB8">
+                                                <rect key="frame" x="324" y="181" width="40" height="40"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="jNJ-dN-1cg"/>
+                                                </constraints>
+                                            </imageView>
                                         </subviews>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -227,7 +227,7 @@
                                             <constraint firstItem="OZX-3a-k3W" firstAttribute="top" secondItem="kzb-1G-IIn" secondAttribute="bottom" constant="19" id="pyO-t6-r1W"/>
                                             <constraint firstItem="OZX-3a-k3W" firstAttribute="leading" secondItem="MDI-Je-TKk" secondAttribute="leading" id="tfm-Rz-8Fs"/>
                                             <constraint firstItem="E3D-S6-Ppd" firstAttribute="top" secondItem="ZLb-pY-77o" secondAttribute="bottom" constant="19" id="uAK-HA-3zt"/>
-                                            <constraint firstItem="fBV-N7-wB8" firstAttribute="leading" secondItem="I5P-lO-6sT" secondAttribute="trailing" constant="8" symbolic="YES" id="uIL-yF-RQd"/>
+                                            <constraint firstItem="fBV-N7-wB8" firstAttribute="leading" secondItem="I5P-lO-6sT" secondAttribute="trailing" constant="34" id="uIL-yF-RQd"/>
                                             <constraint firstItem="E3D-S6-Ppd" firstAttribute="trailing" secondItem="rBl-cJ-Kpi" secondAttribute="trailing" id="urW-fM-2Pp"/>
                                         </constraints>
                                     </view>
