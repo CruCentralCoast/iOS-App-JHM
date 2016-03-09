@@ -104,10 +104,7 @@ class Event: Equatable {
     
     //function for sorting events by date
     class func sortEventsByDate(event1: Event, event2: Event) -> Bool {
-        let date1 = GlobalUtils.dateFromString(event1.startDate)
-        let date2 = GlobalUtils.dateFromString(event2.startDate)
-        
-        return date1.compare(date2) == .OrderedDescending
+        return event1.startNSDate.compare(event2.endNSDate) == .OrderedAscending
     }
 }
 
