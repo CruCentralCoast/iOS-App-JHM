@@ -83,6 +83,17 @@ class GlobalUtils {
         return NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
     }
     
+    //load dictionary object from user defaults
+    class func loadDictionary(key: String) -> NSDictionary? {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if let unarchivedObject = userDefaults.objectForKey(key) {
+            return unarchivedObject as? NSDictionary
+        }
+        
+        return nil
+    }
+    
     class func saveString(key: String, value: String){
         let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(value)
         let defaults = NSUserDefaults.standardUserDefaults()

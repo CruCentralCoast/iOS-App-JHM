@@ -8,7 +8,6 @@
 // Modified by Deniz Tumer on 3/4/16.
 
 import UIKit
-import Foundation
 
 class Event: Equatable {
     // MARK: Properties

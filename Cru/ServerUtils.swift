@@ -76,15 +76,19 @@ class ServerUtils {
     }
     
     //send push notification if possible, otherwise send text
-    class func joinMinistryTeam(ministryTeamId: String, callback: (NSArray) -> Void) {
-        let url = Config.serverUrl + "api/minstryteam/join/" + ministryTeamId
+    class func joinMinistryTeam(ministryTeamId: String, fullName: String, phone: String, callback: (NSArray) -> Void) {
+        let url = Config.serverUrl + "api/ministryteam/join"
+        let params: [String: AnyObject] = ["id": ministryTeamId, "name": fullName, "phone": phone]
         
-        Alamofire.request(.POST, url, parameters: nil).responseJSON {
+        Alamofire.request(.POST, url, parameters: params).responseJSON {
             response in
             
-            //let leaders = response.result.value as! NSArray
-            let leaders = [String]()
-            callback(leaders)
+            if let leaders = response.result.value as? NSArray {
+                callback(leaders)
+            }
+            else {
+                print("ERROR")
+            }
         }
     }
     
