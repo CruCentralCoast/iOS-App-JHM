@@ -60,16 +60,7 @@ class IntroViewController: UIViewController {
         
         print(self.parentViewController)
         displayModal(descriptionModal, fromModal: nil)
-        
-
-        
     }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
     
     // MARK: Initialization Methods
     //function for initializing the background variables
@@ -115,7 +106,7 @@ class IntroViewController: UIViewController {
             let nextButtonX = (backgroundModal.frame.size.width / 2) - (nextButtonWidth / 2)
             initializeButton("Next", buttonWidth: nextButtonWidth, buttonX: nextButtonX)
             
-            titleLabel.text = ""
+            titleLabel.text = " "
         }
         else if (currentModal == campusesModal) {
             let backButtonWidth = currentModal.frame.size.width / 2
@@ -137,7 +128,7 @@ class IntroViewController: UIViewController {
             let nextButtonX = (backgroundModal.frame.size.width * (3 / 4)) - (nextButtonWidth / 2)
             initializeButton("Done", buttonWidth: nextButtonWidth, buttonX: nextButtonX)
             
-            titleLabel.text = "Pick your minitries:"
+            titleLabel.text = "Pick your ministries:"
         }
     }
     
@@ -207,7 +198,7 @@ class IntroViewController: UIViewController {
         
     }
     
-    // 
+    //sets view controllers when certain segues are called
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let vc = segue.destinationViewController as? MinistryTableViewController where segue.identifier == "ministrySegue" {
             embeddedMinistryViewController = vc
