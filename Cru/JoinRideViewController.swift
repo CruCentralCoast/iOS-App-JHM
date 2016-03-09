@@ -137,11 +137,11 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         resetLabel(number, error: numberError)
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.joinRide(nameString!, phone: phoneNumber!, direction: "both",  rideId: (ride?.id)!, handler: successfulJoin)
+        RideUtils.joinRide(nameString!, phone: phoneNumber!, direction: "both",  rideId: (ride?.id)!, handler: successfulJoin, passIdHandler: {pass in})
         
     }
     
-    func successfulJoin(){
+    func successfulJoin(obj : AnyObject){
         let success = UIAlertController(title: "Join Successful", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         success.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
 

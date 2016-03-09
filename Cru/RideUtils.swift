@@ -104,16 +104,16 @@ class RideUtils {
             }
     }
     
-    class func joinRide(name: String, phone: String, direction: String,  rideId: String, handler: ()->Void){
+    class func joinRide(name: String, phone: String, direction: String,  rideId: String, handler: (AnyObject)->Void, passIdHandler: (String)->()){
         createPassenger(name, phone: phone, direction: direction, handler: {(response : AnyObject) in
             let jsonStruct = response as! NSDictionary
             
             let post = jsonStruct["post"] as! NSDictionary
             
             let passengerId = post["_id"] as! String
+            passIdHandler(passengerId)
             
-            addPassengerToRide(rideId, passengerId: passengerId)
-            handler()
+            addPassengerToRide(rideId, passengerId: passengerId, handler: handler)
         })
     }
     
@@ -131,24 +131,19 @@ class RideUtils {
     
     
     
-    private class func addPassengerToRide(rideId: String, passengerId: String){
-        let requestUrl = Config.serverUrl + "api/ride/addPassenger";
+    private class func addPassengerToRide(rideId: String, passengerId: String, handler : (AnyObject)->Void){
+        let requestUrl = Config.serverUrl + "api/ride/addPassenger"
         let body = ["ride_id": rideId,"passenger_id": passengerId]
-        ServerUtils.sendHttpPostRequest(requestUrl, body: body);
+        ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler: handler)
     }
     
     static func leaveRide(passid: String, rideid: String, handler: (Bool)->()){
         let url = Config.serverUrl + "api/ride/dropPassenger"
         let params = ["passenger_id":passid, "ride_id":rideid]
+        
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in
-                if(response.result.isSuccess){
-                    handler(true)
-                }
-                else{
-                    handler(false)
-                }
-                
+                handler(response.result.isSuccess)
         }
     }
     
