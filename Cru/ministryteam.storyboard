@@ -54,6 +54,11 @@
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="JGB-Fc-DgY"/>
                                                 <constraint firstAttribute="height" constant="1" id="zFO-2O-1du"/>
                                             </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="JGB-Fc-DgY"/>
+                                                </mask>
+                                            </variation>
                                         </view>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-Iu-KUK">
                                             <rect key="frame" x="10" y="51" width="187" height="107"/>
