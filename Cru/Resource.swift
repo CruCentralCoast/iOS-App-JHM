@@ -8,12 +8,18 @@
 
 import UIKit
 
+enum ResourceType: String{
+    case Article = "article"
+    case Audio = "audio"
+    case Video = "video"
+}
+
 class Resource {
     // MARK: Properties
     var title: String!
     var id: String!
     var url: String!
-    var type: String!
+    var type: ResourceType!
     var date: NSDateComponents!
     var tags: [String]!
     
@@ -22,7 +28,7 @@ class Resource {
         self.id = id
         self.title = title
         self.url = url
-        self.type = type
+        self.type = ResourceType(rawValue: type!)
         self.date = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(date!))!
         self.tags = tags
     }

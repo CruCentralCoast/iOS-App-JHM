@@ -20,6 +20,11 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     var resources = [Resource]()
     var resourceLinks = [String]()
     var cardViews = [CardView]()
+    
+    var currentType = ResourceType.Article
+    var articleViews = [CardView]()
+    var audioViews = [CardView]()
+    var videoViews = [CardView]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,7 +51,67 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        print("selected \(item.title)")
+        var newType: ResourceType
+        var oldTypeCount = 0
+        var newTypeCount = 0
+        
+        switch (item.title!){
+            case "Articles":
+                newType = ResourceType.Article
+                newTypeCount = articleViews.count
+            case "Audio":
+                newType = ResourceType.Audio
+                newTypeCount = audioViews.count
+            case "Videos":
+                newType = ResourceType.Video
+                newTypeCount = videoViews.count
+            default :
+                newType = ResourceType.Article
+                newTypeCount = articleViews.count
+        }
+        
+        switch (currentType){
+            case .Article:
+                print("\(articleViews.count) articles")
+                oldTypeCount = articleViews.count
+            case .Audio:
+                print("\(audioViews.count) audio")
+                oldTypeCount = audioViews.count
+            case .Video:
+                print("\(videoViews.count) video")
+                oldTypeCount = videoViews.count
+        }
+        
+        if(newType == currentType){
+            return
+        }
+        else{
+            currentType = newType
+        }
+
+        let numNewCells = newTypeCount - oldTypeCount
+        print("newTypeCount is \(newTypeCount)")
+        print("oldTypeCount is \(oldTypeCount)")
+        print("numNewCells is \(numNewCells)")
+        
+        self.tableView.beginUpdates()
+        if(numNewCells < 0){
+            let numCellsToRemove = -numNewCells
+            print("ABOUT TO REMOVE \(numCellsToRemove) cells")
+            for i in 0...(numCellsToRemove - 1){
+                print("meep")
+                self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forItem: i, inSection: 0)], withRowAnimation: .Automatic)
+            }
+        }
+        else if(numNewCells > 0){
+            for i in 0...(numNewCells - 1){
+                print("beep")
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: i, inSection: 0)], withRowAnimation: .Automatic)
+            }
+        }
+        self.tableView.endUpdates()
+        self.tableView.reloadData()
+        //print("selected \(item.title)")
     }
     
 
@@ -72,19 +137,25 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 var cardView : CardView! = nil
                 
-                if (resource.type == "article") {
+                if (resource.type == ResourceType.Article) {
                     cardView = CardView.createCardView(card!, layout: .ArticleCardTall)!
-                } else if (resource.type == "video") {
+                    self.articleViews.insert(cardView, atIndex: 0)
+                } else if (resource.type == ResourceType.Video) {
                     cardView = CardView.createCardView(card!, layout: .SummaryCardTall)!
-                } else if (resource.type == "audio") {
+                    self.videoViews.insert(cardView, atIndex: 0)
+                } else if (resource.type == ResourceType.Audio) {
                     cardView = CardView.createCardView(card!, layout: .VideoCardShort)!
+                    self.audioViews.insert(cardView, atIndex: 0)
                 }
                 
                 if (cardView != nil) {
                     cardView.delegate = self
                     self.resources.insert(Resource(dict: dict)!, atIndex: 0)
-                    self.cardViews.insert(cardView, atIndex: 0)
-                    self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+                    //self.cardViews.insert(cardView, atIndex: 0)
+                    if(self.currentType == resource.type){
+                        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+                    }
+                    
                 }
             } else {
                 print("\nERROR: Card view not created\n")
@@ -112,20 +183,45 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         //print("\nNum card views in the thing: \(cardViews.count)\n")
-        print("\nNum Resources: \(resources.count)\n")
-        return cardViews.count
+        //print("\nNum Resources: \(resources.count)\n")
+        //return cardViews.count
+        
+        switch (currentType){
+        case .Article:
+            print("\(articleViews.count) articles")
+            return articleViews.count
+        case .Audio:
+            print("\(audioViews.count) audio")
+            return audioViews.count
+        case .Video:
+            print("\(videoViews.count) video")
+            return videoViews.count
+        }
     }
     
     //Configures each cell in the table view as a card and sets the UI elements to match with the Resource data
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellIdentifier = "CardTableViewCell"
         let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! CardTableViewCell
-        let cardView = cardViews[indexPath.row]
         
-        cell.contentView.addSubview(cardView)
+        
+        let cardView: CardView?
+        
+        switch (currentType){
+            case .Article:
+                cardView = articleViews[indexPath.row]
+            case .Audio:
+                cardView = audioViews[indexPath.row]
+            case .Video:
+                cardView = videoViews[indexPath.row]
+        }
+        
+        //let cardView = cardViews[indexPath.row]
+        
+        cell.contentView.addSubview(cardView!)
         cell.contentView.backgroundColor = Colors.googleGray
         
-        self.constrainView(cardView, row: indexPath.row)
+        self.constrainView(cardView!, row: indexPath.row)
         
         
         return cell
