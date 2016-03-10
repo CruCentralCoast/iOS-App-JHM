@@ -18,6 +18,7 @@ class MinistryTeamsCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var descriptionTextView: UITextView!
     @IBOutlet private weak var separator: UIView!
     @IBOutlet weak var joinButton: UIButton!
+    @IBOutlet weak var leaderInfo: UILabel!
     
     var ministryTeam: MinistryTeam? {
         didSet {
@@ -54,6 +55,10 @@ class MinistryTeamsCollectionViewCell: UICollectionViewCell {
         
         if joinButton != nil {
             joinButton.alpha = delta            
+        }
+        
+        if leaderInfo != nil && leaderInfo.hidden == false {
+            leaderInfo.alpha = delta
         }
     }
 }
