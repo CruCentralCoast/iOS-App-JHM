@@ -129,7 +129,7 @@ class RiderRideDetailViewController: UIViewController {
     }
     
     func cancelConfirmed(action: UIAlertAction){
-        RideUtils.findIdByGCMInRide(Config.gcmId, ride: ride!, handler: leaveRide)
+        RideUtils.findIdByGCMInRide(Config.gcmId(), ride: ride!, handler: leaveRide)
     }
     
     func leaveRide(passid: String, rideid: String){

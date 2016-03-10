@@ -16,17 +16,16 @@ struct Config {
     static let campusCollection = "campus"
     static let globalTopic = "/topics/global"
     static let gcmIdField = "gcmId"
-    static var gcmId: String{
-        get{
+    static func gcmId()->String{
             if(simulatorMode){
+                print("NOOOOOOOOOOOOOOASDOASDOASODSAODOSADOSAODSAD")
                 return "emulator-id-hey-whats-up-hello"
             }
             else{
                 return SubscriptionManager.loadGCMToken()
             }
-        }
     }
-    static let simulatorMode = true
+    static let simulatorMode = false
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
     

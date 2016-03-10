@@ -55,13 +55,18 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Config.ministryTeamReuseIdentifier, forIndexPath: indexPath) as! MinistryTeamsCollectionViewCell
         
         let ministryTeam = ministryTeams[indexPath.item]
+        let leaderInfo = ministryTeamsStorageManager.getElement(ministryTeam.id) as? String
         cell.ministryTeam = ministryTeam
         
         //check to see if user is a part of ministry team
-        if let _ = ministryTeamsStorageManager.getElement(ministryTeam.id) {
+        if leaderInfo != nil {
             cell.joinButton?.removeFromSuperview()
+            cell.leaderInfo.hidden = false
+            cell.leaderInfo.text = leaderInfo
         }
         else {
+            print(leaderInfo)
+            cell.leaderInfo.hidden = false
             cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
             cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)
         }
@@ -82,26 +87,39 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         
         ServerUtils.joinMinistryTeam(ministry.id, fullName: user!["name"] as! String, phone: user!["phone"] as! String, callback: joinMinistryTeamCompletionHandler(ministry, sender: sender))
         
-        showCompletionAlert()
+        //showCompletionAlert()
     }
     
-    //alert box that shows a completion alert
-    func showCompletionAlert() {
-        let alert = UIAlertController(title: "Thank You!", message: "Thank you for signing up for this ministry team. You will be sent the leader's information shortly", preferredStyle: .Alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-        self.presentViewController(alert, animated: true, completion: nil)
-    }
+//    //alert box that shows a completion alert
+//    func showCompletionAlert() {
+//        let alert = UIAlertController(title: "Thank You!", message: "Thank you for signing up for this ministry team. You will be sent the leader's information shortly", preferredStyle: .Alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+//        self.presentViewController(alert, animated: true, completion: nil)
+//    }
     
     //completion handler for ministry team response from the server after joining
     private func joinMinistryTeamCompletionHandler(ministryTeam: MinistryTeam, sender: UIButton) -> (NSArray -> Void) {
         //add ministry team to local storage
-        self.ministryTeamsStorageManager.addElement(ministryTeam.id, elem: true)
-        sender.removeFromSuperview()
+        var leaderInfo = "Leader(s) Info: "
         
         return { (response: NSArray) in
-            for leader in response {
-                print(leader)
+            if response.count > 0 {
+                let leader = response[0] as! NSDictionary
+                let name = leader["name"] as! [String: String]
+                let leaderName = name["first"]! + " " + name["last"]!
+                let leaderPhone = leader["phone"] as! String
+                leaderInfo += leaderName + ", " + leaderPhone
+                //            for leader in response {
+                //                print(leader)
+                //            }
             }
+            else {
+                leaderInfo += "None"
+            }
+            
+            self.ministryTeamsStorageManager.addElement(ministryTeam.id, elem: leaderInfo)
+            
+            self.collectionView?.reloadData()
         }
     }
     

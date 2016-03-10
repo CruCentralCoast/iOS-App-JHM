@@ -51,7 +51,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         print(event)
         tempEvent = event
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.getRidesNotDriving(Config.gcmId, inserter: insertRide, afterFunc: loadRidesCompletionHandler)
+        RideUtils.getRidesNotDriving(Config.gcmId(), inserter: insertRide, afterFunc: loadRidesCompletionHandler)
     }
     
     private func insertRide(dict: NSDictionary) {
