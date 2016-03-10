@@ -105,6 +105,18 @@ class Event: Equatable {
     class func sortEventsByDate(event1: Event, event2: Event) -> Bool {
         return event1.startNSDate.compare(event2.endNSDate) == .OrderedAscending
     }
+    
+    //return the location as a string
+    func getLocationString() -> String {
+        if location != "" {
+            let street = location!.objectForKey("street1") as! String
+            let suburb = location!.objectForKey("suburb") as! String
+            
+            return  street + ", " + suburb
+        }
+        
+        return ""
+    }
 }
 
 func  ==(lEvent: Event, rEvent: Event) -> Bool{

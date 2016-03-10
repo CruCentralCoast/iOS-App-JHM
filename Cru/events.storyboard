@@ -15,6 +15,8 @@
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
+            <string>FreightSansProMedium-Regular</string>
+            <string>FreightSansProMedium-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -51,7 +53,7 @@
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0s-zt-xf5">
                                                 <rect key="frame" x="20" y="229" width="100" height="22"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-wO-gTI">
@@ -227,30 +229,79 @@
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iOz-Qf-Pfo">
-                                            <rect key="frame" x="13" y="10" width="92" height="24"/>
+                                            <rect key="frame" x="13" y="10" width="91.5" height="24"/>
                                             <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="21"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="D3n-Rl-Oxo" userLabel="separator">
+                                            <rect key="frame" x="13" y="36" width="174" height="1"/>
+                                            <color key="backgroundColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="1" id="HGu-sC-5dz"/>
+                                            </constraints>
+                                        </view>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event StartTime/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A3x-KY-MPW">
+                                            <rect key="frame" x="13" y="41" width="132" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="4Qe-th-YEn"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="15"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Event Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6W-uS-K8p">
+                                            <rect key="frame" x="13" y="67" width="174" height="19"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="19" id="f9N-WN-pOf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="16"/>
+                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
                                 <constraints>
+                                    <constraint firstItem="D3n-Rl-Oxo" firstAttribute="top" secondItem="iOz-Qf-Pfo" secondAttribute="bottom" constant="2" id="0YQ-Tl-B7p"/>
                                     <constraint firstItem="CKK-P9-UQe" firstAttribute="centerY" secondItem="xqr-SD-cHY" secondAttribute="centerY" id="4kK-9J-kgf"/>
+                                    <constraint firstItem="A3x-KY-MPW" firstAttribute="top" secondItem="iOz-Qf-Pfo" secondAttribute="bottom" constant="8" symbolic="YES" id="5Wd-UL-cFg"/>
+                                    <constraint firstItem="A3x-KY-MPW" firstAttribute="top" secondItem="D3n-Rl-Oxo" secondAttribute="bottom" constant="3" id="8pS-50-Hdx"/>
                                     <constraint firstItem="CVq-Mm-cj4" firstAttribute="leading" secondItem="xqr-SD-cHY" secondAttribute="leading" id="HRe-lC-d3h"/>
                                     <constraint firstItem="iOz-Qf-Pfo" firstAttribute="leading" secondItem="xqr-SD-cHY" secondAttribute="leadingMargin" constant="5" id="HaZ-Fh-bDi"/>
                                     <constraint firstAttribute="bottom" secondItem="CVq-Mm-cj4" secondAttribute="bottom" id="IfP-cE-Yal"/>
                                     <constraint firstItem="CKK-P9-UQe" firstAttribute="leading" secondItem="xqr-SD-cHY" secondAttribute="leading" id="K6N-V2-jOU"/>
                                     <constraint firstItem="iOz-Qf-Pfo" firstAttribute="top" secondItem="xqr-SD-cHY" secondAttribute="topMargin" constant="2" id="Kt6-qL-mIb"/>
+                                    <constraint firstItem="iOz-Qf-Pfo" firstAttribute="top" secondItem="xqr-SD-cHY" secondAttribute="topMargin" constant="2" id="OT1-XF-Sn0"/>
                                     <constraint firstAttribute="trailing" secondItem="CVq-Mm-cj4" secondAttribute="trailing" id="PIb-fQ-Tia"/>
+                                    <constraint firstItem="A3x-KY-MPW" firstAttribute="leading" secondItem="xqr-SD-cHY" secondAttribute="leadingMargin" constant="5" id="bAI-ya-QON"/>
+                                    <constraint firstItem="D6W-uS-K8p" firstAttribute="leading" secondItem="xqr-SD-cHY" secondAttribute="leadingMargin" constant="5" id="c6L-46-XaZ"/>
+                                    <constraint firstItem="A3x-KY-MPW" firstAttribute="top" secondItem="iOz-Qf-Pfo" secondAttribute="bottom" constant="8" id="dwK-Vc-QJL"/>
                                     <constraint firstItem="CVq-Mm-cj4" firstAttribute="top" secondItem="xqr-SD-cHY" secondAttribute="top" id="emj-Yc-3Kk"/>
+                                    <constraint firstItem="A3x-KY-MPW" firstAttribute="top" secondItem="D3n-Rl-Oxo" secondAttribute="bottom" constant="4" id="hU7-ES-U1J"/>
+                                    <constraint firstItem="D3n-Rl-Oxo" firstAttribute="leading" secondItem="xqr-SD-cHY" secondAttribute="leadingMargin" constant="5" id="knM-ej-Tbp"/>
+                                    <constraint firstItem="D6W-uS-K8p" firstAttribute="top" secondItem="A3x-KY-MPW" secondAttribute="bottom" constant="8" id="nfF-rY-Q6w"/>
+                                    <constraint firstItem="D3n-Rl-Oxo" firstAttribute="centerX" secondItem="xqr-SD-cHY" secondAttribute="centerX" id="oaW-aS-uW0"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="D3n-Rl-Oxo" secondAttribute="trailing" constant="5" id="q2j-6Q-XlJ"/>
                                     <constraint firstAttribute="trailing" secondItem="CKK-P9-UQe" secondAttribute="trailing" id="rfF-UB-6Fa"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="D6W-uS-K8p" secondAttribute="trailing" constant="5" id="x2c-Hy-cCg"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="200"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Kt6-qL-mIb"/>
+                                        <exclude reference="5Wd-UL-cFg"/>
+                                        <exclude reference="8pS-50-Hdx"/>
+                                        <exclude reference="dwK-Vc-QJL"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <outlet property="eventImageView" destination="CKK-P9-UQe" id="3Zv-ld-5Ga"/>
+                                    <outlet property="eventLocation" destination="D6W-uS-K8p" id="Wh4-up-Nip"/>
+                                    <outlet property="eventStartTime" destination="A3x-KY-MPW" id="bCi-aD-FMk"/>
                                     <outlet property="eventTitleLabel" destination="iOz-Qf-Pfo" id="b2M-2T-qnq"/>
                                     <outlet property="imageCoverView" destination="CVq-Mm-cj4" id="RFI-as-aeb"/>
+                                    <outlet property="separator" destination="D3n-Rl-Oxo" id="iLa-6V-oVw"/>
                                     <segue destination="wSV-ke-WyD" kind="show" identifier="eventDetails" id="ZmF-6q-nWs"/>
                                 </connections>
                             </collectionViewCell>

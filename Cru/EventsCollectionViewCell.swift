@@ -12,15 +12,17 @@ class EventsCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var eventImageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
     @IBOutlet private weak var eventTitleLabel: UILabel!
+    @IBOutlet private weak var separator: UIView!
+    @IBOutlet private weak var eventStartTime: UILabel!
+    @IBOutlet private weak var eventLocation: UILabel!
     
     var event: Event? {
         didSet {
             if let event = event {
                 eventImageView.image = event.image
                 eventTitleLabel.text = event.name
-//                ministryTeamImageView.image = ministryTeam.image
-//                ministryTeamLabel.text = ministryTeam.ministryName
-//                descriptionTextView.text = ministryTeam.description
+                eventStartTime.text = GlobalUtils.stringFromDate(event.startNSDate, format: "h:mma MMMM d, yyyy")
+                eventLocation.text = event.getLocationString()
             }
         }
     }
@@ -41,11 +43,12 @@ class EventsCollectionViewCell: UICollectionViewCell {
         let minAlpha: CGFloat = 0.4
         let maxAlpha: CGFloat = 0.85
         imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
-        
-        //let scale = max(delta, 0.9)
-        //ministryTeamLabel.transform = CGAffineTransformMakeScale(scale, scale)
-        
-        //descriptionTextView.alpha = delta
-        //separator.alpha = delta
+//        
+//        let scale = max(delta, 0.9)
+//        .transform = CGAffineTransformMakeScale(scale, scale)
+//      
+        separator.alpha = delta
+        eventStartTime.alpha = delta
+        eventLocation.alpha = delta
     }
 }

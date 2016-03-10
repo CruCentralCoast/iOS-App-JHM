@@ -69,11 +69,7 @@ class EventDetailsViewController: UIViewController {
             image.image = event.image
             
             if let location = event.location {
-                let street = location.objectForKey("street1") as! String
-                let suburb = location.objectForKey("suburb") as! String
-                let postcode = location.objectForKey("postcode") as! String
-
-                locationLabel.text = street + ", " + suburb + ", " + postcode
+                locationLabel.text = event.getLocationString()
             }
             
             //Set up UITextView description
