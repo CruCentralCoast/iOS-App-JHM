@@ -40,7 +40,7 @@ class RidesTableViewController: UITableViewController {
 
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.getRidesByGCMToken(Config.gcmId, inserter: insertRide, afterFunc: finishRideInsert)
+        RideUtils.getRidesByGCMToken(Config.gcmId(), inserter: insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources("event", inserter: insertEvent, afterFunc: finishInserting)
     }
     
@@ -49,7 +49,7 @@ class RidesTableViewController: UITableViewController {
         rides.removeAll()
         self.tableView.reloadData()
         // Updating your data here...
-        RideUtils.getRidesByGCMToken(Config.gcmId, inserter: insertNewRide, afterFunc: finishRefresh)
+        RideUtils.getRidesByGCMToken(Config.gcmId(), inserter: insertNewRide, afterFunc: finishRefresh)
 
         
     }
@@ -154,7 +154,7 @@ class RidesTableViewController: UITableViewController {
         
         //TODO: Change this to check against GCM id not driver name
         //if(ride.driverName == myName){
-        if(ride.gcmId == Config.gcmId){
+        if(ride.gcmId == Config.gcmId()){
             cell.rideType.text = driver
             cell.icon.image  = UIImage(named: driver)
         }
@@ -193,7 +193,7 @@ class RidesTableViewController: UITableViewController {
             tappedRide = rides[indexPath.row]
             tappedEvent = getEventForEventId((tappedRide?.eventId)!)
         
-            if(tappedRide?.gcmId == Config.gcmId){
+            if(tappedRide?.gcmId == Config.gcmId()){
                 self.performSegueWithIdentifier("driverdetailsegue", sender: self)
             }
             else{

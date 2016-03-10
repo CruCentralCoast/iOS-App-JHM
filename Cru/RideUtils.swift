@@ -55,6 +55,14 @@ class RideUtils {
         //gets rides you are receiving
         var requestUrl = Config.serverUrl + "api/passenger/find"
         let params = ["gcm_id": token]
+        
+        do {
+            let something = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            let string1 = NSString(data: something, encoding: NSUTF8StringEncoding)
+            print(string1)
+        } catch {
+            print("Error writing json body")
+        }
 
         Alamofire.request(.POST, requestUrl, parameters: params).responseJSON { response in
             let rideRequestUrl = Config.serverUrl + "api/ride/search"
@@ -67,9 +75,23 @@ class RideUtils {
             }
                         
             let cond = ["passengers": ["$in": rideIds]]
-            let body : [String : AnyObject] = ["conditions": cond, "projection": "", "options": [:]]
+            //let body : [String : AnyObject] = ["conditions": cond, "projection": "", "options": [:]]
             
-            ServerUtils.sendHttpPostRequest(rideRequestUrl, body: body, completionHandler : ServerUtils.insertResources(inserter, afterFunc: afterFunc))
+            
+            
+            do {
+                let something = try NSJSONSerialization.dataWithJSONObject(cond, options: NSJSONWritingOptions.PrettyPrinted)
+                let string1 = NSString(data: something, encoding: NSUTF8StringEncoding)
+                print(string1)
+            } catch {
+                print("Error writing json body")
+            }
+            
+            if (rideIds.count > 0) {
+                ServerUtils.sendHttpPostRequest(rideRequestUrl, body: cond, completionHandler : ServerUtils.insertResources(inserter, afterFunc: afterFunc))
+            } else {
+                afterFunc()
+            }
         }
         
         
@@ -86,7 +108,7 @@ class RideUtils {
         location: NSDictionary, radius: Int, direction: String, handler: (Bool)->(), idhandler: (String)->()) {
             let requestUrl = Config.serverUrl + "api/ride/create";
             let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
-                "gcm_id": Config.gcmId, "location":location, "radius":radius, "direction":direction]
+                "gcm_id": Config.gcmId(), "location":location, "radius":radius, "direction":direction]
             
             
             Alamofire.request(.POST, requestUrl, parameters: body)
@@ -121,7 +143,7 @@ class RideUtils {
     
     
     private class func createPassenger(name: String, phone: String, direction: String, handler: (AnyObject) -> Void){
-        let gcmToken = Config.gcmId
+        let gcmToken = Config.gcmId()
         
         let requestUrl = Config.serverUrl + "api/passenger/create";
         let body = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken]
