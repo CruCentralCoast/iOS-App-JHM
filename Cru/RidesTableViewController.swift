@@ -190,12 +190,8 @@ class RidesTableViewController: UITableViewController {
     }
      
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-            let cell = tableView.dequeueReusableCellWithIdentifier("ride", forIndexPath: indexPath) as! RideTableViewCell
-        
-        
             tappedRide = rides[indexPath.row]
             tappedEvent = getEventForEventId((tappedRide?.eventId)!)
-        
         
             if(tappedRide?.gcmId == Config.gcmId){
                 self.performSegueWithIdentifier("driverdetailsegue", sender: self)

@@ -49,7 +49,7 @@ class Ride: Comparable, Equatable {
             let loc = dict.objectForKey("location") as! NSDictionary
             
             if let postcode = loc["postcode"] as? String{
-              
+                //something
             }
             if (loc["state"] != nil){
                 state = loc["state"] as! String

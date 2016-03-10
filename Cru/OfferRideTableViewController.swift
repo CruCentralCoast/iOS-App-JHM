@@ -189,7 +189,7 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     }
     
     func validationFailed(errors: [UITextField : ValidationError]) {
-        for (field, _) in validator.errors {
+        for (_, _) in validator.errors {
                 //something here
         }
         
