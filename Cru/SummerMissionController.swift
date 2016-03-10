@@ -56,8 +56,9 @@ class SummerMissionController: UICollectionViewController {
     
     // Sets up the mission detail view when selected
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        let detailViewController = segue.destinationViewController as! SummerMissionDetailController
-        if let selectedCell = sender as? SummerMissionCell {
+        if segue.identifier == "missionDetailSegue" {
+            let detailViewController = segue.destinationViewController as! SummerMissionDetailController
+            let selectedCell = sender as! SummerMissionCell
             if let collectionView = collectionView {
                 let indexPath = collectionView.indexPathForCell(selectedCell)!
                 let selectedMission = missions[indexPath.row]
