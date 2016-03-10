@@ -27,10 +27,10 @@ class CreateRideViewController: UITableViewController {
     /* Function for handling canceling a submission of offering a ride. Displays an alert box if there is unsaved data in the offer ride form and asks the user if they would really like to exit */
     func handleCancelRide(sender: UIBarButtonItem) {
         if (formHasBeenEdited) {
-            let cancelRideAlert = UIAlertController(title: "Cancel Ride", message: "Are you sure you would like to cancel? All unsaved data will be lost.", preferredStyle: UIAlertControllerStyle.Alert)
+            let cancelRideAlert = UIAlertController(title: "Cancel Ride", message: "Are you sure you would like to continue? All unsaved data will be lost!", preferredStyle: UIAlertControllerStyle.Alert)
             
-            cancelRideAlert.addAction(UIAlertAction(title: "Continue", style: .Default, handler: performBackAction))
-            cancelRideAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
+            cancelRideAlert.addAction(UIAlertAction(title: "Yes", style: .Destructive, handler: performBackAction))
+            cancelRideAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
             presentViewController(cancelRideAlert, animated: true, completion: nil)
         }
         else {
