@@ -32,8 +32,7 @@ class MinistryTeam {
         let dParentMinistry = dict.objectForKey("parentMinistry")
         let dDescription = dict.objectForKey("description")
         let dMinistryName = dict.objectForKey("name")
-        let dImage = dict.objectForKey("image")
-//        let dTeamImage = dict.objectForKey("teamImage")
+        let dImage = dict.objectForKey("leadersImage")
         let dLeaders = dict.objectForKey("leaders")
         
         //set up object

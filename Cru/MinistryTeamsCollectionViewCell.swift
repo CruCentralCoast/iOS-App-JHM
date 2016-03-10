@@ -43,8 +43,8 @@ class MinistryTeamsCollectionViewCell: UICollectionViewCell {
         let delta = 1 - ((featuredHeight - CGRectGetHeight(frame)) / (featuredHeight - standardHeight))
         
         // 3
-        let minAlpha: CGFloat = 0.4
-        let maxAlpha: CGFloat = 0.85
+        let minAlpha: CGFloat = 0.6
+        let maxAlpha: CGFloat = 0.9
         imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
         let scale = max(delta, 0.9)
