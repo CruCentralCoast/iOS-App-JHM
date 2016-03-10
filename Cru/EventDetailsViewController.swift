@@ -21,124 +21,123 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var detailsScroller: UIScrollView!
+    @IBOutlet weak var calendarButton: UIButton!
     
     //passed in prepareForSegue
     var event: Event!
-    var eventStore: EKEventStore!
+    var eventLocalStorageManager: MapLocalStorageManager!
+    var calendarManager: CalendarManager!
     
-    //MARK: Actions
-    @IBAction func facebookLinkButton(sender: UIButton) {
-       UIApplication.sharedApplication().openURL(NSURL(string: (event.url))!)
-    }
-    
-    @IBAction func saveToCalendar(sender: UIButton) {
-        // 1 Make Event Store object
-        eventStore = EKEventStore()
-        
-        // 2 Get Authorization
-        switch EKEventStore.authorizationStatusForEntityType(EKEntityType.Event) {
-        case .Authorized:
-            insertEvent(eventStore)
-            sender.setImage(UIImage(named: "addedToCalendar"), forState: UIControlState.Normal)
-        case .Denied:
-            print("Access denied")
-        case .NotDetermined:
-            // 3 Insert Event
-            eventStore.requestAccessToEntityType(EKEntityType.Event, completion: {
-                granted, error in
-                
-                if granted {
-                    self.insertEvent(self.eventStore)
-                } else {
-                    print("Access denied")
-                }
-            })
-        default:
-            print("Case Default")
-        }
-    }
-    
+    //function called when view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
-        if let event = event {
-            
-            navigationItem.title = "Details"
-            titleLabel.text = event.name
-            image.image = event.image
-            
-            if let location = event.location {
-                locationLabel.text = event.getLocationString()
-            }
-            
-            //Set up UITextView description
-            descriptionView.text = event.description
-            
-            print(event)
-            
-            let dFormat = "h:mma MMMM d, yyyy"
-            startTimeLabel.text = GlobalUtils.stringFromDate(event.startNSDate, format: dFormat)
-            endTimeLabel.text = GlobalUtils.stringFromDate(event.endNSDate, format: dFormat)
-            //eventTimeTextView.text = GlobalUtils.stringCompressionOfDates(event.startNSDate, date2: event.endNSDate)
-            
-            if event.url == "" {
-                fbButton.hidden = true
-            }
-        }
+        //setup local storage manager for events
+        eventLocalStorageManager = MapLocalStorageManager(key: Config.eventStorageKey)
+        
+        //setup calendar maanger
+        calendarManager = CalendarManager()
+        
+        //initialize the view
+        initializeView()
     }
     
-    func insertEvent(store: EKEventStore) {
-        // 1
-        let calendars = store.calendarsForEntityType(EKEntityType.Event)
+    //UI view initializer
+    private func initializeView() {
+        let dateFormat = "h:mma MMMM d, yyyy"
         
-        for searchCalendar in calendars {
-            print(searchCalendar.title)
-            if searchCalendar.title == "Cru" {
-                print("Calendar was previously created")
-            }
+        navigationItem.title = "Event Details"
+        
+        image.image = event.image
+        titleLabel.text = event.name
+        startTimeLabel.text = GlobalUtils.stringFromDate(event.startNSDate, format: dateFormat)
+        endTimeLabel.text = GlobalUtils.stringFromDate(event.endNSDate, format: dateFormat)
+        descriptionView.text = event.description
+        
+        //insert location if there is one defined
+        var locationText = "No Location Available"
+        if let _ = event.location {
+            locationText = event.getLocationString()
+        }
+        locationLabel.text = locationText
+        
+        //If there's no URL hide the FB button
+        if event.url == "" {
+            fbButton.hidden = true
         }
         
-        // 4
-        // Create Event
-        let newEvent = EKEvent(eventStore: store)
-        newEvent.calendar = store.defaultCalendarForNewEvents
-        //newEvent.location = event.location
-        newEvent.title = event.name
-        newEvent.startDate = event.startNSDate
-        newEvent.endDate = event.endNSDate
-        
-        // 5
-        // Save Event in Calendar
-        
-        do {
-            try store.saveEvent(newEvent, span: .ThisEvent, commit: true)
-        }
-        catch let error as NSError{
-            print(error)
-        }
-        catch {
-            fatalError()
+        //check if event is in calendar
+        if let _ = eventLocalStorageManager.getElement(event.id) {
+            self.reconfigureCalendarButton(true)
         }
     }
 
+    
+    //MARK: Actions
+    
+    //This action allows the user to access the event on facebook
+    @IBAction func facebookLinkButton(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: (event.url))!)
+    }
+    
+    //This action is for saving an event to the native calendar
+    @IBAction func saveToCalendar(sender: UIButton) {
+        calendarManager.addEventToCalendar(event, completionHandler: {
+            errors, id in
+            
+            //if theres an error print it
+            if errors != nil {
+                print(errors)
+            }
+            else {
+                if let _ = id {
+                    self.eventLocalStorageManager.addElement(self.event.id, elem: id!)
+                    self.reconfigureCalendarButton(true)
+                }
+            }
+        })
+    }
+    
+    //this action removes events from the calendar
+    func removeFromCalendar(sender: UIButton) {
+        let eventIdentifier = eventLocalStorageManager.getElement(event.id)
+        
+        calendarManager.removeEventFromCalendar(eventIdentifier as! String, completionHandler: {
+            errors in
+            
+            if errors != nil {
+                print(errors)
+            }
+            else {
+                self.eventLocalStorageManager.removeElement(self.event.id)
+                self.reconfigureCalendarButton(false)
+            }
+        })
+    }
+    
+    //reconfigures the calendar button
+    private func reconfigureCalendarButton(isInCalendar: Bool) {
+        var action = "saveToCalendar:"
+        var buttonImage = UIImage(named: "saveToCalendarIcon")
+            
+        if isInCalendar {
+            action = "removeFromCalendar:"
+            buttonImage = UIImage(named: "addedToCalendar")
+        }
+        
+        calendarButton.removeTarget(nil, action: nil, forControlEvents: UIControlEvents.AllEvents)
+        calendarButton.addTarget(self, action: Selector(action), forControlEvents: .TouchUpInside)
+        calendarButton.setImage(buttonImage, forState: .Normal)
+    }
+
+    //This function opens the ridesharing section of the application
+    //from the events page
     @IBAction func linkToRideShare(sender: AnyObject) {
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
         //self.presentViewController(vc, animated: true, completion: nil)
         vc.loadEvents({ vc.selectVal(self.event)})
-        
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
     }
 }

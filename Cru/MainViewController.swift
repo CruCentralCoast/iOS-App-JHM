@@ -44,12 +44,10 @@ class MainViewController: UIViewController {
         let defaultSettings = NSUserDefaults.standardUserDefaults()
         
         if let _ = defaultSettings.stringForKey("hasLaunchedBefore") {
-            print("App has launched once before")
             return true
         }
         else {
             defaultSettings.setBool(true, forKey: "hasLaunchedBefore")
-            print("App has launched for the first time")
             return false
         }
     }

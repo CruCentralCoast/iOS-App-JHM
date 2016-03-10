@@ -12,6 +12,8 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
@@ -44,20 +46,14 @@
                                                     <constraint firstAttribute="height" constant="140" id="RBl-mK-Bub"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-UI-Hk1">
-                                                <rect key="frame" x="20" y="199" width="108" height="22"/>
-                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0s-zt-xf5">
-                                                <rect key="frame" x="20" y="229" width="100" height="22"/>
+                                                <rect key="frame" x="480" y="220" width="100" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-wO-gTI">
-                                                <rect key="frame" x="263" y="356" width="74" height="53"/>
+                                                <rect key="frame" x="263" y="339" width="74" height="53"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="74" id="N5z-Wl-fzG"/>
                                                     <constraint firstAttribute="height" constant="53" id="eRL-PQ-j19"/>
@@ -68,7 +64,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-AB-fyb">
-                                                <rect key="frame" x="362" y="355" width="67" height="52"/>
+                                                <rect key="frame" x="362" y="338" width="67" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="67" id="QKW-g2-izm"/>
                                                     <constraint firstAttribute="height" constant="52" id="y7U-ks-yFQ"/>
@@ -85,20 +81,20 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW7-Fr-sMB">
-                                                <rect key="frame" x="20" y="258" width="560" height="22"/>
+                                                <rect key="frame" x="20" y="241" width="560" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Some description of event" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYR-HW-5q5">
-                                                <rect key="frame" x="28" y="303" width="544" height="34"/>
+                                                <rect key="frame" x="28" y="286" width="544" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-il-7OQ">
-                                                <rect key="frame" x="148" y="355" width="90" height="52"/>
+                                                <rect key="frame" x="148" y="338" width="90" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="90" id="OTA-cs-IgV"/>
                                                     <constraint firstAttribute="height" constant="52" id="u3h-9n-SQI"/>
@@ -109,7 +105,7 @@
                                                 </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-rm-aET" userLabel="SeparatorTop">
-                                                <rect key="frame" x="20" y="293" width="560" height="2"/>
+                                                <rect key="frame" x="20" y="276" width="560" height="2"/>
                                                 <color key="backgroundColor" red="0.97647058823529409" green="0.70980392156862748" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -117,25 +113,47 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ah-5N-RBw" userLabel="SeparatorBottom">
-                                                <rect key="frame" x="20" y="345" width="560" height="2"/>
+                                                <rect key="frame" x="20" y="328" width="560" height="2"/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="7k7-Rx-twB"/>
                                                 </constraints>
                                             </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXn-WS-o2A">
+                                                <rect key="frame" x="20" y="220" width="65" height="21.5"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5g-ye-8y1">
+                                                <rect key="frame" x="20" y="199" width="72" height="21.5"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-UI-Hk1">
+                                                <rect key="frame" x="472" y="199" width="107.5" height="21.5"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
+                                            <constraint firstItem="FXn-WS-o2A" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="0LX-HG-X5a"/>
                                             <constraint firstItem="aEf-UI-Hk1" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="5bi-bS-2f4"/>
-                                            <constraint firstItem="bW7-Fr-sMB" firstAttribute="top" secondItem="q0s-zt-xf5" secondAttribute="bottom" constant="8" id="6vZ-Dq-P2k"/>
+                                            <constraint firstItem="bW7-Fr-sMB" firstAttribute="top" secondItem="q0s-zt-xf5" secondAttribute="bottom" id="6vZ-Dq-P2k"/>
                                             <constraint firstItem="WYR-HW-5q5" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leadingMargin" constant="20" id="8Hi-6k-pKX"/>
                                             <constraint firstItem="n6P-F9-53s" firstAttribute="top" secondItem="u9Z-Ze-51u" secondAttribute="top" id="ANN-JG-HOF"/>
                                             <constraint firstItem="pwr-il-7OQ" firstAttribute="top" secondItem="2Ah-5N-RBw" secondAttribute="bottom" constant="8" id="BdQ-eY-74X"/>
-                                            <constraint firstItem="q0s-zt-xf5" firstAttribute="top" secondItem="aEf-UI-Hk1" secondAttribute="bottom" constant="8" id="BjM-vw-gqR"/>
+                                            <constraint firstItem="q0s-zt-xf5" firstAttribute="top" secondItem="aEf-UI-Hk1" secondAttribute="bottom" id="BjM-vw-gqR"/>
                                             <constraint firstItem="aEf-UI-Hk1" firstAttribute="top" secondItem="0OO-sc-rJO" secondAttribute="bottom" constant="8" id="JJM-7a-rvU"/>
                                             <constraint firstItem="2Ah-5N-RBw" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="JTl-35-XKJ"/>
+                                            <constraint firstItem="z5g-ye-8y1" firstAttribute="top" secondItem="0OO-sc-rJO" secondAttribute="bottom" constant="8" id="Mib-ZN-STI"/>
                                             <constraint firstItem="Ghp-wO-gTI" firstAttribute="centerX" secondItem="u9Z-Ze-51u" secondAttribute="centerX" id="Mwm-cj-BKL"/>
+                                            <constraint firstItem="FXn-WS-o2A" firstAttribute="top" secondItem="z5g-ye-8y1" secondAttribute="bottom" id="NYi-4n-8Ii"/>
+                                            <constraint firstAttribute="trailing" secondItem="aEf-UI-Hk1" secondAttribute="trailing" constant="20" id="OKM-vU-vZC"/>
                                             <constraint firstItem="0OO-sc-rJO" firstAttribute="top" secondItem="n6P-F9-53s" secondAttribute="bottom" constant="8" id="Ot9-Hn-XWN"/>
                                             <constraint firstItem="cXx-rm-aET" firstAttribute="top" secondItem="bW7-Fr-sMB" secondAttribute="bottom" constant="13" id="Qsa-sK-Uc4"/>
                                             <constraint firstItem="AZc-AB-fyb" firstAttribute="leading" secondItem="Ghp-wO-gTI" secondAttribute="trailing" constant="25" id="XUc-1V-cGg"/>
@@ -146,6 +164,8 @@
                                             <constraint firstItem="2Ah-5N-RBw" firstAttribute="top" secondItem="WYR-HW-5q5" secondAttribute="bottom" constant="8" id="k7k-n8-nfk"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="WYR-HW-5q5" secondAttribute="trailing" constant="20" id="kUy-Dz-bcn"/>
                                             <constraint firstItem="WYR-HW-5q5" firstAttribute="centerX" secondItem="u9Z-Ze-51u" secondAttribute="centerX" id="ltV-w3-fHn"/>
+                                            <constraint firstItem="z5g-ye-8y1" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="m56-5q-wMs"/>
+                                            <constraint firstAttribute="trailing" secondItem="q0s-zt-xf5" secondAttribute="trailing" constant="20" id="n2L-ke-ocK"/>
                                             <constraint firstItem="Ghp-wO-gTI" firstAttribute="leading" secondItem="pwr-il-7OQ" secondAttribute="trailing" constant="25" id="oYv-vF-U1C"/>
                                             <constraint firstItem="bW7-Fr-sMB" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="pUi-O1-myk"/>
                                             <constraint firstItem="cXx-rm-aET" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="q9w-VA-sTS"/>
@@ -156,6 +176,12 @@
                                             <constraint firstItem="0OO-sc-rJO" firstAttribute="leading" secondItem="u9Z-Ze-51u" secondAttribute="leading" constant="20" id="wqc-wD-CMC"/>
                                             <constraint firstAttribute="trailing" secondItem="cXx-rm-aET" secondAttribute="trailing" constant="20" id="x1c-kN-rJw"/>
                                         </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="5bi-bS-2f4"/>
+                                                <exclude reference="bS7-M0-Qc7"/>
+                                            </mask>
+                                        </variation>
                                     </view>
                                 </subviews>
                                 <constraints>
@@ -179,6 +205,7 @@
                     </view>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="calendarButton" destination="pwr-il-7OQ" id="1PI-K0-6bT"/>
                         <outlet property="descriptionView" destination="WYR-HW-5q5" id="okn-dY-wvY"/>
                         <outlet property="detailsScroller" destination="xck-zL-c1n" id="Nc8-Vf-vC8"/>
                         <outlet property="endTimeLabel" destination="q0s-zt-xf5" id="GcW-fL-R5Z"/>

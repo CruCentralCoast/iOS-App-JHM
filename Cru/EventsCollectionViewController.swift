@@ -30,6 +30,8 @@ class EventsCollectionViewController: UICollectionViewController {
     private func finishInserting() {
         self.events.sortInPlace(Event.sortEventsByDate)
         self.collectionView!.reloadData()
+        
+        print("HELLO THERE. DONE LOADING")
     }
 
     // MARK: UICollectionViewDataSource
@@ -66,6 +68,7 @@ class EventsCollectionViewController: UICollectionViewController {
             let selectedEventCell = sender as! EventsCollectionViewCell
             let indexPath = self.collectionView!.indexPathForCell(selectedEventCell)!
             let selectedEvent = events[indexPath.row]
+            
             eventDetailViewController.event = selectedEvent
         }
     }

@@ -43,6 +43,11 @@ struct Config {
     //configuration key for NSUserDefaults ministry teams
     static let ministryTeamNSDefaultsKey = "ministryTeams"
     
+    //LOCAL STORAGE KEYS
+    static let eventStorageKey = "events"
+    static let userStorageKey = "user"
+    static let ministryStorageKey = "ministries"
+    static let ministryTeamStorageKey = "ministryTeams"
     
     // Modal header and footer text color
     static let textColor = UIColor(red: 0.188, green: 0.188, blue: 0.188, alpha: 1.0)
