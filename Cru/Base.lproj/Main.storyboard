@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JJo-8X-4Mg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JJo-8X-4Mg">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--sideMenuStoryboard-->
@@ -13,7 +13,7 @@
             </objects>
             <point key="canvasLocation" x="1411.5" y="998"/>
         </scene>
-        <!--Main View Controller-->
+        <!--Home-->
         <scene sceneID="Pmt-Nq-gRG">
             <objects>
                 <viewController definesPresentationContext="YES" providesPresentationContextTransitionStyle="YES" id="SOu-VK-CUe" customClass="MainViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
@@ -22,23 +22,57 @@
                         <viewControllerLayoutGuide type="bottom" id="xWF-zG-gFR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5bq-z4-v2i">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Home" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMv-QR-7wC">
-                                <rect key="frame" x="276" y="287" width="49" height="26"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q15-b4-hYB">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99e-FW-B8S">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fake-home" translatesAutoresizingMaskIntoConstraints="NO" id="lHt-b7-RFy">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                            </imageView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="lHt-b7-RFy" firstAttribute="leading" secondItem="99e-FW-B8S" secondAttribute="leading" id="7Qx-km-UVR"/>
+                                            <constraint firstItem="lHt-b7-RFy" firstAttribute="centerY" secondItem="99e-FW-B8S" secondAttribute="centerY" id="CYK-Hr-zH2"/>
+                                            <constraint firstItem="lHt-b7-RFy" firstAttribute="top" secondItem="99e-FW-B8S" secondAttribute="top" id="FIN-Qe-ntE"/>
+                                            <constraint firstItem="lHt-b7-RFy" firstAttribute="centerX" secondItem="99e-FW-B8S" secondAttribute="centerX" id="Jq1-7L-fO3"/>
+                                            <constraint firstAttribute="bottom" secondItem="lHt-b7-RFy" secondAttribute="bottom" id="p0C-jD-Tse"/>
+                                            <constraint firstAttribute="trailing" secondItem="lHt-b7-RFy" secondAttribute="trailing" id="y4G-8z-Zaj"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="99e-FW-B8S" firstAttribute="centerX" secondItem="q15-b4-hYB" secondAttribute="centerX" id="BfW-iL-vYb"/>
+                                    <constraint firstItem="99e-FW-B8S" firstAttribute="top" secondItem="q15-b4-hYB" secondAttribute="top" id="IBe-Sg-uaQ"/>
+                                    <constraint firstAttribute="trailing" secondItem="99e-FW-B8S" secondAttribute="trailing" id="O4f-cO-h6t"/>
+                                    <constraint firstItem="99e-FW-B8S" firstAttribute="leading" secondItem="q15-b4-hYB" secondAttribute="leading" id="QPT-wj-n9a"/>
+                                    <constraint firstItem="99e-FW-B8S" firstAttribute="centerY" secondItem="q15-b4-hYB" secondAttribute="centerY" id="cyX-uN-FGU"/>
+                                    <constraint firstItem="99e-FW-B8S" firstAttribute="centerX" secondItem="q15-b4-hYB" secondAttribute="centerX" id="hmr-55-K1s"/>
+                                    <constraint firstItem="99e-FW-B8S" firstAttribute="centerY" secondItem="q15-b4-hYB" secondAttribute="centerY" id="mCN-1x-ozC"/>
+                                    <constraint firstAttribute="bottom" secondItem="99e-FW-B8S" secondAttribute="bottom" id="yKg-uL-NDW"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="BfW-iL-vYb"/>
+                                        <exclude reference="cyX-uN-FGU"/>
+                                    </mask>
+                                </variation>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="FMv-QR-7wC" firstAttribute="centerY" secondItem="5bq-z4-v2i" secondAttribute="centerY" id="2Si-2w-xIh"/>
-                            <constraint firstItem="FMv-QR-7wC" firstAttribute="centerX" secondItem="5bq-z4-v2i" secondAttribute="centerX" id="weT-n4-x6s"/>
+                            <constraint firstItem="q15-b4-hYB" firstAttribute="width" secondItem="5bq-z4-v2i" secondAttribute="width" id="eH1-Cj-0zV"/>
+                            <constraint firstItem="q15-b4-hYB" firstAttribute="height" secondItem="5bq-z4-v2i" secondAttribute="height" id="gAH-22-Zb4"/>
+                            <constraint firstItem="q15-b4-hYB" firstAttribute="centerX" secondItem="5bq-z4-v2i" secondAttribute="centerX" id="kJQ-hj-puj"/>
+                            <constraint firstItem="q15-b4-hYB" firstAttribute="centerY" secondItem="5bq-z4-v2i" secondAttribute="centerY" id="raa-Mi-fFS"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="1QZ-gY-0dt">
+                    <navigationItem key="navigationItem" title="Home" id="1QZ-gY-0dt">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="hvs-Wd-lEz">
                             <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
@@ -46,13 +80,15 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="800"/>
                     <connections>
                         <segue destination="MNi-Vs-6pf" kind="presentation" identifier="introSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="yFA-dx-Xvz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNr-AS-kQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="1180"/>
+            <point key="canvasLocation" x="928" y="1153"/>
         </scene>
         <!--introStoryboard-->
         <scene sceneID="ye5-nY-CZT">
@@ -86,6 +122,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="fake-home" width="491" height="961"/>
         <image name="menuIcon" width="27" height="18"/>
     </resources>
 </document>
