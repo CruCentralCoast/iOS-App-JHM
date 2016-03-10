@@ -17,13 +17,81 @@ class GlobalUtils {
         return UIImage(data: imageData!)!
     }
 
-    class func dateFromString(dateStr : String) -> NSDateComponents? {
+    //gets an NSDate from a given string
+    class func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let date = dateFormatter.dateFromString(dateStr)
+        
+        //if date formatter returns nil return the current date/time
+        if let date = dateFormatter.dateFromString(dateStr) {
+            return date
+        }
+        else {
+            return NSDate()
+        }
+    }
+    
+//    //compresses two date strings into one
+//    class func stringCompressionOfDates(date1: NSDate, date2: NSDate) -> String {
+//        let date1Comp = GlobalUtils.dateComponentsFromDate(date1)!
+//        let date2Comp = GlobalUtils.dateComponentsFromDate(date2)!
+//        
+//        var returnString = ""
+//        var yearString = ""
+//        var monthString = ""
+//        var dayString = ""
+//        
+//        //if years same
+//        if date1Comp.year == date2Comp.year {
+//            yearString = GlobalUtils.stringFromDate(date1, format: "yyyy")
+//            
+//            //if months and days same
+//            if date1Comp.month == date2Comp.month && date1Comp.day == date2Comp.day {
+//                monthString = GlobalUtils.stringFromDate(date1, format: "MMMM")
+//                dayString = GlobalUtils.stringFromDate(date1, format: "d")
+//                
+//                let dFormat = "h:mma"
+//                returnString += GlobalUtils.stringFromDate(date1, format: dFormat) + "-" + GlobalUtils.stringFromDate(date2, format: dFormat) + " " + monthString + " " + dayString + ", " + yearString
+//            }
+//            else {
+//                let dFormat = "h:mma MMMM d"
+//                returnString += GlobalUtils.stringFromDate(date1, format: dFormat) + " - " + GlobalUtils.stringFromDate(date2, format: dFormat) + yearString
+//            }
+//        }
+//        else {
+//            let dFormat = "h:mma MMMM d, yyyy"
+//            
+//            returnString += GlobalUtils.stringFromDate(date1, format: dFormat) + " - " + GlobalUtils.stringFromDate(date2, format: dFormat)
+//        }
+//        
+//        return returnString
+//    }
+    
+    //return appropriate string representation of NSDate object
+    class func stringFromDate(date: NSDate, format: String) -> String {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = format
+        
+        return formatter.stringFromDate(date)
+    }
+    
+    //gets date components from an NSDate
+    class func dateComponentsFromDate(date: NSDate) -> NSDateComponents? {
         let unitFlags: NSCalendarUnit = [.Minute, .Hour, .Day, .Month, .Year]
-        return NSCalendar.currentCalendar().components(unitFlags, fromDate: date!)
+        
+        return NSCalendar.currentCalendar().components(unitFlags, fromDate: date)
+    }
+    
+    //load dictionary object from user defaults
+    class func loadDictionary(key: String) -> NSDictionary? {
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if let unarchivedObject = userDefaults.objectForKey(key) {
+            return unarchivedObject as? NSDictionary
+        }
+        
+        return nil
     }
     
     class func saveString(key: String, value: String){

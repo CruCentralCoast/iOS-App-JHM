@@ -15,18 +15,14 @@ class EventDetailsViewController: UIViewController {
     
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var startTimeLabel: UILabel!
+    @IBOutlet weak var endTimeLabel: UILabel!
     @IBOutlet weak var descriptionView: UITextView!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var fbButton: UIButton!
-    @IBOutlet weak var eventTimeLabel: UILabel!
     @IBOutlet weak var detailsScroller: UIScrollView!
     
-    
-    /*
-    This value is either passed by `MealTableViewController` in `prepareForSegue(_:sender:)`
-    or constructed as part of adding a new meal.
-    */
+    //passed in prepareForSegue
     var event: Event!
     var eventStore: EKEventStore!
     
@@ -65,12 +61,6 @@ class EventDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-////        detailsScroller.contentSize = CGSizeMake(400, 2300)
-////        detailsScroller.showsHorizontalScrollIndicator = true
-////        detailsScroller.scrollEnabled = true
-//        self.detailsScroller.contentSize = CGSizeMake(2000, 2000)
-        
-        
         // Do any additional setup after loading the view.
         if let event = event {
             
@@ -89,14 +79,12 @@ class EventDetailsViewController: UIViewController {
             //Set up UITextView description
             descriptionView.text = event.description
             
-           
-            eventTimeLabel.text = String(event.startDateHour) + ":" + String(event.startDateMinute) + " — " + String(event.endDateHour) + ":" + String(event.startDateMinute)
+            print(event)
             
-            let dateFormatter: NSDateFormatter = NSDateFormatter()
-            
-            let months = dateFormatter.monthSymbols
-            let monthLong = months[event.startDateMonth-1]
-            timeLabel.text = monthLong + " " + String(event.startDateDay)
+            let dFormat = "h:mma MMMM d, yyyy"
+            startTimeLabel.text = GlobalUtils.stringFromDate(event.startNSDate, format: dFormat)
+            endTimeLabel.text = GlobalUtils.stringFromDate(event.endNSDate, format: dFormat)
+            //eventTimeTextView.text = GlobalUtils.stringCompressionOfDates(event.startNSDate, date2: event.endNSDate)
             
             if event.url == "" {
                 fbButton.hidden = true
@@ -115,36 +103,14 @@ class EventDetailsViewController: UIViewController {
             }
         }
         
-        //Let's try it on the default calendar
-        let start = NSDateComponents()
-        start.day = event.startDateDay
-        start.month = event.startDateMonth
-        start.minute = event.startDateMinute
-        start.hour = event.startDateHour
-        start.year = event.startDateYear
-        
-        let end = NSDateComponents()
-        end.day = event.endDateDay
-        end.month = event.endDateMonth
-        end.minute = event.endDateMinute
-        end.hour = event.endDateHour
-        end.year = event.endDateYear
-        
-        let userCalendar = NSCalendar.currentCalendar()
-        
-        let startDate = userCalendar.dateFromComponents(start)
-        let endDate = userCalendar.dateFromComponents(end)
-        
-        
-        
         // 4
         // Create Event
         let newEvent = EKEvent(eventStore: store)
         newEvent.calendar = store.defaultCalendarForNewEvents
         //newEvent.location = event.location
         newEvent.title = event.name
-        newEvent.startDate = startDate!
-        newEvent.endDate = endDate!
+        newEvent.startDate = event.startNSDate
+        newEvent.endDate = event.endNSDate
         
         // 5
         // Save Event in Calendar

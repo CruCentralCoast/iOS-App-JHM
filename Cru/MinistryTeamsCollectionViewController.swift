@@ -46,7 +46,7 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         //2: change button, show leader info
         
         //if there are ministry teams stored on the phone
-        if var userMinistryTeams = MinistryTeamsCollectionViewController.loadMinistryTeams(defaults) {
+        if var userMinistryTeams = loadMinistryTeams(defaults) {
             
             userMinistryTeams.sortInPlace()
             
@@ -75,12 +75,46 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         
         cell.ministryTeam = ministryTeams[indexPath.item]
         
+        //THIS BUTTON SHOULD ONLY APPEAR IF USER IS NOT ALREADY IN MINISTRY TEAM
+        cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
+        cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)
+        
         if cell.ministryTeam!.userIsPartOf {
             //change cell to show leaders
-            cell.reconfigureMinistryTeamCard()
         }
         
         return cell
+    }
+    
+    //target action on ministry
+    func joinMinistryTeam(sender: UIButton) {
+        let index = sender.layer.valueForKey("index") as! Int
+        let ministry = ministryTeams[index]
+        var user = GlobalUtils.loadDictionary("user")
+        
+        if user == nil {
+            user = ["name": "Deniz Tumer", "phone": "1234567890"]
+        }
+        
+        ServerUtils.joinMinistryTeam(ministry.id, fullName: user!["name"] as! String, phone: user!["phone"] as! String, callback: showLeaderInformation(sender))
+        
+        showCompletionAlert()
+    }
+    
+    func showCompletionAlert() {
+        let alert = UIAlertController(title: "Thank You!", message: "Thank you for signing up for this ministry team. You will be sent the leader's information shortly", preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        self.presentViewController(alert, animated: true, completion: nil)
+    }
+    
+    func showLeaderInformation(sender: UIButton) -> (NSArray -> Void) {
+        return { (response: NSArray) in
+            for leader in response {
+                print(leader)
+            }
+            
+            sender.removeFromSuperview()
+        }
     }
     
     //function for adding functionality for clicing of cells
@@ -93,7 +127,7 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
     }
     
     //loads the ministry team array object from NSUserDefaults
-    internal class func loadMinistryTeams(prefs: NSUserDefaults) -> [String]? {
+    private func loadMinistryTeams(prefs: NSUserDefaults) -> [String]? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Config.ministryTeamNSDefaultsKey) as? NSData {
             return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [String]
         }
@@ -101,17 +135,34 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         return nil
     }
     
-    @IBAction func resetSignUp(sender: AnyObject) {
-        let defaults = NSUserDefaults.standardUserDefaults()
+    //registers a user in a ministry
+    private func registerUserInMinistry(prefs: NSUserDefaults, ministries: [String]!) {
+        var ministryTeams: [String]!
         
-        var ministryTeams = MinistryTeamsCollectionViewController.loadMinistryTeams(defaults)
-        
-        if ministryTeams != nil {
+        //if there are no ministry teams the user has applied to
+        if ministries == nil {
             ministryTeams = [String]()
         }
+        else {
+            ministryTeams = ministries
+        }
         
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(ministryTeams as! NSArray)
-        defaults.setObject(archivedObject, forKey: Config.ministryTeamNSDefaultsKey)
-        defaults.synchronize()
+        //append on ministry team we are a part of
+        //ministryTeams.append(ministryTeam!.id)
+        
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(ministryTeams as NSArray)
+        prefs.setObject(archivedObject, forKey: Config.ministryTeamNSDefaultsKey)
+        prefs.synchronize()
+        
+        //sends notifications
+        //ServerUtils.joinMinistryTeam(ministryTeam!.id, callback: retrieveLeaderInformation)
+    }
+    
+    @IBAction func resetSignUp(sender: AnyObject) {
+        let defaults = NSUserDefaults.standardUserDefaults()
+//        
+//        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(ministryTeams as! NSArray)
+//        defaults.setObject(archivedObject, forKey: Config.ministryTeamNSDefaultsKey)
+//        defaults.synchronize()
     }
 }

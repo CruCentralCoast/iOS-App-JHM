@@ -28,6 +28,7 @@ class EventsCollectionViewController: UICollectionViewController {
 
     //helper function for finishing off inserting event data
     private func finishInserting() {
+        self.events.sortInPlace(Event.sortEventsByDate)
         self.collectionView!.reloadData()
     }
 

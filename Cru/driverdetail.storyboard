@@ -16,7 +16,6 @@
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
             <string>FreightSansProMedium-Regular</string>
-            <string>FreightSansProMedium-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProSem.otf">
             <string>FreightSansProSemibold-Regular</string>
@@ -42,31 +41,10 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWS-SD-Xhe">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0yU-Uc-yPJ">
-                                                <rect key="frame" x="176" y="60" width="127" height="39"/>
-                                                <animations/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="127" id="xPZ-dQ-a0O"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Location:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gxr-5D-JdO">
-                                                <rect key="frame" x="20" y="143" width="181" height="39"/>
+                                                <rect key="frame" x="20" y="115" width="131" height="39"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="16"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yi-OS-ac5">
-                                                <rect key="frame" x="20" y="217" width="148" height="28"/>
-                                                <animations/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="148" id="7W8-AV-ztc"/>
-                                                    <constraint firstAttribute="height" constant="28" id="lKq-jE-7c1"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="25"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
@@ -80,19 +58,8 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q5f-i7-czX">
-                                                <rect key="frame" x="20" y="60" width="181" height="39"/>
-                                                <animations/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="181" id="as3-JB-5df"/>
-                                                    <constraint firstAttribute="height" constant="39" id="hdC-PA-y8L"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="16"/>
-                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Gn-8p-a1d">
-                                                <rect key="frame" x="20" y="102" width="181" height="39"/>
+                                                <rect key="frame" x="20" y="68" width="131" height="39"/>
                                                 <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="39" id="aM8-6Q-hq5"/>
@@ -102,21 +69,21 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Sj-i2-ve2">
-                                                <rect key="frame" x="176" y="101" width="129" height="40"/>
+                                                <rect key="frame" x="176" y="67" width="416" height="40"/>
                                                 <animations/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="129" id="VKx-0Q-XOc"/>
+                                                    <constraint firstAttribute="width" constant="416" id="VKx-0Q-XOc"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="1 Grand Avenue, San Luis Obispo, CA 93410" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="zWK-9r-eTp">
-                                                <rect key="frame" x="176" y="143" width="401" height="66"/>
+                                                <rect key="frame" x="173" y="115" width="401" height="66"/>
                                                 <animations/>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kai-El-QZC">
@@ -133,8 +100,19 @@
                                                     <action selector="cancelPressed:" destination="iNM-Bt-tgs" eventType="touchUpInside" id="H6I-Hd-Vc7"/>
                                                 </connections>
                                             </button>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Yi-OS-ac5">
+                                                <rect key="frame" x="20" y="196" width="148" height="28"/>
+                                                <animations/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="148" id="7W8-AV-ztc"/>
+                                                    <constraint firstAttribute="height" constant="28" id="lKq-jE-7c1"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="25"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="60" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="7jG-6g-fgH">
-                                                <rect key="frame" x="24" y="258" width="553" height="300"/>
+                                                <rect key="frame" x="24" y="237" width="553" height="300"/>
                                                 <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -206,38 +184,33 @@
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="7jG-6g-fgH" secondAttribute="trailing" constant="23" id="1KS-Jk-8sc"/>
                                             <constraint firstAttribute="bottom" secondItem="kai-El-QZC" secondAttribute="bottom" constant="-5" id="3Iq-J2-B1O"/>
-                                            <constraint firstItem="0yU-Uc-yPJ" firstAttribute="leading" secondItem="5Sj-i2-ve2" secondAttribute="leading" id="5Ve-3T-tjf"/>
+                                            <constraint firstAttribute="trailing" secondItem="5Sj-i2-ve2" secondAttribute="trailing" constant="8" id="6rL-TR-Bpj"/>
                                             <constraint firstAttribute="bottom" secondItem="kai-El-QZC" secondAttribute="bottom" id="87x-Ys-lla"/>
-                                            <constraint firstItem="8Yi-OS-ac5" firstAttribute="top" secondItem="gxr-5D-JdO" secondAttribute="bottom" constant="35" id="DDD-36-JFN"/>
-                                            <constraint firstItem="q5f-i7-czX" firstAttribute="top" secondItem="Pxr-bU-jWp" secondAttribute="bottom" constant="8" symbolic="YES" id="DNG-lE-dQF"/>
-                                            <constraint firstItem="q5f-i7-czX" firstAttribute="trailing" secondItem="1Gn-8p-a1d" secondAttribute="trailing" id="Dnn-2g-Nvf"/>
+                                            <constraint firstItem="8Yi-OS-ac5" firstAttribute="top" secondItem="gxr-5D-JdO" secondAttribute="bottom" constant="42" id="DDD-36-JFN"/>
                                             <constraint firstAttribute="bottom" secondItem="kai-El-QZC" secondAttribute="bottom" id="Ey6-Ah-EQ1"/>
-                                            <constraint firstAttribute="trailing" secondItem="zWK-9r-eTp" secondAttribute="trailing" constant="23" id="FOS-GY-aZL"/>
+                                            <constraint firstAttribute="trailing" secondItem="zWK-9r-eTp" secondAttribute="trailing" constant="26" id="FOS-GY-aZL"/>
                                             <constraint firstItem="kai-El-QZC" firstAttribute="centerX" secondItem="Pxr-bU-jWp" secondAttribute="centerX" id="HN8-TK-gYe"/>
                                             <constraint firstItem="7jG-6g-fgH" firstAttribute="leading" secondItem="1Gn-8p-a1d" secondAttribute="leading" constant="4" id="KUU-Bt-305"/>
                                             <constraint firstAttribute="bottom" secondItem="kai-El-QZC" secondAttribute="bottom" id="LVN-70-IFq"/>
                                             <constraint firstItem="Pxr-bU-jWp" firstAttribute="top" secondItem="xWS-SD-Xhe" secondAttribute="top" constant="19" id="N9x-lK-Q75"/>
-                                            <constraint firstItem="5Sj-i2-ve2" firstAttribute="top" secondItem="0yU-Uc-yPJ" secondAttribute="bottom" constant="2" id="Png-Ef-3If"/>
-                                            <constraint firstItem="0yU-Uc-yPJ" firstAttribute="leading" secondItem="xWS-SD-Xhe" secondAttribute="leading" constant="176" id="PxX-ZE-Obp"/>
                                             <constraint firstItem="1Gn-8p-a1d" firstAttribute="trailing" secondItem="gxr-5D-JdO" secondAttribute="trailing" id="Qpk-ci-FcU"/>
+                                            <constraint firstItem="1Gn-8p-a1d" firstAttribute="top" secondItem="Pxr-bU-jWp" secondAttribute="bottom" constant="16" id="RfG-jp-Xk7"/>
                                             <constraint firstItem="7jG-6g-fgH" firstAttribute="leading" secondItem="xWS-SD-Xhe" secondAttribute="leading" constant="24" id="S16-Eb-r8v"/>
                                             <constraint firstItem="7jG-6g-fgH" firstAttribute="leading" secondItem="gxr-5D-JdO" secondAttribute="leading" constant="4" id="WSL-B9-b8q"/>
-                                            <constraint firstItem="zWK-9r-eTp" firstAttribute="top" secondItem="5Sj-i2-ve2" secondAttribute="bottom" constant="2" id="Xnr-Cm-7kD"/>
-                                            <constraint firstItem="zWK-9r-eTp" firstAttribute="leading" secondItem="8Yi-OS-ac5" secondAttribute="trailing" constant="8" id="Z1B-HO-ahe"/>
+                                            <constraint firstItem="zWK-9r-eTp" firstAttribute="top" secondItem="5Sj-i2-ve2" secondAttribute="bottom" constant="8" id="Xnr-Cm-7kD"/>
+                                            <constraint firstItem="zWK-9r-eTp" firstAttribute="leading" secondItem="8Yi-OS-ac5" secondAttribute="trailing" constant="5" id="Z1B-HO-ahe"/>
                                             <constraint firstItem="kai-El-QZC" firstAttribute="leading" secondItem="xWS-SD-Xhe" secondAttribute="leading" id="cNY-BH-yWa"/>
-                                            <constraint firstItem="0yU-Uc-yPJ" firstAttribute="top" secondItem="q5f-i7-czX" secondAttribute="top" id="fZ1-DK-UnJ"/>
+                                            <constraint firstItem="5Sj-i2-ve2" firstAttribute="leading" secondItem="zWK-9r-eTp" secondAttribute="leading" constant="3" id="eRT-8k-l83"/>
                                             <constraint firstItem="1Gn-8p-a1d" firstAttribute="centerY" secondItem="5Sj-i2-ve2" secondAttribute="centerY" id="gO2-4G-0xG"/>
-                                            <constraint firstItem="7jG-6g-fgH" firstAttribute="leading" secondItem="q5f-i7-czX" secondAttribute="leading" constant="4" id="huP-tr-pgp"/>
-                                            <constraint firstItem="0yU-Uc-yPJ" firstAttribute="baseline" secondItem="q5f-i7-czX" secondAttribute="baseline" id="j9n-zM-VU8"/>
                                             <constraint firstItem="7jG-6g-fgH" firstAttribute="leading" secondItem="8Yi-OS-ac5" secondAttribute="leading" constant="4" id="jN5-KO-w1s"/>
                                             <constraint firstItem="7jG-6g-fgH" firstAttribute="top" secondItem="8Yi-OS-ac5" secondAttribute="bottom" constant="13" id="kk6-CJ-ive"/>
                                             <constraint firstItem="7jG-6g-fgH" firstAttribute="leading" secondItem="Pxr-bU-jWp" secondAttribute="leading" constant="4" id="qZy-eQ-UFM"/>
                                             <constraint firstItem="1Gn-8p-a1d" firstAttribute="baseline" secondItem="5Sj-i2-ve2" secondAttribute="baseline" id="seh-sp-mCV"/>
                                             <constraint firstItem="zWK-9r-eTp" firstAttribute="top" secondItem="gxr-5D-JdO" secondAttribute="top" id="xPE-vu-4K0"/>
                                             <constraint firstItem="Pxr-bU-jWp" firstAttribute="centerX" secondItem="xWS-SD-Xhe" secondAttribute="centerX" id="xYY-BA-Xns"/>
-                                            <constraint firstItem="7jG-6g-fgH" firstAttribute="top" secondItem="xWS-SD-Xhe" secondAttribute="top" constant="258" id="yR6-wu-vqD"/>
+                                            <constraint firstItem="7jG-6g-fgH" firstAttribute="top" secondItem="xWS-SD-Xhe" secondAttribute="top" constant="237" id="yR6-wu-vqD"/>
                                             <constraint firstAttribute="height" constant="600" id="z1E-Se-eO5"/>
-                                            <constraint firstItem="7jG-6g-fgH" firstAttribute="top" secondItem="zWK-9r-eTp" secondAttribute="bottom" constant="49" id="z2u-YX-v1f"/>
+                                            <constraint firstItem="7jG-6g-fgH" firstAttribute="top" secondItem="zWK-9r-eTp" secondAttribute="bottom" constant="56" id="z2u-YX-v1f"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -271,7 +244,6 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="contentViewHeight" destination="z1E-Se-eO5" id="WUQ-ix-YiN"/>
-                        <outlet property="departureDate" destination="0yU-Uc-yPJ" id="4UH-tp-GJQ"/>
                         <outlet property="departureLoc" destination="zWK-9r-eTp" id="2v0-VU-fVg"/>
                         <outlet property="departureTime" destination="5Sj-i2-ve2" id="vgA-0a-BWx"/>
                         <outlet property="passengerTable" destination="7jG-6g-fgH" id="V1E-us-elw"/>

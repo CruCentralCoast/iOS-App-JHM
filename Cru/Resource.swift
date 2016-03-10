@@ -23,7 +23,7 @@ class Resource {
         self.title = title
         self.url = url
         self.type = type
-        self.date = GlobalUtils.dateFromString(date!)!
+        self.date = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(date!))!
         self.tags = tags
     }
     

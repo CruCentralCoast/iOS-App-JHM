@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -22,7 +22,6 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cRk-pP-Yuk">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <collectionViewLayout key="collectionViewLayout" id="UHl-8U-RRs" customClass="UltravisualLayout" customModule="Cru" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ministryteam" id="awr-2L-iue" customClass="MinistryTeamsCollectionViewCell" customModule="Cru" customModuleProvider="target">
@@ -34,26 +33,22 @@
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-dd-stK">
                                             <rect key="frame" x="0.0" y="-40" width="195" height="280"/>
-                                            <animations/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="280" id="jc3-Kx-bPQ"/>
                                             </constraints>
                                         </imageView>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ezm-ui-uPJ">
                                             <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0C-t2-fI3">
                                             <rect key="frame" x="13" y="10" width="164" height="26"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="20"/>
                                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="of2-U4-ncP">
                                             <rect key="frame" x="13" y="46" width="169" height="1"/>
-                                            <animations/>
                                             <color key="backgroundColor" red="0.8666666666666667" green="0.49019607843137253" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="JGB-Fc-DgY"/>
@@ -62,7 +57,6 @@
                                         </view>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-Iu-KUK">
                                             <rect key="frame" x="10" y="51" width="187" height="107"/>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -71,7 +65,6 @@
                                         </textView>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM0-nI-FzP">
                                             <rect key="frame" x="30" y="163" width="140" height="25"/>
-                                            <animations/>
                                             <color key="backgroundColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="140" id="6dQ-RW-KDd"/>
@@ -81,15 +74,10 @@
                                             <state key="normal" title="Sign-up Here">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
-                                            <connections>
-                                                <action selector="ministryTeamSignUp:" destination="awr-2L-iue" eventType="touchUpInside" id="eeV-sT-I9x"/>
-                                            </connections>
                                         </button>
                                     </subviews>
-                                    <animations/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
-                                <animations/>
                                 <constraints>
                                     <constraint firstItem="Q0C-t2-fI3" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="5" id="0GK-r8-rL0"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="SdQ-Iu-KUK" secondAttribute="trailing" constant="-5" id="1vU-l3-N90"/>
@@ -126,13 +114,7 @@
                             <outlet property="delegate" destination="5n8-J9-Awi" id="tjX-xx-uJu"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="dli-23-NtB">
-                        <barButtonItem key="rightBarButtonItem" title="Reset Info" id="omx-su-9mY">
-                            <connections>
-                                <action selector="resetSignUp:" destination="5n8-J9-Awi" id="dpr-Hf-xVV"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="dli-23-NtB"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deo-DF-lnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -146,7 +128,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iL-yQ-cO1">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>

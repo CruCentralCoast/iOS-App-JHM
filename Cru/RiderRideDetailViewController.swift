@@ -36,9 +36,8 @@ class RiderRideDetailViewController: UIViewController {
         navigationItem.title = "Ride Details"
         
         eventButton.setTitle(event!.name, forState: UIControlState.Normal)
-        date.text = String(ride!.month) + "   " + String(ride!.day) + "   " + ride!.time
+        date.text = ride!.getTime()
         
-        //TODO: get address from ride 
         address.text = ride!.getCompleteAddress()
         //address.sizeToFit()
 

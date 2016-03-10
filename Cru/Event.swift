@@ -8,7 +8,6 @@
 // Modified by Deniz Tumer on 3/4/16.
 
 import UIKit
-import Foundation
 
 class Event: Equatable {
     // MARK: Properties
@@ -25,22 +24,11 @@ class Event: Equatable {
     var parentMinistries: [String]
     var rideSharingEnabled: Bool
     var endDate: String
+    var endNSDate: NSDate
     var startDate: String
+    var startNSDate: NSDate
     var location: NSDictionary?
     var image: UIImage!
-    
-    //helper variables for details page
-    var startDateMonth: Int
-    var startDateYear: Int
-    var startDateDay: Int
-    var startDateHour: Int
-    var startDateMinute: Int
-
-    var endDateMonth: Int
-    var endDateYear: Int
-    var endDateDay: Int
-    var endDateHour: Int
-    var endDateMinute: Int
     
     init?() {
         self.id = ""
@@ -54,20 +42,10 @@ class Event: Equatable {
         self.parentMinistries = [String]()
         self.rideSharingEnabled = true
         self.endDate = ""
+        self.endNSDate = NSDate()
         self.startDate = ""
+        self.startNSDate = NSDate()
         self.image = nil
-        
-        self.startDateMonth = 1
-        self.startDateYear = 2016
-        self.startDateDay = 1
-        self.startDateHour = 0
-        self.startDateMinute = 0
-        
-        self.endDateMonth = 1
-        self.endDateYear = 2016
-        self.endDateDay = 1
-        self.endDateHour = 0
-        self.endDateMinute = 0
     }
     
     convenience init?(dict : NSDictionary) {
@@ -108,20 +86,10 @@ class Event: Equatable {
             self.rideSharingEnabled = dRideSharingEnabled as! Bool
         }
         if let dEndDate = dict["endDate"] {
-            let endDateComponents = GlobalUtils.dateFromString(dEndDate as! String)!
-            self.endDateMonth = endDateComponents.month
-            self.endDateYear = endDateComponents.year
-            self.endDateDay = endDateComponents.day
-            self.endDateHour = endDateComponents.hour
-            self.endDateMinute = endDateComponents.minute
+            self.endNSDate = GlobalUtils.dateFromString(dEndDate as! String)
         }
         if let dStartDate = dict["startDate"] {
-            let startDateComponents = GlobalUtils.dateFromString(dStartDate as! String)!
-            self.startDateMonth = startDateComponents.month
-            self.startDateYear = startDateComponents.year
-            self.startDateDay = startDateComponents.day
-            self.startDateHour = startDateComponents.hour
-            self.endDateMinute = startDateComponents.minute
+            self.startNSDate = GlobalUtils.dateFromString(dStartDate as! String)
         }
         if let dLocation = dict["location"] {
             self.location = dLocation as? NSDictionary
@@ -131,6 +99,11 @@ class Event: Equatable {
                 self.image = GlobalUtils.getImageFromUrl(imageUrl as! String)
             }
         }
+    }
+    
+    //function for sorting events by date
+    class func sortEventsByDate(event1: Event, event2: Event) -> Bool {
+        return event1.startNSDate.compare(event2.endNSDate) == .OrderedAscending
     }
 }
 

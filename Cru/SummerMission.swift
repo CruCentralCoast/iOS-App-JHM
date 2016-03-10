@@ -40,8 +40,8 @@ class SummerMission {
             self.cost = 9001.0
         }
         self.leaders = leaders!
-        self.startDate = GlobalUtils.dateFromString(startDate!)!
-        self.endDate = GlobalUtils.dateFromString(endDate!)!
+        self.startDate = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(startDate!))!
+        self.endDate = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(endDate!))!
         self.country = country!
         self.state = state!
         self.suburb = suburb!

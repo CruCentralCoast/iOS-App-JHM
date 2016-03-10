@@ -19,7 +19,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
-    @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var departureTime: UILabel!
     @IBOutlet weak var departureLoc: UITextView!
     @IBOutlet weak var rideName: UILabel!
@@ -36,7 +35,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         RideUtils.getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {
         })
         departureTime.text = ride.time
-        departureDate.text = String("\(ride.month) \(ride.day)")
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
         departureLoc.text = nil

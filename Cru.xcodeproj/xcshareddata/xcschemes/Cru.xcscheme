@@ -38,6 +38,17 @@
                BlueprintName = "CruTests"
                ReferencedContainer = "container:Cru.xcodeproj">
             </BuildableReference>
+            <SkippedTests>
+               <Test
+                  Identifier = "RideUtilsTest">
+               </Test>
+               <Test
+                  Identifier = "RideUtilsTest/testAddAndDropPassenger()">
+               </Test>
+               <Test
+                  Identifier = "RideUtilsTest/testPostAndRemoveRideOffer()">
+               </Test>
+            </SkippedTests>
          </TestableReference>
          <TestableReference
             skipped = "NO">
