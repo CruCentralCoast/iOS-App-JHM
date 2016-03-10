@@ -65,13 +65,14 @@ class RideUtils {
         }
 
         Alamofire.request(.POST, requestUrl, parameters: params).responseJSON { response in
-            let rideRequestUrl = Config.serverUrl + "api/ride/search"
+            let rideRequestUrl = Config.serverUrl + "api/ride/find"
 
             let passengerList = response.result.value as! NSArray
             var rideIds = [String]()
             
             for passenger in passengerList{
-                rideIds.append(passenger["_id"] as! String)
+                let pass : [String:AnyObject] = passenger as! [String : AnyObject]
+                rideIds.append(pass["_id"] as! String)
             }
                         
             let cond = ["passengers": ["$in": rideIds]]
@@ -130,9 +131,17 @@ class RideUtils {
         createPassenger(name, phone: phone, direction: direction, handler: {(response : AnyObject) in
             let jsonStruct = response as! NSDictionary
             
-            let post = jsonStruct["post"] as! NSDictionary
+            //let post = jsonStruct["post"] as! NSDictionary
             
-            let passengerId = post["_id"] as! String
+            do {
+                let something = try NSJSONSerialization.dataWithJSONObject(response, options: NSJSONWritingOptions.PrettyPrinted)
+                let string1 = NSString(data: something, encoding: NSUTF8StringEncoding)
+                print(string1)
+            } catch {
+                print("Error writing json body")
+            }
+            
+            let passengerId = jsonStruct["_id"] as! String
             passIdHandler(passengerId)
             
             addPassengerToRide(rideId, passengerId: passengerId, handler: handler)
