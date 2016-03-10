@@ -11,10 +11,11 @@ import WildcardSDK
 import AVFoundation
 import Alamofire
 
-class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CardViewDelegate {
+class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate, CardViewDelegate {
     //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var selectorBar: UITabBar!
     
     var resources = [Resource]()
     var resourceLinks = [String]()
@@ -22,6 +23,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        selectorBar.selectedItem = selectorBar.items![0]
         // Do any additional setup after loading the view.
         self.tableView.delegate = self
         
@@ -42,6 +44,11 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.estimatedRowHeight = 50
         
     }
+    
+    func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        print("selected \(item.title)")
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

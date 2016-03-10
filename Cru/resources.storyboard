@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="138" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sE5-K1-BZV">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
+                                <rect key="frame" x="0.0" y="49" width="600" height="487"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -47,14 +47,31 @@
                                     <outlet property="delegate" destination="M8g-nZ-a69" id="7mH-k8-Vnf"/>
                                 </connections>
                             </tableView>
+                            <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-Ok-niP">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                <animations/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <items>
+                                    <tabBarItem title="Articles" image="article" id="M9F-mC-JKS" userLabel="Articles"/>
+                                    <tabBarItem title="Videos" image="video" id="yxc-95-F9C" userLabel="Videos"/>
+                                    <tabBarItem title="Audio" image="audio" id="APx-3n-ORT" userLabel="Audio"/>
+                                </items>
+                                <connections>
+                                    <outlet property="delegate" destination="M8g-nZ-a69" id="5Ki-Pb-Toa"/>
+                                </connections>
+                            </tabBar>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="sE5-K1-BZV" firstAttribute="top" secondItem="BtO-Y7-cCi" secondAttribute="bottom" id="9vP-bZ-CYL"/>
-                            <constraint firstItem="GR8-yy-jq5" firstAttribute="top" secondItem="sE5-K1-BZV" secondAttribute="bottom" id="atQ-U5-Ilg"/>
-                            <constraint firstItem="sE5-K1-BZV" firstAttribute="leading" secondItem="Jz1-iA-bcz" secondAttribute="leadingMargin" constant="-20" id="mn9-z0-xKh"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="sE5-K1-BZV" secondAttribute="trailing" constant="-20" id="yYw-ZT-7G2"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lHA-Ok-niP" secondAttribute="trailing" constant="-20" id="0b7-Je-ZNy"/>
+                            <constraint firstItem="lHA-Ok-niP" firstAttribute="top" secondItem="BtO-Y7-cCi" secondAttribute="bottom" id="0hI-2Q-bLB"/>
+                            <constraint firstItem="lHA-Ok-niP" firstAttribute="leading" secondItem="Jz1-iA-bcz" secondAttribute="leadingMargin" constant="-20" id="6aP-Vo-gPf"/>
+                            <constraint firstItem="sE5-K1-BZV" firstAttribute="top" secondItem="lHA-Ok-niP" secondAttribute="bottom" id="8e7-AA-pVm"/>
+                            <constraint firstItem="sE5-K1-BZV" firstAttribute="leading" secondItem="Jz1-iA-bcz" secondAttribute="leadingMargin" constant="-20" id="Ivt-bi-EgW"/>
+                            <constraint firstItem="sE5-K1-BZV" firstAttribute="top" secondItem="lHA-Ok-niP" secondAttribute="bottom" id="fX8-Y8-Gdu"/>
+                            <constraint firstItem="GR8-yy-jq5" firstAttribute="top" secondItem="sE5-K1-BZV" secondAttribute="bottom" id="gxH-Hy-1Ge"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sE5-K1-BZV" secondAttribute="trailing" constant="-20" id="uBy-4O-3bd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Resources" id="cax-rf-stk">
@@ -66,6 +83,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="menuButton" destination="18u-6D-tuA" id="WOE-C8-K5W"/>
+                        <outlet property="selectorBar" destination="lHA-Ok-niP" id="vYj-sb-YnI"/>
                         <outlet property="tableView" destination="sE5-K1-BZV" id="v9L-cO-TQI"/>
                     </connections>
                 </viewController>
@@ -195,7 +213,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ufC-ob-TB0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1470" y="3354"/>
+            <point key="canvasLocation" x="898" y="3168"/>
         </scene>
         <!--Resource Video Table View Controller-->
         <scene sceneID="Vat-0d-GJy">
@@ -278,6 +296,9 @@
         </scene>
     </scenes>
     <resources>
+        <image name="article" width="25" height="25"/>
+        <image name="audio" width="25" height="25"/>
         <image name="menuIcon" width="27" height="18"/>
+        <image name="video" width="25" height="25"/>
     </resources>
 </document>
