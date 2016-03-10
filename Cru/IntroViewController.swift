@@ -12,11 +12,6 @@ import UIKit
 
 class IntroViewController: UIViewController {
     // MARK: Properties
-    
-    // temporary placeholder for constants
-    let BACKGROUND_OPACITY: CGFloat = 0.7
-    let MODAL_CORNER_RADIUS: CGFloat = 15.0
-    
     // all of the introduction modals
     var introModals = [UIView]()
     // background view outlet for modal window
@@ -72,8 +67,8 @@ class IntroViewController: UIViewController {
     
     // function for initializing properties about the background and the background modal view
     private func initializeBackgroundViewProperties() {
-        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(BACKGROUND_OPACITY)
-        backgroundModal.layer.cornerRadius = MODAL_CORNER_RADIUS
+        self.view.backgroundColor = UIColor.blackColor().colorWithAlphaComponent(Config.backgroundViewOpacity)
+        backgroundModal.layer.cornerRadius = Config.modalBackgroundRadius
     }
     
     // function for initializing programmatically a button for next or back

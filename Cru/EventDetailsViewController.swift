@@ -137,7 +137,7 @@ class EventDetailsViewController: UIViewController {
         
         self.navigationController?.pushViewController(vc, animated: true)
         //self.presentViewController(vc, animated: true, completion: nil)
-        vc.loadEvents({ vc.selectVal(self.event)})
+        //vc.loadEvents({ vc.selectVal(self.event)})
         
     }
 }

@@ -29,7 +29,11 @@ struct Config {
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
     
-    /* Configureations for Events */
+    /* Modal Configurations: Used on the introduction page and create ride */
+    static let backgroundViewOpacity: CGFloat = 0.7
+    static let modalBackgroundRadius: CGFloat = 15.0
+    
+    /* Configurations for Events */
     //reuse identifier for event collection cells
     static let eventReuseIdentifier = "event"
     //resourse loader key for events

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TempEventTableViewCell: UITableViewCell {
+class ChooseEventTableViewCell: UITableViewCell {
     //MARK: Properties
     @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!

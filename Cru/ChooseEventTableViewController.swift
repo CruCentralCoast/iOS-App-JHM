@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TempEventTableViewController: UITableViewController {
+class ChooseEventTableViewController: UITableViewController {
     
     //MARK: Properties
     var events = [Event]()
@@ -40,22 +40,17 @@ class TempEventTableViewController: UITableViewController {
     
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "PoopyTest"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! TempEventTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(Config.eventReuseIdentifier, forIndexPath: indexPath) as! ChooseEventTableViewCell
         
         // Fetches the appropriate meal for the data source layout.
         let event = events[indexPath.row]
+        let startEventDate = GlobalUtils.dateComponentsFromDate(event.startNSDate)!
+        let dateFormatter = NSDateFormatter()
+        let months = dateFormatter.shortMonthSymbols
         
-        //Creating the abbreviated version of the month to be displayed
-        let dateFormatter: NSDateFormatter = NSDateFormatter()
-        
-//        let months = dateFormatter.shortMonthSymbols
-//        let monthShort = months[event.month!-1]
-//        
-//        cell.monthLabel.text = monthShort.uppercaseString
-//        
-//        cell.dateLabel.text = String(event.startDay!)
-//        cell.nameLabel.text = event.name
+        cell.monthLabel.text = months[startEventDate.month - 1].uppercaseString
+        cell.dateLabel.text = String(startEventDate.day)
+        cell.nameLabel.text = event.name
         
         return cell
     }
@@ -73,7 +68,5 @@ class TempEventTableViewController: UITableViewController {
                 }
             }
         }
-        
     }
-    
 }

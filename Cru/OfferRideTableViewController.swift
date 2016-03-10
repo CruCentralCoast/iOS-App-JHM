@@ -157,14 +157,6 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         self.formHasBeenEdited = true
     }
     
-    // Function for sending the selected event to this view controller.
-    // sets the selected event to the event that was selected in the event table view controller.
-    @IBAction func unwindWithSelectedEvent(segue: UIStoryboardSegue) {
-        if let eventPickerViewController = segue.sourceViewController as? TempEventTableViewController, selectedEvent = eventPickerViewController.selectedEvent {
-            event = selectedEvent
-        }
-    }
-    
     // Action for adding/subtracting from the available seats
     @IBAction func availableSeatsStepperChanged(sender: UIStepper) {
         numAvailableSeatsLabel.text = Int(sender.value).description
@@ -268,6 +260,17 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         }
         
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //check if we're going to event modal
+        if segue.identifier == "pickEvent" {
+            if let destinationVC = segue.destinationViewController as? EventModalViewController {
+                destinationVC.eventModalClosure = { event in
+                    self.event = event
+                }
+            }
+        }
     }
 }
 
