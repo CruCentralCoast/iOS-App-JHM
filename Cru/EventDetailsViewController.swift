@@ -136,8 +136,6 @@ class EventDetailsViewController: UIViewController {
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController
         
         self.navigationController?.pushViewController(vc, animated: true)
-        //self.presentViewController(vc, animated: true, completion: nil)
-        //vc.loadEvents({ vc.selectVal(self.event)})
-        
+        vc.loadRides(event)
     }
 }

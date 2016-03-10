@@ -19,6 +19,8 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     var filteredRides = [Ride]()
     var allRides = [Ride]()
     
+    //this is dumb we need to change this
+    var tempEvent: Event?
     var selectedEvent: Event? {
         didSet {
             if let selectedEvent = selectedEvent {
@@ -39,27 +41,38 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         
         navigationItem.title = "Available Rides"
         
-        loadRides()
+        if tempEvent == nil {
+            loadRides(nil)
+        }
     }
     
-    func loadRides(){
+    func loadRides(event: Event?) {
+        print("LOADING RIDES")
+        print(event)
+        tempEvent = event
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        
         RideUtils.getRidesNotDriving(Config.gcmId, inserter: insertRide, afterFunc: loadRidesCompletionHandler)
     }
     
-    private func insertRide(dict: NSDictionary){
+    private func insertRide(dict: NSDictionary) {
         allRides.append(Ride(dict: dict)!)
     }
     
-    private func loadRidesCompletionHandler(){
+    private func loadRidesCompletionHandler() {
+        print("COMPLETE")
+        if tempEvent != nil {
+            selectedEvent = tempEvent
+        }
+        
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
     private func filterRidesByEventId(eventId: String){
         filteredRides.removeAll()
         
-        for ride in allRides{
+        print("FILTERING")
+        
+        for ride in allRides {
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
             }
@@ -82,7 +95,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         let thisRide = filteredRides[indexPath.row]
         cell.month.text = thisRide.month
         cell.day.text = String(thisRide.day)
-        cell.time.text = thisRide.time
+        cell.time.text = GlobalUtils.stringFromDate(thisRide.date!, format: "h:mma")
         
         cell.seatsLeft.text = thisRide.seatsLeft() + " seats left"
         
