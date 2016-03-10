@@ -62,6 +62,7 @@ class RidesTableViewController: UITableViewController {
     
     
     func finishRefresh(){
+        rides.sortInPlace()
         self.tableView.reloadData()
         self.refreshControl?.endRefreshing()
     }

@@ -72,13 +72,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         switch (currentType){
             case .Article:
-                print("\(articleViews.count) articles")
                 oldTypeCount = articleViews.count
             case .Audio:
-                print("\(audioViews.count) audio")
                 oldTypeCount = audioViews.count
             case .Video:
-                print("\(videoViews.count) video")
                 oldTypeCount = videoViews.count
         }
         
@@ -90,28 +87,21 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
 
         let numNewCells = newTypeCount - oldTypeCount
-        print("newTypeCount is \(newTypeCount)")
-        print("oldTypeCount is \(oldTypeCount)")
-        print("numNewCells is \(numNewCells)")
-        
+
         self.tableView.beginUpdates()
         if(numNewCells < 0){
             let numCellsToRemove = -numNewCells
-            print("ABOUT TO REMOVE \(numCellsToRemove) cells")
             for i in 0...(numCellsToRemove - 1){
-                print("meep")
                 self.tableView.deleteRowsAtIndexPaths([NSIndexPath(forItem: i, inSection: 0)], withRowAnimation: .Automatic)
             }
         }
         else if(numNewCells > 0){
             for i in 0...(numNewCells - 1){
-                print("beep")
                 self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: i, inSection: 0)], withRowAnimation: .Automatic)
             }
         }
         self.tableView.endUpdates()
         self.tableView.reloadData()
-        //print("selected \(item.title)")
     }
     
 
@@ -182,20 +172,13 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //print("\nNum card views in the thing: \(cardViews.count)\n")
-        //print("\nNum Resources: \(resources.count)\n")
-        //return cardViews.count
-        
         switch (currentType){
-        case .Article:
-            print("\(articleViews.count) articles")
-            return articleViews.count
-        case .Audio:
-            print("\(audioViews.count) audio")
-            return audioViews.count
-        case .Video:
-            print("\(videoViews.count) video")
-            return videoViews.count
+            case .Article:
+                return articleViews.count
+            case .Audio:
+                return audioViews.count
+            case .Video:
+                return videoViews.count
         }
     }
     
