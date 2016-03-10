@@ -40,14 +40,12 @@ class ServerUtils {
     class func insertResources(inserter : (NSDictionary) -> (), afterFunc : () -> ()) -> (AnyObject)-> () {
         return {(response : AnyObject) in
             let jsonList = response as! NSArray
-            dispatch_async(dispatch_get_main_queue(), {
-                for sm in jsonList {
-                    if let dict = sm as? [String: AnyObject]{
-                        inserter(dict)
-                    }
+            for sm in jsonList {
+                if let dict = sm as? [String: AnyObject]{
+                    inserter(dict)
                 }
-                afterFunc()
-            })
+            }
+            afterFunc()
         }
     }
 

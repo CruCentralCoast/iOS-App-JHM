@@ -6,7 +6,11 @@ import Alamofire
 class LoginUtils {
     class func login(username: String, password :String, completionHandler : (success : Bool) -> Void) {
         
-        let params = ["username":username, "password":password]
+        var params = ["username":username, "password":password]
+        let gcmId = SubscriptionManager.loadGCMToken()
+        if (gcmId != "") {
+            params[Config.gcmIdField] = gcmId
+        }
         let url = Config.serverUrl + "api/signin"
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in
