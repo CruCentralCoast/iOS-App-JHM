@@ -110,6 +110,7 @@
 		6DBD7B941C75742A00D11FFA /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */; };
 		6DBD7B971C75746300D11FFA /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */; };
 		6DBD7B9A1C75747C00D11FFA /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */; };
+		6DC3747A1C925BC200B3ADB3 /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC374791C925BC200B3ADB3 /* ResourcesTest.swift */; };
 		850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
 		857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */; };
 		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
@@ -249,6 +250,7 @@
 		6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMed.otf; sourceTree = "<group>"; };
 		6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMedIt.otf; sourceTree = "<group>"; };
 		6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
+		6DC374791C925BC200B3ADB3 /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesTest.swift; path = Resources/ResourcesTest.swift; sourceTree = "<group>"; };
 		7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruTests/Pods-CruTests.debug.xcconfig"; sourceTree = "<group>"; };
 		850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUtils.swift; sourceTree = "<group>"; };
 		857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -419,6 +421,7 @@
 		0F8CEF371BEC0E14008FC70D /* CruTests */ = {
 			isa = PBXGroup;
 			children = (
+				6DC3747B1C925BCA00B3ADB3 /* Resources */,
 				0F7CB3CF1C919DE800C8444F /* Config */,
 				0F7CB3CE1C919DDF00C8444F /* Utils */,
 				0F7CB3CD1C919DD100C8444F /* Ministry */,
@@ -628,6 +631,14 @@
 				50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */,
 			);
 			name = FindRide;
+			sourceTree = "<group>";
+		};
+		6DC3747B1C925BCA00B3ADB3 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6DC374791C925BC200B3ADB3 /* ResourcesTest.swift */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		85C6D1161C0BD5CD006A4F9F /* Utils */ = {
@@ -992,6 +1003,7 @@
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
+				6DC3747A1C925BC200B3ADB3 /* ResourcesTest.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
 				0F7CB3C71C919B6200C8444F /* RideTest.swift in Sources */,

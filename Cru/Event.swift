@@ -1,6 +1,7 @@
 //
 //  Event.swift
 //  Cru
+//  This class stores the data for an event, such as its ID, description, start time, end time, and other data.
 //
 //  Created by Erica Solum on 11/24/15.
 //  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
