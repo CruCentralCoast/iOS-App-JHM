@@ -13,11 +13,10 @@ import UIKit
 class SummerMissionController: UICollectionViewController {
     
     //MARK: Constants
-    private let dbCollectionName = "summermission"
     private let reuseIdentifier = "SummerMissionCell"
     
     //MARK: Properties
-    private var missions: [SummerMission] = Array()
+    private var missions: [SummerMission]()
     var startTime:Int!
     var endTime:Int!
     
@@ -27,7 +26,7 @@ class SummerMissionController: UICollectionViewController {
         
         // load summer missions from database
         startTime = Int(NSDate().timeIntervalSince1970)
-        ServerUtils.loadResources(dbCollectionName, inserter: insertMission, afterFunc: reload)
+        ServerUtils.loadResources(Config.missionsCollection, inserter: insertMission, afterFunc: reload)
         
         // set background
         if let patternImage = UIImage(named: "Pattern") {

@@ -121,6 +121,7 @@
 		C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103605C6F44AE29021FA1E17 /* Pods_Cru.framework */; };
+		E94DCDB71C93D59600BDF756 /* SummerMissionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DCDB61C93D59600BDF756 /* SummerMissionTest.swift */; };
 		E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
 		E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB002C1C8F7E04000F7E12 /* SummerMission.swift */; };
 		E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB002D1C8F7E04000F7E12 /* SummerMissionCell.swift */; };
@@ -264,6 +265,7 @@
 		C1DCEC451C7681E1009FACE0 /* RideUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtils.swift; sourceTree = "<group>"; };
 		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
 		E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E94DCDB61C93D59600BDF756 /* SummerMissionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionTest.swift; sourceTree = "<group>"; };
 		E96367931C6D3B8D00B9DBBE /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E9CB002C1C8F7E04000F7E12 /* SummerMission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMission.swift; sourceTree = "<group>"; };
 		E9CB002D1C8F7E04000F7E12 /* SummerMissionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionCell.swift; sourceTree = "<group>"; };
@@ -331,6 +333,7 @@
 		0F7CB3CB1C919DAE00C8444F /* SummerMissions */ = {
 			isa = PBXGroup;
 			children = (
+				E94DCDB61C93D59600BDF756 /* SummerMissionTest.swift */,
 			);
 			name = SummerMissions;
 			sourceTree = "<group>";
@@ -737,7 +740,7 @@
 		0F8CEF151BEC0E13008FC70D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = "Jamaican Hopscotch Mafia";
 				TargetAttributes = {
@@ -992,6 +995,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E94DCDB71C93D59600BDF756 /* SummerMissionTest.swift in Sources */,
 				0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */,
 				0F7CB3C61C919B6000C8444F /* RideUtilsTest.swift in Sources */,
 				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
@@ -1183,6 +1187,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1192,6 +1197,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -1199,6 +1205,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 277D1AE905C50EF27C022201 /* Pods-CruTests.release.xcconfig */;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
