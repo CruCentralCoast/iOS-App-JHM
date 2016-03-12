@@ -110,10 +110,12 @@
 		6DBD7B941C75742A00D11FFA /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */; };
 		6DBD7B971C75746300D11FFA /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */; };
 		6DBD7B9A1C75747C00D11FFA /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */; };
-		6DC3747A1C925BC200B3ADB3 /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DC374791C925BC200B3ADB3 /* ResourcesTest.swift */; };
 		850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
 		857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */; };
 		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
+		C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1015CD11C9429D0005B559E /* ResourcesTest.swift */; };
+		C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
+		C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */; };
 		C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
 		C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
@@ -122,7 +124,6 @@
 		C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103605C6F44AE29021FA1E17 /* Pods_Cru.framework */; };
-		E94DCDB71C93D59600BDF756 /* SummerMissionTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E94DCDB61C93D59600BDF756 /* SummerMissionTest.swift */; };
 		E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
 		E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB002C1C8F7E04000F7E12 /* SummerMission.swift */; };
 		E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB002D1C8F7E04000F7E12 /* SummerMissionCell.swift */; };
@@ -252,13 +253,14 @@
 		6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMed.otf; sourceTree = "<group>"; };
 		6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMedIt.otf; sourceTree = "<group>"; };
 		6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
-		6DC374791C925BC200B3ADB3 /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ResourcesTest.swift; path = Resources/ResourcesTest.swift; sourceTree = "<group>"; };
 		7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruTests/Pods-CruTests.debug.xcconfig"; sourceTree = "<group>"; };
 		850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUtils.swift; sourceTree = "<group>"; };
 		857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilsTest.swift; sourceTree = "<group>"; };
 		85EAB8191C0ECC8A005C7658 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.debug.xcconfig"; sourceTree = "<group>"; };
+		C1015CD11C9429D0005B559E /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
+		C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtilsTest.swift; sourceTree = "<group>"; };
 		C12C0A861C941E9C005751A0 /* DBCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBCollection.swift; sourceTree = "<group>"; };
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
@@ -267,7 +269,6 @@
 		C1DCEC451C7681E1009FACE0 /* RideUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtils.swift; sourceTree = "<group>"; };
 		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
 		E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E94DCDB61C93D59600BDF756 /* SummerMissionTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionTest.swift; sourceTree = "<group>"; };
 		E96367931C6D3B8D00B9DBBE /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		E9CB002C1C8F7E04000F7E12 /* SummerMission.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMission.swift; sourceTree = "<group>"; };
 		E9CB002D1C8F7E04000F7E12 /* SummerMissionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionCell.swift; sourceTree = "<group>"; };
@@ -335,7 +336,6 @@
 		0F7CB3CB1C919DAE00C8444F /* SummerMissions */ = {
 			isa = PBXGroup;
 			children = (
-				E94DCDB61C93D59600BDF756 /* SummerMissionTest.swift */,
 			);
 			name = SummerMissions;
 			sourceTree = "<group>";
@@ -357,6 +357,7 @@
 		0F7CB3CE1C919DDF00C8444F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -641,7 +642,7 @@
 		6DC3747B1C925BCA00B3ADB3 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6DC374791C925BC200B3ADB3 /* ResourcesTest.swift */,
+				C1015CD11C9429D0005B559E /* ResourcesTest.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -999,19 +1000,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E94DCDB71C93D59600BDF756 /* SummerMissionTest.swift in Sources */,
 				0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */,
+				C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */,
 				0F7CB3C61C919B6000C8444F /* RideUtilsTest.swift in Sources */,
 				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
+				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
 				0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */,
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
-				6DC3747A1C925BC200B3ADB3 /* ResourcesTest.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
 				0F7CB3C71C919B6200C8444F /* RideTest.swift in Sources */,
@@ -1020,6 +1021,7 @@
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				500A37B11C7D6587007D6A3B /* Passenger.swift in Sources */,
+				C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */,
 				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,
 				0F1959C91C8E5B0400A783BA /* ServerUtils.swift in Sources */,
@@ -1182,7 +1184,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Cru/Cru-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
