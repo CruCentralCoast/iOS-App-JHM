@@ -16,7 +16,7 @@ class SummerMissionController: UICollectionViewController {
     private let reuseIdentifier = "SummerMissionCell"
     
     //MARK: Properties
-    private var missions: [SummerMission]()
+    private var missions: [SummerMission] = Array()
     var startTime:Int!
     var endTime:Int!
     

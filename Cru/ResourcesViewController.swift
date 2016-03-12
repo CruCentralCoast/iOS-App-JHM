@@ -35,11 +35,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.separatorColor = UIColor.clearColor()
         
         //If the user is logged in, view special resources. Otherwise load non-restricted resources.
-        if (GlobalUtils.loadString(Config.leaderApiKey) == "") {
-            ServerUtils.loadResources("resource", inserter: insertResource, afterFunc: formatResources)
-        } else {
-            ServerUtils.loadSpecialResources("resource", inserter: insertResource, afterFunc: formatResources)
-        }
+        ServerUtils.loadResources("resource", inserter: insertResource, useApiKey: true)
         
         
         tableView.backgroundColor = Colors.googleGray

@@ -1,40 +1,49 @@
 //
-//  DBUtils.swift
+//  ServerUtils.swift
 //  Cru
 //
 //  Created by Peter Godkin on 11/24/15.
-//  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
+//
+//  Class of static methods that communicate with keystone server using HTTP requests.
+//  Made to simplify interactions with the server.
 //
 
 import Alamofire
 
 class ServerUtils {
-
-    static func getById(collectionName : String, id: String, inserter : (NSDictionary) -> ()){
-        let requestUrl = Config.serverUrl + "api/" + collectionName + "/" + id
-        
-        sendHttpGetRequest(requestUrl, completionHandler : {(response : AnyObject) in
-            inserter(response as! NSDictionary)
-        })
-    }
     
-    class func loadSpecialResources(collectionName : String, inserter : (NSDictionary) -> ()) {
-        loadSpecialResources(collectionName, inserter: inserter, afterFunc: {() in })
-    }
     
-    class func loadSpecialResources(collectionName : String, inserter : (NSDictionary) -> (), afterFunc : () -> ()) {
-        let apiKeyStr = "?" + Config.leaderApiKey + "=" + GlobalUtils.loadString(Config.leaderApiKey)
-        let requestUrl = Config.serverUrl + "api/" + collectionName + "/list" + apiKeyStr
-        sendHttpGetRequest(requestUrl, completionHandler: insertResources(inserter, afterFunc: afterFunc))
-    }
+    //Sends a request for all items in the specified collection and calls the inserter method
+    //passed in for each item returned. AfterFunc is called after all the insert calls are done
     
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
-        loadResources(collectionName, inserter: inserter, afterFunc: {() in })
+        loadResources(collectionName, inserter: inserter, afterFunc: {() in }, useApiKey: false)
+    }
+    
+    class func loadResources(collectionName : String, inserter : (NSDictionary) -> (), useApiKey : Bool) {
+        loadResources(collectionName, inserter: inserter, afterFunc: {() in }, useApiKey: useApiKey)
     }
     
     class func loadResources(collectionName : String, inserter : (NSDictionary) -> (), afterFunc : () -> ()) {
-        let requestUrl = Config.serverUrl + "api/" + collectionName + "/list";
+        
+        loadResources(collectionName, inserter: inserter, afterFunc: afterFunc, useApiKey: false)
+    }
+    
+    class func loadResources(collectionName : String, inserter : (NSDictionary) -> (), afterFunc : () -> (), useApiKey: Bool) {
+        
+        var requestUrl = Config.serverUrl + "api/" + collectionName + "/list";
+        if (useApiKey && LoginUtils.isLoggedIn()) {
+            requestUrl += "?" + Config.leaderApiKey + "=" + GlobalUtils.loadString(Config.leaderApiKey)
+        }
+        
         sendHttpGetRequest(requestUrl, completionHandler: insertResources(inserter, afterFunc: afterFunc))
+    }
+    
+    // Made to simplify writing callbacks by automatically getting items from server response and inserting
+    // them into a local array for you
+    
+    class func insertResources(inserter : (NSDictionary) -> ()) -> (AnyObject)-> () {
+        return insertResources(inserter, afterFunc: {() in })
     }
     
     class func insertResources(inserter : (NSDictionary) -> (), afterFunc : () -> ()) -> (AnyObject)-> () {
@@ -49,6 +58,8 @@ class ServerUtils {
         }
     }
 
+    //The following "sendHttp" functions use Alamofire to send http requests to the specified url
+    
     class func sendHttpGetRequest(reqUrl : String, completionHandler : (AnyObject) -> Void) {
         sendHttpRequest(.GET, reqUrl: reqUrl, body: [:], completionHandler: completionHandler)
     }
@@ -73,9 +84,10 @@ class ServerUtils {
         }
     }
     
-    //send push notification if possible, otherwise send text
+    // Send a request to the server with the users name, phonenumber and the id of the team they want to join.
+    // The server should return a list containing the contact info for each team leader
     class func joinMinistryTeam(ministryTeamId: String, fullName: String, phone: String, callback: (NSArray) -> Void) {
-        let url = Config.serverUrl + "api/ministryteam/join"
+        let url = Config.serverUrl + "api/" + DBCollection.MinistryTeam.name() + "/join"
         let params: [String: AnyObject] = ["id": ministryTeamId, "name": fullName, "phone": phone]
         
         Alamofire.request(.POST, url, parameters: params).responseJSON {
@@ -85,78 +97,8 @@ class ServerUtils {
                 callback(leaders)
             }
             else {
-                print("ERROR")
+                print("Error: failed to get leader info")
             }
         }
     }
-    
-//    static func postFakeEvent(idhandler : (String)->()){
-//        let url = Config.serverUrl + "api/event/create"
-//        let dict = ["slug":"testest",
-//            "url":"https://www.facebook.com/events/960196250690072/",
-//            "description":"test event",
-//            "name":"TEST EVENT",
-//            "__v":1,
-//            "notificationDate":"2015-10-12T15:00:00.000Z",
-//            "parentMinistry":"563b07402930ae0300fbc09b",
-//            "imageSquare":[
-//                "public_id":"bzvuvdp24teiwrkosvua",
-//                "version":1455219064,
-//                "signature":"f9b28fd9299e7eabaef3dd9988d83ba702742d3c",
-//                "width":1268,
-//                "height":1268,
-//                "format":"jpg",
-//                "resource_type":"image",
-//                "url":"http://res.cloudinary.com/dcyhqxvmq/image/upload/v1455219064/bzvuvdp24teiwrkosvua.jpg",
-//                "secure_url":"https://res.cloudinary.com/dcyhqxvmq/image/upload/v1455219064/bzvuvdp24teiwrkosvua.jpg"
-//            ],
-//            "notifications":[
-//                
-//            ],
-//            "parentMinistries":[
-//                "563b08df2930ae0300fbc0a0",
-//                "563b08fb2930ae0300fbc0a1",
-//                "563b090b2930ae0300fbc0a2",
-//                "563b091f2930ae0300fbc0a3",
-//                "563b07402930ae0300fbc09b",
-//                "563b08d62930ae0300fbc09f",
-//                "563b08482930ae0300fbc09c",
-//                "563b085d2930ae0300fbc09d",
-//                "563b094e2930ae0300fbc0a5"
-//            ],
-//            "rideSharingEnabled":true,
-//            "endDate":"2016-10-16T12:00:00.000Z",
-//            "startDate":"2016-10-15T19:00:00.000Z",
-//            "location":[
-//                "postcode":"93001",
-//                "state":"CA",
-//                "suburb":"Ventura",
-//                "street1":"2055 E Harbor Blvd",
-//                "country":"United States"
-//            ],
-//            "image":[
-//                "public_id":"devd2faxvvnumpsdkclp",
-//                "version":1446711704,
-//                "signature":"6537942b4e856bf6acd6ef656f12c6c56d0a2d4f",
-//                "width":2048,
-//                "height":770,
-//                "format":"jpg",
-//                "resource_type":"image",
-//                "url":"http://res.cloudinary.com/dcyhqxvmq/image/upload/v1446711704/devd2faxvvnumpsdkclp.jpg",
-//                "secure_url":"https://res.cloudinary.com/dcyhqxvmq/image/upload/v1446711704/devd2faxvvnumpsdkclp.jpg"
-//            ]]
-//        
-//        Alamofire.request(.POST, url, parameters: dict)
-//            .responseJSON { response in
-//                if let JSON = response.result.value {
-//                    if let dict = JSON as? NSDictionary {
-//                        if let postDict = dict["post"] as? NSDictionary{
-//                            if let rideid = postDict["_id"] as? String {
-//                                idhandler(rideid)
-//                            }
-//                        }
-//                    }
-//                }
-//        }
-//    }
 }
