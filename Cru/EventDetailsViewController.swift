@@ -1,6 +1,8 @@
 //
 //  EventDetailsViewController.swift
-//  Cru
+//  
+//  This class customizes the view that is shown when an event is inspected in detail. The app switches to 
+//  this view when a cell in its parent view EventCollectionViewController.swift is selected.
 //
 //  Created by Erica Solum on 11/25/15.
 //  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
@@ -12,7 +14,6 @@ import EventKit
 class EventDetailsViewController: UIViewController {
 
     //MARK: Properties
-    
     @IBOutlet weak var image: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
@@ -48,6 +49,7 @@ class EventDetailsViewController: UIViewController {
         
         navigationItem.title = "Event Details"
         
+        //Set the UI elements to the event’s corresponding value
         image.image = event.image
         titleLabel.text = event.name
         startTimeLabel.text = GlobalUtils.stringFromDate(event.startNSDate, format: dateFormat)
