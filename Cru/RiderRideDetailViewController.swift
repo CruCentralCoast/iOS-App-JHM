@@ -22,11 +22,7 @@ class RiderRideDetailViewController: UIViewController {
             eventButton.setTitle(event!.name, forState: UIControlState.Normal)
         }
     }
-    var ride: Ride?{
-        didSet{
-            
-        }
-    }
+    var ride: Ride?
     
     @IBOutlet weak var eventButton: UIButton!
     @IBOutlet weak var direction: UILabel!
@@ -40,7 +36,6 @@ class RiderRideDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         navigationItem.title = "Ride Details"
         
         
