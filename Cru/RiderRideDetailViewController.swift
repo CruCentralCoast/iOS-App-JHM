@@ -36,7 +36,8 @@ class RiderRideDetailViewController: UIViewController {
         navigationItem.title = "Ride Details"
         
         eventButton.setTitle(event!.name, forState: UIControlState.Normal)
-        date.text = ride!.getTime()
+        //date.text = ride!.getTime()
+        setTime(ride!)
         
         address.text = ride!.getCompleteAddress()
         //address.sizeToFit()
@@ -64,6 +65,10 @@ class RiderRideDetailViewController: UIViewController {
             direction.text = toEvent
         }
         
+    }
+    
+    func setTime(td : TimeDetail){
+        date.text = td.getTime()
     }
     
     @IBAction func eventLabelPressed(sender: AnyObject) {

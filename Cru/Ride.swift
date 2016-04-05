@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Ride: Comparable, Equatable {
+class Ride: Comparable, Equatable, TimeDetail {
     var id: String
     var direction: String
     var seats: Int
