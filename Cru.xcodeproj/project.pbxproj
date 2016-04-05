@@ -69,6 +69,36 @@
 		5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
 		5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
 		5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
+		5072B41A1CB38B80001F5BF6 /* TestDriverRideDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */; };
+		5072B41B1CB38BF8001F5BF6 /* RiderRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */; };
+		5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
+		5072B41D1CB38E0A001F5BF6 /* RidesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503547861C5ABC6900418A92 /* RidesTableViewController.swift */; };
+		5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
+		5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
+		5072B4201CB38E5F001F5BF6 /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
+		5072B4211CB38E67001F5BF6 /* EventModalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F542CF31C9156EF00CCF136 /* EventModalViewController.swift */; };
+		5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
+		5072B4231CB38E75001F5BF6 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
+		5072B4241CB38E99001F5BF6 /* ChooseEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5095272A1C63E6D000E4F7B6 /* ChooseEventTableViewCell.swift */; };
+		5072B4251CB38E99001F5BF6 /* ChooseEventTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527291C63E6D000E4F7B6 /* ChooseEventTableViewController.swift */; };
+		5072B4281CB38F43001F5BF6 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
+		5072B4291CB38F74001F5BF6 /* driverdetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509DA9181C616C840050CE26 /* driverdetail.storyboard */; };
+		5072B42A1CB38FC4001F5BF6 /* riderdetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509DA9141C616BE60050CE26 /* riderdetail.storyboard */; };
+		5072B42B1CB38FEB001F5BF6 /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501D0ABE1C68588700BF243A /* events.storyboard */; };
+		5072B42C1CB38FFE001F5BF6 /* sideMenu.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */; };
+		5072B42D1CB39022001F5BF6 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */; };
+		5072B42E1CB39022001F5BF6 /* ministrytable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */; };
+		5072B42F1CB39022001F5BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
+		5072B4301CB39022001F5BF6 /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251C1C0BB8DF005396BC /* summermissions.storyboard */; };
+		5072B4311CB39022001F5BF6 /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
+		5072B4321CB39022001F5BF6 /* ministryteam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAEB9791C86C1D1005C0B4C /* ministryteam.storyboard */; };
+		5072B4331CB39022001F5BF6 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
+		5072B4341CB39022001F5BF6 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
+		5072B4351CB39022001F5BF6 /* eventmodal.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7CB3C01C915D6900C8444F /* eventmodal.storyboard */; };
+		5072B4361CB39022001F5BF6 /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
+		5072B4371CB39022001F5BF6 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
+		5072B4381CB39022001F5BF6 /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06C91C5F080200DAD10E /* ridesharing.storyboard */; };
+		5072B4391CB39022001F5BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF241BEC0E13008FC70D /* Main.storyboard */; };
 		5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
 		509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */; };
 		509527281C63E6BC00E4F7B6 /* OfferRideTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */; };
@@ -216,6 +246,7 @@
 		507086881C8F69ED006C5215 /* Pods_CruUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CruUITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_CruUITests.framework"; sourceTree = "<group>"; };
 		5070868A1C8F6A0E006C5215 /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationPicker.framework; path = "Pods/../build/Debug-iphoneos/LocationPicker.framework"; sourceTree = "<group>"; };
 		5072B4161CB38616001F5BF6 /* TimeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDetail.swift; sourceTree = "<group>"; };
+		5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDriverRideDetail.swift; sourceTree = "<group>"; };
 		5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverRideDetailViewController.swift; sourceTree = "<group>"; };
 		509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RiderRideDetailViewController.swift; sourceTree = "<group>"; };
 		509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRideTableViewController.swift; sourceTree = "<group>"; };
@@ -513,6 +544,7 @@
 			children = (
 				507086821C8F5F9D006C5215 /* RideTest.swift */,
 				507086841C8F62BA006C5215 /* RideUtilsTest.swift */,
+				5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */,
 			);
 			name = Ridesharing;
 			sourceTree = "<group>";
@@ -830,6 +862,23 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5072B42D1CB39022001F5BF6 /* Intro.storyboard in Resources */,
+				5072B42E1CB39022001F5BF6 /* ministrytable.storyboard in Resources */,
+				5072B42F1CB39022001F5BF6 /* LaunchScreen.storyboard in Resources */,
+				5072B4301CB39022001F5BF6 /* summermissions.storyboard in Resources */,
+				5072B4311CB39022001F5BF6 /* resources.storyboard in Resources */,
+				5072B4321CB39022001F5BF6 /* ministryteam.storyboard in Resources */,
+				5072B4331CB39022001F5BF6 /* getinvolved.storyboard in Resources */,
+				5072B4341CB39022001F5BF6 /* settings.storyboard in Resources */,
+				5072B4351CB39022001F5BF6 /* eventmodal.storyboard in Resources */,
+				5072B4361CB39022001F5BF6 /* findride.storyboard in Resources */,
+				5072B4371CB39022001F5BF6 /* offerride.storyboard in Resources */,
+				5072B4381CB39022001F5BF6 /* ridesharing.storyboard in Resources */,
+				5072B4391CB39022001F5BF6 /* Main.storyboard in Resources */,
+				5072B42C1CB38FFE001F5BF6 /* sideMenu.storyboard in Resources */,
+				5072B42B1CB38FEB001F5BF6 /* events.storyboard in Resources */,
+				5072B42A1CB38FC4001F5BF6 /* riderdetail.storyboard in Resources */,
+				5072B4291CB38F74001F5BF6 /* driverdetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1005,6 +1054,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5072B4281CB38F43001F5BF6 /* PassengerTableViewCell.swift in Sources */,
+				5072B4241CB38E99001F5BF6 /* ChooseEventTableViewCell.swift in Sources */,
+				5072B4251CB38E99001F5BF6 /* ChooseEventTableViewController.swift in Sources */,
+				5072B4231CB38E75001F5BF6 /* DriverRideDetailViewController.swift in Sources */,
+				5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */,
+				5072B4211CB38E67001F5BF6 /* EventModalViewController.swift in Sources */,
+				5072B4201CB38E5F001F5BF6 /* JoinRideViewController.swift in Sources */,
+				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
+				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
+				5072B41D1CB38E0A001F5BF6 /* RidesTableViewController.swift in Sources */,
+				5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */,
+				5072B41B1CB38BF8001F5BF6 /* RiderRideDetailViewController.swift in Sources */,
 				0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */,
 				C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */,
 				0F7CB3C61C919B6000C8444F /* RideUtilsTest.swift in Sources */,
@@ -1027,6 +1088,7 @@
 				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				500A37B11C7D6587007D6A3B /* Passenger.swift in Sources */,
 				5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */,
+				5072B41A1CB38B80001F5BF6 /* TestDriverRideDetail.swift in Sources */,
 				C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */,
 				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,

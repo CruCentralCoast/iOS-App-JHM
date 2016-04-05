@@ -27,7 +27,7 @@
         <!--Rider Ride Detail View Controller-->
         <scene sceneID="9Ga-qe-kjg">
             <objects>
-                <viewController id="aaX-gX-cpJ" customClass="RiderRideDetailViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RiderRideDetailViewController" id="aaX-gX-cpJ" customClass="RiderRideDetailViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gd9-t0-Nh5"/>
                         <viewControllerLayoutGuide type="bottom" id="l2x-zE-tBp"/>

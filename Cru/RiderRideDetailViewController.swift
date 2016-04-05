@@ -17,8 +17,16 @@ class RiderRideDetailViewController: UIViewController {
     let driver = "driver"
     let rider = "rider"
     
-    var event: Event!
-    var ride: Ride?
+    var event: Event!{
+        didSet{
+            eventButton.setTitle(event!.name, forState: UIControlState.Normal)
+        }
+    }
+    var ride: Ride?{
+        didSet{
+            
+        }
+    }
     
     @IBOutlet weak var eventButton: UIButton!
     @IBOutlet weak var direction: UILabel!
@@ -35,18 +43,14 @@ class RiderRideDetailViewController: UIViewController {
         
         navigationItem.title = "Ride Details"
         
-        eventButton.setTitle(event!.name, forState: UIControlState.Normal)
-        //date.text = ride!.getTime()
+        
         setTime(ride!)
-        
         address.text = ride!.getCompleteAddress()
-        //address.sizeToFit()
-
-        setupMap()
-        
         driverName.text = ride!.driverName
         driverNumber.text = ride!.driverNumber
         
+        //this is here because it depends on the ride being there
+        setupMap()
         
         
         if(ride!.direction == roundTripDirection){
@@ -56,7 +60,7 @@ class RiderRideDetailViewController: UIViewController {
         else if(ride!.direction == "from"){
             directionIcon.image = UIImage(named: "oneway")
             direction.text = fromEvent
-
+            
             //mirrors arrow
             directionIcon.transform = CGAffineTransformMakeScale(-1, 1)
         }
