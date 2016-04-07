@@ -17,11 +17,7 @@ class RiderRideDetailViewController: UIViewController {
     let driver = "driver"
     let rider = "rider"
     
-    var event: Event!{
-        didSet{
-            eventButton.setTitle(event!.name, forState: UIControlState.Normal)
-        }
-    }
+    var event: Event!
     var ride: Ride?
     
     @IBOutlet weak var eventButton: UIButton!
@@ -63,6 +59,8 @@ class RiderRideDetailViewController: UIViewController {
             directionIcon.image = UIImage(named: "oneway")
             direction.text = toEvent
         }
+        
+        eventButton.setTitle(event!.name, forState: UIControlState.Normal)
         
     }
     
