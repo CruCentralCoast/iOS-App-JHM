@@ -11,6 +11,8 @@ import Foundation
 enum DBCollection : String {
     
     case MinistryTeam = "ministryteam"
+    case Ride = "ride"
+    case Passenger = "passenger"
     
     func name()->String {
         return self.rawValue

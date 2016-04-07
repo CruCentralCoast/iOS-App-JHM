@@ -217,6 +217,7 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
                     
                     for vc in navController.viewControllers{
                         if let tvc = vc as? RidesTableViewController {
+                        
                             tvc.refresh(1)
                         }
                     }
