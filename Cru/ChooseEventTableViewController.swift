@@ -18,7 +18,7 @@ class ChooseEventTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ServerUtils.loadResources("event", inserter: insertEvent)
+        ServerUtils.loadResources(.Event, inserter: insertEvent)
     }
     
     func insertEvent(dict : NSDictionary) {

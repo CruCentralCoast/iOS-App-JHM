@@ -22,7 +22,7 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         print(ministryTeamsStorageManager.getObject(Config.ministryTeamStorageKey))
         
         //load ministry teams
-        ServerUtils.loadResources(Config.ministryTeamResourceLoaderKey, inserter: insertMinistryTeam, afterFunc: finishInserting)
+        ServerUtils.loadResources(.MinistryTeam, inserter: insertMinistryTeam, afterFunc: finishInserting)
 
         //set background color of page and accelleration of cells
         collectionView!.backgroundColor = UIColor.blackColor()

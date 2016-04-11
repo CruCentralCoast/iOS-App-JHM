@@ -18,7 +18,7 @@ class EventsCollectionViewController: UICollectionViewController {
         //self.navigationController!.navigationBar.translucent = false
         
         //load events
-        ServerUtils.loadResources(Config.eventResourceLoaderKey, inserter: insertEvent, afterFunc: finishInserting)
+        ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
     }
     
     //insert helper function for inserting event data

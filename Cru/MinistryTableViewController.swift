@@ -43,7 +43,7 @@ class MinistryTableViewController: UITableViewController {
             prevMinistries = tempMinistries!
         }
 
-        ServerUtils.loadResources(Config.ministryCollection, inserter: insertMinistry, afterFunc: reloadData)
+        ServerUtils.loadResources(.Ministry, inserter: insertMinistry, afterFunc: reloadData)
         self.tableView.reloadData()	
     }
     
@@ -241,9 +241,6 @@ class MinistryTableViewController: UITableViewController {
                     imageView.image = self.resizeImage(image!, newWidth: 150.0)
                 })
             }
-            
-            
-            
         })
         
     }

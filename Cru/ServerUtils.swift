@@ -16,22 +16,22 @@ class ServerUtils {
     //Sends a request for all items in the specified collection and calls the inserter method
     //passed in for each item returned. AfterFunc is called after all the insert calls are done
     
-    class func loadResources(collectionName : String, inserter : (NSDictionary) -> ()) {
-        loadResources(collectionName, inserter: inserter, afterFunc: {() in }, useApiKey: false)
+    class func loadResources(collection : DBCollection, inserter : (NSDictionary) -> ()) {
+        loadResources(collection, inserter: inserter, afterFunc: {() in }, useApiKey: false)
     }
     
-    class func loadResources(collectionName : String, inserter : (NSDictionary) -> (), useApiKey : Bool) {
-        loadResources(collectionName, inserter: inserter, afterFunc: {() in }, useApiKey: useApiKey)
+    class func loadResources(collection : DBCollection, inserter : (NSDictionary) -> (), useApiKey : Bool) {
+        loadResources(collection, inserter: inserter, afterFunc: {() in }, useApiKey: useApiKey)
     }
     
-    class func loadResources(collectionName : String, inserter : (NSDictionary) -> (), afterFunc : () -> ()) {
+    class func loadResources(collection : DBCollection, inserter : (NSDictionary) -> (), afterFunc : () -> ()) {
         
-        loadResources(collectionName, inserter: inserter, afterFunc: afterFunc, useApiKey: false)
+        loadResources(collection, inserter: inserter, afterFunc: afterFunc, useApiKey: false)
     }
     
-    class func loadResources(collectionName : String, inserter : (NSDictionary) -> (), afterFunc : () -> (), useApiKey: Bool) {
+    class func loadResources(collection : DBCollection, inserter : (NSDictionary) -> (), afterFunc : () -> (), useApiKey: Bool) {
         
-        var requestUrl = Config.serverUrl + "api/" + collectionName + "/list";
+        var requestUrl = Config.serverUrl + "api/" + collection.name() + "/list";
         if (useApiKey && LoginUtils.isLoggedIn()) {
             requestUrl += "?" + Config.leaderApiKey + "=" + GlobalUtils.loadString(Config.leaderApiKey)
         }

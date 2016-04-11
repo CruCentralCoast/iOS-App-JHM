@@ -26,7 +26,7 @@ class SummerMissionController: UICollectionViewController {
         
         // load summer missions from database
         startTime = Int(NSDate().timeIntervalSince1970)
-        ServerUtils.loadResources(Config.missionsCollection, inserter: insertMission, afterFunc: reload)
+        ServerUtils.loadResources(.SummerMission, inserter: insertMission, afterFunc: reload)
         
         // set background
         if let patternImage = UIImage(named: "Pattern") {

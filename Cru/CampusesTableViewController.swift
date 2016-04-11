@@ -16,7 +16,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ServerUtils.loadResources("campus", inserter: insertCampus)
+        ServerUtils.loadResources(.Campus, inserter: insertCampus)
         subbedMinistries = SubscriptionManager.loadMinistries()! 
         
         //setupSearchBar()

@@ -13,6 +13,11 @@ enum DBCollection : String {
     case MinistryTeam = "ministryteam"
     case Ride = "ride"
     case Passenger = "passenger"
+    case Ministry = "ministry"
+    case Campus = "campus"
+    case SummerMission = "summermission"
+    case Resource = "resource"
+    case Event = "event"
     
     func name()->String {
         return self.rawValue
