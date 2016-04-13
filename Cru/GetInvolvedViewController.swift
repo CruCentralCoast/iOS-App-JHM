@@ -12,9 +12,34 @@ class GetInvolvedViewController: UIViewController {
     //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
 
+    @IBOutlet weak var communityGroupLabel: UILabel!
+    @IBOutlet weak var communityGroupTextArea: UITextView!
+    @IBOutlet weak var ministryTeamLabel: UILabel!
+    @IBOutlet weak var ministryTeamTextArea: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let screenSize: CGRect = UIScreen.mainScreen().bounds
+        
+        //iphone 4s and below models
+        if (screenSize.height <= 480.0) {
+            //make sure label fonts arent nil
+            if let mtFont = ministryTeamLabel.font {
+                ministryTeamLabel.font = UIFont(name: mtFont.fontName, size: 20)
+            }
+            if let cgFont = communityGroupLabel.font {
+                communityGroupLabel.font = UIFont(name: cgFont.fontName, size: 20)
+            }
+            
+            //make sure fonts arent nil to prevent crashing
+            if let mtFont = ministryTeamTextArea.font {
+                ministryTeamTextArea.font = UIFont(name: mtFont.fontName, size: 12)
+            }
+            if let cgFont = communityGroupTextArea.font {
+                communityGroupTextArea.font = UIFont(name: cgFont.fontName, size: 12)
+            }
+        }
     }
     
     @IBAction func onClickMinistryView(recognizer: UITapGestureRecognizer) {
