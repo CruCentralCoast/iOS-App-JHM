@@ -44,6 +44,9 @@ class OfferRideViewController: UIViewController, ValidationDelegate {
         
         validator.registerField(nameField, errorLabel: nameFieldError, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(phoneField, errorLabel: phoneFieldError, rules: [RequiredRule(), PhoneNumberRule()])
+        
+        nameFieldError.text = ""
+        phoneFieldError.text = ""
     }
 
     override func didReceiveMemoryWarning() {
