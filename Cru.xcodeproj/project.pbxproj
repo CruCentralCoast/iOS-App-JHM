@@ -45,6 +45,7 @@
 		0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB97F1C8795D0005C0B4C /* MinistryTeam.swift */; };
 		0FAEB9841C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB9831C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift */; };
 		0FAEB9881C87A39D005C0B4C /* UltravisualLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAEB9871C87A39D005C0B4C /* UltravisualLayout.swift */; };
+		0FB6CF511CBF4839007B9F6E /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */; };
 		0FB811851C8F47C600883951 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		0FB811861C8F47E200883951 /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
 		0FC0B9DE1C5F0F9400D1524C /* ministrytable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */; };
@@ -89,7 +90,6 @@
 		5072B42D1CB39022001F5BF6 /* Intro.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */; };
 		5072B42E1CB39022001F5BF6 /* ministrytable.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */; };
 		5072B42F1CB39022001F5BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
-		5072B4301CB39022001F5BF6 /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251C1C0BB8DF005396BC /* summermissions.storyboard */; };
 		5072B4311CB39022001F5BF6 /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		5072B4321CB39022001F5BF6 /* ministryteam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAEB9791C86C1D1005C0B4C /* ministryteam.storyboard */; };
 		5072B4331CB39022001F5BF6 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
@@ -120,7 +120,6 @@
 		50E0E1881C87796D000023F1 /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
 		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
-		50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251C1C0BB8DF005396BC /* summermissions.storyboard */; };
 		50F8251F1C0BB965005396BC /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */; };
 		50FE4D431C50D0D100EA9042 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */; };
@@ -219,6 +218,7 @@
 		0FAEB97F1C8795D0005C0B4C /* MinistryTeam.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeam.swift; sourceTree = "<group>"; };
 		0FAEB9831C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamsCollectionViewCell.swift; sourceTree = "<group>"; };
 		0FAEB9871C87A39D005C0B4C /* UltravisualLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UltravisualLayout.swift; sourceTree = "<group>"; };
+		0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = summermissions.storyboard; sourceTree = "<group>"; };
 		0FC0B9DD1C5F0F9400D1524C /* ministrytable.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = ministrytable.storyboard; sourceTree = "<group>"; };
 		0FC8E39C1C3EF320007A7208 /* sideMenu.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = sideMenu.storyboard; sourceTree = "<group>"; };
 		0FC8E3A51C45EB1A007A7208 /* Intro.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Intro.storyboard; sourceTree = "<group>"; };
@@ -274,7 +274,6 @@
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByEventViewController.swift; sourceTree = "<group>"; };
 		50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinRideViewController.swift; sourceTree = "<group>"; };
-		50F8251C1C0BB8DF005396BC /* summermissions.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = summermissions.storyboard; sourceTree = "<group>"; };
 		50F8251E1C0BB965005396BC /* resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = resources.storyboard; sourceTree = "<group>"; };
 		50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewController.swift; sourceTree = "<group>"; };
 		50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
@@ -676,7 +675,7 @@
 		50ED8FDF1C052B3C002C9E30 /* Summer Missions */ = {
 			isa = PBXGroup;
 			children = (
-				50F8251C1C0BB8DF005396BC /* summermissions.storyboard */,
+				0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */,
 				E9CB002C1C8F7E04000F7E12 /* SummerMission.swift */,
 				E9CB002D1C8F7E04000F7E12 /* SummerMissionCell.swift */,
 				E9CB002E1C8F7E04000F7E12 /* SummerMissionController.swift */,
@@ -850,7 +849,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				50F8251D1C0BB8DF005396BC /* summermissions.storyboard in Resources */,
+				0FB6CF511CBF4839007B9F6E /* summermissions.storyboard in Resources */,
 				503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */,
 				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
 				6DBD7B941C75742A00D11FFA /* FreigSanProMed.otf in Resources */,
@@ -886,7 +885,6 @@
 				5072B42D1CB39022001F5BF6 /* Intro.storyboard in Resources */,
 				5072B42E1CB39022001F5BF6 /* ministrytable.storyboard in Resources */,
 				5072B42F1CB39022001F5BF6 /* LaunchScreen.storyboard in Resources */,
-				5072B4301CB39022001F5BF6 /* summermissions.storyboard in Resources */,
 				5072B4311CB39022001F5BF6 /* resources.storyboard in Resources */,
 				5072B4321CB39022001F5BF6 /* ministryteam.storyboard in Resources */,
 				5072B4331CB39022001F5BF6 /* getinvolved.storyboard in Resources */,

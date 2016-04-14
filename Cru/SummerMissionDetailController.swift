@@ -32,6 +32,15 @@ class SummerMissionDetailController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //check for width of phone
+//        let screenSize: CGRect = UIScreen.mainScreen().bounds
+//        if screenSize.width <= 320.0 {
+//            //make sure label fonts arent nil
+//            if let titleFont = titleLabel.font {
+//                titleLabel.font = UIFont(name: titleFont.fontName, size: 25)
+//            }
+//        }
+        
         // Do any additional setup after loading the view.
         if let mission = mission {
             navigationItem.title = "Details"
@@ -39,6 +48,7 @@ class SummerMissionDetailController: UIViewController {
             image.image = mission.image
             
             titleLabel.text = mission.name
+            titleLabel.sizeToFit()
             
             datesLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.startDate.formatMonthDayYear()
             

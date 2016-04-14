@@ -20,6 +20,7 @@ class SummerMissionCell: UICollectionViewCell {
     @IBOutlet private weak var imageCoverView: UIView!
     @IBOutlet private weak var nameLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var separator: UIView!
     
     var mission: SummerMission? {
         didSet {
@@ -37,27 +38,24 @@ class SummerMissionCell: UICollectionViewCell {
     // Dynamically adjusts the clarity  of cells as the user scrolls and button position
     override func applyLayoutAttributes(layoutAttributes: (UICollectionViewLayoutAttributes!)) {
         super.applyLayoutAttributes(layoutAttributes)
-        adjustClarity()
-    }
-    
-    // Adjust alpha of cell overlay
-    func adjustClarity() {
+        
+        // 1
         let standardHeight = UltravisualLayoutConstants.Cell.standardHeight
         let featuredHeight = UltravisualLayoutConstants.Cell.featuredHeight
         
-        let height = CGRectGetHeight(frame)
-        
-        //let delta = height < featuredHeight ? 1 - ((featuredHeight - height) / (featuredHeight - standardHeight)) : ((featuredHeight - CGRectGetMinY(frame)) / (featuredHeight - standardHeight))
-        
-        let delta = 1 - ((featuredHeight - height) / (featuredHeight - standardHeight))
+        // 2
+        let delta = 1 - ((featuredHeight - CGRectGetHeight(frame)) / (featuredHeight - standardHeight))
         
         // 3
-        let minAlpha: CGFloat = 0.15
-        let maxAlpha: CGFloat = 0.5
+        let minAlpha: CGFloat = 0.4
+        let maxAlpha: CGFloat = 0.85
+        imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
         
-        if let imageCoverView = self.imageCoverView {
-            imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
-            imageCoverView.sizeToFit()
-        }
+        dateLabel.alpha = delta;
+        separator.alpha = delta;
+        //        if let imageCoverView = self.imageCoverView {
+        //            imageCoverView.alpha = maxAlpha - (delta * (maxAlpha - minAlpha))
+        //            imageCoverView.sizeToFit()
+        //        }
     }
 }
