@@ -31,7 +31,7 @@ class ServerUtils {
     
     class func loadResources(collection : DBCollection, inserter : (NSDictionary) -> (), afterFunc : () -> (), useApiKey: Bool) {
         
-        var requestUrl = Config.serverUrl + "api/" + collection.name() + "/list";
+        var requestUrl = Config.serverUrl + "api/" + collection.name();
         if (useApiKey && LoginUtils.isLoggedIn()) {
             requestUrl += "?" + Config.leaderApiKey + "=" + GlobalUtils.loadString(Config.leaderApiKey)
         }

@@ -31,43 +31,7 @@ class GlobalUtils {
             return NSDate()
         }
     }
-    
-//    //compresses two date strings into one
-//    class func stringCompressionOfDates(date1: NSDate, date2: NSDate) -> String {
-//        let date1Comp = GlobalUtils.dateComponentsFromDate(date1)!
-//        let date2Comp = GlobalUtils.dateComponentsFromDate(date2)!
-//        
-//        var returnString = ""
-//        var yearString = ""
-//        var monthString = ""
-//        var dayString = ""
-//        
-//        //if years same
-//        if date1Comp.year == date2Comp.year {
-//            yearString = GlobalUtils.stringFromDate(date1, format: "yyyy")
-//            
-//            //if months and days same
-//            if date1Comp.month == date2Comp.month && date1Comp.day == date2Comp.day {
-//                monthString = GlobalUtils.stringFromDate(date1, format: "MMMM")
-//                dayString = GlobalUtils.stringFromDate(date1, format: "d")
-//                
-//                let dFormat = "h:mma"
-//                returnString += GlobalUtils.stringFromDate(date1, format: dFormat) + "-" + GlobalUtils.stringFromDate(date2, format: dFormat) + " " + monthString + " " + dayString + ", " + yearString
-//            }
-//            else {
-//                let dFormat = "h:mma MMMM d"
-//                returnString += GlobalUtils.stringFromDate(date1, format: dFormat) + " - " + GlobalUtils.stringFromDate(date2, format: dFormat) + yearString
-//            }
-//        }
-//        else {
-//            let dFormat = "h:mma MMMM d, yyyy"
-//            
-//            returnString += GlobalUtils.stringFromDate(date1, format: dFormat) + " - " + GlobalUtils.stringFromDate(date2, format: dFormat)
-//        }
-//        
-//        return returnString
-//    }
-    
+        
     //return appropriate string representation of NSDate object
     class func stringFromDate(date: NSDate, format: String) -> String {
         let formatter = NSDateFormatter()
@@ -107,5 +71,15 @@ class GlobalUtils {
             return token!
         }
         return ""
+    }
+    
+    class func printRequest(params: AnyObject) {
+        do {
+            let something = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
+            let string1 = NSString(data: something, encoding: NSUTF8StringEncoding)
+            print(string1)
+        } catch {
+            print("Error writing json body")
+        }
     }
 }

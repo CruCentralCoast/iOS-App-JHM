@@ -131,12 +131,8 @@ class RiderRideDetailViewController: UIViewController {
     }
     
     func cancelConfirmed(action: UIAlertAction){
-        RideUtils.findIdByGCMInRide(Config.gcmId(), ride: ride!, handler: leaveRide)
-    }
-    
-    func leaveRide(passid: String, rideid: String){
-        RideUtils.leaveRide(passid,rideid: rideid, handler: { success in
-        
+        RideUtils.leaveRidePassenger(ride!, handler: { success in
+            
             if let navController = self.navigationController {
                 navController.popViewControllerAnimated(true)
                 
@@ -147,6 +143,10 @@ class RiderRideDetailViewController: UIViewController {
                 }
             }
         })
+    }
+    
+    func leaveRide(passid: String, rideid: String){
+        
     }
     
 

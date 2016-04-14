@@ -151,6 +151,8 @@
 		C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
 		C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */; };
 		C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
+		C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
+		C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
 		C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
 		C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
@@ -303,6 +305,7 @@
 		C1015CD11C9429D0005B559E /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
 		C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtilsTest.swift; sourceTree = "<group>"; };
 		C12C0A861C941E9C005751A0 /* DBCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBCollection.swift; sourceTree = "<group>"; };
+		C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayLocalStorageManager.swift; sourceTree = "<group>"; };
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
 		C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
@@ -344,6 +347,7 @@
 			children = (
 				0F17E3D41C9103B500713297 /* LocalStorageManager.swift */,
 				0F17E3D81C91076D00713297 /* MapLocalStorageManager.swift */,
+				C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */,
 			);
 			name = LocalStorage;
 			sourceTree = "<group>";
@@ -1043,6 +1047,7 @@
 				E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */,
 				5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */,
 				50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
+				C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				509527281C63E6BC00E4F7B6 /* OfferRideTableViewController.swift in Sources */,
@@ -1094,6 +1099,7 @@
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
 				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
+				C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
 				0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */,
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,

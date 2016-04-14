@@ -172,12 +172,8 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
         if isFormFilledOut() {
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
             
-            RideUtils.postRideOffer(event.id, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult, idhandler: {id in})
-            
-            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-            
-            //display confirmation alert
-            displayAlert(1, displayMessageAddOns: [])
+            RideUtils.postRideOffer(event.id, name: fullName.text!, phone: phoneNumber.text!, seats: Int(numAvailableSeatsLabel.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
+        
         }
         else {
             displayAlert(0, displayMessageAddOns: ["None"])
@@ -185,7 +181,34 @@ class OfferRideTableViewController: CreateRideViewController, UITextFieldDelegat
     }
     
     func handleRequestResult(result : Bool){
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        if result {
+            handleSubmission("Ride Offered", msg: "Thank you your offered ride has been created!")
+        } else {
+            handleSubmission("Ride Offer Failed", msg: "Failed to post ride offer")
+        }
+    }
+    
+    private func handleSubmission(title: String, msg: String) {
+        let cancelRideAlert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
         
+        cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
+            action in
+            
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+                //navController.popViewControllerAnimated(true)
+                
+                for vc in navController.viewControllers{
+                    if let tvc = vc as? RidesTableViewController {
+                        
+                        tvc.refresh(1)
+                    }
+                }
+            }
+        }))
+        presentViewController(cancelRideAlert, animated: true, completion: nil)
+
     }
     
     func validationFailed(errors: [UITextField : ValidationError]) {

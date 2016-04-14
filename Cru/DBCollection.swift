@@ -10,14 +10,14 @@ import Foundation
 
 enum DBCollection : String {
     
-    case MinistryTeam = "ministryteam"
-    case Ride = "ride"
-    case Passenger = "passenger"
-    case Ministry = "ministry"
-    case Campus = "campus"
-    case SummerMission = "summermission"
-    case Resource = "resource"
-    case Event = "event"
+    case MinistryTeam = "ministryteams"
+    case Ride = "rides"
+    case Passenger = "passengers"
+    case Ministry = "ministries"
+    case Campus = "campuses"
+    case SummerMission = "summermissions"
+    case Resource = "resources"
+    case Event = "events"
     
     func name()->String {
         return self.rawValue

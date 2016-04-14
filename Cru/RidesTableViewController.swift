@@ -45,7 +45,7 @@ class RidesTableViewController: UITableViewController {
 
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.getRidesByGCMToken(Config.gcmId(), inserter: insertRide, afterFunc: finishRideInsert)
+        RideUtils.getMyRides(insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
     }
     
@@ -54,7 +54,7 @@ class RidesTableViewController: UITableViewController {
         rides.removeAll()
         self.tableView.reloadData()
         // Updating your data here...
-        RideUtils.getRidesByGCMToken(Config.gcmId(), inserter: insertNewRide, afterFunc: finishRefresh)
+        RideUtils.getMyRides(insertNewRide, afterFunc: finishRefresh)
 
         
     }
@@ -233,12 +233,3 @@ class RidesTableViewController: UITableViewController {
         
 
 }
-
-//    extension Array where Element: Equatable{
-//        mutating func removeObject(object: Element){
-//            if let index = self.indexOf(object){
-//                self.removeAtIndex(index)
-//            }
-//        }
-//    }
-

@@ -9,7 +9,7 @@
 import UIKit
 
 struct Config {
-    static let serverUrl = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3000/"
+    static let serverUrl = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3001/"
     
     static let name = "name"
     static let campusIds = "campuses"
@@ -17,7 +17,6 @@ struct Config {
     static let gcmIdField = "gcmId"
     static func gcmId()->String{
             if(simulatorMode){
-                print("NOOOOOOOOOOOOOOASDOASDOASODSAODOSADOSAODSAD")
                 return "emulator-id-hey-whats-up-hello"
             }
             else{
@@ -27,6 +26,8 @@ struct Config {
     static let simulatorMode = true
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
+    static let ridesReceiving = "ridesReceiving"
+    static let ridesOffering = "ridesOffering"
     
     /* Modal Configurations: Used on the introduction page and create ride */
     static let backgroundViewOpacity: CGFloat = 0.7

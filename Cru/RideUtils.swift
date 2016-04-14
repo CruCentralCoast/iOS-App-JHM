@@ -16,7 +16,7 @@ class RideUtils {
             
         let url = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/find"
         let gcmArray: [String] = [gcmid]
-            let params: [String: AnyObject] =  ["gcm_id": ["$nin" : gcmArray]]
+        let params: [String: AnyObject] =  ["gcm_id": ["$nin" : gcmArray]]
             
         Alamofire.request(.POST, url, parameters: params)
             .responseJSON { response in
@@ -50,64 +50,35 @@ class RideUtils {
         }
     }
     
-    class func getRidesByGCMToken(token: String, inserter: (NSDictionary) -> (), afterFunc: ()->Void) {
+    class func getMyRides(inserter: (NSDictionary) -> (), afterFunc: ()->Void) {
         
         //gets rides you are receiving
-        var requestUrl = Config.serverUrl + "api/" + DBCollection.Passenger.name() + "/find"
-        let params = ["gcm_id": token]
-        
-        do {
-            let something = try NSJSONSerialization.dataWithJSONObject(params, options: NSJSONWritingOptions.PrettyPrinted)
-            let string1 = NSString(data: something, encoding: NSUTF8StringEncoding)
-            print(string1)
-        } catch {
-            print("Error writing json body")
+        let rideIds = getMyRideIds()
+        if (rideIds.count > 0) {
+            let requestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/find"
+            let params = ["_id": ["$in": rideIds]]
+            
+            GlobalUtils.printRequest(params)
+            
+            ServerUtils.sendHttpPostRequest(requestUrl, body: params, completionHandler : ServerUtils.insertResources(inserter, afterFunc: afterFunc))
         }
-
-        Alamofire.request(.POST, requestUrl, parameters: params).responseJSON { response in
-            let rideRequestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/find"
-
-            let passengerList = response.result.value as! NSArray
-            var rideIds = [String]()
-            
-            for passenger in passengerList{
-                let pass : [String:AnyObject] = passenger as! [String : AnyObject]
-                rideIds.append(pass["_id"] as! String)
-            }
-                        
-            let cond = ["passengers": ["$in": rideIds]]
-            //let body : [String : AnyObject] = ["conditions": cond, "projection": "", "options": [:]]
-            
-            
-            
-            do {
-                let something = try NSJSONSerialization.dataWithJSONObject(cond, options: NSJSONWritingOptions.PrettyPrinted)
-                let string1 = NSString(data: something, encoding: NSUTF8StringEncoding)
-                print(string1)
-            } catch {
-                print("Error writing json body")
-            }
-            
-            if (rideIds.count > 0) {
-                ServerUtils.sendHttpPostRequest(rideRequestUrl, body: cond, completionHandler : ServerUtils.insertResources(inserter, afterFunc: afterFunc))
-            } else {
-                afterFunc()
-            }
-        }
+    }
+    
+    private class func getMyRideIds() -> [String] {
+        let alsm = ArrayLocalStorageManager(key: Config.ridesOffering)
+        var rideIds = alsm.getArray()
         
+        let mlsm = MapLocalStorageManager(key: Config.ridesReceiving)
+        rideIds += mlsm.getKeys()
         
-        //gets rides you are giving
-        requestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/find"
-        let body : [String : AnyObject] = ["gcm_id": token]
-        
-        ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : ServerUtils.insertResources(inserter, afterFunc: {() in }))
+        return rideIds
     }
 
     
     // TODO:handler error better
     class func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
-        location: NSDictionary, radius: Int, direction: String, handler: (Bool)->(), idhandler: (String)->()) {
-            let requestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/create";
+        location: NSDictionary, radius: Int, direction: String, handler: (Bool)->()) {
+            let requestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name();
             let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
                 "gcm_id": Config.gcmId(), "location":location, "radius":radius, "direction":direction]
             
@@ -116,117 +87,116 @@ class RideUtils {
                 .responseJSON { response in
                     if let JSON = response.result.value {
                         if let dict = JSON as? NSDictionary {
-                            if let postDict = dict["post"] as? NSDictionary{
-                                if let rideid = postDict["_id"] as? String {
-                                    idhandler(rideid)
-                                }
+                            if let rideId = dict["_id"] as? String {
+                                saveRideOffering(rideId)
+                                handler(true)
+                            } else {
+                                handler(false)
                             }
+                        } else {
+                            handler(false)
                         }
+                    } else {
+                        handler(false)
                     }
-                    handler(response.result.isSuccess)
             }
     }
     
-    class func joinRide(name: String, phone: String, direction: String,  rideId: String, handler: (AnyObject)->Void, passIdHandler: (String)->()){
-        createPassenger(name, phone: phone, direction: direction, handler: {(response : AnyObject) in
-            let jsonStruct = response as! NSDictionary
-            
-            //let post = jsonStruct["post"] as! NSDictionary
-            
-            do {
-                let something = try NSJSONSerialization.dataWithJSONObject(response, options: NSJSONWritingOptions.PrettyPrinted)
-                let string1 = NSString(data: something, encoding: NSUTF8StringEncoding)
-                print(string1)
-            } catch {
-                print("Error writing json body")
-            }
-            
-            let passengerId = jsonStruct["_id"] as! String
-            passIdHandler(passengerId)
-            
-            addPassengerToRide(rideId, passengerId: passengerId, handler: handler)
-        })
+    private class func saveRideOffering(rideId: String) {
+        let alsm = ArrayLocalStorageManager(key: Config.ridesOffering)
+        alsm.addElement(rideId)
     }
     
-    
-    
-    
-    private class func createPassenger(name: String, phone: String, direction: String, handler: (AnyObject) -> Void){
+    class func joinRide(name: String, phone: String, direction: String,  rideId: String, handler: (Bool)->Void){
         let gcmToken = Config.gcmId()
         
-        let requestUrl = Config.serverUrl + "api/" + DBCollection.Passenger.name() + "/create";
+        let requestUrl = Config.serverUrl + "api/" + DBCollection.Passenger.name();
         let body = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken]
         
-        ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler : handler)
-    }
-    
-    
-    
-    private class func addPassengerToRide(rideId: String, passengerId: String, handler : (AnyObject)->Void){
-        let requestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/addPassenger"
-        let body = ["ride_id": rideId,"passenger_id": passengerId]
-        ServerUtils.sendHttpPostRequest(requestUrl, body: body, completionHandler: handler)
-    }
-    
-    static func leaveRide(passid: String, rideid: String, handler: (Bool)->()){
-        let url = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/dropPassenger"
-        let params = ["passenger_id":passid, "ride_id":rideid]
+        Alamofire.request(.POST, requestUrl, parameters: body)
+            .responseJSON { response in
+                if let val = response.result.value {
+                    if let jsonStruct = val as? NSDictionary {
+                        GlobalUtils.printRequest(jsonStruct)
+                        
+                        let passengerId = jsonStruct["_id"] as! String
+                        
+                        addPassengerToRide(rideId, passengerId: passengerId, handler: handler)
+                    } else {
+                        handler(false)
+                    }
+                } else {
+                    handler(false)
+                }
+        }
         
-        Alamofire.request(.POST, url, parameters: params)
+    }
+    
+    private class func addPassengerToRide(rideId: String, passengerId: String, handler : (Bool)->Void){
+        let requestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name()
+            + "/" + rideId + "/" + DBCollection.Passenger.name()
+        let body = ["passenger_id": passengerId]
+        Alamofire.request(.POST, requestUrl, parameters: body)
+            .responseJSON { response in
+                if (response.result.isSuccess && response.result.value != nil) {
+                    handler(true)
+                    saveRideReceiving(rideId, passengerId: passengerId)
+                } else {
+                    handler(false)
+                }
+        }
+    }
+    
+    private class func saveRideReceiving(rideId: String, passengerId: String) {
+        let mlsm = MapLocalStorageManager(key: Config.ridesReceiving)
+        mlsm.addElement(rideId, elem: passengerId)
+    }
+    
+    static func leaveRidePassenger(ride: Ride, handler: (Bool)->()){
+        
+        
+        let mlsm = MapLocalStorageManager(key: Config.ridesReceiving)
+        let rideId = ride.id
+        let passId = mlsm.getElement(rideId) as! String
+        mlsm.removeElement(rideId)
+        let passengerStr =  "/" + DBCollection.Passenger.name() + "/" + passId
+        let url = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/" + rideId + passengerStr
+        Alamofire.request(.DELETE, url)
             .responseJSON { response in
                 handler(response.result.isSuccess)
         }
     }
     
-    
-    static func findIdByGCMInRide(gcm: String, ride: Ride, handler: (String, String)->()){
-        
-        for pass in ride.passengers{
-            let url = Config.serverUrl + "api/" + DBCollection.Passenger.name() + "/" + pass
-            Alamofire.request(.GET, url, parameters: nil)
-                .responseJSON { response in
-                    if let JSON = response.result.value {
-                        if let DICT = JSON as? NSDictionary{
-                            if let theirGCM = DICT["gcm_id"] as? String{
-                                if(gcm ==  theirGCM){
-                                    if let passid = DICT["_id"] as? String{
-                                        handler(passid, ride.id)
-                                    }
-                                }
-                            }
-                            
-                        }
-                    }
-            }
-        }
-        
-    }
-    
     static func leaveRideDriver(rideid: String, handler: (Bool)->()){
-        let params = ["ride_id":rideid]
-        let url = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/dropRide"
+        let url = Config.serverUrl + "api/" + DBCollection.Ride.name() + "/" + rideid
         
-        Alamofire.request(.POST, url, parameters: params)
+        Alamofire.request(.DELETE, url)
             .responseJSON { response in
+                if (response.result.isSuccess) {
+                    let alsm = ArrayLocalStorageManager(key: Config.ridesOffering)
+                    alsm.removeElement(rideid)
+                }
                 handler(response.result.isSuccess)
         }
     }
     
     static func getPassengersByIds(ids : [String], inserter : (Passenger) -> (), afterFunc: ()->Void){
         
-        let params = ["_id":["$in":ids]]
-        let url = Config.serverUrl + "api/" + DBCollection.Passenger.name() + "/find"
-        print(params)
-        Alamofire.request(.POST, url, parameters: params)
-            .responseJSON { response in
-                if let json = response.result.value {
-                    if let passengers = json as? [NSDictionary] {
-                        for pass in passengers {
-                            inserter(Passenger(dict: pass))
+        if (ids.count > 0) {
+            let params = ["_id":["$in":ids]]
+            let url = Config.serverUrl + "api/" + DBCollection.Passenger.name() + "/find"
+            print(params)
+            Alamofire.request(.POST, url, parameters: params)
+                .responseJSON { response in
+                    if let json = response.result.value {
+                        if let passengers = json as? [NSDictionary] {
+                            for pass in passengers {
+                                inserter(Passenger(dict: pass))
+                            }
+                            afterFunc()
                         }
-                        afterFunc()
                     }
-                }
+            }
         }
         
     }

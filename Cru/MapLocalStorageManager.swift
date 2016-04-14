@@ -54,4 +54,8 @@ class MapLocalStorageManager: LocalStorageManager {
             super.removeObject(key)
         }
     }
+    
+    func getKeys() -> [String] {
+        return Array(map.keys)
+    }
 }
