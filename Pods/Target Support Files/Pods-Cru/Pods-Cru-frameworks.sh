@@ -89,6 +89,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
   install_framework "Pods-Cru/MRProgress.framework"
+  install_framework "Pods-Cru/RadioButton.framework"
   install_framework "Pods-Cru/SideMenu.framework"
   install_framework "Pods-Cru/SwiftValidator.framework"
 fi
@@ -98,6 +99,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
   install_framework "Pods-Cru/MRProgress.framework"
+  install_framework "Pods-Cru/RadioButton.framework"
   install_framework "Pods-Cru/SideMenu.framework"
   install_framework "Pods-Cru/SwiftValidator.framework"
 fi

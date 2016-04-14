@@ -61,6 +61,7 @@ PODS:
   - MRProgress/ProgressBaseClass (0.8.3)
   - MRProgress/Stopable (0.8.3):
     - MRProgress/Helper
+  - RadioButton (1.0)
   - SideMenu (0.1.4)
   - SwiftValidator (3.0.3)
 
@@ -71,6 +72,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
   - MRProgress
+  - RadioButton
   - SideMenu (~> 0.1)
   - SwiftValidator
 
@@ -88,6 +90,7 @@ SPEC CHECKSUMS:
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   LocationPicker: 37edad09cefccd0a266e4abfbf5787995b133d54
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
+  RadioButton: 7ef053baf6ff0e7f9e777016c28e9ba4e330edba
   SideMenu: 09bc4ab16e392aea64caf052074efd63ef726b6a
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
 
