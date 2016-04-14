@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="JJo-8X-4Mg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="azP-Hk-ALJ">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
     </dependencies>
     <scenes>
         <!--sideMenuStoryboard-->
@@ -11,7 +10,7 @@
                 <viewControllerPlaceholder storyboardName="sideMenu" referencedIdentifier="sideMenuStoryboard" id="ry4-jd-4Kc" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FKH-dP-JQM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1411.5" y="998"/>
+            <point key="canvasLocation" x="1387.5" y="610"/>
         </scene>
         <!--Home-->
         <scene sceneID="Pmt-Nq-gRG">
@@ -22,19 +21,21 @@
                         <viewControllerLayoutGuide type="bottom" id="xWF-zG-gFR"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="5bq-z4-v2i">
-                        <rect key="frame" x="0.0" y="64" width="600" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q15-b4-hYB">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="99e-FW-B8S">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fake-home" translatesAutoresizingMaskIntoConstraints="NO" id="lHt-b7-RFy">
-                                                <rect key="frame" x="0.0" y="0.0" width="600" height="736"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="800"/>
+                                                <animations/>
                                             </imageView>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="lHt-b7-RFy" firstAttribute="leading" secondItem="99e-FW-B8S" secondAttribute="leading" id="7Qx-km-UVR"/>
@@ -46,6 +47,7 @@
                                         </constraints>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="99e-FW-B8S" firstAttribute="centerX" secondItem="q15-b4-hYB" secondAttribute="centerX" id="BfW-iL-vYb"/>
                                     <constraint firstItem="99e-FW-B8S" firstAttribute="top" secondItem="q15-b4-hYB" secondAttribute="top" id="IBe-Sg-uaQ"/>
@@ -64,6 +66,7 @@
                                 </variation>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="q15-b4-hYB" firstAttribute="width" secondItem="5bq-z4-v2i" secondAttribute="width" id="eH1-Cj-0zV"/>
@@ -74,21 +77,20 @@
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="1QZ-gY-0dt">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="hvs-Wd-lEz">
-                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <connections>
-                                <segue destination="ry4-jd-4Kc" kind="presentation" id="EgN-dx-rlp"/>
-                            </connections>
+                            <color key="tintColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="800"/>
                     <connections>
+                        <outlet property="menuButton" destination="hvs-Wd-lEz" id="J8Q-gu-QbR"/>
                         <segue destination="MNi-Vs-6pf" kind="presentation" identifier="introSegue" modalPresentationStyle="overCurrentContext" modalTransitionStyle="crossDissolve" id="yFA-dx-Xvz"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WNr-AS-kQI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="1153"/>
+            <point key="canvasLocation" x="2552" y="1153"/>
         </scene>
         <!--introStoryboard-->
         <scene sceneID="ye5-nY-CZT">
@@ -98,27 +100,50 @@
             </objects>
             <point key="canvasLocation" x="928.5" y="1646"/>
         </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="WqH-2i-VWp">
+        <!--Reveal View Controller-->
+        <scene sceneID="6rz-Lt-OcP">
             <objects>
-                <navigationController storyboardIdentifier="homeStoryboard" automaticallyAdjustsScrollViewInsets="NO" id="JJo-8X-4Mg" sceneMemberID="viewController">
+                <viewController id="azP-Hk-ALJ" customClass="SWRevealViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qhV-1w-K0J"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ovo-O8-pgu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3nr-BF-usZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="kRV-Qf-GaD"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <connections>
+                        <segue destination="N6m-Jd-u2t" kind="custom" identifier="sw_front" customClass="SWRevealViewControllerSegueSetController" id="XIN-xx-UeX"/>
+                        <segue destination="ry4-jd-4Kc" kind="custom" identifier="sw_rear" customClass="SWRevealViewControllerSegueSetController" id="YVl-iQ-VgQ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0cP-Rf-jkQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="680" y="1118"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="syg-8p-yuc">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="N6m-Jd-u2t" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="k0X-Ia-IU1">
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" prompted="NO"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" id="uVJ-hb-Y1a">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
+                        <animations/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="SOu-VK-CUe" kind="relationship" relationship="rootViewController" id="dfL-TP-gpp"/>
+                        <segue destination="SOu-VK-CUe" kind="relationship" relationship="rootViewController" id="7fA-Tw-KWG"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VT0-ul-AYF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zfg-R9-GH3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="1180"/>
+            <point key="canvasLocation" x="1740" y="1153"/>
         </scene>
     </scenes>
     <resources>

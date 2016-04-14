@@ -113,6 +113,8 @@
 		50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A341CD1C0C10F3006B73DB /* Campus.swift */; };
 		50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */; };
 		50AA7CCB1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
+		50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
+		50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50DD51481C86B85900752777 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
 		50E0E1881C87796D000023F1 /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
@@ -261,6 +263,10 @@
 		50A341CD1C0C10F3006B73DB /* Campus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Campus.swift; sourceTree = "<group>"; };
 		50A38FE81C5F0D960013BFBD /* MinistryTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewCell.swift; sourceTree = "<group>"; };
 		50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
+		50C6CC7A1CBF3A3600EF5EFB /* Cru-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cru-Bridging-Header.h"; sourceTree = "<group>"; };
+		50C6CC7B1CBF3A3600EF5EFB /* CruTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		50C6CC7C1CBF3A3700EF5EFB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
+		50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50DD51471C86B85900752777 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50E0E1871C87796D000023F1 /* Cancler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancler.swift; sourceTree = "<group>"; };
@@ -431,6 +437,7 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				50C6CC791CBF3A0300EF5EFB /* SWRevealController */,
 				0FC8E3A01C45E99E007A7208 /* Introduction */,
 				0FC8E39B1C3EF2FF007A7208 /* SideMenu */,
 				85EAB8181C0ECC40005C7658 /* Config */,
@@ -579,6 +586,17 @@
 				509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */,
 			);
 			name = Rider;
+			sourceTree = "<group>";
+		};
+		50C6CC791CBF3A0300EF5EFB /* SWRevealController */ = {
+			isa = PBXGroup;
+			children = (
+				50C6CC7C1CBF3A3700EF5EFB /* SWRevealViewController.h */,
+				50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */,
+				50C6CC7A1CBF3A3600EF5EFB /* Cru-Bridging-Header.h */,
+				50C6CC7B1CBF3A3600EF5EFB /* CruTests-Bridging-Header.h */,
+			);
+			name = SWRevealController;
 			sourceTree = "<group>";
 		};
 		50ED8FCF1C05063D002C9E30 /* RideSharing */ = {
@@ -1026,6 +1044,7 @@
 				0F542CF41C9156EF00CCF136 /* EventModalViewController.swift in Sources */,
 				E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */,
 				5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */,
+				50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				509527281C63E6BC00E4F7B6 /* OfferRideTableViewController.swift in Sources */,
@@ -1076,6 +1095,7 @@
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
+				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
 				0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */,
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
@@ -1229,7 +1249,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.2158.CruCentralCoast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
 				"SWIFT_OBJC_BRIDGING_HEADER[arch=*]" = "Cru/Cru-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1255,7 +1275,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = edu.calpoly.csc.2158.CruCentralCoast;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/Cru-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1275,6 +1295,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/CruTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -1293,6 +1314,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Cru/CruTests-Bridging-Header.h";
 			};
 			name = Release;
 		};

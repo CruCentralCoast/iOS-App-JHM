@@ -22,13 +22,18 @@ class RidesTableViewController: UITableViewController {
     var tappedRide = Ride?()
     var tappedEvent = Event?()
     
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     //TODO: Get gcm id associated with device and only populate rides associated with that id
     let myName = "Daniel Toy"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        if self.revealViewController() != nil{
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 20)!]
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
         self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]

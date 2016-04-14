@@ -11,6 +11,7 @@ import UIKit
 
 
 class SummerMissionController: UICollectionViewController {
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     //MARK: Constants
     private let reuseIdentifier = "SummerMissionCell"
@@ -23,6 +24,12 @@ class SummerMissionController: UICollectionViewController {
     // Initialization
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if self.revealViewController() != nil{
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+        }
         
         // load summer missions from database
         startTime = Int(NSDate().timeIntervalSince1970)

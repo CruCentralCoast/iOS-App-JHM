@@ -10,5 +10,5 @@
 #define Cru_Bridging_Header_h
 
 #import <Google/CloudMessaging.h>
-
+#import "SWRevealViewController.h"
 #endif /* Cru_Bridging_Header_h */

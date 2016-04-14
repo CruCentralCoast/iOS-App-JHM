@@ -14,8 +14,15 @@ import SideMenu
 class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        
+        if self.revealViewController() != nil{
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer()) 
+        }
     }
+    @IBOutlet weak var menuButton: UIBarButtonItem!
     
     /* This function acts after the view is loaded and appears on the phone. */
     override func viewDidAppear(animated: Bool) {
