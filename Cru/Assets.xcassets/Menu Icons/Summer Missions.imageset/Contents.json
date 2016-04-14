@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "summer-missions@1x.png",
+      "filename" : "summermissions@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "summer-missions@2x.png",
+      "filename" : "summermissions@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "summer-missions@3x.png",
+      "filename" : "summermissions@3x.png",
       "scale" : "3x"
     }
   ],

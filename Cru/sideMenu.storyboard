@@ -35,11 +35,11 @@
                                         <rect key="frame" x="0.0" y="35" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="dVT-Rn-JNp" id="70i-33-HfU">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Home" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2MJ-Ri-qZZ">
-                                                    <rect key="frame" x="67" y="23" width="46.5" height="24"/>
+                                                    <rect key="frame" x="79" y="23" width="47" height="24"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -64,7 +64,7 @@
                                                 <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="top" secondItem="37I-h6-Q7Z" secondAttribute="bottom" constant="3" id="dac-yv-SEF"/>
                                                 <constraint firstItem="37I-h6-Q7Z" firstAttribute="centerY" secondItem="70i-33-HfU" secondAttribute="centerY" id="fLe-1n-Owy"/>
                                                 <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="centerY" secondItem="70i-33-HfU" secondAttribute="centerY" id="gza-mU-wm5"/>
-                                                <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="leading" secondItem="37I-h6-Q7Z" secondAttribute="trailing" constant="8" id="ngo-4a-5kj"/>
+                                                <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="leading" secondItem="37I-h6-Q7Z" secondAttribute="trailing" constant="20" id="ngo-4a-5kj"/>
                                                 <constraint firstItem="37I-h6-Q7Z" firstAttribute="leading" secondItem="70i-33-HfU" secondAttribute="leadingMargin" constant="42" id="pZc-sA-dge"/>
                                                 <constraint firstItem="37I-h6-Q7Z" firstAttribute="centerX" secondItem="70i-33-HfU" secondAttribute="centerX" id="w78-EB-XOS"/>
                                                 <constraint firstItem="2MJ-Ri-qZZ" firstAttribute="leading" secondItem="37I-h6-Q7Z" secondAttribute="trailing" constant="20" id="wgB-Cr-Py4"/>
@@ -93,12 +93,12 @@
                                         <rect key="frame" x="0.0" y="105" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Xtl-hg-YSz" id="Mba-Gc-PSX">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNG-XR-5eB">
-                                                    <rect key="frame" x="67" y="24" width="47.5" height="23"/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Events" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNG-XR-5eB">
+                                                    <rect key="frame" x="79" y="24" width="57" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -119,7 +119,7 @@
                                                 <constraint firstItem="fNG-XR-5eB" firstAttribute="centerY" secondItem="Mba-Gc-PSX" secondAttribute="centerY" id="OiL-3B-kUe"/>
                                                 <constraint firstItem="fNG-XR-5eB" firstAttribute="top" secondItem="Fvv-g4-29B" secondAttribute="bottom" constant="3" id="QkU-Rp-kZv"/>
                                                 <constraint firstItem="fNG-XR-5eB" firstAttribute="leading" secondItem="Mba-Gc-PSX" secondAttribute="leadingMargin" constant="36" id="ibd-m1-f4w"/>
-                                                <constraint firstItem="fNG-XR-5eB" firstAttribute="leading" secondItem="Fvv-g4-29B" secondAttribute="trailing" constant="8" id="lR3-c3-ozG"/>
+                                                <constraint firstItem="fNG-XR-5eB" firstAttribute="leading" secondItem="Fvv-g4-29B" secondAttribute="trailing" constant="20" id="lR3-c3-ozG"/>
                                                 <constraint firstItem="fNG-XR-5eB" firstAttribute="centerX" secondItem="Mba-Gc-PSX" secondAttribute="centerX" id="mwJ-M3-Sfc"/>
                                             </constraints>
                                             <variation key="default">
@@ -150,7 +150,7 @@
                                         <rect key="frame" x="0.0" y="175" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OvV-aL-yFO" id="1Jx-33-gEV">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Resources" translatesAutoresizingMaskIntoConstraints="NO" id="GQ0-sg-VMr">
@@ -160,9 +160,9 @@
                                                         <constraint firstAttribute="width" constant="40" id="Vg9-Fa-2hX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-Dq-QBz">
-                                                    <rect key="frame" x="67" y="23" width="73.5" height="23"/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Resources" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ek6-Dq-QBz">
+                                                    <rect key="frame" x="79" y="23" width="81" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -177,7 +177,7 @@
                                                 <constraint firstItem="ek6-Dq-QBz" firstAttribute="centerY" secondItem="1Jx-33-gEV" secondAttribute="centerY" id="Ql6-pu-RKg"/>
                                                 <constraint firstItem="ek6-Dq-QBz" firstAttribute="centerY" secondItem="1Jx-33-gEV" secondAttribute="centerY" id="R1N-GL-dT0"/>
                                                 <constraint firstItem="GQ0-sg-VMr" firstAttribute="leading" secondItem="1Jx-33-gEV" secondAttribute="leadingMargin" constant="11" id="hPK-9O-0hq"/>
-                                                <constraint firstItem="ek6-Dq-QBz" firstAttribute="leading" secondItem="GQ0-sg-VMr" secondAttribute="trailing" constant="8" id="kpH-2d-Bz2"/>
+                                                <constraint firstItem="ek6-Dq-QBz" firstAttribute="leading" secondItem="GQ0-sg-VMr" secondAttribute="trailing" constant="20" id="kpH-2d-Bz2"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
@@ -199,19 +199,19 @@
                                         <rect key="frame" x="0.0" y="245" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ReV-To-1NX" id="YMD-uy-FH2">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RideSharing" translatesAutoresizingMaskIntoConstraints="NO" id="4EF-Mn-YoG">
-                                                    <rect key="frame" x="19" y="14.5" width="40" height="40"/>
+                                                    <rect key="frame" x="19" y="15" width="40" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="fcq-Kr-Ivv"/>
                                                         <constraint firstAttribute="width" constant="40" id="nuC-zJ-13j"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="RideSharing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32o-RX-Lnb">
-                                                    <rect key="frame" x="67" y="24" width="84.5" height="23"/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="RideSharing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="32o-RX-Lnb">
+                                                    <rect key="frame" x="79" y="24" width="92" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -225,7 +225,7 @@
                                                 <constraint firstItem="32o-RX-Lnb" firstAttribute="centerX" secondItem="YMD-uy-FH2" secondAttribute="centerX" id="ZWz-IO-xpw"/>
                                                 <constraint firstItem="4EF-Mn-YoG" firstAttribute="centerY" secondItem="YMD-uy-FH2" secondAttribute="centerY" id="dkx-Ql-ea1"/>
                                                 <constraint firstItem="4EF-Mn-YoG" firstAttribute="leading" secondItem="YMD-uy-FH2" secondAttribute="leadingMargin" constant="35" id="gaf-qt-DoD"/>
-                                                <constraint firstItem="32o-RX-Lnb" firstAttribute="leading" secondItem="4EF-Mn-YoG" secondAttribute="trailing" constant="8" id="hoX-XC-h6t"/>
+                                                <constraint firstItem="32o-RX-Lnb" firstAttribute="leading" secondItem="4EF-Mn-YoG" secondAttribute="trailing" constant="20" id="hoX-XC-h6t"/>
                                                 <constraint firstItem="32o-RX-Lnb" firstAttribute="centerY" secondItem="YMD-uy-FH2" secondAttribute="centerY" id="uHs-Pf-MzA"/>
                                             </constraints>
                                             <variation key="default">
@@ -248,7 +248,7 @@
                                         <rect key="frame" x="0.0" y="315" width="600" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mlj-ST-2vi" id="UQL-Zu-DIg">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="69"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Get Involved" translatesAutoresizingMaskIntoConstraints="NO" id="Pw4-Yn-bxV">
@@ -258,9 +258,9 @@
                                                         <constraint firstAttribute="width" constant="40" id="EOF-cX-wsU"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Get Involved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLD-jC-IC0">
-                                                    <rect key="frame" x="67" y="23" width="89" height="23"/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Get Involved" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sLD-jC-IC0">
+                                                    <rect key="frame" x="79" y="23" width="97" height="24"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -273,7 +273,7 @@
                                                 <constraint firstItem="sLD-jC-IC0" firstAttribute="centerX" secondItem="UQL-Zu-DIg" secondAttribute="centerX" id="OMj-kd-mk6"/>
                                                 <constraint firstItem="Pw4-Yn-bxV" firstAttribute="top" secondItem="UQL-Zu-DIg" secondAttribute="topMargin" constant="1" id="RCu-k2-HdC"/>
                                                 <constraint firstItem="sLD-jC-IC0" firstAttribute="top" secondItem="Pw4-Yn-bxV" secondAttribute="bottom" constant="3" id="aAA-qJ-NvA"/>
-                                                <constraint firstItem="sLD-jC-IC0" firstAttribute="leading" secondItem="Pw4-Yn-bxV" secondAttribute="trailing" constant="8" id="lPD-sE-KBf"/>
+                                                <constraint firstItem="sLD-jC-IC0" firstAttribute="leading" secondItem="Pw4-Yn-bxV" secondAttribute="trailing" constant="20" id="lPD-sE-KBf"/>
                                                 <constraint firstItem="sLD-jC-IC0" firstAttribute="leading" secondItem="UQL-Zu-DIg" secondAttribute="leadingMargin" constant="4" id="rIT-UW-Xj6"/>
                                                 <constraint firstItem="sLD-jC-IC0" firstAttribute="centerY" secondItem="UQL-Zu-DIg" secondAttribute="centerY" id="xY8-da-kEw"/>
                                             </constraints>
@@ -297,7 +297,7 @@
                                         <rect key="frame" x="0.0" y="385" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IUz-L9-lXk" id="1do-HL-Wse">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Summer Missions" translatesAutoresizingMaskIntoConstraints="NO" id="pLZ-kw-hNj">
@@ -307,9 +307,9 @@
                                                         <constraint firstAttribute="height" constant="40" id="nc4-am-gBX"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Summer Missions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5g-Fg-IVG">
-                                                    <rect key="frame" x="67" y="32" width="126" height="23"/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Summer Missions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5g-Fg-IVG">
+                                                    <rect key="frame" x="79" y="32" width="135" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -319,7 +319,7 @@
                                                 <constraint firstItem="pLZ-kw-hNj" firstAttribute="centerX" secondItem="1do-HL-Wse" secondAttribute="centerX" id="8TU-hb-uKM"/>
                                                 <constraint firstItem="R5g-Fg-IVG" firstAttribute="centerY" secondItem="1do-HL-Wse" secondAttribute="centerY" id="BMq-K5-Knb"/>
                                                 <constraint firstItem="pLZ-kw-hNj" firstAttribute="leading" secondItem="1do-HL-Wse" secondAttribute="leadingMargin" constant="35" id="bYA-3r-0F4"/>
-                                                <constraint firstItem="R5g-Fg-IVG" firstAttribute="leading" secondItem="pLZ-kw-hNj" secondAttribute="trailing" constant="8" id="fiv-UT-UlT"/>
+                                                <constraint firstItem="R5g-Fg-IVG" firstAttribute="leading" secondItem="pLZ-kw-hNj" secondAttribute="trailing" constant="20" id="fiv-UT-UlT"/>
                                                 <constraint firstItem="R5g-Fg-IVG" firstAttribute="leading" secondItem="1do-HL-Wse" secondAttribute="leadingMargin" id="gZp-IM-fSF"/>
                                                 <constraint firstItem="pLZ-kw-hNj" firstAttribute="leading" secondItem="1do-HL-Wse" secondAttribute="leadingMargin" constant="11" id="gh5-Oe-pBa"/>
                                                 <constraint firstItem="pLZ-kw-hNj" firstAttribute="centerY" secondItem="1do-HL-Wse" secondAttribute="centerY" id="itc-ZD-c1g"/>
@@ -346,7 +346,7 @@
                                         <rect key="frame" x="0.0" y="473" width="600" height="88"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ztj-CL-54o" id="tgg-p4-fvh">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="87.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="87"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Settings" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-Br-0CM">
@@ -356,9 +356,9 @@
                                                         <constraint firstAttribute="width" constant="40" id="krI-Ao-CzW"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqu-4X-ZSL">
-                                                    <rect key="frame" x="67" y="32" width="57.5" height="23"/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Settings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yqu-4X-ZSL">
+                                                    <rect key="frame" x="79" y="32" width="70" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -366,7 +366,7 @@
                                             <constraints>
                                                 <constraint firstItem="Bny-Br-0CM" firstAttribute="centerX" secondItem="tgg-p4-fvh" secondAttribute="centerX" id="54h-vj-hHE"/>
                                                 <constraint firstItem="yqu-4X-ZSL" firstAttribute="top" secondItem="Bny-Br-0CM" secondAttribute="bottom" constant="3" id="G4u-3B-wA7"/>
-                                                <constraint firstItem="yqu-4X-ZSL" firstAttribute="leading" secondItem="Bny-Br-0CM" secondAttribute="trailing" constant="8" id="GxF-e9-8JZ"/>
+                                                <constraint firstItem="yqu-4X-ZSL" firstAttribute="leading" secondItem="Bny-Br-0CM" secondAttribute="trailing" constant="20" id="GxF-e9-8JZ"/>
                                                 <constraint firstItem="Bny-Br-0CM" firstAttribute="top" secondItem="tgg-p4-fvh" secondAttribute="topMargin" constant="-3" id="HXM-UH-mw1"/>
                                                 <constraint firstItem="yqu-4X-ZSL" firstAttribute="centerY" secondItem="tgg-p4-fvh" secondAttribute="centerY" id="IOA-sw-HBV"/>
                                                 <constraint firstItem="Bny-Br-0CM" firstAttribute="leading" secondItem="tgg-p4-fvh" secondAttribute="leadingMargin" constant="43" id="Kmc-c3-6sM"/>
@@ -474,7 +474,7 @@
         <image name="Get Involved" width="150" height="150"/>
         <image name="Home" width="150" height="150"/>
         <image name="Resources" width="150" height="150"/>
-        <image name="RideSharing" width="150" height="150"/>
+        <image name="RideSharing" width="600" height="600"/>
         <image name="Settings" width="150" height="150"/>
         <image name="Summer Missions" width="600" height="600"/>
     </resources>

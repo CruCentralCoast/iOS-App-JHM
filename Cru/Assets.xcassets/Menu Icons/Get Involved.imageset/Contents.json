@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "get-involved@1x.png",
+      "filename" : "getinvolved@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "get-involved@2x.png",
+      "filename" : "getinvolved@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "get-involved@3x.png",
+      "filename" : "getinvolved@3x.png",
       "scale" : "3x"
     }
   ],
