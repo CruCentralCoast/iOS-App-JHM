@@ -124,7 +124,13 @@ class OfferRideViewController: UIViewController, ValidationDelegate {
         validator.validate(self)
     }
     
+    @IBAction func choosePickupLocation(sender: AnyObject) {
+        print("choose loc")
+    }
     
+    @IBAction func chooseEventSelected(sender: AnyObject) {
+        print("choose event")
+    }
     
 
 }
