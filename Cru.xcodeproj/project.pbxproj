@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F10F0221CC03F7000F478ED /* RidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10F0211CC03F7000F478ED /* RidesViewController.swift */; };
 		0F17E3D21C90F68300713297 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F17E3D11C90F68300713297 /* CalendarManager.swift */; };
 		0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F17E3D11C90F68300713297 /* CalendarManager.swift */; };
 		0F17E3D51C9103B500713297 /* LocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F17E3D41C9103B500713297 /* LocalStorageManager.swift */; };
@@ -193,6 +194,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0F10F0211CC03F7000F478ED /* RidesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RidesViewController.swift; sourceTree = "<group>"; };
 		0F17E3D11C90F68300713297 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		0F17E3D41C9103B500713297 /* LocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		0F17E3D81C91076D00713297 /* MapLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocalStorageManager.swift; sourceTree = "<group>"; };
@@ -612,6 +614,7 @@
 				50EF26E11C7592D20055F480 /* FindRide */,
 				0FFCBC2D1C63F689000B4E18 /* OfferRide */,
 				503A06C91C5F080200DAD10E /* ridesharing.storyboard */,
+				0F10F0211CC03F7000F478ED /* RidesViewController.swift */,
 				503547861C5ABC6900418A92 /* RidesTableViewController.swift */,
 				50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */,
 				50E0E1871C87796D000023F1 /* Cancler.swift */,
@@ -1019,6 +1022,7 @@
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */,
 				5095272E1C63E6F600E4F7B6 /* CreateRideViewController.swift in Sources */,
+				0F10F0221CC03F7000F478ED /* RidesViewController.swift in Sources */,
 				C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
 				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,

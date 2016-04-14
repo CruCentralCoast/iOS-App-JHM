@@ -38,7 +38,7 @@ class Event: Equatable {
         self.name = ""
         self.notificationDate = ""
         self.parentMinistry = ""
-        self.imageSquare = nil
+        self.imageSquare = UIImage(named: "event2")
         self.notifications = [String]()
         self.parentMinistries = [String]()
         self.rideSharingEnabled = true
@@ -46,7 +46,7 @@ class Event: Equatable {
         self.endNSDate = NSDate()
         self.startDate = ""
         self.startNSDate = NSDate()
-        self.image = nil
+        self.image = UIImage(named: "event1")
     }
     
     convenience init?(dict : NSDictionary) {
@@ -73,9 +73,11 @@ class Event: Equatable {
             self.parentMinistry = dParentMinistry as! String
         }
         if let dImageSquare = dict["imageSquare"] {
-            if let imageUrl = dImageSquare.objectForKey("secure_url") {
-                self.imageSquare = GlobalUtils.getImageFromUrl(imageUrl as! String)
-            }
+//            if let imageUrl = dImageSquare.objectForKey("secure_url") {
+//                print("START IMG SQUARE LOAD")
+//                self.imageSquare = GlobalUtils.getImageFromUrl(imageUrl as! String)
+//                print("END IMG SQUARE LOAD")
+//            }
         }
         if let dNotifications = dict["notifications"] {
             self.notifications = dNotifications as! [String]
@@ -96,9 +98,11 @@ class Event: Equatable {
             self.location = dLocation as? NSDictionary
         }
         if let dImage = dict["image"] {
-            if let imageUrl = dImage.objectForKey("secure_url") {
-                self.image = GlobalUtils.getImageFromUrl(imageUrl as! String)
-            }
+//            if let imageUrl = dImage.objectForKey("secure_url") {
+//                print("START IMAGE LOAD")
+//                self.image = GlobalUtils.getImageFromUrl(imageUrl as! String)
+//                print("END IMAGE LOAD")
+//            }
         }
     }
     

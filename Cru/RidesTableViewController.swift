@@ -22,28 +22,13 @@ class RidesTableViewController: UITableViewController {
     var tappedRide = Ride?()
     var tappedEvent = Event?()
     
-    @IBOutlet weak var menuButton: UIBarButtonItem!
     //TODO: Get gcm id associated with device and only populate rides associated with that id
     let myName = "Daniel Toy"
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if self.revealViewController() != nil{
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-        }
-        self.navigationController!.navigationBar.titleTextAttributes = [ NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 20)!]
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor.whiteColor()]
-        self.navigationController!.navigationBar.titleTextAttributes = titleDict as? [String : AnyObject]
-        
-        self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
-        self.navigationController!.navigationBar.tintColor = UIColor.whiteColor()
         self.refreshControl?.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
 
-
-        
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         RideUtils.getMyRides(insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
@@ -53,18 +38,13 @@ class RidesTableViewController: UITableViewController {
     {
         rides.removeAll()
         self.tableView.reloadData()
-        // Updating your data here...
         RideUtils.getMyRides(insertNewRide, afterFunc: finishRefresh)
-
-        
     }
     
     func finishRideInsert(){
         rides.sortInPlace()
         self.tableView.reloadData()
     }
- 
-    
     
     func finishRefresh(){
         rides.sortInPlace()
@@ -174,24 +154,6 @@ class RidesTableViewController: UITableViewController {
         cell.eventTitle.text = getEventNameForEventId(ride.eventId)
         
         return cell
-    }
-
-    @IBAction func addRideSelected(sender: AnyObject) {
-        let newRideAlert = UIAlertController(title: "New Ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        newRideAlert.addAction(UIAlertAction(title: "Offer Ride", style: .Default, handler: handleOfferRide))
-        newRideAlert.addAction(UIAlertAction(title: "Find a Ride", style: .Default, handler: handleFindRide))
-        newRideAlert.addAction(UIAlertAction(title: "Cancel", style: .Cancel, handler: nil))
-        
-        self.presentViewController(newRideAlert, animated: true, completion: nil)
-    }
-    
-    func handleOfferRide(action: UIAlertAction){
-        self.performSegueWithIdentifier("offerridesegue", sender: self)
-        
-    }
-    
-    func handleFindRide(action: UIAlertAction){
-        self.performSegueWithIdentifier("findridesegue", sender: self)
     }
      
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
