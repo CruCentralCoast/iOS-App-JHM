@@ -11,7 +11,6 @@ def cru_pods
     pod 'LocationPicker'
     pod 'IQKeyboardManagerSwift', '3.3.4'
     pod 'SwiftValidator'
-    pod 'FlatUIKit'
     pod 'MRProgress'
     pod 'Alamofire', '~> 3.0'
 end
@@ -25,7 +24,4 @@ target 'CruTests' do
     cru_pods
 end
 
-target 'CruUITests' do
-    cru_pods
-end
 

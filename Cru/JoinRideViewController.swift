@@ -9,7 +9,6 @@
 import UIKit
 import MapKit
 import SwiftValidator
-import FlatUIKit
 import MRProgress
 
 struct JoinRideConstants{
@@ -24,7 +23,6 @@ struct JoinRideConstants{
 
 class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
     //Buttons, labels, a map
-    @IBOutlet weak var join: FUIButton!
     @IBOutlet weak var time: UILabel!
     @IBOutlet weak var address: UITextView!
     @IBOutlet weak var name: UITextField!
@@ -93,7 +91,6 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         numberError.text = ""
         
         //initalize validation things
-        makeButtonPretty()
         validator.registerField(name, errorLabel: nameError, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(number, errorLabel: numberError, rules: [RequiredRule(), PhoneNumberRule()])
 
@@ -104,16 +101,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         self.resignFirstResponder()
     }
     
-    func makeButtonPretty(){
-        join.buttonColor = Colors.green
-        join.shadowColor = Colors.darkerGreen
-        join.shadowHeight = 3.0
-        join.cornerRadius = 6.0
-        join.titleLabel!.font = UIFont.boldFlatFontOfSize(16)
-        join.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Normal)
-        join.setTitleColor(UIColor.cloudsColor(), forState: UIControlState.Highlighted)
-        
-    }
+
     
     func insertEvent(dict: NSDictionary){
         let event = Event(dict: dict)
