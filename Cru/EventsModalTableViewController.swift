@@ -11,7 +11,7 @@ import UIKit
 class EventsModalTableViewController: UITableViewController {
     var events = [Event]()
     var vc: OfferRideViewController?
-    
+    var fvc: FilterByEventViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -43,8 +43,15 @@ class EventsModalTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
-        vc!.eventName.text = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
-        vc!.chosenEvent = events[indexPath.row]
+        if vc != nil{
+            vc!.eventName.text = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
+            vc!.chosenEvent = events[indexPath.row]
+            
+        }
+        if fvc != nil{
+            fvc!.eventNameLabel.text = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
+            fvc!.selectedEvent = events[indexPath.row]
+        }
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
     }
     

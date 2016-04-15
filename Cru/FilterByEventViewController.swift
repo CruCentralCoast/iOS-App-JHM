@@ -9,7 +9,7 @@
 import UIKit
 import MRProgress
 
-class FilterByEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource /*UIPickerViewDelegate, UIPickerViewDataSource*/ {
+class FilterByEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate /*UIPickerViewDelegate, UIPickerViewDataSource*/ {
     
     @IBOutlet weak var rideTable: UITableView!
     @IBOutlet weak var eventNameLabel: UILabel!
@@ -40,10 +40,20 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         rideTable.dataSource = self
         
         navigationItem.title = "Available Rides"
-        
+        loadEvents()
         if tempEvent == nil {
             loadRides(nil)
         }
+    }
+    
+    // MARK: - Table view data source
+    func loadEvents(){
+        ServerUtils.loadResources(.Event, inserter: insertEvent)
+    }
+    
+    func insertEvent(dict : NSDictionary) {
+        events.insert(Event(dict: dict)!, atIndex: 0)
+        //self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
     }
     
     func loadRides(event: Event?) {
@@ -127,6 +137,10 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         self.selectedEvent = event
     }
     
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
@@ -136,9 +150,12 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         
         //check if we're going to event modal
         if segue.identifier == "pickEvent" {
-            if let destinationVC = segue.destinationViewController as? EventModalViewController {
-                destinationVC.eventModalClosure = { event in
-                    self.selectedEvent = event
+            if let destinationVC = segue.destinationViewController as? EventsModalTableViewController {
+                destinationVC.events = events
+                destinationVC.fvc = self
+                var controller = destinationVC.popoverPresentationController
+                if(controller != nil){
+                    controller?.delegate = self
                 }
             }
         }

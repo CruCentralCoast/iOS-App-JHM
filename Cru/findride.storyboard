@@ -43,13 +43,36 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--eventmodal-->
-        <scene sceneID="8X8-YQ-R2d">
+        <!--Events Modal Table View Controller-->
+        <scene sceneID="f1E-TV-a2y">
             <objects>
-                <viewControllerPlaceholder storyboardName="eventmodal" id="LsI-lT-qai" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Y2I-vF-c9j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tableViewController id="cr2-ej-A6j" customClass="EventsModalTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="2cD-5K-gpU">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="30M-wI-HH8">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="30M-wI-HH8" id="g2v-Bs-C4n">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cr2-ej-A6j" id="dav-dx-a3W"/>
+                            <outlet property="delegate" destination="cr2-ej-A6j" id="8kF-vD-VFD"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iBm-D0-TMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1297.5" y="490"/>
+            <point key="canvasLocation" x="1032" y="47"/>
         </scene>
         <!--Filter By Event View Controller-->
         <scene sceneID="All-xW-VyS">
@@ -211,7 +234,9 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1E-GD-1Us" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="DqI-K3-h9i">
                     <connections>
-                        <segue destination="LsI-lT-qai" kind="presentation" identifier="pickEvent" id="Wbh-eB-Ni7"/>
+                        <segue destination="cr2-ej-A6j" kind="popoverPresentation" identifier="pickEvent" popoverAnchorView="K6n-sk-rec" id="4zh-6l-cDK">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
