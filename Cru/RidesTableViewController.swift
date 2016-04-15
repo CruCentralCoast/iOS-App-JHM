@@ -32,6 +32,7 @@ class RidesTableViewController: UITableViewController {
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         RideUtils.getMyRides(insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
+
     }
     
     func refresh(sender:AnyObject)

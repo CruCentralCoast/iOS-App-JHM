@@ -309,22 +309,4 @@ extension NSDate {
     }
 }
 
-extension Location {
-    func getLocationAsDict(loc: Location) -> NSDictionary {
-        var dict = [String:AnyObject]()
-        if let street = loc.placemark.addressDictionary!["Street"] {
-            dict["street1"] = street
-        }
-        if let state = loc.placemark.addressDictionary!["State"] {
-            dict["state"] = state
-        }
-        if let zip = loc.placemark.addressDictionary!["ZIP"] {
-            dict["postcode"] = zip
-        }
-        if let suburb = loc.placemark.addressDictionary!["SubAdministrativeArea"] {
-            dict["suburb"] = suburb
-        }
-        return dict
-        
-    }
-}
+

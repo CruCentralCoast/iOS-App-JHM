@@ -69,6 +69,8 @@
 		503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
+		507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */; };
+		507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */; };
 		5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
 		5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
 		5072B41A1CB38B80001F5BF6 /* TestDriverRideDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */; };
@@ -116,6 +118,8 @@
 		50AA7CCB1C63320F00866BE6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
 		50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
 		50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
+		50D507861CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */; };
+		50D507871CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50DD51481C86B85900752777 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
 		50E0E1881C87796D000023F1 /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
@@ -252,6 +256,7 @@
 		507086861C8F69DB006C5215 /* Pods_Cru.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Cru.framework; path = "Pods/../build/Debug-iphoneos/Pods_Cru.framework"; sourceTree = "<group>"; };
 		507086881C8F69ED006C5215 /* Pods_CruUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CruUITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_CruUITests.framework"; sourceTree = "<group>"; };
 		5070868A1C8F6A0E006C5215 /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationPicker.framework; path = "Pods/../build/Debug-iphoneos/LocationPicker.framework"; sourceTree = "<group>"; };
+		507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModalTableViewController.swift; sourceTree = "<group>"; };
 		5072B4161CB38616001F5BF6 /* TimeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDetail.swift; sourceTree = "<group>"; };
 		5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDriverRideDetail.swift; sourceTree = "<group>"; };
 		50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTimeDetail.swift; sourceTree = "<group>"; };
@@ -271,6 +276,7 @@
 		50C6CC7B1CBF3A3600EF5EFB /* CruTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		50C6CC7C1CBF3A3700EF5EFB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
 		50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWRevealViewController.m; sourceTree = "<group>"; };
+		50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferRideViewController.swift; sourceTree = "<group>"; };
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50DD51471C86B85900752777 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50E0E1871C87796D000023F1 /* Cancler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancler.swift; sourceTree = "<group>"; };
@@ -536,6 +542,8 @@
 				5095272D1C63E6F600E4F7B6 /* CreateRideViewController.swift */,
 				509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */,
 				503A06CB1C5F08CC00DAD10E /* offerride.storyboard */,
+				50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */,
+				507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */,
 			);
 			name = OfferRide;
 			sourceTree = "<group>";
@@ -1029,6 +1037,7 @@
 				0F17E3D91C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
 				C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */,
 				50AA7CCB1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
+				50D507861CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
 				0F74A3101C0BB9D300401377 /* User.swift in Sources */,
 				C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */,
 				6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */,
@@ -1036,6 +1045,7 @@
 				0FC8E3B21C48750A007A7208 /* IntroViewController.swift in Sources */,
 				0FF87DA01C8A20A200D56C4E /* EventsCollectionViewCell.swift in Sources */,
 				E9CB00341C8F7E04000F7E12 /* SummerMissionDetailController.swift in Sources */,
+				507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
 				E9CB00331C8F7E04000F7E12 /* SummerMissionController.swift in Sources */,
 				5095272B1C63E6D000E4F7B6 /* ChooseEventTableViewController.swift in Sources */,
@@ -1089,6 +1099,7 @@
 				5072B4231CB38E75001F5BF6 /* DriverRideDetailViewController.swift in Sources */,
 				5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */,
 				5072B4211CB38E67001F5BF6 /* EventModalViewController.swift in Sources */,
+				50D507871CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
 				5072B4201CB38E5F001F5BF6 /* JoinRideViewController.swift in Sources */,
 				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
@@ -1102,6 +1113,7 @@
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
+				507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
