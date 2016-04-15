@@ -44,9 +44,9 @@ class RidesTableViewController: UITableViewController {
 
 
         
-        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.getRidesByGCMToken(Config.gcmId(), inserter: insertRide, afterFunc: finishRideInsert)
-        ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
+//        //MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+        //RideUtils.getRidesByGCMToken(Config.gcmId(), inserter: insertRide, afterFunc: finishRideInsert)
+        //ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
     }
     
     func refresh(sender:AnyObject)

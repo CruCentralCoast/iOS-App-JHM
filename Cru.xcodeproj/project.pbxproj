@@ -68,6 +68,8 @@
 		503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
+		507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */; };
+		507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */; };
 		5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
 		5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
 		5072B41A1CB38B80001F5BF6 /* TestDriverRideDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */; };
@@ -250,6 +252,7 @@
 		507086861C8F69DB006C5215 /* Pods_Cru.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Cru.framework; path = "Pods/../build/Debug-iphoneos/Pods_Cru.framework"; sourceTree = "<group>"; };
 		507086881C8F69ED006C5215 /* Pods_CruUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CruUITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_CruUITests.framework"; sourceTree = "<group>"; };
 		5070868A1C8F6A0E006C5215 /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationPicker.framework; path = "Pods/../build/Debug-iphoneos/LocationPicker.framework"; sourceTree = "<group>"; };
+		507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModalTableViewController.swift; sourceTree = "<group>"; };
 		5072B4161CB38616001F5BF6 /* TimeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDetail.swift; sourceTree = "<group>"; };
 		5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDriverRideDetail.swift; sourceTree = "<group>"; };
 		50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTimeDetail.swift; sourceTree = "<group>"; };
@@ -534,6 +537,7 @@
 				509527271C63E6BC00E4F7B6 /* OfferRideTableViewController.swift */,
 				503A06CB1C5F08CC00DAD10E /* offerride.storyboard */,
 				50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */,
+				507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */,
 			);
 			name = OfferRide;
 			sourceTree = "<group>";
@@ -1033,6 +1037,7 @@
 				0FC8E3B21C48750A007A7208 /* IntroViewController.swift in Sources */,
 				0FF87DA01C8A20A200D56C4E /* EventsCollectionViewCell.swift in Sources */,
 				E9CB00341C8F7E04000F7E12 /* SummerMissionDetailController.swift in Sources */,
+				507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
 				E9CB00331C8F7E04000F7E12 /* SummerMissionController.swift in Sources */,
 				5095272B1C63E6D000E4F7B6 /* ChooseEventTableViewController.swift in Sources */,
@@ -1099,6 +1104,7 @@
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
+				507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
 				0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */,

@@ -14,6 +14,7 @@ def cru_pods
     pod 'MRProgress'
     pod 'Alamofire', '~> 3.0'
     pod 'RadioButton'
+    pod 'ActionSheetPicker-3.0'
 end
     
 

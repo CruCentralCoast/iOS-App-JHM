@@ -84,6 +84,7 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "Pods-CruTests/ActionSheetPicker_3_0.framework"
   install_framework "Pods-CruTests/Alamofire.framework"
   install_framework "Pods-CruTests/DatePickerCell.framework"
   install_framework "Pods-CruTests/IQKeyboardManagerSwift.framework"
@@ -94,6 +95,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-CruTests/SwiftValidator.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "Pods-CruTests/ActionSheetPicker_3_0.framework"
   install_framework "Pods-CruTests/Alamofire.framework"
   install_framework "Pods-CruTests/DatePickerCell.framework"
   install_framework "Pods-CruTests/IQKeyboardManagerSwift.framework"

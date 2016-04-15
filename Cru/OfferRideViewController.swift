@@ -9,24 +9,29 @@
 import UIKit
 import RadioButton
 import SwiftValidator
+import ActionSheetPicker_3_0
 
-class OfferRideViewController: UIViewController, ValidationDelegate {
+class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPresentationControllerDelegate{
     @IBOutlet weak var numSeats: UILabel!
     @IBOutlet weak var roundTripButton: RadioButton!
     @IBOutlet weak var toEventButton: RadioButton!
     @IBOutlet weak var fromEventButton: RadioButton!
     @IBOutlet weak var stepper: UIStepper!
-    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var nameFieldError: UILabel!
-    
+    @IBOutlet weak var chooseEventButton: UIButton!
     @IBOutlet weak var phoneField: UITextField!
     @IBOutlet weak var phoneFieldError: UILabel!
+    @IBOutlet weak var pickupDate: UILabel!
+    @IBOutlet weak var pickupTime: UILabel!
+    @IBOutlet weak var pickupLocation: UILabel!
+    @IBOutlet weak var eventName: UILabel!
     
     var checkImage = UIImage(named: "checked")
     var uncheckImage = UIImage(named: "unchecked")
     let validator = Validator()
     
+    var events = [Event]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,6 +52,13 @@ class OfferRideViewController: UIViewController, ValidationDelegate {
         
         nameFieldError.text = ""
         phoneFieldError.text = ""
+        eventName.text = ""
+        pickupLocation.text = ""
+        pickupTime.text = ""
+        pickupDate.text = ""
+
+        //loadEvents()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,8 +141,74 @@ class OfferRideViewController: UIViewController, ValidationDelegate {
     }
     
     @IBAction func chooseEventSelected(sender: AnyObject) {
-        print("choose event")
+        self.performSegueWithIdentifier("eventPopover", sender: self)
     }
     
+    @IBAction func chooseTime(sender: UIButton) {
+        let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: sender.superview!.superview)
+        
+        datePicker.minuteInterval = 15
+        datePicker.showActionSheetPicker()
+    }
+    
+    @IBAction func chooseDate(sender: AnyObject) {
+        let datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.Date, selectedDate: NSDate(), doneBlock: {
+            picker, value, index in
+            
+            if let val = value as? NSDate{
+                let calendar = NSCalendar.currentCalendar()
+                let components = calendar.components([.Day,.Month,.Year], fromDate: val)
+
+                let month = String(components.month)
+                let day = String(components.day)
+                let year = String(components.year)
+
+                self.pickupDate.text = month + "/" + day + "/" + year
+            }
+            
+            
+            return
+            }, cancelBlock: { ActionStringCancelBlock in return }, origin: self.view)
+
+        
+        datePicker.showActionSheetPicker()
+    }
+
+
+    
+    func datePicked(obj: NSDate) {
+        if let val = obj as? NSDate{
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "h:mm a"
+            pickupTime.text = formatter.stringFromDate(val)
+        }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "eventPopover"{
+            var vc  = segue.destinationViewController as? EventsModalTableViewController
+            vc?.events = events
+            vc?.vc = self
+            var controller = vc?.popoverPresentationController
+            if(controller != nil){
+                controller?.delegate = self
+            }
+        }
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
+    // MARK: - Table view data source
+    func loadEvents(){
+        ServerUtils.loadResources(.Event, inserter: insertEvent)
+    }
+    
+    func insertEvent(dict : NSDictionary) {
+        events.insert(Event(dict: dict)!, atIndex: 0)
+        //self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+    }
+
 
 }
