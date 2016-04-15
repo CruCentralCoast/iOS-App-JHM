@@ -44,6 +44,7 @@ class EventsModalTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         vc!.eventName.text = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
+        vc!.chosenEvent = events[indexPath.row]
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
     }
     

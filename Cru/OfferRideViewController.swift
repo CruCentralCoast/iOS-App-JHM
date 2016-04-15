@@ -10,6 +10,9 @@ import UIKit
 import RadioButton
 import SwiftValidator
 import ActionSheetPicker_3_0
+import MapKit
+import LocationPicker
+import MRProgress
 
 class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPresentationControllerDelegate{
     @IBOutlet weak var numSeats: UILabel!
@@ -30,8 +33,14 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     var checkImage = UIImage(named: "checked")
     var uncheckImage = UIImage(named: "unchecked")
     let validator = Validator()
-    
     var events = [Event]()
+    var chosenEvent:Event?
+    var direction:String?
+    var location: Location! {
+        didSet {
+            pickupLocation.text? = location.address
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,7 +66,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         pickupTime.text = ""
         pickupDate.text = ""
 
-        //loadEvents()
+        loadEvents()
         
     }
 
@@ -83,13 +92,13 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         if let sendr = sender as? RadioButton{
             let text = sendr.titleLabel?.text
             if(text == "  Round-Trip"){
-
+                direction = "Round-Trip"
             }
             else if(text == "  To Event"){
-
+                direction =  "To Event"
             }
             else if(text == "  From Event"){
-
+                direction = "From Event"
             }
         }
     }
@@ -97,8 +106,22 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     
     func validationSuccessful() {
         
+        if chosenEvent == nil{
+            return
+        }
+        if direction == nil{
+            return
+        }
+        
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+        RideUtils.postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: direction!, handler:  wasSuccess, idhandler: {id in})
+        
+        
     }
-    
+    func wasSuccess(sucess: Bool){
+        print(sucess)
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+    }
     func resetLabel(field: UITextField, error: UILabel){
         field.layer.borderColor = UIColor.clearColor().CGColor
         field.layer.borderWidth = 0.0
@@ -137,7 +160,17 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     }
     
     @IBAction func choosePickupLocation(sender: AnyObject) {
-        print("choose loc")
+        let locationPicker = LocationPickerViewController()
+        
+        if self.location != nil {
+            locationPicker.location = self.location
+        }
+        
+        locationPicker.completion = { location in
+            self.location = location
+        }
+        
+        navigationController?.pushViewController(locationPicker, animated: true)
     }
     
     @IBAction func chooseEventSelected(sender: AnyObject) {
@@ -211,4 +244,24 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     }
 
 
+}
+
+extension Location {
+    func getLocationAsDict(loc: Location) -> NSDictionary {
+        var dict = [String:AnyObject]()
+        if let street = loc.placemark.addressDictionary!["Street"] {
+            dict["street1"] = street
+        }
+        if let state = loc.placemark.addressDictionary!["State"] {
+            dict["state"] = state
+        }
+        if let zip = loc.placemark.addressDictionary!["ZIP"] {
+            dict["postcode"] = zip
+        }
+        if let suburb = loc.placemark.addressDictionary!["SubAdministrativeArea"] {
+            dict["suburb"] = suburb
+        }
+        return dict
+        
+    }
 }
