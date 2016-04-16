@@ -188,8 +188,9 @@ class RidesTableViewController: UITableViewController {
             
             yourNextViewController.ride = tappedRide
             yourNextViewController.event = tappedEvent
-            //yourNextViewController.passengers = tappedRide!.passengers
         }
+        
+        
         
     }
         

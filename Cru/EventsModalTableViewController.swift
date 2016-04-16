@@ -46,6 +46,7 @@ class EventsModalTableViewController: UITableViewController {
         if vc != nil{
             vc!.eventName.text = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
             vc!.chosenEvent = events[indexPath.row]
+            vc!.formHasBeenEdited = true
             
         }
         if fvc != nil{

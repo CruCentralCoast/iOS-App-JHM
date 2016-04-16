@@ -19,7 +19,7 @@ class RiderRideDetailViewController: UIViewController {
     
     var event: Event!
     var ride: Ride?
-    
+    var rideVC: RidesViewController?
     @IBOutlet weak var eventButton: UIButton!
     @IBOutlet weak var direction: UILabel!
     @IBOutlet weak var directionIcon: UIImageView!
@@ -132,15 +132,9 @@ class RiderRideDetailViewController: UIViewController {
     
     func cancelConfirmed(action: UIAlertAction){
         RideUtils.leaveRidePassenger(ride!, handler: { success in
-            
             if let navController = self.navigationController {
                 navController.popViewControllerAnimated(true)
-                
-                for vc in navController.viewControllers{
-                    if let tvc = vc as? RidesTableViewController {
-                        tvc.refresh(1)
-                    }
-                }
+                self.rideVC?.refresh(self)
             }
         })
     }

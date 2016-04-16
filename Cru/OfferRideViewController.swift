@@ -30,20 +30,27 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     @IBOutlet weak var pickupLocation: UILabel!
     @IBOutlet weak var eventName: UILabel!
     
+    var rideVC: RidesViewController?
     var checkImage = UIImage(named: "checked")
     var uncheckImage = UIImage(named: "unchecked")
     let validator = Validator()
     var events = [Event]()
     var chosenEvent:Event?
     var direction:String?
+    var formHasBeenEdited = false
     var location: Location! {
         didSet {
+            formHasBeenEdited = true
             pickupLocation.text? = location.address
         }
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        phoneField.keyboardType = UIKeyboardType.NumberPad
         
         roundTripButton.setImage(checkImage, forState: UIControlState.Selected)
         roundTripButton.setImage(uncheckImage, forState: UIControlState.Normal)
@@ -55,6 +62,8 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         fromEventButton.setImage(uncheckImage, forState: UIControlState.Normal)
         
         stepper.value = 1
+        numSeats.text = "1"
+        direction = "Round-Trip"
         
         validator.registerField(nameField, errorLabel: nameFieldError, rules: [RequiredRule(), FullNameRule()])
         validator.registerField(phoneField, errorLabel: phoneFieldError, rules: [RequiredRule(), PhoneNumberRule()])
@@ -68,7 +77,9 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
 
         loadEvents()
         
-    }
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Bordered, target: self, action: "handleCancelRide:")
+        self.navigationItem.leftBarButtonItem = newBackButton;    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -100,6 +111,8 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
             else if(text == "  From Event"){
                 direction = "From Event"
             }
+            formHasBeenEdited = true
+
         }
     }
     
@@ -135,28 +148,26 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     func handleRequestResult(result : Bool){
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         if result {
-            presentAlert("Ride Offered", msg: "Thank you your offered ride has been created!")
+            presentAlert("Ride Offered", msg: "Thank you your offered ride has been created!", handler:  {
+                if let navController = self.navigationController {
+                    navController.popViewControllerAnimated(true)
+                    self.rideVC?.refresh(self)
+                }
+            })
+            
+            
         } else {
-            presentAlert("Ride Offer Failed", msg: "Failed to post ride offer")
+            presentAlert("Ride Offer Failed", msg: "Failed to post ride offer", handler:  {})
         }
     }
     
-    private func presentAlert(title: String, msg: String) {
+    private func presentAlert(title: String, msg: String, handler: ()->()) {
         let cancelRideAlert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
         
         cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
             action in
+            handler()
             
-            if let navController = self.navigationController {
-                navController.popViewControllerAnimated(true)
-                
-                for vc in navController.viewControllers{
-                    if let tvc = vc as? RidesTableViewController {
-                        
-                        tvc.refresh(1)
-                    }
-                }
-            }
         }))
         presentViewController(cancelRideAlert, animated: true, completion: nil)
         
@@ -238,6 +249,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
                 let year = String(components.year)
 
                 self.pickupDate.text = month + "/" + day + "/" + year
+                self.formHasBeenEdited = true
             }
             
             
@@ -255,6 +267,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
             let formatter = NSDateFormatter()
             formatter.dateFormat = "h:mm a"
             pickupTime.text = formatter.stringFromDate(val)
+            formHasBeenEdited = true
         }
     }
     
@@ -281,9 +294,28 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     
     func insertEvent(dict : NSDictionary) {
         events.insert(Event(dict: dict)!, atIndex: 0)
-        //self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
     }
-
+    
+    /* Function for handling canceling a submission of offering a ride. Displays an alert box if there is unsaved data in the offer ride form and asks the user if they would really like to exit */
+    func handleCancelRide(sender: UIBarButtonItem) {
+        if (formHasBeenEdited) {
+            let cancelRideAlert = UIAlertController(title: "Cancel Ride", message: "Are you sure you would like to continue? All unsaved data will be lost!", preferredStyle: UIAlertControllerStyle.Alert)
+            
+            cancelRideAlert.addAction(UIAlertAction(title: "Yes", style: .Destructive, handler: performBackAction))
+            cancelRideAlert.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+            presentViewController(cancelRideAlert, animated: true, completion: nil)
+        }
+        else {
+            performBackAction(UIAlertAction())
+        }
+    }
+    
+    // Helper function for popping the offer rides view controller from the view stack and show the rides table
+    func performBackAction(action: UIAlertAction) {
+        self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    
 
 }
 

@@ -16,7 +16,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     var ride: Ride!
     var passengers = [Passenger]()
     let cellHeight = CGFloat(60)
-    
+    var rideVC: RidesViewController?
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
     @IBOutlet weak var departureTime: UILabel!
@@ -148,13 +148,9 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
             Cancler.showCancelSuccess(self, handler: { action in
                 if let navController = self.navigationController {
                     navController.popViewControllerAnimated(true)
-                    
-                    for vc in navController.viewControllers{
-                        if let tvc = vc as? RidesTableViewController {
-                            tvc.refresh(1)
-                        }
-                    }
+                    self.rideVC?.refresh(self)
                 }
+                
             })
         }
         else{
