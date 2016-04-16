@@ -114,14 +114,55 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         }
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: direction!, handler:  wasSuccess)
+        RideUtils.postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
         
         
     }
-    func wasSuccess(sucess: Bool){
-        print(sucess)
+    
+    // Function for returning a direction based off of what is picked in the diriver direction picker
+    private func getDirection() -> String {
+        if direction! == "To Event" {
+            return "to"
+        }
+        else if direction! == "From Event" {
+            return "from"
+        }
+        else {
+            return "both"
+        }
+    }
+    
+    func handleRequestResult(result : Bool){
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        if result {
+            presentAlert("Ride Offered", msg: "Thank you your offered ride has been created!")
+        } else {
+            presentAlert("Ride Offer Failed", msg: "Failed to post ride offer")
+        }
     }
+    
+    private func presentAlert(title: String, msg: String) {
+        let cancelRideAlert = UIAlertController(title: title, message: msg, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        cancelRideAlert.addAction(UIAlertAction(title: "OK", style: .Default, handler: {
+            action in
+            
+            if let navController = self.navigationController {
+                navController.popViewControllerAnimated(true)
+                
+                for vc in navController.viewControllers{
+                    if let tvc = vc as? RidesTableViewController {
+                        
+                        tvc.refresh(1)
+                    }
+                }
+            }
+        }))
+        presentViewController(cancelRideAlert, animated: true, completion: nil)
+        
+    }
+    
+    
     func resetLabel(field: UITextField, error: UILabel){
         field.layer.borderColor = UIColor.clearColor().CGColor
         field.layer.borderWidth = 0.0
