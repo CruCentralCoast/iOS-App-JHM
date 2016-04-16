@@ -39,9 +39,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.ridesTableView.addSubview(self.refreshControl)
         
-        //MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        //RideUtils.getMyRides(insertRide, afterFunc: finishRideInsert)
-        //ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+        RideUtils.getMyRides(insertRide, afterFunc: finishRideInsert)
+        ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
     }
 
     override func didReceiveMemoryWarning() {
