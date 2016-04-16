@@ -80,7 +80,7 @@ class RideUtils {
         location: NSDictionary, radius: Int, direction: String, handler: (Bool)->()) {
             let requestUrl = Config.serverUrl + "api/" + DBCollection.Ride.name();
             let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
-                "gcm_id": Config.gcmId(), "location":location, "radius":radius, "direction":direction]
+                "gcm_id": Config.gcmId(), "location":location, "radius":radius, "direction":direction, "gender": 0]
             
             
             Alamofire.request(.POST, requestUrl, parameters: body)
@@ -111,7 +111,8 @@ class RideUtils {
         let gcmToken = Config.gcmId()
         
         let requestUrl = Config.serverUrl + "api/" + DBCollection.Passenger.name();
-        let body = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken]
+        let body: [String : AnyObject]
+        body = ["name": name, "phone": phone, "direction":direction, "gcm_id":gcmToken, "gender": 0]
         
         Alamofire.request(.POST, requestUrl, parameters: body)
             .responseJSON { response in

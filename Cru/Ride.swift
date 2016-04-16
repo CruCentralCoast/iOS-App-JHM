@@ -30,6 +30,7 @@ class Ride: Comparable, Equatable, TimeDetail {
     var state: String = ""
     var suburb: String = ""
     var street: String = ""
+    var gender: Int = 0
     
     
     init?(dict: NSDictionary){

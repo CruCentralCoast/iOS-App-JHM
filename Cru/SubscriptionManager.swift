@@ -92,10 +92,8 @@ class SubscriptionManager{
     }
     
     static func campusContainsMinistry(campus: Campus, ministry: Ministry)->Bool{
-        for campusId in ministry.campusIds{
-            if(campusId == campus.id){
-                return true
-            }
+        if(ministry.campusId == campus.id){
+            return true
         }
         return false
     }
