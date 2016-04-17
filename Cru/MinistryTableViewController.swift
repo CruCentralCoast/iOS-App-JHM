@@ -223,7 +223,7 @@ class MinistryTableViewController: UITableViewController {
                 //let stream = NSInputStream(URL: NSURL(string: min.imageUrl)!)
                 
                 let data = NSData(contentsOfURL: NSURL(string: min.imageUrl)!)
-                self.totalMegsUsed += Double(data!.length)/1024.0/1024.0
+                //self.totalMegsUsed += Double(data!.length)/1024.0/1024.0
                 //    print("got it .... yiiissss \(Double(data!.length)/1024.0/1024.0)")
                 //print("total: \(self.totalMegsUsed)")
                 var image : UIImage?
@@ -238,7 +238,10 @@ class MinistryTableViewController: UITableViewController {
                     
                     //alternate method of setting the image
                     //imageView.image = self.smallerImage(image!)
-                    imageView.image = self.resizeImage(image!, newWidth: 150.0)
+                    if(image != nil){
+                        imageView.image = self.resizeImage(image!, newWidth: 150.0)
+                    }
+                    
                 })
             }
         })
