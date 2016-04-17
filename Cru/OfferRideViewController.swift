@@ -150,6 +150,10 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
             return
         }
         
+        if location == nil{
+            return
+        }
+        
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         RideUtils.postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
         
