@@ -14,7 +14,7 @@ import MapKit
 import LocationPicker
 import MRProgress
 
-class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPresentationControllerDelegate{
+class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPresentationControllerDelegate, UIGestureRecognizerDelegate{
     @IBOutlet weak var numSeats: UILabel!
     @IBOutlet weak var roundTripButton: RadioButton!
     @IBOutlet weak var toEventButton: RadioButton!
@@ -70,16 +70,40 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         
         nameFieldError.text = ""
         phoneFieldError.text = ""
-        eventName.text = ""
-        pickupLocation.text = ""
-        pickupTime.text = ""
-        pickupDate.text = ""
+        //eventName.text = ""
+        //pickupLocation.text = ""
+        //pickupTime.text = ""
+        //pickupDate.text = ""
 
         loadEvents()
         
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Bordered, target: self, action: "handleCancelRide:")
-        self.navigationItem.leftBarButtonItem = newBackButton;    }
+        self.navigationItem.leftBarButtonItem = newBackButton
+        
+        
+        eventName.userInteractionEnabled = true // Remember to do this
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "chooseEvent:")
+        eventName.addGestureRecognizer(tap)
+        tap.delegate = self
+        
+        pickupLocation.userInteractionEnabled = true
+        let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "choosePickupLocation:")
+        pickupLocation.addGestureRecognizer(tap2)
+        tap2.delegate = self
+        
+        pickupTime.userInteractionEnabled = true
+        let tap3: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "chooseTime:")
+    
+        pickupTime.addGestureRecognizer(tap3)
+        tap3.delegate = self
+        
+        pickupDate.userInteractionEnabled = true
+        let tap4: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "chooseDate:")
+        pickupDate.addGestureRecognizer(tap4)
+        tap4.delegate = self
+    
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -228,9 +252,11 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     @IBAction func chooseEventSelected(sender: AnyObject) {
         self.performSegueWithIdentifier("eventPopover", sender: self)
     }
-    
+    func chooseEvent(sender: UITapGestureRecognizer){
+        chooseEventSelected(sender)
+    }
     @IBAction func chooseTime(sender: UIButton) {
-        let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: sender.superview!.superview)
+        let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: self.view.superview)//sender.superview!.superview)
         
         datePicker.minuteInterval = 15
         datePicker.showActionSheetPicker()

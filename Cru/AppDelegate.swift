@@ -76,8 +76,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     }
     
     func applicationDidEnterBackground(application: UIApplication) {
-        GCMService.sharedInstance().disconnect()
-        self.connectedToGCM = false    }
+        //GCMService.sharedInstance().disconnect()
+        //self.connectedToGCM = false
+    }
     
     func application( application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken
         deviceToken: NSData ) {
