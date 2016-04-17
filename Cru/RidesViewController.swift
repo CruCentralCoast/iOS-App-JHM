@@ -63,7 +63,10 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             let destVC = segue.destinationViewController as? OfferRideViewController
             destVC?.rideVC = self
         }
-        
+        if segue.identifier == "findridesegue"{
+            let destVC = segue.destinationViewController as? FilterByEventViewController
+            destVC?.rideVC = self
+        }
         if(segue.identifier == "riderdetailsegue") {
             
             let yourNextViewController = (segue.destinationViewController as! RiderRideDetailViewController)

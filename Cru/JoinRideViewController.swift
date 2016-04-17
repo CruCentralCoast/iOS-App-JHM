@@ -46,6 +46,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     var event: Event?
     let dummyAddress = "1 Grand Avenue San Luis Obispo 93401 California"
     
+    var rideVC:RidesViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -144,7 +145,11 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
     func unwindToRideList(action: UIAlertAction){
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
-            //navController.popViewControllerAnimated(true)
+            navController.popViewControllerAnimated(true)
+            
+            if (rideVC != nil){
+                rideVC?.refresh(self)
+            }
 
         }
     }

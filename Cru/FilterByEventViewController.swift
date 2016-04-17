@@ -14,7 +14,8 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var rideTable: UITableView!
     @IBOutlet weak var eventNameLabel: UILabel!
     
-    //var rides = ["ride1", "ride2"]
+    var rideVC:RidesViewController?
+    
     var events = [Event]()
     var filteredRides = [Ride]()
     var allRides = [Ride]()
@@ -57,8 +58,6 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func loadRides(event: Event?) {
-        print("LOADING RIDES")
-        print(event)
         tempEvent = event
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         RideUtils.getRidesNotDriving(Config.gcmId(), inserter: insertRide, afterFunc: loadRidesCompletionHandler)
@@ -69,7 +68,6 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func loadRidesCompletionHandler() {
-        print("COMPLETE")
         if tempEvent != nil {
             selectedEvent = tempEvent
         }
@@ -79,9 +77,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     
     private func filterRidesByEventId(eventId: String){
         filteredRides.removeAll()
-        
-        print("FILTERING")
-        
+                
         for ride in allRides {
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
@@ -146,6 +142,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
                     vc.ride = self.selectedRide
                     vc.event = self.selectedEvent
+                    vc.rideVC = self.rideVC
         }
         
         //check if we're going to event modal
