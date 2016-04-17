@@ -145,12 +145,7 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)
             //navController.popViewControllerAnimated(true)
-            
-            for vc in navController.viewControllers{
-                if let tvc = vc as? RidesTableViewController {
-                    tvc.refresh(1)
-                }
-            }
+
         }
     }
     
