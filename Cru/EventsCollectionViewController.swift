@@ -23,7 +23,7 @@ class EventsCollectionViewController: UICollectionViewController {
         }
         
         //uncomment this line out to crash the app
-        Crashlytics.sharedInstance().crash()
+        //Crashlytics.sharedInstance().crash()
         
 
         //self.navigationController!.navigationBar.translucent = false
