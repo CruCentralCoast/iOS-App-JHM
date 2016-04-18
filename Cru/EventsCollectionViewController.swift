@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class EventsCollectionViewController: UICollectionViewController {
 
@@ -20,6 +21,10 @@ class EventsCollectionViewController: UICollectionViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
+        
+        //uncomment this line out to crash the app
+        Crashlytics.sharedInstance().crash()
+        
 
         //self.navigationController!.navigationBar.translucent = false
         

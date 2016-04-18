@@ -744,6 +744,7 @@
 				11613E4FE54B8EA98CDD49CC /* Embed Pods Frameworks */,
 				BF48549276203C9B3D0040AC /* Copy Pods Resources */,
 				6D4B78C01C70EBD500F643CB /* Embed Frameworks */,
+				50BAF9661CC46275007CC328 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -912,6 +913,20 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CruTests/Pods-CruTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		50BAF9661CC46275007CC328 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Fabric/run\" 10da74926f66f76a6c83ed3c83db5484fc0e4411 c8e9bb12648a07b2772ed011c1d9ec66b8c679d0b60824f3b9b76118e58fef9a\n";
 		};
 		826A1931001405333AEF0D9D /* Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;

@@ -11,6 +11,8 @@ import CoreData
 import WildcardSDK
 import IQKeyboardManagerSwift
 import Google
+import Fabric
+import Crashlytics
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GCMReceiverDelegate {
@@ -28,7 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        
+        Fabric.with([Crashlytics.self])
+        // TODO: Move this to where you establish a user session
+        self.logUser()
+
         // Configure the Google context: parses the GoogleService-Info.plist, and initializes
         // the services that have entries in the file
         var configureError:NSError?
@@ -57,6 +62,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
         
         return true
     }
+    
+    func logUser() {
+        // TODO: Use the current user's information
+        // You can call any combination of these three methods
+        Crashlytics.sharedInstance().setUserEmail("user@fabric.io")
+        Crashlytics.sharedInstance().setUserIdentifier("12345")
+        Crashlytics.sharedInstance().setUserName("Test User")
+    }
+
     
     func applicationDidBecomeActive( application: UIApplication) {
         // Connect to the GCM server to receive non-APNS notifications

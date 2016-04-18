@@ -1,7 +1,10 @@
 PODS:
   - ActionSheetPicker-3.0 (2.0.5)
   - Alamofire (3.2.1)
+  - Crashlytics (3.7.0):
+    - Fabric (~> 1.6.3)
   - DatePickerCell (1.0.4)
+  - Fabric (1.6.6)
   - GGLInstanceID (1.1.5):
     - GoogleIPhoneUtilities (~> 1.0)
     - GoogleNetworkingUtilities (~> 1.0)
@@ -69,7 +72,9 @@ PODS:
 DEPENDENCIES:
   - ActionSheetPicker-3.0
   - Alamofire (~> 3.0)
+  - Crashlytics
   - DatePickerCell
+  - Fabric
   - Google/CloudMessaging
   - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
@@ -81,7 +86,9 @@ DEPENDENCIES:
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 8312778b6815578e6a86d630fbcf31dc94c534e7
   Alamofire: f11d8624a05f5d39e0c99309b3e600a3ba64298a
+  Crashlytics: c3a2333dea9e2733d2777f730910321fc9e25c0d
   DatePickerCell: 20d2ba8b5cd5bb8a5a79e2b43bc7758e3b65daf2
+  Fabric: 1abc1e59f11fa39ede6f690ef7309d8563e3ec59
   GGLInstanceID: 4be9a86f27e87f8cedc9694f521f12949813a7ba
   Google: 97618e118111b998cce1d8dd1bd98b82301d72db
   GoogleCloudMessaging: faa057e30845e7300da31de3777060420b2f6579
