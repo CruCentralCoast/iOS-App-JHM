@@ -86,6 +86,7 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Cru/ActionSheetPicker_3_0.framework"
   install_framework "Pods-Cru/Alamofire.framework"
+  install_framework "Pods-Cru/DZNEmptyDataSet.framework"
   install_framework "Pods-Cru/DatePickerCell.framework"
   install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
@@ -97,6 +98,7 @@ fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Cru/ActionSheetPicker_3_0.framework"
   install_framework "Pods-Cru/Alamofire.framework"
+  install_framework "Pods-Cru/DZNEmptyDataSet.framework"
   install_framework "Pods-Cru/DatePickerCell.framework"
   install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
