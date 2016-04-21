@@ -62,6 +62,9 @@ class RideUtils {
             
             ServerUtils.sendHttpPostRequest(requestUrl, body: params, completionHandler : ServerUtils.insertResources(inserter, afterFunc: afterFunc))
         }
+        else{
+            afterFunc()
+        }
     }
     
     private class func getMyRideIds() -> [String] {
