@@ -23,7 +23,15 @@ struct Config {
                 return SubscriptionManager.loadGCMToken()
             }
     }
-    static let simulatorMode = true
+    static var simulatorMode: Bool{
+        get{
+            #if (arch(i386) || arch(x86_64)) && os(iOS)
+                return true
+            #else
+                return false
+            #endif
+        }
+    }
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
     static let ridesReceiving = "ridesReceiving"
