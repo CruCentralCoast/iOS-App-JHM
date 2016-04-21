@@ -8,9 +8,10 @@
 
 import UIKit
 import MRProgress
+import DZNEmptyDataSet
 
 
-class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     let roundTrip = "round-trip"
     let roundTripDirection = "both"
     let fromEvent = "from event"
@@ -42,6 +43,14 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         RideUtils.getMyRides(insertRide, afterFunc: finishRideInsert)
         ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
+        
+        self.ridesTableView.emptyDataSetSource = self
+        self.ridesTableView.emptyDataSetDelegate = self
+        self.ridesTableView.tableFooterView = UIView()
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "Pacman")
     }
 
     override func didReceiveMemoryWarning() {
