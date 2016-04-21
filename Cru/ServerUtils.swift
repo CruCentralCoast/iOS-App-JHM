@@ -87,8 +87,8 @@ class ServerUtils {
     // Send a request to the server with the users name, phonenumber and the id of the team they want to join.
     // The server should return a list containing the contact info for each team leader
     class func joinMinistryTeam(ministryTeamId: String, fullName: String, phone: String, callback: (NSArray) -> Void) {
-        let url = Config.serverUrl + "api/" + DBCollection.MinistryTeam.name() + "/join"
-        let params: [String: AnyObject] = ["id": ministryTeamId, "name": fullName, "phone": phone]
+        let url = Config.serverUrl + "api/" + DBCollection.MinistryTeam.name() + "/" + ministryTeamId + "/join"
+        let params: [String: AnyObject] = ["name": fullName, "phone": phone]
         
         Alamofire.request(.POST, url, parameters: params).responseJSON {
             response in
