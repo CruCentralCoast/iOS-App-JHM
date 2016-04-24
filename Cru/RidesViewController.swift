@@ -50,7 +50,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "Pacman")
+        return UIImage(named: "norides")
     }
 
     override func didReceiveMemoryWarning() {
