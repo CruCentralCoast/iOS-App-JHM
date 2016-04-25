@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="FIx-eN-Ksa">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5n8-J9-Awi">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="FreigSanProMed.otf">
-            <string>FreightSansProMedium-Regular</string>
             <string>FreightSansProMedium-Regular</string>
             <string>FreightSansProMedium-Regular</string>
         </mutableArray>
@@ -25,7 +24,7 @@
                         <collectionViewLayout key="collectionViewLayout" id="UHl-8U-RRs" customClass="UltravisualLayout" customModule="Cru" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ministryteam" id="awr-2L-iue" customClass="MinistryTeamsCollectionViewCell" customModule="Cru" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="64" width="200" height="200"/>
+                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                     <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
@@ -80,12 +79,6 @@
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </state>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text=" " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFN-1w-alr">
-                                            <rect key="frame" x="28" y="165" width="145" height="20.5"/>
-                                            <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
@@ -102,22 +95,18 @@
                                     <constraint firstItem="Q0C-t2-fI3" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="topMargin" constant="2" id="KBl-Vi-ctw"/>
                                     <constraint firstItem="HM0-nI-FzP" firstAttribute="centerX" secondItem="awr-2L-iue" secondAttribute="centerX" id="PcM-09-U1X"/>
                                     <constraint firstAttribute="trailingMargin" secondItem="TQB-dd-stK" secondAttribute="trailing" constant="-3" id="R2T-g1-091"/>
-                                    <constraint firstItem="UFN-1w-alr" firstAttribute="top" secondItem="SdQ-Iu-KUK" secondAttribute="bottom" constant="7" id="VLz-5M-ocm"/>
                                     <constraint firstItem="Ezm-ui-uPJ" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leading" id="bef-pd-rol"/>
                                     <constraint firstAttribute="bottom" secondItem="Ezm-ui-uPJ" secondAttribute="bottom" id="cJu-hz-SGr"/>
-                                    <constraint firstItem="UFN-1w-alr" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="20" id="cZR-L5-PDs"/>
                                     <constraint firstItem="SdQ-Iu-KUK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="2" id="eg9-zi-jDe"/>
                                     <constraint firstItem="SdQ-Iu-KUK" firstAttribute="top" secondItem="of2-U4-ncP" secondAttribute="bottom" constant="4" id="epF-Qv-8Gm"/>
                                     <constraint firstItem="TQB-dd-stK" firstAttribute="centerY" secondItem="awr-2L-iue" secondAttribute="centerY" id="fdZ-Uz-gmL"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="UFN-1w-alr" secondAttribute="trailing" constant="19" id="jAF-lU-9pJ"/>
                                     <constraint firstItem="Ezm-ui-uPJ" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="top" id="nyc-rV-NBZ"/>
                                 </constraints>
                                 <size key="customSize" width="200" height="200"/>
                                 <connections>
                                     <outlet property="descriptionTextView" destination="SdQ-Iu-KUK" id="aOK-JN-Zxx"/>
                                     <outlet property="imageCoverView" destination="Ezm-ui-uPJ" id="aJe-tj-TKp"/>
-                                    <outlet property="joinButton" destination="HM0-nI-FzP" id="tCi-c4-7gM"/>
-                                    <outlet property="leaderInfo" destination="UFN-1w-alr" id="Jzf-i4-zfY"/>
+                                    <outlet property="joinButton" destination="HM0-nI-FzP" id="8EW-kK-Wy7"/>
                                     <outlet property="ministryTeamImageView" destination="TQB-dd-stK" id="yju-fE-r14"/>
                                     <outlet property="ministryTeamLabel" destination="Q0C-t2-fI3" id="aC2-dP-STb"/>
                                     <outlet property="separator" destination="of2-U4-ncP" id="JaD-kK-8iu"/>
@@ -134,24 +123,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deo-DF-lnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1707" y="142"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="EqF-hQ-GIi">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FIx-eN-Ksa" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2iL-yQ-cO1">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="5n8-J9-Awi" kind="relationship" relationship="rootViewController" id="jsk-Zj-9hU"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kMg-J5-pCE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="895" y="142"/>
         </scene>
     </scenes>
 </document>

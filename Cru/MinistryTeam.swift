@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MinistryTeam {
+class MinistryTeam: Dictable {
     var id: String
     var parentMinistry: String
     var description: String
@@ -62,5 +62,14 @@ class MinistryTeam {
         if (dLeaders != nil) {
             self.leaders = dLeaders as! [String]
         }
+    }
+    
+    func toDictionary() -> NSDictionary {
+        return [
+            "id": self.id,
+            "name": self.ministryName,
+            "description": self.description,
+            "leaders": self.leaders
+        ]
     }
 }

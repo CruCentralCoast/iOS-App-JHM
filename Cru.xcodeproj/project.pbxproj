@@ -22,12 +22,14 @@
 		0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
 		0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
 		0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
+		0F1B8C271CC976D000CEE24C /* Dictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C261CC976D000CEE24C /* Dictable.swift */; };
+		0F1B8C291CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C281CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift */; };
+		0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */; };
+		0F1B8C2D1CC99B1A00CEE24C /* MinistryTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */; };
+		0F1B8C2F1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */; };
 		0F74A3101C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3111C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
-		0F7B72C31C0D3C3100539B33 /* MinistryTeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C21C0D3C3100539B33 /* MinistryTeamsViewController.swift */; };
-		0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C41C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift */; };
-		0F7B72C71C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7B72C61C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift */; };
 		0F7CB3C51C919B5C00C8444F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
 		0F7CB3C61C919B6000C8444F /* RideUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507086841C8F62BA006C5215 /* RideUtilsTest.swift */; };
 		0F7CB3C71C919B6200C8444F /* RideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507086821C8F5F9D006C5215 /* RideTest.swift */; };
@@ -190,10 +192,12 @@
 		0F17E3D11C90F68300713297 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		0F17E3D41C9103B500713297 /* LocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		0F17E3D81C91076D00713297 /* MapLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocalStorageManager.swift; sourceTree = "<group>"; };
+		0F1B8C261CC976D000CEE24C /* Dictable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictable.swift; sourceTree = "<group>"; };
+		0F1B8C281CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinedTeamsTableViewCell.swift; sourceTree = "<group>"; };
+		0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupViewController.swift; sourceTree = "<group>"; };
+		0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamViewController.swift; sourceTree = "<group>"; };
+		0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamDetailViewController.swift; sourceTree = "<group>"; };
 		0F74A30F1C0BB9D300401377 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		0F7B72C21C0D3C3100539B33 /* MinistryTeamsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamsViewController.swift; sourceTree = "<group>"; };
-		0F7B72C41C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupsLoadedViewController.swift; sourceTree = "<group>"; };
-		0F7B72C61C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupsUnLoadedViewController.swift; sourceTree = "<group>"; };
 		0F7CB3C31C919A8600C8444F /* EventTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTest.swift; sourceTree = "<group>"; };
 		0F8CEF1D1BEC0E13008FC70D /* Cru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cru.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -633,10 +637,11 @@
 				0FB3939F1C82DF6400C81EFB /* MinistryTeams */,
 				0F74A30F1C0BB9D300401377 /* User.swift */,
 				501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */,
+				0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */,
 				50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */,
-				0F7B72C21C0D3C3100539B33 /* MinistryTeamsViewController.swift */,
-				0F7B72C41C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift */,
-				0F7B72C61C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift */,
+				0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */,
+				0F1B8C281CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift */,
+				0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */,
 			);
 			name = "Get Involved";
 			sourceTree = "<group>";
@@ -694,6 +699,7 @@
 				C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */,
 				0FF87DA31C8A268D00D56C4E /* GlobalUtils.swift */,
 				0F17E3D11C90F68300713297 /* CalendarManager.swift */,
+				0F1B8C261CC976D000CEE24C /* Dictable.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1001,11 +1007,11 @@
 				5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				509DA91D1C6172FC0050CE26 /* Ride.swift in Sources */,
 				C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */,
+				0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */,
 				50FE4D431C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
 				50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */,
 				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
-				0F7B72C71C0D4D1200539B33 /* CommunityGroupsUnLoadedViewController.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */,
 				0F10F0221CC03F7000F478ED /* RidesViewController.swift in Sources */,
@@ -1018,6 +1024,7 @@
 				50D507861CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
 				0F74A3101C0BB9D300401377 /* User.swift in Sources */,
 				C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */,
+				0F1B8C2F1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift in Sources */,
 				6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F17E3D51C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				0FC8E3B21C48750A007A7208 /* IntroViewController.swift in Sources */,
@@ -1033,12 +1040,15 @@
 				0FAEB9841C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift in Sources */,
 				0FAEB97C1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
 				6DBD7B8C1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
+				0F1B8C291CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift in Sources */,
 				50FE4D471C50D37C00EA9042 /* Ministry.swift in Sources */,
+				0F1B8C2D1CC99B1A00CEE24C /* MinistryTeamViewController.swift in Sources */,
 				E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */,
 				5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */,
 				50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
+				0F1B8C271CC976D000CEE24C /* Dictable.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
@@ -1054,10 +1064,8 @@
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */,
 				50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
-				0F7B72C51C0D3C4900539B33 /* CommunityGroupsLoadedViewController.swift in Sources */,
 				6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
-				0F7B72C31C0D3C3100539B33 /* MinistryTeamsViewController.swift in Sources */,
 				C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

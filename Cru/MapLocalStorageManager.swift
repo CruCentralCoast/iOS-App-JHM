@@ -55,6 +55,12 @@ class MapLocalStorageManager: LocalStorageManager {
         }
     }
     
+    //deletes the entire map
+    func deleteMap(key: String) {
+        super.removeObject(key)
+    }
+    
+    //gets the keys as an array
     func getKeys() -> [String] {
         return Array(map.keys)
     }

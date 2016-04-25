@@ -19,8 +19,6 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         //setup local storage manager
         ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
         
-        print(ministryTeamsStorageManager.getObject(Config.ministryTeamStorageKey))
-        
         //load ministry teams
         ServerUtils.loadResources(.MinistryTeam, inserter: insertMinistryTeam, afterFunc: finishInserting)
 
@@ -55,21 +53,9 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Config.ministryTeamReuseIdentifier, forIndexPath: indexPath) as! MinistryTeamsCollectionViewCell
         
         let ministryTeam = ministryTeams[indexPath.item]
-        let leaderInfo = ministryTeamsStorageManager.getElement(ministryTeam.id) as? String
         cell.ministryTeam = ministryTeam
-        
-        //check to see if user is a part of ministry team
-        if leaderInfo != nil {
-            cell.joinButton?.removeFromSuperview()
-            cell.leaderInfo.hidden = false
-            cell.leaderInfo.text = leaderInfo
-        }
-        else {
-            print(leaderInfo)
-            cell.leaderInfo.hidden = false
-            cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
-            cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)
-        }
+        cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
+        cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)
         
         return cell
     }
@@ -85,7 +71,9 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
             user = ["name": "Deniz Tumer", "phone": "1234567890"]
         }
         
-        ServerUtils.joinMinistryTeam(ministry.id, fullName: user!["name"] as! String, phone: user!["phone"] as! String, callback: joinMinistryTeamCompletionHandler(ministry, sender: sender))
+        ministryTeamsStorageManager.addElement(ministry.id, elem: ministry.toDictionary())
+        //doesnt work right now
+//        ServerUtils.joinMinistryTeam(ministry.id, fullName: user!["name"] as! String, phone: user!["phone"] as! String, callback: joinMinistryTeamCompletionHandler(ministry, sender: sender))
         
         //showCompletionAlert()
     }

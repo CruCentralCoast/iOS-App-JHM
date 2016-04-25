@@ -1,21 +1,18 @@
 //
-//  CommunityGroupsViewController.swift
+//  CommunityGroupViewController.swift
 //  Cru
 //
-//  Created by Deniz Tumer on 11/30/15.
-//  Copyright © 2015 Jamaican Hopscotch Mafia. All rights reserved.
+//  Created by Deniz Tumer on 4/21/16.
+//  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
 import UIKit
 
-class CommunityGroupsLoadedViewController: UIViewController {
-    
-    //MARK: Load method
+class CommunityGroupViewController: UIViewController {
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("Loaded Community Groups")
-        
+
         // Do any additional setup after loading the view.
     }
 
@@ -24,8 +21,9 @@ class CommunityGroupsLoadedViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    //MARK: Actions
-    
+    @IBAction func onTouchSeeMore(sender: AnyObject) {
+        print("HERE")
+    }
 
     /*
     // MARK: - Navigation
