@@ -22,7 +22,7 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         print(ministryTeamsStorageManager.getObject(Config.ministryTeamStorageKey))
         
         //load ministry teams
-        ServerUtils.loadResources(.MinistryTeam, inserter: insertMinistryTeam, afterFunc: finishInserting)
+        CruClients.getServerClient().getData(.MinistryTeam, insert: insertMinistryTeam, completionHandler: finishInserting)
 
         //set background color of page and accelleration of cells
         collectionView!.backgroundColor = UIColor.blackColor()
@@ -35,7 +35,8 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
     }
     
     //reload the collection view data and store whether or not the user is in the repsective ministries
-    private func finishInserting() {
+    private func finishInserting(success: Bool) {
+        //TODO: handle failure
         self.collectionView!.reloadData()
     }
 
@@ -85,7 +86,7 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
             user = ["name": "Deniz Tumer", "phone": "1234567890"]
         }
         
-        ServerUtils.joinMinistryTeam(ministry.id, fullName: user!["name"] as! String, phone: user!["phone"] as! String, callback: joinMinistryTeamCompletionHandler(ministry, sender: sender))
+        CruClients.getServerClient().joinMinistryTeam(ministry.id, fullName: user!["name"] as! String, phone: user!["phone"] as! String, callback: joinMinistryTeamCompletionHandler(ministry, sender: sender))
         
         //showCompletionAlert()
     }
@@ -98,23 +99,28 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
 //    }
     
     //completion handler for ministry team response from the server after joining
-    private func joinMinistryTeamCompletionHandler(ministryTeam: MinistryTeam, sender: UIButton) -> (NSArray -> Void) {
+    private func joinMinistryTeamCompletionHandler(ministryTeam: MinistryTeam, sender: UIButton) -> (NSArray? -> Void) {
         //add ministry team to local storage
         var leaderInfo = "Leader(s) Info: "
         
-        return { (response: NSArray) in
-            if response.count > 0 {
-                let leader = response[0] as! NSDictionary
-                let name = leader["name"] as! [String: String]
-                let leaderName = name["first"]! + " " + name["last"]!
-                let leaderPhone = leader["phone"] as! String
-                leaderInfo += leaderName + ", " + leaderPhone
-                //            for leader in response {
-                //                print(leader)
-                //            }
-            }
-            else {
-                leaderInfo += "None"
+        return { (response: NSArray?) in
+            if response != nil {
+                let leaders = response!
+                if leaders.count > 0 {
+                    let leader = leaders[0] as! NSDictionary
+                    let name = leader["name"] as! [String: String]
+                    let leaderName = name["first"]! + " " + name["last"]!
+                    let leaderPhone = leader["phone"] as! String
+                    leaderInfo += leaderName + ", " + leaderPhone
+                    //            for leader in response {
+                    //                print(leader)
+                    //            }
+                }
+                else {
+                    leaderInfo += "None"
+                }
+            } else {
+                //TODO: handle failure here
             }
             
             self.ministryTeamsStorageManager.addElement(ministryTeam.id, elem: leaderInfo)

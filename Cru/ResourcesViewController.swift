@@ -44,7 +44,9 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.separatorColor = UIColor.clearColor()
         
         //If the user is logged in, view special resources. Otherwise load non-restricted resources.
-        ServerUtils.loadResources(.Resource, inserter: insertResource, useApiKey: true)
+        CruClients.getServerClient().getData(.Resource, insert: insertResource, completionHandler: {success in
+            // TODO: should be handling failure
+        })
         
         
         tableView.backgroundColor = Colors.googleGray

@@ -29,7 +29,7 @@ class EventsCollectionViewController: UICollectionViewController {
         //self.navigationController!.navigationBar.translucent = false
         
         //load events
-        ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
+        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
     }
     
     //insert helper function for inserting event data
@@ -38,7 +38,8 @@ class EventsCollectionViewController: UICollectionViewController {
     }
 
     //helper function for finishing off inserting event data
-    private func finishInserting() {
+    private func finishInserting(success: Bool) {
+        //TODO: handler failure here!
         self.events.sortInPlace(Event.sortEventsByDate)
         self.collectionView!.reloadData()
         

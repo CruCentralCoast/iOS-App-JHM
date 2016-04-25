@@ -131,7 +131,7 @@ class RiderRideDetailViewController: UIViewController {
     }
     
     func cancelConfirmed(action: UIAlertAction){
-        RideUtils.leaveRidePassenger(ride!, handler: { success in
+        CruClients.getRideUtils().leaveRidePassenger(ride!, handler: { success in
             if let navController = self.navigationController {
                 navController.popViewControllerAnimated(true)
                 self.rideVC?.refresh(self)

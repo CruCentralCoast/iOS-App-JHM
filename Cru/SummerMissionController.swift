@@ -33,7 +33,7 @@ class SummerMissionController: UICollectionViewController {
         
         // load summer missions from database
         startTime = Int(NSDate().timeIntervalSince1970)
-        ServerUtils.loadResources(.SummerMission, inserter: insertMission, afterFunc: reload)
+        CruClients.getServerClient().getData(DBCollection.SummerMission, insert: insertMission, completionHandler: reload)
         
         // set background
         if let patternImage = UIImage(named: "Pattern") {
@@ -48,7 +48,7 @@ class SummerMissionController: UICollectionViewController {
     }
     
     // Signals the collection view to reload data.
-    func reload() {
+    func reload(success: Bool) {
         self.collectionView?.reloadData()
         endTime = Int(NSDate().timeIntervalSince1970)
         print("Fetching missions took " + String(endTime - startTime) + " seconds.")

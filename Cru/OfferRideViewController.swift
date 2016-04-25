@@ -155,7 +155,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         }
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
+        CruClients.getRideUtils().postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
         
         
     }
@@ -303,10 +303,10 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventPopover"{
-            var vc  = segue.destinationViewController as? EventsModalTableViewController
+            let vc  = segue.destinationViewController as? EventsModalTableViewController
             vc?.events = events
             vc?.vc = self
-            var controller = vc?.popoverPresentationController
+            let controller = vc?.popoverPresentationController
             if(controller != nil){
                 controller?.delegate = self
             }
@@ -319,7 +319,9 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     
     // MARK: - Table view data source
     func loadEvents(){
-        ServerUtils.loadResources(.Event, inserter: insertEvent)
+        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: {success in
+            //TODO: should be handling failure
+        })
     }
     
     func insertEvent(dict : NSDictionary) {

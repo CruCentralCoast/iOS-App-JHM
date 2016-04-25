@@ -32,7 +32,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         self.passengerTable.delegate = self
         passengerTable.scrollEnabled = false;
         rideName.text = event!.name
-        RideUtils.getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {
+        CruClients.getRideUtils().getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {success in
+            //TODO: should be handling failure here
         })
         departureTime.text = ride.time
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
@@ -42,7 +43,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         passengerTable.backgroundColor = UIColor.clearColor()
     }
     
-    func insertPassenger(newPassenger: Passenger){
+    func insertPassenger(newPassenger: NSDictionary){
+        let newPassenger = Passenger(dict: newPassenger)
         passengers.append(newPassenger)
         self.passengerTable.reloadData()
         adjustPageConstraints()
@@ -140,7 +142,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     
     func cancelConfirmed(action: UIAlertAction){
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.leaveRideDriver(ride.id, handler: handleCancelResult)
+        CruClients.getRideUtils().leaveRideDriver(ride.id, handler: handleCancelResult)
     }
     
     func handleCancelResult(success: Bool){

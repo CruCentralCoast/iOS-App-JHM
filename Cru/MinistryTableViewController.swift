@@ -43,11 +43,16 @@ class MinistryTableViewController: UITableViewController {
             prevMinistries = tempMinistries!
         }
 
-        ServerUtils.loadResources(.Ministry, inserter: insertMinistry, afterFunc: reloadData)
+        CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
+            // TODO: handle failure
+            self.reloadData()
+        })
         self.tableView.reloadData()	
     }
     
     func reloadData(){
+        //TODO: handler failure
+        
         //super.viewDidLoad()
         subscribedCampuses = SubscriptionManager.loadCampuses()!
         prevMinistries = SubscriptionManager.loadMinistries()!
