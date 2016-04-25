@@ -8,9 +8,10 @@
 
 import UIKit
 import MRProgress
+import DZNEmptyDataSet
 
 
-class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     let roundTrip = "round-trip"
     let roundTripDirection = "both"
     let fromEvent = "from event"
@@ -24,7 +25,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var tappedEvent = Event?()
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var ridesTableView: UITableView!
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,8 +41,17 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         self.ridesTableView.addSubview(self.refreshControl)
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.getMyRides(insertRide, afterFunc: finishRideInsert)
-        ServerUtils.loadResources(.Event, inserter: insertEvent, afterFunc: finishInserting)
+        CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
+        
+        CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+        
+        self.ridesTableView.emptyDataSetSource = self
+        self.ridesTableView.emptyDataSetDelegate = self
+        self.ridesTableView.tableFooterView = UIView()
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: "norides")
     }
 
     override func didReceiveMemoryWarning() {
@@ -90,15 +100,15 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     {
         rides.removeAll()
         self.ridesTableView.reloadData()
-        RideUtils.getMyRides(insertNewRide, afterFunc: finishRefresh)
+        CruClients.getRideUtils().getMyRides(insertNewRide, afterFunc: finishRefresh)
     }
     
-    func finishRideInsert(){
+    func finishRideInsert(success: Bool){
         rides.sortInPlace()
         self.ridesTableView.reloadData()
     }
     
-    func finishRefresh(){
+    func finishRefresh(success: Bool){
         rides.sortInPlace()
         self.ridesTableView.reloadData()
         self.refreshControl?.endRefreshing()
@@ -123,7 +133,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     
-    func finishInserting(){
+    func finishInserting(success: Bool){
         self.ridesTableView.beginUpdates()
         
         

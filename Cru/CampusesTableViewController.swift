@@ -16,7 +16,9 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ServerUtils.loadResources(.Campus, inserter: insertCampus)
+        CruClients.getServerClient().getData(.Campus, insert: insertCampus, completionHandler: {success in
+            //TODO: should be handling failure here
+        })
         subbedMinistries = SubscriptionManager.loadMinistries()! 
         
         //setupSearchBar()

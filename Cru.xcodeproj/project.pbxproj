@@ -16,7 +16,6 @@
 		0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F17E3D81C91076D00713297 /* MapLocalStorageManager.swift */; };
 		0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
 		0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
-		0F1959C91C8E5B0400A783BA /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
 		0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
 		0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
 		0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
@@ -139,12 +138,17 @@
 		6DBD7B941C75742A00D11FFA /* FreigSanProMed.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B931C75742A00D11FFA /* FreigSanProMed.otf */; };
 		6DBD7B971C75746300D11FFA /* FreigSanProMedIt.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */; };
 		6DBD7B9A1C75747C00D11FFA /* FreigSanProSem.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */; };
-		850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */; };
 		857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */; };
 		85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
 		C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1015CD11C9429D0005B559E /* ResourcesTest.swift */; };
 		C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
 		C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */; };
+		C12940E61CCD82D4004DACB1 /* CruClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940E51CCD82D4004DACB1 /* CruClients.swift */; };
+		C12940E71CCD82D4004DACB1 /* CruClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940E51CCD82D4004DACB1 /* CruClients.swift */; };
+		C12940E91CCD833E004DACB1 /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940E81CCD833E004DACB1 /* ServerProtocol.swift */; };
+		C12940EA1CCD833E004DACB1 /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940E81CCD833E004DACB1 /* ServerProtocol.swift */; };
+		C12940EC1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */; };
+		C12940ED1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */; };
 		C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
 		C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
 		C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
@@ -290,13 +294,15 @@
 		6DBD7B961C75746300D11FFA /* FreigSanProMedIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProMedIt.otf; sourceTree = "<group>"; };
 		6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
 		7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruTests/Pods-CruTests.debug.xcconfig"; sourceTree = "<group>"; };
-		850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerUtils.swift; sourceTree = "<group>"; };
 		857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilsTest.swift; sourceTree = "<group>"; };
 		85EAB8191C0ECC8A005C7658 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.debug.xcconfig"; sourceTree = "<group>"; };
 		C1015CD11C9429D0005B559E /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
 		C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalUtilsTest.swift; sourceTree = "<group>"; };
+		C12940E51CCD82D4004DACB1 /* CruClients.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CruClients.swift; sourceTree = "<group>"; };
+		C12940E81CCD833E004DACB1 /* ServerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
+		C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeystoneClient.swift; sourceTree = "<group>"; };
 		C12C0A861C941E9C005751A0 /* DBCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBCollection.swift; sourceTree = "<group>"; };
 		C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayLocalStorageManager.swift; sourceTree = "<group>"; };
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -422,6 +428,7 @@
 		0F8CEF1F1BEC0E13008FC70D /* Cru */ = {
 			isa = PBXGroup;
 			children = (
+				C12940E41CCD829E004DACB1 /* Clients */,
 				50C6CC791CBF3A0300EF5EFB /* SWRevealController */,
 				0FC8E3A01C45E99E007A7208 /* Introduction */,
 				0FC8E39B1C3EF2FF007A7208 /* SideMenu */,
@@ -693,7 +700,6 @@
 			isa = PBXGroup;
 			children = (
 				0F17E3D71C9106B500713297 /* LocalStorage */,
-				850EBAEA1C0BEEB800D5B794 /* ServerUtils.swift */,
 				E96367931C6D3B8D00B9DBBE /* DateExtension.swift */,
 				C1DCEC451C7681E1009FACE0 /* RideUtils.swift */,
 				C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */,
@@ -734,6 +740,16 @@
 				360BFA33208E012224F0CAD5 /* Pods_CruUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C12940E41CCD829E004DACB1 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				C12940E51CCD82D4004DACB1 /* CruClients.swift */,
+				C12940E81CCD833E004DACB1 /* ServerProtocol.swift */,
+				C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */,
+			);
+			name = Clients;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1012,8 +1028,10 @@
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
 				50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */,
 				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
+				C12940E61CCD82D4004DACB1 /* CruClients.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */,
+				C12940EC1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
 				0F10F0221CC03F7000F478ED /* RidesViewController.swift in Sources */,
 				C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
@@ -1032,6 +1050,7 @@
 				E9CB00341C8F7E04000F7E12 /* SummerMissionDetailController.swift in Sources */,
 				507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
+				C12940E91CCD833E004DACB1 /* ServerProtocol.swift in Sources */,
 				E9CB00331C8F7E04000F7E12 /* SummerMissionController.swift in Sources */,
 				0FAEB9881C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
@@ -1050,7 +1069,6 @@
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				0F1B8C271CC976D000CEE24C /* Dictable.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
-				850EBAEB1C0BEEB800D5B794 /* ServerUtils.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
 				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
 				6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */,
@@ -1083,6 +1101,8 @@
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
 				5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */,
 				5072B41B1CB38BF8001F5BF6 /* RiderRideDetailViewController.swift in Sources */,
+				C12940E71CCD82D4004DACB1 /* CruClients.swift in Sources */,
+				C12940EA1CCD833E004DACB1 /* ServerProtocol.swift in Sources */,
 				0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */,
 				C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */,
 				0F7CB3C61C919B6000C8444F /* RideUtilsTest.swift in Sources */,
@@ -1098,6 +1118,7 @@
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
+				C12940ED1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
@@ -1113,7 +1134,6 @@
 				C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */,
 				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,
-				0F1959C91C8E5B0400A783BA /* ServerUtils.swift in Sources */,
 				0F7CB3C51C919B5C00C8444F /* DBUtilsTest.swift in Sources */,
 				6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */,
 				0FF87DA51C8A268D00D56C4E /* GlobalUtils.swift in Sources */,

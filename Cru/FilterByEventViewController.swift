@@ -49,7 +49,10 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     
     // MARK: - Table view data source
     func loadEvents(){
-        ServerUtils.loadResources(.Event, inserter: insertEvent)
+        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler:
+            { sucess in
+                //we should be handling failure here
+        })
     }
     
     func insertEvent(dict : NSDictionary) {
@@ -60,14 +63,14 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     func loadRides(event: Event?) {
         tempEvent = event
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        RideUtils.getRidesNotDriving(Config.gcmId(), inserter: insertRide, afterFunc: loadRidesCompletionHandler)
+        CruClients.getRideUtils().getRidesNotDriving(Config.gcmId(), insert: insertRide, afterFunc: loadRidesCompletionHandler)
     }
     
     private func insertRide(dict: NSDictionary) {
         allRides.append(Ride(dict: dict)!)
     }
     
-    private func loadRidesCompletionHandler() {
+    private func loadRidesCompletionHandler(success: Bool) {
         if tempEvent != nil {
             selectedEvent = tempEvent
         }

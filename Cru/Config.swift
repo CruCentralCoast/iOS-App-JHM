@@ -10,6 +10,7 @@ import UIKit
 
 struct Config {
     static let serverUrl = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3001/"
+    static let serverEndpoint = "http://ec2-52-32-197-212.us-west-2.compute.amazonaws.com:3001/api/"
     
     static let name = "name"
     static let campusIds = "campuses"
@@ -23,7 +24,15 @@ struct Config {
                 return SubscriptionManager.loadGCMToken()
             }
     }
-    static let simulatorMode = true
+    static var simulatorMode: Bool{
+        get{
+            #if (arch(i386) || arch(x86_64)) && os(iOS)
+                return true
+            #else
+                return false
+            #endif
+        }
+    }
     static let leaderApiKey = "LeaderAPIKey"
     static let username = "username"
     static let ridesReceiving = "ridesReceiving"
