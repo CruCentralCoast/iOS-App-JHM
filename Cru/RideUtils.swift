@@ -9,6 +9,12 @@
 import Foundation
 import Alamofire
 
+enum ResponseType{
+    case Success
+    case NoRides
+    case NoConnection
+}
+
 class RideUtils {
     
     var serverClient: ServerProtocol!
@@ -35,18 +41,48 @@ class RideUtils {
         serverClient.getById(DBCollection.Passenger, insert: insert, completionHandler: afterFunc, id: id)
     }
     
-    func getMyRides(insert: (NSDictionary) -> (), afterFunc: (Bool)->Void) {
+    func getMyRides(insert: (NSDictionary) -> (), afterFunc: (ResponseType)->Void) {
         //gets rides you are receiving
+        
+        
         let rideIds = getMyRideIds()
+        
+        
+        print("There are \(rideIds.count) rides")
         if (rideIds.count > 0) {
             let params = ["_id": ["$in": rideIds]]
             
-            GlobalUtils.printRequest(params)
-            
-            serverClient.getData(DBCollection.Ride, insert: insert, completionHandler: afterFunc, params: params)
+            //GlobalUtils.printRequest(params)
+            Alamofire.request(.POST, Config.serverUrl, parameters: params)
+                .responseJSON { response in
+                    if let json = response.result.value {
+                        if let arr = json as? NSArray{
+                            for rideInfo in arr{
+                                if let rideDict = rideInfo as? NSDictionary{
+                                    insert(rideDict)
+                                }
+                            }
+                        }
+                    }
+                    
+                    if (response.result.isSuccess == true && response.result.value != nil){
+                        afterFunc(.Success)
+                    }
+                    else{
+                        afterFunc(.NoConnection)
+                    }
+            }
         }
         else{
-            afterFunc(true)
+            Alamofire.request(.GET, Config.serverEndpoint + "rides")
+                .responseJSON { response in
+                    if response.result.isSuccess {
+                       afterFunc(.NoRides)
+                    }
+                    else{
+                        afterFunc(.NoConnection)
+                    }
+            }
         }
     }
     

@@ -8,9 +8,10 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
+import MRProgress
 
-
-class SummerMissionController: UICollectionViewController {
+class SummerMissionController: UICollectionViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     //MARK: Constants
@@ -33,6 +34,7 @@ class SummerMissionController: UICollectionViewController {
         
         // load summer missions from database
         startTime = Int(NSDate().timeIntervalSince1970)
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         CruClients.getServerClient().getData(DBCollection.SummerMission, insert: insertMission, completionHandler: reload)
         
         // set background
@@ -42,6 +44,10 @@ class SummerMissionController: UICollectionViewController {
         collectionView!.backgroundColor = UIColor.blackColor()
     }
     
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noConnectionImageName)
+    }
+    
     // Creates and inserts a SummerMission into this collection view from the given dictionary.
     func insertMission(dict : NSDictionary) {
         self.missions.append(SummerMission(dict: dict)!)
@@ -49,9 +55,15 @@ class SummerMissionController: UICollectionViewController {
     
     // Signals the collection view to reload data.
     func reload(success: Bool) {
-        self.collectionView?.reloadData()
+        
+        
         endTime = Int(NSDate().timeIntervalSince1970)
         print("Fetching missions took " + String(endTime - startTime) + " seconds.")
+        
+        self.collectionView!.emptyDataSetSource = self;
+        self.collectionView!.emptyDataSetDelegate = self;
+        self.collectionView?.reloadData()
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
     override func didReceiveMemoryWarning() {

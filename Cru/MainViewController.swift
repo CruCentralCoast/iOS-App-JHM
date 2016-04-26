@@ -11,7 +11,10 @@
 import UIKit
 import SideMenu
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    var items = ["Church on Sunday!", "Fall Retreat", "Bowling lessons with Pete, or was it Peter? Find out at the Event"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,6 +60,17 @@ class MainViewController: UIViewController {
             defaultSettings.setBool(true, forKey: "hasLaunchedBefore")
             return false
         }
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return items.count
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! VarietyItemCollectionViewCell
+        cell.title.text = items[indexPath.row]
+        print("assigned cell to \(cell.title.text)")
+        return cell
     }
 }
 
