@@ -10,7 +10,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Ministry Table View Controller-->
+        <!--Empty Data Set Delegate-->
         <scene sceneID="NTv-CR-3Tc">
             <objects>
                 <tableViewController storyboardIdentifier="minstrytable" id="dqf-2e-9DN" customClass="MinistryTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,6 +64,8 @@
                         <connections>
                             <outlet property="dataSource" destination="dqf-2e-9DN" id="VcR-zU-g3U"/>
                             <outlet property="delegate" destination="dqf-2e-9DN" id="Oc4-zs-iXN"/>
+                            <outlet property="emptyDataSetDelegate" destination="dqf-2e-9DN" id="aOI-bd-HHx"/>
+                            <outlet property="emptyDataSetSource" destination="dqf-2e-9DN" id="DGs-tx-n22"/>
                         </connections>
                     </tableView>
                     <nil key="simulatedStatusBarMetrics"/>

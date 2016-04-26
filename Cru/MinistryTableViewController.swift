@@ -8,8 +8,10 @@
 
 import UIKit
 import MRProgress
+import DZNEmptyDataSet
 
-class MinistryTableViewController: UITableViewController {
+
+class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource  {
     var ministries = [Ministry]()            //list of ALL ministries
     var subscribedCampuses = [Campus]()      //list of subscribed campuses
     var ministryMap = [Campus: [Ministry]]() //map of all subscribed campsuses to their respective ministries
@@ -25,9 +27,8 @@ class MinistryTableViewController: UITableViewController {
         //viewDidLoad()
     }
     
-    override func didReceiveMemoryWarning() {
-        print("MEMORY OVERLOAD")
-        super.didReceiveMemoryWarning()
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noConnectionImageName)
     }
     
     override func viewDidLoad() {
