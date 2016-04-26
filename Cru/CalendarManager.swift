@@ -9,14 +9,7 @@
 import Foundation
 import EventKit
 
-class CalendarManager {
-    private var calendarStore: EKEventStore
-    
-    //constructor for initializing the manager
-    init() {
-        self.calendarStore = EKEventStore()
-    }
-    
+class CalendarManager: CalendarServices {
     /*
     This function is the public access function for adding an event to
     the native calendar.
@@ -137,19 +130,6 @@ class CalendarManager {
         catch {
             fatalError()
         }
-    }
-    
-    //this helper function creates an EKEvent that can be stored in the native calendar
-    private func createCalendarEvent(event: Event) -> EKEvent {
-        let calendarEvent: EKEvent = EKEvent(eventStore: self.calendarStore)
-        
-        calendarEvent.calendar = calendarStore.defaultCalendarForNewEvents
-        calendarEvent.location = event.getLocationString()
-        calendarEvent.title = event.name
-        calendarEvent.startDate = event.startNSDate
-        calendarEvent.endDate = event.endNSDate
-        
-        return calendarEvent
     }
     
     //this function tries to get access to the native calendar for the application

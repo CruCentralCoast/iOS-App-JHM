@@ -26,12 +26,17 @@
 		0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */; };
 		0F1B8C2D1CC99B1A00CEE24C /* MinistryTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */; };
 		0F1B8C2F1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */; };
+		0F1B8C6E1CCFD7EF00CEE24C /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */; };
+		0F1B8C6F1CCFD7F300CEE24C /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */; };
+		0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10F0211CC03F7000F478ED /* RidesViewController.swift */; };
+		0F1B8C711CCFDBEF00CEE24C /* Dictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C261CC976D000CEE24C /* Dictable.swift */; };
+		0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */; };
+		0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */; };
+		0F1B8C761CCFDCD500CEE24C /* CalendarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */; };
 		0F74A3101C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3111C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
 		0F7CB3C51C919B5C00C8444F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
-		0F7CB3C61C919B6000C8444F /* RideUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507086841C8F62BA006C5215 /* RideUtilsTest.swift */; };
-		0F7CB3C71C919B6200C8444F /* RideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507086821C8F5F9D006C5215 /* RideTest.swift */; };
 		0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7CB3C31C919A8600C8444F /* EventTest.swift */; };
 		0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
 		0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */; };
@@ -71,7 +76,6 @@
 		507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */; };
 		5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
 		5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
-		5072B41A1CB38B80001F5BF6 /* TestDriverRideDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */; };
 		5072B41B1CB38BF8001F5BF6 /* RiderRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */; };
 		5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
 		5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
@@ -95,7 +99,6 @@
 		5072B4371CB39022001F5BF6 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		5072B4381CB39022001F5BF6 /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06C91C5F080200DAD10E /* ridesharing.storyboard */; };
 		5072B4391CB39022001F5BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF241BEC0E13008FC70D /* Main.storyboard */; };
-		50844D9A1CB3AE3A0089FC93 /* MockTimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */; };
 		5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
 		509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 509527231C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift */; };
 		509DA9151C616BE60050CE26 /* riderdetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 509DA9141C616BE60050CE26 /* riderdetail.storyboard */; };
@@ -201,6 +204,9 @@
 		0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamDetailViewController.swift; sourceTree = "<group>"; };
+		0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarServices.swift; sourceTree = "<group>"; };
+		0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManagerTest.swift; sourceTree = "<group>"; };
+		0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTest.swift; sourceTree = "<group>"; };
 		0F74A30F1C0BB9D300401377 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7CB3C31C919A8600C8444F /* EventTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTest.swift; sourceTree = "<group>"; };
 		0F8CEF1D1BEC0E13008FC70D /* Cru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -355,6 +361,8 @@
 			isa = PBXGroup;
 			children = (
 				0F7CB3C31C919A8600C8444F /* EventTest.swift */,
+				0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */,
+				0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -706,6 +714,7 @@
 				0FF87DA31C8A268D00D56C4E /* GlobalUtils.swift */,
 				0F17E3D11C90F68300713297 /* CalendarManager.swift */,
 				0F1B8C261CC976D000CEE24C /* Dictable.swift */,
+				0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -899,6 +908,7 @@
 				5072B42C1CB38FFE001F5BF6 /* sideMenu.storyboard in Resources */,
 				5072B42B1CB38FEB001F5BF6 /* events.storyboard in Resources */,
 				5072B42A1CB38FC4001F5BF6 /* riderdetail.storyboard in Resources */,
+				0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */,
 				5072B4291CB38F74001F5BF6 /* driverdetail.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1068,6 +1078,7 @@
 				C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				0F1B8C271CC976D000CEE24C /* Dictable.swift in Sources */,
+				0F1B8C6E1CCFD7EF00CEE24C /* CalendarServices.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
 				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
@@ -1097,6 +1108,7 @@
 				5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */,
 				50D507871CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
 				5072B4201CB38E5F001F5BF6 /* JoinRideViewController.swift in Sources */,
+				0F1B8C6F1CCFD7F300CEE24C /* CalendarServices.swift in Sources */,
 				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
 				5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */,
@@ -1105,11 +1117,11 @@
 				C12940EA1CCD833E004DACB1 /* ServerProtocol.swift in Sources */,
 				0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */,
 				C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */,
-				0F7CB3C61C919B6000C8444F /* RideUtilsTest.swift in Sources */,
 				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
+				0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */,
 				507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
@@ -1119,23 +1131,23 @@
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
 				C12940ED1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
+				0F1B8C711CCFDBEF00CEE24C /* Dictable.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
-				0F7CB3C71C919B6200C8444F /* RideTest.swift in Sources */,
 				0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				500A37B11C7D6587007D6A3B /* Passenger.swift in Sources */,
-				50844D9A1CB3AE3A0089FC93 /* MockTimeDetail.swift in Sources */,
 				5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */,
-				5072B41A1CB38B80001F5BF6 /* TestDriverRideDetail.swift in Sources */,
 				C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */,
+				0F1B8C761CCFDCD500CEE24C /* CalendarTest.swift in Sources */,
 				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,
 				0F7CB3C51C919B5C00C8444F /* DBUtilsTest.swift in Sources */,
 				6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */,
+				0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */,
 				0FF87DA51C8A268D00D56C4E /* GlobalUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
