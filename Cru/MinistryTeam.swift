@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MinistryTeam: Dictable {
+class MinistryTeam {
     var id: String
     var parentMinistry: String
     var description: String

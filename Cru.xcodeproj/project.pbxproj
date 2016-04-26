@@ -21,7 +21,6 @@
 		0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
 		0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
 		0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
-		0F1B8C271CC976D000CEE24C /* Dictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C261CC976D000CEE24C /* Dictable.swift */; };
 		0F1B8C291CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C281CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift */; };
 		0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */; };
 		0F1B8C2D1CC99B1A00CEE24C /* MinistryTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */; };
@@ -29,7 +28,6 @@
 		0F1B8C6E1CCFD7EF00CEE24C /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */; };
 		0F1B8C6F1CCFD7F300CEE24C /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */; };
 		0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10F0211CC03F7000F478ED /* RidesViewController.swift */; };
-		0F1B8C711CCFDBEF00CEE24C /* Dictable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C261CC976D000CEE24C /* Dictable.swift */; };
 		0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */; };
 		0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */; };
 		0F1B8C761CCFDCD500CEE24C /* CalendarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */; };
@@ -201,7 +199,6 @@
 		0F17E3D11C90F68300713297 /* CalendarManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManager.swift; sourceTree = "<group>"; };
 		0F17E3D41C9103B500713297 /* LocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocalStorageManager.swift; sourceTree = "<group>"; };
 		0F17E3D81C91076D00713297 /* MapLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapLocalStorageManager.swift; sourceTree = "<group>"; };
-		0F1B8C261CC976D000CEE24C /* Dictable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictable.swift; sourceTree = "<group>"; };
 		0F1B8C281CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinedTeamsTableViewCell.swift; sourceTree = "<group>"; };
 		0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamViewController.swift; sourceTree = "<group>"; };
@@ -725,7 +722,6 @@
 				C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */,
 				0FF87DA31C8A268D00D56C4E /* GlobalUtils.swift */,
 				0F17E3D11C90F68300713297 /* CalendarManager.swift */,
-				0F1B8C261CC976D000CEE24C /* Dictable.swift */,
 				0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */,
 			);
 			name = Utils;
@@ -1090,7 +1086,6 @@
 				508B2BD71CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */,
 				C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
-				0F1B8C271CC976D000CEE24C /* Dictable.swift in Sources */,
 				0F1B8C6E1CCFD7EF00CEE24C /* CalendarServices.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
@@ -1145,7 +1140,6 @@
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
 				C12940ED1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
-				0F1B8C711CCFDBEF00CEE24C /* Dictable.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,

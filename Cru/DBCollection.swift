@@ -18,6 +18,7 @@ enum DBCollection : String {
     case SummerMission = "summermissions"
     case Resource = "resources"
     case Event = "events"
+    case MinistyQuestion = "ministryquestions"
     
     func name()->String {
         return self.rawValue
