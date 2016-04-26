@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="2388.5" y="2587"/>
         </scene>
-        <!--Empty Data Set Delegate-->
+        <!--Summer Missions-->
         <scene sceneID="Bvq-ZM-bAb">
             <objects>
                 <collectionViewController id="vyg-d7-iVR" customClass="SummerMissionController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
@@ -172,8 +172,6 @@
                         <connections>
                             <outlet property="dataSource" destination="vyg-d7-iVR" id="xYH-IC-rO2"/>
                             <outlet property="delegate" destination="vyg-d7-iVR" id="WV7-Xs-GWa"/>
-                            <outlet property="emptyDataSetDelegate" destination="vyg-d7-iVR" id="2A4-3S-ENb"/>
-                            <outlet property="emptyDataSetSource" destination="vyg-d7-iVR" id="Mof-F3-tUE"/>
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" title="Summer Missions" id="MfI-0V-6RI">
