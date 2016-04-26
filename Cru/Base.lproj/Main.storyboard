@@ -41,7 +41,7 @@
                                                 <rect key="frame" x="218" y="348" width="164" height="21"/>
                                                 <animations/>
                                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="17"/>
-                                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
@@ -56,7 +56,7 @@
                                             <constraint firstItem="hc6-Bv-K6z" firstAttribute="centerX" secondItem="99e-FW-B8S" secondAttribute="centerX" id="eAV-ri-SNj"/>
                                         </constraints>
                                     </view>
-                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oks-cQ-oVk">
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oks-cQ-oVk">
                                         <rect key="frame" x="8" y="440" width="584" height="346"/>
                                         <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -78,7 +78,7 @@
                                                             <rect key="frame" x="54" y="65" width="42" height="21"/>
                                                             <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -108,9 +108,13 @@
                                     <constraint firstItem="99e-FW-B8S" firstAttribute="centerX" secondItem="q15-b4-hYB" secondAttribute="centerX" id="BfW-iL-vYb"/>
                                     <constraint firstAttribute="bottom" secondItem="99e-FW-B8S" secondAttribute="bottom" constant="-64" id="HFc-YI-1Ko"/>
                                     <constraint firstAttribute="trailing" secondItem="99e-FW-B8S" secondAttribute="trailing" id="Hjh-uS-aJt"/>
+                                    <constraint firstItem="oks-cQ-oVk" firstAttribute="leading" secondItem="q15-b4-hYB" secondAttribute="leading" constant="8" id="JFm-An-18u"/>
+                                    <constraint firstItem="oks-cQ-oVk" firstAttribute="top" secondItem="q15-b4-hYB" secondAttribute="top" constant="440" id="KaG-l8-GpI"/>
                                     <constraint firstItem="99e-FW-B8S" firstAttribute="centerY" secondItem="q15-b4-hYB" secondAttribute="centerY" id="cyX-uN-FGU"/>
                                     <constraint firstItem="99e-FW-B8S" firstAttribute="leading" secondItem="q15-b4-hYB" secondAttribute="leading" id="iML-8B-our"/>
                                     <constraint firstItem="99e-FW-B8S" firstAttribute="centerX" secondItem="q15-b4-hYB" secondAttribute="centerX" id="ibb-I2-y79"/>
+                                    <constraint firstAttribute="trailing" secondItem="oks-cQ-oVk" secondAttribute="trailing" constant="8" id="keS-Bg-7OW"/>
+                                    <constraint firstAttribute="bottom" secondItem="oks-cQ-oVk" secondAttribute="bottom" constant="14" id="ncB-Fv-K9J"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">

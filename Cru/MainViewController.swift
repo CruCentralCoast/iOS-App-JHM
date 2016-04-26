@@ -12,7 +12,7 @@ import UIKit
 import SideMenu
 
 class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    var items = ["Church on Sunday!", "Fall Retreat", "Bowling lessons with Pete, or was it Peter? Find out at the Event"]
+    var items = ["Church on Sunday!", "Fall Retreat", "Bowling lessons with Pete, or was it Peter? Find out at the Event", "Idk was it peter", "Futbol"]
     
     
     override func viewDidLoad() {

@@ -99,7 +99,6 @@
 		5072B4371CB39022001F5BF6 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		5072B4381CB39022001F5BF6 /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06C91C5F080200DAD10E /* ridesharing.storyboard */; };
 		5072B4391CB39022001F5BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF241BEC0E13008FC70D /* Main.storyboard */; };
-		50844D9A1CB3AE3A0089FC93 /* MockTimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */; };
 		508B2BD71CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B2BD61CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift */; };
 		508B2BD81CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B2BD61CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift */; };
 		5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
@@ -455,9 +454,7 @@
 				50ED8FCF1C05063D002C9E30 /* RideSharing */,
 				508B2BD51CCF487D00CD130C /* Home */,
 				0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */,
-				0F8CEF221BEC0E13008FC70D /* MainViewController.swift */,
 				508B2BD61CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift */,
-				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
 				0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */,
 				0F8CEF2F1BEC0E13008FC70D /* Info.plist */,
 				857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */,
@@ -597,6 +594,8 @@
 		508B2BD51CCF487D00CD130C /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				0F8CEF221BEC0E13008FC70D /* MainViewController.swift */,
+				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
 			);
 			name = Home;
 			sourceTree = "<group>";
