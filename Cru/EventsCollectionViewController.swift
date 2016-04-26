@@ -8,8 +8,9 @@
 
 import UIKit
 import Crashlytics
+import DZNEmptyDataSet
 
-class EventsCollectionViewController: UICollectionViewController {
+class EventsCollectionViewController: UICollectionViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
 
     var events = [Event]()
     @IBOutlet weak var menuButton: UIBarButtonItem!
@@ -30,6 +31,10 @@ class EventsCollectionViewController: UICollectionViewController {
         
         //load events
         CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noConnectionImageName)
     }
     
     //insert helper function for inserting event data
