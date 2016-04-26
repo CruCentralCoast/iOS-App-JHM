@@ -17,7 +17,8 @@ def cru_pods
     pod 'ActionSheetPicker-3.0'
     pod 'Fabric'
     pod 'Crashlytics'
-    pod 'DZNEmptyDataSet'   
+    pod 'DZNEmptyDataSet'
+    pod 'ImageLoader'
 end
     
 
