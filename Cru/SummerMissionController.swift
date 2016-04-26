@@ -8,9 +8,9 @@
 
 import Foundation
 import UIKit
+import DZNEmptyDataSet
 
-
-class SummerMissionController: UICollectionViewController {
+class SummerMissionController: UICollectionViewController, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     //MARK: Constants
@@ -40,6 +40,10 @@ class SummerMissionController: UICollectionViewController {
             view.backgroundColor = UIColor(patternImage: patternImage)
         }
         collectionView!.backgroundColor = UIColor.blackColor()
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noConnectionImageName)
     }
     
     // Creates and inserts a SummerMission into this collection view from the given dictionary.
