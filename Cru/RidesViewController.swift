@@ -23,6 +23,11 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     var events = [Event]()
     var tappedRide = Ride?()
     var tappedEvent = Event?()
+    var noRideImage: UIImage?{
+        didSet{
+            ridesTableView.reloadData()
+        }
+    }
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var ridesTableView: UITableView!
 
@@ -43,7 +48,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
         
-        CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+        noRideImage = UIImage(named: "norides")!
         
         self.ridesTableView.emptyDataSetSource = self
         self.ridesTableView.emptyDataSetDelegate = self
@@ -51,7 +56,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: "norides")
+        return noRideImage
     }
 
     override func didReceiveMemoryWarning() {
@@ -103,12 +108,24 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         CruClients.getRideUtils().getMyRides(insertNewRide, afterFunc: finishRefresh)
     }
     
-    func finishRideInsert(success: Bool){
+    func finishRideInsert(type: ResponseType){
+
+        switch type{
+            case .NoRides:
+                noRideImage = UIImage(named: "norides")!
+                MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            case .NoConnection:
+                noRideImage = UIImage(named: "noserver")!
+                MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            default:
+                CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+        }
+        
         rides.sortInPlace()
         self.ridesTableView.reloadData()
     }
     
-    func finishRefresh(success: Bool){
+    func finishRefresh(type: ResponseType){
         rides.sortInPlace()
         self.ridesTableView.reloadData()
         self.refreshControl?.endRefreshing()
