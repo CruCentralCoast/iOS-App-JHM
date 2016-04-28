@@ -119,8 +119,12 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="dli-23-NtB"/>
+                    <connections>
+                        <segue destination="jzj-P8-WH5" kind="unwind" identifier="unwindToMList" unwindAction="unwindToMinistryTeamsList:" id="xay-tq-Ekk"/>
+                    </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Deo-DF-lnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="jzj-P8-WH5" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1707" y="142"/>
         </scene>

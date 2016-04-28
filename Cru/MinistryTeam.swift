@@ -14,7 +14,9 @@ class MinistryTeam {
     var description: String
     var ministryName: String
     var image: UIImage!
+    var imageUrl: String
     var teamImage: UIImage!
+    var teamImageUrl: String
     var leaders: [String]
     
     init?(dict: NSDictionary) {
@@ -23,8 +25,10 @@ class MinistryTeam {
         self.parentMinistry = ""
         self.ministryName = ""
         self.description = ""
-        self.image = nil
-        self.teamImage = nil
+        self.image = UIImage(named: "event1")
+        self.imageUrl = ""
+        self.teamImage = UIImage(named: "event1")
+        self.teamImageUrl = ""
         self.leaders = [String]()
         
         //grabbing dictionary values
@@ -50,13 +54,14 @@ class MinistryTeam {
         }
         if (dImage != nil) {
             if let imageUrl = dImage?.objectForKey("secure_url") {
-                self.image = GlobalUtils.getImageFromUrl(imageUrl as! String)
+                self.imageUrl = imageUrl as! String
             }
             else {
                 print("error: no image to display")
             }
         }
         else {
+            //if image is nil
             self.image = UIImage(named: "fall-retreat-still")
         }
         if (dLeaders != nil) {

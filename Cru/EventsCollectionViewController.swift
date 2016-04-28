@@ -65,6 +65,7 @@ class EventsCollectionViewController: UICollectionViewController, DZNEmptyDataSe
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Config.eventReuseIdentifier, forIndexPath: indexPath) as! EventsCollectionViewCell
     
         cell.event = events[indexPath.item]
+        cell.eventImageView.load(cell.event!.imageUrl)
     
         return cell
     }

@@ -61,7 +61,7 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
     }
 
     //refreshes the table view
-    func refresh(sender:AnyObject)
+    func refresh(sender: AnyObject)
     {
         ministryTeams.removeAll()
         self.ministryTeamTableView.reloadData()
@@ -115,5 +115,9 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
         if let refresh = self.refreshControl {
             refresh.endRefreshing()
         }
+    }
+    
+    @IBAction func unwindToMinistryTeamsList(segue: UIStoryboardSegue) {
+        refresh(self)
     }
 }

@@ -9,6 +9,7 @@
 // Modified by Deniz Tumer on 3/4/16.
 
 import UIKit
+import ImageLoader
 
 class Event: Equatable {
     // MARK: Properties
@@ -21,6 +22,7 @@ class Event: Equatable {
     var notificationDate: String? //notification date is not applicable for every event
     var parentMinistry: String
     var imageSquare: UIImage!
+    var imageSquareUrl: String
     var notifications: [String]
     var parentMinistries: [String]
     var rideSharingEnabled: Bool
@@ -30,6 +32,7 @@ class Event: Equatable {
     var startNSDate: NSDate
     var location: NSDictionary?
     var image: UIImage!
+    var imageUrl: String
     
     init?() {
         self.id = ""
@@ -39,6 +42,7 @@ class Event: Equatable {
         self.notificationDate = ""
         self.parentMinistry = ""
         self.imageSquare = UIImage(named: "event2")
+        self.imageSquareUrl = ""
         self.notifications = [String]()
         self.parentMinistries = [String]()
         self.rideSharingEnabled = true
@@ -47,6 +51,7 @@ class Event: Equatable {
         self.startDate = ""
         self.startNSDate = NSDate()
         self.image = UIImage(named: "event1")
+        self.imageUrl = ""
     }
     
     convenience init?(dict : NSDictionary) {
@@ -73,11 +78,10 @@ class Event: Equatable {
             self.parentMinistry = dParentMinistry as! String
         }
         if let dImageSquare = dict["imageSquare"] {
-//            if let imageUrl = dImageSquare.objectForKey("secure_url") {
-//                print("START IMG SQUARE LOAD")
-//                self.imageSquare = GlobalUtils.getImageFromUrl(imageUrl as! String)
-//                print("END IMG SQUARE LOAD")
-//            }
+            if let imageUrl = dImageSquare.objectForKey("url") {
+                self.imageSquareUrl = imageUrl as! String
+                print("SQUARE IMAGE: " + (imageUrl as! String))
+            }
         }
         if let dNotifications = dict["notifications"] {
             self.notifications = dNotifications as! [String]
@@ -98,11 +102,9 @@ class Event: Equatable {
             self.location = dLocation as? NSDictionary
         }
         if let dImage = dict["image"] {
-//            if let imageUrl = dImage.objectForKey("secure_url") {
-//                print("START IMAGE LOAD")
-//                self.image = GlobalUtils.getImageFromUrl(imageUrl as! String)
-//                print("END IMAGE LOAD")
-//            }
+            if let imageUrl = dImage.objectForKey("url") {
+                self.imageUrl = imageUrl as! String
+            }
         }
     }
     

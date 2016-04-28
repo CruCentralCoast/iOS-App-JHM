@@ -7,16 +7,9 @@
 //
 
 import UIKit
+import ImageLoader
 
 class GlobalUtils {
-    // gets UIImage from cloudinary URL's
-    class func getImageFromUrl(imageUrl: String) -> UIImage {
-        let cloudUrl = NSURL(string: imageUrl)
-        let imageData = NSData(contentsOfURL: cloudUrl!)
-        
-        return UIImage(data: imageData!)!
-    }
-
     //gets an NSDate from a given string
     class func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()

@@ -9,7 +9,7 @@
 import UIKit
 
 class EventsCollectionViewCell: UICollectionViewCell {
-    @IBOutlet private weak var eventImageView: UIImageView!
+    @IBOutlet weak var eventImageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
     @IBOutlet private weak var eventTitleLabel: UILabel!
     @IBOutlet private weak var separator: UIView!
@@ -19,7 +19,7 @@ class EventsCollectionViewCell: UICollectionViewCell {
     var event: Event? {
         didSet {
             if let event = event {
-                eventImageView.image = event.image
+                //eventImageView.image = event.image
                 eventTitleLabel.text = event.name
                 eventStartTime.text = GlobalUtils.stringFromDate(event.startNSDate, format: "h:mma MMMM d, yyyy")
                 eventLocation.text = event.getLocationString()

@@ -57,6 +57,7 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         cell.ministryTeam = ministryTeam
         cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
         cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)
+        cell.ministryTeamImageView.load(cell.ministryTeam!.imageUrl)
         
         return cell
     }
@@ -89,31 +90,30 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
     //completion handler for ministry team response from the server after joining
     private func joinMinistryTeamCompletionHandler(ministryTeam: MinistryTeam, sender: UIButton) -> (NSArray? -> Void) {
         //add ministry team to local storage
-        var leaderInfo = "Leader(s) Info: "
+//        var leaderInfo = "Leader(s) Info: "
         
         return { (response: NSArray?) in
-            if response != nil {
-                let leaders = response!
-                if leaders.count > 0 {
-                    let leader = leaders[0] as! NSDictionary
-                    let name = leader["name"] as! [String: String]
-                    let leaderName = name["first"]! + " " + name["last"]!
-                    let leaderPhone = leader["phone"] as! String
-                    leaderInfo += leaderName + ", " + leaderPhone
-                    //            for leader in response {
-                    //                print(leader)
-                    //            }
-                }
-                else {
-                    leaderInfo += "None"
-                }
-            } else {
-                //TODO: handle failure here
-            }
-            
-            self.ministryTeamsStorageManager.addElement(ministryTeam.id, elem: leaderInfo)
-            
-            self.collectionView?.reloadData()
+//            if response != nil {
+//                let leaders = response!
+//                if leaders.count > 0 {
+//                    let leader = leaders[0] as! NSDictionary
+//                    let name = leader["name"] as! [String: String]
+//                    let leaderName = name["first"]! + " " + name["last"]!
+//                    let leaderPhone = leader["phone"] as! String
+//                    leaderInfo += leaderName + ", " + leaderPhone
+//                    //            for leader in response {
+//                    //                print(leader)
+//                    //            }
+//                }
+//                else {
+//                    leaderInfo += "None"
+//                }
+//            } else {
+//                //TODO: handle failure here
+//            }
+//            
+//            self.ministryTeamsStorageManager.addElement(ministryTeam.id, elem: leaderInfo)
+            self.performSegueWithIdentifier("unwindToMList", sender: self)
         }
     }
     

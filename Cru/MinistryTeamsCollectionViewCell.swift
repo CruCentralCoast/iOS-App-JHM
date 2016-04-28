@@ -12,7 +12,7 @@ import Alamofire
 class MinistryTeamsCollectionViewCell: UICollectionViewCell {
     //variable storing the constant for ministry tema keys in NSUserDefaults
     
-    @IBOutlet private weak var ministryTeamImageView: UIImageView!
+    @IBOutlet weak var ministryTeamImageView: UIImageView!
     @IBOutlet private weak var imageCoverView: UIView!
     @IBOutlet private weak var ministryTeamLabel: UILabel!
     @IBOutlet private weak var descriptionTextView: UITextView!
