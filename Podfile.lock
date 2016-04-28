@@ -36,6 +36,7 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
+  - ImageLoader (0.8.9)
   - IQKeyboardManagerSwift (3.3.4)
   - LocationPicker (0.5.3)
   - MRProgress (0.8.3):
@@ -78,6 +79,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - Fabric
   - Google/CloudMessaging
+  - ImageLoader
   - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
   - MRProgress
@@ -100,6 +102,7 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  ImageLoader: 7a26b4e248aa4cae7df322449ddb109bcfba9f09
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   LocationPicker: 37edad09cefccd0a266e4abfbf5787995b133d54
   MRProgress: 16de7cc9f347e8846797a770db102a323fe7ef09
