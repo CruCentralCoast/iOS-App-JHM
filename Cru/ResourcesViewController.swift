@@ -220,12 +220,12 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 }
                 
                 
-                //let doc = HTMLDocument(string: htmlAsString)
+                let doc = HTMLDocument(string: htmlAsString)
+                var abstract = ""
+                var filteredContent = ""
                 
-                // find the table of charts in the HTML
-                //let content = doc.nodesMatchingSelector("body")
-                //let contentElement = content as? HTMLElement
-                //var contentEl:HTMLElement?
+                
+                
                 
                 var articleCard:ArticleCard!
                 var creator: Creator!
@@ -241,9 +241,34 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 //Use the right creator with the right favicon
                 if(resource.url.rangeOfString("cru") != nil) {
                     creator = cru
+                    
+                    let absContent = doc.nodesMatchingSelector("p")
+                    
+                    abstract = absContent[0].textContent
+                    
+                    let content = doc.nodesMatchingSelector(".textImage")
+                    
+                    filteredContent = content[0].textContent
+                    
                 }
                 else if(resource.url.rangeOfString("everystudent") != nil) {
                     creator = everyStudent
+                    
+                    let absContent = doc.nodesMatchingSelector(".subhead")
+                    
+                    for el in absContent {
+                        let subhead = el.firstNodeMatchingSelector("em")!
+                        //vidURL = vidNode.objectForKeyedSubscript("src") as? String
+                        let child = subhead.childAtIndex(0)
+                        
+                        abstract = child.textContent
+                    }
+                    
+                    let content = doc.nodesMatchingSelector(".contentpadding")
+                    
+                    filteredContent = content[0].innerHTML
+                    
+                    
                 }
                 else {
                     creator = generic
@@ -253,7 +278,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 let articleData:NSMutableDictionary = NSMutableDictionary()
                 let articleBaseData:NSMutableDictionary = NSMutableDictionary()
                 
-                articleData["htmlContent"] = htmlAsString
+                articleData["htmlContent"] = filteredContent
                 articleData["publicationDate"] = NSNumber(longLong: 1429063354000)
                 let articleMedia:NSMutableDictionary = NSMutableDictionary()
                 articleMedia["imageUrl"] =  "https://images.unsplash.com/photo-1458170143129-546a3530d995?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=82cec66525b351900022cf11428dad4a"
@@ -261,9 +286,9 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 articleData["media"] = articleMedia
                 articleBaseData["article"] = articleData
                 
+         
                 
-                
-                articleCard = ArticleCard(title: resource.title, abstractContent: "Hello", url: NSURL(string: resource.url)!, creator: creator, data: articleBaseData)
+                articleCard = ArticleCard(title: resource.title, abstractContent: abstract, url: NSURL(string: resource.url)!, creator: creator, data: articleBaseData)
                 
                 var cardView : CardView! = nil
                 cardView = CardView.createCardView(articleCard!, layout: .ArticleCardTall)!
