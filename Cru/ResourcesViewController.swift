@@ -149,59 +149,6 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         else if (resource.type == ResourceType.Audio) {
             
         }
-        
-        //If card was created, insert the resource into the array and insert it into the table
-//        if (cardView != nil) {
-//            cardView.delegate = self
-//            self.resources.insert(Resource(dict: dict)!, atIndex: 0)
-//            if(self.currentType == resource.type){
-//                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-//            }
-//        }
-        
-        
-        
-        
-        
-        
-        
-        
-        //Create card by passing in the URL to the video or article page
-//        Card.getFromUrl(url) {(card: Card?, error: NSError?) in
-//            if (error != nil) {
-//                print("Error getting card from url: \(error?.localizedDescription)")
-//            } else if(card != nil) {
-//                
-//                var cardView : CardView! = nil
-//                
-//                //Create card with Article card layout
-//                if (resource.type == ResourceType.Article) {
-//                    cardView = CardView.createCardView(card!, layout: .ArticleCardTall)!
-//                    self.articleViews.insert(cardView, atIndex: 0)
-//                }
-//                //Create a video card as a summary card because of the transcripts
-//                else if (resource.type == ResourceType.Video) {
-//                    cardView = CardView.createCardView(card!, layout: .SummaryCardTall)!
-//                    self.videoViews.insert(cardView, atIndex: 0)
-//                }
-//                //Audio is currently not supported
-//                else if (resource.type == ResourceType.Audio) {
-//                    //cardView = CardView.createCardView(card!, layout: .VideoCardShort)!
-//                    //self.audioViews.insert(cardView, atIndex: 0)
-//                }
-//                
-//                //If card was created, insert the resource into the array and insert it into the table
-//                if (cardView != nil) {
-//                    cardView.delegate = self
-//                    self.resources.insert(Resource(dict: dict)!, atIndex: 0)
-//                    if(self.currentType == resource.type){
-//                        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-//                    }     
-//                }
-//            } else {
-//                print("\nERROR: Card view not created\n")
-//            }
-//        }
     }
     
     
@@ -291,7 +238,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 articleCard = ArticleCard(title: resource.title, abstractContent: abstract, url: NSURL(string: resource.url)!, creator: creator, data: articleBaseData)
                 
                 var cardView : CardView! = nil
-                cardView = CardView.createCardView(articleCard!, layout: .ArticleCardTall)!
+                cardView = CardView.createCardView(articleCard!, layout: .ArticleCardNoImage)!
                 
                 
                 self.articleViews.insert(cardView, atIndex: 0)
