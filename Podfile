@@ -17,6 +17,8 @@ def cru_pods
     pod 'ActionSheetPicker-3.0'
     pod 'Fabric'
     pod 'Crashlytics'
+    pod 'HTMLReader', '~> 0.9'
+    pod 'SwiftyJSON', '~> 2.3.0'
 end
     
 

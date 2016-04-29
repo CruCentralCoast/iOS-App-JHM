@@ -130,6 +130,8 @@
 		6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7A1C06AB6900F8B007 /* Event.swift */; };
 		6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7A1C06AB6900F8B007 /* Event.swift */; };
 		6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
+		6DB0A9551CD0031D0003D327 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB0A9541CD0031D0003D327 /* Article.swift */; };
+		6DB298091CD2AF5700B2DA70 /* YoutubeThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DB298081CD2AF5600B2DA70 /* YoutubeThumbnail.swift */; };
 		6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */; };
 		6DBD7B8C1C756D1000D11FFA /* GlobalCruColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */; };
 		6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */; };
@@ -279,6 +281,8 @@
 		6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
 		6D76CA7A1C06AB6900F8B007 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		6DB0A9541CD0031D0003D327 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		6DB298081CD2AF5600B2DA70 /* YoutubeThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeThumbnail.swift; sourceTree = "<group>"; };
 		6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBook.otf; sourceTree = "<group>"; };
 		6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCruColors.swift; sourceTree = "<group>"; };
 		6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLigIt.otf; sourceTree = "<group>"; };
@@ -647,6 +651,8 @@
 				50F8251E1C0BB965005396BC /* resources.storyboard */,
 				6D4B78B51C702FDF00F643CB /* Resource.swift */,
 				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
+				6DB298081CD2AF5600B2DA70 /* YoutubeThumbnail.swift */,
+				6DB0A9541CD0031D0003D327 /* Article.swift */,
 				6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */,
 				6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */,
 			);
@@ -1026,6 +1032,7 @@
 				507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
 				E9CB00331C8F7E04000F7E12 /* SummerMissionController.swift in Sources */,
+				6DB298091CD2AF5700B2DA70 /* YoutubeThumbnail.swift in Sources */,
 				0FAEB9881C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				500A37B01C7D6587007D6A3B /* Passenger.swift in Sources */,
@@ -1034,6 +1041,7 @@
 				0FAEB97C1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
 				6DBD7B8C1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				50FE4D471C50D37C00EA9042 /* Ministry.swift in Sources */,
+				6DB0A9551CD0031D0003D327 /* Article.swift in Sources */,
 				E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */,
 				5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */,
 				50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
