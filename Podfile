@@ -19,6 +19,8 @@ def cru_pods
     pod 'Crashlytics'
     pod 'DZNEmptyDataSet'
     pod 'ImageLoader'
+    pod 'HTMLReader', '~> 0.9'
+    pod 'SwiftyJSON', '~> 2.3.0'
 end
     
 

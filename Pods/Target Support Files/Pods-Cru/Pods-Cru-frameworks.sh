@@ -88,6 +88,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Cru/Alamofire.framework"
   install_framework "Pods-Cru/DZNEmptyDataSet.framework"
   install_framework "Pods-Cru/DatePickerCell.framework"
+  install_framework "Pods-Cru/HTMLReader.framework"
   install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/ImageLoader.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
@@ -95,12 +96,14 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Cru/RadioButton.framework"
   install_framework "Pods-Cru/SideMenu.framework"
   install_framework "Pods-Cru/SwiftValidator.framework"
+  install_framework "Pods-Cru/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Cru/ActionSheetPicker_3_0.framework"
   install_framework "Pods-Cru/Alamofire.framework"
   install_framework "Pods-Cru/DZNEmptyDataSet.framework"
   install_framework "Pods-Cru/DatePickerCell.framework"
+  install_framework "Pods-Cru/HTMLReader.framework"
   install_framework "Pods-Cru/IQKeyboardManagerSwift.framework"
   install_framework "Pods-Cru/ImageLoader.framework"
   install_framework "Pods-Cru/LocationPicker.framework"
@@ -108,4 +111,5 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Cru/RadioButton.framework"
   install_framework "Pods-Cru/SideMenu.framework"
   install_framework "Pods-Cru/SwiftValidator.framework"
+  install_framework "Pods-Cru/SwiftyJSON.framework"
 fi

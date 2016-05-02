@@ -36,6 +36,7 @@ PODS:
   - GoogleSymbolUtilities (1.0.3)
   - GoogleUtilities (1.1.0):
     - GoogleSymbolUtilities (~> 1.0.0)
+  - HTMLReader (0.9.6)
   - ImageLoader (0.8.9)
   - IQKeyboardManagerSwift (3.3.4)
   - LocationPicker (0.5.3)
@@ -70,6 +71,7 @@ PODS:
   - RadioButton (1.0)
   - SideMenu (0.1.4)
   - SwiftValidator (3.0.3)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - ActionSheetPicker-3.0
@@ -79,6 +81,7 @@ DEPENDENCIES:
   - DZNEmptyDataSet
   - Fabric
   - Google/CloudMessaging
+  - HTMLReader (~> 0.9)
   - ImageLoader
   - IQKeyboardManagerSwift (= 3.3.4)
   - LocationPicker
@@ -86,6 +89,7 @@ DEPENDENCIES:
   - RadioButton
   - SideMenu (~> 0.1)
   - SwiftValidator
+  - SwiftyJSON (~> 2.3.0)
 
 SPEC CHECKSUMS:
   ActionSheetPicker-3.0: 8312778b6815578e6a86d630fbcf31dc94c534e7
@@ -102,6 +106,7 @@ SPEC CHECKSUMS:
   GoogleNetworkingUtilities: 292992ab31b7b4ba32809a0e8b40e324cdfb2c0c
   GoogleSymbolUtilities: 82ad9f93d3615244b3f4ce440f5ab2515e8b4f56
   GoogleUtilities: 8ed9134debe11719097881711464752900668f10
+  HTMLReader: 7e21488ee378afc56ccade8af35840c4e03e434c
   ImageLoader: 7a26b4e248aa4cae7df322449ddb109bcfba9f09
   IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   LocationPicker: 37edad09cefccd0a266e4abfbf5787995b133d54
@@ -109,5 +114,6 @@ SPEC CHECKSUMS:
   RadioButton: 7ef053baf6ff0e7f9e777016c28e9ba4e330edba
   SideMenu: 09bc4ab16e392aea64caf052074efd63ef726b6a
   SwiftValidator: 0b6a48bf10364411b0d64c97f78665ff87ca9f8b
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
 COCOAPODS: 0.39.0
