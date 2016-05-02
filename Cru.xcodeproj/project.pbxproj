@@ -134,6 +134,10 @@
 		6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7A1C06AB6900F8B007 /* Event.swift */; };
 		6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7A1C06AB6900F8B007 /* Event.swift */; };
 		6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
+		6D8F423C1CD80C8D0013BB13 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F423B1CD80C8D0013BB13 /* Article.swift */; };
+		6D8F423D1CD80C8D0013BB13 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F423B1CD80C8D0013BB13 /* Article.swift */; };
+		6D8F423F1CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F423E1CD80CF60013BB13 /* YoutubeThumbnail.swift */; };
+		6D8F42401CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D8F423E1CD80CF60013BB13 /* YoutubeThumbnail.swift */; };
 		6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */; };
 		6DBD7B8C1C756D1000D11FFA /* GlobalCruColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */; };
 		6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */; };
@@ -293,6 +297,8 @@
 		6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
 		6D76CA7A1C06AB6900F8B007 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventDetailsViewController.swift; sourceTree = "<group>"; };
+		6D8F423B1CD80C8D0013BB13 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		6D8F423E1CD80CF60013BB13 /* YoutubeThumbnail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YoutubeThumbnail.swift; sourceTree = "<group>"; };
 		6DB922811C07CE1400C7B120 /* FreigSanProBook.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProBook.otf; sourceTree = "<group>"; };
 		6DBD7B8B1C756D1000D11FFA /* GlobalCruColors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalCruColors.swift; sourceTree = "<group>"; };
 		6DBD7B8F1C7573DC00D11FFA /* FreigSanProLigIt.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLigIt.otf; sourceTree = "<group>"; };
@@ -676,6 +682,8 @@
 				50F8251E1C0BB965005396BC /* resources.storyboard */,
 				6D4B78B51C702FDF00F643CB /* Resource.swift */,
 				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
+				6D8F423E1CD80CF60013BB13 /* YoutubeThumbnail.swift */,
+				6D8F423B1CD80C8D0013BB13 /* Article.swift */,
 				6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */,
 				6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */,
 			);
@@ -1049,6 +1057,7 @@
 				C12940E61CCD82D4004DACB1 /* CruClients.swift in Sources */,
 				0F8CEF231BEC0E13008FC70D /* MainViewController.swift in Sources */,
 				E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */,
+				6D8F423C1CD80C8D0013BB13 /* Article.swift in Sources */,
 				C12940EC1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
 				0F10F0221CC03F7000F478ED /* RidesViewController.swift in Sources */,
 				C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
@@ -1096,6 +1105,7 @@
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
 				50E0E1881C87796D000023F1 /* Cancler.swift in Sources */,
+				6D8F423F1CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */,
 				0FF87DA41C8A268D00D56C4E /* GlobalUtils.swift in Sources */,
 				50A38FE91C5F0D960013BFBD /* MinistryTableViewCell.swift in Sources */,
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
@@ -1136,6 +1146,7 @@
 				C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
 				0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */,
+				6D8F423D1CD80C8D0013BB13 /* Article.swift in Sources */,
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
@@ -1144,6 +1155,7 @@
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
 				0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */,
+				6D8F42401CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
