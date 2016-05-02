@@ -44,18 +44,14 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         //Make the line between cells invisible
         tableView.separatorColor = UIColor.clearColor()
         
+       
         //If the user is logged in, view special resources. Otherwise load non-restricted resources.
-        ServerUtils.loadResources(.Resource, inserter: insertResource, useApiKey: true)
-        
+        //ServerUtils.loadResources(.Resource, inserter: insertResource, useApiKey: true)jm,
+        CruClients.getServerClient().getData(DBCollection.Resource, insert: insertResource, completionHandler: {error in })
         
         tableView.backgroundColor = Colors.googleGray
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
-        
-        
-        
-        
-        
     }
     
     //Code for the bar at the top of the view for filtering resources
