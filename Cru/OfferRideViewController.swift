@@ -178,9 +178,9 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         }
     }
     
-    func handleRequestResult(result : Bool){
+    func handleRequestResult(result : Ride?){
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-        if result {
+        if result != nil {
             presentAlert("Ride Offered", msg: "Thank you your offered ride has been created!", handler:  {
                 if let navController = self.navigationController {
                     navController.popViewControllerAnimated(true)
