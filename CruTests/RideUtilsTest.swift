@@ -10,11 +10,14 @@ import XCTest
 
 class RideUtilsTest: XCTestCase {
     
+    var serverClient: FakeServerClient!
+    var rideUtils: RideUtils!
     
     override func setUp() {
         super.setUp()
         // Put setup code here. This method is called before the invocation of each test method in the class.
-        
+        serverClient = FakeServerClient()
+        rideUtils = RideUtils(serverProtocol: serverClient)
     }
     
     override func tearDown() {
@@ -25,27 +28,31 @@ class RideUtilsTest: XCTestCase {
     func testPostAndRemoveRideOffer() {
         //test post
         var readyExpectation = self.expectationWithDescription("post a ride")
-        var rideId: String?
+        var postedRide: Ride!
         
-        RideUtils.postRideOffer("563b11135e926d03001ac15c", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ success in
-            XCTAssert(success)
+        rideUtils.postRideOffer("some-event-id", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ result in
+            XCTAssert(result != nil)
+            postedRide = result!
             readyExpectation.fulfill()
-            },
-            idhandler: { id in
-                rideId = id
         })
         
-        waitForExpectationsWithTimeout(5) {error in
+        waitForExpectationsWithTimeout(2) {error in
             XCTAssertNil(error, "Error")
         }
         
         
+        XCTAssert("some-event-id" == postedRide.eventId)
+        XCTAssert("Joe Schmo" == postedRide.driverName)
+        XCTAssert("1234567890" == postedRide.driverNumber)
+        XCTAssert(5 == postedRide.seats)
+        XCTAssert(3 == postedRide.radius)
+        XCTAssert("both" == postedRide.direction)
+
         //test drop
         readyExpectation = self.expectationWithDescription("drop a ride")
-        
-        XCTAssertNotNil(rideId)
-        
-        RideUtils.leaveRideDriver(rideId!, handler: { success in
+
+
+        rideUtils.leaveRideDriver(postedRide.id, handler: { success in
             XCTAssert(success)
             readyExpectation.fulfill()
         })
@@ -56,12 +63,12 @@ class RideUtilsTest: XCTestCase {
     }
     
     func testAddAndDropPassenger(){
-        var rideId: String?
+        /*var rideId: String?
         var passId: String?
         
         //posts a ride
         var readyExpectation = self.expectationWithDescription("post a ride")
-        RideUtils.postRideOffer("563b11135e926d03001ac15c", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ success in
+        rideUtils.postRideOffer("563b11135e926d03001ac15c", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ success in
             XCTAssert(success)
             readyExpectation.fulfill()
             },
@@ -74,18 +81,16 @@ class RideUtilsTest: XCTestCase {
         
         //add passenger
         readyExpectation = self.expectationWithDescription("join a ride")
-        RideUtils.joinRide("Test Tester", phone: "1234567890", direction: "to",  rideId: rideId!, handler: { obj in
+        rideUtils.joinRide("Test Tester", phone: "1234567890", direction: "to",  rideId: rideId!, handler: { obj in
                 readyExpectation.fulfill()
-            }, passIdHandler: { id in
-                passId = id
-        })
+            })
         waitForExpectationsWithTimeout(5) {error in
             XCTAssertNil(error, "Error")
         }
         
         //drop passenger
         readyExpectation = self.expectationWithDescription("leave a ride")
-        RideUtils.leaveRide(passId!, rideid: rideId!, handler: { success in
+        rideUtils.leaveRidePassenger(passId!, rideid: rideId!, handler: { success in
             print("here 3")
             XCTAssert(success)
             readyExpectation.fulfill()
@@ -100,14 +105,14 @@ class RideUtilsTest: XCTestCase {
         
         XCTAssertNotNil(rideId)
         
-        RideUtils.leaveRideDriver(rideId!, handler: { success in
+        rideUtils.leaveRideDriver(rideId!, handler: { success in
             XCTAssert(success)
             readyExpectation.fulfill()
         })
         
         waitForExpectationsWithTimeout(5) {error in
             XCTAssertNil(error, "Error")
-        }
+        }*/
     }
     
     func testPerformanceExample() {

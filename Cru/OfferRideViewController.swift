@@ -87,6 +87,11 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         eventName.addGestureRecognizer(tap)
         tap.delegate = self
         
+        //this is here so the event the event name will show if this page was called from the event detail page
+        if(chosenEvent != nil){
+            eventName.text = chosenEvent!.name
+        }
+        
         pickupLocation.userInteractionEnabled = true
         let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "choosePickupLocation:")
         pickupLocation.addGestureRecognizer(tap2)
@@ -173,9 +178,9 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         }
     }
     
-    func handleRequestResult(result : Bool){
+    func handleRequestResult(result : Ride?){
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-        if result {
+        if result != nil {
             presentAlert("Ride Offered", msg: "Thank you your offered ride has been created!", handler:  {
                 if let navController = self.navigationController {
                     navController.popViewControllerAnimated(true)

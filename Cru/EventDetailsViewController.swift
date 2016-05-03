@@ -135,9 +135,18 @@ class EventDetailsViewController: UIViewController {
     //This function opens the ridesharing section of the application
     //from the events page
     @IBAction func linkToRideShare(sender: AnyObject) {
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController
         
-        self.navigationController?.pushViewController(vc, animated: true)
-        vc.loadRides(event)
+        if let button = sender as? UIButton{
+            if(button.currentTitle == "offer ride"){
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("offerRide") as! OfferRideViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+                vc.chosenEvent = event
+            }
+            else{
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController
+                self.navigationController?.pushViewController(vc, animated: true)
+                vc.loadRides(event)
+            }
+        }
     }
 }
