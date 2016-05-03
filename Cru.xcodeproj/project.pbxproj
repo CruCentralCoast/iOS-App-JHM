@@ -31,6 +31,10 @@
 		0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */; };
 		0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */; };
 		0F1B8C761CCFDCD500CEE24C /* CalendarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */; };
+		0F5302721CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */; };
+		0F5302731CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */; };
+		0F5302751CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */; };
+		0F5302761CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */; };
 		0F74A3101C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3111C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
@@ -210,6 +214,8 @@
 		0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarServices.swift; sourceTree = "<group>"; };
 		0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManagerTest.swift; sourceTree = "<group>"; };
 		0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTest.swift; sourceTree = "<group>"; };
+		0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
+		0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		0F74A30F1C0BB9D300401377 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		0F7CB3C31C919A8600C8444F /* EventTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTest.swift; sourceTree = "<group>"; };
 		0F8CEF1D1BEC0E13008FC70D /* Cru.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cru.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -657,6 +663,8 @@
 				6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */,
 				0FF87D9B1C8A1EF800D56C4E /* EventsCollectionViewController.swift */,
 				0FF87D9F1C8A20A200D56C4E /* EventsCollectionViewCell.swift */,
+				0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */,
+				0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -1051,6 +1059,7 @@
 				C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */,
 				50FE4D431C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
+				0F5302721CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */,
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
 				50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */,
 				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
@@ -1085,6 +1094,7 @@
 				0F17E3D21C90F68300713297 /* CalendarManager.swift in Sources */,
 				0FAEB9841C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift in Sources */,
 				0FAEB97C1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
+				0F5302751CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */,
 				6DBD7B8C1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
 				0F1B8C291CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift in Sources */,
 				50FE4D471C50D37C00EA9042 /* Ministry.swift in Sources */,
@@ -1145,9 +1155,11 @@
 				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
+				0F5302761CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */,
 				0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */,
 				6D8F423D1CD80C8D0013BB13 /* Article.swift in Sources */,
 				0FAEB9811C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
+				0F5302731CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */,
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
 				C12940ED1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
