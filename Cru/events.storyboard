@@ -149,7 +149,7 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="cHk-7k-E01"/>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="53" id="tu6-iS-xET"/>
                                                 </constraints>
-                                                <state key="normal" title="Ridesharing" image="event-rideshare"/>
+                                                <state key="normal" title="offer ride" image="event-rideshare"/>
                                                 <connections>
                                                     <action selector="linkToRideShare:" destination="wSV-ke-WyD" eventType="touchUpInside" id="fMG-d1-UzL"/>
                                                 </connections>
@@ -162,7 +162,7 @@
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="Xcn-8l-MdK"/>
                                                     <constraint firstAttribute="width" secondItem="1Er-G8-5WP" secondAttribute="height" multiplier="74:53" id="Xxe-01-Ibo"/>
                                                 </constraints>
-                                                <state key="normal" title="Ridesharing" image="event-rideshare"/>
+                                                <state key="normal" title="find ride" image="event-rideshare"/>
                                                 <connections>
                                                     <action selector="linkToRideShare:" destination="wSV-ke-WyD" eventType="touchUpInside" id="1Oh-Mv-gMR"/>
                                                 </connections>

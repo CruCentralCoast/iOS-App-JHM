@@ -87,6 +87,11 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         eventName.addGestureRecognizer(tap)
         tap.delegate = self
         
+        //this is here so the event the event name will show if this page was called from the event detail page
+        if(chosenEvent != nil){
+            eventName.text = chosenEvent!.name
+        }
+        
         pickupLocation.userInteractionEnabled = true
         let tap2: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "choosePickupLocation:")
         pickupLocation.addGestureRecognizer(tap2)
