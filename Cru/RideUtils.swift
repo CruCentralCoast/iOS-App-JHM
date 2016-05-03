@@ -18,15 +18,15 @@ enum ResponseType{
 class RideUtils {
     
     var serverClient: ServerProtocol!
-    
+
     convenience init() {
         self.init(serverProtocol: CruClients.getServerClient())
     }
-    
+
     init(serverProtocol: ServerProtocol) {
         serverClient = serverProtocol
     }
-    
+
     func getRidesNotDriving(gcmid: String, insert : (NSDictionary) -> (),
         afterFunc : (Bool) -> ()) {
 
@@ -53,36 +53,25 @@ class RideUtils {
             let params = ["_id": ["$in": rideIds]]
             
             //GlobalUtils.printRequest(params)
-            Alamofire.request(.POST, Config.serverUrl, parameters: params)
-                .responseJSON { response in
-                    if let json = response.result.value {
-                        if let arr = json as? NSArray{
-                            for rideInfo in arr{
-                                if let rideDict = rideInfo as? NSDictionary{
-                                    insert(rideDict)
-                                }
-                            }
-                        }
-                    }
-                    
-                    if (response.result.isSuccess == true && response.result.value != nil){
+            serverClient.getData(DBCollection.Ride, insert: insert, completionHandler:
+                { success in
+                    if (success) {
                         afterFunc(.Success)
-                    }
-                    else{
+                    } else {
                         afterFunc(.NoConnection)
                     }
-            }
+                }, params: params)
         }
         else{
-            Alamofire.request(.GET, Config.serverEndpoint + "rides")
-                .responseJSON { response in
-                    if response.result.isSuccess {
-                       afterFunc(.NoRides)
-                    }
-                    else{
+            //TODO: add something new to serverClient for pinging
+            serverClient.getData(DBCollection.Ride, insert: {elem in }, completionHandler:
+                {success in
+                    if (success) {
+                        afterFunc(.NoRides)
+                    } else {
                         afterFunc(.NoConnection)
                     }
-            }
+            })
         }
     }
     
@@ -97,7 +86,7 @@ class RideUtils {
     }
 
     func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
-        location: NSDictionary, radius: Int, direction: String, handler: (Bool)->()) {
+        location: NSDictionary, radius: Int, direction: String, handler: (Ride?)->()) {
             let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
                 "gcm_id": Config.gcmId(), "location":location, "radius":radius, "direction":direction, "gender": 0]
             
@@ -106,9 +95,9 @@ class RideUtils {
                 { ride in
                     if (ride != nil) {
                         self.saveRideOffering(ride!["_id"] as! String)
-                        handler(true)
+                        handler(Ride(dict: ride!))
                     } else {
-                        handler(false)
+                        handler(nil)
                     }
             })
     }

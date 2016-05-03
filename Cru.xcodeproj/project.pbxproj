@@ -34,7 +34,6 @@
 		0F74A3101C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3111C0BB9D300401377 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F74A30F1C0BB9D300401377 /* User.swift */; };
 		0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */; };
-		0F7CB3C51C919B5C00C8444F /* DBUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */; };
 		0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7CB3C31C919A8600C8444F /* EventTest.swift */; };
 		0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85EAB8191C0ECC8A005C7658 /* Config.swift */; };
 		0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8CEF201BEC0E13008FC70D /* AppDelegate.swift */; };
@@ -150,6 +149,9 @@
 		C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1015CD11C9429D0005B559E /* ResourcesTest.swift */; };
 		C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
 		C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */; };
+		C12562551CD3E77B002B05D0 /* SWRevealViewController.h in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7C1CBF3A3700EF5EFB /* SWRevealViewController.h */; };
+		C12562561CD3E77B002B05D0 /* Cru-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7A1CBF3A3600EF5EFB /* Cru-Bridging-Header.h */; };
+		C12562571CD3E77B002B05D0 /* CruTests-Bridging-Header.h in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7B1CBF3A3600EF5EFB /* CruTests-Bridging-Header.h */; };
 		C12940E61CCD82D4004DACB1 /* CruClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940E51CCD82D4004DACB1 /* CruClients.swift */; };
 		C12940E71CCD82D4004DACB1 /* CruClients.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940E51CCD82D4004DACB1 /* CruClients.swift */; };
 		C12940E91CCD833E004DACB1 /* ServerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940E81CCD833E004DACB1 /* ServerProtocol.swift */; };
@@ -162,7 +164,10 @@
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
 		C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
 		C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
+		C185BB391CD2904F00787153 /* FakeServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185BB381CD2904F00787153 /* FakeServerClient.swift */; };
+		C185BB3A1CD2904F00787153 /* FakeServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185BB381CD2904F00787153 /* FakeServerClient.swift */; };
 		C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */; };
+		C1D99C821CD4011B00128CA9 /* RideUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */; };
 		C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103605C6F44AE29021FA1E17 /* Pods_Cru.framework */; };
@@ -220,7 +225,6 @@
 		0F8CEF2A1BEC0E13008FC70D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0F8CEF2F1BEC0E13008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8CEF341BEC0E14008FC70D /* CruTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CruTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0F8CEF381BEC0E14008FC70D /* CruTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruTests.swift; sourceTree = "<group>"; };
 		0F8CEF3A1BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F8CEF431BEC0E14008FC70D /* CruUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CruUITests.swift; sourceTree = "<group>"; };
 		0F8CEF451BEC0E14008FC70D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -254,7 +258,6 @@
 		504742451C759823003F276E /* OfferedRideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRideTableViewCell.swift; sourceTree = "<group>"; };
 		504742491C75988E003F276E /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
 		507086821C8F5F9D006C5215 /* RideTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTest.swift; sourceTree = "<group>"; };
-		507086841C8F62BA006C5215 /* RideUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtilsTest.swift; sourceTree = "<group>"; };
 		507086861C8F69DB006C5215 /* Pods_Cru.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Cru.framework; path = "Pods/../build/Debug-iphoneos/Pods_Cru.framework"; sourceTree = "<group>"; };
 		507086881C8F69ED006C5215 /* Pods_CruUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CruUITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_CruUITests.framework"; sourceTree = "<group>"; };
 		5070868A1C8F6A0E006C5215 /* LocationPicker.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LocationPicker.framework; path = "Pods/../build/Debug-iphoneos/LocationPicker.framework"; sourceTree = "<group>"; };
@@ -307,7 +310,6 @@
 		6DBD7B991C75747C00D11FFA /* FreigSanProSem.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProSem.otf; sourceTree = "<group>"; };
 		7084225A2F6E2AA2C32279EE /* Pods-CruTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruTests/Pods-CruTests.debug.xcconfig"; sourceTree = "<group>"; };
 		857EC1D41C4785770014F3C9 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBUtilsTest.swift; sourceTree = "<group>"; };
 		85EAB8191C0ECC8A005C7658 /* Config.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
 		ADCCEB616B0F2822F079FDD1 /* Pods-Cru.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.debug.xcconfig"; sourceTree = "<group>"; };
 		C1015CD11C9429D0005B559E /* ResourcesTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesTest.swift; sourceTree = "<group>"; };
@@ -320,7 +322,9 @@
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
 		C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
+		C185BB381CD2904F00787153 /* FakeServerClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeServerClient.swift; sourceTree = "<group>"; };
 		C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtilsTest.swift; sourceTree = "<group>"; };
 		C1DCEC451C7681E1009FACE0 /* RideUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtils.swift; sourceTree = "<group>"; };
 		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
 		E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -485,8 +489,6 @@
 				0F7CB3CA1C919DA500C8444F /* MinistryTeams */,
 				0F7CB3C21C919A7300C8444F /* Events */,
 				507086811C8F5F08006C5215 /* Ridesharing */,
-				85C6D11F1C0BE84C006A4F9F /* DBClient */,
-				0F8CEF381BEC0E14008FC70D /* CruTests.swift */,
 				0F8CEF3A1BEC0E14008FC70D /* Info.plist */,
 			);
 			path = CruTests;
@@ -557,8 +559,8 @@
 		507086811C8F5F08006C5215 /* Ridesharing */ = {
 			isa = PBXGroup;
 			children = (
+				C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */,
 				507086821C8F5F9D006C5215 /* RideTest.swift */,
-				507086841C8F62BA006C5215 /* RideUtilsTest.swift */,
 				5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */,
 				50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */,
 			);
@@ -735,14 +737,6 @@
 			name = Utils;
 			sourceTree = "<group>";
 		};
-		85C6D11F1C0BE84C006A4F9F /* DBClient */ = {
-			isa = PBXGroup;
-			children = (
-				85C6D1201C0BE87B006A4F9F /* DBUtilsTest.swift */,
-			);
-			name = DBClient;
-			sourceTree = "<group>";
-		};
 		85EAB8181C0ECC40005C7658 /* Config */ = {
 			isa = PBXGroup;
 			children = (
@@ -773,6 +767,7 @@
 				C12940E51CCD82D4004DACB1 /* CruClients.swift */,
 				C12940E81CCD833E004DACB1 /* ServerProtocol.swift */,
 				C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */,
+				C185BB381CD2904F00787153 /* FakeServerClient.swift */,
 			);
 			name = Clients;
 			sourceTree = "<group>";
@@ -1111,6 +1106,7 @@
 				85EAB81A1C0ECC8A005C7658 /* Config.swift in Sources */,
 				E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */,
 				50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */,
+				C185BB391CD2904F00787153 /* FakeServerClient.swift in Sources */,
 				6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 				C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */,
@@ -1121,6 +1117,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C12562551CD3E77B002B05D0 /* SWRevealViewController.h in Sources */,
+				C12562561CD3E77B002B05D0 /* Cru-Bridging-Header.h in Sources */,
+				C12562571CD3E77B002B05D0 /* CruTests-Bridging-Header.h in Sources */,
 				5072B4281CB38F43001F5BF6 /* PassengerTableViewCell.swift in Sources */,
 				5072B4231CB38E75001F5BF6 /* DriverRideDetailViewController.swift in Sources */,
 				508B2BD81CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */,
@@ -1131,6 +1130,7 @@
 				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
 				5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */,
+				C1D99C821CD4011B00128CA9 /* RideUtilsTest.swift in Sources */,
 				5072B41B1CB38BF8001F5BF6 /* RiderRideDetailViewController.swift in Sources */,
 				C12940E71CCD82D4004DACB1 /* CruClients.swift in Sources */,
 				C12940EA1CCD833E004DACB1 /* ServerProtocol.swift in Sources */,
@@ -1143,6 +1143,7 @@
 				0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */,
 				507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
+				C185BB3A1CD2904F00787153 /* FakeServerClient.swift in Sources */,
 				C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FB811851C8F47C600883951 /* Ministry.swift in Sources */,
 				0F17E3D31C90F68300713297 /* CalendarManager.swift in Sources */,
@@ -1165,7 +1166,6 @@
 				0F1B8C761CCFDCD500CEE24C /* CalendarTest.swift in Sources */,
 				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,
-				0F7CB3C51C919B5C00C8444F /* DBUtilsTest.swift in Sources */,
 				6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */,
 				0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */,
 				0FF87DA51C8A268D00D56C4E /* GlobalUtils.swift in Sources */,
