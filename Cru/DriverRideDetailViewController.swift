@@ -169,4 +169,16 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editSegue"{
+            if let destVC = segue.destinationViewController as? EditRideViewController{
+                print("this hapepned")
+                destVC.ride = ride
+                destVC.event = event
+            }
+            
+        }
+    }
+    
 }
