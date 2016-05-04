@@ -19,9 +19,11 @@ class EditRideViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        address.sizeToFit()
+        
+        //not sure of what the effect of sizeToFit is really...
+        //address.sizeToFit()
+        
         populateLabels()
-        // Do any additional setup after loading the view.
     }
     
     
@@ -33,11 +35,7 @@ class EditRideViewController: UIViewController {
         timeLabel.text = ride!.time
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
     @IBAction func editPressed(sender: UIButton) {
         var editChoice = sender.titleLabel!.text
         
@@ -56,6 +54,9 @@ class EditRideViewController: UIViewController {
     }
     
 
+    @IBAction func savePressed(sender: AnyObject) {
+        
+    }
     /*
     // MARK: - Navigation
 

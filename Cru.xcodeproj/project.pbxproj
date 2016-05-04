@@ -71,6 +71,7 @@
 		503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
+		506EBF921CD9D3AB002E6F6A /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506EBF911CD9D3AB002E6F6A /* TimePicker.swift */; };
 		507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */; };
 		507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */; };
 		5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4161CB38616001F5BF6 /* TimeDetail.swift */; };
@@ -261,6 +262,7 @@
 		503A06CF1C5F08E200DAD10E /* findride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = findride.storyboard; sourceTree = "<group>"; };
 		504742451C759823003F276E /* OfferedRideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRideTableViewCell.swift; sourceTree = "<group>"; };
 		504742491C75988E003F276E /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
+		506EBF911CD9D3AB002E6F6A /* TimePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 		507086821C8F5F9D006C5215 /* RideTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTest.swift; sourceTree = "<group>"; };
 		507086861C8F69DB006C5215 /* Pods_Cru.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_Cru.framework; path = "Pods/../build/Debug-iphoneos/Pods_Cru.framework"; sourceTree = "<group>"; };
 		507086881C8F69ED006C5215 /* Pods_CruUITests.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pods_CruUITests.framework; path = "Pods/../build/Debug-iphoneos/Pods_CruUITests.framework"; sourceTree = "<group>"; };
@@ -578,6 +580,7 @@
 				509DA91C1C6172FC0050CE26 /* Ride.swift */,
 				500A37AF1C7D6587007D6A3B /* Passenger.swift */,
 				5072B4161CB38616001F5BF6 /* TimeDetail.swift */,
+				506EBF911CD9D3AB002E6F6A /* TimePicker.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -1091,6 +1094,7 @@
 				0F1B8C291CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift in Sources */,
 				50FE4D471C50D37C00EA9042 /* Ministry.swift in Sources */,
 				0F1B8C2D1CC99B1A00CEE24C /* MinistryTeamViewController.swift in Sources */,
+				506EBF921CD9D3AB002E6F6A /* TimePicker.swift in Sources */,
 				E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */,
 				5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */,
 				50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,

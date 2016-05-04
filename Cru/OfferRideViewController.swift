@@ -265,34 +265,20 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         chooseEventSelected(sender)
     }
     @IBAction func chooseTime(sender: UIButton) {
-        let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: self.view.superview)//sender.superview!.superview)
-        
-        datePicker.minuteInterval = 15
-        datePicker.showActionSheetPicker()
+        TimePicker.pickTime(self)
     }
     
     @IBAction func chooseDate(sender: AnyObject) {
-        let datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.Date, selectedDate: NSDate(), doneBlock: {
-            picker, value, index in
-            
-            if let val = value as? NSDate{
-                let calendar = NSCalendar.currentCalendar()
-                let components = calendar.components([.Day,.Month,.Year], fromDate: val)
-
-                let month = String(components.month)
-                let day = String(components.day)
-                let year = String(components.year)
-
-                self.pickupDate.text = month + "/" + day + "/" + year
-                self.formHasBeenEdited = true
-            }
-            
-            
-            return
-            }, cancelBlock: { ActionStringCancelBlock in return }, origin: self.view)
-
+        TimePicker.pickDate(self, handler: chooseDateHandler)
+    }
+    
+    func chooseDateHandler(month : Int, day : Int, year : Int){
+        let month = String(month)
+        let day = String(day)
+        let year = String(year)
         
-        datePicker.showActionSheetPicker()
+        self.pickupDate.text = month + "/" + day + "/" + year
+        self.formHasBeenEdited = true
     }
 
 
