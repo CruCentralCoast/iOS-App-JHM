@@ -41,6 +41,14 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         departureLoc.text = nil
         departureLoc.text = ride.getCompleteAddress()
         passengerTable.backgroundColor = UIColor.clearColor()
+        
+        var editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "goToEditPage")
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    
+    func goToEditPage(){
+        self.performSegueWithIdentifier("editSegue", sender: self)
     }
     
     func insertPassenger(newPassenger: NSDictionary){

@@ -248,11 +248,31 @@
                         <outlet property="passengerTable" destination="7jG-6g-fgH" id="V1E-us-elw"/>
                         <outlet property="passengerTableHeight" destination="lfV-Vy-eXP" id="iCG-Jm-EY7"/>
                         <outlet property="rideName" destination="Pxr-bU-jWp" id="K1N-67-sd3"/>
+                        <segue destination="02L-Gk-VaH" kind="show" identifier="editSegue" id="uQq-aw-CPk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XQ9-d5-7Nu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1679" y="588"/>
+        </scene>
+        <!--Edit Ride View Controller-->
+        <scene sceneID="PSG-ft-xFj">
+            <objects>
+                <viewController id="02L-Gk-VaH" customClass="EditRideViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P7r-GM-hbY"/>
+                        <viewControllerLayoutGuide type="bottom" id="NHX-du-mxl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="DS3-Sv-HpQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="buH-xs-rIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2372" y="588"/>
         </scene>
     </scenes>
     <resources>
