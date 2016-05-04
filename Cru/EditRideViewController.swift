@@ -10,9 +10,10 @@ import UIKit
 
 class EditRideViewController: UIViewController {
 
+    @IBOutlet weak var address: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        address.sizeToFit()
         // Do any additional setup after loading the view.
     }
 
