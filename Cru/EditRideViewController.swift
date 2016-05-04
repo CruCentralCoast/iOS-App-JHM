@@ -17,6 +17,7 @@ class EditRideViewController: UIViewController {
     @IBOutlet weak var driverNumber: UITextField!
     @IBOutlet weak var timeLabel: UILabel!
     
+    @IBOutlet weak var dateLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,7 +42,9 @@ class EditRideViewController: UIViewController {
         
         switch editChoice!{
             case "editTime":
-                print("editTime")
+                TimePicker.pickTime(self)
+            case "editDate":
+                TimePicker.pickDate(self, handler: chooseDateHandler)
             case "editAddress":
                 print("editAddress")
             case "editName":
@@ -50,6 +53,22 @@ class EditRideViewController: UIViewController {
                 driverNumber.becomeFirstResponder()
             default:
                 print("k")
+        }
+    }
+    
+    func chooseDateHandler(month : Int, day : Int, year : Int){
+        let month = String(month)
+        let day = String(day)
+        let year = String(year)
+        
+        self.dateLabel.text = month + "/" + day + "/" + year
+    }
+    
+    func datePicked(obj: NSDate){
+        if let val = obj as? NSDate{
+            let formatter = NSDateFormatter()
+            formatter.dateFormat = "h:mm a"
+            timeLabel.text = formatter.stringFromDate(val)
         }
     }
     
