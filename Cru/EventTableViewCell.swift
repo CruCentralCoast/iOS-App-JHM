@@ -10,10 +10,22 @@ import UIKit
 
 class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventTitleLabel: UILabel!
+    @IBOutlet weak var eventImage: UIImageView!
+    @IBOutlet weak var spaceToTopCard: NSLayoutConstraint!
     
     var event: Event! {
         didSet {
             eventTitleLabel.text = event.name
+            
+            if event.imageUrl == "" {
+                eventImage.hidden = true
+                spaceToTopCard.constant = 8
+            }
+            else {
+                eventImage.hidden = false
+                spaceToTopCard.constant = 158
+                eventImage.load(event.imageUrl)
+            }
         }
     }
 }

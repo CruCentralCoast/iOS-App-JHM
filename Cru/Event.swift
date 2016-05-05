@@ -80,7 +80,7 @@ class Event: Equatable {
         if let dImageSquare = dict["imageSquare"] {
             if let imageUrl = dImageSquare.objectForKey("url") {
                 self.imageSquareUrl = imageUrl as! String
-                print("SQUARE IMAGE: " + (imageUrl as! String))
+//                print("SQUARE IMAGE: " + (imageUrl as! String))
             }
         }
         if let dNotifications = dict["notifications"] {
@@ -104,6 +104,7 @@ class Event: Equatable {
         if let dImage = dict["image"] {
             if let imageUrl = dImage.objectForKey("url") {
                 self.imageUrl = imageUrl as! String
+//                print("eventName: " + self.name + ": " + self.imageUrl)
             }
         }
     }

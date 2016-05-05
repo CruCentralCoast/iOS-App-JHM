@@ -25,8 +25,6 @@
 		0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */; };
 		0F1B8C2D1CC99B1A00CEE24C /* MinistryTeamViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */; };
 		0F1B8C2F1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */; };
-		0F1B8C6E1CCFD7EF00CEE24C /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */; };
-		0F1B8C6F1CCFD7F300CEE24C /* CalendarServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */; };
 		0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10F0211CC03F7000F478ED /* RidesViewController.swift */; };
 		0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */; };
 		0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */; };
@@ -220,7 +218,6 @@
 		0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamDetailViewController.swift; sourceTree = "<group>"; };
-		0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarServices.swift; sourceTree = "<group>"; };
 		0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManagerTest.swift; sourceTree = "<group>"; };
 		0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTest.swift; sourceTree = "<group>"; };
 		0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
@@ -750,7 +747,6 @@
 				C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */,
 				0FF87DA31C8A268D00D56C4E /* GlobalUtils.swift */,
 				0F17E3D11C90F68300713297 /* CalendarManager.swift */,
-				0F1B8C6D1CCFD7EF00CEE24C /* CalendarServices.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -1111,7 +1107,6 @@
 				508B2BD71CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */,
 				C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
-				0F1B8C6E1CCFD7EF00CEE24C /* CalendarServices.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
 				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
@@ -1148,7 +1143,6 @@
 				5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */,
 				50D507871CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
 				5072B4201CB38E5F001F5BF6 /* JoinRideViewController.swift in Sources */,
-				0F1B8C6F1CCFD7F300CEE24C /* CalendarServices.swift in Sources */,
 				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
 				5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */,
