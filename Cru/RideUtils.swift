@@ -16,7 +16,7 @@ enum ResponseType{
 }
 
 class RideUtils {
-    
+
     var serverClient: ServerProtocol!
 
     convenience init() {
@@ -35,12 +35,11 @@ class RideUtils {
         
         serverClient.getData(DBCollection.Ride, insert: insert, completionHandler: afterFunc, params: params)
     }
-    
-    
+
     func getPassengerById(id: String, insert: (AnyObject)->(), afterFunc: (Bool)->Void){
         serverClient.getById(DBCollection.Passenger, insert: insert, completionHandler: afterFunc, id: id)
     }
-    
+
     func getMyRides(insert: (NSDictionary) -> (), afterFunc: (ResponseType)->Void) {
         //gets rides you are receiving
         
@@ -183,4 +182,23 @@ class RideUtils {
         }
     }
     
+    func patchRide(id: String, params: [String:AnyObject], handler: (Ride?)->Void) {
+        serverClient.patch(DBCollection.Ride, params: params, completionHandler: { dict in
+            if dict == nil {
+                handler(nil)
+            } else {
+                handler(Ride(dict: dict!))
+            }
+            }, id: id)
+    }
+    
+    func patchPassenger(id: String, params: [String:AnyObject], handler: (Passenger?)->Void) {
+        serverClient.patch(DBCollection.Passenger, params: params, completionHandler: { dict in
+            if dict == nil {
+                handler(nil)
+            } else {
+                handler(Passenger(dict: dict!))
+            }
+            }, id: id)
+    }
 }

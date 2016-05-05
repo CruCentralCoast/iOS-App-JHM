@@ -415,6 +415,7 @@
 		0F7CB3CE1C919DDF00C8444F /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */,
 				C1015CD71C942D7F005B559E /* GlobalUtilsTest.swift */,
 			);
 			name = Utils;
@@ -566,7 +567,6 @@
 		507086811C8F5F08006C5215 /* Ridesharing */ = {
 			isa = PBXGroup;
 			children = (
-				C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */,
 				507086821C8F5F9D006C5215 /* RideTest.swift */,
 				5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */,
 				50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */,

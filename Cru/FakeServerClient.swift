@@ -139,6 +139,15 @@ class FakeServerClient: ServerProtocol {
         exception.raise()
     }
     
+    func patch(collection: DBCollection, params: [String : AnyObject], completionHandler: (NSDictionary?) -> Void, id: String) {
+        let exception = NSException(
+            name: "Not implemented!",
+            reason: "Don't need it yet",
+            userInfo: nil
+        )
+        exception.raise()
+    }
+    
     private func getById(collection: DBCollection, id: String) -> [String:AnyObject]! {
         let col = getCollection(collection)
         

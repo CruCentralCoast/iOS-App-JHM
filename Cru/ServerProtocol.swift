@@ -27,6 +27,8 @@ protocol ServerProtocol {
     
     func deleteByIdIn(parent: DBCollection, parentId: String, child: DBCollection, childId: String, completionHandler: (Bool)->Void)
     
+    func patch(collection: DBCollection, params: [String:AnyObject], completionHandler: (NSDictionary?)->Void, id: String)
+    
     func sendHttpGetRequest(reqUrl : String, completionHandler : (AnyObject?) -> Void)
     
     func sendHttpPostRequest(reqUrl : String, params : [String : AnyObject], completionHandler : (AnyObject?) -> Void)

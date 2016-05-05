@@ -51,13 +51,12 @@ class RideUtilsTest: XCTestCase {
         //test drop
         readyExpectation = self.expectationWithDescription("drop a ride")
 
-
         rideUtils.leaveRideDriver(postedRide.id, handler: { success in
             XCTAssert(success)
             readyExpectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5) {error in
+        waitForExpectationsWithTimeout(2) {error in
             XCTAssertNil(error, "Error")
         }
     }
