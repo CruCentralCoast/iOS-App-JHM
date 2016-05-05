@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import MapKit
+import LocationPicker
 
 class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -32,7 +34,11 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     var seatsValue: UITextView!
     var nameValue: UITextView!
     var numberValue: UITextView!
-    
+    var location: Location! {
+        didSet {
+            addressValue.text? = location.address
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -101,7 +107,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             seatsValue = cell?.contentTextField
         }
         else if(cell?.contentType.text == addressLabel){
-            //something
+            addressValue = cell?.contentValue
         }
         else if(cell?.contentType.text == nameLabel){
             nameValue = cell?.contentTextField
@@ -127,7 +133,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             case departureDateLabel:
                 TimePicker.pickDate(self, handler: chooseDateHandler)
             case addressLabel:
-                print("editAddress")
+                choosePickupLocation(self)
             case nameLabel:
                 nameValue.becomeFirstResponder()
             case phoneLabel:
@@ -155,6 +161,21 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             timeValue.text = formatter.stringFromDate(val)
         }
     }
+    
+    func choosePickupLocation(sender: AnyObject) {
+        let locationPicker = LocationPickerViewController()
+        
+        if self.location != nil {
+            locationPicker.location = self.location
+        }
+        
+        locationPicker.completion = { location in
+            self.location = location
+        }
+        
+        navigationController?.pushViewController(locationPicker, animated: true)
+    }
+    
     
 
     @IBAction func savePressed(sender: AnyObject) {
