@@ -19,13 +19,29 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var selectorBar: UITabBar!
     
+    
+    var serverClient: ServerProtocol
     var resources = [Resource]()
     var cardViews = [CardView]()
+    
     
     var currentType = ResourceType.Article
     var articleViews = [CardView]()
     var audioViews = [CardView]()
     var videoViews = [CardView]()
+    
+    //Call this constructor in testing with a fake serverProtocol
+    init?(serverProtocol: ServerProtocol, aDecoder: NSCoder) {
+        //super.init(coder: NSCoder)
+        self.serverClient = serverProtocol
+        super.init(coder: aDecoder)
+        
+    }
+
+    required convenience init?(coder aDecoder: NSCoder) {
+        //fatalError("init(coder:) has not been implemented")
+        self.init(serverProtocol: CruClients.getServerClient(), aDecoder: aDecoder)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,9 +51,6 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        
-        
         selectorBar.selectedItem = selectorBar.items![0]
         self.tableView.delegate = self
         
@@ -46,8 +59,8 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
        
         //If the user is logged in, view special resources. Otherwise load non-restricted resources.
-        //ServerUtils.loadResources(.Resource, inserter: insertResource, useApiKey: true)jm,
-        CruClients.getServerClient().getData(DBCollection.Resource, insert: insertResource, completionHandler: {error in })
+        
+        serverClient.getData(DBCollection.Resource, insert: insertResource, completionHandler: {error in })
         
         tableView.backgroundColor = Colors.googleGray
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -145,6 +158,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         else if (resource.type == ResourceType.Audio) {
             
         }
+    }
+    
+    private func insertTool(resource: Resource, completionHandler: (NSError?) -> Void) {
+        
     }
     
     

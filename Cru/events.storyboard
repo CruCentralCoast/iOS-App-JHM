@@ -213,7 +213,7 @@
                                 <constraints>
                                     <constraint firstItem="u9Z-Ze-51u" firstAttribute="top" secondItem="xck-zL-c1n" secondAttribute="top" id="3ie-Jn-3Fk"/>
                                     <constraint firstItem="u9Z-Ze-51u" firstAttribute="leading" secondItem="xck-zL-c1n" secondAttribute="leading" id="6c6-QR-idG"/>
-                                    <constraint firstAttribute="bottom" secondItem="u9Z-Ze-51u" secondAttribute="bottom" constant="200" id="D8z-Xk-6ua"/>
+                                    <constraint firstAttribute="bottom" secondItem="u9Z-Ze-51u" secondAttribute="bottom" id="D8z-Xk-6ua"/>
                                     <constraint firstAttribute="trailing" secondItem="u9Z-Ze-51u" secondAttribute="trailing" id="Wgi-6g-52I"/>
                                 </constraints>
                             </scrollView>
@@ -222,7 +222,7 @@
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="xck-zL-c1n" firstAttribute="leading" secondItem="yUa-OG-x5d" secondAttribute="leadingMargin" constant="-20" id="0j2-vI-bxn"/>
-                            <constraint firstItem="u9Z-Ze-51u" firstAttribute="height" secondItem="yUa-OG-x5d" secondAttribute="height" priority="250" constant="-200" id="6PO-k5-MOB"/>
+                            <constraint firstItem="u9Z-Ze-51u" firstAttribute="height" secondItem="yUa-OG-x5d" secondAttribute="height" priority="250" id="6PO-k5-MOB"/>
                             <constraint firstItem="xck-zL-c1n" firstAttribute="top" secondItem="yUa-OG-x5d" secondAttribute="topMargin" id="AmI-xx-epA"/>
                             <constraint firstItem="y2c-A1-M5Z" firstAttribute="top" secondItem="xck-zL-c1n" secondAttribute="bottom" id="fzP-WP-Opz"/>
                             <constraint firstItem="u9Z-Ze-51u" firstAttribute="width" secondItem="yUa-OG-x5d" secondAttribute="width" id="lRo-2k-YNA"/>

@@ -41,6 +41,14 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         departureLoc.text = nil
         departureLoc.text = ride.getCompleteAddress()
         passengerTable.backgroundColor = UIColor.clearColor()
+        
+        var editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "goToEditPage")
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    
+    func goToEditPage(){
+        self.performSegueWithIdentifier("editSegue", sender: self)
     }
     
     func insertPassenger(newPassenger: NSDictionary){
@@ -159,6 +167,18 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
             Cancler.showCancelFailure(self)
         }
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+    }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editSegue"{
+            if let destVC = segue.destinationViewController as? EditRideViewController{
+                print("this hapepned")
+                destVC.ride = ride
+                destVC.event = event
+            }
+            
+        }
     }
     
 }
