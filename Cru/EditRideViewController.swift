@@ -8,9 +8,10 @@
 
 import UIKit
 
-class EditRideViewController: UIViewController {
+class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var event : Event!
     var ride : Ride!
+    var options = [EditableItem]()
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var driverName: UITextField!
@@ -25,19 +26,63 @@ class EditRideViewController: UIViewController {
         //address.sizeToFit()
         
         populateLabels()
+        
+        options.append(EditableItem(itemName: "Event:", itemValue: event.name, itemEditable: false, itemIsText: false))
+        options.append(EditableItem(itemName: "Departure Time:", itemValue: ride.time, itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: "Departure Date:", itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: "Departure Address:", itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: "Number of Seats:", itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
+        options.append(EditableItem(itemName: "Name:", itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
+        options.append(EditableItem(itemName: "Phone Number:", itemValue: String(ride.driverNumber), itemEditable: true, itemIsText: true))
+        
+        //print("number is \(ride.driverNumber)")
+        
     }
+    
     
     
     func populateLabels(){
-        eventName.text = event!.name
-        address.text = ride!.getCompleteAddress()
-        driverName.text = ride!.driverName
-        driverNumber.text = ride!.driverNumber
-        timeLabel.text = ride!.time
+        //eventName.text = event!.name
+        //address.text = ride!.getCompleteAddress()
+        //driverName.text = ride!.driverName
+        //driverNumber.text = ride!.driverNumber
+        //timeLabel.text = ride!.time
     }
 
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return options.count
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as? EditCell
+        let option = options[indexPath.row]
+        
+        cell?.contentType.text = option.itemName
+        cell?.contentValue.text = option.itemValue
+        
+        if option.itemIsText! {
+            cell?.contentValue.hidden = true
+            cell?.contentTextField.hidden = false
+            cell?.contentTextField.text = option.itemValue
+        }
+        else{
+            cell?.contentTextField.hidden = true
+            cell?.contentValue.hidden = false
+        }
+        
+        
+        cell?.editButton.hidden = !(option.itemEditable)
+        
+    
+        return cell!
+    }
 
     @IBAction func editPressed(sender: UIButton) {
+        /*
         var editChoice = sender.titleLabel!.text
         
         switch editChoice!{
@@ -54,6 +99,7 @@ class EditRideViewController: UIViewController {
             default:
                 print("k")
         }
+        */
     }
     
     func chooseDateHandler(month : Int, day : Int, year : Int){
