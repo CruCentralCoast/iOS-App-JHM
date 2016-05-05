@@ -174,6 +174,7 @@
 		C1D99C821CD4011B00128CA9 /* RideUtilsTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */; };
 		C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
+		C1EF49041CDBE08C009439FE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506EBF911CD9D3AB002E6F6A /* TimePicker.swift */; };
 		CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103605C6F44AE29021FA1E17 /* Pods_Cru.framework */; };
 		E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
 		E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB002C1C8F7E04000F7E12 /* SummerMission.swift */; };
@@ -1129,6 +1130,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1EF49041CDBE08C009439FE /* TimePicker.swift in Sources */,
 				C12562551CD3E77B002B05D0 /* SWRevealViewController.h in Sources */,
 				C12562561CD3E77B002B05D0 /* Cru-Bridging-Header.h in Sources */,
 				C12562571CD3E77B002B05D0 /* CruTests-Bridging-Header.h in Sources */,
