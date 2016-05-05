@@ -348,6 +348,9 @@
                                                         <constraint firstAttribute="height" constant="24" id="Y6f-Rb-zEa"/>
                                                     </constraints>
                                                     <state key="normal" title="Button" image="pencil"/>
+                                                    <connections>
+                                                        <action selector="editPressed:" destination="02L-Gk-VaH" eventType="touchUpInside" id="Pwr-5t-YhB"/>
+                                                    </connections>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Ma-5j-Nrh">
                                                     <rect key="frame" x="8" y="28" width="539" height="44"/>

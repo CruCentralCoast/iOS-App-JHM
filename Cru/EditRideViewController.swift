@@ -9,16 +9,31 @@
 import UIKit
 
 class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
+    let eventLabel = "Event:"
+    let departureDateLabel = "Departure Date:"
+    let departureTimeLabel = "Departure Time:"
+    let addressLabel = "Departure Address:"
+    let seatsLabel = "Number of Seats:"
+    let nameLabel = "Name:"
+    let phoneLabel = "Phone Number:"
+    
     var event : Event!
     var ride : Ride!
     var options = [EditableItem]()
+    
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var driverName: UITextField!
     @IBOutlet weak var driverNumber: UITextField!
-    @IBOutlet weak var timeLabel: UILabel!
+    var timeValue: UILabel!
+    var dateValue: UILabel!
+    var addressValue: UILabel!
+    var seatsValue: UITextView!
+    var nameValue: UITextView!
+    var numberValue: UITextView!
     
-    @IBOutlet weak var dateLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,13 +42,13 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         populateLabels()
         
-        options.append(EditableItem(itemName: "Event:", itemValue: event.name, itemEditable: false, itemIsText: false))
-        options.append(EditableItem(itemName: "Departure Time:", itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
-        options.append(EditableItem(itemName: "Departure Date:", itemValue: ride.getDate(), itemEditable: true, itemIsText: false))
-        options.append(EditableItem(itemName: "Departure Address:", itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
-        options.append(EditableItem(itemName: "Number of Seats:", itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
-        options.append(EditableItem(itemName: "Name:", itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
-        options.append(EditableItem(itemName: "Phone Number:", itemValue: String(ride.driverNumber), itemEditable: true, itemIsText: true))
+        options.append(EditableItem(itemName: eventLabel, itemValue: event.name, itemEditable: false, itemIsText: false))
+        options.append(EditableItem(itemName: departureTimeLabel, itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: departureDateLabel, itemValue: ride.getDate(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: seatsLabel, itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
+        options.append(EditableItem(itemName: nameLabel, itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
+        options.append(EditableItem(itemName: phoneLabel, itemValue: String(ride.driverNumber), itemEditable: true, itemIsText: true))
         
         //print("number is \(ride.driverNumber)")
         
@@ -63,6 +78,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         cell?.contentType.text = option.itemName
         cell?.contentValue.text = option.itemValue
+        cell?.editButton.setTitle(option.itemName, forState: .Normal)
         
         if option.itemIsText! {
             cell?.contentValue.hidden = true
@@ -74,6 +90,26 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             cell?.contentValue.hidden = false
         }
         
+        if(cell?.contentType.text == departureTimeLabel){
+            timeValue = cell?.contentValue
+        }
+        else if(cell?.contentType.text == departureDateLabel){
+            dateValue = cell?.contentValue
+        }
+        else if(cell?.contentType.text == seatsLabel){
+            cell?.contentTextField.keyboardType = .NumberPad
+            seatsValue = cell?.contentTextField
+        }
+        else if(cell?.contentType.text == addressLabel){
+            //something
+        }
+        else if(cell?.contentType.text == nameLabel){
+            nameValue = cell?.contentTextField
+        }
+        else if(cell?.contentType.text == phoneLabel){
+            cell?.contentTextField.keyboardType = .NumberPad
+            numberValue = cell?.contentTextField
+        }
         
         cell?.editButton.hidden = !(option.itemEditable)
         
@@ -82,24 +118,26 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     }
 
     @IBAction func editPressed(sender: UIButton) {
-        /*
-        var editChoice = sender.titleLabel!.text
+        let editChoice = sender.currentTitle
+        
         
         switch editChoice!{
-            case "editTime":
+            case departureTimeLabel:
                 TimePicker.pickTime(self)
-            case "editDate":
+            case departureDateLabel:
                 TimePicker.pickDate(self, handler: chooseDateHandler)
-            case "editAddress":
+            case addressLabel:
                 print("editAddress")
-            case "editName":
-                driverName.becomeFirstResponder()
-            case "editNumber":
-                driverNumber.becomeFirstResponder()
+            case nameLabel:
+                nameValue.becomeFirstResponder()
+            case phoneLabel:
+                numberValue.becomeFirstResponder()
+            case seatsLabel:
+                seatsValue.becomeFirstResponder()
             default:
                 print("k")
         }
-        */
+        
     }
     
     func chooseDateHandler(month : Int, day : Int, year : Int){
@@ -107,14 +145,14 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         let day = String(day)
         let year = String(year)
         
-        self.dateLabel.text = month + "/" + day + "/" + year
+        self.dateValue.text = month + "/" + day + "/" + year
     }
     
     func datePicked(obj: NSDate){
         if let val = obj as? NSDate{
             let formatter = NSDateFormatter()
             formatter.dateFormat = "h:mm a"
-            timeLabel.text = formatter.stringFromDate(val)
+            timeValue.text = formatter.stringFromDate(val)
         }
     }
     
