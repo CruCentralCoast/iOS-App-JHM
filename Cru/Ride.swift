@@ -130,7 +130,12 @@ class Ride: Comparable, Equatable, TimeDetail {
     }
     
     func getTime()->String{
-        let dFormat = "h:mm a MMMM d, yyyy"
+        let dFormat = "h:mm a"
+        return GlobalUtils.stringFromDate(self.date!, format: dFormat)
+    }
+    
+    func getDate()->String{
+        let dFormat = "MMMM d, yyyy"
         return GlobalUtils.stringFromDate(self.date!, format: dFormat)
     }
         

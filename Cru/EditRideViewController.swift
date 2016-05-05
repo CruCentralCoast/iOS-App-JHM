@@ -28,8 +28,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         populateLabels()
         
         options.append(EditableItem(itemName: "Event:", itemValue: event.name, itemEditable: false, itemIsText: false))
-        options.append(EditableItem(itemName: "Departure Time:", itemValue: ride.time, itemEditable: true, itemIsText: false))
-        options.append(EditableItem(itemName: "Departure Date:", itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: "Departure Time:", itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: "Departure Date:", itemValue: ride.getDate(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: "Departure Address:", itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: "Number of Seats:", itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: "Name:", itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))

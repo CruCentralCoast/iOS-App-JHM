@@ -20,6 +20,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
     @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
     @IBOutlet weak var departureTime: UILabel!
+    @IBOutlet weak var departureDate: UILabel!
     @IBOutlet weak var departureLoc: UITextView!
     @IBOutlet weak var rideName: UILabel!
     @IBOutlet weak var passengerTable: UITableView!
@@ -35,7 +36,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         CruClients.getRideUtils().getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {success in
             //TODO: should be handling failure here
         })
-        departureTime.text = ride.time
+        departureTime.text = ride.getTime()
+        departureDate.text = ride.getDate()
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
         departureLoc.text = nil
