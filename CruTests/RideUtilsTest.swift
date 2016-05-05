@@ -51,13 +51,40 @@ class RideUtilsTest: XCTestCase {
         //test drop
         readyExpectation = self.expectationWithDescription("drop a ride")
 
-
         rideUtils.leaveRideDriver(postedRide.id, handler: { success in
             XCTAssert(success)
             readyExpectation.fulfill()
         })
         
-        waitForExpectationsWithTimeout(5) {error in
+        waitForExpectationsWithTimeout(2) {error in
+            XCTAssertNil(error, "Error")
+        }
+    }
+    
+    func testPatch() {
+        var readyExpectation = self.expectationWithDescription("post a ride")
+        var id: String!
+        
+        rideUtils.postRideOffer("test-event-id", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ result in
+            XCTAssert(result != nil)
+            id = result?.id
+            readyExpectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(2) {error in
+            XCTAssertNil(error, "Error")
+        }
+        
+        
+        readyExpectation = self.expectationWithDescription("patch a ride")
+        
+        rideUtils.patchRide(id, params: ["seats": 17], handler :{ result in
+            XCTAssert(result != nil)
+            XCTAssert(result?.seats == 17)
+            readyExpectation.fulfill()
+        })
+        
+        waitForExpectationsWithTimeout(2) {error in
             XCTAssertNil(error, "Error")
         }
     }
