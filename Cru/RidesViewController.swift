@@ -48,7 +48,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
         
-        noRideImage = UIImage(named: "norides")!
+        noRideImage = UIImage(named: Config.noRidesImageName)!
         
         self.ridesTableView.emptyDataSetSource = self
         self.ridesTableView.emptyDataSetDelegate = self
@@ -112,10 +112,10 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         switch type{
             case .NoRides:
-                noRideImage = UIImage(named: "norides")!
+                noRideImage = UIImage(named: Config.noRidesImageName)!
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             case .NoConnection:
-                noRideImage = UIImage(named: "noserver")!
+                noRideImage = UIImage(named: Config.noConnectionImageName)!
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             default:
                 CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
