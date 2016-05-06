@@ -9,6 +9,8 @@
 import UIKit
 import MapKit
 import LocationPicker
+import SwiftValidator
+
 
 class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
@@ -39,6 +41,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             addressValue.text? = location.address
         }
     }
+    let validator = Validator()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -147,11 +150,20 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func chooseDateHandler(month : Int, day : Int, year : Int){
-        let month = String(month)
-        let day = String(day)
-        let year = String(year)
+        let curDate = ride.date
         
-        self.dateValue.text = month + "/" + day + "/" + year
+        
+        let dateStr = ""
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "MM d yyyy"
+        
+        //if date formatter returns nil return the current date/time
+        if let date = dateFormatter.dateFromString(String(month) + " " + String(day) + " " + String(year)) {
+            ride.date = date
+            self.dateValue.text = ride.getDate()
+            ride.date = curDate
+        }
     }
     
     func datePicked(obj: NSDate){
@@ -179,6 +191,75 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     
 
     @IBAction func savePressed(sender: AnyObject) {
+        
+        
+        if(seatsValue != nil){
+            ride.seats = Int(seatsValue.text)!
+        }
+        
+        if(timeValue != nil){
+            ride.time = timeValue.text!
+        }
+        
+        
+        let timeVal = timeValue.text
+        let dateVal = dateValue.text
+        var timeDate: NSDate?
+        var dateDate: NSDate?
+        
+        
+        
+        let dateStr = ""
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "MMM d, yyyy"
+        
+        //if date formatter returns nil return the current date/time
+        if let date = dateFormatter.dateFromString(dateVal!) {
+            dateDate = date
+        }
+
+        
+        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
+        dateFormatter.dateFormat = "h:mm a"
+        
+        //if date formatter returns nil return the current date/time
+        if let date = dateFormatter.dateFromString(timeVal!) {
+            timeDate = date
+        }
+        
+        var components = GlobalUtils.dateComponentsFromDate(dateDate!)
+        ride.day = (components?.day)!
+        ride.monthNum = (components?.month)!
+        ride.year = (components?.year)!
+        
+        components = GlobalUtils.dateComponentsFromDate(timeDate!)
+        ride.hour = (components?.hour)!
+        ride.minute = (components?.minute)!
+        
+        
+        
+        if(location != nil){
+            var map = location.getLocationAsDict(location)
+            ride.postcode = map[LocationKeys.postcode] as! String
+            ride.state = map[LocationKeys.state] as! String
+            ride.suburb = map[LocationKeys.suburb] as! String
+            ride.street = map[LocationKeys.street1] as! String
+        }
+        
+        if (nameValue != nil){
+            ride.driverName = nameValue.text!
+        }
+        if (numberValue != nil){
+            ride.driverNumber = numberValue.text!
+        }
+        
+        var k = ride.getTimeInServerFormat()
+        
+        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.driverName: ride.driverName, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
+    }
+    
+    func handlePostResult(ride: Ride?){
         
     }
     /*

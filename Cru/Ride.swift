@@ -59,7 +59,7 @@ class Ride: Comparable, Equatable, TimeDetail {
     var country: String = ""
     var gender: Int = 0
     
-    
+
     init?(dict: NSDictionary){
 
         if (dict.objectForKey(LocationKeys.loc) != nil){
@@ -129,6 +129,44 @@ class Ride: Comparable, Equatable, TimeDetail {
 
     }
     
+    func getTimeInServerFormat()->String{
+        
+        var dayString = ""
+        var hourString = ""
+        var minuteString = ""
+        var monthString = ""
+        
+        if(monthNum < 10){
+            monthString = "0" + String(monthNum)
+        }
+        else{
+            monthString = String(monthNum)
+        }
+        
+        if(day < 10){
+            dayString = "0" + String(day)
+        }
+        else{
+            dayString = String(day)
+        }
+        
+        if(hour < 10){
+            hourString = "0"  + String(hour)
+        }
+        else{
+            hourString = String(hour)
+        }
+        
+        if(minute < 10){
+            minuteString = "0"  + String(minute)
+        }
+        else{
+            minuteString = String(minute)
+        }
+        
+        return String(year) + "-" + String(monthString) + "-" + String(dayString) + "T" + hourString + ":" + String(minuteString) + ":00.000Z"
+    }
+    
     func getCompleteAddress()->String{
         var address: String = ""
         
@@ -171,20 +209,26 @@ class Ride: Comparable, Equatable, TimeDetail {
     }
     
     func getRideAsDict()->[String:AnyObject]{
-        var map = [String:AnyObject]()
-        map[RideKeys.id] = self.id
+        var map: [String:AnyObject] = [RideKeys.id : self.id,
+            RideKeys.direction: self.direction, RideKeys.driverName: self.driverName,
+            RideKeys.driverNumber: self.driverNumber, RideKeys.radius: self.radius,
+            RideKeys.seats: self.seats, RideKeys.time: self.time,
+            RideKeys.location: self.getLocationAsDict(), RideKeys.passengers: self.passengers]
+        map.updateValue(self.direction, forKey: RideKeys.direction)
         map[RideKeys.direction] = self.direction
-        map[RideKeys.driverName] = self.driverName
-        map[RideKeys.driverNumber] = self.driverNumber
-        map[RideKeys.event] = self.eventId
-        map[RideKeys.gcm_id] = self.gcmId
-        map[RideKeys.gender] = self.gender
-        map[RideKeys.radius] = self.radius
-        map[RideKeys.seats] = self.seats
-        map[RideKeys.v] = 0
-        map[RideKeys.time] = self.time
-        map[RideKeys.location] = self.getLocationAsDict()
-        map[RideKeys.passengers] = self.passengers
+        //map[RideKeys.driverName] = self.driverName
+        //map[RideKeys.driverNumber] = self.driverNumber
+        //map[RideKeys.radius] = self.radius
+        //map[RideKeys.seats] = self.seats
+        //map[RideKeys.time] = self.time
+        //map[RideKeys.location] = self.getLocationAsDict()
+        //map[RideKeys.passengers] = self.passengers
+        
+        //map[RideKeys.id] = self.id
+        //map[RideKeys.event] = self.eventId
+        //map[RideKeys.gcm_id] = self.gcmId
+        //map[RideKeys.gender] = self.gender
+        //map[RideKeys.v] = 0
 
         return map
     }
