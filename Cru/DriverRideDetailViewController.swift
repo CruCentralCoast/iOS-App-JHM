@@ -13,7 +13,19 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     
     //MARK: Properties
     var event: Event!
-    var ride: Ride!
+    var ride: Ride!{
+        didSet {
+            if(self.departureTime != nil){
+                self.departureTime.text = ride.getTime()
+            }
+            if(self.departureLoc != nil){
+                self.departureLoc.text = ride.getCompleteAddress()
+            }
+            if(self.departureDate != nil){
+                self.departureDate.text = ride.getDate()
+            }
+        }
+    }
     var passengers = [Passenger]()
     let cellHeight = CGFloat(60)
     var rideVC: RidesViewController?
@@ -178,6 +190,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
                 print("this hapepned")
                 destVC.ride = ride
                 destVC.event = event
+                destVC.ridesVC = self.rideVC
+                destVC.rideDetailVC = self
             }
             
         }

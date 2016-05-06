@@ -89,6 +89,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             yourNextViewController.ride = tappedRide
             yourNextViewController.event = tappedEvent
             yourNextViewController.rideVC = self
+            
         }
         
         if(segue.identifier == "driverdetailsegue") {

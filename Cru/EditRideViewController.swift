@@ -25,6 +25,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     var event : Event!
     var ride : Ride!
     var options = [EditableItem]()
+    var ridesVC: RidesViewController?
+    var rideDetailVC: DriverRideDetailViewController?
     
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var address: UILabel!
@@ -252,6 +254,9 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             let alert = UIAlertController(title: "Ride updated successfully", message: "", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
             self.presentViewController(alert, animated: true, completion: nil)
+            ridesVC!.refresh(self)
+            self.ride = ride
+            rideDetailVC?.ride = ride
         }
         else{
             let alert = UIAlertController(title: "Could not update ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)
