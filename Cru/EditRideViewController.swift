@@ -36,21 +36,22 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     var seatsValue: UITextView!
     var nameValue: UITextView!
     var numberValue: UITextView!
+    let validator = Validator()
+    var hasUserEdited = false
     var location: Location! {
         didSet {
             addressValue.text? = location.address
         }
     }
-    let validator = Validator()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //not sure of what the effect of sizeToFit is really...
-        //address.sizeToFit()
-        
-        populateLabels()
-        
+        populateOptions()
+    }
+    
+    
+    func populateOptions(){
         options.append(EditableItem(itemName: eventLabel, itemValue: event.name, itemEditable: false, itemIsText: false))
         options.append(EditableItem(itemName: departureTimeLabel, itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: departureDateLabel, itemValue: ride.getDate(), itemEditable: true, itemIsText: false))
@@ -58,19 +59,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         options.append(EditableItem(itemName: seatsLabel, itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: nameLabel, itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: phoneLabel, itemValue: String(ride.driverNumber), itemEditable: true, itemIsText: true))
-        
-        //print("number is \(ride.driverNumber)")
-        
-    }
-    
-    
-    
-    func populateLabels(){
-        //eventName.text = event!.name
-        //address.text = ride!.getCompleteAddress()
-        //driverName.text = ride!.driverName
-        //driverNumber.text = ride!.driverNumber
-        //timeLabel.text = ride!.time
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -128,9 +116,10 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBAction func editPressed(sender: UIButton) {
         let editChoice = sender.currentTitle
-        
+        hasUserEdited = true
         
         switch editChoice!{
+            
             case departureTimeLabel:
                 TimePicker.pickTime(self)
             case departureDateLabel:
@@ -191,7 +180,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     
 
     @IBAction func savePressed(sender: AnyObject) {
-        
         
         if(seatsValue != nil){
             ride.seats = Int(seatsValue.text)!
@@ -256,11 +244,20 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         var k = ride.getTimeInServerFormat()
         
-        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.driverName: ride.driverName, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
+        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.driverName: ride.driverName, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
     
     func handlePostResult(ride: Ride?){
-        
+        if(ride?.hour != -1){
+            let alert = UIAlertController(title: "Ride updated successfully", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
+        else{
+            let alert = UIAlertController(title: "Could not update ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(alert, animated: true, completion: nil)
+        }
     }
     /*
     // MARK: - Navigation

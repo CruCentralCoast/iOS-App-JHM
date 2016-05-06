@@ -13,7 +13,8 @@ class EditableItem {
     var itemValue:String!
     var itemEditable:Bool!
     var itemIsText:Bool!
-    
+    var desiredValue:AnyObject?
+    var wasChanged = false
     
     init(itemName: String, itemValue: String, itemEditable: Bool, itemIsText: Bool){
         self.itemName = itemName
@@ -21,4 +22,6 @@ class EditableItem {
         self.itemEditable = itemEditable
         self.itemIsText = itemIsText
     }
+    
+    
 }
