@@ -113,6 +113,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         switch type{
             case .NoRides:
                 noRideImage = UIImage(named: Config.noRidesImageName)!
+                CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             case .NoConnection:
                 noRideImage = UIImage(named: Config.noConnectionImageName)!
@@ -152,7 +153,6 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func finishInserting(success: Bool){
         self.ridesTableView.beginUpdates()
-        
         
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         
