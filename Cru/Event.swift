@@ -52,6 +52,7 @@ class Event: Equatable {
         self.startNSDate = NSDate()
         self.image = UIImage(named: "event1")
         self.imageUrl = ""
+        self.location = NSDictionary()
     }
     
     convenience init?(dict : NSDictionary) {

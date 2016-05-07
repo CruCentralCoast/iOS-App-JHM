@@ -27,8 +27,6 @@
 		0F1B8C2F1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */; };
 		0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10F0211CC03F7000F478ED /* RidesViewController.swift */; };
 		0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */; };
-		0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */; };
-		0F1B8C761CCFDCD500CEE24C /* CalendarTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */; };
 		0F5302721CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */; };
 		0F5302731CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */; };
 		0F5302751CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */; };
@@ -223,8 +221,6 @@
 		0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamDetailViewController.swift; sourceTree = "<group>"; };
-		0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarManagerTest.swift; sourceTree = "<group>"; };
-		0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTest.swift; sourceTree = "<group>"; };
 		0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		0F74A30F1C0BB9D300401377 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -388,8 +384,6 @@
 			isa = PBXGroup;
 			children = (
 				0F7CB3C31C919A8600C8444F /* EventTest.swift */,
-				0F1B8C731CCFDC9900CEE24C /* CalendarManagerTest.swift */,
-				0F1B8C751CCFDCD500CEE24C /* CalendarTest.swift */,
 			);
 			name = Events;
 			sourceTree = "<group>";
@@ -1170,7 +1164,6 @@
 				50AC22541CDB033D00427C08 /* EditableItem.swift in Sources */,
 				50AC22511CDB016800427C08 /* EditCell.swift in Sources */,
 				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
-				0F1B8C741CCFDC9900CEE24C /* CalendarManagerTest.swift in Sources */,
 				507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
 				C185BB3A1CD2904F00787153 /* FakeServerClient.swift in Sources */,
@@ -1196,7 +1189,6 @@
 				6DA330AB1CD95E1200FCC970 /* ResourceTest.swift in Sources */,
 				5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */,
 				C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */,
-				0F1B8C761CCFDCD500CEE24C /* CalendarTest.swift in Sources */,
 				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,
 				6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */,
