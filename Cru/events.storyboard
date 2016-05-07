@@ -354,7 +354,6 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="cardWidth" destination="PgR-Er-eUL" id="Uva-c5-ISm"/>
                                     <outlet property="eventImage" destination="aNi-WW-mcE" id="Kg9-vx-sYs"/>
                                     <outlet property="eventTitleLabel" destination="uE1-BH-g7w" id="6XP-gs-teA"/>
                                     <outlet property="spaceToTopCard" destination="kNn-qw-AsL" id="uN4-HW-dVx"/>
