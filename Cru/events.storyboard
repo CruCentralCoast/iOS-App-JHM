@@ -263,16 +263,16 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MXh-6C-3Mi">
-                                            <rect key="frame" x="160" y="8" width="280" height="284"/>
+                                            <rect key="frame" x="16" y="8" width="300" height="284"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uE1-BH-g7w">
-                                                    <rect key="frame" x="8" y="158" width="264" height="28"/>
+                                                    <rect key="frame" x="8" y="158" width="284" height="28"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="22"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event2" translatesAutoresizingMaskIntoConstraints="NO" id="aNi-WW-mcE">
-                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="150"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="300" height="150"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="1pz-00-9Dv"/>
                                                     </constraints>
@@ -311,7 +311,7 @@
                                                 <constraint firstItem="uE1-BH-g7w" firstAttribute="top" secondItem="MXh-6C-3Mi" secondAttribute="top" priority="250" constant="8" id="LOx-Vc-37N"/>
                                                 <constraint firstAttribute="trailing" secondItem="uE1-BH-g7w" secondAttribute="trailing" constant="8" id="MrK-RL-LeT"/>
                                                 <constraint firstItem="Brg-Ex-ZpJ" firstAttribute="leading" secondItem="MXh-6C-3Mi" secondAttribute="leading" constant="28" id="NhX-u0-zO9"/>
-                                                <constraint firstAttribute="width" constant="280" id="PgR-Er-eUL"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="PgR-Er-eUL"/>
                                                 <constraint firstItem="aNi-WW-mcE" firstAttribute="width" secondItem="MXh-6C-3Mi" secondAttribute="width" id="PqD-jR-Y0g"/>
                                                 <constraint firstItem="85u-aF-aSY" firstAttribute="leading" secondItem="MXh-6C-3Mi" secondAttribute="leading" constant="24" id="TRY-LZ-9cz"/>
                                                 <constraint firstItem="Brg-Ex-ZpJ" firstAttribute="top" secondItem="85u-aF-aSY" secondAttribute="bottom" constant="10" id="aEs-hc-san"/>
@@ -337,6 +337,8 @@
                                         </view>
                                     </subviews>
                                     <constraints>
+                                        <constraint firstItem="MXh-6C-3Mi" firstAttribute="leading" secondItem="o8d-KB-HUx" secondAttribute="leadingMargin" constant="8" id="2G0-xi-Ilv"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="MXh-6C-3Mi" secondAttribute="trailing" constant="8" id="Ba6-3d-9Qk"/>
                                         <constraint firstItem="MXh-6C-3Mi" firstAttribute="centerX" secondItem="o8d-KB-HUx" secondAttribute="centerX" id="G6L-xs-2c4"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="MXh-6C-3Mi" secondAttribute="trailing" constant="8" id="Hwk-LP-P7x"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="MXh-6C-3Mi" secondAttribute="bottom" id="kQJ-Ya-Ymm"/>
@@ -352,6 +354,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="cardWidth" destination="PgR-Er-eUL" id="Uva-c5-ISm"/>
                                     <outlet property="eventImage" destination="aNi-WW-mcE" id="Kg9-vx-sYs"/>
                                     <outlet property="eventTitleLabel" destination="uE1-BH-g7w" id="6XP-gs-teA"/>
                                     <outlet property="spaceToTopCard" destination="kNn-qw-AsL" id="uN4-HW-dVx"/>
