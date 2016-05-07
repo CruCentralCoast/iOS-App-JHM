@@ -146,7 +146,8 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             //let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
             //downloadImage(url!, imageView: cell.minstryImage) //UIImage(data: data!)
         
-            asyncLoadMinistryImage(ministry, imageView: cell.minstryImage)
+            cell.minstryImage.load(ministry.imageUrl)
+            //asyncLoadMinistryImage(ministry, imageView: cell.minstryImage)
         
             if(ministry.feedEnabled == true){
                 cell.accessoryType = .Checkmark
