@@ -65,16 +65,16 @@ class Ride: Comparable, Equatable, TimeDetail {
         if (dict.objectForKey(LocationKeys.loc) != nil){
             let loc = dict.objectForKey(LocationKeys.loc) as! NSDictionary
             
-            if (loc[LocationKeys.postcode] != nil){
+            if (loc[LocationKeys.postcode] != nil && !(loc[LocationKeys.postcode] is NSNull)){
                 postcode = loc[LocationKeys.postcode] as! String
             }
-            if (loc[LocationKeys.state] != nil){
+            if (loc[LocationKeys.state] != nil && !(loc[LocationKeys.state] is NSNull)){
                 state = loc[LocationKeys.state] as! String
             }
-            if (loc[LocationKeys.suburb] != nil){
+            if (loc[LocationKeys.suburb] != nil && !(loc[LocationKeys.suburb] is NSNull)){
                 suburb = loc[LocationKeys.suburb] as! String
             }
-            if (loc[LocationKeys.street1] != nil){
+            if (loc[LocationKeys.street1] != nil && !(loc[LocationKeys.street1] is NSNull)){
                 street = loc[LocationKeys.street1] as! String
             }
             if loc[LocationKeys.country] != nil {
