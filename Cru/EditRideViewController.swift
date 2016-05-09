@@ -12,7 +12,7 @@ import LocationPicker
 import SwiftValidator
 
 
-class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
+class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate, UITextViewDelegate {
     
     let eventLabel = "Event:"
     let departureDateLabel = "Departure Date:"
@@ -68,7 +68,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         options.append(EditableItem(itemName: directionLabel, itemValue: ride.getDirection(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: seatsLabel, itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: nameLabel, itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
-        options.append(EditableItem(itemName: phoneLabel, itemValue: String(ride.driverNumber), itemEditable: true, itemIsText: true))
+        options.append(EditableItem(itemName: phoneLabel, itemValue: "", itemEditable: true, itemIsText: true))
         
     }
 
@@ -117,6 +117,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         else if(cell?.contentType.text == phoneLabel){
             cell?.contentTextField.keyboardType = .NumberPad
             numberValue = cell?.contentTextField
+            numberValue.delegate = self
+            numberValue.text = unparsePhoneNumber(ride.driverNumber)
         }
         else if(cell?.contentType.text == directionLabel){
             directionValue = cell?.contentValue
@@ -264,7 +266,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             ride.driverName = nameValue.text!
         }
         if (numberValue != nil){
-            ride.driverNumber = numberValue.text!
+            let parsedNum = parsePhoneNumber(numberValue.text!)
+            ride.driverNumber = parsedNum
         }
         
         var serverVal = ""
@@ -336,6 +339,89 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             controller!.permittedArrowDirections = .Any
         }
     }
-
+    
+    
+    
+    
+    
+    func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+        if numberValue != nil {
+            if textView == numberValue {
+                let newString = (textView.text! as NSString).stringByReplacingCharactersInRange(range, withString: text)
+                let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+                
+                let decimalString = components.joinWithSeparator("") as NSString
+                let length = decimalString.length
+                let hasLeadingOne = length > 0 && decimalString.characterAtIndex(0) == (1 as unichar)
+                
+                if length == 0 || (length > 10 && !hasLeadingOne) || length > 11 {
+                    let newLength = (textView.text! as NSString).length + (text as NSString).length - range.length as Int
+                    return (newLength > 10) ? false : true
+                }
+                var index = 0 as Int
+                let formattedString = NSMutableString()
+                
+                if hasLeadingOne {
+                    formattedString.appendString("1 ")
+                    index += 1
+                }
+                if (length - index) > 3 {
+                    let areaCode = decimalString.substringWithRange(NSMakeRange(index, 3))
+                    formattedString.appendFormat("(%@) ", areaCode)
+                    index += 3
+                }
+                if length - index > 3 {
+                    let prefix = decimalString.substringWithRange(NSMakeRange(index, 3))
+                    formattedString.appendFormat("%@-", prefix)
+                    index += 3
+                }
+                
+                let remainder = decimalString.substringFromIndex(index)
+                formattedString.appendString(remainder)
+                textView.text = formattedString as String
+                return false
+            }
+            else {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
+    
+    func parsePhoneNumber(phoneNum : String) -> String {
+        // split by '-'
+        let full = phoneNum.componentsSeparatedByString("-")
+        let left = full[0]
+        let right = full[1]
+        
+        // get area code from ()
+        var index1 = left.startIndex.advancedBy(1)
+        let delFirstParen = left.substringFromIndex(index1)
+        let index2 = delFirstParen.startIndex.advancedBy(3)
+        let areaCode = delFirstParen.substringToIndex(index2)
+        
+        // get first three digits
+        index1 = left.startIndex.advancedBy(6)
+        let threeDigits = left.substringFromIndex(index1)
+        
+        // get last four digits
+        // = right
+        
+        let finalPhoneNum = areaCode + threeDigits + right
+        //return Int(finalPhoneNum)!
+        return finalPhoneNum
+        
+    }
+    
+    func unparsePhoneNumber(phoneNum: String) -> String{
+        let str : NSMutableString = NSMutableString(string: phoneNum)
+        str.insertString("(", atIndex: 0)
+        str.insertString(")", atIndex: 4)
+        str.insertString(" ", atIndex: 5)
+        str.insertString("-", atIndex: 9)
+        return str as String
+    }
 
 }
