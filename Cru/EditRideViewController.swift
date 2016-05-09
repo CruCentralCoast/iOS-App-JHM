@@ -246,15 +246,23 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             timeDate = date
         }
         
-        var components = GlobalUtils.dateComponentsFromDate(dateDate!)
-        ride.day = (components?.day)!
-        ride.monthNum = (components?.month)!
-        ride.year = (components?.year)!
+        if (dateDate != nil){
+            if let components = GlobalUtils.dateComponentsFromDate(dateDate!){
+                ride.day = (components.day)
+                ride.monthNum = (components.month)
+                ride.year = (components.year)
+            }
+        }
         
-        components = GlobalUtils.dateComponentsFromDate(timeDate!)
-        ride.hour = (components?.hour)!
-        ride.minute = (components?.minute)!
+        if (timeDate != nil){
+            if let components = GlobalUtils.dateComponentsFromDate(timeDate!){
+                ride.hour = (components.hour)
+                ride.minute = (components.minute)
+            }
+        }
         
+        
+
         
         
         if(location != nil){
@@ -283,17 +291,20 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             ride.driverNumber = parsedNum
         }
         
-        var serverVal = ""
-        switch (directionValue.text){
-        case Directions.from?:
-            serverVal = "from"
-        case Directions.to?:
-            serverVal = "to"
-        case Directions.both?:
-            serverVal = "both"
-        default:
-            serverVal = ""
+        var serverVal = ride.direction
+        if(directionValue != nil){
+            switch (directionValue.text){
+            case Directions.from?:
+                serverVal = "from"
+            case Directions.to?:
+                serverVal = "to"
+            case Directions.both?:
+                serverVal = "both"
+            default:
+                serverVal = ""
+            }
         }
+        
         
         let index1 = pickupRadius.text?.startIndex.advancedBy(2)
         let numMiles = pickupRadius.text?.substringToIndex(index1!)
