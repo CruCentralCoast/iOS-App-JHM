@@ -109,6 +109,8 @@
 		5072B4371CB39022001F5BF6 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		5072B4381CB39022001F5BF6 /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06C91C5F080200DAD10E /* ridesharing.storyboard */; };
 		5072B4391CB39022001F5BF6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F8CEF241BEC0E13008FC70D /* Main.storyboard */; };
+		507B368A1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B36891CE10BDC003D6CF9 /* UpcomingItemCell.swift */; };
+		507B368B1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507B36891CE10BDC003D6CF9 /* UpcomingItemCell.swift */; };
 		508B2BD71CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B2BD61CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift */; };
 		508B2BD81CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 508B2BD61CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift */; };
 		5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
@@ -289,6 +291,7 @@
 		507252E31CC07E8200DD4EFF /* EventsModalTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsModalTableViewController.swift; sourceTree = "<group>"; };
 		5072B4161CB38616001F5BF6 /* TimeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeDetail.swift; sourceTree = "<group>"; };
 		5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestDriverRideDetail.swift; sourceTree = "<group>"; };
+		507B36891CE10BDC003D6CF9 /* UpcomingItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingItemCell.swift; sourceTree = "<group>"; };
 		50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockTimeDetail.swift; sourceTree = "<group>"; };
 		508B2BD61CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VarietyItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverRideDetailViewController.swift; sourceTree = "<group>"; };
@@ -635,6 +638,7 @@
 			children = (
 				0F8CEF221BEC0E13008FC70D /* MainViewController.swift */,
 				0F8CEF241BEC0E13008FC70D /* Main.storyboard */,
+				507B36891CE10BDC003D6CF9 /* UpcomingItemCell.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1075,6 +1079,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				507B368A1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,
 				0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */,
 				0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */,
 				0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */,
@@ -1190,6 +1195,7 @@
 				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				505722A51CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
+				507B368B1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				50AC22541CDB033D00427C08 /* EditableItem.swift in Sources */,
 				50AC22511CDB016800427C08 /* EditCell.swift in Sources */,

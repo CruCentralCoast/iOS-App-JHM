@@ -153,7 +153,16 @@ class Ride: Comparable, Equatable, TimeDetail {
         else{
             return String(radius) + " miles"
         }
-        
+    }
+    
+    
+    func getDescription(eventName: String)->String{
+        if (self.gcmId == Config.gcmId()){
+            return "Driving to " + eventName + " at " + self.getTime()
+         }
+        else{
+            return "Geting a ride to " + eventName + " with " + self.driverName + " at " + self.getTime()
+        }
     }
     
     func getTimeInServerFormat()->String{
