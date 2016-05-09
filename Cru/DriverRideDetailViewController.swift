@@ -214,7 +214,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         }
         else if(segue.identifier == "passengerSegue"){
             let popoverVC = segue.destinationViewController
-            popoverVC.preferredContentSize = CGSize(width: self.view.frame.width * 0.8, height: self.view.frame.height * 0.7)
+            popoverVC.preferredContentSize = CGSize(width: self.view.frame.width * 0.8, height: self.view.frame.height * 0.77)
             popoverVC.popoverPresentationController!.sourceRect = CGRectMake(CGRectGetMidX(self.view.bounds), (addressView?.frame.origin.y)! - 50.0,0,0)
 
             let controller = popoverVC.popoverPresentationController
