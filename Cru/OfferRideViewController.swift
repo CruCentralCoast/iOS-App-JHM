@@ -160,7 +160,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         }
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        CruClients.getRideUtils().postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
+        CruClients.getRideUtils().postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 1, direction: getDirection(), handler:  handleRequestResult)
         
         
     }
