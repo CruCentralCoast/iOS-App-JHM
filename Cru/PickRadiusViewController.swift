@@ -15,6 +15,7 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
     @IBOutlet weak var map: MKMapView!
     @IBOutlet weak var radiusSlider: UISlider!
     var numMiles = 1
+    var numMilesFloat: Float?
     var ride: Ride?
     var location: CLLocation?{
         didSet{
@@ -28,6 +29,7 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
     
     override func viewDidLoad() {
         numMiles = (ride?.radius)!
+        numMilesFloat = Float((ride?.radius)!)
         radiusSlider.value = Float(numMiles)
         if(numMiles == 1){
             radiusLabel.text = String(numMiles) + " mile"
@@ -50,6 +52,7 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
         
         if let slider = sender as? UISlider{
             numMiles = (Int(slider.value))
+            numMilesFloat = slider.value
             if(numMiles == 1){
                 radiusLabel.text = String(numMiles) + " mile"
             }
@@ -98,8 +101,8 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
     func mapView(mapView: MKMapView, rendererForOverlay overlay: MKOverlay) -> MKOverlayRenderer {
         
         let circleRenderer = MKCircleRenderer(overlay: overlay)
-        circleRenderer.fillColor = UIColor.blueColor().colorWithAlphaComponent(0.1)
-        circleRenderer.strokeColor = UIColor.blueColor()
+        circleRenderer.fillColor = CruColors.lightBlue.colorWithAlphaComponent(0.1)//UIColor.blueColor().colorWithAlphaComponent(0.1)
+        circleRenderer.strokeColor = CruColors.darkBlue//UIColor.blueColor()
         circleRenderer.lineWidth = 1
         return circleRenderer
     }
@@ -116,7 +119,7 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
         //1
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         //2
-        var circle = MKCircle(centerCoordinate: coordinates, radius: (Double(numMiles) * metersInMile))
+        let circle = MKCircle(centerCoordinate: coordinates, radius: (Double(numMilesFloat!) * metersInMile))
         //3
         //self.map.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 7, longitudeDelta: 7)), animated: true)
         //4
