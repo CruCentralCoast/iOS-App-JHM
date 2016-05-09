@@ -19,6 +19,8 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProSem.otf">
             <string>FreightSansProSemibold-Regular</string>
@@ -271,7 +273,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0u-5S-zJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2453" y="284"/>
+            <point key="canvasLocation" x="2426" y="-146"/>
         </scene>
         <!--Edit Ride View Controller-->
         <scene sceneID="PSG-ft-xFj">
@@ -401,11 +403,92 @@
                         <segue destination="sFi-3y-nFH" kind="popoverPresentation" identifier="direction" popoverAnchorView="f80-Ag-Nl7" id="2oZ-M8-fbJ">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
+                        <segue destination="He5-kL-mpg" kind="show" identifier="radius" id="boU-To-t6e"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buH-xs-rIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2420" y="1031"/>
+            <point key="canvasLocation" x="2426" y="588"/>
+        </scene>
+        <!--Pick Radius View Controller-->
+        <scene sceneID="3tE-nl-Buz">
+            <objects>
+                <viewController id="He5-kL-mpg" customClass="PickRadiusViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="yE5-u9-5U6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Oyp-gS-sbl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XoX-6Q-apV">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CH0-36-3DU">
+                                <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.20000000000000001" alpha="0.67720905170000001" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="mfg-XW-B78"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
+                                <state key="normal" title="Ok">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="okPressed:" destination="He5-kL-mpg" eventType="touchUpInside" id="XTq-gj-duu"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="1" maxValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="EO7-iL-3pM">
+                                <rect key="frame" x="18" y="490" width="564" height="31"/>
+                                <animations/>
+                                <connections>
+                                    <action selector="radiusValChanged:" destination="He5-kL-mpg" eventType="valueChanged" id="fFC-cO-56o"/>
+                                </connections>
+                            </slider>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="2Tt-Ji-zGc">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="419"/>
+                                <animations/>
+                                <connections>
+                                    <outlet property="delegate" destination="He5-kL-mpg" id="N06-6w-JhH"/>
+                                </connections>
+                            </mapView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Radius: 1 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GME-VA-emw">
+                                <rect key="frame" x="20" y="427" width="560" height="28"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="ZEM-rV-rAf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="CH0-36-3DU" firstAttribute="leading" secondItem="XoX-6Q-apV" secondAttribute="leadingMargin" constant="-20" id="0RP-0t-1v7"/>
+                            <constraint firstItem="GME-VA-emw" firstAttribute="leading" secondItem="EO7-iL-3pM" secondAttribute="leading" id="1KF-Do-Ogh"/>
+                            <constraint firstItem="GME-VA-emw" firstAttribute="centerX" secondItem="CH0-36-3DU" secondAttribute="centerX" id="1XN-EI-8Oc"/>
+                            <constraint firstItem="EO7-iL-3pM" firstAttribute="top" secondItem="GME-VA-emw" secondAttribute="bottom" constant="35" id="1q8-WB-pIa"/>
+                            <constraint firstItem="GME-VA-emw" firstAttribute="trailing" secondItem="EO7-iL-3pM" secondAttribute="trailing" id="9a3-zZ-tiB"/>
+                            <constraint firstItem="GME-VA-emw" firstAttribute="leading" secondItem="XoX-6Q-apV" secondAttribute="leadingMargin" id="Crk-Nh-ayP"/>
+                            <constraint firstItem="GME-VA-emw" firstAttribute="top" secondItem="2Tt-Ji-zGc" secondAttribute="bottom" constant="8" symbolic="YES" id="Eyu-MU-s5c"/>
+                            <constraint firstItem="2Tt-Ji-zGc" firstAttribute="trailing" secondItem="CH0-36-3DU" secondAttribute="trailing" id="F1u-xD-b0c"/>
+                            <constraint firstItem="2Tt-Ji-zGc" firstAttribute="leading" secondItem="CH0-36-3DU" secondAttribute="leading" id="PNt-9R-l8k"/>
+                            <constraint firstAttribute="bottom" secondItem="GME-VA-emw" secondAttribute="bottom" constant="145" id="aAm-FU-Bry"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="CH0-36-3DU" secondAttribute="trailing" constant="-20" id="etf-5d-nlO"/>
+                            <constraint firstItem="Oyp-gS-sbl" firstAttribute="top" secondItem="CH0-36-3DU" secondAttribute="bottom" id="nH3-Df-WlU"/>
+                            <constraint firstItem="2Tt-Ji-zGc" firstAttribute="top" secondItem="XoX-6Q-apV" secondAttribute="top" id="xmV-Wx-96V"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="map" destination="2Tt-Ji-zGc" id="FpJ-9K-bnl"/>
+                        <outlet property="radiusLabel" destination="GME-VA-emw" id="wz1-1E-bXf"/>
+                        <outlet property="radiusSlider" destination="EO7-iL-3pM" id="DcC-Zp-oTB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="929-uZ-KTP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3249" y="588"/>
         </scene>
         <!--DirectionTVC-->
         <scene sceneID="9P6-TT-ZZs">
@@ -438,7 +521,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdJ-f2-ORq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3205" y="1040"/>
+            <point key="canvasLocation" x="3149" y="4"/>
         </scene>
     </scenes>
     <resources>

@@ -40,6 +40,7 @@ struct Labels{
     static let departureDateLabel = "Departure Date:"
     static let departureTimeLabel = "Departure Time:"
     static let addressLabel = "Departure Address:"
+    static let pickupRadius = "Pickup Radius:"
     static let seatsLabel = "Seats Offered:"
     static let seatsLeftLabel = "Seats Available:"
     static let nameLabel = "Name:"
@@ -142,6 +143,17 @@ class Ride: Comparable, Equatable, TimeDetail {
             passengers = dict.objectForKey(RideKeys.passengers) as! [String]
         }
 
+    }
+    
+    
+    func getRadius()->String{
+        if (radius == 1 ){
+            return String(radius) + " mile"
+        }
+        else{
+            return String(radius) + " miles"
+        }
+        
     }
     
     func getTimeInServerFormat()->String{

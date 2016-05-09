@@ -71,6 +71,8 @@
 		503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
+		505722A41CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505722A31CE095A800F87BE4 /* PickRadiusViewController.swift */; };
+		505722A51CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505722A31CE095A800F87BE4 /* PickRadiusViewController.swift */; };
 		50697BBE1CE002C500776CC5 /* DirectionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50697BBD1CE002C500776CC5 /* DirectionTVC.swift */; };
 		50697BBF1CE002C500776CC5 /* DirectionTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50697BBD1CE002C500776CC5 /* DirectionTVC.swift */; };
 		50697BC11CE0303B00776CC5 /* DetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50697BC01CE0303B00776CC5 /* DetailCell.swift */; };
@@ -274,6 +276,7 @@
 		503A06CF1C5F08E200DAD10E /* findride.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = findride.storyboard; sourceTree = "<group>"; };
 		504742451C759823003F276E /* OfferedRideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OfferedRideTableViewCell.swift; sourceTree = "<group>"; };
 		504742491C75988E003F276E /* PassengerTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengerTableViewCell.swift; sourceTree = "<group>"; };
+		505722A31CE095A800F87BE4 /* PickRadiusViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PickRadiusViewController.swift; sourceTree = "<group>"; };
 		50697BBD1CE002C500776CC5 /* DirectionTVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectionTVC.swift; sourceTree = "<group>"; };
 		50697BC01CE0303B00776CC5 /* DetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailCell.swift; sourceTree = "<group>"; };
 		50697BC31CE03B5600776CC5 /* PassengersViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PassengersViewController.swift; sourceTree = "<group>"; };
@@ -605,6 +608,7 @@
 			isa = PBXGroup;
 			children = (
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
+				505722A31CE095A800F87BE4 /* PickRadiusViewController.swift */,
 				50697BC31CE03B5600776CC5 /* PassengersViewController.swift */,
 				50697BC01CE0303B00776CC5 /* DetailCell.swift */,
 				50697BBD1CE002C500776CC5 /* DirectionTVC.swift */,
@@ -1112,6 +1116,7 @@
 				507252E41CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
 				5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
 				C12940E91CCD833E004DACB1 /* ServerProtocol.swift in Sources */,
+				505722A41CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
 				E9CB00331C8F7E04000F7E12 /* SummerMissionController.swift in Sources */,
 				0FAEB9881C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
@@ -1184,6 +1189,7 @@
 				C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */,
 				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
+				505722A51CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				50AC22541CDB033D00427C08 /* EditableItem.swift in Sources */,
 				50AC22511CDB016800427C08 /* EditCell.swift in Sources */,

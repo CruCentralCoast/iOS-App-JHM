@@ -28,6 +28,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     var directionLabel: UILabel?
     var seatsOffered: UILabel?
     var seatsLeft: UILabel?
+    var radius: UILabel?
     var itemMap = [String: EditableItem]()
     @IBOutlet weak var detailsTable: UITableView!
     
@@ -64,9 +65,11 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         details.append(EditableItem(itemName: Labels.departureTimeLabel, itemValue: ride.getTime(), itemEditable: false, itemIsText: true))
         details.append(EditableItem(itemName: Labels.departureDateLabel, itemValue: ride.getDate(), itemEditable: false, itemIsText: true))
         details.append(EditableItem(itemName: Labels.addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.pickupRadius, itemValue: ride.getRadius(), itemEditable: false, itemIsText: true))
         details.append(EditableItem(itemName: Labels.directionLabel, itemValue: ride.getDirection(), itemEditable: false, itemIsText: true))
         details.append(EditableItem(itemName: Labels.seatsLabel, itemValue: String(ride.seats), itemEditable: false, itemIsText: true))
         details.append(EditableItem(itemName: Labels.seatsLeftLabel, itemValue: String(ride.seatsLeft()), itemEditable: false, itemIsText: true))
+        
     }
     
     func updateData(){
@@ -75,6 +78,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         addressView?.text = ride.getCompleteAddress()
         seatsOffered?.text = String(ride.seats)
         seatsLeft?.text = String(ride.seatsLeft())
+        radius?.text = ride.getRadius()
     }
     
     
@@ -143,6 +147,9 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             }
             else if(details[indexPath.row].itemName == Labels.directionLabel){
                 directionLabel = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.pickupRadius){
+                radius = cell.value
             }
             
             chosenCell = cell

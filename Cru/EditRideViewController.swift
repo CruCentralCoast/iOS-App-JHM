@@ -34,11 +34,12 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var driverName: UITextField!
     @IBOutlet weak var driverNumber: UITextField!
-    
+    var CLocation: CLLocation?
     var timeValue: UILabel!
     var dateValue: UILabel!
     var directionValue: UILabel!
     var addressValue: UILabel!
+    var pickupRadius: UITextView!
     var seatsValue: UITextView!
     var nameValue: UITextView!
     var numberValue: UITextView!
@@ -57,6 +58,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         super.viewDidLoad()
         self.navigationItem.title = "Edit Ride"
         populateOptions()
+        getRideLocation()
     }
     
     
@@ -65,10 +67,12 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         options.append(EditableItem(itemName: departureTimeLabel, itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: departureDateLabel, itemValue: ride.getDate(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: Labels.pickupRadius, itemValue: ride.getRadius(), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: directionLabel, itemValue: ride.getDirection(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: seatsLabel, itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: nameLabel, itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: phoneLabel, itemValue: "", itemEditable: true, itemIsText: true))
+        
         
     }
 
@@ -125,6 +129,9 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             directionCell = cell
             directionCellPath = indexPath
         }
+        else if(cell?.contentType.text == Labels.pickupRadius){
+            pickupRadius = cell?.contentTextField
+        }
         
         cell?.editButton.hidden = !(option.itemEditable)
         table = tableView
@@ -152,12 +159,17 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
                 seatsValue.becomeFirstResponder()
             case directionLabel:
                 self.performSegueWithIdentifier("direction", sender: self)
+            case Labels.pickupRadius:
+                self.performSegueWithIdentifier("radius", sender: self)
             default:
                 print("k")
         }
         
     }
 
+    func editRadius(){
+        
+    }
     
     func chooseDateHandler(month : Int, day : Int, year : Int){
         let curDate = ride.date
@@ -190,6 +202,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         locationPicker.completion = { location in
             self.location = location
+            self.CLocation = self.location.location
         }
         
         navigationController?.pushViewController(locationPicker, animated: true)
@@ -282,10 +295,15 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             serverVal = ""
         }
         
+        let index1 = pickupRadius.text?.startIndex.advancedBy(2)
+        let numMiles = pickupRadius.text?.substringToIndex(index1!)
+        let trimmedString = numMiles!.stringByTrimmingCharactersInSet(
+            NSCharacterSet.whitespaceAndNewlineCharacterSet()
+        )
+        let milesInt = Int(trimmedString)
         
-        
-        
-        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.driverName: ride.driverName, RideKeys.direction: serverVal, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
+    
+        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.radius: milesInt!, RideKeys.driverName: ride.driverName, RideKeys.direction: serverVal, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
     
     func handlePostResult(ride: Ride?){
@@ -343,10 +361,48 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             controller!.sourceRect = fromRect
             controller!.permittedArrowDirections = .Any
         }
+        else if(segue.identifier == "radius"){
+            let vc = segue.destinationViewController as! PickRadiusViewController
+            vc.ride = self.ride
+            vc.setRadius = setRadius
+            vc.numMiles = ride.radius
+            vc.location = CLocation
+            
+            
+        }
     }
     
     
+    func setRadius(radius: Int){
+        if(radius == 1){
+            pickupRadius.text = String(radius) + " mile"
+        }
+        else{
+            pickupRadius.text = String(radius) + " miles"
+        }
+        ride.radius = radius
+    }
     
+    
+    func getRideLocation(){
+        var initialLocation = CLLocation()
+        let request = MKLocalSearchRequest()
+        request.naturalLanguageQuery = ride!.getCompleteAddress()
+        
+        
+        let search = MKLocalSearch(request: request)
+        search.startWithCompletionHandler { (response, error) in
+            guard let response = response else {
+                return
+            }
+            
+            for item in response.mapItems {
+                initialLocation = item.placemark.location!
+  
+                self.CLocation = initialLocation
+            }
+        }
+    }
     
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
