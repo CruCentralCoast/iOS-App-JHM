@@ -14,8 +14,9 @@ class PassengerTableViewCell: UITableViewCell {
     
     //@IBOutlet weak var tripIndicator: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var phoneLabel: UILabel!
+    //@IBOutlet weak var phoneLabel: UILabel!
     
+    @IBOutlet weak var phoneLabel: UITextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

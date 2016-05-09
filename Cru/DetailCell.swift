@@ -12,4 +12,5 @@ class DetailCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var value: UILabel!
+    @IBOutlet weak var textViewValue: UITextView!
 }

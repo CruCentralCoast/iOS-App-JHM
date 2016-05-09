@@ -2,12 +2,12 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="iNM-Bt-tgs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
@@ -72,27 +72,42 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golf" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAx-Dn-Uwn">
-                                                    <rect key="frame" x="8" y="29" width="584" height="42"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Golf" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAx-Dn-Uwn">
+                                                    <rect key="frame" x="8" y="27" width="584" height="52"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Okm-ke-DMv">
+                                                    <rect key="frame" x="8" y="24" width="584" height="58"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="1" green="0.95586716270000005" blue="0.066846050919999997" alpha="0.0" colorSpace="calibratedRGB"/>
+                                                    <color key="tintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
                                                 <constraint firstItem="rNS-s0-b2t" firstAttribute="trailing" secondItem="RAx-Dn-Uwn" secondAttribute="trailing" id="1Sx-J3-Cb0"/>
-                                                <constraint firstItem="RAx-Dn-Uwn" firstAttribute="bottom" secondItem="yNu-Bj-LnT" secondAttribute="bottomMargin" id="9pE-rh-pV2"/>
+                                                <constraint firstItem="Okm-ke-DMv" firstAttribute="centerY" secondItem="RAx-Dn-Uwn" secondAttribute="centerY" id="9GZ-Rv-3Do"/>
+                                                <constraint firstItem="RAx-Dn-Uwn" firstAttribute="bottom" secondItem="yNu-Bj-LnT" secondAttribute="bottomMargin" constant="8" id="9pE-rh-pV2"/>
                                                 <constraint firstItem="rNS-s0-b2t" firstAttribute="leading" secondItem="yNu-Bj-LnT" secondAttribute="leadingMargin" id="GqB-aG-oFq"/>
+                                                <constraint firstItem="Okm-ke-DMv" firstAttribute="trailing" secondItem="RAx-Dn-Uwn" secondAttribute="trailing" id="Qf4-so-qJk"/>
                                                 <constraint firstItem="RAx-Dn-Uwn" firstAttribute="trailing" secondItem="yNu-Bj-LnT" secondAttribute="trailingMargin" id="W3q-cR-gKZ"/>
-                                                <constraint firstItem="RAx-Dn-Uwn" firstAttribute="top" secondItem="rNS-s0-b2t" secondAttribute="bottom" id="a61-Pw-Xmr"/>
+                                                <constraint firstItem="RAx-Dn-Uwn" firstAttribute="top" secondItem="rNS-s0-b2t" secondAttribute="bottom" constant="-2" id="a61-Pw-Xmr"/>
                                                 <constraint firstItem="RAx-Dn-Uwn" firstAttribute="leading" secondItem="rNS-s0-b2t" secondAttribute="leading" id="em8-Bk-ot2"/>
+                                                <constraint firstItem="Okm-ke-DMv" firstAttribute="leading" secondItem="RAx-Dn-Uwn" secondAttribute="leading" id="f1c-cv-lU7"/>
                                                 <constraint firstItem="rNS-s0-b2t" firstAttribute="top" secondItem="yNu-Bj-LnT" secondAttribute="topMargin" id="h4L-jZ-hFC"/>
+                                                <constraint firstItem="Okm-ke-DMv" firstAttribute="top" secondItem="rNS-s0-b2t" secondAttribute="bottom" constant="-5" id="y9N-og-yFA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
+                                            <outlet property="textViewValue" destination="Okm-ke-DMv" id="puC-jP-svC"/>
                                             <outlet property="title" destination="rNS-s0-b2t" id="zc0-Rb-a9i"/>
                                             <outlet property="value" destination="RAx-Dn-Uwn" id="ugD-3o-wuw"/>
                                         </connections>
@@ -106,7 +121,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3O-gN-C7K">
                                 <rect key="frame" x="0.0" y="510" width="600" height="45"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.88235294119999996" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.49019607843137253" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="45" id="MHs-LP-1UF"/>
                                 </constraints>
@@ -196,32 +211,33 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(310) 310 5454" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O5N-l9-TsT">
-                                                    <rect key="frame" x="459" y="11" width="133" height="21"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="(310) 410-4200" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DDq-fu-4HG">
+                                                    <rect key="frame" x="438" y="4" width="145" height="35"/>
                                                     <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="133" id="zPa-UW-4K4"/>
+                                                        <constraint firstAttribute="width" constant="145" id="wa3-f0-q00"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                                </textView>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="O5N-l9-TsT" firstAttribute="baseline" secondItem="ony-2T-u3r" secondAttribute="baseline" id="1zT-3M-2d0"/>
+                                                <constraint firstItem="DDq-fu-4HG" firstAttribute="leading" secondItem="ony-2T-u3r" secondAttribute="trailing" constant="8" symbolic="YES" id="4kc-KK-jmM"/>
+                                                <constraint firstItem="ony-2T-u3r" firstAttribute="centerY" secondItem="VSI-sY-mBn" secondAttribute="centerY" id="7l8-X3-E7a"/>
                                                 <constraint firstItem="ony-2T-u3r" firstAttribute="top" secondItem="VSI-sY-mBn" secondAttribute="topMargin" constant="3" id="9Nq-zK-I9l"/>
-                                                <constraint firstItem="O5N-l9-TsT" firstAttribute="firstBaseline" secondItem="ony-2T-u3r" secondAttribute="firstBaseline" id="LC1-Aw-7k2"/>
-                                                <constraint firstItem="O5N-l9-TsT" firstAttribute="centerY" secondItem="VSI-sY-mBn" secondAttribute="centerY" id="MfK-mk-gF5"/>
+                                                <constraint firstItem="DDq-fu-4HG" firstAttribute="centerY" secondItem="ony-2T-u3r" secondAttribute="centerY" id="Bvg-1M-sXH"/>
                                                 <constraint firstItem="ony-2T-u3r" firstAttribute="leading" secondItem="VSI-sY-mBn" secondAttribute="leadingMargin" constant="18" id="SJX-er-2BA"/>
-                                                <constraint firstItem="O5N-l9-TsT" firstAttribute="leading" secondItem="ony-2T-u3r" secondAttribute="trailing" constant="29" id="cia-EY-trL"/>
-                                                <constraint firstItem="O5N-l9-TsT" firstAttribute="trailing" secondItem="VSI-sY-mBn" secondAttribute="trailingMargin" id="rb2-QE-c1H"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DDq-fu-4HG" secondAttribute="trailing" constant="9" id="SeC-7Q-FkD"/>
+                                                <constraint firstItem="DDq-fu-4HG" firstAttribute="top" secondItem="VSI-sY-mBn" secondAttribute="topMargin" constant="-4" id="vQn-Hs-PvG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
                                             <outlet property="nameLabel" destination="ony-2T-u3r" id="gzP-RE-fTm"/>
-                                            <outlet property="phoneLabel" destination="O5N-l9-TsT" id="UCE-Fa-Sct"/>
+                                            <outlet property="phoneLabel" destination="DDq-fu-4HG" id="WMe-yd-WMy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -260,22 +276,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdV-Ja-GZb">
-                                <rect key="frame" x="0.0" y="559" width="600" height="41"/>
-                                <animations/>
-                                <color key="backgroundColor" red="0.0" green="0.40000000000000002" blue="0.20000000000000001" alpha="0.67720905170000001" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="0XK-54-p9G"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <state key="normal" title="Save"/>
-                                <connections>
-                                    <action selector="savePressed:" destination="02L-Gk-VaH" eventType="touchUpInside" id="B9R-kb-UiY"/>
-                                </connections>
-                            </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f80-Ag-Nl7">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="559"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -289,7 +291,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="6tG-LP-JZx">
                                                     <rect key="frame" x="8" y="28" width="539" height="39"/>
                                                     <animations/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -358,6 +360,20 @@
                                     <outlet property="delegate" destination="02L-Gk-VaH" id="oC0-Q5-Lv5"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wdV-Ja-GZb">
+                                <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.7803921568627451" alpha="0.68000000000000005" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="0XK-54-p9G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="savePressed:" destination="02L-Gk-VaH" eventType="touchUpInside" id="B9R-kb-UiY"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

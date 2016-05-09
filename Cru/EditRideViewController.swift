@@ -118,7 +118,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             cell?.contentTextField.keyboardType = .NumberPad
             numberValue = cell?.contentTextField
             numberValue.delegate = self
-            numberValue.text = unparsePhoneNumber(ride.driverNumber)
+            numberValue.text = PhoneFormatter.unparsePhoneNumber(ride.driverNumber)
         }
         else if(cell?.contentType.text == directionLabel){
             directionValue = cell?.contentValue
@@ -266,7 +266,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             ride.driverName = nameValue.text!
         }
         if (numberValue != nil){
-            let parsedNum = parsePhoneNumber(numberValue.text!)
+            let parsedNum = PhoneFormatter.parsePhoneNumber(numberValue.text!)
             ride.driverNumber = parsedNum
         }
         
@@ -390,38 +390,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     
-    func parsePhoneNumber(phoneNum : String) -> String {
-        // split by '-'
-        let full = phoneNum.componentsSeparatedByString("-")
-        let left = full[0]
-        let right = full[1]
-        
-        // get area code from ()
-        var index1 = left.startIndex.advancedBy(1)
-        let delFirstParen = left.substringFromIndex(index1)
-        let index2 = delFirstParen.startIndex.advancedBy(3)
-        let areaCode = delFirstParen.substringToIndex(index2)
-        
-        // get first three digits
-        index1 = left.startIndex.advancedBy(6)
-        let threeDigits = left.substringFromIndex(index1)
-        
-        // get last four digits
-        // = right
-        
-        let finalPhoneNum = areaCode + threeDigits + right
-        //return Int(finalPhoneNum)!
-        return finalPhoneNum
-        
-    }
     
-    func unparsePhoneNumber(phoneNum: String) -> String{
-        let str : NSMutableString = NSMutableString(string: phoneNum)
-        str.insertString("(", atIndex: 0)
-        str.insertString(")", atIndex: 4)
-        str.insertString(" ", atIndex: 5)
-        str.insertString("-", atIndex: 9)
-        return str as String
-    }
 
 }

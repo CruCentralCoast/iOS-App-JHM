@@ -19,7 +19,30 @@ class PassengersViewController: UIViewController, UITableViewDataSource, UITable
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell") as? PassengerTableViewCell
         cell?.nameLabel.text = passengers[indexPath.row].name
-        cell?.phoneLabel.text = passengers[indexPath.row].phone
+        cell?.phoneLabel.text = PhoneFormatter.unparsePhoneNumber(passengers[indexPath.row].phone)
+        
+        
+        var mod = indexPath.row % 4
+        var color: UIColor?
+        
+        
+        if(mod == 0) {
+            color = CruColors.darkBlue
+        }
+        else if(mod == 1) {
+            color = CruColors.lightBlue
+        }
+        else if(mod == 2) {
+            color = CruColors.yellow
+        }
+        else if(mod == 3) {
+            color = CruColors.orange
+        }
+        
+        cell?.nameLabel.textColor = color
+        cell?.phoneLabel.tintColor = color
+        
+        
         return cell!
     }
     @IBAction func okPressed(sender: AnyObject) {

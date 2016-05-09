@@ -22,7 +22,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     var passengers = [Passenger]()
     let cellHeight = CGFloat(60)
     var rideVC: RidesViewController?
-    @IBOutlet weak var passengerTable: UITableView!
+    var addressView: UITextView?
     @IBOutlet weak var detailsTable: UITableView!
     
     override func viewDidLoad() {
@@ -76,27 +76,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         
     }
     
-    func adjustPageConstraints(){
-        //we don't want to expand the table/view size unless there is more than 5 passengers
-        //because the table can already hold 5 when the page loads
-//        if(self.passengers.count > 5){
-//            let tvHeight = (CGFloat(self.passengers.count) * self.cellHeight)
-//            var heightExpansion  = CGFloat(0)
-//            
-//            if(tvHeight > self.passengerTableHeight.constant){
-//                heightExpansion = tvHeight - self.passengerTableHeight.constant
-//            }
-//            
-//            let newHeight = self.view.frame.size.height + heightExpansion
-//            let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
-//            
-//            //set view frame, tableheight, and content view height
-//            self.view.frame = newFrame
-//            self.passengerTableHeight.constant = tvHeight
-//            self.contentViewHeight.constant = newHeight
-//        }
-    }
-    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -109,10 +88,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
-        if (tableView.isEqual(passengerTable)){
-            return passengers.count
-        }
+  
         
         if (tableView.isEqual(detailsTable)){
             return details.count
@@ -126,48 +102,28 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         
         var chosenCell: UITableViewCell?
         
-        if(tableView.isEqual(passengerTable)){
-            let cellIdentifier = "passengerCell"
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PassengerTableViewCell
-            
-            cell.nameLabel!.text = passengers[indexPath.row].name
-            cell.phoneLabel!.text = passengers[indexPath.row].phone
-            
-            if(ride.direction == "to event") {
-                //cell.tripIndicator!.image = UIImage(named: "toEvent")
-            }
-            else if(ride.direction == "from event") {
-                //cell.tripIndicator!.image = UIImage(named: "fromEvent")
-            }
-            else {
-                //cell.tripIndicator!.image = UIImage(named: "roundTrip")
-            }
-            
-            
-            if(indexPath.row % 4 == 0) {
-                cell.nameLabel.textColor = CruColors.darkBlue
-                cell.phoneLabel.textColor = CruColors.darkBlue
-            }
-            else if(indexPath.row % 4 == 1) {
-                cell.nameLabel.textColor = CruColors.lightBlue
-                cell.phoneLabel.textColor = CruColors.lightBlue
-            }
-            else if(indexPath.row % 4 == 2) {
-                cell.nameLabel.textColor = CruColors.yellow
-                cell.phoneLabel.textColor = CruColors.yellow
-            }
-            else if(indexPath.row % 4 == 3) {
-                cell.nameLabel.textColor = CruColors.orange
-                cell.phoneLabel.textColor = CruColors.orange
-            }
-            chosenCell = cell
-        }
         
         if(tableView.isEqual(detailsTable)){
             let cellIdentifier = "detailCell"
             let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DetailCell
             cell.title.text = details[indexPath.row].itemName
             cell.value.text = details[indexPath.row].itemValue
+            
+            if (details[indexPath.row].itemName == "Departure Address:"){
+                //departureLabel = cell.value
+                
+                //cell.textViewValue.editable = false
+                cell.textViewValue.dataDetectorTypes = .Address
+                //cell.textViewValue.selectable = true
+                //cell.textViewValue.userInteractionEnabled = false
+                cell.textViewValue.text = details[indexPath.row].itemValue
+                
+                addressView = cell.textViewValue
+                cell.value.hidden = true
+            }else{
+                cell.textViewValue.hidden = true
+            }
+            
             //cell.contentValue.text = details[indexPath.row].itemValue
             //cell.contentTextField.text = details[indexPath.row].itemValue
             chosenCell = cell
@@ -179,12 +135,10 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if(tableView.isEqual(passengerTable)){
-            return CGFloat(50.0)
-        }
+
         
         if(tableView.isEqual(detailsTable)){
-            return CGFloat(60.0)
+            return CGFloat(80.0)
         }
         
         return CGFloat(44.0)
@@ -240,6 +194,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             
         }
         else if(segue.identifier == "passengerSegue"){
+            var text = addressView!.text
+            
             let popoverVC = segue.destinationViewController
             
             let controller = popoverVC.popoverPresentationController
