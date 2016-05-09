@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class RiderRideDetailViewController: UIViewController {
+class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     let roundTrip = "round-trip"
     let roundTripDirection = "both"
     let fromEvent = "from event"
@@ -17,60 +17,68 @@ class RiderRideDetailViewController: UIViewController {
     let driver = "driver"
     let rider = "rider"
     
+    var details = [EditableItem]()
     var event: Event!
     var ride: Ride?
     var rideVC: RidesViewController?
-    @IBOutlet weak var eventButton: UIButton!
-    @IBOutlet weak var direction: UILabel!
-    @IBOutlet weak var directionIcon: UIImageView!
-    @IBOutlet weak var driverName: UILabel!
-    @IBOutlet weak var date: UITextView!
-    @IBOutlet weak var driverNumber: UITextView!
-    @IBOutlet weak var pickupMap: MKMapView!
-    @IBOutlet weak var address: UITextView!
+
     
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return details.count
+    }
     
+    func populateDetails(){
+        details.append(EditableItem(itemName: Labels.driverName, itemValue: (ride?.driverName)!, itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.driverNumber, itemValue: (ride?.driverNumber)!, itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.addressLabel, itemValue: (ride?.getCompleteAddress())!, itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.departureDateLabel, itemValue: (ride?.getDate())!, itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.departureTimeLabel, itemValue: (ride?.getTime())!, itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.directionLabel, itemValue: (ride?.getDirection())!, itemEditable: false, itemIsText: true))
+    }
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! DetailCell
+        
+        if(details[indexPath.row].itemName == Labels.driverNumber){
+            cell.textViewValue.text = PhoneFormatter.unparsePhoneNumber(details[indexPath.row].itemValue)
+            cell.textViewValue.dataDetectorTypes = .PhoneNumber
+            cell.title.text = details[indexPath.row].itemName
+            cell.textViewValue.hidden = false
+            cell.value.hidden = true
+        }
+        else if(details[indexPath.row].itemName == Labels.addressLabel){
+            cell.textViewValue.text = details[indexPath.row].itemValue
+            cell.textViewValue.dataDetectorTypes = .Address
+            cell.title.text = details[indexPath.row].itemName
+            cell.textViewValue.hidden = false
+            cell.value.hidden = true
+        }
+        else{
+            cell.value.text = details[indexPath.row].itemValue
+            cell.title.text = details[indexPath.row].itemName
+            cell.textViewValue.hidden = true
+            cell.value.hidden = false
+        }
+        
+        
+        return cell
+    }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Ride Details"
-        
-        
-        setTime(ride!)
-        address.text = ride!.getCompleteAddress()
-        driverName.text = ride!.driverName
-        driverNumber.text = ride!.driverNumber
-        
-        //this is here because it depends on the ride being there
-        setupMap()
-        
-        
-        if(ride!.direction == roundTripDirection){
-            directionIcon.image = UIImage(named: "twoway")
-            direction.text = roundTrip
-        }
-        else if(ride!.direction == "from"){
-            directionIcon.image = UIImage(named: "oneway")
-            direction.text = fromEvent
-            
-            //mirrors arrow
-            directionIcon.transform = CGAffineTransformMakeScale(-1, 1)
-        }
-        else if (ride!.direction == "to"){
-            directionIcon.image = UIImage(named: "oneway")
-            direction.text = toEvent
-        }
-        
-        eventButton.setTitle(event!.name, forState: UIControlState.Normal)
-        
+        populateDetails()
+
     }
     
     func setTime(td : TimeDetail){
-        date.text = td.getTime()
+        //date.text = td.getTime()
     }
     
     @IBAction func eventLabelPressed(sender: AnyObject) {
         self.performSegueWithIdentifier("eventDetailSegue", sender: self)
-        print("go to event!")
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -87,10 +95,10 @@ class RiderRideDetailViewController: UIViewController {
         request.naturalLanguageQuery = ride!.getCompleteAddress()
         
         if(request.naturalLanguageQuery != nil){
-            request.naturalLanguageQuery = self.address.text
+            //request.naturalLanguageQuery = self.address.text
         }
         
-        request.region = pickupMap.region
+        //request.region = pickupMap.region
         
         let search = MKLocalSearch(request: request)
         search.startWithCompletionHandler { (response, error) in
@@ -103,11 +111,11 @@ class RiderRideDetailViewController: UIViewController {
                 initialLocation = item.placemark.location!
                 let dropPin = MKPointAnnotation()
                 dropPin.coordinate = initialLocation.coordinate
-                dropPin.title = self.address.text
+                //dropPin.title = self.address.text
                 
                 
                 self.centerMapOnLocation(initialLocation)
-                self.pickupMap.addAnnotation(dropPin)
+                //self.pickupMap.addAnnotation(dropPin)
             }
         }
     }
@@ -115,10 +123,10 @@ class RiderRideDetailViewController: UIViewController {
     
     
     func centerMapOnLocation(location: CLLocation) {
-        let regionRadius: CLLocationDistance = 1000
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
-            regionRadius * 2.0, regionRadius * 2.0)
-        pickupMap.setRegion(coordinateRegion, animated: true)
+        //let regionRadius: CLLocationDistance = 1000
+        //let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
+           // regionRadius * 2.0, regionRadius * 2.0)
+        //pickupMap.setRegion(coordinateRegion, animated: true)
     }
 
     override func didReceiveMemoryWarning() {

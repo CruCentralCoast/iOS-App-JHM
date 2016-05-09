@@ -45,6 +45,8 @@ struct Labels{
     static let nameLabel = "Name:"
     static let phoneLabel = "Phone Number:"
     static let directionLabel = "Direction:"
+    static let driverName = "Driver Name:"
+    static let driverNumber = "Driver Number:"
 }
 
 class Ride: Comparable, Equatable, TimeDetail {
