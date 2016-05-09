@@ -12,7 +12,7 @@ import LocationPicker
 import SwiftValidator
 
 
-class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
     
     let eventLabel = "Event:"
     let departureDateLabel = "Departure Date:"
@@ -21,25 +21,31 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     let seatsLabel = "Number of Seats:"
     let nameLabel = "Name:"
     let phoneLabel = "Phone Number:"
+    let directionLabel = "Direction:"
     
     var event : Event!
     var ride : Ride!
     var options = [EditableItem]()
     var ridesVC: RidesViewController?
     var rideDetailVC: DriverRideDetailViewController?
+    var table: UITableView?
     
     @IBOutlet weak var eventName: UILabel!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var driverName: UITextField!
     @IBOutlet weak var driverNumber: UITextField!
+    
     var timeValue: UILabel!
     var dateValue: UILabel!
+    var directionValue: UILabel!
     var addressValue: UILabel!
     var seatsValue: UITextView!
     var nameValue: UITextView!
     var numberValue: UITextView!
     let validator = Validator()
     var hasUserEdited = false
+    var directionCell: UITableViewCell?
+    var directionCellPath: NSIndexPath?
     var location: Location! {
         didSet {
             addressValue.text? = location.address
@@ -58,9 +64,11 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         options.append(EditableItem(itemName: departureTimeLabel, itemValue: ride.getTime(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: departureDateLabel, itemValue: ride.getDate(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
+        options.append(EditableItem(itemName: directionLabel, itemValue: ride.direction, itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: seatsLabel, itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: nameLabel, itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: phoneLabel, itemValue: String(ride.driverNumber), itemEditable: true, itemIsText: true))
+        
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -109,9 +117,14 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             cell?.contentTextField.keyboardType = .NumberPad
             numberValue = cell?.contentTextField
         }
+        else if(cell?.contentType.text == directionLabel){
+            directionValue = cell?.contentValue
+            directionCell = cell
+            directionCellPath = indexPath
+        }
         
         cell?.editButton.hidden = !(option.itemEditable)
-        
+        table = tableView
     
         return cell!
     }
@@ -134,17 +147,19 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
                 numberValue.becomeFirstResponder()
             case seatsLabel:
                 seatsValue.becomeFirstResponder()
+            case directionLabel:
+                self.performSegueWithIdentifier("direction", sender: self)
             default:
                 print("k")
         }
         
     }
+
     
     func chooseDateHandler(month : Int, day : Int, year : Int){
         let curDate = ride.date
         
         
-        let dateStr = ""
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "MM d yyyy"
@@ -158,11 +173,9 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func datePicked(obj: NSDate){
-        if let val = obj as? NSDate{
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "h:mm a"
-            timeValue.text = formatter.stringFromDate(val)
-        }
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "h:mm a"
+        timeValue.text = formatter.stringFromDate(obj)
     }
     
     func choosePickupLocation(sender: AnyObject) {
@@ -199,7 +212,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         
-        let dateStr = ""
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "MMM d, yyyy"
@@ -230,11 +242,21 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         
         if(location != nil){
-            var map = location.getLocationAsDict(location)
-            ride.postcode = map[LocationKeys.postcode] as! String
-            ride.state = map[LocationKeys.state] as! String
-            ride.suburb = map[LocationKeys.suburb] as! String
-            ride.street = map[LocationKeys.street1] as! String
+            let map = location.getLocationAsDict(location)
+            
+            if(map[LocationKeys.postcode] != nil){
+                ride.postcode = map[LocationKeys.postcode] as! String
+            }
+            if(map[LocationKeys.postcode] != nil){
+                ride.state = map[LocationKeys.state] as! String
+            }
+            if(map[LocationKeys.postcode] != nil){
+                ride.suburb = map[LocationKeys.suburb] as! String
+            }
+            if(map[LocationKeys.postcode] != nil){
+                ride.street = map[LocationKeys.street1] as! String
+            }
+
         }
         
         if (nameValue != nil){
@@ -244,12 +266,26 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             ride.driverNumber = numberValue.text!
         }
         
-        var k = ride.getTimeInServerFormat()
+        var serverVal = ""
+        switch (directionValue.text){
+        case Directions.from?:
+            serverVal = "from"
+        case Directions.to?:
+            serverVal = "to"
+        case Directions.both?:
+            serverVal = "both"
+        default:
+            serverVal = ""
+        }
         
-        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.driverName: ride.driverName, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
+        
+        
+        
+        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.driverName: ride.driverName, RideKeys.direction: serverVal, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
     
     func handlePostResult(ride: Ride?){
+        
         if(ride?.hour != -1){
             let alert = UIAlertController(title: "Ride updated successfully", message: "", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
@@ -264,14 +300,41 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             self.presentViewController(alert, animated: true, completion: nil)
         }
     }
-    /*
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
+    
+    func handleDirectionChoice(choice: String){
+        directionValue.text = choice
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if(segue.identifier == "direction"){
+            
+            //uipopover magic
+            let popoverVC = segue.destinationViewController
+            let controller = popoverVC.popoverPresentationController
+            popoverVC.preferredContentSize = CGSizeMake(self.view.frame.width - 30, 140)
+            
+            if(controller != nil){
+                controller?.delegate = self
+            }
+            
+            if let vc = popoverVC as? DirectionTVC{
+                vc.handler = handleDirectionChoice
+            }
+            let fromRect:CGRect = self.table!.rectForRowAtIndexPath(directionCellPath!)
+            controller!.sourceView = self.table
+            controller!.sourceRect = fromRect
+            controller!.permittedArrowDirections = .Any
+        }
     }
-    */
+
 
 }
