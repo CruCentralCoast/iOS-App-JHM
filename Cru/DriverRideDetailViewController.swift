@@ -9,52 +9,69 @@
 import UIKit
 import MRProgress
 
-class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
+class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
     
     //MARK: Properties
+    var details = [EditableItem]()
     var event: Event!
     var ride: Ride!{
         didSet {
-            if(self.departureTime != nil){
-                self.departureTime.text = ride.getTime()
-            }
-            if(self.departureLoc != nil){
-                self.departureLoc.text = ride.getCompleteAddress()
-            }
-            if(self.departureDate != nil){
-                self.departureDate.text = ride.getDate()
-            }
+//            if(self.departureTime != nil){
+//                self.departureTime.text = ride.getTime()
+//            }
+//            if(self.departureLoc != nil){
+//                self.departureLoc.text = ride.getCompleteAddress()
+//            }
+//            if(self.departureDate != nil){
+//                self.departureDate.text = ride.getDate()
+//            }
         }
     }
     var passengers = [Passenger]()
     let cellHeight = CGFloat(60)
     var rideVC: RidesViewController?
-    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
-    @IBOutlet weak var departureTime: UILabel!
-    @IBOutlet weak var departureDate: UILabel!
-    @IBOutlet weak var departureLoc: UITextView!
-    @IBOutlet weak var rideName: UILabel!
+//    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
+//    @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
+//    @IBOutlet weak var departureTime: UILabel!
+//    @IBOutlet weak var departureDate: UILabel!
+//    @IBOutlet weak var departureLoc: UITextView!
+//    @IBOutlet weak var rideName: UILabel!
     @IBOutlet weak var passengerTable: UITableView!
+    @IBOutlet weak var detailsTable: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.contentViewHeight.constant = CGFloat(600)
-        adjustPageConstraints()
-        self.passengerTable.delegate = self
-        passengerTable.scrollEnabled = false;
-        rideName.text = event!.name
+        
+        details.append(EditableItem(itemName: "Event:", itemValue: event!.name, itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: "Departure Time:", itemValue: ride.getTime(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: "Departure Date:", itemValue: ride.getDate(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: "Departure Address:", itemValue: ride.getCompleteAddress(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: "Direction:", itemValue: ride.getDirection(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: "Seats:", itemValue: String(ride.seats), itemEditable: false, itemIsText: true))
+        
+        
+        
+        //self.contentViewHeight.constant = CGFloat(600)
+        //adjustPageConstraints()
+        
+        //self.passengerTable.delegate = self
+        
+        //passengerTable.scrollEnabled = false;
+        //rideName.text = event!.name
         CruClients.getRideUtils().getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {success in
             //TODO: should be handling failure here
         })
-        departureTime.text = ride.getTime()
-        departureDate.text = ride.getDate()
+        //departureTime.text = ride.getTime()
+        //departureDate.text = ride.getDate()
+        
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
         //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
-        departureLoc.text = nil
-        departureLoc.text = ride.getCompleteAddress()
-        passengerTable.backgroundColor = UIColor.clearColor()
+        
+        //departureLoc.text = nil
+        //departureLoc.text = ride.getCompleteAddress()
+        
+        //passengerTable.backgroundColor = UIColor.clearColor()
         
         var editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "goToEditPage")
         self.navigationItem.rightBarButtonItem = editButton
@@ -68,30 +85,30 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     func insertPassenger(newPassenger: NSDictionary){
         let newPassenger = Passenger(dict: newPassenger)
         passengers.append(newPassenger)
-        self.passengerTable.reloadData()
-        adjustPageConstraints()
+        //self.passengerTable.reloadData()
+        //adjustPageConstraints()
         
     }
     
     func adjustPageConstraints(){
         //we don't want to expand the table/view size unless there is more than 5 passengers
         //because the table can already hold 5 when the page loads
-        if(self.passengers.count > 5){
-            let tvHeight = (CGFloat(self.passengers.count) * self.cellHeight)
-            var heightExpansion  = CGFloat(0)
-            
-            if(tvHeight > self.passengerTableHeight.constant){
-                heightExpansion = tvHeight - self.passengerTableHeight.constant
-            }
-            
-            let newHeight = self.view.frame.size.height + heightExpansion
-            let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
-            
-            //set view frame, tableheight, and content view height
-            self.view.frame = newFrame
-            self.passengerTableHeight.constant = tvHeight
-            self.contentViewHeight.constant = newHeight
-        }
+//        if(self.passengers.count > 5){
+//            let tvHeight = (CGFloat(self.passengers.count) * self.cellHeight)
+//            var heightExpansion  = CGFloat(0)
+//            
+//            if(tvHeight > self.passengerTableHeight.constant){
+//                heightExpansion = tvHeight - self.passengerTableHeight.constant
+//            }
+//            
+//            let newHeight = self.view.frame.size.height + heightExpansion
+//            let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
+//            
+//            //set view frame, tableheight, and content view height
+//            self.view.frame = newFrame
+//            self.passengerTableHeight.constant = tvHeight
+//            self.contentViewHeight.constant = newHeight
+//        }
     }
     
 
@@ -106,49 +123,90 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return passengers.count
+        
+        if (tableView.isEqual(passengerTable)){
+            return passengers.count
+        }
+        
+        if (tableView.isEqual(detailsTable)){
+            return details.count
+        }
+        
+        
+        return 0
     }
     //Set up the cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "PassengerTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PassengerTableViewCell
         
-        cell.nameLabel!.text = passengers[indexPath.row].name
-        cell.phoneLabel!.text = passengers[indexPath.row].phone
+        var chosenCell: UITableViewCell?
         
-        if(ride.direction == "to event") {
-            cell.tripIndicator!.image = UIImage(named: "toEvent")
-        }
-        else if(ride.direction == "from event") {
-            cell.tripIndicator!.image = UIImage(named: "fromEvent")
-        }
-        else {
-            cell.tripIndicator!.image = UIImage(named: "roundTrip")
+        if(tableView.isEqual(passengerTable)){
+            let cellIdentifier = "passengerCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PassengerTableViewCell
+            
+            cell.nameLabel!.text = passengers[indexPath.row].name
+            cell.phoneLabel!.text = passengers[indexPath.row].phone
+            
+            if(ride.direction == "to event") {
+                //cell.tripIndicator!.image = UIImage(named: "toEvent")
+            }
+            else if(ride.direction == "from event") {
+                //cell.tripIndicator!.image = UIImage(named: "fromEvent")
+            }
+            else {
+                //cell.tripIndicator!.image = UIImage(named: "roundTrip")
+            }
+            
+            
+            if(indexPath.row % 4 == 0) {
+                cell.nameLabel.textColor = CruColors.darkBlue
+                cell.phoneLabel.textColor = CruColors.darkBlue
+            }
+            else if(indexPath.row % 4 == 1) {
+                cell.nameLabel.textColor = CruColors.lightBlue
+                cell.phoneLabel.textColor = CruColors.lightBlue
+            }
+            else if(indexPath.row % 4 == 2) {
+                cell.nameLabel.textColor = CruColors.yellow
+                cell.phoneLabel.textColor = CruColors.yellow
+            }
+            else if(indexPath.row % 4 == 3) {
+                cell.nameLabel.textColor = CruColors.orange
+                cell.phoneLabel.textColor = CruColors.orange
+            }
+            chosenCell = cell
         }
         
+        if(tableView.isEqual(detailsTable)){
+            let cellIdentifier = "detailCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DetailCell
+            cell.title.text = details[indexPath.row].itemName
+            cell.value.text = details[indexPath.row].itemValue
+            //cell.contentValue.text = details[indexPath.row].itemValue
+            //cell.contentTextField.text = details[indexPath.row].itemValue
+            chosenCell = cell
+        }
         
-        if(indexPath.row % 4 == 0) {
-            cell.nameLabel.textColor = CruColors.darkBlue
-            cell.phoneLabel.textColor = CruColors.darkBlue
+        return chosenCell!
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        if(tableView.isEqual(passengerTable)){
+            return CGFloat(50.0)
         }
-        else if(indexPath.row % 4 == 1) {
-            cell.nameLabel.textColor = CruColors.lightBlue
-            cell.phoneLabel.textColor = CruColors.lightBlue
+        
+        if(tableView.isEqual(detailsTable)){
+            return CGFloat(60.0)
         }
-        else if(indexPath.row % 4 == 2) {
-            cell.nameLabel.textColor = CruColors.yellow
-            cell.phoneLabel.textColor = CruColors.yellow
-        }
-        else if(indexPath.row % 4 == 3) {
-            cell.nameLabel.textColor = CruColors.orange
-            cell.phoneLabel.textColor = CruColors.orange
-        }
-        return cell
+        
+        return CGFloat(44.0)
     }
     
     // Reload the data every time we come back to this view controller
     override func viewDidAppear(animated: Bool) {
-        passengerTable.reloadData()
+        //passengerTable.reloadData()
         self.navigationItem.title = "Ride Details"
     }
     
@@ -195,6 +253,31 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
             }
             
         }
+        else if(segue.identifier == "passengerSegue"){
+            let popoverVC = segue.destinationViewController
+            
+            let controller = popoverVC.popoverPresentationController
+            //popoverVC.preferredContentSize = CGSizeMake(self.view.frame.width - 30, 140)
+            
+            if(controller != nil){
+                controller?.delegate = self
+            }
+            
+            
+            if let vc = popoverVC as? PassengersViewController{
+                vc.passengers = self.passengers
+                print("there are \(self.passengers.count) passengers")
+            }
+            
+            //let fromRect:CGRect = self.table!.rectForRowAtIndexPath(directionCellPath!)
+            //controller!.sourceView = self.table
+            //controller!.sourceRect = fromRect
+            //controller!.permittedArrowDirections = .Any
+        }
+        
     }
     
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
 }

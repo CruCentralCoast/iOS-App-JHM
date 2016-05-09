@@ -55,6 +55,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.title = "Edit Ride"
         populateOptions()
     }
     

@@ -12,7 +12,7 @@ class PassengerTableViewCell: UITableViewCell {
 
     // MARK: Properties
     
-    @IBOutlet weak var tripIndicator: UIImageView!
+    //@IBOutlet weak var tripIndicator: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     
