@@ -106,7 +106,7 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
         
         let keys: [String] = ministryTeamsStorageManager.getKeys()
         
-        for var key in keys {
+        for  key in keys {
             ministryTeams.append(ministryTeamsStorageManager.getElement(key) as! NSDictionary)
         }
         

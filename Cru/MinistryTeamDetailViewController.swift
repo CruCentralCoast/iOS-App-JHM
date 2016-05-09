@@ -26,7 +26,7 @@ class MinistryTeamDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ministryTeamNameLabel.text = ministryTeam["name"] as! String
+        ministryTeamNameLabel.text = ministryTeam["name"] as? String
         ministryTeamImage.load(ministryTeam["imageUrl"] as! String)
         
             ministryTeamDescription.text = ministryTeam["description"] as! String

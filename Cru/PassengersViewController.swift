@@ -22,7 +22,7 @@ class PassengersViewController: UIViewController, UITableViewDataSource, UITable
         cell?.phoneLabel.text = PhoneFormatter.unparsePhoneNumber(passengers[indexPath.row].phone)
         
         
-        var mod = indexPath.row % 4
+        let mod = indexPath.row % 4
         var color: UIColor?
         
         

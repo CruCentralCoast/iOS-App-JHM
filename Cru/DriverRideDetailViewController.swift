@@ -25,6 +25,11 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     var addressView: UITextView?
     @IBOutlet weak var detailsTable: UITableView!
     
+    override func viewWillAppear(animated: Bool) {
+      
+        self.navigationItem.rightBarButtonItem!.setTitleTextAttributes([NSFontAttributeName: UIFont(name: Config.fontName, size: 20)!], forState: .Normal)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,7 +41,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         details.append(EditableItem(itemName: "Direction:", itemValue: ride.getDirection(), itemEditable: false, itemIsText: true))
         details.append(EditableItem(itemName: "Seats:", itemValue: String(ride.seats), itemEditable: false, itemIsText: true))
         
-        
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 15)!], forState: .Normal)
         
         //self.contentViewHeight.constant = CGFloat(600)
         //adjustPageConstraints()
@@ -59,7 +64,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         
         //passengerTable.backgroundColor = UIColor.clearColor()
         
-        var editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "goToEditPage")
+        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "goToEditPage")
         self.navigationItem.rightBarButtonItem = editButton
     }
     
@@ -194,10 +199,10 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             
         }
         else if(segue.identifier == "passengerSegue"){
-            var text = addressView!.text
-            
             let popoverVC = segue.destinationViewController
-            
+            popoverVC.preferredContentSize = CGSize(width: self.view.frame.width * 0.8, height: self.view.frame.height * 0.7)
+            popoverVC.popoverPresentationController!.sourceRect = CGRectMake(CGRectGetMidX(self.view.bounds), (addressView?.frame.origin.y)! - 50.0,0,0)
+
             let controller = popoverVC.popoverPresentationController
             
             if(controller != nil){
@@ -207,7 +212,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             
             if let vc = popoverVC as? PassengersViewController{
                 vc.passengers = self.passengers
-                print("there are \(self.passengers.count) passengers")
             }
         }
         

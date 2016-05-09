@@ -34,6 +34,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        
+        
         if self.revealViewController() != nil{
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
@@ -217,6 +220,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(animated: Bool) {
         navigationItem.title = "Rides"
         
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontName, size: 25)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     
