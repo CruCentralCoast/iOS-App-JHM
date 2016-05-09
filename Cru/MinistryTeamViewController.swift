@@ -118,6 +118,10 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func unwindToMinistryTeamsList(segue: UIStoryboardSegue) {
+        if ministryTeams.count == 0 {
+            toggleMinistryTableView(false)
+        }
+            
         refresh(self)
     }
 }

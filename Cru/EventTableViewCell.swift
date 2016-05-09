@@ -12,10 +12,25 @@ class EventTableViewCell: UITableViewCell {
     @IBOutlet weak var eventTitleLabel: UILabel!
     @IBOutlet weak var eventImage: UIImageView!
     @IBOutlet weak var spaceToTopCard: NSLayoutConstraint!
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var timeLabel: UILabel!
+    @IBOutlet weak var locationLabel: UILabel!
     
     var event: Event! {
         didSet {
+            let dateFormatter = "MMM d, yyyy"
+            let timeFormatter = "h:mma"
+            
+            let startDate = GlobalUtils.stringFromDate(event.startNSDate, format: dateFormatter)
+            let startTime = GlobalUtils.stringFromDate(event.startNSDate, format: timeFormatter)
+            let endDate = GlobalUtils.stringFromDate(event.startNSDate, format: dateFormatter)
+            let endTime = GlobalUtils.stringFromDate(event.startNSDate, format: timeFormatter)
+            let location = GlobalUtils.stringFromLocation(event.location)
+            
             eventTitleLabel.text = event.name
+            dateLabel.text = startDate + " - " + endDate
+            timeLabel.text = startTime + " - " + endTime
+            locationLabel.text = location
             
             if event.imageUrl == "" {
                 eventImage.hidden = true

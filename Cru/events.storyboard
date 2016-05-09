@@ -15,6 +15,9 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
@@ -38,8 +41,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xck-zL-c1n">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u9Z-Ze-51u">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u9Z-Ze-51u">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="398"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="n6P-F9-53s">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="140"/>
@@ -48,7 +51,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q0s-zt-xf5">
-                                                <rect key="frame" x="480" y="220" width="100" height="22"/>
+                                                <rect key="frame" x="480" y="219" width="100" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -59,29 +62,29 @@
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW7-Fr-sMB">
-                                                <rect key="frame" x="20" y="241" width="560" height="22"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bW7-Fr-sMB">
+                                                <rect key="frame" x="20" y="239" width="560" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" preservesSuperviewLayoutMargins="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Some description of event" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYR-HW-5q5">
-                                                <rect key="frame" x="28" y="286" width="544" height="34"/>
+                                            <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Some description of event" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WYR-HW-5q5">
+                                                <rect key="frame" x="28" y="284" width="544" height="34"/>
                                                 <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                                             </textView>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-rm-aET" userLabel="SeparatorTop">
-                                                <rect key="frame" x="20" y="276" width="560" height="2"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cXx-rm-aET" userLabel="SeparatorTop">
+                                                <rect key="frame" x="20" y="274" width="560" height="2"/>
                                                 <color key="backgroundColor" red="0.97647058823529409" green="0.70980392156862748" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="ioF-H9-QxZ"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ah-5N-RBw" userLabel="SeparatorBottom">
-                                                <rect key="frame" x="20" y="328" width="560" height="2"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Ah-5N-RBw" userLabel="SeparatorBottom">
+                                                <rect key="frame" x="20" y="326" width="560" height="2"/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <color key="tintColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
@@ -89,25 +92,25 @@
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="End Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXn-WS-o2A">
-                                                <rect key="frame" x="20" y="220" width="65" height="22"/>
+                                                <rect key="frame" x="20" y="219" width="65" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z5g-ye-8y1">
-                                                <rect key="frame" x="20" y="199" width="72" height="22"/>
+                                                <rect key="frame" x="20" y="199" width="72" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Time/Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aEf-UI-Hk1">
-                                                <rect key="frame" x="472" y="199" width="108" height="22"/>
+                                                <rect key="frame" x="472" y="199" width="107.5" height="21.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-AB-fyb">
-                                                <rect key="frame" x="281" y="341" width="67" height="52"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AZc-AB-fyb">
+                                                <rect key="frame" x="281" y="339" width="67" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="67" id="9eA-pS-bMe"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" secondItem="AZc-AB-fyb" secondAttribute="height" multiplier="67:52" id="owQ-IY-uxE"/>
@@ -118,8 +121,8 @@
                                                     <action selector="facebookLinkButton:" destination="wSV-ke-WyD" eventType="touchUpInside" id="jYh-uu-Xkc"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-il-7OQ">
-                                                <rect key="frame" x="20" y="341" width="85" height="50"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwr-il-7OQ">
+                                                <rect key="frame" x="20" y="339" width="85" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="85" id="3Up-pz-rex"/>
                                                     <constraint firstAttribute="width" secondItem="pwr-il-7OQ" secondAttribute="height" multiplier="17:10" id="9it-r9-p7x"/>
@@ -130,8 +133,8 @@
                                                     <action selector="saveToCalendar:" destination="wSV-ke-WyD" eventType="touchUpInside" id="Hh0-3z-WfO"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-wO-gTI">
-                                                <rect key="frame" x="113" y="341" width="74" height="53"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="749" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ghp-wO-gTI">
+                                                <rect key="frame" x="113" y="339" width="74" height="53"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="Ghp-wO-gTI" secondAttribute="height" multiplier="74:53" id="GgI-lI-Eb8"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="cHk-7k-E01"/>
@@ -142,8 +145,8 @@
                                                     <action selector="linkToRideShare:" destination="wSV-ke-WyD" eventType="touchUpInside" id="fMG-d1-UzL"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-G8-5WP">
-                                                <rect key="frame" x="197" y="341" width="74" height="53"/>
+                                            <button opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="748" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Er-G8-5WP">
+                                                <rect key="frame" x="197" y="339" width="74" height="53"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="53" id="Sy4-8T-aRJ"/>
                                                     <constraint firstAttribute="width" relation="lessThanOrEqual" constant="74" id="Xcn-8l-MdK"/>
@@ -298,12 +301,32 @@
                                                         <constraint firstAttribute="height" constant="20" id="qa4-Fu-wi7"/>
                                                     </constraints>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="w0U-Ti-62f">
+                                                    <rect key="frame" x="52" y="191" width="240" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="9WI-sW-ybq">
+                                                    <rect key="frame" x="52" y="222" width="240" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="QjH-0B-HkY">
+                                                    <rect key="frame" x="52" y="251" width="240" height="23"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="aNi-WW-mcE" firstAttribute="top" secondItem="MXh-6C-3Mi" secondAttribute="top" id="4Rd-zg-dVJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="aNi-WW-mcE" secondAttribute="trailing" id="4k3-RC-be5"/>
+                                                <constraint firstItem="9WI-sW-ybq" firstAttribute="centerY" secondItem="85u-aF-aSY" secondAttribute="centerY" id="4oF-Si-otn"/>
                                                 <constraint firstItem="Brg-Ex-ZpJ" firstAttribute="top" secondItem="KVt-NN-rtr" secondAttribute="bottom" constant="8" id="8v5-wr-dJg"/>
+                                                <constraint firstItem="QjH-0B-HkY" firstAttribute="centerY" secondItem="Brg-Ex-ZpJ" secondAttribute="centerY" id="9VU-Gi-fS6"/>
                                                 <constraint firstItem="uE1-BH-g7w" firstAttribute="top" secondItem="aNi-WW-mcE" secondAttribute="bottom" constant="8" id="DU6-jT-Kbq"/>
                                                 <constraint firstItem="aNi-WW-mcE" firstAttribute="centerX" secondItem="MXh-6C-3Mi" secondAttribute="centerX" id="ESZ-i5-jPC"/>
                                                 <constraint firstItem="85u-aF-aSY" firstAttribute="top" secondItem="Brg-Ex-ZpJ" secondAttribute="bottom" constant="8" id="Fbt-05-ztn"/>
@@ -314,13 +337,20 @@
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="PgR-Er-eUL"/>
                                                 <constraint firstItem="aNi-WW-mcE" firstAttribute="width" secondItem="MXh-6C-3Mi" secondAttribute="width" id="PqD-jR-Y0g"/>
                                                 <constraint firstItem="85u-aF-aSY" firstAttribute="leading" secondItem="MXh-6C-3Mi" secondAttribute="leading" constant="24" id="TRY-LZ-9cz"/>
+                                                <constraint firstItem="9WI-sW-ybq" firstAttribute="leading" secondItem="85u-aF-aSY" secondAttribute="trailing" constant="8" id="WSn-7I-ifI"/>
                                                 <constraint firstItem="Brg-Ex-ZpJ" firstAttribute="top" secondItem="85u-aF-aSY" secondAttribute="bottom" constant="10" id="aEs-hc-san"/>
+                                                <constraint firstItem="w0U-Ti-62f" firstAttribute="leading" secondItem="KVt-NN-rtr" secondAttribute="trailing" constant="8" id="blg-fE-79P"/>
                                                 <constraint firstItem="KVt-NN-rtr" firstAttribute="leading" secondItem="MXh-6C-3Mi" secondAttribute="leading" constant="24" id="c1Z-PB-p5T"/>
+                                                <constraint firstAttribute="trailing" secondItem="QjH-0B-HkY" secondAttribute="trailing" constant="8" id="eTw-1y-b7V"/>
+                                                <constraint firstItem="w0U-Ti-62f" firstAttribute="centerY" secondItem="KVt-NN-rtr" secondAttribute="centerY" id="f2F-OR-UHv"/>
                                                 <constraint firstItem="85u-aF-aSY" firstAttribute="top" secondItem="KVt-NN-rtr" secondAttribute="bottom" constant="10" id="gQm-yp-YMx"/>
+                                                <constraint firstAttribute="trailing" secondItem="w0U-Ti-62f" secondAttribute="trailing" constant="8" id="jey-C5-vjA"/>
                                                 <constraint firstItem="uE1-BH-g7w" firstAttribute="top" secondItem="MXh-6C-3Mi" secondAttribute="top" constant="158" id="kNn-qw-AsL"/>
+                                                <constraint firstAttribute="trailing" secondItem="9WI-sW-ybq" secondAttribute="trailing" constant="8" id="l6a-sE-JWg"/>
                                                 <constraint firstItem="uE1-BH-g7w" firstAttribute="top" secondItem="MXh-6C-3Mi" secondAttribute="top" constant="136" id="nAw-k7-t3q"/>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="280" id="odz-mR-DpO"/>
                                                 <constraint firstItem="KVt-NN-rtr" firstAttribute="top" secondItem="uE1-BH-g7w" secondAttribute="bottom" constant="7.5" id="tfj-8x-lxa"/>
+                                                <constraint firstItem="QjH-0B-HkY" firstAttribute="leading" secondItem="Brg-Ex-ZpJ" secondAttribute="trailing" constant="11" id="yq3-O2-KyN"/>
                                                 <constraint firstItem="uE1-BH-g7w" firstAttribute="leading" secondItem="MXh-6C-3Mi" secondAttribute="leading" constant="8" id="zGF-Tg-Kmq"/>
                                             </constraints>
                                             <variation key="default">
@@ -354,9 +384,12 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="dateLabel" destination="w0U-Ti-62f" id="H3H-j5-Seq"/>
                                     <outlet property="eventImage" destination="aNi-WW-mcE" id="Kg9-vx-sYs"/>
                                     <outlet property="eventTitleLabel" destination="uE1-BH-g7w" id="6XP-gs-teA"/>
+                                    <outlet property="locationLabel" destination="QjH-0B-HkY" id="6w5-LQ-Pth"/>
                                     <outlet property="spaceToTopCard" destination="kNn-qw-AsL" id="uN4-HW-dVx"/>
+                                    <outlet property="timeLabel" destination="9WI-sW-ybq" id="775-fg-LpA"/>
                                     <segue destination="wSV-ke-WyD" kind="show" identifier="eventDetails" id="dNT-hU-eqO"/>
                                 </connections>
                             </tableViewCell>

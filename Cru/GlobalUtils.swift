@@ -10,6 +10,24 @@ import UIKit
 import ImageLoader
 
 class GlobalUtils {
+    class func stringFromLocation(location: NSDictionary?) -> String {
+        var locStr = ""
+        
+        if let loc = location {
+            if let street = loc["street1"] {
+                locStr += street as! String
+            }
+            if let city = loc["suburb"] {
+                locStr += " " + (city as! String)
+            }
+            if let state = loc["state"] {
+                locStr += ", " + (state as! String)
+            }
+        }
+        
+        return locStr
+    }
+    
     //gets an NSDate from a given string
     class func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
