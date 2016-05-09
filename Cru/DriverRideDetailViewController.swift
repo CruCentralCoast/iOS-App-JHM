@@ -16,26 +16,12 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     var event: Event!
     var ride: Ride!{
         didSet {
-//            if(self.departureTime != nil){
-//                self.departureTime.text = ride.getTime()
-//            }
-//            if(self.departureLoc != nil){
-//                self.departureLoc.text = ride.getCompleteAddress()
-//            }
-//            if(self.departureDate != nil){
-//                self.departureDate.text = ride.getDate()
-//            }
+            
         }
     }
     var passengers = [Passenger]()
     let cellHeight = CGFloat(60)
     var rideVC: RidesViewController?
-//    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
-//    @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
-//    @IBOutlet weak var departureTime: UILabel!
-//    @IBOutlet weak var departureDate: UILabel!
-//    @IBOutlet weak var departureLoc: UITextView!
-//    @IBOutlet weak var rideName: UILabel!
     @IBOutlet weak var passengerTable: UITableView!
     @IBOutlet weak var detailsTable: UITableView!
     
@@ -257,7 +243,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             let popoverVC = segue.destinationViewController
             
             let controller = popoverVC.popoverPresentationController
-            //popoverVC.preferredContentSize = CGSizeMake(self.view.frame.width - 30, 140)
             
             if(controller != nil){
                 controller?.delegate = self
@@ -268,11 +253,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
                 vc.passengers = self.passengers
                 print("there are \(self.passengers.count) passengers")
             }
-            
-            //let fromRect:CGRect = self.table!.rectForRowAtIndexPath(directionCellPath!)
-            //controller!.sourceView = self.table
-            //controller!.sourceRect = fromRect
-            //controller!.permittedArrowDirections = .Any
         }
         
     }
