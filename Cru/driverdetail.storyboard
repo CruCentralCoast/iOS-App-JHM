@@ -320,7 +320,7 @@
                                     <action selector="savePressed:" destination="02L-Gk-VaH" eventType="touchUpInside" id="B9R-kb-UiY"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f80-Ag-Nl7">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="f80-Ag-Nl7">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="559"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -353,11 +353,11 @@
                                                     </connections>
                                                 </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Ma-5j-Nrh">
-                                                    <rect key="frame" x="8" y="28" width="539" height="44"/>
+                                                    <rect key="frame" x="8" y="28" width="539" height="52"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAZ-1A-cBn">
@@ -376,12 +376,12 @@
                                                 <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="pAZ-1A-cBn" secondAttribute="trailing" constant="8" symbolic="YES" id="1OM-NL-Cle"/>
                                                 <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="1Ma-5j-Nrh" secondAttribute="trailing" constant="8" symbolic="YES" id="9eN-VL-PyY"/>
                                                 <constraint firstItem="1Ma-5j-Nrh" firstAttribute="top" secondItem="6H1-9a-0BJ" secondAttribute="topMargin" constant="20" id="EU2-Bw-ssm"/>
-                                                <constraint firstItem="6tG-LP-JZx" firstAttribute="bottom" secondItem="1Ma-5j-Nrh" secondAttribute="bottom" constant="-5" id="F4K-eg-JhW"/>
+                                                <constraint firstItem="6tG-LP-JZx" firstAttribute="bottom" secondItem="1Ma-5j-Nrh" secondAttribute="bottom" constant="-13" id="F4K-eg-JhW"/>
                                                 <constraint firstItem="6tG-LP-JZx" firstAttribute="leading" secondItem="1Ma-5j-Nrh" secondAttribute="leading" id="FJT-KQ-Lyb"/>
                                                 <constraint firstItem="h90-KE-gi7" firstAttribute="top" secondItem="6H1-9a-0BJ" secondAttribute="topMargin" constant="20" id="GwO-5U-2yd"/>
                                                 <constraint firstItem="pAZ-1A-cBn" firstAttribute="top" secondItem="6H1-9a-0BJ" secondAttribute="top" id="Ijl-b5-iXK"/>
                                                 <constraint firstItem="6tG-LP-JZx" firstAttribute="top" secondItem="pAZ-1A-cBn" secondAttribute="bottom" constant="-7" id="N7v-P7-EhD"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="1Ma-5j-Nrh" secondAttribute="bottom" id="Qaj-gV-8tq"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1Ma-5j-Nrh" secondAttribute="bottom" constant="-8" id="Qaj-gV-8tq"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="h90-KE-gi7" secondAttribute="bottom" constant="20" id="Whk-fX-KzO"/>
                                                 <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="6tG-LP-JZx" secondAttribute="trailing" constant="8" symbolic="YES" id="aTv-AB-xW8"/>
                                                 <constraint firstItem="pAZ-1A-cBn" firstAttribute="leading" secondItem="6tG-LP-JZx" secondAttribute="leading" id="eIv-6t-MUU"/>

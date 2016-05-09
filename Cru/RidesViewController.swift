@@ -50,8 +50,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         noRideImage = UIImage(named: Config.noRidesImageName)!
         
-        self.ridesTableView.emptyDataSetSource = self
-        self.ridesTableView.emptyDataSetDelegate = self
+        
         self.ridesTableView.tableFooterView = UIView()
     }
     
@@ -113,12 +112,18 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         switch type{
             case .NoRides:
+                self.ridesTableView.emptyDataSetSource = self
+                self.ridesTableView.emptyDataSetDelegate = self
                 noRideImage = UIImage(named: Config.noRidesImageName)!
                 CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
             case .NoConnection:
+                self.ridesTableView.emptyDataSetSource = self
+                self.ridesTableView.emptyDataSetDelegate = self
                 noRideImage = UIImage(named: Config.noConnectionImageName)!
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
             default:
                 CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
         }
@@ -130,6 +135,25 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         rides.sortInPlace()
         self.ridesTableView.reloadData()
         self.refreshControl?.endRefreshing()
+        
+        switch type{
+        case .NoRides:
+            self.ridesTableView.emptyDataSetSource = self
+            self.ridesTableView.emptyDataSetDelegate = self
+            noRideImage = UIImage(named: Config.noRidesImageName)!
+            CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+        case .NoConnection:
+            self.ridesTableView.emptyDataSetSource = self
+            self.ridesTableView.emptyDataSetDelegate = self
+            noRideImage = UIImage(named: Config.noConnectionImageName)!
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+        default:
+            print("")
+        }
+        
     }
     
     func insertNewRide(dict : NSDictionary){

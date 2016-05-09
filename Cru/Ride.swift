@@ -208,6 +208,19 @@ class Ride: Comparable, Equatable, TimeDetail {
         return self.seats - self.passengers.count
     }
     
+    func getDirection()->String{
+        switch (direction){
+            case "both":
+                return Directions.both
+            case "to":
+                return Directions.to
+            case "from":
+                return Directions.from
+            default:
+                return Directions.both
+        }
+    }
+    
     func getRideAsDict()->[String:AnyObject]{
         var map: [String:AnyObject] = [RideKeys.id : self.id,
             RideKeys.direction: self.direction, RideKeys.driverName: self.driverName,
