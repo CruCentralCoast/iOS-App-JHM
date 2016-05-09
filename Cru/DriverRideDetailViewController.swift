@@ -23,6 +23,12 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     let cellHeight = CGFloat(60)
     var rideVC: RidesViewController?
     var addressView: UITextView?
+    var timeLabel: UILabel?
+    var dateLabel: UILabel?
+    var directionLabel: UILabel?
+    var seatsOffered: UILabel?
+    var seatsLeft: UILabel?
+    var itemMap = [String: EditableItem]()
     @IBOutlet weak var detailsTable: UITableView!
     
     override func viewWillAppear(animated: Bool) {
@@ -32,40 +38,43 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        details.append(EditableItem(itemName: "Event:", itemValue: event!.name, itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: "Departure Time:", itemValue: ride.getTime(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: "Departure Date:", itemValue: ride.getDate(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: "Departure Address:", itemValue: ride.getCompleteAddress(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: "Direction:", itemValue: ride.getDirection(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: "Seats:", itemValue: String(ride.seats), itemEditable: false, itemIsText: true))
-        
+        populateDetails()
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 15)!], forState: .Normal)
+        detailsTable.separatorStyle = .None
         
-        //self.contentViewHeight.constant = CGFloat(600)
-        //adjustPageConstraints()
         
-        //self.passengerTable.delegate = self
-        
-        //passengerTable.scrollEnabled = false;
-        //rideName.text = event!.name
+  
         CruClients.getRideUtils().getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {success in
             //TODO: should be handling failure here
         })
-        //departureTime.text = ride.getTime()
-        //departureDate.text = ride.getDate()
         
-        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
-        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
-        
-        //departureLoc.text = nil
-        //departureLoc.text = ride.getCompleteAddress()
-        
-        //passengerTable.backgroundColor = UIColor.clearColor()
         
         let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "goToEditPage")
         self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    
+    
+    func populateDetails(){
+        var newItem = EditableItem(itemName: Labels.eventLabel, itemValue: event!.name, itemEditable: false, itemIsText: true)
+        itemMap.updateValue(newItem, forKey: Labels.eventLabel)
+        details.append(newItem)
+        newItem = EditableItem(itemName: Labels.departureTimeLabel, itemValue: ride.getTime(), itemEditable: false, itemIsText: true)
+        itemMap.updateValue(newItem, forKey: Labels.departureTimeLabel)
+        details.append(EditableItem(itemName: Labels.departureTimeLabel, itemValue: ride.getTime(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.departureDateLabel, itemValue: ride.getDate(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.directionLabel, itemValue: ride.getDirection(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.seatsLabel, itemValue: String(ride.seats), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.seatsLeftLabel, itemValue: String(ride.seatsLeft()), itemEditable: false, itemIsText: true))
+    }
+    
+    func updateData(){
+        timeLabel?.text = ride.getTime()
+        dateLabel?.text = ride.getDate()
+        addressView?.text = ride.getCompleteAddress()
+        seatsOffered?.text = String(ride.seats)
+        seatsLeft?.text = String(ride.seatsLeft())
     }
     
     
@@ -76,9 +85,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     func insertPassenger(newPassenger: NSDictionary){
         let newPassenger = Passenger(dict: newPassenger)
         passengers.append(newPassenger)
-        //self.passengerTable.reloadData()
-        //adjustPageConstraints()
-        
     }
     
 
@@ -114,23 +120,31 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             cell.title.text = details[indexPath.row].itemName
             cell.value.text = details[indexPath.row].itemValue
             
-            if (details[indexPath.row].itemName == "Departure Address:"){
-                //departureLabel = cell.value
-                
-                //cell.textViewValue.editable = false
+            if (details[indexPath.row].itemName == Labels.addressLabel){
                 cell.textViewValue.dataDetectorTypes = .Address
-                //cell.textViewValue.selectable = true
-                //cell.textViewValue.userInteractionEnabled = false
                 cell.textViewValue.text = details[indexPath.row].itemValue
-                
                 addressView = cell.textViewValue
                 cell.value.hidden = true
             }else{
                 cell.textViewValue.hidden = true
             }
             
-            //cell.contentValue.text = details[indexPath.row].itemValue
-            //cell.contentTextField.text = details[indexPath.row].itemValue
+            if(details[indexPath.row].itemName == Labels.departureTimeLabel){
+                timeLabel = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.departureDateLabel){
+                dateLabel = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.seatsLeftLabel){
+                seatsLeft = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.seatsLabel){
+                seatsOffered = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.directionLabel){
+                directionLabel = cell.value
+            }
+            
             chosenCell = cell
         }
         

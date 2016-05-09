@@ -18,7 +18,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     let departureDateLabel = "Departure Date:"
     let departureTimeLabel = "Departure Time:"
     let addressLabel = "Departure Address:"
-    let seatsLabel = "Number of Seats:"
+    let seatsLabel = "Seats Offered:"
     let nameLabel = "Name:"
     let phoneLabel = "Phone Number:"
     let directionLabel = "Direction:"
@@ -293,10 +293,15 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         if(ride?.hour != -1){
             let alert = UIAlertController(title: "Ride updated successfully", message: "", preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-            self.presentViewController(alert, animated: true, completion: nil)
+            self.presentViewController(alert, animated: true, completion: {
+                //self.navigationController?.popViewControllerAnimated(true)
+            })
             ridesVC!.refresh(self)
             self.ride = ride
+            
             rideDetailVC?.ride = ride
+            rideDetailVC?.updateData()
+            
         }
         else{
             let alert = UIAlertController(title: "Could not update ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -324,7 +329,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             //uipopover magic
             let popoverVC = segue.destinationViewController
             let controller = popoverVC.popoverPresentationController
-            popoverVC.preferredContentSize = CGSizeMake(self.view.frame.width - 30, 140)
+            popoverVC.preferredContentSize = CGSizeMake(self.view.frame.width - 30, 240)
             
             if(controller != nil){
                 controller?.delegate = self

@@ -34,7 +34,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
+        ridesTableView.separatorStyle = .None
         
         
         if self.revealViewController() != nil{

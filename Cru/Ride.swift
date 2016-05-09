@@ -34,6 +34,19 @@ struct LocationKeys {
     static let country = "country"
 }
 
+
+struct Labels{
+    static let eventLabel = "Event:"
+    static let departureDateLabel = "Departure Date:"
+    static let departureTimeLabel = "Departure Time:"
+    static let addressLabel = "Departure Address:"
+    static let seatsLabel = "Seats Offered:"
+    static let seatsLeftLabel = "Seats Available:"
+    static let nameLabel = "Name:"
+    static let phoneLabel = "Phone Number:"
+    static let directionLabel = "Direction:"
+}
+
 class Ride: Comparable, Equatable, TimeDetail {
     var id: String = ""
     var direction: String = ""

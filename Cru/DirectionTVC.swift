@@ -27,7 +27,13 @@ class DirectionTVC: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell")
         cell?.textLabel!.text = options[indexPath.row]
         cell?.textLabel?.font = UIFont(name: "FreightSans Pro", size: 18)
+        cell?.textLabel?.textAlignment = .Center
         return cell!
+    }
+    
+    
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 80.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
