@@ -124,7 +124,6 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
         
         rides.sortInPlace()
-        self.ridesTableView.reloadData()
     }
     
     func finishRefresh(type: ResponseType){
@@ -177,7 +176,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        return "Max's Golf Lessons"
+        return ""
     }
     
     func getEventForEventId(id : String)->Event{
@@ -217,8 +216,6 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.month.text = ride.month
         
         
-        //TODO: Change this to check against GCM id not driver name
-        //if(ride.driverName == myName){
         if(ride.gcmId == Config.gcmId()){
             cell.rideType.text = driver
             cell.icon.image  = UIImage(named: driver)
