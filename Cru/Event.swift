@@ -33,6 +33,7 @@ class Event: Equatable {
     var location: NSDictionary?
     var image: UIImage!
     var imageUrl: String
+    var rideshareEnabled: Bool?
     
     init?() {
         self.id = ""
@@ -53,6 +54,7 @@ class Event: Equatable {
         self.image = UIImage(named: "event1")
         self.imageUrl = ""
         self.location = NSDictionary()
+        self.rideshareEnabled = false
     }
     
     convenience init?(dict : NSDictionary) {
@@ -60,6 +62,9 @@ class Event: Equatable {
         self.init()
         
         //grab dictionary objects
+        if let enabled = dict["rideSharing"] as? Bool{
+            self.rideSharingEnabled = enabled
+        }
         if let dId = dict["_id"] {
             self.id = dId as! String
         }
@@ -125,6 +130,18 @@ class Event: Equatable {
         }
         
         return ""
+    }
+    
+    static func eventsWithRideShare(eventList : [Event])->[Event]{
+        var filteredList = [Event]()
+        
+        for event in eventList{
+            if event.rideSharingEnabled {
+                filteredList.append(event)
+            }
+        }
+        
+        return filteredList
     }
 }
 

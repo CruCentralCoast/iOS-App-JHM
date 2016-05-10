@@ -295,7 +295,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventPopover"{
             let vc  = segue.destinationViewController as? EventsModalTableViewController
-            vc?.events = events
+            vc?.events = Event.eventsWithRideShare(events)
             vc?.vc = self
             let controller = vc?.popoverPresentationController
             if(controller != nil){
@@ -303,6 +303,8 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
             }
         }
     }
+    
+    
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
