@@ -40,37 +40,20 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
         var cell: DetailCell!
         cell = tableView.dequeueReusableCellWithIdentifier("smallerCell") as! DetailCell
         
-//        if(details[indexPath.row].itemName == Labels.addressLabel){
-//            cell = tableView.dequeueReusableCellWithIdentifier("cell") as! DetailCell
-//        }
-//        else{
-//            
-//        }
+        cell.textViewValue.text = details[indexPath.row].itemValue
+        cell.title.text = details[indexPath.row].itemName
         
         
         if(details[indexPath.row].itemName == Labels.driverNumber){
             cell.textViewValue.text = PhoneFormatter.unparsePhoneNumber(details[indexPath.row].itemValue)
             cell.textViewValue.dataDetectorTypes = .PhoneNumber
-            cell.title.text = details[indexPath.row].itemName
-            //cell.textViewValue.hidden = false
-            //cell.value.hidden = true
+            cell.textViewValue.userInteractionEnabled = true
         }
         else if(details[indexPath.row].itemName == Labels.addressLabel){
-            cell.textViewValue.text = details[indexPath.row].itemValue
             cell.textViewValue.dataDetectorTypes = .Address
-            cell.title.text = details[indexPath.row].itemName
-            //cell.textViewValue.hidden = false
-            //cell.value.hidden = true
+            cell.textViewValue.userInteractionEnabled = true
         }
-        else{
-            //cell.value.text = details[indexPath.row].itemValue
-            cell.textViewValue.text = details[indexPath.row].itemValue
-            cell.title.text = details[indexPath.row].itemName
-            //cell.textViewValue.hidden = true
-            //cell.value.hidden = false
-        }
-        
-        
+
         return cell
     }
     
