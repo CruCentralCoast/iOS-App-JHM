@@ -88,8 +88,14 @@ class EventDetailsViewController: UIViewController {
             errors, id in
             
             //if theres an error print it
-            if errors != nil {
-                print(errors)
+            if let error = errors {
+                if (error.domain == "calendar") {
+                    //error code 9 means that the event you tried to add was not successful
+                    if (error.code == 9) {
+                        self.displayError("I'm sorry. There was an error adding that event to your calendar")
+                        self.reconfigureCalendarButton(false)
+                    }
+                }
             }
             else {
                 if let _ = id {
@@ -107,8 +113,15 @@ class EventDetailsViewController: UIViewController {
         calendarManager.removeEventFromCalendar(eventIdentifier as! String, completionHandler: {
             errors in
             
-            if errors != nil {
-                print(errors)
+            if let error = errors {
+                if (error.domain == "calendar") {
+                    //error code 10 says that theres no calendar event in the calendar
+                    //to remove
+                    if (error.code == 10) {
+                        self.displayError("That event was already removed from your calendar!")
+                        self.reconfigureCalendarButton(false)
+                    }
+                }
             }
             else {
                 self.eventLocalStorageManager.removeElement(self.event.id)
@@ -148,5 +161,13 @@ class EventDetailsViewController: UIViewController {
                 vc.loadRides(event)
             }
         }
+    }
+    
+    //displays any errors on the page as necessary
+    func displayError(message: String) {
+        let alert = UIAlertController(title: "Oops!", message: message, preferredStyle: .Alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        
+        self.presentViewController(alert, animated: true, completion: nil)
     }
 }

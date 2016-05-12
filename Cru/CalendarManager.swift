@@ -119,18 +119,21 @@ class CalendarManager {
     
     //helper method for removing event from calendar
     private func removeEvent(eventIdentifier: String) -> NSError? {
-        let calendarEvent = self.calendarStore.eventWithIdentifier(eventIdentifier)!
-        
-        //try to store the event into the calendar
-        do {
-            try self.calendarStore.removeEvent(calendarEvent, span: EKSpan.ThisEvent, commit: true)
-            return nil
+        if let calendarEvent = self.calendarStore.eventWithIdentifier(eventIdentifier) {
+            //try to store the event into the calendar
+            do {
+                try self.calendarStore.removeEvent(calendarEvent, span: EKSpan.ThisEvent, commit: true)
+                return nil
+            }
+            catch let error as NSError {
+                return error
+            }
+            catch {
+                fatalError()
+            }
         }
-        catch let error as NSError {
-            return error
-        }
-        catch {
-            fatalError()
+        else {
+            return NSError(domain: "calendar", code: 10, userInfo: nil)
         }
     }
     
