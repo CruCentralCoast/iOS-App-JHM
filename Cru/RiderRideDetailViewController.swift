@@ -36,27 +36,38 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
         details.append(EditableItem(itemName: Labels.directionLabel, itemValue: (ride?.getDirection())!, itemEditable: false, itemIsText: true))
     }
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as! DetailCell
+        
+        var cell: DetailCell!
+        cell = tableView.dequeueReusableCellWithIdentifier("smallerCell") as! DetailCell
+        
+//        if(details[indexPath.row].itemName == Labels.addressLabel){
+//            cell = tableView.dequeueReusableCellWithIdentifier("cell") as! DetailCell
+//        }
+//        else{
+//            
+//        }
+        
         
         if(details[indexPath.row].itemName == Labels.driverNumber){
             cell.textViewValue.text = PhoneFormatter.unparsePhoneNumber(details[indexPath.row].itemValue)
             cell.textViewValue.dataDetectorTypes = .PhoneNumber
             cell.title.text = details[indexPath.row].itemName
-            cell.textViewValue.hidden = false
-            cell.value.hidden = true
+            //cell.textViewValue.hidden = false
+            //cell.value.hidden = true
         }
         else if(details[indexPath.row].itemName == Labels.addressLabel){
             cell.textViewValue.text = details[indexPath.row].itemValue
             cell.textViewValue.dataDetectorTypes = .Address
             cell.title.text = details[indexPath.row].itemName
-            cell.textViewValue.hidden = false
-            cell.value.hidden = true
+            //cell.textViewValue.hidden = false
+            //cell.value.hidden = true
         }
         else{
-            cell.value.text = details[indexPath.row].itemValue
+            //cell.value.text = details[indexPath.row].itemValue
+            cell.textViewValue.text = details[indexPath.row].itemValue
             cell.title.text = details[indexPath.row].itemName
-            cell.textViewValue.hidden = true
-            cell.value.hidden = false
+            //cell.textViewValue.hidden = true
+            //cell.value.hidden = false
         }
         
         
@@ -64,7 +75,15 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80.0
+        let cell =  self.tableView(tableView, cellForRowAtIndexPath: indexPath) as? DetailCell
+        
+        if(cell!.title.text == Labels.addressLabel){
+            return 95.0
+        }
+        else{
+            return 44.0
+        }
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()

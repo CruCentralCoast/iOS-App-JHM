@@ -9,8 +9,10 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProSem.otf">
+            <string>FreightSansProSemibold-Regular</string>
             <string>FreightSansProSemibold-Regular</string>
         </mutableArray>
     </customFonts>
@@ -87,6 +89,47 @@
                                             <outlet property="textViewValue" destination="d1f-Fd-xIc" id="E4Z-su-XUB"/>
                                             <outlet property="title" destination="iSV-Hk-WIU" id="jbU-D6-GZe"/>
                                             <outlet property="value" destination="5Jp-Y1-Mlq" id="Zto-MN-z1D"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="smallerCell" rowHeight="95" id="uv1-Ka-N3H" customClass="DetailCell" customModule="Cru" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="600" height="95"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uv1-Ka-N3H" id="2FR-yi-ySX">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="95"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uzV-MV-6R6">
+                                                    <rect key="frame" x="14" y="13" width="150" height="24"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Lorem ipsum dolor " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="0Ht-ps-zjh">
+                                                    <rect key="frame" x="180" y="8" width="420" height="84"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="tintColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="0Ht-ps-zjh" secondAttribute="bottom" constant="-5" id="ECA-QM-mZB"/>
+                                                <constraint firstItem="uzV-MV-6R6" firstAttribute="leading" secondItem="2FR-yi-ySX" secondAttribute="leadingMargin" constant="6" id="GG1-az-YYT"/>
+                                                <constraint firstItem="0Ht-ps-zjh" firstAttribute="top" secondItem="2FR-yi-ySX" secondAttribute="topMargin" id="ckh-Qj-MdP"/>
+                                                <constraint firstItem="0Ht-ps-zjh" firstAttribute="trailing" secondItem="2FR-yi-ySX" secondAttribute="trailingMargin" constant="8" id="gKe-1O-fPu"/>
+                                                <constraint firstItem="uzV-MV-6R6" firstAttribute="top" secondItem="2FR-yi-ySX" secondAttribute="topMargin" constant="5" id="qgX-O0-aeX"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstItem="0Ht-ps-zjh" firstAttribute="leading" secondItem="uv1-Ka-N3H" secondAttribute="leading" constant="180" id="xmG-Ua-3Ix"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="textViewValue" destination="0Ht-ps-zjh" id="0ig-Qw-uB8"/>
+                                            <outlet property="title" destination="uzV-MV-6R6" id="PfS-mZ-TLp"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
