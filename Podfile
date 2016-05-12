@@ -15,21 +15,25 @@ def cru_pods
     pod 'Alamofire', '~> 3.0'
     pod 'RadioButton'
     pod 'ActionSheetPicker-3.0'
-    pod 'Fabric'
-    pod 'Crashlytics'
     pod 'DZNEmptyDataSet'
     pod 'ImageLoader'
     pod 'HTMLReader', '~> 0.9'
     pod 'SwiftyJSON', '~> 2.3.0'
 end
-    
+
+def crash_monitor
+    pod 'Fabric'
+    pod 'Crashlytics'
+end
 
 target 'Cru' do
     cru_pods
+    crash_monitor
 end
 
 target 'CruTests' do
     cru_pods
+    crash_monitor
 end
 
 
