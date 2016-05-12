@@ -107,12 +107,15 @@ class Event: Equatable {
         if let dLocation = dict["location"] {
             self.location = dLocation as? NSDictionary
         }
-        if let dImage = dict["image"] {
-            if let imageUrl = dImage.objectForKey("url") {
-                self.imageUrl = imageUrl as! String
-//                print("eventName: " + self.name + ": " + self.imageUrl)
-            }
+        if let dImageLink = dict["imageLink"] {
+            self.imageUrl = dImageLink as! String
         }
+//        if let dImage = dict["image"] {
+//            if let imageUrl = dImage.objectForKey("url") {
+//                self.imageUrl = imageUrl as! String
+////                print("eventName: " + self.name + ": " + self.imageUrl)
+//            }
+//        }
     }
     
     //function for sorting events by date
