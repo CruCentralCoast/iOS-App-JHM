@@ -67,6 +67,9 @@
 		501D0ABF1C68588700BF243A /* events.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 501D0ABE1C68588700BF243A /* events.storyboard */; };
 		5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094D1C066C780019E97C /* CampusesViewController.swift */; };
 		502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5026094F1C066D1F0019E97C /* CampusesTableViewController.swift */; };
+		5031E1521CE682F30005AAF6 /* RideTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507086821C8F5F9D006C5215 /* RideTest.swift */; };
+		5031E1531CE682F30005AAF6 /* TestDriverRideDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5072B4191CB38B80001F5BF6 /* TestDriverRideDetail.swift */; };
+		5031E1541CE682F30005AAF6 /* MockTimeDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50844D991CB3AE3A0089FC93 /* MockTimeDetail.swift */; };
 		503A06CA1C5F080200DAD10E /* ridesharing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06C91C5F080200DAD10E /* ridesharing.storyboard */; };
 		503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
 		503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
@@ -1177,6 +1180,7 @@
 				C12562571CD3E77B002B05D0 /* CruTests-Bridging-Header.h in Sources */,
 				5072B4281CB38F43001F5BF6 /* PassengerTableViewCell.swift in Sources */,
 				5072B4231CB38E75001F5BF6 /* DriverRideDetailViewController.swift in Sources */,
+				5031E1541CE682F30005AAF6 /* MockTimeDetail.swift in Sources */,
 				508B2BD81CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */,
 				50697BC81CE0456600776CC5 /* PhoneFormatter.swift in Sources */,
 				5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */,
@@ -1193,6 +1197,7 @@
 				0F1959C71C8E5AFD00A783BA /* Colors.swift in Sources */,
 				C1015CD21C9429D0005B559E /* ResourcesTest.swift in Sources */,
 				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
+				5031E1531CE682F30005AAF6 /* TestDriverRideDetail.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				505722A51CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
 				507B368B1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,
@@ -1221,6 +1226,7 @@
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
+				5031E1521CE682F30005AAF6 /* RideTest.swift in Sources */,
 				500A37B11C7D6587007D6A3B /* Passenger.swift in Sources */,
 				6DA330AB1CD95E1200FCC970 /* ResourceTest.swift in Sources */,
 				5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */,
