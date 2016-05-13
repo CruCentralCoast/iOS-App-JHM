@@ -11,6 +11,8 @@ import UIKit
 class EventsTableViewController: UITableViewController {
     
     var events = [Event]()
+    let curDate = NSDate()
+    
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -28,7 +30,13 @@ class EventsTableViewController: UITableViewController {
     
     //insert helper function for inserting event data
     private func insertEvent(dict: NSDictionary) {
-        self.events.insert(Event(dict: dict)!, atIndex: 0)
+        let event = Event(dict: dict)!
+        let cmpResult = curDate.compare(event.startNSDate)
+        
+        //check if the event has happened yet. If it hasnt then add it
+        if cmpResult == NSComparisonResult.OrderedAscending || cmpResult == NSComparisonResult.OrderedSame {
+            self.events.insert(event, atIndex: 0)
+        }
     }
     
     //helper function for finishing off inserting event data
