@@ -29,7 +29,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     var seatsOffered: UILabel?
     var seatsLeft: UILabel?
     var radius: UILabel?
-    var itemMap = [String: EditableItem]()
     @IBOutlet weak var detailsTable: UITableView!
     
     override func viewWillAppear(animated: Bool) {
@@ -57,19 +56,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     
     
     func populateDetails(){
-        var newItem = EditableItem(itemName: Labels.eventLabel, itemValue: event!.name, itemEditable: false, itemIsText: true)
-        itemMap.updateValue(newItem, forKey: Labels.eventLabel)
-        details.append(newItem)
-        newItem = EditableItem(itemName: Labels.departureTimeLabel, itemValue: ride.getTime(), itemEditable: false, itemIsText: true)
-        itemMap.updateValue(newItem, forKey: Labels.departureTimeLabel)
-        details.append(EditableItem(itemName: Labels.departureTimeLabel, itemValue: ride.getTime(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.departureDateLabel, itemValue: ride.getDate(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.pickupRadius, itemValue: ride.getRadius(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.directionLabel, itemValue: ride.getDirection(), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.seatsLabel, itemValue: String(ride.seats), itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.seatsLeftLabel, itemValue: String(ride.seatsLeft()), itemEditable: false, itemIsText: true))
-        
+        details = ride.getDriverDetails()        
     }
     
     func updateData(){

@@ -264,6 +264,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tappedRide = rides[indexPath.row]
         tappedEvent = getEventForEventId((tappedRide?.eventId)!)
+        tappedRide!.eventName = (tappedEvent?.name)!
         
         if(tappedRide?.gcmId == Config.gcmId()){
             self.performSegueWithIdentifier("driverdetailsegue", sender: self)

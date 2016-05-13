@@ -59,6 +59,7 @@ class Ride: Comparable, Equatable, TimeDetail {
     var driverNumber: String = ""
     var driverName: String = ""
     var eventId: String = ""
+    var eventName: String = ""
     var time: String = ""
     var passengers = [String]()
     var day = -1
@@ -257,6 +258,51 @@ class Ride: Comparable, Equatable, TimeDetail {
         }
     }
     
+    func getRiderDetails() -> [EditableItem]{
+        var details = [EditableItem]()
+        details.appendContentsOf(getEventInfo())
+        details.appendContentsOf(getDriverInfo())
+        details.appendContentsOf(getDepartureInfo())
+        return details
+    }
+    
+    func getDriverDetails() -> [EditableItem]{
+        var details = [EditableItem]()
+        details.appendContentsOf(getEventInfo())
+        details.appendContentsOf(getDepartureInfo())
+        details.appendContentsOf(getSeatsInfo())
+        return details
+    }
+    
+    func getSeatsInfo() -> [EditableItem]{
+        var details = [EditableItem]()
+        details.append(EditableItem(itemName: Labels.seatsLabel, itemValue: String(seats), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.seatsLeftLabel, itemValue: String(seatsLeft()), itemEditable: false, itemIsText: true))
+        return details
+    }
+    
+    func getEventInfo() -> [EditableItem]{
+        return [EditableItem(itemName: Labels.eventLabel, itemValue: eventName, itemEditable: false, itemIsText: true)]
+    }
+    
+    func getDepartureInfo() -> [EditableItem]{
+        var details = [EditableItem]()
+        details.append(EditableItem(itemName: Labels.departureDateLabel, itemValue: getDate(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.departureTimeLabel, itemValue: getTime(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.directionLabel, itemValue: getDirection(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.addressLabel, itemValue: getCompleteAddress(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.pickupRadius, itemValue: getRadius(), itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.directionLabel, itemValue: getDirection(), itemEditable: false, itemIsText: true))
+        return details
+    }
+    
+    func getDriverInfo() -> [EditableItem]{
+        var details = [EditableItem]()
+        details.append(EditableItem(itemName: Labels.driverName, itemValue: driverName, itemEditable: false, itemIsText: true))
+        details.append(EditableItem(itemName: Labels.driverNumber, itemValue: driverNumber, itemEditable: false, itemIsText: true))
+        return details
+    }
+    
     func getRideAsDict()->[String:AnyObject]{
         var map: [String:AnyObject] = [RideKeys.id : self.id,
             RideKeys.direction: self.direction, RideKeys.driverName: self.driverName,
@@ -265,20 +311,6 @@ class Ride: Comparable, Equatable, TimeDetail {
             RideKeys.location: self.getLocationAsDict(), RideKeys.passengers: self.passengers]
         map.updateValue(self.direction, forKey: RideKeys.direction)
         map[RideKeys.direction] = self.direction
-        //map[RideKeys.driverName] = self.driverName
-        //map[RideKeys.driverNumber] = self.driverNumber
-        //map[RideKeys.radius] = self.radius
-        //map[RideKeys.seats] = self.seats
-        //map[RideKeys.time] = self.time
-        //map[RideKeys.location] = self.getLocationAsDict()
-        //map[RideKeys.passengers] = self.passengers
-        
-        //map[RideKeys.id] = self.id
-        //map[RideKeys.event] = self.eventId
-        //map[RideKeys.gcm_id] = self.gcmId
-        //map[RideKeys.gender] = self.gender
-        //map[RideKeys.v] = 0
-
         return map
     }
     

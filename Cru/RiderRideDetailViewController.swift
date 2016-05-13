@@ -22,19 +22,21 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
     var ride: Ride?
     var rideVC: RidesViewController?
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        navigationItem.title = "Ride Details"
+        populateDetails()
+        
+    }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return details.count
     }
     
     func populateDetails(){
-        details.append(EditableItem(itemName: Labels.driverName, itemValue: (ride?.driverName)!, itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.driverNumber, itemValue: (ride?.driverNumber)!, itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.addressLabel, itemValue: (ride?.getCompleteAddress())!, itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.departureDateLabel, itemValue: (ride?.getDate())!, itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.departureTimeLabel, itemValue: (ride?.getTime())!, itemEditable: false, itemIsText: true))
-        details.append(EditableItem(itemName: Labels.directionLabel, itemValue: (ride?.getDirection())!, itemEditable: false, itemIsText: true))
+        details = ride!.getRiderDetails()
     }
+    
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         var cell: DetailCell!
@@ -68,12 +70,7 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
         }
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "Ride Details"
-        populateDetails()
-
-    }
+    
     
     func setTime(td : TimeDetail){
         //date.text = td.getTime()
