@@ -25,12 +25,12 @@ class SummerMissionCell: UICollectionViewCell {
     var mission: SummerMission? {
         didSet {
             if let mission = mission {
-                imageView.image = mission.image
+//                imageView.image = mission.image
                 
                 nameLabel.text = mission.name
                 nameLabel.sizeToFit()
                 
-                dateLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.endDate.formatMonthDayYear()
+//                dateLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.endDate.formatMonthDayYear()
             }
         }
     }
