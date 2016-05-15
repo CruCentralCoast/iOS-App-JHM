@@ -22,6 +22,9 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
         </mutableArray>
+        <mutableArray key="FreigSanProMed.otf">
+            <string>FreightSansProMedium-Regular</string>
+        </mutableArray>
         <mutableArray key="FreigSanProSem.otf">
             <string>FreightSansProSemibold-Regular</string>
             <string>FreightSansProSemibold-Regular</string>
@@ -204,7 +207,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1tG-wk-QH8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="561"/>
+                                <rect key="frame" x="0.0" y="45" width="600" height="516"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -257,23 +260,33 @@
                                     <outlet property="delegate" destination="3yh-Ii-FnX" id="lmv-t1-SM9"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Passengers" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Th-dZ-2WG">
+                                <rect key="frame" x="251" y="10" width="100" height="26"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="22"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="1tG-wk-QH8" firstAttribute="top" secondItem="1Th-dZ-2WG" secondAttribute="bottom" constant="9" id="6He-Bk-syS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="1tG-wk-QH8" secondAttribute="trailing" constant="-20" id="C1P-3M-O0a"/>
                             <constraint firstItem="D4A-zT-fTJ" firstAttribute="top" secondItem="2P4-lF-wZi" secondAttribute="bottom" id="PA3-eY-bcv"/>
-                            <constraint firstItem="1tG-wk-QH8" firstAttribute="top" secondItem="py0-Z5-KJ2" secondAttribute="topMargin" id="afF-RB-XRD"/>
+                            <constraint firstItem="1Th-dZ-2WG" firstAttribute="top" secondItem="py0-Z5-KJ2" secondAttribute="topMargin" constant="10" id="Sty-Qy-ZHr"/>
+                            <constraint firstItem="1tG-wk-QH8" firstAttribute="top" secondItem="py0-Z5-KJ2" secondAttribute="topMargin" constant="45" id="afF-RB-XRD"/>
                             <constraint firstItem="1tG-wk-QH8" firstAttribute="leading" secondItem="py0-Z5-KJ2" secondAttribute="leadingMargin" constant="-20" id="cFP-iY-2Va"/>
                             <constraint firstAttribute="trailingMargin" secondItem="2P4-lF-wZi" secondAttribute="trailing" constant="-20" id="jQB-V5-n6K"/>
                             <constraint firstItem="2P4-lF-wZi" firstAttribute="leading" secondItem="py0-Z5-KJ2" secondAttribute="leadingMargin" constant="-20" id="reo-Oa-qXV"/>
                             <constraint firstItem="D4A-zT-fTJ" firstAttribute="top" secondItem="1tG-wk-QH8" secondAttribute="bottom" constant="39" id="scw-T8-Jxq"/>
+                            <constraint firstItem="1Th-dZ-2WG" firstAttribute="centerX" secondItem="py0-Z5-KJ2" secondAttribute="centerX" id="zS7-7R-eOG"/>
                         </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0u-5S-zJa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="-146"/>
+            <point key="canvasLocation" x="2364" y="-111"/>
         </scene>
         <!--Edit Ride View Controller-->
         <scene sceneID="PSG-ft-xFj">
