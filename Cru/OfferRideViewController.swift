@@ -347,19 +347,45 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
 extension Location {
     func getLocationAsDict(loc: Location) -> NSDictionary {
         var dict = [String:AnyObject]()
+        let otherDict = loc.placemark.addressDictionary!
+        
         if let street = loc.placemark.addressDictionary!["Street"] {
-            dict["street1"] = street
+            dict[LocationKeys.street1] = street
         }
+        
         if let state = loc.placemark.addressDictionary!["State"] {
-            dict["state"] = state
+            dict[LocationKeys.state] = state
         }
+        
         if let zip = loc.placemark.addressDictionary!["ZIP"] {
-            dict["postcode"] = zip
+            dict[LocationKeys.postcode] = zip
         }
-        if let suburb = loc.placemark.addressDictionary!["SubAdministrativeArea"] {
-            dict["suburb"] = suburb
+        
+        if let suburb = loc.placemark.addressDictionary!["locality"] {
+            dict[LocationKeys.city] = suburb
+        }
+        else if let suburb = loc.placemark.addressDictionary!["subLocality"]{
+            dict[LocationKeys.city] = suburb
+        }
+        else if let suburb = loc.placemark.addressDictionary!["SubAdministrativeArea"]{
+            dict[LocationKeys.city] = suburb
         }
         return dict
         
+        /*
+            public var name: String? { get } // eg. Apple Inc.
+            public var thoroughfare: String? { get } // street name, eg. Infinite Loop
+            public var subThoroughfare: String? { get } // eg. 1
+            public var locality: String? { get } // city, eg. Cupertino
+            public var subLocality: String? { get } // neighborhood, common name, eg. Mission District
+            public var administrativeArea: String? { get } // state, eg. CA
+            public var subAdministrativeArea: String? { get } // county, eg. Santa Clara
+            public var postalCode: String? { get } // zip code, eg. 95014
+            public var ISOcountryCode: String? { get } // eg. US
+            public var country: String? { get } // eg. United States
+            public var inlandWater: String? { get } // eg. Lake Tahoe
+            public var ocean: String? { get } // eg. Pacific Ocean
+            public var areasOfInterest: [String]? { get } // eg. Golden Gate Park
+        */
     }
 }

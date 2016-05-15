@@ -30,7 +30,7 @@ struct LocationKeys {
     static let loc = "location"
     static let postcode = "postcode"
     static let street1 = "street1"
-    static let suburb = "suburb"
+    static let city = "city"
     static let state = "state"
     static let country = "country"
 }
@@ -54,6 +54,10 @@ struct Labels{
 //used for validation errors on ride signup and edit forms
 struct ValidationErrors{
     static let none = ""
+    static let noStreet = "Please provide an address with a valid street"
+    static let noZip = "Please provide an address with a valid zipcode"
+    static let noState = "Please provide an address with a valid state"
+    static let noCity = "Please provide an address with a valid city"
     static let noPhone = "Please provide a phone number"
     static let badPhone = "Please provide a valid 10 digit phone number"
     static let noName = "Please provide a first and last name"
@@ -81,7 +85,7 @@ class Ride: Comparable, Equatable, TimeDetail {
     var date : NSDate?
     var postcode: String = ""
     var state: String = ""
-    var suburb: String = ""
+    var city: String = ""
     var street: String = ""
     var country: String = ""
     var gender: Int = 0
@@ -98,13 +102,13 @@ class Ride: Comparable, Equatable, TimeDetail {
             if (loc[LocationKeys.state] != nil && !(loc[LocationKeys.state] is NSNull)){
                 state = loc[LocationKeys.state] as! String
             }
-            if (loc[LocationKeys.suburb] != nil && !(loc[LocationKeys.suburb] is NSNull)){
-                suburb = loc[LocationKeys.suburb] as! String
+            if (loc[LocationKeys.city] != nil && !(loc[LocationKeys.city] is NSNull)){
+                city = loc[LocationKeys.city] as! String
             }
             if (loc[LocationKeys.street1] != nil && !(loc[LocationKeys.street1] is NSNull)){
                 street = loc[LocationKeys.street1] as! String
             }
-            if loc[LocationKeys.country] != nil {
+            if (loc[LocationKeys.country] != nil && !(loc[LocationKeys.country] is NSNull)) {
                 country = loc[LocationKeys.country] as! String
             }
         }
@@ -220,14 +224,17 @@ class Ride: Comparable, Equatable, TimeDetail {
         if(street != ""){
             address += street
         }
-        if(postcode != ""){
-            address += ", " + postcode
-        }
-        if(suburb != ""){
-            address += ", " + suburb
+        if(city != ""){
+            address += ", " + city
         }
         if(state != ""){
             address += ", " + state
+        }
+        if(postcode != ""){
+            address += ", " + postcode
+        }
+        if(country != ""){
+            address += ", " + country
         }
         
         return address
@@ -268,6 +275,31 @@ class Ride: Comparable, Equatable, TimeDetail {
         }
     }
     
+    func clearAddress(){
+        postcode = ""
+        state = ""
+        city = ""
+        street = ""
+        country = ""
+    }
+    
+    func isValidAddress() -> String{
+        if (street == ""){
+            return ValidationErrors.noStreet
+        }
+        if (postcode == ""){
+            return ValidationErrors.noZip
+        }
+        if (city == ""){
+            return ValidationErrors.noCity
+        }
+        if (state == ""){
+            return ValidationErrors.noState
+        }
+
+        
+        return ValidationErrors.none
+    }
     
     //Accepts a phone number as a string and returns a String indicating any errors
     func isValidPhoneNum(num: String) -> String{
@@ -390,7 +422,7 @@ class Ride: Comparable, Equatable, TimeDetail {
         locMap[LocationKeys.state] = self.state
         locMap[LocationKeys.street1] = self.street
         locMap[LocationKeys.country] = self.country
-        locMap[LocationKeys.suburb] = self.suburb
+        locMap[LocationKeys.city] = self.city
         
         map[LocationKeys.loc] = locMap
         

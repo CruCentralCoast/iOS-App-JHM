@@ -167,9 +167,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
     }
 
-    func editRadius(){
-        
-    }
     
     func chooseDateHandler(month : Int, day : Int, year : Int){
         let curDate = ride.date
@@ -208,25 +205,11 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         navigationController?.pushViewController(locationPicker, animated: true)
     }
     
-    
-
-    @IBAction func savePressed(sender: AnyObject) {
-        
-        if(seatsValue != nil && seatsValue.text != ""){
-            ride.seats = Int(seatsValue.text)!
-        }
-        
-        if(timeValue != nil){
-            ride.time = timeValue.text!
-        }
-        
-        
+    func extractDateTimeFromView(){
         let timeVal = timeValue.text
         let dateVal = dateValue.text
         var timeDate: NSDate?
         var dateDate: NSDate?
-        
-        
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
@@ -236,7 +219,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         if let date = dateFormatter.dateFromString(dateVal!) {
             dateDate = date
         }
-
         
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "h:mm a"
@@ -260,75 +242,114 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
                 ride.minute = (components.minute)
             }
         }
-        
-        
+    }
 
-        
-        
+    
+    func extractLocationFromView()->Bool{
         if(location != nil){
             let map = location.getLocationAsDict(location)
             
+            ride.clearAddress()
+            
+            
+            if(map[LocationKeys.city] != nil){
+                ride.city = map[LocationKeys.city] as! String
+            }
+            if(map[LocationKeys.state] != nil){
+                ride.state = map[LocationKeys.state] as! String
+            }
+            if(map[LocationKeys.street1] != nil){
+                ride.street = map[LocationKeys.street1] as! String
+            }
+            if(map[LocationKeys.country] != nil){
+                ride.country = map[LocationKeys.country] as! String
+            }
             if(map[LocationKeys.postcode] != nil){
                 ride.postcode = map[LocationKeys.postcode] as! String
             }
-            if(map[LocationKeys.postcode] != nil){
-                ride.state = map[LocationKeys.state] as! String
+            
+            if(ride.isValidAddress() == ""){
+                return true
             }
-            if(map[LocationKeys.postcode] != nil){
-                ride.suburb = map[LocationKeys.suburb] as! String
+            else{
+                showValidationError(ride.isValidAddress())
+                return false
             }
-            if(map[LocationKeys.postcode] != nil){
-                ride.street = map[LocationKeys.street1] as! String
-            }
-
+            
         }
+        return true
         
-        
-        
-        
+    }
+    
+    
+    func extractNameFromView() -> Bool{
         if (nameValue != nil){
             let error  = ride.isValidName(nameValue.text)
             if(error != ""){
                 showValidationError(error)
                 addTextViewError(nameValue)
-                return
+                return false
             }
             else{
                 ride.driverName = nameValue.text!
                 removeTextViewError(nameValue)
+                return true
             }
         }
-        
+        return true
+    }
+    
+    func extractNumberFromView()->Bool{
         if (numberValue != nil){
             let parsedNum = PhoneFormatter.parsePhoneNumber(numberValue.text!)
             let error  = ride.isValidPhoneNum(parsedNum)
             if(error != ""){
                 showValidationError(error)
                 addTextViewError(numberValue)
-                return
+                return false
             }
             else{
                 ride.driverNumber = parsedNum
                 removeTextViewError(numberValue)
+                return true
             }
             
         }
-        
-        var serverVal = ride.direction
+        return true
+    }
+    
+    
+    func extractDirectionFromView(){
         if(directionValue != nil){
-            serverVal = ride.getServerDirectionValue(directionValue.text!)
+             ride.direction = ride.getServerDirectionValue(directionValue.text!)
         }
-        
-        
+    }
+    
+    func extractMilesFromView(){
         let index1 = pickupRadius.text?.startIndex.advancedBy(2)
         let numMiles = pickupRadius.text?.substringToIndex(index1!)
         let trimmedString = numMiles!.stringByTrimmingCharactersInSet(
             NSCharacterSet.whitespaceAndNewlineCharacterSet()
         )
-        let milesInt = Int(trimmedString)
-        
+        ride.radius = Int(trimmedString)!
+    }
     
-        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.radius: milesInt!, RideKeys.driverName: ride.driverName, RideKeys.direction: serverVal, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
+    @IBAction func savePressed(sender: AnyObject) {
+        
+        //extract seats, time, date, location, name, phone number (all if possible aka null checking)
+        if(seatsValue != nil && seatsValue.text != ""){ride.seats = Int(seatsValue.text)!}
+        if(timeValue != nil){ ride.time = timeValue.text! }
+        extractDateTimeFromView()
+        if(extractLocationFromView() == false){return}
+        if (extractNameFromView() == false){return}
+        if (extractNumberFromView() == false){return}
+        extractDirectionFromView()
+        
+        
+        //radius already extracted when set
+        extractMilesFromView()
+    
+        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.radius: ride.radius, RideKeys.driverName: ride.driverName, RideKeys.direction: ride.direction, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.city: ride.city, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
     
     
@@ -492,8 +513,4 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         return false
     }
-    
-    
-    
-
 }
