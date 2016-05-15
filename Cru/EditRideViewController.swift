@@ -316,16 +316,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
         var serverVal = ride.direction
         if(directionValue != nil){
-            switch (directionValue.text){
-            case Directions.from?:
-                serverVal = "from"
-            case Directions.to?:
-                serverVal = "to"
-            case Directions.both?:
-                serverVal = "both"
-            default:
-                serverVal = ""
-            }
+            serverVal = ride.getServerDirectionValue(directionValue.text!)
         }
         
         
@@ -399,7 +390,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             //uipopover magic
             let popoverVC = segue.destinationViewController
             let controller = popoverVC.popoverPresentationController
-            popoverVC.preferredContentSize = CGSizeMake(self.view.frame.width - 30, 240)
+            popoverVC.preferredContentSize = CGSizeMake(self.view.frame.width - 30, 195)
             
             if(controller != nil){
                 controller?.delegate = self

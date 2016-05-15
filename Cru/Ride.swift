@@ -311,6 +311,21 @@ class Ride: Comparable, Equatable, TimeDetail {
     }
     
     
+    //converts our direction value to a server value
+    func getServerDirectionValue(dir : String)->String{
+        switch (dir){
+            case Directions.from:
+                return "from"
+            case Directions.to:
+                return  "to"
+            case Directions.both:
+                return  "both"
+            default:
+                return  ""
+        }
+    }
+    
+    
     func getRiderDetails() -> [EditableItem]{
         var details = [EditableItem]()
         details.appendContentsOf(getEventInfo())

@@ -532,6 +532,9 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="400" height="300"/>
+                    <connections>
+                        <outlet property="table" destination="Fak-ww-nKO" id="gGZ-p8-Ait"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LdJ-f2-ORq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
