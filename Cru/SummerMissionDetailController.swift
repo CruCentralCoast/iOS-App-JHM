@@ -45,14 +45,14 @@ class SummerMissionDetailController: UIViewController {
         if let mission = mission {
             navigationItem.title = "Details"
             
-            image.image = mission.image
+//            image.image = mission.image
             
             titleLabel.text = mission.name
             titleLabel.sizeToFit()
             
-            datesLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.startDate.formatMonthDayYear()
+//            datesLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.startDate.formatMonthDayYear()
             
-            locationLabel.text = mission.country //mission.street! + ", " + event.suburb! + ", " + event.postcode!
+//            locationLabel.text = mission.country //mission.street! + ", " + event.suburb! + ", " + event.postcode!
             
             
             descriptionView.text = mission.description

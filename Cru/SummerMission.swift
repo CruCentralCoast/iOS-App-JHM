@@ -6,71 +6,87 @@
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class SummerMission {
     
     //MARK: Properties
     var id: String
-    var slug: String
     var description: String
     var name: String
     var url: String
     var cost: Double
     var leaders: String
-    var startDate: NSDateComponents
-    var endDate: NSDateComponents
-    var country: String
-    var state: String
-    var suburb: String
-    var street: String
-    var image: UIImage?
-
-    //MARK: Initialization
-    init?(id: String?, slug: String?, description: String?, name: String?, url: String?, cost: Double?, leaders: String?, startDate: String?, endDate: String?, country: String?, state: String?, suburb: String?, street: String?, imageUrl: String?) {
-        self.id = id!
-        self.slug = slug!
-        self.description = description!
-        self.name = name!
-        self.url = url!
-        if (cost != nil) {
-            self.cost = cost!
-        }
-        else {
-            self.cost = 9001.0
-        }
-        self.leaders = leaders!
-        self.startDate = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(startDate!))!
-        self.endDate = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(endDate!))!
-        self.country = country!
-        self.state = state!
-        self.suburb = suburb!
-        self.street = street!
+    var startNSDate: NSDate
+    var endNSDate: NSDate
+    var location: NSDictionary?
+    var imageLink: String
+    
+    init?() {
+        self.id = ""
+        self.description = ""
+        self.name = ""
+        self.url = ""
+        self.cost = 0.0
+        self.leaders = ""
+        self.startNSDate = NSDate()
+        self.endNSDate = NSDate()
+        self.location = NSDictionary()
+        self.imageLink = ""
+    }
+    
+    convenience init?(dict: NSDictionary) {
+        self.init()
         
-        if (imageUrl != nil) {
-            let cloudURL = NSURL(string: imageUrl!)
-            let imageData = NSData(contentsOfURL: cloudURL!)
-            self.image = UIImage(data: imageData!)!
+        if let dId = dict["_id"] {
+            self.id = dId as! String
+        }
+        if let dDescription = dict["description"] {
+            self.description = dDescription as! String
+        }
+        if let dName = dict["name"] {
+            self.name = dName as! String
+        }
+        if let dUrl = dict["url"] {
+            self.url = dUrl as! String
+        }
+        if let dCost = dict["cost"] {
+           self.cost = dCost as! Double
+        }
+        if let dLeaders = dict["leaders"] {
+            self.leaders = dLeaders as! String
+        }
+        if let dStartDate = dict["startDate"] {
+            self.startNSDate = GlobalUtils.dateFromString(dStartDate as! String)
+        }
+        if let dEndDate = dict["endDate"] {
+            self.endNSDate = GlobalUtils.dateFromString(dEndDate as! String)
+        }
+        if let dLocation = dict["location"] {
+            self.location = dLocation as? NSDictionary
+        }
+        if let dImageLink = dict["imageLink"] {
+            self.imageLink = dImageLink as! String
         }
     }
     
-    convenience init?(dict : NSDictionary) {
-        let id = dict["_id"] as! String?
-        let slug = dict["slug"] as! String?
-        let description = dict["description"] as! String?
-        let name = dict["name"] as! String?
-        let url = dict["url"] == nil ? "" : dict["url"] as! String?
-        let cost = dict["cost"] as! Double?
-        let leaders = dict["startDate"] as! String?
-        let startDate = dict["startDate"] as! String?
-        let endDate = dict["endDate"] as! String?
-        let country = dict["location"]?.objectForKey("country") as! String?
-        let state = dict["location"]?.objectForKey("state") as! String?
-        let suburb = dict["location"]?.objectForKey("suburb") as! String?
-        let street = dict["location"]?.objectForKey("street1") as! String?
-        let imageUrl = dict["image"]?.objectForKey("secure_url") as! String?
+    //return the location as a string
+    func getLocationString() -> String {
+        var retLoc = ""
         
-
-        self.init(id: id, slug: slug, description: description, name: name, url: url, cost: cost, leaders: leaders, startDate: startDate, endDate: endDate, country: country, state: state, suburb:suburb, street: street, imageUrl: imageUrl)
+        if location != "" {
+            if let dSuburb = location!.objectForKey("suburb") {
+                retLoc += dSuburb as! String
+            }
+            if let dCountry = location!.objectForKey("country") {
+                if retLoc != "" {
+                    retLoc += ", "
+                }
+                
+                retLoc += dCountry as! String
+            }
+        }
+        
+        return retLoc
     }
 }
