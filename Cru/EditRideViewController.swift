@@ -11,6 +11,16 @@ import MapKit
 import LocationPicker
 import SwiftValidator
 
+enum EditTags: Int {
+    case Time
+    case Date
+    case Address
+    case Radius
+    case Direction
+    case Seats
+    case Name
+    case Number
+}
 
 class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate, UITextViewDelegate {
     
@@ -26,6 +36,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     var event : Event!
     var ride : Ride!
     var options = [EditableItem]()
+    var directionOption: EditableItem!
     var ridesVC: RidesViewController?
     var rideDetailVC: DriverRideDetailViewController?
     var table: UITableView?
@@ -50,6 +61,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     var location: Location! {
         didSet {
             addressValue.text? = location.address
+            extractLocationFromView()
+            updateOptions()
         }
     }
     
@@ -57,6 +70,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Edit Ride"
+        ride.eventStartDate = event.startNSDate
+        ride.eventEndDate = event.endNSDate
         populateOptions()
         getRideLocation()
     }
@@ -68,12 +83,37 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         options.append(EditableItem(itemName: departureDateLabel, itemValue: ride.getDate(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: Labels.pickupRadius, itemValue: ride.getRadius(), itemEditable: true, itemIsText: true))
-        options.append(EditableItem(itemName: directionLabel, itemValue: ride.getDirection(), itemEditable: true, itemIsText: false))
+        directionOption = EditableItem(itemName: directionLabel, itemValue: ride.getDirection(), itemEditable: true, itemIsText: false)
+        options.append(directionOption)
         options.append(EditableItem(itemName: seatsLabel, itemValue: String(ride.seats), itemEditable: true, itemIsText: true))
-        options.append(EditableItem(itemName: nameLabel, itemValue: String(ride.driverName), itemEditable: true, itemIsText: true))
+        options.append(EditableItem(itemName: nameLabel, itemValue: ride.driverName, itemEditable: true, itemIsText: true))
         options.append(EditableItem(itemName: phoneLabel, itemValue: "", itemEditable: true, itemIsText: true))
-        
-        
+    }
+    
+    func updateOptions(){
+        for option in options{
+            switch option.itemName{
+                case nameLabel:
+                    option.itemValue = ride.driverName
+                case seatsLabel:
+                    option.itemValue = String(ride.seats)
+                case Labels.pickupRadius:
+                    option.itemValue = ride.getRadius()
+                case directionLabel:
+                    option.itemValue = ride.getDirection()
+                case phoneLabel:
+                    option.itemValue = ride.driverNumber
+                case departureTimeLabel:
+                    option.itemValue = ride.getTime()
+                case departureDateLabel:
+                    option.itemValue = ride.getDate()
+                case addressLabel:
+                    option.itemValue = ride.getCompleteAddress()
+                default:
+                    print("")
+            }
+        }
+        self.table?.reloadData()
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -110,6 +150,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else if(cell?.contentType.text == seatsLabel){
             cell?.contentTextField.keyboardType = .NumberPad
+            cell?.contentTextField.tag = EditTags.Seats.rawValue
+            cell?.contentTextField.delegate = self
             seatsValue = cell?.contentTextField
         }
         else if(cell?.contentType.text == addressLabel){
@@ -117,9 +159,12 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else if(cell?.contentType.text == nameLabel){
             nameValue = cell?.contentTextField
+            cell?.contentTextField.tag = EditTags.Name.rawValue
+            nameValue.delegate = self
         }
         else if(cell?.contentType.text == phoneLabel){
             cell?.contentTextField.keyboardType = .NumberPad
+            cell?.contentTextField.tag = EditTags.Number.rawValue
             numberValue = cell?.contentTextField
             numberValue.delegate = self
             numberValue.text = PhoneFormatter.unparsePhoneNumber(ride.driverNumber)
@@ -131,6 +176,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         else if(cell?.contentType.text == Labels.pickupRadius){
             pickupRadius = cell?.contentTextField
+            pickupRadius.tag = EditTags.Radius.rawValue
+            pickupRadius.delegate = self
         }
         
         cell?.editButton.hidden = !(option.itemEditable)
@@ -169,9 +216,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
 
     
     func chooseDateHandler(month : Int, day : Int, year : Int){
-        let curDate = ride.date
-        
-        
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "MM d yyyy"
@@ -180,7 +224,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         if let date = dateFormatter.dateFromString(String(month) + " " + String(day) + " " + String(year)) {
             ride.date = date
             self.dateValue.text = ride.getDate()
-            ride.date = curDate
+            extractDateTimeFromView()
+            updateOptions()
         }
     }
     
@@ -188,6 +233,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         let formatter = NSDateFormatter()
         formatter.dateFormat = "h:mm a"
         timeValue.text = formatter.stringFromDate(obj)
+        extractDateTimeFromView()
+        updateOptions()
     }
     
     func choosePickupLocation(sender: AnyObject) {
@@ -205,7 +252,11 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         navigationController?.pushViewController(locationPicker, animated: true)
     }
     
-    func extractDateTimeFromView(){
+    func extractDateTimeFromView()->Bool{
+        ride.eventStartDate = event.startNSDate
+        ride.eventEndDate = event.endNSDate
+    
+        
         let timeVal = timeValue.text
         let dateVal = dateValue.text
         var timeDate: NSDate?
@@ -241,6 +292,16 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
                 ride.hour = (components.hour)
                 ride.minute = (components.minute)
             }
+        }
+        
+        ride.date = GlobalUtils.dateFromString(ride.getTimeInServerFormat())
+        
+        if (ride.isValidTime() == ""){
+            return true
+        }
+        else{
+            showValidationError(ride.isValidTime())
+            return false
         }
     }
 
@@ -334,21 +395,55 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         ride.radius = Int(trimmedString)!
     }
     
+    
+    func extractNumSeats()->Bool{
+        if (seatsValue != nil && seatsValue != ""){
+            if let val = Int(seatsValue.text.stringByTrimmingCharactersInSet(
+                NSCharacterSet.whitespaceAndNewlineCharacterSet())){
+                    if(val == 0){
+                        showValidationError(ValidationErrors.badSeats)
+                        return false
+                    }
+                    else{
+                        ride.seats = val
+                        return true
+                    }
+            }
+            else{
+                showValidationError(ValidationErrors.badSeats)
+            }
+        }
+        
+        if(seatsValue != ""){
+            showValidationError(ValidationErrors.noSeats)
+            return false
+        }
+        
+        
+        return true
+        
+    }
     @IBAction func savePressed(sender: AnyObject) {
         
         //extract seats, time, date, location, name, phone number (all if possible aka null checking)
-        if(seatsValue != nil && seatsValue.text != ""){ride.seats = Int(seatsValue.text)!}
+        
         if(timeValue != nil){ ride.time = timeValue.text! }
-        extractDateTimeFromView()
+        
+        if(extractNumSeats() == false){return}
+        //you must extract direction before time, time validation depends on direction of ride
+        extractDirectionFromView()
+        if(extractDateTimeFromView() == false){return}
         if(extractLocationFromView() == false){return}
         if (extractNameFromView() == false){return}
         if (extractNumberFromView() == false){return}
-        extractDirectionFromView()
+        
         
         
         //radius already extracted when set
         extractMilesFromView()
     
+        let timeInServer = ride.getTimeInServerFormat()
+        
         CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.radius: ride.radius, RideKeys.driverName: ride.driverName, RideKeys.direction: ride.direction, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.city: ride.city, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
     
@@ -380,7 +475,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             })
             ridesVC!.refresh(self)
             self.ride = ride
-            
+            self.table!.reloadData()
             rideDetailVC?.ride = ride
             rideDetailVC?.updateData()
             
@@ -398,6 +493,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func handleDirectionChoice(choice: String){
         directionValue.text = choice
+        ride.direction = ride.getServerDirectionValue(choice)
+        directionOption.itemValue = choice
     }
     
     // MARK: - Navigation
@@ -438,13 +535,10 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     
     
     func setRadius(radius: Int){
-        if(radius == 1){
-            pickupRadius.text = String(radius) + " mile"
-        }
-        else{
-            pickupRadius.text = String(radius) + " miles"
-        }
+        pickupRadius.text = String(radius) + " mi."
+        
         ride.radius = radius
+        updateOptions()
     }
     
     
@@ -466,6 +560,32 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
                 self.CLocation = initialLocation
             }
         }
+    }
+    
+    func textViewDidEndEditing(textView: UITextView) {
+        let senderId = textView.tag
+        
+        switch senderId{
+            case EditTags.Name.rawValue:
+                ride.driverName = nameValue.text
+            case EditTags.Number.rawValue:
+                ride.driverNumber = numberValue.text
+            //case EditTags.Time.rawValue
+            //case EditTags.Date.rawValue
+            //case EditTags.Address.rawValue
+            case EditTags.Radius.rawValue:
+                extractMilesFromView()
+            case EditTags.Direction.rawValue:
+                ride.direction = ride.getServerDirectionValue(directionValue.text!)
+            case EditTags.Seats.rawValue:
+                if let val = Int(seatsValue.text.stringByTrimmingCharactersInSet(
+                    NSCharacterSet.whitespaceAndNewlineCharacterSet())){
+                    ride.seats = val
+                }
+            default:
+                print("Issue -1 on edit ride page")
+        }
+        updateOptions()
     }
     
     

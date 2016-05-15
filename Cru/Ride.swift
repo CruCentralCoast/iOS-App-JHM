@@ -54,6 +54,10 @@ struct Labels{
 //used for validation errors on ride signup and edit forms
 struct ValidationErrors{
     static let none = ""
+    static let noSeats = "Please specify how many seats you would like to offer"
+    static let badSeats = "Please enter a valid number of seats to offer"
+    static let badTimeBefore = "Please select a time before the start of the event"
+    static let badTimeBeforeStart = "Please select a time after the start of the event"
     static let noStreet = "Please provide an address with a valid street"
     static let noZip = "Please provide an address with a valid zipcode"
     static let noState = "Please provide an address with a valid state"
@@ -74,6 +78,8 @@ class Ride: Comparable, Equatable, TimeDetail {
     var driverName: String = ""
     var eventId: String = ""
     var eventName: String = ""
+    var eventStartDate = NSDate()
+    var eventEndDate = NSDate()
     var time: String = ""
     var passengers = [String]()
     var day = -1
@@ -281,6 +287,23 @@ class Ride: Comparable, Equatable, TimeDetail {
         city = ""
         street = ""
         country = ""
+    }
+    
+    func isValidTime() -> String{
+        let theDate =  GlobalUtils.dateFromString(self.getTimeInServerFormat())
+        
+        if(direction == "to" || direction == "both"){
+            if theDate.compare(eventStartDate) == NSComparisonResult.OrderedDescending {
+                return ValidationErrors.badTimeBefore
+            }
+        }
+        else{
+            if theDate.compare(eventStartDate) == NSComparisonResult.OrderedAscending {
+                return ValidationErrors.badTimeBeforeStart
+            }
+        }
+        
+        return ValidationErrors.none
     }
     
     func isValidAddress() -> String{
