@@ -290,18 +290,28 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             let error  = ride.isValidName(nameValue.text)
             if(error != ""){
                 showValidationError(error)
+                addTextViewError(nameValue)
                 return
             }
-            ride.driverName = nameValue.text!
+            else{
+                ride.driverName = nameValue.text!
+                removeTextViewError(nameValue)
+            }
         }
+        
         if (numberValue != nil){
             let parsedNum = PhoneFormatter.parsePhoneNumber(numberValue.text!)
             let error  = ride.isValidPhoneNum(parsedNum)
             if(error != ""){
                 showValidationError(error)
+                addTextViewError(numberValue)
                 return
             }
-            ride.driverNumber = parsedNum
+            else{
+                ride.driverNumber = parsedNum
+                removeTextViewError(numberValue)
+            }
+            
         }
         
         var serverVal = ride.direction
@@ -328,6 +338,16 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         
     
         CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.radius: milesInt!, RideKeys.driverName: ride.driverName, RideKeys.direction: serverVal, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
+    }
+    
+    
+    func addTextViewError(textView: UITextView){
+        textView.layer.borderWidth = 1
+        textView.layer.borderColor = UIColor.redColor().CGColor
+    }
+    
+    func removeTextViewError(textView: UITextView){
+        textView.layer.borderWidth = 0
     }
     
     func showValidationError(error: String){
