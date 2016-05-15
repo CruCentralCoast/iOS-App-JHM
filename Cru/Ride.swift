@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//use to parse ride data to and from keystone db
 struct RideKeys {
     static let id = "_id"
     static let direction = "direction"
@@ -25,6 +25,7 @@ struct RideKeys {
     static let passengers = "passengers" //list
 }
 
+//used to parse location into map for keystone db
 struct LocationKeys {
     static let loc = "location"
     static let postcode = "postcode"
@@ -34,7 +35,7 @@ struct LocationKeys {
     static let country = "country"
 }
 
-
+//Used for display on detail screens
 struct Labels{
     static let eventLabel = "Event:"
     static let departureDateLabel = "Departure Date:"
@@ -48,6 +49,15 @@ struct Labels{
     static let directionLabel = "Direction:"
     static let driverName = "Driver Name:"
     static let driverNumber = "Driver Number:"
+}
+
+//used for validation errors on ride signup and edit forms
+struct ValidationErrors{
+    static let none = ""
+    static let noPhone = "Please provide a phone number"
+    static let badPhone = "Please provide a valid 10 digit phone number"
+    static let noName = "Please provide a first and last name"
+    static let badName = "Please provide a valid first and last name"
 }
 
 class Ride: Comparable, Equatable, TimeDetail {
@@ -257,6 +267,49 @@ class Ride: Comparable, Equatable, TimeDetail {
                 return Directions.both
         }
     }
+    
+    
+    //Accepts a phone number as a string and returns a String indicating any errors
+    func isValidPhoneNum(num: String) -> String{
+        if(num.characters.count == 10){
+            for c in num.characters{
+                if let _ = Int(String(c)){
+                    
+                }
+                else{
+                    return ValidationErrors.badPhone
+                }
+            }
+        }
+        else if(num.characters.count == 0){
+            return ValidationErrors.noPhone
+        }
+        else {
+            return ValidationErrors.badPhone
+        }
+        
+        return ValidationErrors.none
+    }
+    
+    //Accepts a name and returns a String indicating any errors
+    func isValidName(name: String) -> String{
+        let fullNameArr = name.componentsSeparatedByString(" ")
+        
+        if(fullNameArr.count == 2){
+            if let _ = Int(fullNameArr[0]){
+                return ValidationErrors.badName
+            }
+            if let _ = Int(fullNameArr[1]){
+                return ValidationErrors.badName
+            }
+            return ValidationErrors.none
+        }
+        else{
+            return ValidationErrors.noName;
+        }
+        
+    }
+    
     
     func getRiderDetails() -> [EditableItem]{
         var details = [EditableItem]()

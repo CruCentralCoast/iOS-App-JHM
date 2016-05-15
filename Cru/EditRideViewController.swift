@@ -212,7 +212,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
 
     @IBAction func savePressed(sender: AnyObject) {
         
-        if(seatsValue != nil){
+        if(seatsValue != nil && seatsValue.text != ""){
             ride.seats = Int(seatsValue.text)!
         }
         
@@ -283,11 +283,24 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
 
         }
         
+        
+        
+        
         if (nameValue != nil){
+            let error  = ride.isValidName(nameValue.text)
+            if(error != ""){
+                showValidationError(error)
+                return
+            }
             ride.driverName = nameValue.text!
         }
         if (numberValue != nil){
             let parsedNum = PhoneFormatter.parsePhoneNumber(numberValue.text!)
+            let error  = ride.isValidPhoneNum(parsedNum)
+            if(error != ""){
+                showValidationError(error)
+                return
+            }
             ride.driverNumber = parsedNum
         }
         
@@ -316,6 +329,14 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     
         CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.radius: milesInt!, RideKeys.driverName: ride.driverName, RideKeys.direction: serverVal, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.suburb: ride.suburb, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
+    
+    func showValidationError(error: String){
+        let alert = UIAlertController(title: error, message: "", preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "Ok", style: .Default, handler: nil)
+        alert.addAction(ok)
+        self.presentViewController(alert, animated: true, completion: {})
+    }
+    
     
     func handlePostResult(ride: Ride?){
         

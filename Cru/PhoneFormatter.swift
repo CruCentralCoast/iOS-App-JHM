@@ -10,36 +10,50 @@ import Foundation
 
 class PhoneFormatter {
     static func parsePhoneNumber(phoneNum : String) -> String {
-        // split by '-'
-        let full = phoneNum.componentsSeparatedByString("-")
-        let left = full[0]
-        let right = full[1]
         
-        // get area code from ()
-        var index1 = left.startIndex.advancedBy(1)
-        let delFirstParen = left.substringFromIndex(index1)
-        let index2 = delFirstParen.startIndex.advancedBy(3)
-        let areaCode = delFirstParen.substringToIndex(index2)
+        if(phoneNum.characters.count == 14){
+            // split by '-'
+            let full = phoneNum.componentsSeparatedByString("-")
+            let left = full[0]
+            var areaCode = ""
+            var threeDigits = ""
+            var right = ""
         
-        // get first three digits
-        index1 = left.startIndex.advancedBy(6)
-        let threeDigits = left.substringFromIndex(index1)
         
-        // get last four digits
-        // = right
+            if(left.characters.count >= 5){
+                // get area code from ()
+                var index1 = left.startIndex.advancedBy(1)
+                let delFirstParen = left.substringFromIndex(index1)
+                let index2 = delFirstParen.startIndex.advancedBy(3)
+                areaCode = delFirstParen.substringToIndex(index2)
+                if(left.characters.count >= 9){
+                    // get first three digits
+                    index1 = left.startIndex.advancedBy(6)
+                    threeDigits = left.substringFromIndex(index1)
+                }
+            }
         
-        let finalPhoneNum = areaCode + threeDigits + right
-        //return Int(finalPhoneNum)!
-        return finalPhoneNum
+            // get last four digits if they exist
+            if(full.count == 2){
+                right = full[1]
+            }
         
+        
+            return areaCode + threeDigits + right
+        }
+        return phoneNum
     }
     
     static func unparsePhoneNumber(phoneNum: String) -> String{
+        
+        if(phoneNum.characters.count == 10){
         let str : NSMutableString = NSMutableString(string: phoneNum)
         str.insertString("(", atIndex: 0)
         str.insertString(")", atIndex: 4)
         str.insertString(" ", atIndex: 5)
         str.insertString("-", atIndex: 9)
         return str as String
+        }
+        return phoneNum
     }
 }
