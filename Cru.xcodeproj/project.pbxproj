@@ -622,12 +622,12 @@
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
 				505722A31CE095A800F87BE4 /* PickRadiusViewController.swift */,
 				50697BC31CE03B5600776CC5 /* PassengersViewController.swift */,
+				504742491C75988E003F276E /* PassengerTableViewCell.swift */,
 				50697BC01CE0303B00776CC5 /* DetailCell.swift */,
 				50697BBD1CE002C500776CC5 /* DirectionTVC.swift */,
 				50AC224F1CDB016800427C08 /* EditCell.swift */,
 				50AC22521CDB033D00427C08 /* EditableItem.swift */,
 				5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */,
-				504742491C75988E003F276E /* PassengerTableViewCell.swift */,
 				501038B11CD9655F00CCD7DC /* EditRideViewController.swift */,
 			);
 			name = Driver;

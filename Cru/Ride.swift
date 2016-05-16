@@ -49,6 +49,7 @@ struct Labels{
     static let directionLabel = "Direction:"
     static let driverName = "Driver Name:"
     static let driverNumber = "Driver Number:"
+    static let passengers = "Passengers:"
 }
 
 //used for validation errors on ride signup and edit forms

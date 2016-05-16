@@ -208,6 +208,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
                 destVC.event = event
                 destVC.ridesVC = self.rideVC
                 destVC.rideDetailVC = self
+                destVC.passengers = passengers
             }
             
         }

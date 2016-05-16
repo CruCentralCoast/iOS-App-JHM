@@ -21,6 +21,9 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
@@ -219,18 +222,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ony-2T-u3r">
-                                                    <rect key="frame" x="26" y="11" width="404" height="21"/>
+                                                    <rect key="frame" x="26" y="11" width="434" height="21"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="(310) 410-4200" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DDq-fu-4HG">
-                                                    <rect key="frame" x="438" y="4" width="145" height="35"/>
+                                                    <rect key="frame" x="468" y="4" width="124" height="35"/>
                                                     <animations/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="145" id="wa3-f0-q00"/>
+                                                        <constraint firstAttribute="width" constant="124" id="wa3-f0-q00"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -239,12 +242,12 @@
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="DDq-fu-4HG" firstAttribute="leading" secondItem="ony-2T-u3r" secondAttribute="trailing" constant="8" symbolic="YES" id="4kc-KK-jmM"/>
+                                                <constraint firstItem="DDq-fu-4HG" firstAttribute="leading" secondItem="ony-2T-u3r" secondAttribute="trailing" constant="8" id="4kc-KK-jmM"/>
                                                 <constraint firstItem="ony-2T-u3r" firstAttribute="centerY" secondItem="VSI-sY-mBn" secondAttribute="centerY" id="7l8-X3-E7a"/>
                                                 <constraint firstItem="ony-2T-u3r" firstAttribute="top" secondItem="VSI-sY-mBn" secondAttribute="topMargin" constant="3" id="9Nq-zK-I9l"/>
                                                 <constraint firstItem="DDq-fu-4HG" firstAttribute="centerY" secondItem="ony-2T-u3r" secondAttribute="centerY" id="Bvg-1M-sXH"/>
                                                 <constraint firstItem="ony-2T-u3r" firstAttribute="leading" secondItem="VSI-sY-mBn" secondAttribute="leadingMargin" constant="18" id="SJX-er-2BA"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="DDq-fu-4HG" secondAttribute="trailing" constant="9" id="SeC-7Q-FkD"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="DDq-fu-4HG" secondAttribute="trailing" id="SeC-7Q-FkD"/>
                                                 <constraint firstItem="DDq-fu-4HG" firstAttribute="top" secondItem="VSI-sY-mBn" secondAttribute="topMargin" constant="-4" id="vQn-Hs-PvG"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -252,6 +255,68 @@
                                         <connections>
                                             <outlet property="nameLabel" destination="ony-2T-u3r" id="gzP-RE-fTm"/>
                                             <outlet property="phoneLabel" destination="DDq-fu-4HG" id="WMe-yd-WMy"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="updatePassengerCell" id="ZWf-5a-jlG" customClass="PassengerTableViewCell" customModule="Cru" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="72" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZWf-5a-jlG" id="4ac-kL-wCj">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Seo-Yo-DjL">
+                                                    <rect key="frame" x="522" y="5" width="70" height="35"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="0.0" alpha="0.22219827586206897" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="70" id="pj1-za-y4U"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <state key="normal" title="drop"/>
+                                                    <connections>
+                                                        <action selector="dropPassengerSelected:" destination="ZWf-5a-jlG" eventType="touchUpInside" id="3Tu-NI-g60"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kMP-hj-Att">
+                                                    <rect key="frame" x="26" y="11" width="382" height="21"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="(310) 410-4200" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="PA3-hY-Pgb">
+                                                    <rect key="frame" x="406" y="4" width="113" height="35"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="113" id="vWg-xD-NRV"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
+                                                </textView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="kMP-hj-Att" firstAttribute="leading" secondItem="4ac-kL-wCj" secondAttribute="leadingMargin" constant="18" id="3x6-x7-wbL"/>
+                                                <constraint firstItem="PA3-hY-Pgb" firstAttribute="top" secondItem="4ac-kL-wCj" secondAttribute="topMargin" constant="-4" id="6fu-cC-02j"/>
+                                                <constraint firstItem="PA3-hY-Pgb" firstAttribute="centerY" secondItem="kMP-hj-Att" secondAttribute="centerY" id="8Fs-P6-3fO"/>
+                                                <constraint firstItem="kMP-hj-Att" firstAttribute="top" secondItem="4ac-kL-wCj" secondAttribute="topMargin" constant="3" id="AuD-lC-syc"/>
+                                                <constraint firstItem="kMP-hj-Att" firstAttribute="centerY" secondItem="4ac-kL-wCj" secondAttribute="centerY" id="Efy-9B-rGT"/>
+                                                <constraint firstItem="Seo-Yo-DjL" firstAttribute="leading" secondItem="PA3-hY-Pgb" secondAttribute="trailing" constant="3" id="HVl-nh-spQ"/>
+                                                <constraint firstItem="Seo-Yo-DjL" firstAttribute="centerY" secondItem="4ac-kL-wCj" secondAttribute="centerY" id="QzB-hr-Jwv"/>
+                                                <constraint firstItem="Seo-Yo-DjL" firstAttribute="trailing" secondItem="4ac-kL-wCj" secondAttribute="trailingMargin" id="gqa-4d-Pui"/>
+                                                <constraint firstItem="Seo-Yo-DjL" firstAttribute="top" secondItem="4ac-kL-wCj" secondAttribute="topMargin" constant="-3" id="jbg-pz-mg4"/>
+                                                <constraint firstItem="PA3-hY-Pgb" firstAttribute="leading" secondItem="kMP-hj-Att" secondAttribute="trailing" constant="-2" id="llg-US-4Pa"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="PA3-hY-Pgb" secondAttribute="trailing" constant="73" id="o5G-Iy-e2r"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="dropButton" destination="Seo-Yo-DjL" id="XBG-yW-hxa"/>
+                                            <outlet property="nameLabel" destination="kMP-hj-Att" id="Fkv-Lq-Owp"/>
+                                            <outlet property="phoneLabel" destination="PA3-hY-Pgb" id="kex-2C-gC3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -264,7 +329,7 @@
                                 <rect key="frame" x="250" y="10" width="100" height="26"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="22"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -418,11 +483,14 @@
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                         <segue destination="He5-kL-mpg" kind="show" identifier="radius" id="boU-To-t6e"/>
+                        <segue destination="3yh-Ii-FnX" kind="popoverPresentation" identifier="editPassengerSegue" popoverAnchorView="wdV-Ja-GZb" id="he8-TB-1wb">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="buH-xs-rIZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2426" y="588"/>
+            <point key="canvasLocation" x="2364" y="588"/>
         </scene>
         <!--Pick Radius View Controller-->
         <scene sceneID="3tE-nl-Buz">
@@ -544,4 +612,7 @@
     <resources>
         <image name="pencil" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="KiA-Xm-1vs"/>
+    </inferredMetricsTieBreakers>
 </document>
