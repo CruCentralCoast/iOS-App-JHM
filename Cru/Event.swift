@@ -13,6 +13,7 @@ import ImageLoader
 
 class Event: Equatable {
     // MARK: Properties
+    static let ministriesField = "ministries"
     
     //properties in the database for each event
     var id: String

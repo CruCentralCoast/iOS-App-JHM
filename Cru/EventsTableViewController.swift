@@ -24,19 +24,7 @@ class EventsTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        loadEvents()
-    }
-
-    private func  loadEvents() {
-        //Will load all events if you belong to no ministries
-        var ministryIds = []
-        if let ministries = SubscriptionManager.loadMinistries() {
-            ministryIds = ministries.map({min in min.id})
-        }
-
-        let params: [String:AnyObject] = ["ministries":["$in":ministryIds]]
-
-        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting, params: params)
+        CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
     }
 
     //insert helper function for inserting event data
