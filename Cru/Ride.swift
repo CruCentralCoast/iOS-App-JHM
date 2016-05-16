@@ -269,6 +269,10 @@ class Ride: Comparable, Equatable, TimeDetail {
         return self.seats - self.passengers.count
     }
     
+    func numSeatsNeedToDrop(proposedNumSeats: Int)->Int{
+        return passengers.count - proposedNumSeats
+    }
+    
     func getDirection()->String{
         switch (direction){
             case "both":

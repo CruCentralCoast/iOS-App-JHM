@@ -607,7 +607,12 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             case EditTags.Seats.rawValue:
                 if let val = Int(seatsValue.text.stringByTrimmingCharactersInSet(
                     NSCharacterSet.whitespaceAndNewlineCharacterSet())){
-                    ride.seats = val
+                    if (ride.numSeatsNeedToDrop(val) >= 1 && val > 0){
+                        needToDropPassenger(val, numToDrop: ride.numSeatsNeedToDrop(val))
+                    }
+                    else{
+                        ride.seats = val
+                    }
                 }
             default:
                 print("Issue -1 on edit ride page")
@@ -615,6 +620,19 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         updateOptions()
     }
     
+    func needToDropPassenger(num : Int, numToDrop: Int){
+        var message = "If you want to lower the number of offered seats to " +
+            String(num) + ", you must drop " + String(numToDrop)
+        
+        if(numToDrop == 1){
+            message += " passenger."
+        }
+        else{
+            message += " passengers."
+        }
+        
+        showValidationError(message)
+    }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         if numberValue != nil {
