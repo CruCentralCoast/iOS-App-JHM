@@ -110,7 +110,6 @@
 		5072B42F1CB39022001F5BF6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
 		5072B4311CB39022001F5BF6 /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		5072B4321CB39022001F5BF6 /* ministryteam.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FAEB9791C86C1D1005C0B4C /* ministryteam.storyboard */; };
-		5072B4331CB39022001F5BF6 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		5072B4341CB39022001F5BF6 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
 		5072B4361CB39022001F5BF6 /* findride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CF1C5F08E200DAD10E /* findride.storyboard */; };
 		5072B4371CB39022001F5BF6 /* offerride.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 503A06CB1C5F08CC00DAD10E /* offerride.storyboard */; };
@@ -140,7 +139,6 @@
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50DD51481C86B85900752777 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
 		50E0E1881C87796D000023F1 /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
-		50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
 		50F8251F1C0BB965005396BC /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */; };
@@ -186,6 +184,15 @@
 		C12940EC1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */; };
 		C12940ED1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */; };
 		C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */ = {isa = PBXBuildFile; fileRef = C12C0A861C941E9C005751A0 /* DBCollection.swift */; };
+		C13F7DE61CE2713A0057D0F5 /* getinvolved.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C13F7DE51CE2713A0057D0F5 /* getinvolved.storyboard */; };
+		C13F7DE81CE277E30057D0F5 /* CGQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DE71CE277E30057D0F5 /* CGQuestion.swift */; };
+		C13F7DE91CE277E30057D0F5 /* CGQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DE71CE277E30057D0F5 /* CGQuestion.swift */; };
+		C13F7DEE1CE28CF50057D0F5 /* TextQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */; };
+		C13F7DEF1CE28CF50057D0F5 /* TextQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */; };
+		C13F7DF11CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */; };
+		C13F7DF21CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */; };
+		C13F7DF41CE28D2F0057D0F5 /* OptionQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */; };
+		C13F7DF51CE28D2F0057D0F5 /* OptionQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */; };
 		C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
 		C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
@@ -198,6 +205,10 @@
 		C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1EF49041CDBE08C009439FE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506EBF911CD9D3AB002E6F6A /* TimePicker.swift */; };
+		C1EF49071CDBF3AD009439FE /* communitygroups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */; };
+		C1EF49081CDBF3AD009439FE /* communitygroups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */; };
+		C1EF490A1CDBF74E009439FE /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF49091CDBF74E009439FE /* SurveyViewController.swift */; };
+		C1EF490B1CDBF74E009439FE /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1EF49091CDBF74E009439FE /* SurveyViewController.swift */; };
 		CDECB16F9C5B582EB9A73650 /* Pods_Cru.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 103605C6F44AE29021FA1E17 /* Pods_Cru.framework */; };
 		E96367941C6D3B8D00B9DBBE /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
 		E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9CB002C1C8F7E04000F7E12 /* SummerMission.swift */; };
@@ -321,7 +332,6 @@
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50DD51471C86B85900752777 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50E0E1871C87796D000023F1 /* Cancler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancler.swift; sourceTree = "<group>"; };
-		50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByEventViewController.swift; sourceTree = "<group>"; };
 		50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinRideViewController.swift; sourceTree = "<group>"; };
@@ -358,6 +368,11 @@
 		C12940E81CCD833E004DACB1 /* ServerProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ServerProtocol.swift; sourceTree = "<group>"; };
 		C12940EB1CCD85E0004DACB1 /* KeystoneClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeystoneClient.swift; sourceTree = "<group>"; };
 		C12C0A861C941E9C005751A0 /* DBCollection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBCollection.swift; sourceTree = "<group>"; };
+		C13F7DE51CE2713A0057D0F5 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
+		C13F7DE71CE277E30057D0F5 /* CGQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGQuestion.swift; sourceTree = "<group>"; };
+		C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextQuestionCell.swift; sourceTree = "<group>"; };
+		C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeQuestionCell.swift; sourceTree = "<group>"; };
+		C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionQuestionCell.swift; sourceTree = "<group>"; };
 		C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayLocalStorageManager.swift; sourceTree = "<group>"; };
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
@@ -366,6 +381,8 @@
 		C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtilsTest.swift; sourceTree = "<group>"; };
 		C1DCEC451C7681E1009FACE0 /* RideUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtils.swift; sourceTree = "<group>"; };
+		C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = communitygroups.storyboard; sourceTree = "<group>"; };
+		C1EF49091CDBF74E009439FE /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
 		E2B79444E127FAE30F09FA75 /* Pods_CruTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CruTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E96367931C6D3B8D00B9DBBE /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
@@ -715,11 +732,12 @@
 		50ED8FDD1C052B03002C9E30 /* Get Involved */ = {
 			isa = PBXGroup;
 			children = (
+				C1EF49051CDBF254009439FE /* CommunityGroups */,
 				0FB3939F1C82DF6400C81EFB /* MinistryTeams */,
 				0F74A30F1C0BB9D300401377 /* User.swift */,
 				501085B11BFBDB8600849CED /* GetInvolvedViewController.swift */,
+				C13F7DE51CE2713A0057D0F5 /* getinvolved.storyboard */,
 				0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */,
-				50ED8FE31C052BD9002C9E30 /* getinvolved.storyboard */,
 				0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */,
 				0F1B8C281CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift */,
 				0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */,
@@ -822,6 +840,19 @@
 				C185BB381CD2904F00787153 /* FakeServerClient.swift */,
 			);
 			name = Clients;
+			sourceTree = "<group>";
+		};
+		C1EF49051CDBF254009439FE /* CommunityGroups */ = {
+			isa = PBXGroup;
+			children = (
+				C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */,
+				C1EF49091CDBF74E009439FE /* SurveyViewController.swift */,
+				C13F7DE71CE277E30057D0F5 /* CGQuestion.swift */,
+				C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */,
+				C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */,
+				C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */,
+			);
+			name = CommunityGroups;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -927,13 +958,13 @@
 			files = (
 				0FB6CF511CBF4839007B9F6E /* summermissions.storyboard in Resources */,
 				503A06D01C5F08E200DAD10E /* findride.storyboard in Resources */,
-				50ED8FE41C052BD9002C9E30 /* getinvolved.storyboard in Resources */,
 				6DBD7B941C75742A00D11FFA /* FreigSanProMed.otf in Resources */,
 				857EC1D51C4785770014F3C9 /* GoogleService-Info.plist in Resources */,
 				50F8251F1C0BB965005396BC /* resources.storyboard in Resources */,
 				6DB922821C07CE1400C7B120 /* FreigSanProBook.otf in Resources */,
 				509DA9151C616BE60050CE26 /* riderdetail.storyboard in Resources */,
 				0FC8E39D1C3EF320007A7208 /* sideMenu.storyboard in Resources */,
+				C13F7DE61CE2713A0057D0F5 /* getinvolved.storyboard in Resources */,
 				503A06CC1C5F08CC00DAD10E /* offerride.storyboard in Resources */,
 				501D0ABF1C68588700BF243A /* events.storyboard in Resources */,
 				6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */,
@@ -943,6 +974,7 @@
 				0F8CEF261BEC0E13008FC70D /* Main.storyboard in Resources */,
 				503A06CA1C5F080200DAD10E /* ridesharing.storyboard in Resources */,
 				6DBD7B901C7573DC00D11FFA /* FreigSanProLigIt.otf in Resources */,
+				C1EF49071CDBF3AD009439FE /* communitygroups.storyboard in Resources */,
 				6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */,
 				6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */,
 				0FC0B9DE1C5F0F9400D1524C /* ministrytable.storyboard in Resources */,
@@ -962,7 +994,6 @@
 				5072B42F1CB39022001F5BF6 /* LaunchScreen.storyboard in Resources */,
 				5072B4311CB39022001F5BF6 /* resources.storyboard in Resources */,
 				5072B4321CB39022001F5BF6 /* ministryteam.storyboard in Resources */,
-				5072B4331CB39022001F5BF6 /* getinvolved.storyboard in Resources */,
 				5072B4341CB39022001F5BF6 /* settings.storyboard in Resources */,
 				5072B4361CB39022001F5BF6 /* findride.storyboard in Resources */,
 				5072B4371CB39022001F5BF6 /* offerride.storyboard in Resources */,
@@ -970,6 +1001,7 @@
 				5072B4391CB39022001F5BF6 /* Main.storyboard in Resources */,
 				5072B42C1CB38FFE001F5BF6 /* sideMenu.storyboard in Resources */,
 				5072B42B1CB38FEB001F5BF6 /* events.storyboard in Resources */,
+				C1EF49081CDBF3AD009439FE /* communitygroups.storyboard in Resources */,
 				5072B42A1CB38FC4001F5BF6 /* riderdetail.storyboard in Resources */,
 				0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */,
 				5072B4291CB38F74001F5BF6 /* driverdetail.storyboard in Resources */,
@@ -1093,6 +1125,7 @@
 				507B368A1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,
 				0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */,
 				0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */,
+				C1EF490A1CDBF74E009439FE /* SurveyViewController.swift in Sources */,
 				0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */,
 				5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
 				509DA91D1C6172FC0050CE26 /* Ride.swift in Sources */,
@@ -1112,6 +1145,7 @@
 				E9CB00311C8F7E04000F7E12 /* SummerMission.swift in Sources */,
 				6D8F423C1CD80C8D0013BB13 /* Article.swift in Sources */,
 				50697BC41CE03B5600776CC5 /* PassengersViewController.swift in Sources */,
+				C13F7DF41CE28D2F0057D0F5 /* OptionQuestionCell.swift in Sources */,
 				C12940EC1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
 				0F10F0221CC03F7000F478ED /* RidesViewController.swift in Sources */,
 				C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
@@ -1135,10 +1169,12 @@
 				C12940E91CCD833E004DACB1 /* ServerProtocol.swift in Sources */,
 				505722A41CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
 				E9CB00331C8F7E04000F7E12 /* SummerMissionController.swift in Sources */,
+				C13F7DEE1CE28CF50057D0F5 /* TextQuestionCell.swift in Sources */,
 				0FAEB9881C87A39D005C0B4C /* UltravisualLayout.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				500A37B01C7D6587007D6A3B /* Passenger.swift in Sources */,
 				0F17E3D21C90F68300713297 /* CalendarManager.swift in Sources */,
+				C13F7DF11CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */,
 				0FAEB9841C879B49005C0B4C /* MinistryTeamsCollectionViewCell.swift in Sources */,
 				0FAEB97C1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
 				0F5302751CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */,
@@ -1157,6 +1193,7 @@
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
 				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
 				6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */,
+				C13F7DE81CE277E30057D0F5 /* CGQuestion.swift in Sources */,
 				0FF87D9C1C8A1EF800D56C4E /* EventsCollectionViewController.swift in Sources */,
 				6D4B78C21C70ECC300F643CB /* CardTableViewController.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
@@ -1200,6 +1237,7 @@
 				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
 				5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */,
+				C13F7DF51CE28D2F0057D0F5 /* OptionQuestionCell.swift in Sources */,
 				C1D99C821CD4011B00128CA9 /* RideUtilsTest.swift in Sources */,
 				5072B41B1CB38BF8001F5BF6 /* RiderRideDetailViewController.swift in Sources */,
 				50697BC21CE0303B00776CC5 /* DetailCell.swift in Sources */,
@@ -1214,6 +1252,7 @@
 				507B368B1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				50AC22541CDB033D00427C08 /* EditableItem.swift in Sources */,
+				C13F7DEF1CE28CF50057D0F5 /* TextQuestionCell.swift in Sources */,
 				50AC22511CDB016800427C08 /* EditCell.swift in Sources */,
 				C1015CD81C942D7F005B559E /* GlobalUtilsTest.swift in Sources */,
 				507252E51CC07E8200DD4EFF /* EventsModalTableViewController.swift in Sources */,
@@ -1229,9 +1268,12 @@
 				509DA91E1C6172FC0050CE26 /* Ride.swift in Sources */,
 				0F17E3DA1C91076D00713297 /* MapLocalStorageManager.swift in Sources */,
 				C12940ED1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
+				C13F7DE91CE277E30057D0F5 /* CGQuestion.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
+				C13F7DF21CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */,
+				C1EF490B1CDBF74E009439FE /* SurveyViewController.swift in Sources */,
 				0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */,
 				6D8F42401CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
