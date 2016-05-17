@@ -51,13 +51,13 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
 
     //function for adding scrolling functionality for cells
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Config.ministryTeamReuseIdentifier, forIndexPath: indexPath) as! MinistryTeamsCollectionViewCell
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Config.ministryTeamReuseIdentifier, forIndexPath: indexPath)
         
         let ministryTeam = ministryTeams[indexPath.item]
-        cell.ministryTeam = ministryTeam
-        cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
-        cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)
-        cell.ministryTeamImageView.load(cell.ministryTeam!.imageUrl)
+//        cell.ministryTeam = ministryTeam
+//        cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
+//        cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)
+//        cell.ministryTeamImageView.load(cell.ministryTeam!.imageUrl)
         
         return cell
     }
@@ -119,10 +119,10 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
     
     //function for adding functionality for clicing of cells
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        let layout = collectionViewLayout as! UltravisualLayout
-        let offset = layout.dragOffset * CGFloat(indexPath.item)
-        if collectionView.contentOffset.y != offset {
-            collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
-        }
+//        let layout = collectionViewLayout as! UltravisualLayout
+//        let offset = layout.dragOffset * CGFloat(indexPath.item)
+//        if collectionView.contentOffset.y != offset {
+//            collectionView.setContentOffset(CGPoint(x: 0, y: offset), animated: true)
+//        }
     }
 }

@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  MinistryTeam.swift
 //  Cru
 //
 //  Created by Deniz Tumer on 3/2/16.

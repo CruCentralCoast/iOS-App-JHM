@@ -12,10 +12,14 @@ class MinistryTeamsTableViewController: UITableViewController {
 
     var ministryTeamsStorageManager: MapLocalStorageManager!
     var ministryTeams = [MinistryTeam]()
-    private let reuseIdentifier = "ministryTeamCell"
+    private let reuseIdentifierPic = "ministryTeamCell"
+    private let reuseIdentifierNoPic = "ministryTeamNoPicCell"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.tableView.estimatedRowHeight = 200
+        self.tableView.rowHeight = UITableViewAutomaticDimension
         
         //setup local storage manager
         ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
@@ -35,16 +39,6 @@ class MinistryTeamsTableViewController: UITableViewController {
         //TODO: handle failure
         self.tableView.reloadData()
     }
-    
-    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let ministryTeam = ministryTeams[indexPath.row]
-        let descLength = ministryTeam.description.characters.count
-        
-        print(ministryTeam.ministryName + ": " + String(Double(descLength) / 40))
-        
-        return 350.0
-        //return 120.0 + (CGFloat(Double(descLength) / 40.0) * 25.0) + 8.0
-    }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return 1
@@ -55,11 +49,21 @@ class MinistryTeamsTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifier, forIndexPath: indexPath) as! MinistryTeamsTableViewCell
         let ministryTeam = ministryTeams[indexPath.row]
         
-        cell.ministryTeam = ministryTeam
-        
-        return cell
+        if ministryTeam.imageUrl == "" {
+            let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierNoPic, forIndexPath: indexPath) as! MinistryTeamNoPictureTableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.ministryTeam = ministryTeam
+            
+            return cell
+        }
+        else {
+            let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierPic, forIndexPath: indexPath) as! MinistryTeamsTableViewCell
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.ministryTeam = ministryTeam
+            
+            return cell
+        }
     }
 }
