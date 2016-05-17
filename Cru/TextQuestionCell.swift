@@ -11,7 +11,8 @@ import UIKit
 class TextQuestionCell: UITableViewCell {
 
     @IBOutlet weak var answer: UITextView!
-    @IBOutlet weak var question: UITextView!
+    
+    @IBOutlet weak var question: UILabel!
     
     var cgQuestion: CGQuestion!
 
