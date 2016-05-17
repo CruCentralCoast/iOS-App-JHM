@@ -128,7 +128,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             
             default:
-                CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+                CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
         }
         
         rides.sortInPlace()

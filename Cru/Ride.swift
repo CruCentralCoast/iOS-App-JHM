@@ -8,7 +8,7 @@
 
 import Foundation
 
-
+//use to parse ride data to and from keystone db
 struct RideKeys {
     static let id = "_id"
     static let direction = "direction"
@@ -25,16 +25,17 @@ struct RideKeys {
     static let passengers = "passengers" //list
 }
 
+//used to parse location into map for keystone db
 struct LocationKeys {
     static let loc = "location"
     static let postcode = "postcode"
     static let street1 = "street1"
-    static let suburb = "suburb"
+    static let city = "city"
     static let state = "state"
     static let country = "country"
 }
 
-
+//Used for display on detail screens
 struct Labels{
     static let eventLabel = "Event:"
     static let departureDateLabel = "Departure Date:"
@@ -48,6 +49,24 @@ struct Labels{
     static let directionLabel = "Direction:"
     static let driverName = "Driver Name:"
     static let driverNumber = "Driver Number:"
+    static let passengers = "Passengers:"
+}
+
+//used for validation errors on ride signup and edit forms
+struct ValidationErrors{
+    static let none = ""
+    static let noSeats = "Please specify how many seats you would like to offer"
+    static let badSeats = "Please enter a valid number of seats to offer"
+    static let badTimeBefore = "Please select a time before the start of the event"
+    static let badTimeBeforeStart = "Please select a time after the start of the event"
+    static let noStreet = "Please provide an address with a valid street"
+    static let noZip = "Please provide an address with a valid zipcode"
+    static let noState = "Please provide an address with a valid state"
+    static let noCity = "Please provide an address with a valid city"
+    static let noPhone = "Please provide a phone number"
+    static let badPhone = "Please provide a valid 10 digit phone number"
+    static let noName = "Please provide a first and last name"
+    static let badName = "Please provide a valid first and last name"
 }
 
 class Ride: Comparable, Equatable, TimeDetail {
@@ -60,6 +79,8 @@ class Ride: Comparable, Equatable, TimeDetail {
     var driverName: String = ""
     var eventId: String = ""
     var eventName: String = ""
+    var eventStartDate = NSDate()
+    var eventEndDate = NSDate()
     var time: String = ""
     var passengers = [String]()
     var day = -1
@@ -71,7 +92,7 @@ class Ride: Comparable, Equatable, TimeDetail {
     var date : NSDate?
     var postcode: String = ""
     var state: String = ""
-    var suburb: String = ""
+    var city: String = ""
     var street: String = ""
     var country: String = ""
     var gender: Int = 0
@@ -88,13 +109,13 @@ class Ride: Comparable, Equatable, TimeDetail {
             if (loc[LocationKeys.state] != nil && !(loc[LocationKeys.state] is NSNull)){
                 state = loc[LocationKeys.state] as! String
             }
-            if (loc[LocationKeys.suburb] != nil && !(loc[LocationKeys.suburb] is NSNull)){
-                suburb = loc[LocationKeys.suburb] as! String
+            if (loc[LocationKeys.city] != nil && !(loc[LocationKeys.city] is NSNull)){
+                city = loc[LocationKeys.city] as! String
             }
             if (loc[LocationKeys.street1] != nil && !(loc[LocationKeys.street1] is NSNull)){
                 street = loc[LocationKeys.street1] as! String
             }
-            if loc[LocationKeys.country] != nil {
+            if (loc[LocationKeys.country] != nil && !(loc[LocationKeys.country] is NSNull)) {
                 country = loc[LocationKeys.country] as! String
             }
         }
@@ -210,14 +231,17 @@ class Ride: Comparable, Equatable, TimeDetail {
         if(street != ""){
             address += street
         }
-        if(postcode != ""){
-            address += ", " + postcode
-        }
-        if(suburb != ""){
-            address += ", " + suburb
+        if(city != ""){
+            address += ", " + city
         }
         if(state != ""){
             address += ", " + state
+        }
+        if(postcode != ""){
+            address += ", " + postcode
+        }
+        if(country != ""){
+            address += ", " + country
         }
         
         return address
@@ -245,6 +269,10 @@ class Ride: Comparable, Equatable, TimeDetail {
         return self.seats - self.passengers.count
     }
     
+    func numSeatsNeedToDrop(proposedNumSeats: Int)->Int{
+        return passengers.count - proposedNumSeats
+    }
+    
     func getDirection()->String{
         switch (direction){
             case "both":
@@ -257,6 +285,106 @@ class Ride: Comparable, Equatable, TimeDetail {
                 return Directions.both
         }
     }
+    
+    func clearAddress(){
+        postcode = ""
+        state = ""
+        city = ""
+        street = ""
+        country = ""
+    }
+    
+    func isValidTime() -> String{
+        let theDate =  GlobalUtils.dateFromString(self.getTimeInServerFormat())
+        
+        if(direction == "to" || direction == "both"){
+            if theDate.compare(eventStartDate) == NSComparisonResult.OrderedDescending {
+                return ValidationErrors.badTimeBefore
+            }
+        }
+        else{
+            if theDate.compare(eventStartDate) == NSComparisonResult.OrderedAscending {
+                return ValidationErrors.badTimeBeforeStart
+            }
+        }
+        
+        return ValidationErrors.none
+    }
+    
+    func isValidAddress() -> String{
+        if (street == ""){
+            return ValidationErrors.noStreet
+        }
+        if (postcode == ""){
+            return ValidationErrors.noZip
+        }
+        if (city == ""){
+            return ValidationErrors.noCity
+        }
+        if (state == ""){
+            return ValidationErrors.noState
+        }
+
+        
+        return ValidationErrors.none
+    }
+    
+    //Accepts a phone number as a string and returns a String indicating any errors
+    func isValidPhoneNum(num: String) -> String{
+        if(num.characters.count == 10){
+            for c in num.characters{
+                if let _ = Int(String(c)){
+                    
+                }
+                else{
+                    return ValidationErrors.badPhone
+                }
+            }
+        }
+        else if(num.characters.count == 0){
+            return ValidationErrors.noPhone
+        }
+        else {
+            return ValidationErrors.badPhone
+        }
+        
+        return ValidationErrors.none
+    }
+    
+    //Accepts a name and returns a String indicating any errors
+    func isValidName(name: String) -> String{
+        let fullNameArr = name.componentsSeparatedByString(" ")
+        
+        if(fullNameArr.count == 2){
+            if let _ = Int(fullNameArr[0]){
+                return ValidationErrors.badName
+            }
+            if let _ = Int(fullNameArr[1]){
+                return ValidationErrors.badName
+            }
+            return ValidationErrors.none
+        }
+        else{
+            return ValidationErrors.noName;
+        }
+        
+    }
+    
+    
+    //converts our direction value to a server value
+    func getServerDirectionValue(dir : String)->String{
+        switch (dir){
+            case Directions.from:
+                return "from"
+            case Directions.to:
+                return  "to"
+            case Directions.both:
+                return  "both"
+            default:
+                return  ""
+        }
+    }
+    
     
     func getRiderDetails() -> [EditableItem]{
         var details = [EditableItem]()
@@ -322,7 +450,7 @@ class Ride: Comparable, Equatable, TimeDetail {
         locMap[LocationKeys.state] = self.state
         locMap[LocationKeys.street1] = self.street
         locMap[LocationKeys.country] = self.country
-        locMap[LocationKeys.suburb] = self.suburb
+        locMap[LocationKeys.city] = self.city
         
         map[LocationKeys.loc] = locMap
         

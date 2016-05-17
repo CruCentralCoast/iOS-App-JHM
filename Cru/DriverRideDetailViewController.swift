@@ -60,12 +60,17 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     }
     
     func updateData(){
-        timeLabel?.text = ride.getTime()
-        dateLabel?.text = ride.getDate()
-        addressView?.text = ride.getCompleteAddress()
-        seatsOffered?.text = String(ride.seats)
-        seatsLeft?.text = String(ride.seatsLeft())
-        radius?.text = ride.getRadius()
+        details.removeAll()
+        ride.eventName = event.name
+        details = ride.getDriverDetails()
+        self.detailsTable.reloadData()
+//        timeLabel?.text = ride.getTime()
+//        dateLabel?.text = ride.getDate()
+//        addressView?.text = ride.getCompleteAddress()
+//        seatsOffered?.text = String(ride.seats)
+//        seatsLeft?.text = String(ride.seatsLeft())
+//        radius?.text = ride.getRadius()
+//        self.detailsTable.reloadData()
     }
     
     
@@ -203,6 +208,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
                 destVC.event = event
                 destVC.ridesVC = self.rideVC
                 destVC.rideDetailVC = self
+                destVC.passengers = passengers
             }
             
         }

@@ -12,6 +12,7 @@ class CruClients {
     
     static var serverClient: ServerProtocol!
     static var rideUtils: RideUtils!
+    static var eventUtils: EventUtils!
     
     static func getServerClient() -> ServerProtocol {
         if (serverClient == nil) {
@@ -25,5 +26,12 @@ class CruClients {
             rideUtils = RideUtils()
         }
         return rideUtils
+    }
+    
+    static func getEventUtils() -> EventUtils {
+        if (eventUtils == nil) {
+            eventUtils = EventUtils()
+        }
+        return eventUtils
     }
 }

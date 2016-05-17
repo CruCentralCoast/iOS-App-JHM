@@ -18,6 +18,13 @@ struct Directions{
 class DirectionTVC: UITableViewController {
     let options = [Directions.to, Directions.from, Directions.both]
     var handler: ((String)->())?
+    @IBOutlet var table: UITableView!
+    
+    
+    
+    override func viewDidLoad() {
+       table.scrollEnabled = true
+    }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return options.count
@@ -33,7 +40,7 @@ class DirectionTVC: UITableViewController {
     
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        return 80.0
+        return 65.0
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {

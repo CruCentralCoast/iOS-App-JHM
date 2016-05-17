@@ -23,6 +23,7 @@ class CommunityGroupViewController: UIViewController {
     
     @IBAction func onTouchSeeMore(sender: AnyObject) {
         print("HERE")
+        self.performSegueWithIdentifier("cGroupSurvey", sender: self)
     }
 
     /*

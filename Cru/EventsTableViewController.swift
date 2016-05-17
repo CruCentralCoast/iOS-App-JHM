@@ -24,10 +24,9 @@ class EventsTableViewController: UITableViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         
-        //load events
-        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
+        CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
     }
-    
+
     //insert helper function for inserting event data
     private func insertEvent(dict: NSDictionary) {
         let event = Event(dict: dict)!
