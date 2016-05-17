@@ -9,14 +9,15 @@
 import MRProgress
 import UIKit
 
-class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
     
     let textId = "text-cell"
     let optionId = "option-cell"
     let datetimeId = "datetime-cell"
     
     var questions = [UITableViewCell]()
-
+    var optionsToBeShown = [String]()
+    
     @IBOutlet weak var table: UITableView!
     
     override func viewDidLoad() {
@@ -45,6 +46,7 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 cell = self.table.dequeueReusableCellWithIdentifier(optionId)!
                 let selectCell = cell as! OptionQuestionCell
                 selectCell.setQuestion(question)
+                selectCell.presentingVC = self
                 break;
             
             case .DATETIME:
@@ -85,8 +87,7 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
             return 150
             
         case optionId:
-            let selectCell = cell as? OptionQuestionCell
-            return 150.0 + CGFloat(selectCell!.cgQuestion.options.count) * 44.0
+            return 150.0
             
         case datetimeId:
             return 150
@@ -96,14 +97,37 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
 
-    /*
+    
+    func showOptions(options: [String]){
+        optionsToBeShown = options
+        self.performSegueWithIdentifier("showOptions", sender: self)
+    }
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "showOptions"){
+            if let popupVC = segue.destinationViewController as? SearchableOptionsVC{
+                
+                popupVC.options = optionsToBeShown
+                
+                popupVC.preferredContentSize = CGSize(width: self.view.frame.width * 0.97, height: self.view.frame.height * 0.77)
+                //popupVC.popoverPresentationController!.sourceRect = CGRectMake(CGRectGetMidX(self.view.bounds), (passengerValue?.frame.origin.y)! - 50.0,0,0)
+                
+                let controller = popupVC.popoverPresentationController
+                
+                if(controller != nil){
+                    controller?.delegate = self
+                }
+            }
+        }
     }
-    */
+
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
 
 }
