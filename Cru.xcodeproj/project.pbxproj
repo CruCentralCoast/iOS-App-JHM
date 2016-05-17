@@ -149,13 +149,16 @@
 		50FE4D431C50D0D100EA9042 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */; };
 		50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */; };
 		50FE4D471C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
+		6D0968E21CE52E6300FA8638 /* ResourcesViewControllerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D0968E01CE52E6300FA8638 /* ResourcesViewControllerTest.swift */; };
+		6D0968E31CE52ED600FA8638 /* ResourcesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 501085AD1BFBDB6700849CED /* ResourcesViewController.swift */; };
+		6D0968E41CE6600700FA8638 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59068D1CE3F0DC00464D57 /* CardTableViewCell.swift */; };
+		6D0968E51CE6637B00FA8638 /* WildcardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */; };
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
-		6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */; };
 		6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B51C702FDF00F643CB /* Resource.swift */; };
 		6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78B51C702FDF00F643CB /* Resource.swift */; };
 		6D4B78BE1C70EBD500F643CB /* WildcardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */; };
 		6D4B78BF1C70EBD500F643CB /* WildcardSDK.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		6D4B78C21C70ECC300F643CB /* CardTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */; };
+		6D59068F1CE3F0DC00464D57 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59068D1CE3F0DC00464D57 /* CardTableViewCell.swift */; };
 		6D76CA751C06A40B00F8B007 /* Leitura-Roman 3.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */; };
 		6D76CA771C06A41900F8B007 /* FreigSanProLig.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */; };
 		6D76CA7B1C06AB6900F8B007 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7A1C06AB6900F8B007 /* Event.swift */; };
@@ -349,11 +352,11 @@
 		50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionManager.swift; sourceTree = "<group>"; };
 		50FE4D461C50D37C00EA9042 /* Ministry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ministry.swift; sourceTree = "<group>"; };
 		51A90E0DC654B19B9DAAA708 /* Pods-CruUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CruUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CruUITests/Pods-CruUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6D0968E01CE52E6300FA8638 /* ResourcesViewControllerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResourcesViewControllerTest.swift; sourceTree = "<group>"; };
 		6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		6D4B78B51C702FDF00F643CB /* Resource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WildcardSDK.framework; sourceTree = "<group>"; };
-		6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewController.swift; sourceTree = "<group>"; };
+		6D59068D1CE3F0DC00464D57 /* CardTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardTableViewCell.swift; sourceTree = "<group>"; };
 		6D76CA741C06A40B00F8B007 /* Leitura-Roman 3.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Leitura-Roman 3.otf"; sourceTree = "<group>"; };
 		6D76CA761C06A41900F8B007 /* FreigSanProLig.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FreigSanProLig.otf; sourceTree = "<group>"; };
 		6D76CA7A1C06AB6900F8B007 /* Event.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
@@ -419,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECA244F33222A58BB52BB6DF /* Pods_CruTests.framework in Frameworks */,
+				6D0968E51CE6637B00FA8638 /* WildcardSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -768,8 +772,7 @@
 				501085AD1BFBDB6700849CED /* ResourcesViewController.swift */,
 				6D8F423E1CD80CF60013BB13 /* YoutubeThumbnail.swift */,
 				6D8F423B1CD80C8D0013BB13 /* Article.swift */,
-				6D4B78B11C7024C900F643CB /* CardTableViewCell.swift */,
-				6D4B78C11C70ECC300F643CB /* CardTableViewController.swift */,
+				6D59068D1CE3F0DC00464D57 /* CardTableViewCell.swift */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -803,6 +806,7 @@
 			isa = PBXGroup;
 			children = (
 				C1015CD11C9429D0005B559E /* ResourcesTest.swift */,
+				6D0968E01CE52E6300FA8638 /* ResourcesViewControllerTest.swift */,
 				6DA330AA1CD95E1200FCC970 /* ResourceTest.swift */,
 			);
 			name = Resources;
@@ -1203,6 +1207,7 @@
 				E9CB00321C8F7E04000F7E12 /* SummerMissionCell.swift in Sources */,
 				5072B4171CB38616001F5BF6 /* TimeDetail.swift in Sources */,
 				50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */,
+				6D59068F1CE3F0DC00464D57 /* CardTableViewCell.swift in Sources */,
 				508B2BD71CCF4C2C00CD130C /* VarietyItemCollectionViewCell.swift in Sources */,
 				C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */,
 				0FAEB9801C8795D0005C0B4C /* MinistryTeam.swift in Sources */,
@@ -1213,7 +1218,6 @@
 				6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */,
 				C13F7DE81CE277E30057D0F5 /* CGQuestion.swift in Sources */,
 				0FF87D9C1C8A1EF800D56C4E /* EventsCollectionViewController.swift in Sources */,
-				6D4B78C21C70ECC300F643CB /* CardTableViewController.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
 				5026094E1C066C780019E97C /* CampusesViewController.swift in Sources */,
 				50E0E1881C87796D000023F1 /* Cancler.swift in Sources */,
@@ -1227,7 +1231,6 @@
 				50697BC71CE0456600776CC5 /* PhoneFormatter.swift in Sources */,
 				501038B21CD9655F00CCD7DC /* EditRideViewController.swift in Sources */,
 				C185BB391CD2904F00787153 /* FakeServerClient.swift in Sources */,
-				6D4B78B21C7024C900F643CB /* CardTableViewCell.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 				C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */,
 			);
@@ -1313,6 +1316,7 @@
 				501038B31CD9655F00CCD7DC /* EditRideViewController.swift in Sources */,
 				0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */,
 				0FF87DA51C8A268D00D56C4E /* GlobalUtils.swift in Sources */,
+				6D0968E41CE6600700FA8638 /* CardTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1431,6 +1435,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1457,6 +1462,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
