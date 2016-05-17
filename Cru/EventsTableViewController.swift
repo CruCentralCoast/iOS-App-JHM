@@ -30,12 +30,7 @@ class EventsTableViewController: UITableViewController {
     //insert helper function for inserting event data
     private func insertEvent(dict: NSDictionary) {
         let event = Event(dict: dict)!
-        let cmpResult = curDate.compare(event.endNSDate)
-        
-        //check if the event has happened yet. If it hasnt then add it
-        if cmpResult == NSComparisonResult.OrderedAscending || cmpResult == NSComparisonResult.OrderedSame {
-            self.events.insert(event, atIndex: 0)
-        }
+        self.events.insert(event, atIndex: 0)
     }
     
     //helper function for finishing off inserting event data
