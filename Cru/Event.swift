@@ -14,6 +14,7 @@ import ImageLoader
 class Event: Equatable {
     // MARK: Properties
     static let ministriesField = "ministries"
+    static let endDateField = "endDate"
     
     //properties in the database for each event
     var id: String
@@ -93,13 +94,13 @@ class Event: Equatable {
         if let dNotifications = dict["notifications"] {
             self.notifications = dNotifications as! [String]
         }
-        if let dParentMinistries = dict["parentMinistries"] {
+        if let dParentMinistries = dict[Event.ministriesField] {
             self.parentMinistries = dParentMinistries as! [String]
         }
         if let dRideSharingEnabled = dict["rideSharingEnabled"] {
             self.rideSharingEnabled = dRideSharingEnabled as! Bool
         }
-        if let dEndDate = dict["endDate"] {
+        if let dEndDate = dict[Event.endDateField] {
             self.endNSDate = GlobalUtils.dateFromString(dEndDate as! String)
         }
         if let dStartDate = dict["startDate"] {

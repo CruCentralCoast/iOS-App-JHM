@@ -28,11 +28,17 @@ class GlobalUtils {
         return locStr
     }
     
-    //gets an NSDate from a given string
-    class func dateFromString(dateStr: String) -> NSDate {
+    class func getDefaultDateFormatter() -> NSDateFormatter {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        
+        return dateFormatter
+    }
+    
+    //gets an NSDate from a given string
+    class func dateFromString(dateStr: String) -> NSDate {
+        let dateFormatter = getDefaultDateFormatter()
         
         //if date formatter returns nil return the current date/time
         if let date = dateFormatter.dateFromString(dateStr) {
@@ -47,6 +53,13 @@ class GlobalUtils {
     class func stringFromDate(date: NSDate, format: String) -> String {
         let formatter = NSDateFormatter()
         formatter.dateFormat = format
+        
+        return formatter.stringFromDate(date)
+    }
+    
+    //returns default date as it is in the database
+    class func stringFromDate(date: NSDate) -> String {
+        let formatter = getDefaultDateFormatter()
         
         return formatter.stringFromDate(date)
     }

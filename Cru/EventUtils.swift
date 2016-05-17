@@ -27,7 +27,9 @@ class EventUtils {
             ministryIds = ministries.map({min in min.id})
         }
         
-        let params: [String:AnyObject] = [Event.ministriesField:["$in":ministryIds]]
+        let curDate = GlobalUtils.stringFromDate(NSDate())
+        
+        let params: [String:AnyObject] = [Event.ministriesField:["$in":ministryIds], Event.endDateField:["$gte": curDate]]
         
         CruClients.getServerClient().getData(.Event, insert: inserter, completionHandler: completionHandler, params: params)
     }
