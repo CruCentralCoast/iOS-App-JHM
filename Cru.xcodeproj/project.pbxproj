@@ -134,6 +134,8 @@
 		50AC22511CDB016800427C08 /* EditCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC224F1CDB016800427C08 /* EditCell.swift */; };
 		50AC22531CDB033D00427C08 /* EditableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC22521CDB033D00427C08 /* EditableItem.swift */; };
 		50AC22541CDB033D00427C08 /* EditableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC22521CDB033D00427C08 /* EditableItem.swift */; };
+		50B172601CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */; };
+		50B172611CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */; };
 		50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
 		50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
 		50D507861CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */; };
@@ -327,6 +329,7 @@
 		50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideTableViewCell.swift; sourceTree = "<group>"; };
 		50AC224F1CDB016800427C08 /* EditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCell.swift; sourceTree = "<group>"; };
 		50AC22521CDB033D00427C08 /* EditableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableItem.swift; sourceTree = "<group>"; };
+		50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableOptionsVC.swift; sourceTree = "<group>"; };
 		50C6CC7A1CBF3A3600EF5EFB /* Cru-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cru-Bridging-Header.h"; sourceTree = "<group>"; };
 		50C6CC7B1CBF3A3600EF5EFB /* CruTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		50C6CC7C1CBF3A3700EF5EFB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -854,6 +857,7 @@
 				C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */,
 				C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */,
 				C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */,
+				50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */,
 			);
 			name = CommunityGroups;
 			sourceTree = "<group>";
@@ -1195,6 +1199,7 @@
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
 				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
+				50B172601CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */,
 				6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */,
 				C13F7DE81CE277E30057D0F5 /* CGQuestion.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
@@ -1277,6 +1282,7 @@
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
 				C13F7DF21CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */,
+				50B172611CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */,
 				C1214DC91CEA63B300E7D25F /* EventUtils.swift in Sources */,
 				C1EF490B1CDBF74E009439FE /* SurveyViewController.swift in Sources */,
 				0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */,

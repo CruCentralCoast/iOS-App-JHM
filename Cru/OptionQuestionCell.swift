@@ -8,30 +8,19 @@
 
 import UIKit
 
-class OptionQuestionCell: UITableViewCell, UITableViewDelegate, UITableViewDataSource {
+class OptionQuestionCell: UITableViewCell {
     @IBOutlet weak var question: UILabel!
-
-    @IBOutlet weak var options: UITableView!
-    
+    var presentingVC: SurveyViewController!
     var cgQuestion: CGQuestion!
+    
     
     func setQuestion(cgq: CGQuestion) {
         cgQuestion = cgq
         question.text = cgQuestion.question
-        
-        options.delegate = self
-        options.dataSource = self
-        options.reloadData()
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("answer-cell")
-        cell?.textLabel!.text = cgQuestion.options[indexPath.row]
-        print(cgQuestion.options[indexPath.row])
-        return cell!
-    }
-    
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return cgQuestion.options.count
+    @IBAction func showOptions(sender: AnyObject) {
+        presentingVC.showOptions(cgQuestion.options)
+        //presentingVC.performSegueWithIdentifier("showOptions", sender: presentingVC)
     }
 }
