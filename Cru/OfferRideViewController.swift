@@ -160,7 +160,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         }
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        CruClients.getRideUtils().postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 0, direction: getDirection(), handler:  handleRequestResult)
+        CruClients.getRideUtils().postRideOffer(chosenEvent!.id, name: (nameField.text)!, phone: phoneField.text!, seats: Int(numSeats.text!)!, location: location.getLocationAsDict(location), radius: 1, direction: getDirection(), handler:  handleRequestResult)
         
         
     }
@@ -265,34 +265,20 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         chooseEventSelected(sender)
     }
     @IBAction func chooseTime(sender: UIButton) {
-        let datePicker = ActionSheetDatePicker(title: "Time:", datePickerMode: UIDatePickerMode.Time, selectedDate: NSDate(), target: self, action: "datePicked:", origin: self.view.superview)//sender.superview!.superview)
-        
-        datePicker.minuteInterval = 15
-        datePicker.showActionSheetPicker()
+        TimePicker.pickTime(self)
     }
     
     @IBAction func chooseDate(sender: AnyObject) {
-        let datePicker = ActionSheetDatePicker(title: "Date:", datePickerMode: UIDatePickerMode.Date, selectedDate: NSDate(), doneBlock: {
-            picker, value, index in
-            
-            if let val = value as? NSDate{
-                let calendar = NSCalendar.currentCalendar()
-                let components = calendar.components([.Day,.Month,.Year], fromDate: val)
-
-                let month = String(components.month)
-                let day = String(components.day)
-                let year = String(components.year)
-
-                self.pickupDate.text = month + "/" + day + "/" + year
-                self.formHasBeenEdited = true
-            }
-            
-            
-            return
-            }, cancelBlock: { ActionStringCancelBlock in return }, origin: self.view)
-
+        TimePicker.pickDate(self, handler: chooseDateHandler)
+    }
+    
+    func chooseDateHandler(month : Int, day : Int, year : Int){
+        let month = String(month)
+        let day = String(day)
+        let year = String(year)
         
-        datePicker.showActionSheetPicker()
+        self.pickupDate.text = month + "/" + day + "/" + year
+        self.formHasBeenEdited = true
     }
 
 
@@ -309,7 +295,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "eventPopover"{
             let vc  = segue.destinationViewController as? EventsModalTableViewController
-            vc?.events = events
+            vc?.events = Event.eventsWithRideShare(events)
             vc?.vc = self
             let controller = vc?.popoverPresentationController
             if(controller != nil){
@@ -317,6 +303,8 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
             }
         }
     }
+    
+    
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
@@ -359,19 +347,45 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
 extension Location {
     func getLocationAsDict(loc: Location) -> NSDictionary {
         var dict = [String:AnyObject]()
+        let otherDict = loc.placemark.addressDictionary!
+        
         if let street = loc.placemark.addressDictionary!["Street"] {
-            dict["street1"] = street
+            dict[LocationKeys.street1] = street
         }
+        
         if let state = loc.placemark.addressDictionary!["State"] {
-            dict["state"] = state
+            dict[LocationKeys.state] = state
         }
+        
         if let zip = loc.placemark.addressDictionary!["ZIP"] {
-            dict["postcode"] = zip
+            dict[LocationKeys.postcode] = zip
         }
-        if let suburb = loc.placemark.addressDictionary!["SubAdministrativeArea"] {
-            dict["suburb"] = suburb
+        
+        if let suburb = loc.placemark.addressDictionary!["locality"] {
+            dict[LocationKeys.city] = suburb
+        }
+        else if let suburb = loc.placemark.addressDictionary!["subLocality"]{
+            dict[LocationKeys.city] = suburb
+        }
+        else if let suburb = loc.placemark.addressDictionary!["SubAdministrativeArea"]{
+            dict[LocationKeys.city] = suburb
         }
         return dict
         
+        /*
+            public var name: String? { get } // eg. Apple Inc.
+            public var thoroughfare: String? { get } // street name, eg. Infinite Loop
+            public var subThoroughfare: String? { get } // eg. 1
+            public var locality: String? { get } // city, eg. Cupertino
+            public var subLocality: String? { get } // neighborhood, common name, eg. Mission District
+            public var administrativeArea: String? { get } // state, eg. CA
+            public var subAdministrativeArea: String? { get } // county, eg. Santa Clara
+            public var postalCode: String? { get } // zip code, eg. 95014
+            public var ISOcountryCode: String? { get } // eg. US
+            public var country: String? { get } // eg. United States
+            public var inlandWater: String? { get } // eg. Lake Tahoe
+            public var ocean: String? { get } // eg. Pacific Ocean
+            public var areasOfInterest: [String]? { get } // eg. Golden Gate Park
+        */
     }
 }

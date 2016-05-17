@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qKH-sz-Wh1">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
+        </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
             <string>FreightSansProMedium-Regular</string>
@@ -130,13 +135,13 @@
                                 <rect key="frame" x="20" y="0.0" width="560" height="487"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join A Ministry Team!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-Pu-SrR">
-                                        <rect key="frame" x="8" y="8" width="544" height="28.5"/>
+                                        <rect key="frame" x="8" y="8" width="544" height="29"/>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-Mj-jWS">
-                                        <rect key="frame" x="8" y="36" width="544" height="404.5"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-Mj-jWS">
+                                        <rect key="frame" x="8" y="36" width="544" height="405"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Here is information about what a community group is and anything else that you would like to hear about Ministry Teams. Here's another sentence to provide more information about what this information provides.</string>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
@@ -179,11 +184,11 @@
                                                 <rect key="frame" x="0.0" y="28" width="600" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vbj-Jf-Yw3" id="cJk-ey-s1u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="49.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="49"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-uY-I7B">
-                                                            <rect key="frame" x="8" y="14" width="584" height="20.5"/>
+                                                            <rect key="frame" x="8" y="14" width="584" height="21"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
@@ -271,49 +276,155 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1x-uX-6FD">
-                                <rect key="frame" x="20" y="20" width="157" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul5-hy-nar">
-                                <rect key="frame" x="0.0" y="560" width="600" height="40"/>
-                                <color key="backgroundColor" red="0.72941176470588232" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2v-fc-Wdb">
+                                <rect key="frame" x="0.0" y="20" width="600" height="580"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4T-Of-6oF">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="336"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wWw-vp-4CK">
+                                                <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="wWw-vp-4CK" secondAttribute="height" multiplier="5:3" id="NUE-YB-d0L"/>
+                                                    <constraint firstAttribute="height" constant="200" id="Pgj-My-pvc"/>
+                                                    <constraint firstAttribute="height" constant="200" id="ROz-Qn-h3T"/>
+                                                    <constraint firstAttribute="width" constant="200" id="a4b-qA-Qm5"/>
+                                                    <constraint firstAttribute="width" secondItem="wWw-vp-4CK" secondAttribute="height" multiplier="30:7" id="bcu-ki-fW1"/>
+                                                    <constraint firstAttribute="width" secondItem="wWw-vp-4CK" secondAttribute="height" multiplier="152:75" id="l8G-nC-KO6"/>
+                                                    <constraint firstAttribute="height" constant="300" id="zBh-wn-x5e"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="NUE-YB-d0L"/>
+                                                        <exclude reference="ROz-Qn-h3T"/>
+                                                        <exclude reference="a4b-qA-Qm5"/>
+                                                        <exclude reference="bcu-ki-fW1"/>
+                                                        <exclude reference="l8G-nC-KO6"/>
+                                                        <exclude reference="zBh-wn-x5e"/>
+                                                    </mask>
+                                                </variation>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1x-uX-6FD">
+                                                <rect key="frame" x="8" y="208" width="584" height="31"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="24"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-ig-BtX">
+                                                <rect key="frame" x="8" y="246" width="584" height="1"/>
+                                                <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="GE1-VB-0WG"/>
+                                                </constraints>
+                                            </view>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul5-hy-nar">
+                                                <rect key="frame" x="0.0" y="296" width="608" height="40"/>
+                                                <color key="backgroundColor" red="0.72941176470588232" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="1de-ET-fky"/>
+                                                </constraints>
+                                                <state key="normal" title="Leave Team">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="leaveMinistryTeam:" destination="kK3-7x-RQT" eventType="touchUpInside" id="19Q-Kb-dat"/>
+                                                </connections>
+                                            </button>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-hT-PEM">
+                                                <rect key="frame" x="8" y="255" width="584" height="33"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                            </textView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="2qi-hT-PEM" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="09R-cU-MzS"/>
+                                            <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="2fN-YT-97j"/>
+                                            <constraint firstItem="2qi-hT-PEM" firstAttribute="top" secondItem="qNB-ig-BtX" secondAttribute="bottom" constant="8" id="3jM-wi-GM7"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="6LK-WO-i9o"/>
+                                            <constraint firstItem="wWw-vp-4CK" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" id="DCS-h5-szz"/>
+                                            <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="m4T-Of-6oF" secondAttribute="top" constant="8" id="Dan-Jt-qpC"/>
+                                            <constraint firstItem="Ul5-hy-nar" firstAttribute="top" secondItem="2qi-hT-PEM" secondAttribute="bottom" constant="8" id="FHK-T6-C1r"/>
+                                            <constraint firstAttribute="height" constant="97" id="GTg-05-h4J"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="LdW-Mt-lN8"/>
+                                            <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="wWw-vp-4CK" secondAttribute="bottom" constant="8" id="Uud-dM-FDa"/>
+                                            <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="WhJ-eo-njJ"/>
+                                            <constraint firstItem="qNB-ig-BtX" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="Whd-eq-8J4"/>
+                                            <constraint firstItem="2qi-hT-PEM" firstAttribute="top" secondItem="wWw-vp-4CK" secondAttribute="bottom" constant="8" id="XNC-9Q-zMM"/>
+                                            <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="bQR-DC-BGS"/>
+                                            <constraint firstAttribute="trailing" secondItem="wWw-vp-4CK" secondAttribute="trailing" id="fIL-4m-j3z"/>
+                                            <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="wWw-vp-4CK" secondAttribute="trailing" id="fiy-Du-bUa"/>
+                                            <constraint firstAttribute="bottom" secondItem="Ul5-hy-nar" secondAttribute="bottom" id="hZt-AS-1B2"/>
+                                            <constraint firstItem="h1x-uX-6FD" firstAttribute="centerX" secondItem="m4T-Of-6oF" secondAttribute="centerX" id="iIz-ml-BBG"/>
+                                            <constraint firstAttribute="trailing" secondItem="wWw-vp-4CK" secondAttribute="trailing" constant="-8" id="im9-9A-v6m"/>
+                                            <constraint firstItem="2qi-hT-PEM" firstAttribute="top" secondItem="h1x-uX-6FD" secondAttribute="bottom" constant="7.5" id="jZS-p7-Cxf"/>
+                                            <constraint firstItem="wWw-vp-4CK" firstAttribute="top" secondItem="m4T-Of-6oF" secondAttribute="top" id="kSu-iQ-xYu"/>
+                                            <constraint firstItem="qNB-ig-BtX" firstAttribute="centerX" secondItem="m4T-Of-6oF" secondAttribute="centerX" id="mW3-pL-RcM"/>
+                                            <constraint firstAttribute="trailing" secondItem="Ul5-hy-nar" secondAttribute="trailing" constant="-8" id="mZo-68-7Is"/>
+                                            <constraint firstItem="Ul5-hy-nar" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" id="ohv-sj-HNj"/>
+                                            <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="wWw-vp-4CK" secondAttribute="bottom" constant="8" id="pFt-1o-6No"/>
+                                            <constraint firstAttribute="trailing" secondItem="2qi-hT-PEM" secondAttribute="trailing" constant="8" id="rMs-tR-RZQ"/>
+                                            <constraint firstItem="qNB-ig-BtX" firstAttribute="top" secondItem="h1x-uX-6FD" secondAttribute="bottom" constant="8" id="vyr-n7-ftN"/>
+                                            <constraint firstAttribute="trailing" secondItem="qNB-ig-BtX" secondAttribute="trailing" constant="8" id="xgY-IF-YBF"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="GTg-05-h4J"/>
+                                                <exclude reference="im9-9A-v6m"/>
+                                                <exclude reference="6LK-WO-i9o"/>
+                                                <exclude reference="Dan-Jt-qpC"/>
+                                                <exclude reference="WhJ-eo-njJ"/>
+                                                <exclude reference="bQR-DC-BGS"/>
+                                                <exclude reference="fiy-Du-bUa"/>
+                                                <exclude reference="pFt-1o-6No"/>
+                                                <exclude reference="XNC-9Q-zMM"/>
+                                                <exclude reference="jZS-p7-Cxf"/>
+                                            </mask>
+                                        </variation>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="1de-ET-fky"/>
+                                    <constraint firstItem="m4T-Of-6oF" firstAttribute="leading" secondItem="s2v-fc-Wdb" secondAttribute="leading" id="Gkd-cD-HtF"/>
+                                    <constraint firstItem="m4T-Of-6oF" firstAttribute="top" secondItem="s2v-fc-Wdb" secondAttribute="top" id="J7i-vU-OPN"/>
+                                    <constraint firstAttribute="trailing" secondItem="m4T-Of-6oF" secondAttribute="trailing" id="Z7v-K5-csa"/>
+                                    <constraint firstAttribute="bottom" secondItem="m4T-Of-6oF" secondAttribute="bottom" id="biL-Mm-bEG"/>
                                 </constraints>
-                                <state key="normal" title="Leave Team">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="leaveMinistryTeam:" destination="kK3-7x-RQT" eventType="touchUpInside" id="19Q-Kb-dat"/>
-                                </connections>
-                            </button>
+                            </scrollView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Ul5-hy-nar" secondAttribute="trailing" constant="-20" id="1dW-g3-Mir"/>
-                            <constraint firstItem="ezZ-hQ-EOG" firstAttribute="top" secondItem="Ul5-hy-nar" secondAttribute="bottom" id="4EX-ev-r4O"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="Ul5-hy-nar" secondAttribute="leading" constant="-20" id="KVz-IS-5Ae"/>
-                            <constraint firstItem="Ul5-hy-nar" firstAttribute="centerX" secondItem="tMc-Rh-DgV" secondAttribute="centerX" id="SeE-TD-fit"/>
-                            <constraint firstItem="Ul5-hy-nar" firstAttribute="width" secondItem="tMc-Rh-DgV" secondAttribute="width" id="dGq-BM-9DN"/>
+                            <constraint firstItem="s2v-fc-Wdb" firstAttribute="top" secondItem="Xdb-gG-xJa" secondAttribute="bottom" id="0AG-T1-lng"/>
+                            <constraint firstItem="s2v-fc-Wdb" firstAttribute="top" secondItem="Xdb-gG-xJa" secondAttribute="bottom" constant="-20" id="5PJ-4i-5rV"/>
+                            <constraint firstItem="ezZ-hQ-EOG" firstAttribute="top" secondItem="s2v-fc-Wdb" secondAttribute="bottom" id="9cr-OE-qmZ"/>
+                            <constraint firstItem="ezZ-hQ-EOG" firstAttribute="top" secondItem="s2v-fc-Wdb" secondAttribute="bottom" id="JgA-L6-IES"/>
+                            <constraint firstItem="m4T-Of-6oF" firstAttribute="height" secondItem="tMc-Rh-DgV" secondAttribute="height" id="XYI-eN-AFN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s2v-fc-Wdb" secondAttribute="trailing" constant="-20" id="dUi-R7-V6F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="s2v-fc-Wdb" secondAttribute="trailing" constant="-20" id="i3K-06-sSn"/>
+                            <constraint firstItem="s2v-fc-Wdb" firstAttribute="leading" secondItem="tMc-Rh-DgV" secondAttribute="leadingMargin" constant="-20" id="spl-fL-7Mf"/>
+                            <constraint firstItem="m4T-Of-6oF" firstAttribute="width" secondItem="tMc-Rh-DgV" secondAttribute="width" id="xWT-zb-bUd"/>
+                            <constraint firstItem="s2v-fc-Wdb" firstAttribute="leading" secondItem="tMc-Rh-DgV" secondAttribute="leadingMargin" constant="-20" id="yYA-BJ-mYg"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="1dW-g3-Mir"/>
-                                <exclude reference="KVz-IS-5Ae"/>
+                                <exclude reference="XYI-eN-AFN"/>
+                                <exclude reference="5PJ-4i-5rV"/>
+                                <exclude reference="dUi-R7-V6F"/>
+                                <exclude reference="yYA-BJ-mYg"/>
+                                <exclude reference="9cr-OE-qmZ"/>
                             </mask>
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="NLQ-fQ-d2O"/>
                     <connections>
+                        <outlet property="ministryTeamDescription" destination="2qi-hT-PEM" id="bB2-mn-WYG"/>
+                        <outlet property="ministryTeamImage" destination="wWw-vp-4CK" id="m4C-uj-3yw"/>
                         <outlet property="ministryTeamNameLabel" destination="h1x-uX-6FD" id="hxu-bW-82b"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fqk-yG-Dsj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2546" y="2350"/>
+            <point key="canvasLocation" x="2526" y="2386"/>
         </scene>
         <!--Community Group View Controller-->
         <scene sceneID="G68-eN-OY9">
@@ -331,13 +442,13 @@
                                 <rect key="frame" x="20" y="0.0" width="560" height="487"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join A Community Group!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kld-tR-OoT">
-                                        <rect key="frame" x="8" y="8" width="544" height="28.5"/>
+                                        <rect key="frame" x="8" y="8" width="544" height="29"/>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-3t-uJg">
-                                        <rect key="frame" x="8" y="36" width="544" height="404.5"/>
+                                        <rect key="frame" x="8" y="36" width="544" height="405"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Here is information about what a community group is and anything else that you would like to hear about Community Groups. Here's another sentence to provide more information about what this information provides.</string>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
@@ -388,6 +499,9 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <segue destination="Xoq-Tk-ub7" kind="show" identifier="cGroupSurvey" id="Zjm-DD-K3W"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nq4-dt-quj" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="DeS-zp-erU">
@@ -397,6 +511,14 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2493" y="1714.5"/>
+        </scene>
+        <!--communitygroups-->
+        <scene sceneID="OsC-yo-5Hj">
+            <objects>
+                <viewControllerPlaceholder storyboardName="communitygroups" id="Xoq-Tk-ub7" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KMq-r0-AzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2951.5" y="1687"/>
         </scene>
     </scenes>
     <resources>

@@ -146,7 +146,8 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             //let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
             //downloadImage(url!, imageView: cell.minstryImage) //UIImage(data: data!)
         
-            asyncLoadMinistryImage(ministry, imageView: cell.minstryImage)
+            cell.minstryImage.load(ministry.imageUrl)
+            //asyncLoadMinistryImage(ministry, imageView: cell.minstryImage)
         
             if(ministry.feedEnabled == true){
                 cell.accessoryType = .Checkmark
@@ -164,12 +165,14 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             let ministry = getMinistryAtIndexPath(indexPath)
             
             if(cell.accessoryType == .Checkmark){
-                cell.accessoryType = .None
-                ministry.feedEnabled = false
-                
                 MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
                 SubscriptionManager.unsubscribeToTopic("/topics/" + ministry.id, handler: {(success) in
                     
+                    if (success) {
+                        cell.accessoryType = .None
+                        ministry.feedEnabled = false
+                    }
+
                     let title = success ? "Successfully unsubscribed" : "Failed to unsubscribe"
                     
                     let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
@@ -181,12 +184,14 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
                 })
             }
             else{
-                cell.accessoryType = .Checkmark
-                ministry.feedEnabled = true
-                
                 MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
                 SubscriptionManager.subscribeToTopic("/topics/" + ministry.id, handler: {(success) in
                     
+                    if (success) {
+                        cell.accessoryType = .Checkmark
+                        ministry.feedEnabled = true
+                    }
+
                     let title = success ? "Successfully subscribed" : "Failed to subscribe"
                     
                     let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)

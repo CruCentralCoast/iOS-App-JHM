@@ -74,7 +74,9 @@ class MinistryTeam {
             "id": self.id,
             "name": self.ministryName,
             "description": self.description,
-            "leaders": self.leaders
+            "leaders": self.leaders,
+            "imageUrl": self.imageUrl,
+            "teamImageUrl": self.teamImageUrl
         ]
     }
 }

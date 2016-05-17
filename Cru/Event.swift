@@ -13,6 +13,7 @@ import ImageLoader
 
 class Event: Equatable {
     // MARK: Properties
+    static let ministriesField = "ministries"
     
     //properties in the database for each event
     var id: String
@@ -33,6 +34,7 @@ class Event: Equatable {
     var location: NSDictionary?
     var image: UIImage!
     var imageUrl: String
+    var rideshareEnabled: Bool?
     
     init?() {
         self.id = ""
@@ -52,6 +54,8 @@ class Event: Equatable {
         self.startNSDate = NSDate()
         self.image = UIImage(named: "event1")
         self.imageUrl = ""
+        self.location = NSDictionary()
+        self.rideshareEnabled = false
     }
     
     convenience init?(dict : NSDictionary) {
@@ -59,6 +63,9 @@ class Event: Equatable {
         self.init()
         
         //grab dictionary objects
+        if let enabled = dict["rideSharing"] as? Bool{
+            self.rideSharingEnabled = enabled
+        }
         if let dId = dict["_id"] {
             self.id = dId as! String
         }
@@ -80,7 +87,7 @@ class Event: Equatable {
         if let dImageSquare = dict["imageSquare"] {
             if let imageUrl = dImageSquare.objectForKey("url") {
                 self.imageSquareUrl = imageUrl as! String
-                print("SQUARE IMAGE: " + (imageUrl as! String))
+//                print("SQUARE IMAGE: " + (imageUrl as! String))
             }
         }
         if let dNotifications = dict["notifications"] {
@@ -101,11 +108,15 @@ class Event: Equatable {
         if let dLocation = dict["location"] {
             self.location = dLocation as? NSDictionary
         }
-        if let dImage = dict["image"] {
-            if let imageUrl = dImage.objectForKey("url") {
-                self.imageUrl = imageUrl as! String
-            }
+        if let dImageLink = dict["imageLink"] {
+            self.imageUrl = dImageLink as! String
         }
+//        if let dImage = dict["image"] {
+//            if let imageUrl = dImage.objectForKey("url") {
+//                self.imageUrl = imageUrl as! String
+////                print("eventName: " + self.name + ": " + self.imageUrl)
+//            }
+//        }
     }
     
     //function for sorting events by date
@@ -123,6 +134,18 @@ class Event: Equatable {
         }
         
         return ""
+    }
+    
+    static func eventsWithRideShare(eventList : [Event])->[Event]{
+        var filteredList = [Event]()
+        
+        for event in eventList{
+            if event.rideSharingEnabled {
+                filteredList.append(event)
+            }
+        }
+        
+        return filteredList
     }
 }
 

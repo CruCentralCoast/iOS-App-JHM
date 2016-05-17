@@ -9,7 +9,9 @@
 import Foundation
 import EventKit
 
-class CalendarManager: CalendarServices {
+class CalendarManager {
+    var calendarStore: EKEventStore = EKEventStore()
+    
     /*
     This function is the public access function for adding an event to
     the native calendar.
@@ -117,18 +119,21 @@ class CalendarManager: CalendarServices {
     
     //helper method for removing event from calendar
     private func removeEvent(eventIdentifier: String) -> NSError? {
-        let calendarEvent = self.calendarStore.eventWithIdentifier(eventIdentifier)!
-        
-        //try to store the event into the calendar
-        do {
-            try self.calendarStore.removeEvent(calendarEvent, span: EKSpan.ThisEvent, commit: true)
-            return nil
+        if let calendarEvent = self.calendarStore.eventWithIdentifier(eventIdentifier) {
+            //try to store the event into the calendar
+            do {
+                try self.calendarStore.removeEvent(calendarEvent, span: EKSpan.ThisEvent, commit: true)
+                return nil
+            }
+            catch let error as NSError {
+                return error
+            }
+            catch {
+                fatalError()
+            }
         }
-        catch let error as NSError {
-            return error
-        }
-        catch {
-            fatalError()
+        else {
+            return NSError(domain: "calendar", code: 10, userInfo: nil)
         }
     }
     
@@ -146,5 +151,22 @@ class CalendarManager: CalendarServices {
         })
         
         return isValid
+    }
+    
+    //this function creates an EKEvent that can be stored in the native calendar
+    func createCalendarEvent(event: Event) -> EKEvent {
+        let calendarEvent: EKEvent = EKEvent(eventStore: self.calendarStore)
+        
+        calendarEvent.calendar = calendarStore.defaultCalendarForNewEvents
+        
+        if let _ = event.location {
+            calendarEvent.location = event.getLocationString()
+        }
+        
+        calendarEvent.title = event.name
+        calendarEvent.startDate = event.startNSDate
+        calendarEvent.endDate = event.endNSDate
+        
+        return calendarEvent
     }
 }

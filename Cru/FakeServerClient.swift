@@ -139,6 +139,20 @@ class FakeServerClient: ServerProtocol {
         exception.raise()
     }
     
+    func patch(collection: DBCollection, params: [String : AnyObject], completionHandler: (NSDictionary?) -> Void, id: String) {
+        var dict = getById(collection, id: id)
+        if (dict == nil) {
+            completionHandler(nil)
+        } else {
+            for (k, v) in params {
+                dict[k] = v
+            }
+
+            overrideData(collection, params: dict)
+            completionHandler(dict)
+        }
+    }
+    
     private func getById(collection: DBCollection, id: String) -> [String:AnyObject]! {
         let col = getCollection(collection)
         
@@ -165,6 +179,17 @@ class FakeServerClient: ServerProtocol {
         var dict = params
         
         dict["_id"] = getNewId()
+        col.append(dict)
+        fakeDB[collection] = col
+        return dict
+    }
+    
+    private func overrideData(collection: DBCollection, params: [String: AnyObject]) -> [String:AnyObject] {
+        deleteById(collection, id: params["_id"] as! String)
+        
+        var col = getCollection(collection)
+        let dict = params
+        
         col.append(dict)
         fakeDB[collection] = col
         return dict

@@ -11,6 +11,8 @@ import UIKit
 class MinistryTeamDetailViewController: UIViewController {
 
     @IBOutlet weak var ministryTeamNameLabel: UILabel!
+    @IBOutlet weak var ministryTeamImage: UIImageView!
+    @IBOutlet weak var ministryTeamDescription: UITextView!
     
     //storage manager
     var teamStorageManager: MapLocalStorageManager!
@@ -24,7 +26,10 @@ class MinistryTeamDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ministryTeamNameLabel.text = ministryTeam["name"] as! String
+        ministryTeamNameLabel.text = ministryTeam["name"] as? String
+        ministryTeamImage.load(ministryTeam["imageUrl"] as! String)
+        
+            ministryTeamDescription.text = ministryTeam["description"] as! String
     
         teamStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
     }

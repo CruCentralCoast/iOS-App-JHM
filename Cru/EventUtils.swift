@@ -1,0 +1,34 @@
+//
+//  EventUtils.swift
+//  Cru
+//
+//  Created by Peter Godkin on 5/16/16.
+//  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
+//
+
+import Foundation
+
+class EventUtils {
+
+    var serverClient: ServerProtocol
+    
+    init() {
+        serverClient = CruClients.getServerClient()
+    }
+    
+    init(serverProtocol: ServerProtocol) {
+        serverClient = serverProtocol
+    }
+    
+    func loadEvents(inserter: (NSDictionary)->Void, completionHandler: (Bool)->Void) {
+        //Will load all events if you belong to no ministries
+        var ministryIds = []
+        if let ministries = SubscriptionManager.loadMinistries() {
+            ministryIds = ministries.map({min in min.id})
+        }
+        
+        let params: [String:AnyObject] = [Event.ministriesField:["$in":ministryIds]]
+        
+        CruClients.getServerClient().getData(.Event, insert: inserter, completionHandler: completionHandler, params: params)
+    }
+}

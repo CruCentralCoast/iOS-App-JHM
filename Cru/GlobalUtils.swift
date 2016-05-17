@@ -10,6 +10,24 @@ import UIKit
 import ImageLoader
 
 class GlobalUtils {
+    class func stringFromLocation(location: NSDictionary?) -> String {
+        var locStr = ""
+        
+        if let loc = location {
+            if let street = loc["street1"] {
+                locStr += street as! String
+            }
+            if let city = loc["suburb"] {
+                locStr += " " + (city as! String)
+            }
+            if let state = loc["state"] {
+                locStr += ", " + (state as! String)
+            }
+        }
+        
+        return locStr
+    }
+    
     //gets an NSDate from a given string
     class func dateFromString(dateStr: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
@@ -74,5 +92,29 @@ class GlobalUtils {
         } catch {
             print("Error writing json body")
         }
+    }
+    
+    class func parsePhoneNumber(phoneNum : String) -> String {
+        // split by '-'
+        let full = phoneNum.componentsSeparatedByString("-")
+        let left = full[0]
+        let right = full[1]
+        
+        // get area code from ()
+        var index1 = left.startIndex.advancedBy(1)
+        let delFirstParen = left.substringFromIndex(index1)
+        let index2 = delFirstParen.startIndex.advancedBy(3)
+        let areaCode = delFirstParen.substringToIndex(index2)
+        
+        // get first three digits
+        index1 = left.startIndex.advancedBy(6)
+        let threeDigits = left.substringFromIndex(index1)
+        
+        // get last four digits
+        // = right
+        
+        let finalPhoneNum = areaCode + threeDigits + right
+        return finalPhoneNum
+        
     }
 }

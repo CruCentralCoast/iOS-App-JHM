@@ -151,9 +151,9 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         //check if we're going to event modal
         if segue.identifier == "pickEvent" {
             if let destinationVC = segue.destinationViewController as? EventsModalTableViewController {
-                destinationVC.events = events
+                destinationVC.events = Event.eventsWithRideShare(events)
                 destinationVC.fvc = self
-                var controller = destinationVC.popoverPresentationController
+                let controller = destinationVC.popoverPresentationController
                 if(controller != nil){
                     controller?.delegate = self
                 }

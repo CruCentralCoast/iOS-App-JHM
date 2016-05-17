@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -27,29 +26,29 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8Yq-mn-96w">
-                                <rect key="frame" x="45" y="136" width="510" height="327"/>
+                                <rect key="frame" x="35" y="136" width="530" height="327"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Cru Central Coast!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uc4-wf-PGc">
-                                        <rect key="frame" x="0.0" y="7" width="510" height="25.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Cru Central Coast!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Uc4-wf-PGc">
+                                        <rect key="frame" x="0.0" y="7" width="530" height="25.5"/>
                                         <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                         <color key="textColor" red="0.18823529411764706" green="0.18823529411764706" blue="0.18823529411764706" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c8I-tJ-ea3">
-                                        <rect key="frame" x="0.0" y="33" width="510" height="21.5"/>
+                                        <rect key="frame" x="0.0" y="33" width="530" height="21.5"/>
                                         <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                         <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KEJ-m8-8vH">
-                                        <rect key="frame" x="0.0" y="58" width="510" height="1"/>
+                                        <rect key="frame" x="0.0" y="58" width="530" height="1"/>
                                         <color key="backgroundColor" red="0.27450980392156865" green="0.27450980392156865" blue="0.27450980392156865" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="nNM-1o-5mb"/>
                                         </constraints>
                                     </view>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UjS-0t-nvN" userLabel="Description Modal">
-                                        <rect key="frame" x="0.0" y="59" width="510" height="215"/>
+                                        <rect key="frame" x="0.0" y="59" width="530" height="215"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="215" id="A7N-M1-VRF"/>
                                         </constraints>
@@ -58,7 +57,7 @@
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Wv-Dj-n2d" userLabel="Campuses Modal">
-                                        <rect key="frame" x="0.0" y="59" width="510" height="215"/>
+                                        <rect key="frame" x="0.0" y="59" width="530" height="215"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="215" id="QUn-yj-R2A"/>
                                         </constraints>
@@ -67,7 +66,7 @@
                                         </connections>
                                     </containerView>
                                     <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hQ5-E0-4pe" userLabel="Ministries View">
-                                        <rect key="frame" x="0.0" y="59" width="510" height="215"/>
+                                        <rect key="frame" x="0.0" y="59" width="530" height="215"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="215" id="yaF-Gl-xVn"/>
                                         </constraints>
@@ -76,7 +75,7 @@
                                         </connections>
                                     </containerView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ExK-JJ-493">
-                                        <rect key="frame" x="0.0" y="274" width="510" height="1"/>
+                                        <rect key="frame" x="0.0" y="274" width="530" height="1"/>
                                         <color key="backgroundColor" red="0.27450980390000002" green="0.27450980390000002" blue="0.27450980390000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1" id="Uuu-K5-9J0"/>
@@ -118,10 +117,10 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="8Yq-mn-96w" secondAttribute="trailing" constant="25" id="AGa-3w-n60"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="8Yq-mn-96w" secondAttribute="trailing" constant="15" id="AGa-3w-n60"/>
                             <constraint firstItem="8Yq-mn-96w" firstAttribute="centerX" secondItem="2f9-1B-IYG" secondAttribute="centerX" id="JH0-qd-b9s"/>
                             <constraint firstItem="8Yq-mn-96w" firstAttribute="centerY" secondItem="2f9-1B-IYG" secondAttribute="centerY" id="bEg-rk-fx8"/>
-                            <constraint firstItem="8Yq-mn-96w" firstAttribute="leading" secondItem="2f9-1B-IYG" secondAttribute="leadingMargin" constant="25" id="le1-Yd-Lod"/>
+                            <constraint firstItem="8Yq-mn-96w" firstAttribute="leading" secondItem="2f9-1B-IYG" secondAttribute="leadingMargin" constant="15" id="le1-Yd-Lod"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -144,16 +143,16 @@
             <objects>
                 <tableViewController id="0nA-tD-f49" customClass="CampusesTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="lFM-25-y5T">
-                        <rect key="frame" x="0.0" y="0.0" width="510" height="215"/>
+                        <rect key="frame" x="0.0" y="0.0" width="530" height="215"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="campusCell" id="xkE-RB-WNR">
-                                <rect key="frame" x="0.0" y="28" width="510" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="530" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xkE-RB-WNR" id="qCh-Em-9P8">
-                                    <rect key="frame" x="0.0" y="0.0" width="510" height="44"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="530" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -178,19 +177,19 @@
                         <viewControllerLayoutGuide type="bottom" id="9se-el-X57"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="vWD-1A-bmi">
-                        <rect key="frame" x="0.0" y="0.0" width="510" height="215"/>
+                        <rect key="frame" x="0.0" y="0.0" width="530" height="215"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiH-EY-oVz">
-                                <rect key="frame" x="33" y="38" width="442" height="159.5"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fiH-EY-oVz">
+                                <rect key="frame" x="33" y="38" width="462" height="169"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Other information, more information about cru. Some welcome message. This is the welcome message.</string>
+                                <string key="text">Thank you for choosing our application! We would like to welcome you to the Cru community! Please continue through the following pages to select which ministries you would like to subscribe to!</string>
                                 <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome To Cru!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EG0-t6-eob">
-                                <rect key="frame" x="35" y="13" width="440" height="25.5"/>
+                                <rect key="frame" x="35" y="13" width="460" height="25.5"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                 <color key="textColor" red="0.38039215686274508" green="0.38039215686274508" blue="0.38039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -202,6 +201,7 @@
                             <constraint firstItem="EG0-t6-eob" firstAttribute="top" secondItem="8uN-lA-J7l" secondAttribute="bottom" constant="13" id="RCp-Py-kD1"/>
                             <constraint firstAttribute="leadingMargin" secondItem="EG0-t6-eob" secondAttribute="leading" constant="-15" id="VtD-GU-JQX"/>
                             <constraint firstItem="fiH-EY-oVz" firstAttribute="top" secondItem="EG0-t6-eob" secondAttribute="bottom" id="WOd-mA-k4L"/>
+                            <constraint firstItem="9se-el-X57" firstAttribute="top" secondItem="fiH-EY-oVz" secondAttribute="bottom" constant="8" id="e2M-Jf-uRa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="fiH-EY-oVz" secondAttribute="trailing" constant="15" id="lqK-OZ-vxV"/>
                             <constraint firstItem="fiH-EY-oVz" firstAttribute="leading" secondItem="vWD-1A-bmi" secondAttribute="leadingMargin" constant="13" id="qE6-r4-sZ0"/>
                         </constraints>

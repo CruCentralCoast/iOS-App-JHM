@@ -9,67 +9,78 @@
 import UIKit
 import MRProgress
 
-class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
+class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIPopoverPresentationControllerDelegate {
     
     //MARK: Properties
+    var details = [EditableItem]()
     var event: Event!
-    var ride: Ride!
+    var ride: Ride!{
+        didSet {
+            
+        }
+    }
     var passengers = [Passenger]()
     let cellHeight = CGFloat(60)
     var rideVC: RidesViewController?
-    @IBOutlet weak var contentViewHeight: NSLayoutConstraint!
-    @IBOutlet weak var passengerTableHeight: NSLayoutConstraint!
-    @IBOutlet weak var departureTime: UILabel!
-    @IBOutlet weak var departureLoc: UITextView!
-    @IBOutlet weak var rideName: UILabel!
-    @IBOutlet weak var passengerTable: UITableView!
+    var addressView: UITextView?
+    var timeLabel: UILabel?
+    var dateLabel: UILabel?
+    var directionLabel: UILabel?
+    var seatsOffered: UILabel?
+    var seatsLeft: UILabel?
+    var radius: UILabel?
+    @IBOutlet weak var detailsTable: UITableView!
+    
+    override func viewWillAppear(animated: Bool) {
+      
+        self.navigationItem.rightBarButtonItem!.setTitleTextAttributes([NSFontAttributeName: UIFont(name: Config.fontName, size: 20)!], forState: .Normal)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        populateDetails()
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 15)!], forState: .Normal)
+        detailsTable.separatorStyle = .None
         
-        self.contentViewHeight.constant = CGFloat(600)
-        adjustPageConstraints()
-        self.passengerTable.delegate = self
-        passengerTable.scrollEnabled = false;
-        rideName.text = event!.name
+        
+  
         CruClients.getRideUtils().getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {success in
             //TODO: should be handling failure here
         })
-        departureTime.text = ride.time
-        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.None
-        //departureLoc.dataDetectorTypes = UIDataDetectorTypes.Address
-        departureLoc.text = nil
-        departureLoc.text = ride.getCompleteAddress()
-        passengerTable.backgroundColor = UIColor.clearColor()
+        
+        
+        let editButton = UIBarButtonItem(title: "Edit", style: .Plain, target: self, action: "goToEditPage")
+        self.navigationItem.rightBarButtonItem = editButton
+    }
+    
+    
+    
+    func populateDetails(){
+        details = ride.getDriverDetails()        
+    }
+    
+    func updateData(){
+        details.removeAll()
+        ride.eventName = event.name
+        details = ride.getDriverDetails()
+        self.detailsTable.reloadData()
+//        timeLabel?.text = ride.getTime()
+//        dateLabel?.text = ride.getDate()
+//        addressView?.text = ride.getCompleteAddress()
+//        seatsOffered?.text = String(ride.seats)
+//        seatsLeft?.text = String(ride.seatsLeft())
+//        radius?.text = ride.getRadius()
+//        self.detailsTable.reloadData()
+    }
+    
+    
+    func goToEditPage(){
+        self.performSegueWithIdentifier("editSegue", sender: self)
     }
     
     func insertPassenger(newPassenger: NSDictionary){
         let newPassenger = Passenger(dict: newPassenger)
         passengers.append(newPassenger)
-        self.passengerTable.reloadData()
-        adjustPageConstraints()
-        
-    }
-    
-    func adjustPageConstraints(){
-        //we don't want to expand the table/view size unless there is more than 5 passengers
-        //because the table can already hold 5 when the page loads
-        if(self.passengers.count > 5){
-            let tvHeight = (CGFloat(self.passengers.count) * self.cellHeight)
-            var heightExpansion  = CGFloat(0)
-            
-            if(tvHeight > self.passengerTableHeight.constant){
-                heightExpansion = tvHeight - self.passengerTableHeight.constant
-            }
-            
-            let newHeight = self.view.frame.size.height + heightExpansion
-            let newFrame = CGRectMake(0, 0, self.view.frame.size.width, newHeight)
-            
-            //set view frame, tableheight, and content view height
-            self.view.frame = newFrame
-            self.passengerTableHeight.constant = tvHeight
-            self.contentViewHeight.constant = newHeight
-        }
     }
     
 
@@ -84,49 +95,76 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return passengers.count
+  
+        
+        if (tableView.isEqual(detailsTable)){
+            return details.count
+        }
+        
+        
+        return 0
     }
     //Set up the cell
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellIdentifier = "PassengerTableViewCell"
-        let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! PassengerTableViewCell
         
-        cell.nameLabel!.text = passengers[indexPath.row].name
-        cell.phoneLabel!.text = passengers[indexPath.row].phone
-        
-        if(ride.direction == "to event") {
-            cell.tripIndicator!.image = UIImage(named: "toEvent")
-        }
-        else if(ride.direction == "from event") {
-            cell.tripIndicator!.image = UIImage(named: "fromEvent")
-        }
-        else {
-            cell.tripIndicator!.image = UIImage(named: "roundTrip")
-        }
+        var chosenCell: UITableViewCell?
         
         
-        if(indexPath.row % 4 == 0) {
-            cell.nameLabel.textColor = CruColors.darkBlue
-            cell.phoneLabel.textColor = CruColors.darkBlue
+        if(tableView.isEqual(detailsTable)){
+            let cellIdentifier = "detailCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DetailCell
+            cell.title.text = details[indexPath.row].itemName
+            cell.value.text = details[indexPath.row].itemValue
+            
+            if (details[indexPath.row].itemName == Labels.addressLabel){
+                cell.textViewValue.dataDetectorTypes = .Address
+                cell.textViewValue.text = details[indexPath.row].itemValue
+                addressView = cell.textViewValue
+                cell.value.hidden = true
+            }else{
+                cell.textViewValue.hidden = true
+            }
+            
+            if(details[indexPath.row].itemName == Labels.departureTimeLabel){
+                timeLabel = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.departureDateLabel){
+                dateLabel = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.seatsLeftLabel){
+                seatsLeft = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.seatsLabel){
+                seatsOffered = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.directionLabel){
+                directionLabel = cell.value
+            }
+            else if(details[indexPath.row].itemName == Labels.pickupRadius){
+                radius = cell.value
+            }
+            
+            chosenCell = cell
         }
-        else if(indexPath.row % 4 == 1) {
-            cell.nameLabel.textColor = CruColors.lightBlue
-            cell.phoneLabel.textColor = CruColors.lightBlue
+        
+        return chosenCell!
+        
+    }
+    
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+
+        
+        if(tableView.isEqual(detailsTable)){
+            return CGFloat(80.0)
         }
-        else if(indexPath.row % 4 == 2) {
-            cell.nameLabel.textColor = CruColors.yellow
-            cell.phoneLabel.textColor = CruColors.yellow
-        }
-        else if(indexPath.row % 4 == 3) {
-            cell.nameLabel.textColor = CruColors.orange
-            cell.phoneLabel.textColor = CruColors.orange
-        }
-        return cell
+        
+        return CGFloat(44.0)
     }
     
     // Reload the data every time we come back to this view controller
     override func viewDidAppear(animated: Bool) {
-        passengerTable.reloadData()
+        //passengerTable.reloadData()
         self.navigationItem.title = "Ride Details"
     }
     
@@ -161,4 +199,39 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate {
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editSegue"{
+            if let destVC = segue.destinationViewController as? EditRideViewController{
+                print("this hapepned")
+                destVC.ride = ride
+                destVC.event = event
+                destVC.ridesVC = self.rideVC
+                destVC.rideDetailVC = self
+                destVC.passengers = passengers
+            }
+            
+        }
+        else if(segue.identifier == "passengerSegue"){
+            let popoverVC = segue.destinationViewController
+            popoverVC.preferredContentSize = CGSize(width: self.view.frame.width * 0.8, height: self.view.frame.height * 0.77)
+            popoverVC.popoverPresentationController!.sourceRect = CGRectMake(CGRectGetMidX(self.view.bounds), (addressView?.frame.origin.y)! - 50.0,0,0)
+
+            let controller = popoverVC.popoverPresentationController
+            
+            if(controller != nil){
+                controller?.delegate = self
+            }
+            
+            
+            if let vc = popoverVC as? PassengersViewController{
+                vc.passengers = self.passengers
+            }
+        }
+        
+    }
+    
+    func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
+        return .None
+    }
 }

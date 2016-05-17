@@ -110,6 +110,15 @@ class KeystoneClient: ServerProtocol {
         requestData(reqUrl, method: .POST, params: params, insert: insert, completionHandler: completionHandler)
     }
     
+    func patch(collection: DBCollection, params: [String:AnyObject], completionHandler: (NSDictionary?)->Void, id: String) {
+        let reqUrl = Config.serverEndpoint + collection.name() + "/" + id
+        
+        Alamofire.request(.PATCH, reqUrl, parameters: params)
+            .responseJSON { response in
+                completionHandler(response.result.value as? NSDictionary)
+        }
+    }
+    
     private func requestData(url: String, method: Alamofire.Method, params: [String:AnyObject]?, insert: (NSDictionary) -> (), completionHandler: (Bool)->Void) {
         var reqUrl = url
         if (LoginUtils.isLoggedIn()) {

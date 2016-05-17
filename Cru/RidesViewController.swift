@@ -34,6 +34,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        ridesTableView.separatorStyle = .None
+        
+        
         if self.revealViewController() != nil{
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
@@ -48,10 +51,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
         
-        noRideImage = UIImage(named: "norides")!
+        noRideImage = UIImage(named: Config.noRidesImageName)!
         
-        self.ridesTableView.emptyDataSetSource = self
-        self.ridesTableView.emptyDataSetDelegate = self
+        
         self.ridesTableView.tableFooterView = UIView()
     }
     
@@ -89,6 +91,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             yourNextViewController.ride = tappedRide
             yourNextViewController.event = tappedEvent
             yourNextViewController.rideVC = self
+            
         }
         
         if(segue.identifier == "driverdetailsegue") {
@@ -112,23 +115,48 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         switch type{
             case .NoRides:
-                noRideImage = UIImage(named: "norides")!
-                MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-            case .NoConnection:
-                noRideImage = UIImage(named: "noserver")!
-                MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-            default:
+                self.ridesTableView.emptyDataSetSource = self
+                self.ridesTableView.emptyDataSetDelegate = self
+                noRideImage = UIImage(named: Config.noRidesImageName)!
                 CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+                MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+            case .NoConnection:
+                self.ridesTableView.emptyDataSetSource = self
+                self.ridesTableView.emptyDataSetDelegate = self
+                noRideImage = UIImage(named: Config.noConnectionImageName)!
+                MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+            default:
+                CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
         }
         
         rides.sortInPlace()
-        self.ridesTableView.reloadData()
     }
     
     func finishRefresh(type: ResponseType){
         rides.sortInPlace()
         self.ridesTableView.reloadData()
         self.refreshControl?.endRefreshing()
+        
+        switch type{
+        case .NoRides:
+            self.ridesTableView.emptyDataSetSource = self
+            self.ridesTableView.emptyDataSetDelegate = self
+            noRideImage = UIImage(named: Config.noRidesImageName)!
+            CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+        case .NoConnection:
+            self.ridesTableView.emptyDataSetSource = self
+            self.ridesTableView.emptyDataSetDelegate = self
+            noRideImage = UIImage(named: Config.noConnectionImageName)!
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+        default:
+            print("")
+        }
+        
     }
     
     func insertNewRide(dict : NSDictionary){
@@ -153,7 +181,6 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func finishInserting(success: Bool){
         self.ridesTableView.beginUpdates()
         
-        
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         
         self.ridesTableView.reloadData()
@@ -176,7 +203,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             }
         }
         
-        return "Max's Golf Lessons"
+        return ""
     }
     
     func getEventForEventId(id : String)->Event{
@@ -193,6 +220,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(animated: Bool) {
         navigationItem.title = "Rides"
         
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontName, size: 25)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     
@@ -216,8 +244,6 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         cell.month.text = ride.month
         
         
-        //TODO: Change this to check against GCM id not driver name
-        //if(ride.driverName == myName){
         if(ride.gcmId == Config.gcmId()){
             cell.rideType.text = driver
             cell.icon.image  = UIImage(named: driver)
@@ -238,6 +264,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tappedRide = rides[indexPath.row]
         tappedEvent = getEventForEventId((tappedRide?.eventId)!)
+        tappedRide!.eventName = (tappedEvent?.name)!
         
         if(tappedRide?.gcmId == Config.gcmId()){
             self.performSegueWithIdentifier("driverdetailsegue", sender: self)

@@ -11,19 +11,27 @@
 import UIKit
 import SideMenu
 
-class MainViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
-    var items = ["Church on Sunday!", "Fall Retreat", "Bowling lessons with Pete, or was it Peter? Find out at the Event", "Idk was it peter", "Futbol"]
-    
+class MainViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    var items = [String]()//["Church on Sunday!", "Fall Retreat", "Bowling lessons with Pete, or was it Peter? Find out at the Event", "Idk was it peter", "Futbol"]
+    var months = [String]()
+    var days = [String]()
+    var rides = [Ride]()
+    var events = [Event]()
+    @IBOutlet weak var table: UITableView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.navigationItem.leftBarButtonItem!.setTitleTextAttributes([NSFontAttributeName: UIFont(name: Config.fontName, size: 20)!], forState: .Normal)
         
         if self.revealViewController() != nil{
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer()) 
         }
+        
+        
+        //load upcoming items
+        CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
     }
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -33,6 +41,58 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             self.performSegueWithIdentifier("introSegue", sender: self)
             self.navigationItem.leftBarButtonItem?.enabled = false
         }
+    }
+    
+    func insertRide(dict : NSDictionary) {
+        //create ride
+        let newRide = Ride(dict: dict)
+        
+        //insert into ride array
+        rides.insert(newRide!, atIndex: 0)
+        
+        rides.sortInPlace()
+        
+    }
+    
+    
+    func insertEvent(dict : NSDictionary) {
+        //create event
+        let event = Event(dict: dict)
+        
+        //insert into event array
+        events.insert(event!, atIndex: 0)
+    }
+    
+    func finishRideInsert(type: ResponseType){
+        
+        switch type{
+
+            
+        case .NoConnection:
+            print("")
+            //self.ridesTableView.emptyDataSetSource = self
+            //self.ridesTableView.emptyDataSetDelegate = self
+            //noRideImage = UIImage(named: Config.noConnectionImageName)!
+            //MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            
+        default:
+            CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+        }
+        
+        rides.sortInPlace()
+    }
+    
+    func finishInserting(success: Bool){
+        
+        //MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        for ride in rides{
+            
+            months.append(ride.month)
+            days.append(String(ride.day))
+            items.append(ride.getDescription(getEventNameForEventId(ride.eventId)))
+        }
+        
+        table?.reloadData()
     }
     
     // prepare for segue
@@ -61,16 +121,37 @@ class MainViewController: UIViewController, UICollectionViewDataSource, UICollec
             return false
         }
     }
+
     
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return items.count
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("cell", forIndexPath: indexPath) as! VarietyItemCollectionViewCell
-        cell.title.text = items[indexPath.row]
-        print("assigned cell to \(cell.title.text)")
+    func getEventNameForEventId(id : String)->String{
+        
+        for event in events{
+            if(event.id != "" && event.id == id){
+                return event.name
+            }
+        }
+        
+        return ""
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath) as! UpcomingItemCell
+        
+        cell.month.text = months[indexPath.row]
+        cell.day.text = days[indexPath.row]
+        cell.summary.text = items[indexPath.row]
+
         return cell
     }
+    
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 70.0
+    }
+    
+   
 }
 
