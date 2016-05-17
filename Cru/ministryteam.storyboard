@@ -1,132 +1,212 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="5n8-J9-Awi">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <mutableArray key="FreigSanProBook.otf">
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+        </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
             <string>FreightSansProMedium-Regular</string>
         </mutableArray>
-        <mutableArray key="FreigSanProSem.otf">
-            <string>FreightSansProSemibold-Regular</string>
-        </mutableArray>
     </customFonts>
     <scenes>
-        <!--Ministry Teams Collection View Controller-->
-        <scene sceneID="uwx-fU-G3N">
+        <!--Ministry Teams Table View Controller-->
+        <scene sceneID="6ns-OO-wtL">
             <objects>
-                <collectionViewController storyboardIdentifier="MinistryTeamsCollectionViewController" id="5n8-J9-Awi" customClass="MinistryTeamsCollectionViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="cRk-pP-Yuk">
+                <tableViewController storyboardIdentifier="MinistryTeamsCollectionViewController" id="X1c-iH-i36" customClass="MinistryTeamsTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="273" sectionHeaderHeight="28" sectionFooterHeight="28" id="EOo-DB-8ge">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewLayout key="collectionViewLayout" id="UHl-8U-RRs" customClass="UltravisualLayout" customModule="Cru" customModuleProvider="target"/>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ministryteam" id="awr-2L-iue" customClass="MinistryTeamsCollectionViewCell" customModule="Cru" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                        <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ministryTeamCell" rowHeight="273" id="ULJ-OV-Rkw" customClass="MinistryTeamsTableViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="600" height="273"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ULJ-OV-Rkw" id="iyd-pj-SVJ">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="273"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TQB-dd-stK">
-                                            <rect key="frame" x="0.0" y="-40" width="195" height="280"/>
+                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Gv-F0y">
+                                            <rect key="frame" x="16" y="8" width="262.5" height="256.5"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Summer Missions" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-6t-M48">
+                                                    <rect key="frame" x="8" y="8" width="100" height="100"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="100" id="9rp-Ph-oUz"/>
+                                                        <constraint firstAttribute="height" constant="100" id="TmV-X9-e9E"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPT-Cg-l3C">
+                                                    <rect key="frame" x="116" y="47" width="138.5" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry Team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fqj-fo-mUz">
+                                                    <rect key="frame" x="8" y="116" width="246.5" height="97.5"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teV-Ab-QhB">
+                                                    <rect key="frame" x="71" y="221.5" width="120" height="27"/>
+                                                    <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="27" id="cVm-lo-tb7"/>
+                                                        <constraint firstAttribute="width" constant="120" id="dbr-C0-TDr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="15"/>
+                                                    <state key="normal" title="sign up">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="280" id="jc3-Kx-bPQ"/>
-                                            </constraints>
-                                        </imageView>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ezm-ui-uPJ">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                        </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q0C-t2-fI3">
-                                            <rect key="frame" x="13" y="10" width="163.5" height="26"/>
-                                            <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="20"/>
-                                            <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="of2-U4-ncP">
-                                            <rect key="frame" x="13" y="46" width="169" height="1"/>
-                                            <color key="backgroundColor" red="0.8666666666666667" green="0.49019607843137253" blue="0.10588235294117647" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="JGB-Fc-DgY"/>
-                                                <constraint firstAttribute="height" constant="1" id="zFO-2O-1du"/>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="4e9-c7-8j8"/>
+                                                <constraint firstItem="teV-Ab-QhB" firstAttribute="top" secondItem="Fqj-fo-mUz" secondAttribute="bottom" constant="8" id="5pd-Dh-4Tq"/>
+                                                <constraint firstItem="Fqj-fo-mUz" firstAttribute="top" secondItem="dwc-6t-M48" secondAttribute="bottom" constant="8" id="8yk-0T-oQJ"/>
+                                                <constraint firstItem="dwc-6t-M48" firstAttribute="leading" secondItem="laG-Gv-F0y" secondAttribute="leading" constant="8" id="Csn-tS-7z6"/>
+                                                <constraint firstItem="dwc-6t-M48" firstAttribute="top" secondItem="laG-Gv-F0y" secondAttribute="top" constant="8" id="DBB-Mf-5BM"/>
+                                                <constraint firstAttribute="trailing" secondItem="MPT-Cg-l3C" secondAttribute="trailing" constant="8" id="NLM-sK-g4x"/>
+                                                <constraint firstAttribute="bottom" secondItem="Fqj-fo-mUz" secondAttribute="bottom" constant="8" id="SSr-Au-ZI6"/>
+                                                <constraint firstAttribute="bottom" secondItem="teV-Ab-QhB" secondAttribute="bottom" constant="8" id="TAa-1s-ZUq"/>
+                                                <constraint firstItem="MPT-Cg-l3C" firstAttribute="centerY" secondItem="dwc-6t-M48" secondAttribute="centerY" id="Y7p-cu-TFV"/>
+                                                <constraint firstItem="Fqj-fo-mUz" firstAttribute="leading" secondItem="laG-Gv-F0y" secondAttribute="leading" constant="8" id="p58-kT-Xlc"/>
+                                                <constraint firstItem="MPT-Cg-l3C" firstAttribute="leading" secondItem="dwc-6t-M48" secondAttribute="trailing" constant="8" id="tTD-Jj-d8I"/>
+                                                <constraint firstAttribute="trailing" secondItem="Fqj-fo-mUz" secondAttribute="trailing" constant="8" id="tj3-5g-qyG"/>
+                                                <constraint firstItem="teV-Ab-QhB" firstAttribute="centerX" secondItem="laG-Gv-F0y" secondAttribute="centerX" id="ui1-Ll-DKA"/>
                                             </constraints>
                                             <variation key="default">
                                                 <mask key="constraints">
-                                                    <exclude reference="JGB-Fc-DgY"/>
+                                                    <exclude reference="SSr-Au-ZI6"/>
                                                 </mask>
                                             </variation>
                                         </view>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="SdQ-Iu-KUK">
-                                            <rect key="frame" x="10" y="51" width="187" height="107"/>
-                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
-                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        </textView>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HM0-nI-FzP">
-                                            <rect key="frame" x="30" y="163" width="140" height="25"/>
-                                            <color key="backgroundColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
-                                            <constraints>
-                                                <constraint firstAttribute="width" constant="140" id="6dQ-RW-KDd"/>
-                                                <constraint firstAttribute="height" constant="25" id="B2Z-Wq-yaw"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="15"/>
-                                            <state key="normal" title="Sign-up Here">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                                <constraints>
-                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="5" id="0GK-r8-rL0"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="SdQ-Iu-KUK" secondAttribute="trailing" constant="-5" id="1vU-l3-N90"/>
-                                    <constraint firstItem="HM0-nI-FzP" firstAttribute="top" secondItem="SdQ-Iu-KUK" secondAttribute="bottom" constant="5" id="5aw-p4-qMS"/>
-                                    <constraint firstItem="TQB-dd-stK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="-8" id="9C3-ly-zib"/>
-                                    <constraint firstItem="of2-U4-ncP" firstAttribute="top" secondItem="Q0C-t2-fI3" secondAttribute="bottom" constant="10" id="E23-Go-GeT"/>
-                                    <constraint firstAttribute="trailing" secondItem="Ezm-ui-uPJ" secondAttribute="trailing" id="ESv-ZY-blj"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="of2-U4-ncP" secondAttribute="trailing" constant="10" id="F87-hk-aoj"/>
-                                    <constraint firstAttribute="bottomMargin" secondItem="SdQ-Iu-KUK" secondAttribute="bottom" constant="34" id="FLL-b4-WV6"/>
-                                    <constraint firstItem="of2-U4-ncP" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="5" id="HwM-2l-aIf"/>
-                                    <constraint firstItem="Q0C-t2-fI3" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="topMargin" constant="2" id="KBl-Vi-ctw"/>
-                                    <constraint firstItem="HM0-nI-FzP" firstAttribute="centerX" secondItem="awr-2L-iue" secondAttribute="centerX" id="PcM-09-U1X"/>
-                                    <constraint firstAttribute="trailingMargin" secondItem="TQB-dd-stK" secondAttribute="trailing" constant="-3" id="R2T-g1-091"/>
-                                    <constraint firstItem="Ezm-ui-uPJ" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leading" id="bef-pd-rol"/>
-                                    <constraint firstAttribute="bottom" secondItem="Ezm-ui-uPJ" secondAttribute="bottom" id="cJu-hz-SGr"/>
-                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="leading" secondItem="awr-2L-iue" secondAttribute="leadingMargin" constant="2" id="eg9-zi-jDe"/>
-                                    <constraint firstItem="SdQ-Iu-KUK" firstAttribute="top" secondItem="of2-U4-ncP" secondAttribute="bottom" constant="4" id="epF-Qv-8Gm"/>
-                                    <constraint firstItem="TQB-dd-stK" firstAttribute="centerY" secondItem="awr-2L-iue" secondAttribute="centerY" id="fdZ-Uz-gmL"/>
-                                    <constraint firstItem="Ezm-ui-uPJ" firstAttribute="top" secondItem="awr-2L-iue" secondAttribute="top" id="nyc-rV-NBZ"/>
-                                </constraints>
-                                <size key="customSize" width="200" height="200"/>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="laG-Gv-F0y" secondAttribute="bottom" id="NXG-uX-UYJ"/>
+                                        <constraint firstItem="laG-Gv-F0y" firstAttribute="leading" secondItem="iyd-pj-SVJ" secondAttribute="leadingMargin" constant="8" id="riu-91-H9T"/>
+                                        <constraint firstItem="laG-Gv-F0y" firstAttribute="centerX" secondItem="iyd-pj-SVJ" secondAttribute="centerX" id="suu-uF-geA"/>
+                                        <constraint firstItem="laG-Gv-F0y" firstAttribute="top" secondItem="iyd-pj-SVJ" secondAttribute="topMargin" id="vF1-UG-3RF"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="laG-Gv-F0y" secondAttribute="trailing" constant="8" id="yjn-Nh-yTT"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
-                                    <outlet property="descriptionTextView" destination="SdQ-Iu-KUK" id="aOK-JN-Zxx"/>
-                                    <outlet property="imageCoverView" destination="Ezm-ui-uPJ" id="aJe-tj-TKp"/>
-                                    <outlet property="joinButton" destination="HM0-nI-FzP" id="8EW-kK-Wy7"/>
-                                    <outlet property="ministryTeamImageView" destination="TQB-dd-stK" id="yju-fE-r14"/>
-                                    <outlet property="ministryTeamLabel" destination="Q0C-t2-fI3" id="aC2-dP-STb"/>
-                                    <outlet property="separator" destination="of2-U4-ncP" id="JaD-kK-8iu"/>
+                                    <outlet property="ministryTeamDescription" destination="Fqj-fo-mUz" id="U0k-jp-VxR"/>
+                                    <outlet property="ministryTeamImage" destination="dwc-6t-M48" id="sBA-T3-lNA"/>
+                                    <outlet property="ministryTeamName" destination="MPT-Cg-l3C" id="nXQ-da-iiS"/>
                                 </connections>
-                            </collectionViewCell>
-                        </cells>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ministryTeamNoPicCell" rowHeight="273" id="HJ1-vF-4lg" customClass="MinistryTeamNoPictureTableViewCell" customModule="Cru" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="301" width="600" height="273"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HJ1-vF-4lg" id="Xhz-VB-oof">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="273"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-st-lki">
+                                            <rect key="frame" x="16" y="8" width="170" height="256.5"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-1u-Nwu">
+                                                    <rect key="frame" x="8" y="8" width="154" height="21.5"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-RI-Zbg">
+                                                    <rect key="frame" x="25" y="221" width="120" height="27"/>
+                                                    <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="120" id="7G4-QK-3bI"/>
+                                                        <constraint firstAttribute="height" constant="27" id="VRE-6p-2ff"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="15"/>
+                                                    <state key="normal" title="sign up">
+                                                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </state>
+                                                </button>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry Team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHY-R5-KDS">
+                                                    <rect key="frame" x="8" y="37" width="154" height="176"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="0IW-3B-hgA"/>
+                                                <constraint firstItem="lKd-RI-Zbg" firstAttribute="centerX" secondItem="sHU-st-lki" secondAttribute="centerX" id="6TS-f6-nAE"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rcg-1u-Nwu" secondAttribute="trailing" constant="8" id="CbT-hp-vLF"/>
+                                                <constraint firstItem="eHY-R5-KDS" firstAttribute="top" secondItem="Rcg-1u-Nwu" secondAttribute="bottom" constant="7.5" id="E0A-hM-0Ti"/>
+                                                <constraint firstAttribute="bottom" secondItem="lKd-RI-Zbg" secondAttribute="bottom" constant="8" id="KVc-O5-xqk"/>
+                                                <constraint firstItem="eHY-R5-KDS" firstAttribute="leading" secondItem="sHU-st-lki" secondAttribute="leading" constant="8" id="prS-bK-fSG"/>
+                                                <constraint firstItem="lKd-RI-Zbg" firstAttribute="top" secondItem="eHY-R5-KDS" secondAttribute="bottom" constant="8" id="sGo-fd-U3B"/>
+                                                <constraint firstAttribute="trailing" secondItem="Rcg-1u-Nwu" secondAttribute="trailing" constant="8" id="sNC-D8-caj"/>
+                                                <constraint firstAttribute="trailing" secondItem="eHY-R5-KDS" secondAttribute="trailing" constant="8" id="u5W-gO-t0y"/>
+                                                <constraint firstItem="Rcg-1u-Nwu" firstAttribute="top" secondItem="sHU-st-lki" secondAttribute="top" constant="8" id="xEw-l2-4P9"/>
+                                                <constraint firstItem="Rcg-1u-Nwu" firstAttribute="leading" secondItem="sHU-st-lki" secondAttribute="leading" constant="8" id="xn9-iL-t8f"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="CbT-hp-vLF"/>
+                                                </mask>
+                                            </variation>
+                                        </view>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="sHU-st-lki" secondAttribute="trailing" constant="8" id="A2K-6H-5sM"/>
+                                        <constraint firstItem="sHU-st-lki" firstAttribute="leading" secondItem="Xhz-VB-oof" secondAttribute="leadingMargin" constant="8" id="D5s-cc-Oys"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="sHU-st-lki" secondAttribute="bottom" id="fV2-Eq-CER"/>
+                                        <constraint firstItem="sHU-st-lki" firstAttribute="top" secondItem="Xhz-VB-oof" secondAttribute="topMargin" id="kV9-PR-mgm"/>
+                                        <constraint firstItem="sHU-st-lki" firstAttribute="centerX" secondItem="Xhz-VB-oof" secondAttribute="centerX" id="rY0-wE-L4k"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="ministryDescriptionLabel" destination="eHY-R5-KDS" id="egW-g2-kmT"/>
+                                    <outlet property="ministryTeamNameLabel" destination="Rcg-1u-Nwu" id="Ol7-t2-29C"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="5n8-J9-Awi" id="apK-Bu-65m"/>
-                            <outlet property="delegate" destination="5n8-J9-Awi" id="tjX-xx-uJu"/>
+                            <outlet property="dataSource" destination="X1c-iH-i36" id="42L-hi-IkO"/>
+                            <outlet property="delegate" destination="X1c-iH-i36" id="Ag1-pS-2Vh"/>
                         </connections>
-                    </collectionView>
-                    <navigationItem key="navigationItem" id="dli-23-NtB"/>
-                    <connections>
-                        <segue destination="jzj-P8-WH5" kind="unwind" identifier="unwindToMList" unwindAction="unwindToMinistryTeamsList:" id="xay-tq-Ekk"/>
-                    </connections>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Deo-DF-lnJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="jzj-P8-WH5" userLabel="Exit" sceneMemberID="exit"/>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YFp-KA-Oym" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1707" y="142"/>
+            <point key="canvasLocation" x="1707" y="-557"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="0Jp-5j-nia">
+            <objects>
+                <viewController id="rve-6O-0d5" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="OFC-S3-gei"/>
+                        <viewControllerLayoutGuide type="bottom" id="6A0-YD-5LY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="AAE-5s-U1p">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Byq-bh-2NS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2370" y="-557"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Summer Missions" width="150" height="150"/>
+    </resources>
 </document>
