@@ -31,16 +31,20 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     var videoViews = [CardView]()
     
     //Call this constructor in testing with a fake serverProtocol
-    init?(serverProtocol: ServerProtocol, aDecoder: NSCoder) {
+    init?(serverProtocol: ServerProtocol, _ coder: NSCoder? = nil) {
         //super.init(coder: NSCoder)
         self.serverClient = serverProtocol
-        super.init(coder: aDecoder)
-        
+        if let coder = coder {
+            super.init(coder: coder)
+        }
+        else {
+            super.init()
+        }
     }
 
     required convenience init?(coder aDecoder: NSCoder) {
         //fatalError("init(coder:) has not been implemented")
-        self.init(serverProtocol: CruClients.getServerClient(), aDecoder: aDecoder)
+        self.init(serverProtocol: CruClients.getServerClient(), aDecoder)
     }
     
     override func viewDidLoad() {
@@ -132,34 +136,26 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     func insertResource(dict : NSDictionary) {
         let resource = Resource(dict: dict)!
         resources.insert(resource, atIndex: 0)
-        let url = NSURL.init(string: resource.url)
-        
-        
-        
         
         if (resource.type == ResourceType.Article) {
-            
-            
             insertArticle(resource, completionHandler: {error in })
-            
         }
-        else if (resource.type == ResourceType.Video) {
             
+        else if (resource.type == ResourceType.Video) {
             if(resource.url.rangeOfString("youtube") != nil) {
                 insertYoutube(resource, completionHandler: {error in })
             }
             else {
                 insertGeneric(resource, completionHandler: {error in })
             }
-            
-            
-            
         }
-        else if (resource.type == ResourceType.Audio) {
             
+        else if (resource.type == ResourceType.Audio) {
+            //Implement audio later
         }
     }
     
+    /* Implement when tools support is requested */
     private func insertTool(resource: Resource, completionHandler: (NSError?) -> Void) {
         
     }
@@ -183,10 +179,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 let doc = HTMLDocument(string: htmlAsString)
                 var abstract = ""
                 var filteredContent = ""
-                
-                
-                
-                
+
                 var articleCard:ArticleCard!
                 var creator: Creator!
                 
@@ -338,21 +331,16 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     
     //Get the id of the youtube video by searching within the URL
     private func getYoutubeID(url: String) -> String {
-        var start = url.rangeOfString("embed/")
+        let start = url.rangeOfString("embed/")
         if(start != nil) {
-            var end = url.rangeOfString("?")
+            let end = url.rangeOfString("?")
             
             if(end != nil) {
                 return url.substringWithRange(Range(start: start!.endIndex,
                     end: end!.startIndex))
             }
         }
-        
-        //        if let match = url.rangeOfString(aString: "[^\/]+.[^embed]+.[\?]", options: .RegularExpressionSearch) {
-        //
-        //            return url.substringWithRange(match)
-        //
-        //        }
+
         return String("")
     }
     
@@ -371,8 +359,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         let videoData:NSMutableDictionary = NSMutableDictionary()
         let videoMedia:NSMutableDictionary = NSMutableDictionary()
-        //videoMedia["description"] =  "Subscribe to TRAILERS: http://bit.ly/sxaw6h Subscribe to COMING SOON: http://bit.ly/H2vZUn Like us on FACEBOOK: http://goo.gl/dHs73 Follow us on TWITTER: htt..."
-        //videoMedia["posterImageUrl"] =  "https://i.ytimg.com/vi/L0WFKiuwUUQ/maxresdefault.jpg"
+        
         videoData["media"] = videoMedia
         videoCard = VideoCard(title: resource.title, embedUrl: embedUrl, url: vidwebUrl, creator: youtube, data: videoData)
         
