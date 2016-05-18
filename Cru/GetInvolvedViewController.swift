@@ -33,11 +33,15 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate {
         }
         
         selectorBar.selectedItem = selectorBar.items![0]
+        selectorBar.tintColor = UIColor.whiteColor()
+        
+      
     }
     
     //tab bar function 
     //TODO figure out how to call this in viewDidLoad
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
+        
         switch (item.title!){
         case "Community Groups":
             communityGroupContainer.hidden = false
