@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qKH-sz-Wh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qKH-sz-Wh1">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -32,18 +32,21 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2F-hS-g5Y">
                                 <rect key="frame" x="0.0" y="49" width="600" height="487"/>
+                                <animations/>
                                 <connections>
                                     <segue destination="Swp-qm-uyo" kind="embed" id="vlu-AP-znH"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpv-Rc-b55" userLabel="communityGroupContainer">
                                 <rect key="frame" x="0.0" y="49" width="600" height="487"/>
+                                <animations/>
                                 <connections>
                                     <segue destination="ROr-Ps-fvZ" kind="embed" id="HZc-Oc-05V"/>
                                 </connections>
                             </containerView>
                             <tabBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb7-NY-Slq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Community Group" image="community-group-icon" id="AVU-sM-4Gk"/>
@@ -56,6 +59,7 @@
                                 </connections>
                             </tabBar>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Hpv-Rc-b55" secondAttribute="leading" id="0BU-qn-O71"/>
@@ -106,6 +110,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Aj-E9-wWT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <animations/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -138,12 +143,14 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join A Ministry Team!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-Pu-SrR">
                                         <rect key="frame" x="8" y="8" width="544" height="29"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-Mj-jWS">
                                         <rect key="frame" x="8" y="36" width="544" height="405"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Here is information about what a community group is and anything else that you would like to hear about Ministry Teams. Here's another sentence to provide more information about what this information provides.</string>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
@@ -151,6 +158,7 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWe-rh-4Mb">
                                         <rect key="frame" x="486" y="449" width="66" height="30"/>
+                                        <animations/>
                                         <gestureRecognizers/>
                                         <state key="normal" title="See More"/>
                                         <connections>
@@ -158,6 +166,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -180,6 +189,7 @@
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-4c-lwh">
                                         <rect key="frame" x="0.0" y="0.0" width="600" height="447"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ministryTeam" id="Vbj-Jf-Yw3" customClass="JoinedTeamsTableViewCell" customModule="Cru" customModuleProvider="target">
@@ -191,12 +201,15 @@
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-uY-I7B">
                                                             <rect key="frame" x="8" y="14" width="584" height="21"/>
+                                                            <animations/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
+                                                    <animations/>
                                                 </tableViewCellContentView>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstItem="1dZ-uY-I7B" firstAttribute="leading" secondItem="Vbj-Jf-Yw3" secondAttribute="leading" constant="8" id="G35-Bc-s6k"/>
                                                     <constraint firstItem="1dZ-uY-I7B" firstAttribute="centerY" secondItem="Vbj-Jf-Yw3" secondAttribute="centerY" id="J6k-co-NO7"/>
@@ -214,6 +227,7 @@
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIj-MI-WSB">
                                         <rect key="frame" x="0.0" y="447" width="600" height="40"/>
+                                        <animations/>
                                         <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="zB3-iQ-1XA"/>
@@ -226,6 +240,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="pIj-MI-WSB" firstAttribute="top" secondItem="RiY-4c-lwh" secondAttribute="bottom" id="3Tf-K1-JOb"/>
@@ -238,6 +253,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="bHE-Mw-sQa" secondAttribute="trailing" id="1kx-8g-mqI"/>
@@ -286,6 +302,7 @@
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wWw-vp-4CK">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
+                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wWw-vp-4CK" secondAttribute="height" multiplier="5:3" id="NUE-YB-d0L"/>
                                                     <constraint firstAttribute="height" constant="200" id="Pgj-My-pvc"/>
@@ -308,12 +325,14 @@
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1x-uX-6FD">
                                                 <rect key="frame" x="8" y="208" width="584" height="31"/>
+                                                <animations/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="24"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-ig-BtX">
                                                 <rect key="frame" x="8" y="246" width="584" height="1"/>
+                                                <animations/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="GE1-VB-0WG"/>
@@ -321,6 +340,7 @@
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul5-hy-nar">
                                                 <rect key="frame" x="0.0" y="296" width="608" height="40"/>
+                                                <animations/>
                                                 <color key="backgroundColor" red="0.72941176470588232" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="1de-ET-fky"/>
@@ -334,11 +354,13 @@
                                             </button>
                                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-hT-PEM">
                                                 <rect key="frame" x="8" y="255" width="584" height="33"/>
+                                                <animations/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="2qi-hT-PEM" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="09R-cU-MzS"/>
@@ -386,6 +408,7 @@
                                         </variation>
                                     </view>
                                 </subviews>
+                                <animations/>
                                 <constraints>
                                     <constraint firstItem="m4T-Of-6oF" firstAttribute="leading" secondItem="s2v-fc-Wdb" secondAttribute="leading" id="Gkd-cD-HtF"/>
                                     <constraint firstItem="m4T-Of-6oF" firstAttribute="top" secondItem="s2v-fc-Wdb" secondAttribute="top" id="J7i-vU-OPN"/>
@@ -394,6 +417,7 @@
                                 </constraints>
                             </scrollView>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="s2v-fc-Wdb" firstAttribute="top" secondItem="Xdb-gG-xJa" secondAttribute="bottom" id="0AG-T1-lng"/>
@@ -445,44 +469,55 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join A Community Group!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kld-tR-OoT">
                                         <rect key="frame" x="8" y="8" width="544" height="29"/>
+                                        <animations/>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-3t-uJg">
-                                        <rect key="frame" x="8" y="36" width="544" height="405"/>
+                                        <rect key="frame" x="8" y="36" width="544" height="383"/>
+                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Here is information about what a community group is and anything else that you would like to hear about Community Groups. Here's another sentence to provide more information about what this information provides.</string>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHy-fT-PBH">
-                                        <rect key="frame" x="486" y="449" width="66" height="30"/>
+                                        <rect key="frame" x="-20" y="427" width="600" height="60"/>
+                                        <animations/>
+                                        <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
-                                        <state key="normal" title="See More"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="V2R-qB-nJg"/>
+                                        </constraints>
+                                        <state key="normal" title="Join a Community Group">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
                                         <connections>
                                             <outletCollection property="gestureRecognizers" destination="DeS-zp-erU" appends="YES" id="Wh5-hW-CqG"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
-                                    <constraint firstItem="ZHy-fT-PBH" firstAttribute="top" secondItem="EUt-3t-uJg" secondAttribute="bottom" constant="8" id="B6x-2F-Dbx"/>
-                                    <constraint firstAttribute="trailing" secondItem="EUt-3t-uJg" secondAttribute="trailing" constant="8" id="Hna-mn-h7a"/>
-                                    <constraint firstAttribute="bottom" secondItem="ZHy-fT-PBH" secondAttribute="bottom" constant="8" id="L0D-jv-R1d"/>
+                                    <constraint firstItem="ZHy-fT-PBH" firstAttribute="leading" secondItem="uS1-wq-mn1" secondAttribute="leading" constant="-20" id="1z4-jO-4MI"/>
+                                    <constraint firstItem="EUt-3t-uJg" firstAttribute="top" secondItem="uS1-wq-mn1" secondAttribute="top" constant="36" id="FJm-UX-oOk"/>
                                     <constraint firstAttribute="trailing" secondItem="kld-tR-OoT" secondAttribute="trailing" constant="8" id="Smf-aW-N4d"/>
+                                    <constraint firstItem="EUt-3t-uJg" firstAttribute="trailing" secondItem="kld-tR-OoT" secondAttribute="trailing" id="VQ7-Eq-7bL"/>
                                     <constraint firstItem="kld-tR-OoT" firstAttribute="top" secondItem="uS1-wq-mn1" secondAttribute="top" constant="8" id="adL-Lf-97y"/>
                                     <constraint firstItem="kld-tR-OoT" firstAttribute="leading" secondItem="uS1-wq-mn1" secondAttribute="leading" constant="8" id="bo4-Mv-CRa"/>
                                     <constraint firstItem="kld-tR-OoT" firstAttribute="centerX" secondItem="uS1-wq-mn1" secondAttribute="centerX" id="cz4-Be-cfv"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZHy-fT-PBH" secondAttribute="trailing" constant="8" id="e4O-c7-ZQK"/>
+                                    <constraint firstItem="ZHy-fT-PBH" firstAttribute="top" secondItem="EUt-3t-uJg" secondAttribute="bottom" constant="8" symbolic="YES" id="dfR-1O-7bj"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="kfp-v3-XWx"/>
-                                    <constraint firstItem="EUt-3t-uJg" firstAttribute="centerX" secondItem="uS1-wq-mn1" secondAttribute="centerX" id="nqa-WR-og7"/>
-                                    <constraint firstItem="EUt-3t-uJg" firstAttribute="leading" secondItem="uS1-wq-mn1" secondAttribute="leading" constant="8" id="xAQ-eU-ceW"/>
-                                    <constraint firstItem="EUt-3t-uJg" firstAttribute="top" secondItem="kld-tR-OoT" secondAttribute="bottom" constant="-0.5" id="z4q-oW-mMd"/>
+                                    <constraint firstItem="EUt-3t-uJg" firstAttribute="centerX" secondItem="ZHy-fT-PBH" secondAttribute="centerX" id="l9s-H5-fbs"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZHy-fT-PBH" secondAttribute="bottom" id="oIl-yq-WOL"/>
+                                    <constraint firstItem="EUt-3t-uJg" firstAttribute="leading" secondItem="kld-tR-OoT" secondAttribute="leading" id="xK2-ck-9k1"/>
                                 </constraints>
                             </view>
                         </subviews>
+                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uS1-wq-mn1" firstAttribute="height" secondItem="Xpd-b9-2bh" secondAttribute="height" id="1IA-dI-m4d"/>
@@ -520,7 +555,7 @@
                 <viewControllerPlaceholder storyboardName="communitygroups" id="Xoq-Tk-ub7" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMq-r0-AzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2951.5" y="1687"/>
+            <point key="canvasLocation" x="2992" y="1715"/>
         </scene>
     </scenes>
     <resources>
