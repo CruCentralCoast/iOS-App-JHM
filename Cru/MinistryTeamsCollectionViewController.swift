@@ -53,7 +53,7 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier(Config.ministryTeamReuseIdentifier, forIndexPath: indexPath)
         
-        let ministryTeam = ministryTeams[indexPath.item]
+        //let ministryTeam = ministryTeams[indexPath.item]
 //        cell.ministryTeam = ministryTeam
 //        cell.joinButton?.layer.setValue(indexPath.row, forKey: "index")
 //        cell.joinButton?.addTarget(self, action: "joinMinistryTeam:", forControlEvents: UIControlEvents.TouchUpInside)

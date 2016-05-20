@@ -8,7 +8,7 @@
         <!--Resources-->
         <scene sceneID="Erz-N0-Mtg">
             <objects>
-                <viewController id="M8g-nZ-a69" customClass="ResourcesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="resourcesPage" id="M8g-nZ-a69" customClass="ResourcesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BtO-Y7-cCi"/>
                         <viewControllerLayoutGuide type="bottom" id="GR8-yy-jq5"/>
@@ -105,7 +105,7 @@
         <!--Card Table View Controller-->
         <scene sceneID="bge-gb-yai">
             <objects>
-                <tableViewController id="2De-pM-5yc" customClass="CardTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="cardPage" id="2De-pM-5yc" customClass="CardTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="139" sectionHeaderHeight="28" sectionFooterHeight="28" id="wLo-la-7Cg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -136,7 +136,7 @@
         <!--Resource Table View Controller-->
         <scene sceneID="gEu-Is-h9E">
             <objects>
-                <tableViewController id="gW7-6a-T85" customClass="ResourceTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="resourcesViewer" id="gW7-6a-T85" customClass="ResourceTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="xbM-oQ-gYg">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -205,7 +205,7 @@
         <!--Resource Video Table View Controller-->
         <scene sceneID="Vat-0d-GJy">
             <objects>
-                <tableViewController id="UKi-4h-IaS" customClass="ResourceVideoTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="videoPage" id="UKi-4h-IaS" customClass="ResourceVideoTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="250" sectionHeaderHeight="28" sectionFooterHeight="28" id="0fu-sa-nZf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -255,7 +255,7 @@
         <!--View Controller-->
         <scene sceneID="7Pw-Ns-cZ0">
             <objects>
-                <viewController id="dmk-zP-lUw" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="idk" id="dmk-zP-lUw" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LmF-sk-Oaa"/>
                         <viewControllerLayoutGuide type="bottom" id="HGP-rr-Ooi"/>
@@ -279,7 +279,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A7q-n5-oW7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1656" y="2739.6533333333332"/>
+            <point key="canvasLocation" x="1628" y="2935"/>
         </scene>
     </scenes>
     <resources>

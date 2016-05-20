@@ -78,7 +78,7 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
         loadEvents()
         
         self.navigationItem.hidesBackButton = true
-        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Bordered, target: self, action: "handleCancelRide:")
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "handleCancelRide:")
         self.navigationItem.leftBarButtonItem = newBackButton
         
         
@@ -284,12 +284,10 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
 
     
     func datePicked(obj: NSDate) {
-        if let val = obj as? NSDate{
-            let formatter = NSDateFormatter()
-            formatter.dateFormat = "h:mm a"
-            pickupTime.text = formatter.stringFromDate(val)
-            formHasBeenEdited = true
-        }
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "h:mm a"
+        pickupTime.text = formatter.stringFromDate(obj)
+        formHasBeenEdited = true
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -347,7 +345,6 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
 extension Location {
     func getLocationAsDict(loc: Location) -> NSDictionary {
         var dict = [String:AnyObject]()
-        let otherDict = loc.placemark.addressDictionary!
         
         if let street = loc.placemark.addressDictionary!["Street"] {
             dict[LocationKeys.street1] = street
