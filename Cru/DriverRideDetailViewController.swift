@@ -23,12 +23,12 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     let cellHeight = CGFloat(60)
     var rideVC: RidesViewController?
     var addressView: UITextView?
-    var timeLabel: UILabel?
-    var dateLabel: UILabel?
-    var directionLabel: UILabel?
-    var seatsOffered: UILabel?
-    var seatsLeft: UILabel?
-    var radius: UILabel?
+    var timeLabel: UITextView?
+    var dateLabel: UITextView?
+    var directionLabel: UITextView?
+    var seatsOffered: UITextView?
+    var seatsLeft: UITextView?
+    var radius: UITextView?
     @IBOutlet weak var detailsTable: UITableView!
     
     override func viewWillAppear(animated: Bool) {
@@ -111,21 +111,20 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         
         
         if(tableView.isEqual(detailsTable)){
-            let cellIdentifier = "detailCell"
-            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DetailCell
-            cell.title.text = details[indexPath.row].itemName
+            let cellIdentifier = "smallCell"
+            let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DriverDetailCell
+            
+            cell.label.text = details[indexPath.row].itemName
+            //cell.label.text = details[indexPath.row].itemName
             cell.value.text = details[indexPath.row].itemValue
             
             if (details[indexPath.row].itemName == Labels.addressLabel){
-                cell.textViewValue.dataDetectorTypes = .Address
-                cell.textViewValue.text = details[indexPath.row].itemValue
-                addressView = cell.textViewValue
-                cell.value.hidden = true
-            }else{
-                cell.textViewValue.hidden = true
+                cell.value.dataDetectorTypes = .Address
+                cell.value.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
+                //cell.textViewValue.text = details[indexPath.row].itemValue
+                addressView = cell.value
             }
-            
-            if(details[indexPath.row].itemName == Labels.departureTimeLabel){
+            else if(details[indexPath.row].itemName == Labels.departureTimeLabel){
                 timeLabel = cell.value
             }
             else if(details[indexPath.row].itemName == Labels.departureDateLabel){
@@ -153,13 +152,10 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-
-        
-        if(tableView.isEqual(detailsTable)){
-            return CGFloat(80.0)
+        if (details[indexPath.row].itemName == Labels.addressLabel){
+            return CGFloat(75.0)
         }
-        
-        return CGFloat(44.0)
+        return CGFloat(50.0)
     }
     
     // Reload the data every time we come back to this view controller

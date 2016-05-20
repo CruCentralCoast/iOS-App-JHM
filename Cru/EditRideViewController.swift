@@ -1,6 +1,12 @@
 //
 //  EditRideViewController.swift
 //  Cru
+//  
+//  This class represents the view and controller whereby a user can edit 
+//  most but not all of the details of their ride. This page segues into
+//  a radius editor, address picker, and spawns popovers to allow the user
+//  to edit passengers and direction of the ride. Everything but the ride's 
+//  event is editable.
 //
 //  Created by Max Crane on 5/3/16.
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
@@ -22,30 +28,23 @@ enum EditTags: Int {
     case Number
 }
 
+struct EditRideConstants{
+    static let pageTitle = "Edit Ride"
+    static let cellIdentifier = "cell"
+    static let editDirectionSegue = "direction"
+    static let editRadiusSegue = "radius"
+    static let editPassengersSegue = "editPassengerSegue"
+}
+
 class EditRideViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UIPopoverPresentationControllerDelegate, UITextViewDelegate {
-    
-//    let eventLabel = "Event:"
-//    let departureDateLabel = "Departure Date:"
-//    let departureTimeLabel = "Departure Time:"
-//    let addressLabel = "Departure Address:"
-//    let seatsLabel = "Seats Offered:"
-//    let passengerLabel = "Passengers:"
-//    let nameLabel = "Name:"
-//    let phoneLabel = "Phone Number:"
-//    let directionLabel = "Direction:"
-    
+    @IBOutlet weak var table: UITableView!
     var event : Event!
     var ride : Ride!
     var options = [EditableItem]()
     var directionOption: EditableItem!
-    var ridesVC: RidesViewController?
-    var rideDetailVC: DriverRideDetailViewController?
-    var table: UITableView?
+    var ridesVC: RidesViewController!
+    var rideDetailVC: DriverRideDetailViewController!
     var passengers = [Passenger]()
-    @IBOutlet weak var eventName: UILabel!
-    @IBOutlet weak var address: UILabel!
-    @IBOutlet weak var driverName: UITextField!
-    @IBOutlet weak var driverNumber: UITextField!
     var CLocation: CLLocation?
     var timeValue: UILabel!
     var dateValue: UILabel!
@@ -58,8 +57,8 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     var passengerValue: UITextView!
     let validator = Validator()
     var hasUserEdited = false
-    var directionCell: UITableViewCell?
-    var directionCellPath: NSIndexPath?
+    var directionCell: UITableViewCell!
+    var directionCellPath: NSIndexPath!
     var location: Location! {
         didSet {
             addressValue.text? = location.address
@@ -71,7 +70,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Edit Ride"
+        self.navigationItem.title = EditRideConstants.pageTitle
         ride.eventStartDate = event.startNSDate
         ride.eventEndDate = event.endNSDate
         populateOptions()
@@ -112,7 +111,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
                     option.itemValue = ride.getDate()
                 case Labels.addressLabel:
                     option.itemValue = ride.getCompleteAddress()
-            case Labels.passengers:
+                case Labels.passengers:
                     option.itemValue = String(ride.passengers.count)
                 default:
                     print("")
@@ -130,68 +129,76 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell") as? EditCell
+        let cell = tableView.dequeueReusableCellWithIdentifier(EditRideConstants.cellIdentifier) as! EditCell
         let option = options[indexPath.row]
         
-        cell?.contentType.text = option.itemName
-        cell?.contentValue.text = option.itemValue
-        cell?.editButton.setTitle(option.itemName, forState: .Normal)
+        cell.contentType.text = option.itemName
+        cell.contentValue.text = option.itemValue
+        cell.editButton.setTitle(option.itemName, forState: .Normal)
         
         if option.itemIsText! {
-            cell?.contentValue.hidden = true
-            cell?.contentTextField.hidden = false
-            cell?.contentTextField.text = option.itemValue
+            cell.contentValue.hidden = true
+            cell.contentTextField.hidden = false
+            cell.contentTextField.text = option.itemValue
         }
         else{
-            cell?.contentTextField.hidden = true
-            cell?.contentValue.hidden = false
+            cell.contentTextField.hidden = true
+            cell.contentValue.hidden = false
         }
         
-        if(cell?.contentType.text == Labels.departureTimeLabel){
-            timeValue = cell?.contentValue
-        }
-        else if(cell?.contentType.text == Labels.departureDateLabel){
-            dateValue = cell?.contentValue
-        }
-        else if(cell?.contentType.text == Labels.seatsLabel){
-            cell?.contentTextField.keyboardType = .NumberPad
-            cell?.contentTextField.tag = EditTags.Seats.rawValue
-            cell?.contentTextField.delegate = self
-            seatsValue = cell?.contentTextField
-        }
-        else if(cell?.contentType.text == Labels.addressLabel){
-            addressValue = cell?.contentValue
-        }
-        else if(cell?.contentType.text == Labels.nameLabel){
-            nameValue = cell?.contentTextField
-            cell?.contentTextField.tag = EditTags.Name.rawValue
-            nameValue.delegate = self
-        }
-        else if(cell?.contentType.text == Labels.phoneLabel){
-            cell?.contentTextField.keyboardType = .NumberPad
-            cell?.contentTextField.tag = EditTags.Number.rawValue
-            numberValue = cell?.contentTextField
-            numberValue.delegate = self
-            numberValue.text = PhoneFormatter.unparsePhoneNumber(ride.driverNumber)
-        }
-        else if(cell?.contentType.text == Labels.directionLabel){
-            directionValue = cell?.contentValue
-            directionCell = cell
-            directionCellPath = indexPath
-        }
-        else if(cell?.contentType.text == Labels.pickupRadius){
-            pickupRadius = cell?.contentTextField
-            pickupRadius.tag = EditTags.Radius.rawValue
-            pickupRadius.delegate = self
-        }
-        else if(cell?.contentType.text == Labels.passengers){
-            passengerValue = cell?.contentTextField
+        switch (cell.contentType.text!){
+            case Labels.departureTimeLabel:
+                timeValue = cell.contentValue
+            
+            case Labels.departureDateLabel:
+                dateValue = cell.contentValue
+            
+            case Labels.seatsLabel:
+                timeValue = cell.contentValue
+                cell.contentTextField.keyboardType = .NumberPad
+                cell.contentTextField.tag = EditTags.Seats.rawValue
+                cell.contentTextField.delegate = self
+                seatsValue = cell.contentTextField
+            
+            case Labels.addressLabel:
+                addressValue = cell.contentValue
+            
+            case Labels.nameLabel:
+                nameValue = cell.contentTextField
+                cell.contentTextField.tag = EditTags.Name.rawValue
+                nameValue.delegate = self
+            
+            case Labels.phoneLabel:
+                cell.contentTextField.keyboardType = .NumberPad
+                cell.contentTextField.tag = EditTags.Number.rawValue
+                numberValue = cell.contentTextField
+                numberValue.delegate = self
+                numberValue.text = PhoneFormatter.unparsePhoneNumber(ride.driverNumber)
+            
+            case Labels.directionLabel:
+                timeValue = cell.contentValue
+            
+            case Labels.directionLabel:
+                directionValue = cell.contentValue
+                directionCell = cell
+                directionCellPath = indexPath
+            
+            case Labels.pickupRadius:
+                pickupRadius = cell.contentTextField
+                pickupRadius.tag = EditTags.Radius.rawValue
+                pickupRadius.delegate = self
+            
+            case Labels.passengers:
+                passengerValue = cell.contentTextField
+            
+            default:
+                print("error in switch statement on edit ride page")
         }
         
-        cell?.editButton.hidden = !(option.itemEditable)
+        cell.editButton.hidden = !(option.itemEditable)
         table = tableView
     
-        return cell!
+        return cell
     }
 
     @IBAction func editPressed(sender: UIButton) {
@@ -213,13 +220,13 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             case Labels.seatsLabel:
                 seatsValue.becomeFirstResponder()
             case Labels.directionLabel:
-                self.performSegueWithIdentifier("direction", sender: self)
+                self.performSegueWithIdentifier(EditRideConstants.editDirectionSegue, sender: self)
             case Labels.pickupRadius:
-                self.performSegueWithIdentifier("radius", sender: self)
+                self.performSegueWithIdentifier(EditRideConstants.editRadiusSegue, sender: self)
             case Labels.passengers:
-                self.performSegueWithIdentifier("editPassengerSegue", sender: self)
+                self.performSegueWithIdentifier(EditRideConstants.editPassengersSegue, sender: self)
             default:
-                print("k")
+                print("")
         }
         
     }
@@ -259,7 +266,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             self.CLocation = self.location.location
         }
         
-        navigationController?.pushViewController(locationPicker, animated: true)
+        navigationController!.pushViewController(locationPicker, animated: true)
     }
     
     func extractDateTimeFromView()->Bool{
@@ -453,7 +460,6 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
         //radius already extracted when set
         extractMilesFromView()
     
-        let timeInServer = ride.getTimeInServerFormat()
         
         CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.passengers: ride.passengers, RideKeys.radius: ride.radius, RideKeys.driverName: ride.driverName, RideKeys.direction: ride.direction, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.city: ride.city, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
@@ -514,7 +520,7 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        if(segue.identifier == "direction"){
+        if(segue.identifier == EditRideConstants.editDirectionSegue){
             
             //uipopover magic
             let popoverVC = segue.destinationViewController
@@ -533,14 +539,14 @@ class EditRideViewController: UIViewController, UITableViewDataSource, UITableVi
             controller!.sourceRect = fromRect
             controller!.permittedArrowDirections = .Any
         }
-        else if(segue.identifier == "radius"){
+        else if(segue.identifier == EditRideConstants.editRadiusSegue){
             let vc = segue.destinationViewController as! PickRadiusViewController
             vc.ride = self.ride
             vc.setRadius = setRadius
             vc.numMiles = ride.radius
             vc.location = CLocation
         }
-        else if(segue.identifier == "editPassengerSegue"){
+        else if(segue.identifier == EditRideConstants.editPassengersSegue){
             let popoverVC = segue.destinationViewController
             popoverVC.preferredContentSize = CGSize(width: self.view.frame.width * 0.97, height: self.view.frame.height * 0.77)
             popoverVC.popoverPresentationController!.sourceRect = CGRectMake(CGRectGetMidX(self.view.bounds), (passengerValue?.frame.origin.y)! - 50.0,0,0)

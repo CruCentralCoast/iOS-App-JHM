@@ -136,6 +136,12 @@
 		50AC22541CDB033D00427C08 /* EditableItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AC22521CDB033D00427C08 /* EditableItem.swift */; };
 		50B172601CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */; };
 		50B172611CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */; };
+		50B1D3C51CED6BB10014EE1B /* ChooseMinistryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D3C41CED6BB10014EE1B /* ChooseMinistryVC.swift */; };
+		50B1D3C61CED6BB10014EE1B /* ChooseMinistryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D3C41CED6BB10014EE1B /* ChooseMinistryVC.swift */; };
+		50B1D3C81CED76910014EE1B /* SelectCGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D3C71CED76910014EE1B /* SelectCGVC.swift */; };
+		50B1D3C91CED76910014EE1B /* SelectCGVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D3C71CED76910014EE1B /* SelectCGVC.swift */; };
+		50B1D3CB1CED76D60014EE1B /* CommunityGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D3CA1CED76D60014EE1B /* CommunityGroup.swift */; };
+		50B1D3CC1CED76D60014EE1B /* CommunityGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50B1D3CA1CED76D60014EE1B /* CommunityGroup.swift */; };
 		50C6CC7E1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
 		50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
 		50D507861CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */; };
@@ -143,6 +149,8 @@
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50DD51481C86B85900752777 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
 		50E0E1881C87796D000023F1 /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
+		50E57A8D1CEE989900462F8A /* DriverDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */; };
+		50E57A8E1CEE989A00462F8A /* DriverDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
 		50F8251F1C0BB965005396BC /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */; };
@@ -197,8 +205,6 @@
 		C13F7DE91CE277E30057D0F5 /* CGQuestion.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DE71CE277E30057D0F5 /* CGQuestion.swift */; };
 		C13F7DEE1CE28CF50057D0F5 /* TextQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */; };
 		C13F7DEF1CE28CF50057D0F5 /* TextQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */; };
-		C13F7DF11CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */; };
-		C13F7DF21CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */; };
 		C13F7DF41CE28D2F0057D0F5 /* OptionQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */; };
 		C13F7DF51CE28D2F0057D0F5 /* OptionQuestionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */; };
 		C14019CD1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
@@ -330,6 +336,9 @@
 		50AC224F1CDB016800427C08 /* EditCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCell.swift; sourceTree = "<group>"; };
 		50AC22521CDB033D00427C08 /* EditableItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableItem.swift; sourceTree = "<group>"; };
 		50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchableOptionsVC.swift; sourceTree = "<group>"; };
+		50B1D3C41CED6BB10014EE1B /* ChooseMinistryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseMinistryVC.swift; sourceTree = "<group>"; };
+		50B1D3C71CED76910014EE1B /* SelectCGVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectCGVC.swift; sourceTree = "<group>"; };
+		50B1D3CA1CED76D60014EE1B /* CommunityGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroup.swift; sourceTree = "<group>"; };
 		50C6CC7A1CBF3A3600EF5EFB /* Cru-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Cru-Bridging-Header.h"; sourceTree = "<group>"; };
 		50C6CC7B1CBF3A3600EF5EFB /* CruTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CruTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		50C6CC7C1CBF3A3700EF5EFB /* SWRevealViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWRevealViewController.h; sourceTree = "<group>"; };
@@ -338,6 +347,7 @@
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50DD51471C86B85900752777 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50E0E1871C87796D000023F1 /* Cancler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancler.swift; sourceTree = "<group>"; };
+		50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverDetailCell.swift; sourceTree = "<group>"; };
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByEventViewController.swift; sourceTree = "<group>"; };
 		50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinRideViewController.swift; sourceTree = "<group>"; };
@@ -379,7 +389,6 @@
 		C13F7DE51CE2713A0057D0F5 /* getinvolved.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = getinvolved.storyboard; sourceTree = "<group>"; };
 		C13F7DE71CE277E30057D0F5 /* CGQuestion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGQuestion.swift; sourceTree = "<group>"; };
 		C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextQuestionCell.swift; sourceTree = "<group>"; };
-		C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateTimeQuestionCell.swift; sourceTree = "<group>"; };
 		C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionQuestionCell.swift; sourceTree = "<group>"; };
 		C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayLocalStorageManager.swift; sourceTree = "<group>"; };
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -646,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
+				50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */,
 				505722A31CE095A800F87BE4 /* PickRadiusViewController.swift */,
 				50697BC31CE03B5600776CC5 /* PassengersViewController.swift */,
 				504742491C75988E003F276E /* PassengerTableViewCell.swift */,
@@ -852,10 +862,12 @@
 			isa = PBXGroup;
 			children = (
 				C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */,
+				50B1D3C71CED76910014EE1B /* SelectCGVC.swift */,
+				50B1D3CA1CED76D60014EE1B /* CommunityGroup.swift */,
+				50B1D3C41CED6BB10014EE1B /* ChooseMinistryVC.swift */,
 				C1EF49091CDBF74E009439FE /* SurveyViewController.swift */,
 				C13F7DE71CE277E30057D0F5 /* CGQuestion.swift */,
 				C13F7DED1CE28CF50057D0F5 /* TextQuestionCell.swift */,
-				C13F7DF01CE28D0E0057D0F5 /* DateTimeQuestionCell.swift */,
 				C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */,
 				50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */,
 			);
@@ -1135,6 +1147,7 @@
 				C1EF490A1CDBF74E009439FE /* SurveyViewController.swift in Sources */,
 				0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */,
 				5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
+				50E57A8D1CEE989900462F8A /* DriverDetailCell.swift in Sources */,
 				509DA91D1C6172FC0050CE26 /* Ride.swift in Sources */,
 				C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */,
@@ -1155,6 +1168,7 @@
 				C13F7DF41CE28D2F0057D0F5 /* OptionQuestionCell.swift in Sources */,
 				C12940EC1CCD85E0004DACB1 /* KeystoneClient.swift in Sources */,
 				0F10F0221CC03F7000F478ED /* RidesViewController.swift in Sources */,
+				50B1D3C51CED6BB10014EE1B /* ChooseMinistryVC.swift in Sources */,
 				C1D9078E1C88F8C800FDC096 /* SettingsTableViewController.swift in Sources */,
 				0F8CEF211BEC0E13008FC70D /* AppDelegate.swift in Sources */,
 				501085AE1BFBDB6700849CED /* ResourcesViewController.swift in Sources */,
@@ -1180,7 +1194,6 @@
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
 				500A37B01C7D6587007D6A3B /* Passenger.swift in Sources */,
 				0F17E3D21C90F68300713297 /* CalendarManager.swift in Sources */,
-				C13F7DF11CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */,
 				0FAEB97C1C878FCE005C0B4C /* MinistryTeamsCollectionViewController.swift in Sources */,
 				0F5302751CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */,
 				6DBD7B8C1C756D1000D11FFA /* CruColors.swift in Sources */,
@@ -1200,6 +1213,7 @@
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
 				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
 				50B172601CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */,
+				50B1D3C81CED76910014EE1B /* SelectCGVC.swift in Sources */,
 				6D4B78B61C702FDF00F643CB /* Resource.swift in Sources */,
 				C13F7DE81CE277E30057D0F5 /* CGQuestion.swift in Sources */,
 				6D76CA801C06C1D200F8B007 /* EventDetailsViewController.swift in Sources */,
@@ -1215,6 +1229,7 @@
 				50697BC71CE0456600776CC5 /* PhoneFormatter.swift in Sources */,
 				501038B21CD9655F00CCD7DC /* EditRideViewController.swift in Sources */,
 				C185BB391CD2904F00787153 /* FakeServerClient.swift in Sources */,
+				50B1D3CB1CED76D60014EE1B /* CommunityGroup.swift in Sources */,
 				0F8CEF291BEC0E13008FC70D /* Cru.xcdatamodeld in Sources */,
 				C12C0A871C941E9C005751A0 /* DBCollection.swift in Sources */,
 			);
@@ -1257,6 +1272,7 @@
 				5031E1531CE682F30005AAF6 /* TestDriverRideDetail.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				505722A51CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
+				50B1D3CC1CED76D60014EE1B /* CommunityGroup.swift in Sources */,
 				507B368B1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,
 				0F17E3D61C9103B500713297 /* LocalStorageManager.swift in Sources */,
 				50AC22541CDB033D00427C08 /* EditableItem.swift in Sources */,
@@ -1281,12 +1297,13 @@
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
-				C13F7DF21CE28D0E0057D0F5 /* DateTimeQuestionCell.swift in Sources */,
 				50B172611CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */,
 				C1214DC91CEA63B300E7D25F /* EventUtils.swift in Sources */,
 				C1EF490B1CDBF74E009439FE /* SurveyViewController.swift in Sources */,
 				0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */,
 				6D8F42401CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */,
+				50B1D3C91CED76910014EE1B /* SelectCGVC.swift in Sources */,
+				50E57A8E1CEE989A00462F8A /* DriverDetailCell.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* CruColors.swift in Sources */,
@@ -1300,6 +1317,7 @@
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,
 				6D4B78B71C702FDF00F643CB /* Resource.swift in Sources */,
 				501038B31CD9655F00CCD7DC /* EditRideViewController.swift in Sources */,
+				50B1D3C61CED6BB10014EE1B /* ChooseMinistryVC.swift in Sources */,
 				0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */,
 				0FF87DA51C8A268D00D56C4E /* GlobalUtils.swift in Sources */,
 				6D0968E41CE6600700FA8638 /* CardTableViewCell.swift in Sources */,

@@ -10,6 +10,7 @@ import UIKit
 
 class OptionQuestionCell: UITableViewCell {
     @IBOutlet weak var question: UILabel!
+    @IBOutlet weak var optionButton: UIButton!
     var presentingVC: SurveyViewController!
     var cgQuestion: CGQuestion!
     
@@ -19,8 +20,12 @@ class OptionQuestionCell: UITableViewCell {
         question.text = cgQuestion.question
     }
     
+    func setOptionButtonText(text : String){
+        optionButton.setTitle(text, forState: .Normal)
+    }
+    
     @IBAction func showOptions(sender: AnyObject) {
-        presentingVC.showOptions(cgQuestion.options)
+        presentingVC.showOptions(cgQuestion.options, optionHandler: setOptionButtonText, theCell: self)
         //presentingVC.performSegueWithIdentifier("showOptions", sender: presentingVC)
     }
 }

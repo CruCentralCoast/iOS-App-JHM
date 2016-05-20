@@ -12,7 +12,6 @@ enum CGQuestionType : String {
     
     case TEXT = "text"
     case SELECT = "select"
-    case DATETIME = "datetime"
     
     func name()->String {
         return self.rawValue
@@ -20,6 +19,8 @@ enum CGQuestionType : String {
 }
 
 class CGQuestion {
+    
+    static let ministryField = "ministry"
 
     let ministry: String
     let question: String
@@ -27,7 +28,7 @@ class CGQuestion {
     let options: [String]
 
     init(dict: NSDictionary) {
-        ministry = dict["ministry"] as! String
+        ministry = dict[CGQuestion.ministryField] as! String
         question = dict["question"] as! String
         type = CGQuestionType(rawValue: dict["type"] as! String)!
         
