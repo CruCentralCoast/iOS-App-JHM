@@ -63,7 +63,7 @@ class LoginViewController: UIViewController, ValidationDelegate {
         
         // turn the fields to red
         for (field, error) in validator.errors {
-            field.layer.borderColor = UIColor.redColor().CGColor
+            field.layer.borderColor = CruColors.yellow.CGColor
             field.layer.borderWidth = 1.0
             error.errorLabel?.text = error.errorMessage // works if you added labels
             error.errorLabel?.hidden = false
