@@ -527,6 +527,7 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="table" destination="f80-Ag-Nl7" id="gAu-Uk-58W"/>
                         <segue destination="sFi-3y-nFH" kind="popoverPresentation" identifier="direction" popoverAnchorView="f80-Ag-Nl7" id="2oZ-M8-fbJ">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
