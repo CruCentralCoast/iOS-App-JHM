@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="hlO-HX-eT8">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="498"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="480"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -164,7 +164,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="lDP-iX-G64" secondAttribute="trailing" constant="-20" id="UtW-A4-Xoi"/>
                             <constraint firstItem="hlO-HX-eT8" firstAttribute="trailing" secondItem="lDP-iX-G64" secondAttribute="trailing" id="X6p-VY-nto"/>
                             <constraint firstItem="hlO-HX-eT8" firstAttribute="leading" secondItem="lDP-iX-G64" secondAttribute="leading" id="ZPZ-cs-McC"/>
-                            <constraint firstItem="l2x-zE-tBp" firstAttribute="top" secondItem="hlO-HX-eT8" secondAttribute="bottom" constant="38" id="dUx-9C-JKt"/>
+                            <constraint firstItem="l2x-zE-tBp" firstAttribute="top" secondItem="hlO-HX-eT8" secondAttribute="bottom" constant="56" id="dUx-9C-JKt"/>
                             <constraint firstItem="l2x-zE-tBp" firstAttribute="top" secondItem="lDP-iX-G64" secondAttribute="bottom" id="enJ-9h-9XB"/>
                         </constraints>
                     </view>

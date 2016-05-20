@@ -127,6 +127,14 @@ public class LocationPickerViewController: UIViewController {
 		locationManager.delegate = self
 		mapView.delegate = self
 		searchBar.delegate = self
+        
+        
+        //Edited by Max Crane, this changes the search text to white
+        let textFieldInsideSearchBar = searchBar.valueForKey("searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = UIColor.whiteColor()
+        
+        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.valueForKey("placeholderLabel") as? UILabel
+        textFieldInsideSearchBarLabel?.textColor = UIColor.whiteColor()
 		
 		// gesture recognizer for adding by tap
 		mapView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "addLocation:"))
