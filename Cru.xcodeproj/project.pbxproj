@@ -149,6 +149,8 @@
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
 		50DD51481C86B85900752777 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50DD51471C86B85900752777 /* Colors.swift */; };
 		50E0E1881C87796D000023F1 /* Cancler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E0E1871C87796D000023F1 /* Cancler.swift */; };
+		50E57A8D1CEE989900462F8A /* DriverDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */; };
+		50E57A8E1CEE989A00462F8A /* DriverDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */; };
 		50ED8FEE1C052C65002C9E30 /* settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50ED8FED1C052C65002C9E30 /* settings.storyboard */; };
 		50F8251F1C0BB965005396BC /* resources.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 50F8251E1C0BB965005396BC /* resources.storyboard */; };
 		50FE4D3F1C50CE5100EA9042 /* MinistryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */; };
@@ -345,6 +347,7 @@
 		50D8B6DC1C0E323A001127D5 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		50DD51471C86B85900752777 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		50E0E1871C87796D000023F1 /* Cancler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cancler.swift; sourceTree = "<group>"; };
+		50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverDetailCell.swift; sourceTree = "<group>"; };
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByEventViewController.swift; sourceTree = "<group>"; };
 		50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinRideViewController.swift; sourceTree = "<group>"; };
@@ -652,6 +655,7 @@
 			isa = PBXGroup;
 			children = (
 				509DA9181C616C840050CE26 /* driverdetail.storyboard */,
+				50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */,
 				505722A31CE095A800F87BE4 /* PickRadiusViewController.swift */,
 				50697BC31CE03B5600776CC5 /* PassengersViewController.swift */,
 				504742491C75988E003F276E /* PassengerTableViewCell.swift */,
@@ -1143,6 +1147,7 @@
 				C1EF490A1CDBF74E009439FE /* SurveyViewController.swift in Sources */,
 				0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */,
 				5094897D1C64000200A67697 /* DriverRideDetailViewController.swift in Sources */,
+				50E57A8D1CEE989900462F8A /* DriverDetailCell.swift in Sources */,
 				509DA91D1C6172FC0050CE26 /* Ride.swift in Sources */,
 				C1DCEC461C7681E1009FACE0 /* RideUtils.swift in Sources */,
 				0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */,
@@ -1298,6 +1303,7 @@
 				0F7CB3C81C919B6500C8444F /* EventTest.swift in Sources */,
 				6D8F42401CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */,
 				50B1D3C91CED76910014EE1B /* SelectCGVC.swift in Sources */,
+				50E57A8E1CEE989A00462F8A /* DriverDetailCell.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* GlobalCruColors.swift in Sources */,
