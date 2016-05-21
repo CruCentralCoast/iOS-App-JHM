@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n6g-2e-QXr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="n6g-2e-QXr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -14,6 +14,9 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
         </mutableArray>
+        <mutableArray key="FreigSanProMed.otf">
+            <string>FreightSansProMedium-Regular</string>
+        </mutableArray>
     </customFonts>
     <scenes>
         <!--Summer Missions-->
@@ -23,7 +26,6 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="161" sectionHeaderHeight="28" sectionFooterHeight="28" id="U4a-t4-2oe">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
                         <color key="backgroundColor" red="0.90196078430000004" green="0.90196078430000004" blue="0.90196078430000004" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="missionCell" rowHeight="300" id="pZi-vv-tAZ" customClass="SummerMissionsTableViewCell" customModule="Cru" customModuleProvider="target">
@@ -38,21 +40,18 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="event1" translatesAutoresizingMaskIntoConstraints="NO" id="FAY-xd-Jdg">
                                                     <rect key="frame" x="0.0" y="0.0" width="299" height="150"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="150" id="h5R-1I-VaR"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PN9-eB-SDf">
                                                     <rect key="frame" x="8" y="158" width="283" height="28"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="22"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="calendar" translatesAutoresizingMaskIntoConstraints="NO" id="5bu-hF-uIp">
                                                     <rect key="frame" x="24" y="204" width="20" height="20"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="gFQ-0Z-9AL"/>
                                                         <constraint firstAttribute="width" constant="20" id="mnG-80-5n8"/>
@@ -60,14 +59,12 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="umr-4H-e40">
                                                     <rect key="frame" x="52" y="204" width="239" height="21"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="map" translatesAutoresizingMaskIntoConstraints="NO" id="pof-WM-tj3">
                                                     <rect key="frame" x="27" y="245" width="13" height="20"/>
-                                                    <animations/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="20" id="UFe-WO-dE0"/>
                                                         <constraint firstAttribute="width" constant="13" id="aO7-Pb-hbu"/>
@@ -75,13 +72,11 @@
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qdc-GM-h8r">
                                                     <rect key="frame" x="52" y="244" width="239" height="22"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstItem="FAY-xd-Jdg" firstAttribute="centerX" secondItem="mzN-Za-OV7" secondAttribute="centerX" id="3KV-TL-hFX"/>
@@ -106,7 +101,6 @@
                                             </constraints>
                                         </view>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="topMargin" secondItem="mzN-Za-OV7" secondAttribute="top" id="IzU-nG-8hE"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="mzN-Za-OV7" secondAttribute="trailing" constant="8" id="JUl-BP-cYH"/>
@@ -115,7 +109,6 @@
                                         <constraint firstAttribute="bottomMargin" secondItem="mzN-Za-OV7" secondAttribute="bottom" id="jQw-LO-7fm"/>
                                     </constraints>
                                 </tableViewCellContentView>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="missionDateLabel" destination="umr-4H-e40" id="FPR-pM-zyP"/>
@@ -158,20 +151,17 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" semanticContentAttribute="forceLeftToRight" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Xk-Ul-T0t">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="300" id="nAa-yh-Tj1"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSD-p0-cYo">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="300"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="toM-5X-tgU">
                                 <rect key="frame" x="20" y="214" width="560" height="38"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="38" id="z7r-t0-uCU"/>
                                 </constraints>
@@ -181,14 +171,12 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dates" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="TAs-eT-z0T">
                                 <rect key="frame" x="20" y="260" width="560" height="26"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1eJ-GR-SSU">
                                 <rect key="frame" x="20" y="308" width="560" height="34"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="34" id="LLm-MQ-HCV"/>
                                 </constraints>
@@ -198,7 +186,6 @@
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5JB-eb-o9k" userLabel="SeparatorTop">
                                 <rect key="frame" x="20" y="350" width="560" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="tintColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -210,14 +197,12 @@
                                 <subviews>
                                     <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Description of Mission" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tpV-Js-85u">
                                         <rect key="frame" x="10" y="0.0" width="540" height="177"/>
-                                        <animations/>
                                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="15"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES"/>
                                     </textView>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="tpV-Js-85u" secondAttribute="bottom" id="04w-cI-3tX"/>
                                     <constraint firstItem="tpV-Js-85u" firstAttribute="centerY" secondItem="g60-O0-lCD" secondAttribute="centerY" id="1XF-v9-2bU"/>
@@ -227,8 +212,21 @@
                                     <constraint firstItem="tpV-Js-85u" firstAttribute="centerX" secondItem="g60-O0-lCD" secondAttribute="centerX" id="jjr-nE-4dz"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1h-LC-7xh">
+                                <rect key="frame" x="255" y="556" width="90" height="31"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="90" id="9qS-pr-dFl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="15"/>
+                                <state key="normal" title="Learn More">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="learnMoreButton:" destination="43A-o8-bh2" eventType="touchUpInside" id="HJV-YA-q6u"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="1eJ-GR-SSU" firstAttribute="top" secondItem="6Xk-Ul-T0t" secondAttribute="bottom" constant="8" id="76U-Jw-9J7"/>
@@ -237,9 +235,11 @@
                             <constraint firstItem="CSD-p0-cYo" firstAttribute="width" secondItem="6Xk-Ul-T0t" secondAttribute="width" id="EEr-gi-Czz"/>
                             <constraint firstAttribute="trailingMargin" secondItem="g60-O0-lCD" secondAttribute="trailing" id="GwM-4t-7WL"/>
                             <constraint firstItem="g60-O0-lCD" firstAttribute="leading" secondItem="KBn-MQ-hCM" secondAttribute="leadingMargin" id="O4H-2u-h30"/>
+                            <constraint firstItem="Q1h-LC-7xh" firstAttribute="centerX" secondItem="KBn-MQ-hCM" secondAttribute="centerX" id="Ofs-9q-Jij"/>
                             <constraint firstItem="toM-5X-tgU" firstAttribute="trailing" secondItem="KBn-MQ-hCM" secondAttribute="trailingMargin" id="Q57-C3-LYl"/>
                             <constraint firstItem="1eJ-GR-SSU" firstAttribute="top" secondItem="CSD-p0-cYo" secondAttribute="bottom" constant="8" id="QBY-xQ-gLs"/>
                             <constraint firstItem="g60-O0-lCD" firstAttribute="centerX" secondItem="KBn-MQ-hCM" secondAttribute="centerX" id="RRL-sp-oLA"/>
+                            <constraint firstItem="Q1h-LC-7xh" firstAttribute="top" secondItem="tpV-Js-85u" secondAttribute="bottom" constant="20" id="RZe-Y9-z1q"/>
                             <constraint firstItem="TAs-eT-z0T" firstAttribute="top" secondItem="toM-5X-tgU" secondAttribute="bottom" constant="8" id="UTK-uF-0Qx"/>
                             <constraint firstItem="5JB-eb-o9k" firstAttribute="trailing" secondItem="KBn-MQ-hCM" secondAttribute="trailingMargin" id="Vsx-vo-gY0"/>
                             <constraint firstItem="CSD-p0-cYo" firstAttribute="height" secondItem="6Xk-Ul-T0t" secondAttribute="height" id="W93-8w-9yU"/>
@@ -285,6 +285,7 @@
                         <outlet property="datesLabel" destination="TAs-eT-z0T" id="OM7-eW-p5J"/>
                         <outlet property="descriptionView" destination="tpV-Js-85u" id="4ji-pE-Oca"/>
                         <outlet property="image" destination="6Xk-Ul-T0t" id="eEc-RU-b26"/>
+                        <outlet property="learnMoreButton" destination="Q1h-LC-7xh" id="VLh-N0-r26"/>
                         <outlet property="locationLabel" destination="1eJ-GR-SSU" id="4bJ-JF-Xe6"/>
                         <outlet property="titleLabel" destination="toM-5X-tgU" id="KZZ-oT-Ze9"/>
                         <outlet property="topCoverView" destination="CSD-p0-cYo" id="x9W-EV-xuf"/>
@@ -302,7 +303,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IBr-VB-IQW">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">

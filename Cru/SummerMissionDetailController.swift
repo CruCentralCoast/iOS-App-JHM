@@ -22,12 +22,17 @@ class SummerMissionDetailController: UIViewController {
     @IBOutlet private weak var locationLabel: UILabel!
     @IBOutlet private weak var fbButton: UIButton!
     @IBOutlet private weak var eventTimeLabel: UILabel!
+    @IBOutlet weak var learnMoreButton: UIButton!
     
     private let COVER_ALPHA: CGFloat = 0.35
     
     var mission: SummerMission!
     
     //MARK: Actions
+    
+    @IBAction func learnMoreButton(sender: UIButton) {
+        UIApplication.sharedApplication().openURL(NSURL(string: (mission.url))!)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
