@@ -20,6 +20,9 @@ class SettingsViewController: UIViewController {
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
         // Do any additional setup after loading the view.
+        navigationItem.title = "Settings"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontName, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
 
     override func didReceiveMemoryWarning() {

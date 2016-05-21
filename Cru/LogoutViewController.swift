@@ -6,10 +6,13 @@ class LogoutViewController: UIViewController {
 
 
     @IBOutlet weak var loggedInLabel: UILabel!
+    @IBOutlet weak var usernameLabel: UILabel!
     
     
     override func viewDidLoad() {
-        loggedInLabel.text = "You are alredy logged in as " + GlobalUtils.loadString(Config.username)
+        usernameLabel.text = GlobalUtils.loadString(Config.username)
+        //loggedInLabel.text = "You are alredy logged in as " + GlobalUtils.loadString(Config.username)
+       
     }
     
     
