@@ -33,13 +33,13 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     
     override func viewWillAppear(animated: Bool) {
       
-        self.navigationItem.rightBarButtonItem!.setTitleTextAttributes([NSFontAttributeName: UIFont(name: Config.fontName, size: 20)!], forState: .Normal)
+        self.navigationItem.rightBarButtonItem!.setTitleTextAttributes([NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!], forState: .Normal)
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         populateDetails()
-        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: "FreightSans Pro", size: 15)!], forState: .Normal)
+        self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: Config.fontBold, size: 15)!], forState: .Normal)
         detailsTable.separatorStyle = .None
         
         

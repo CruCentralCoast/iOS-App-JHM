@@ -25,6 +25,11 @@ class EventsTableViewController: UITableViewController {
         }
         
         CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
+        
+        //Set the nav title & font
+        navigationItem.title = "Events"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
 
     //insert helper function for inserting event data

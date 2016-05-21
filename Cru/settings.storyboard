@@ -298,10 +298,10 @@
             </objects>
             <point key="canvasLocation" x="2918" y="4360.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Ministries-->
         <scene sceneID="DSR-Jy-fCn">
             <objects>
-                <viewController id="2AH-CA-8ZX" sceneMemberID="viewController">
+                <viewController title="Ministries" id="2AH-CA-8ZX" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2SI-YL-ALS"/>
                         <viewControllerLayoutGuide type="bottom" id="vYA-5s-Jck"/>

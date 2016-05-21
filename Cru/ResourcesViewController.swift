@@ -69,6 +69,11 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.backgroundColor = Colors.googleGray
         tableView.rowHeight = UITableViewAutomaticDimension
         tableView.estimatedRowHeight = 50
+        
+        //Set the nav title
+        navigationItem.title = "Resources"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     //Code for the bar at the top of the view for filtering resources

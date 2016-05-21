@@ -72,6 +72,7 @@ struct Config {
     // Content Text Color
     static let introModalContentTextColor = UIColor(red: 0.38, green: 0.38, blue: 0.38, alpha: 1.0)
     static let fontName = "FreightSans Pro"
+    static let fontBold = "FreightSansProMedium-Regular"
     
     /* Image names */
     static let noConnectionImageName = "server-error"

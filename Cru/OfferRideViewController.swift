@@ -77,6 +77,8 @@ class OfferRideViewController: UIViewController, ValidationDelegate, UIPopoverPr
 
         loadEvents()
         
+        navigationItem.title = "Offer a Ride"
+        
         self.navigationItem.hidesBackButton = true
         let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "handleCancelRide:")
         self.navigationItem.leftBarButtonItem = newBackButton

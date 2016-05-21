@@ -45,6 +45,8 @@ class SummerMissionDetailController: UIViewController {
         if let mission = mission {
             navigationItem.title = "Details"
             
+            self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+            
 //            image.image = mission.image
             
             titleLabel.text = mission.name

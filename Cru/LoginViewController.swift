@@ -24,6 +24,10 @@ class LoginViewController: UIViewController, ValidationDelegate {
         
         validator.registerField(usernameField, errorLabel: usernameError, rules: [RequiredRule(), EmailRule()])
         validator.registerField(passwordField, errorLabel: passwordError, rules: [RequiredRule()])
+        
+        navigationItem.title = "Log In"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     func validationSuccessful() {

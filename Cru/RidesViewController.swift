@@ -218,9 +218,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillAppear(animated: Bool) {
-        navigationItem.title = "Rides"
+        navigationItem.title = " My Rides"
         
-        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontName, size: 25)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
     
     

@@ -25,6 +25,8 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Ride Details"
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         populateDetails()
         
     }

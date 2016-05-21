@@ -25,6 +25,10 @@ class SummerMissionsTableViewController: UITableViewController {
         }
         
         CruClients.getServerClient().getData(DBCollection.SummerMission, insert: insertMission, completionHandler: reload)
+        
+        navigationItem.title = "Summer Missions"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
     }
 
     // Creates and inserts a SummerMission into this collection view from the given dictionary.
@@ -70,6 +74,7 @@ class SummerMissionsTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "missionDetails" {
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title:"", style:.Plain, target:nil, action:nil)
             let missionDetailViewController = segue.destinationViewController as! SummerMissionDetailController
             let selectedMissionCell = sender as! SummerMissionsTableViewCell
             let indexPath = self.tableView!.indexPathForCell(selectedMissionCell)!

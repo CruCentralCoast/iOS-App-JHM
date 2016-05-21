@@ -22,7 +22,10 @@ class SettingsViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.title = "Settings"
         
-        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontName, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        
+        
     }
 
     override func didReceiveMemoryWarning() {

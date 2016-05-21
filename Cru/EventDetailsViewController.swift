@@ -39,6 +39,11 @@ class EventDetailsViewController: UIViewController {
         //setup calendar maanger
         calendarManager = CalendarManager()
         
+        //Set nav title & font
+        navigationItem.title = "Event Details"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         //initialize the view
         initializeView()
     }

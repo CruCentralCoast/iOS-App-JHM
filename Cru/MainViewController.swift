@@ -29,6 +29,11 @@ class MainViewController: UIViewController, UITableViewDataSource, UITableViewDe
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer()) 
         }
         
+        //Change nav title font
+        navigationItem.title = "Home"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         
         //load upcoming items
         CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
