@@ -23,7 +23,10 @@ class EventDetailsViewController: UIViewController {
     @IBOutlet weak var fbButton: UIButton!
     @IBOutlet weak var detailsScroller: UIScrollView!
     @IBOutlet weak var calendarButton: UIButton!
-    
+    @IBOutlet weak var findRideButton: UIButton!
+    @IBOutlet weak var offerRideButton: UIButton!
+    @IBOutlet weak var offerLeading: NSLayoutConstraint!
+    @IBOutlet weak var findRideLeading: NSLayoutConstraint!
     //passed in prepareForSegue
     var event: Event!
     var eventLocalStorageManager: MapLocalStorageManager!
@@ -46,6 +49,7 @@ class EventDetailsViewController: UIViewController {
         
         //initialize the view
         initializeView()
+        setButtonConstraints(UIScreen.mainScreen().bounds.width)
     }
     
     //UI view initializer
@@ -77,6 +81,25 @@ class EventDetailsViewController: UIViewController {
         if let _ = eventLocalStorageManager.getElement(event.id) {
             self.reconfigureCalendarButton(true)
         }
+    }
+    
+    //Sets the spacing of the buttons according to the screen size
+    func setButtonConstraints(screenWidth: CGFloat) {
+        let totalSpacing = screenWidth - (calendarButton.bounds.width*4) - 40
+        let interval = totalSpacing/3
+        
+        offerLeading.constant = interval
+        findRideLeading.constant = interval
+        
+        //let offerConstraints = offerRideButton.constraints
+        
+        //for con in offerConstraints {
+            //print(con.description)
+        //}
+        
+        //offerRideButton.addConstraint(NSLayoutConstraint(item: offerRideButton, attribute: NSLayoutAttribute.LeadingMargin, relatedBy: NSLayoutRelation.Equal, toItem: offerRideButton.superview, attribute:  NSLayoutAttribute.LeadingMargin, multiplier: 1, constant: interval))
+        
+        //findRideButton.addConstraint(NSLayoutConstraint(item: findRideButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: offerRideButton, attribute:  NSLayoutAttribute.Trailing, multiplier: 1, constant: interval))
     }
 
     
@@ -138,11 +161,11 @@ class EventDetailsViewController: UIViewController {
     //reconfigures the calendar button
     private func reconfigureCalendarButton(isInCalendar: Bool) {
         var action = "saveToCalendar:"
-        var buttonImage = UIImage(named: "saveToCalendarIcon")
+        var buttonImage = UIImage(named: "addToCalendar")
             
         if isInCalendar {
             action = "removeFromCalendar:"
-            buttonImage = UIImage(named: "addedToCalendar")
+            buttonImage = UIImage(named: "removeFromCalendar")
         }
         
         calendarButton.removeTarget(nil, action: nil, forControlEvents: UIControlEvents.AllEvents)
