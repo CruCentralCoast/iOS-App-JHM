@@ -122,7 +122,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.ridesTableView.emptyDataSetSource = self
                 self.ridesTableView.emptyDataSetDelegate = self
                 noRideImage = UIImage(named: Config.noRidesImageName)!
-                CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
+                CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             
             case .NoConnection:
@@ -132,7 +132,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
             
             default:
-                CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
+                CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
         }
         
         rides.sortInPlace()
@@ -184,7 +184,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func finishInserting(success: Bool){
         self.ridesTableView.beginUpdates()
-        
+        print("got \(events.count) events")
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         
         self.ridesTableView.reloadData()

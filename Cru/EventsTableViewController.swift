@@ -23,8 +23,7 @@ class EventsTableViewController: UITableViewController {
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
         }
-        
-        CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
+        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
         
         //Set the nav title & font
         navigationItem.title = "Events"
