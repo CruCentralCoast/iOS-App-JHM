@@ -145,6 +145,11 @@ class RideUtils {
         mlsm.addElement(rideId, elem: passengerId)
     }
     
+    func dropPassenger(rideId: String, passengerId: String, handler: (Bool)->Void){
+        serverClient.deleteById(DBCollection.Ride,  id: rideId + "/passengers/" + passengerId, completionHandler: handler)
+    }
+    
+    
     func leaveRidePassenger(ride: Ride, handler: (Bool)->()){
         let rideId = ride.id
         let mlsm = MapLocalStorageManager(key: Config.ridesReceiving)

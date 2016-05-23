@@ -83,6 +83,9 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     var hasUserEdited = false
     var directionCell: UITableViewCell!
     var directionCellPath: NSIndexPath!
+    var passengersToDrop = [Passenger]()
+    var passesToDrop : Int!
+    var passesDropped : Int!
     var location: Location! {
         didSet {
             addressValue.text? = location.address
@@ -554,10 +557,48 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     
         if(isOfferingRide){
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-            CruClients.getRideUtils().postRideOffer(ride.eventId, name: nameValue.text, phone: numberValue.text, seats: ride.seats, time: ride.getTimeInServerFormat(), location: location.getLocationAsDict(location), radius: 1, direction: ride.direction, handler:  handleRequestResult)
+            sendRideOffer()
+            
         }
         else{
-           CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.passengers: ride.passengers, RideKeys.radius: ride.radius, RideKeys.driverName: ride.driverName, RideKeys.direction: ride.direction, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.city: ride.city, LocationKeys.country: ride.country]], handler: handlePostResult)
+            
+            self.passesToDrop = self.passengersToDrop.count
+            
+            if(self.passesToDrop != 0){
+                for pass in self.passengersToDrop{
+                    CruClients.getRideUtils().dropPassenger(ride.id, passengerId: pass.id, handler: handleDropPass)
+                }
+            }
+            else{
+                sendPatchRequest()
+            }
+           
+        }
+    }
+    func sendPatchRequest(){
+        CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.passengers: ride.passengers, RideKeys.radius: ride.radius, RideKeys.driverName: ride.driverName, RideKeys.direction: ride.direction, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.city: ride.city, LocationKeys.country: ride.country]], handler: handlePostResult)
+    }
+    func sendRideOffer(){
+        CruClients.getRideUtils().postRideOffer(ride.eventId, name: nameValue.text, phone: numberValue.text, seats: ride.seats, time: ride.getTimeInServerFormat(), location: location.getLocationAsDict(location), radius: 1, direction: ride.direction, handler:  handleRequestResult)
+    }
+    
+    func handleDropPass(success: Bool){
+        if(self.passesDropped == nil){
+            self.passesDropped = 0
+        }
+        
+        
+        if(success){
+            self.passesDropped = self.passesDropped + 1
+            if(self.passesDropped == self.passengersToDrop.count){
+                self.passesDropped = 0
+                self.passengersToDrop.removeAll()
+                sendPatchRequest()
+            }
+        }
+        else{
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            presentAlert("Could not drop a passenger", msg: "", handler: {  })
         }
     }
     

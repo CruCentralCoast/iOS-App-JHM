@@ -28,6 +28,10 @@ class PassengersViewController: UIViewController, UITableViewDataSource, UITable
             
             parentEditVC.passengers = remainingPassengers
             parentEditVC.ride.passengers = remainingPassString
+            
+            for pass in self.passengersToDrop{
+                parentEditVC.passengersToDrop.append(pass)
+            }
             parentEditVC.updateOptions()
         }
     }
