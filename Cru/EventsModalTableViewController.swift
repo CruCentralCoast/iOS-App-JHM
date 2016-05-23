@@ -60,6 +60,7 @@ class EventsModalTableViewController: UITableViewController {
             offerRide!.ride.eventName = events[indexPath.row].name
             offerRide!.ride.eventStartDate = events[indexPath.row].startNSDate
             offerRide!.ride.eventEndDate = events[indexPath.row].endNSDate
+            offerRide!.event = events[indexPath.row]
             offerRide!.updateOptions()
         }
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})

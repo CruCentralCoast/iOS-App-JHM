@@ -80,8 +80,8 @@ class Ride: Comparable, Equatable, TimeDetail {
     var driverName: String = ""
     var eventId: String = ""
     var eventName: String = ""
-    var eventStartDate = NSDate()
-    var eventEndDate = NSDate()
+    var eventStartDate : NSDate!
+    var eventEndDate : NSDate!
     var time: String = ""
     var passengers = [String]()
     var day = -1
@@ -158,8 +158,8 @@ class Ride: Comparable, Equatable, TimeDetail {
             time = dict.objectForKey(RideKeys.time) as! String
             self.date = GlobalUtils.dateFromString(time)
             self.departureDate = self.date
-            self.departureTime = self.date
-            self.departureDay = self.date
+            //self.departureTime = self.date
+            //self.departureDay = self.date
             
 
             

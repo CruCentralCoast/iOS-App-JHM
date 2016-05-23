@@ -52,20 +52,14 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     var event : Event!{
         didSet{
             if(ride != nil){
-                ride.eventStartDate = event.startNSDate
-                ride.eventEndDate = event.endNSDate
-                ride.eventName = event.name
-                ride.eventId = event.id
+                syncRideToEvent()
             }
         }
     }
     var ride : Ride!{
         didSet{
             if(event != nil){
-                ride.eventName = event.name
-                ride.eventId = event.id
-                ride.eventStartDate = event.startNSDate
-                ride.eventEndDate = event.endNSDate
+                syncRideToEvent()
             }
         }
     }
@@ -118,20 +112,32 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             ride.eventEndDate = event.endNSDate
         }
         else{
-            event = Event()
+            //event = Event()
         }
         
         populateOptions()
         getRideLocation()
     }
     
+    func syncRideToEvent(){
+        ride.eventName = event.name
+        ride.eventId = event.id
+        ride.eventStartDate = event.startNSDate
+        ride.eventEndDate = event.endNSDate
+        ride.departureDay = event.startNSDate
+        ride.departureTime = event.startNSDate
+    }
+    
     
     func populateOptions(){
-        options.append(EditableItem(itemName: Labels.eventLabel, itemValue: event.name, itemEditable: isOfferingRide, itemIsText: false))
+        options.append(EditableItem(itemName: Labels.eventLabel, itemValue: ride.eventName, itemEditable: isOfferingRide, itemIsText: false))
         
-        
+       
         options.append(EditableItem(itemName: Labels.departureTimeLabel, itemValue: ride.getDepartureTime(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: Labels.departureDateLabel, itemValue: ride.getDepartureDay(), itemEditable: true, itemIsText: false))
+   
+        
+        
         options.append(EditableItem(itemName: Labels.addressLabel, itemValue: ride.getCompleteAddress(), itemEditable: true, itemIsText: false))
         options.append(EditableItem(itemName: Labels.pickupRadius, itemValue: ride.getRadius(), itemEditable: true, itemIsText: true))
         directionOption = EditableItem(itemName: Labels.directionLabel, itemValue: ride.getDirection(), itemEditable: true, itemIsText: false)
