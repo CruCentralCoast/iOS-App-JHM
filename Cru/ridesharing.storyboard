@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="868" y="846"/>
         </scene>
-        <!--createRide-->
+        <!--createARide-->
         <scene sceneID="sVZ-5V-gyT">
             <objects>
-                <viewControllerPlaceholder storyboardName="driverdetail" referencedIdentifier="createRide" id="XEe-PU-cXZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="driverdetail" referencedIdentifier="createARide" id="XEe-PU-cXZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXr-0p-OIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1470" y="460"/>

@@ -51,11 +51,22 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     var events = [Event]()
     var event : Event!{
         didSet{
-            ride.eventStartDate = event.startNSDate
-            ride.eventEndDate = event.endNSDate
+            if(ride != nil){
+                ride.eventStartDate = event.startNSDate
+                ride.eventEndDate = event.endNSDate
+                ride.eventName = event.name
+            }
         }
     }
-    var ride : Ride!
+    var ride : Ride!{
+        didSet{
+            if(event != nil){
+                ride.eventName = event.name
+                ride.eventStartDate = event.startNSDate
+                ride.eventEndDate = event.endNSDate
+            }
+        }
+    }
     var rideVC: RidesViewController!
     var options = [EditableItem]()
     var directionOption: EditableItem!
@@ -90,6 +101,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         
         if(isOfferingRide){
             self.navigationItem.title = OfferRideConstants.pageTitle
+            self.ride = Ride()
             bottomButton.setTitle(OfferRideConstants.bottomButton, forState: .Normal)
         }
         else{
@@ -98,7 +110,8 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         }
         
         
-        if(event != nil){
+        
+        if(event != nil && ride != nil){
             ride.eventStartDate = event.startNSDate
             ride.eventEndDate = event.endNSDate
         }

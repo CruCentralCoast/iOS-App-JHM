@@ -233,9 +233,10 @@ class EventDetailsViewController: UIViewController {
         
         if let button = sender as? UIButton{
             if(button.currentTitle == "offer ride"){
-                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("offerRide") as! OfferRideViewController
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("createARide") as! OfferOrEditRideViewController
                 self.navigationController?.pushViewController(vc, animated: true)
-                vc.chosenEvent = event
+                vc.event = event
+                vc.isOfferingRide = true
             }
             else{
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController

@@ -78,8 +78,8 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "offerridesegue"{
             let destVC = segue.destinationViewController as! OfferOrEditRideViewController
-            let templateRide = Ride()
-            destVC.ride = templateRide
+            //let templateRide = Ride()
+            //destVC.ride = templateRide
             destVC.events = self.events
             destVC.rideVC = self
             destVC.isOfferingRide = true
