@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+enum EventStatus {
+    case NotAdded
+    case Added
+    case Sync
+}

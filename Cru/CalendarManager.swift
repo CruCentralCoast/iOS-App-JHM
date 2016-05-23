@@ -55,6 +55,38 @@ class CalendarManager {
         completionHandler(error: errors, eventIdentifier: eventIdentifier)
     }
     
+    //Function that syncs the updated event to the pre-existing one
+    func syncEventToCalendar(event: Event, eventIdentifier: String, completionHandler: (error: NSError?) -> ()) {
+        var errors: NSError? = NSError(domain: "", code: 0, userInfo: nil)
+        
+        //Get authorization to native calendar
+        switch EKEventStore.authorizationStatusForEntityType(EKEntityType.Event) {
+            //If the user has authorized access to the calendar
+        case .Authorized:
+            errors = syncEvent(event, eventIdentifier: eventIdentifier)
+            
+            //If the user has denied access to the calendar
+        case .Denied:
+            errors = createUnauthorizedErrorObject()
+            
+            //If access tp the calendar has not yet been determined
+        case .NotDetermined:
+            if requestNativeCalendarAccess() {
+                errors = syncEvent(event, eventIdentifier: eventIdentifier)
+            }
+            else {
+                errors = createUnauthorizedErrorObject()
+            }
+            
+        default:
+            print("No Default Case")
+            
+        }
+        
+        completionHandler(error: errors)
+        
+    }
+    
     func removeEventFromCalendar(eventIdentifier: String, completionHandler: (error: NSError?) -> ()) {
         var errors: NSError? = NSError(domain: "", code: 0, userInfo: nil)
         
@@ -85,6 +117,17 @@ class CalendarManager {
         completionHandler(error: errors)
     }
     
+    //Returns the event in the calendar
+    func getEvent(eventIdentifier: String) -> EKEvent? {
+        if let calendarEvent = self.calendarStore.eventWithIdentifier(eventIdentifier) {
+            return calendarEvent
+        }
+        else {
+            print("Could not retrieve event from calendar")
+            return nil
+        }
+    }
+    
     //Creates an unauthorized error object
     private func createUnauthorizedErrorObject() -> NSError {
         let errorInfo: [NSObject : AnyObject] =
@@ -94,6 +137,33 @@ class CalendarManager {
         ]
         
         return NSError(domain: "NativeCalendarAccessError", code: 401, userInfo: errorInfo)
+    }
+    
+    //Helper function that actually changes the event in user's calendar
+    private func syncEvent(event: Event, eventIdentifier: String) -> NSError? {
+        let dateFormat = "h:mma MMMM d, yyyy"
+        print("Event to update: ")
+        print("   start: \(GlobalUtils.stringFromDate(event.startNSDate, format: dateFormat))")
+        print("   end: \(GlobalUtils.stringFromDate(event.endNSDate, format: dateFormat))")
+        
+        if let calendarEvent = self.calendarStore.eventWithIdentifier(eventIdentifier) {
+            //try to store the event into the calendar
+            
+            calendarEvent.location = event.getLocationString()
+            calendarEvent.startDate = event.startNSDate
+            calendarEvent.endDate = event.endNSDate
+            print("Syncing event now")
+            
+            let dateFormat = "h:mma MMMM d, yyyy"
+            print("Updated Event: ")
+            print("   start: \(GlobalUtils.stringFromDate(calendarEvent.startDate, format: dateFormat))")
+            print("   end: \(GlobalUtils.stringFromDate(calendarEvent.endDate, format: dateFormat))")
+            return nil
+            
+        }
+        else {
+            return NSError(domain: "calendar", code: 10, userInfo: nil)
+        }
     }
     
     //helper function that actually inserts the event to the calendar

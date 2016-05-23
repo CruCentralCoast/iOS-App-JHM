@@ -78,9 +78,42 @@ class EventDetailsViewController: UIViewController {
         }
         
         //check if event is in calendar
-        if let _ = eventLocalStorageManager.getElement(event.id) {
-            self.reconfigureCalendarButton(true)
+        if let eventId = eventLocalStorageManager.getElement(event.id) {
+            
+            checkForChanges(eventId as! String)
+            
         }
+    }
+    
+    //Checks for differences between the native event and the one being displayed
+    func checkForChanges(eventID: String) {
+        var changed = false
+        
+        if let nativeEvent = calendarManager.getEvent(eventID) {
+            
+            if nativeEvent.location != self.event.getLocationString(){
+                changed = true
+            }
+        
+            if nativeEvent.startDate != self.event.startNSDate {
+                changed = true
+            }
+            
+            if nativeEvent.endDate != self.event.endNSDate {
+                changed = true
+            }
+            
+            if changed {
+                self.reconfigureCalendarButton(EventStatus.Sync)
+            }
+            else {
+                self.reconfigureCalendarButton(EventStatus.Added)
+                print("Event exists")
+            }
+        }
+        
+        
+        
     }
     
     //Sets the spacing of the buttons according to the screen size
@@ -90,16 +123,6 @@ class EventDetailsViewController: UIViewController {
         
         offerLeading.constant = interval
         findRideLeading.constant = interval
-        
-        //let offerConstraints = offerRideButton.constraints
-        
-        //for con in offerConstraints {
-            //print(con.description)
-        //}
-        
-        //offerRideButton.addConstraint(NSLayoutConstraint(item: offerRideButton, attribute: NSLayoutAttribute.LeadingMargin, relatedBy: NSLayoutRelation.Equal, toItem: offerRideButton.superview, attribute:  NSLayoutAttribute.LeadingMargin, multiplier: 1, constant: interval))
-        
-        //findRideButton.addConstraint(NSLayoutConstraint(item: findRideButton, attribute: NSLayoutAttribute.Leading, relatedBy: NSLayoutRelation.Equal, toItem: offerRideButton, attribute:  NSLayoutAttribute.Trailing, multiplier: 1, constant: interval))
     }
 
     
@@ -121,15 +144,41 @@ class EventDetailsViewController: UIViewController {
                     //error code 9 means that the event you tried to add was not successful
                     if (error.code == 9) {
                         self.displayError("I'm sorry. There was an error adding that event to your calendar")
-                        self.reconfigureCalendarButton(false)
+                        self.reconfigureCalendarButton(EventStatus.NotAdded)
                     }
                 }
             }
             else {
                 if let _ = id {
                     self.eventLocalStorageManager.addElement(self.event.id, elem: id!)
-                    self.reconfigureCalendarButton(true)
+                    self.reconfigureCalendarButton(EventStatus.Added)
                 }
+            }
+        })
+    }
+    
+    //This function syncs the event in the database to the event that
+    //already exists in the user's native calendar
+    func syncToCalendar(sender: UIButton) {
+        let eventIdentifier = eventLocalStorageManager.getElement(event.id)
+        
+        calendarManager.syncEventToCalendar(event, eventIdentifier: eventIdentifier as! String, completionHandler: {
+            errors in
+            
+            if let error = errors {
+                if (error.domain == "calendar") {
+                    //error code 10 says that theres no calendar event in the calendar
+                    //to remove
+                    if (error.code == 10) {
+                        self.displayError("That event was already synced!")
+                        self.reconfigureCalendarButton(EventStatus.Added)
+                    }
+                }
+            }
+            else {
+                //self.eventLocalStorageManager.removeElement(self.event.id)
+                self.reconfigureCalendarButton(EventStatus.Added)
+                print("ERRORS")
             }
         })
     }
@@ -147,30 +196,35 @@ class EventDetailsViewController: UIViewController {
                     //to remove
                     if (error.code == 10) {
                         self.displayError("That event was already removed from your calendar!")
-                        self.reconfigureCalendarButton(false)
+                        self.reconfigureCalendarButton(EventStatus.NotAdded)
                     }
                 }
             }
             else {
                 self.eventLocalStorageManager.removeElement(self.event.id)
-                self.reconfigureCalendarButton(false)
+                self.reconfigureCalendarButton(EventStatus.NotAdded)
             }
         })
     }
     
     //reconfigures the calendar button
-    private func reconfigureCalendarButton(isInCalendar: Bool) {
+    private func reconfigureCalendarButton(status: EventStatus) {
         var action = "saveToCalendar:"
-        var buttonImage = UIImage(named: "addToCalendar")
-            
-        if isInCalendar {
+        var buttonImage = UIImage(named: "add-to-calendar")
+        
+        switch status {
+        case .Added:
             action = "removeFromCalendar:"
-            buttonImage = UIImage(named: "removeFromCalendar")
+            buttonImage = UIImage(named: "remove-from-calendar")
+        case .Sync:
+            action = "syncToCalendar:"
+            buttonImage = UIImage(named: "sync-to-calendar")
+        default: ()
         }
         
         calendarButton.removeTarget(nil, action: nil, forControlEvents: UIControlEvents.AllEvents)
         calendarButton.addTarget(self, action: Selector(action), forControlEvents: .TouchUpInside)
-        calendarButton.setImage(buttonImage, forState: .Normal)
+        calendarButton.setBackgroundImage(buttonImage, forState: .Normal)
     }
 
     //This function opens the ridesharing section of the application
