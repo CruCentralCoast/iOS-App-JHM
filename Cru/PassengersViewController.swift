@@ -12,7 +12,7 @@ class PassengersViewController: UIViewController, UITableViewDataSource, UITable
     var passengers = [Passenger]()
     var passengersToDrop = [Passenger]()
     var editable = false
-    var parentEditVC: EditRideViewController!
+    var parentEditVC: OfferOrEditRideViewController!
     
     override func viewWillDisappear(animated: Bool) {
         var remainingPassengers = [Passenger]()

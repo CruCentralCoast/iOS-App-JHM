@@ -59,6 +59,7 @@ class Event: Equatable {
         self.rideshareEnabled = false
     }
     
+    
     convenience init?(dict : NSDictionary) {
         //init all required variables
         self.init()

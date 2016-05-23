@@ -43,6 +43,7 @@ struct Labels{
     static let addressLabel = "Departure Address:"
     static let pickupRadius = "Pickup Radius:"
     static let seatsLabel = "Seats Offered:"
+    static let seatsOfferLabel = "Seats Offering:"
     static let seatsLeftLabel = "Seats Available:"
     static let nameLabel = "Name:"
     static let phoneLabel = "Phone Number:"
@@ -89,14 +90,24 @@ class Ride: Comparable, Equatable, TimeDetail {
     var hour = -1
     var minute = -1
     var year = -1
-    var date : NSDate?
+    var date : NSDate!
     var postcode: String = ""
     var state: String = ""
     var city: String = ""
     var street: String = ""
     var country: String = ""
     var gender: Int = 0
+    var timeStr = ""
+    var departureDate : NSDate! //both time and date
+    var departureTime: NSDate! //only time component h:mm a
+    var departureDay : NSDate!  //only date component d/m/y
     
+    
+    init(){
+        self.direction = Directions.both
+        self.seats = 1
+        self.radius = 1
+    }
 
     init?(dict: NSDictionary){
 
@@ -146,6 +157,11 @@ class Ride: Comparable, Equatable, TimeDetail {
         if (dict.objectForKey(RideKeys.time) != nil){
             time = dict.objectForKey(RideKeys.time) as! String
             self.date = GlobalUtils.dateFromString(time)
+            self.departureDate = self.date
+            self.departureTime = self.date
+            self.departureDay = self.date
+            
+
             
             let components = GlobalUtils.dateComponentsFromDate(GlobalUtils.dateFromString(time))!
             self.day = components.day
@@ -249,12 +265,50 @@ class Ride: Comparable, Equatable, TimeDetail {
     
     func getTime()->String{
         let dFormat = "h:mm a"
-        return GlobalUtils.stringFromDate(self.date!, format: dFormat)
+        return GlobalUtils.stringFromDate(self.date, format: dFormat)
     }
     
     func getDate()->String{
+        if(day == -1){
+            return ""
+        }
+        else{
+            let dFormat = "MMMM d, yyyy"
+            return GlobalUtils.stringFromDate(self.date, format: dFormat)
+        }
+    }
+    
+    func getDepartureDate()->NSDate{
+        return self.departureDate
+    }
+    
+    func getDepartureDay()->String{
         let dFormat = "MMMM d, yyyy"
-        return GlobalUtils.stringFromDate(self.date!, format: dFormat)
+        if(self.departureDay == nil){
+            return ""
+        }
+        else{
+            return GlobalUtils.stringFromDate(self.departureDay, format: dFormat)
+        }
+        
+    }
+    
+    func getDepartureDay()->NSDate{
+        return self.departureDay
+    }
+    
+    func getDepartureTime()->String{
+        let dFormat = "h:mm a"
+        if(self.departureTime == nil){
+            return ""
+        }
+        else{
+            return GlobalUtils.stringFromDate(self.departureTime, format: dFormat)
+        }
+    }
+    
+    func getDepartureTime()->NSDate{
+        return self.departureTime
     }
         
     func hasSeats()->Bool{
@@ -296,6 +350,10 @@ class Ride: Comparable, Equatable, TimeDetail {
     
     func isValidTime() -> String{
         let theDate =  GlobalUtils.dateFromString(self.getTimeInServerFormat())
+        
+        if(minute == -1 || hour == -1 || day == -1 || monthNum == -1 || day == -1 || year == -1){
+            return ValidationErrors.none
+        }
         
         if(direction == "to" || direction == "both"){
             if theDate.compare(eventStartDate) == NSComparisonResult.OrderedDescending {

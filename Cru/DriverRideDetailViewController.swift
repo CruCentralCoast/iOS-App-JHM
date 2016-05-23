@@ -198,11 +198,11 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editSegue"{
-            if let destVC = segue.destinationViewController as? EditRideViewController{
+            if let destVC = segue.destinationViewController as? OfferOrEditRideViewController{
                 print("this hapepned")
                 destVC.ride = ride
                 destVC.event = event
-                destVC.ridesVC = self.rideVC
+                destVC.rideVC = self.rideVC
                 destVC.rideDetailVC = self
                 destVC.passengers = passengers
             }

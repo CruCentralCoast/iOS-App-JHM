@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="868" y="846"/>
         </scene>
-        <!--offerride-->
+        <!--createRide-->
         <scene sceneID="sVZ-5V-gyT">
             <objects>
-                <viewControllerPlaceholder storyboardName="offerride" id="XEe-PU-cXZ" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="driverdetail" referencedIdentifier="createRide" id="XEe-PU-cXZ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jXr-0p-OIh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1470" y="460"/>
@@ -205,10 +205,10 @@
             </objects>
             <point key="canvasLocation" x="1474.5" y="721"/>
         </scene>
-        <!--driverdetail-->
+        <!--driverDetail-->
         <scene sceneID="OIi-3y-uuo">
             <objects>
-                <viewControllerPlaceholder storyboardName="driverdetail" id="HcF-jr-Y8U" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="driverdetail" referencedIdentifier="driverDetail" id="HcF-jr-Y8U" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TwL-94-omf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1478" y="826"/>

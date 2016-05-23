@@ -12,6 +12,7 @@ class EventsModalTableViewController: UITableViewController {
     var events = [Event]()
     var vc: OfferRideViewController?
     var fvc: FilterByEventViewController?
+    var offerRide: OfferOrEditRideViewController?
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -50,9 +51,16 @@ class EventsModalTableViewController: UITableViewController {
             vc!.formHasBeenEdited = true
             
         }
-        if fvc != nil{
+        else if fvc != nil{
             fvc!.eventNameLabel.text = tableView.cellForRowAtIndexPath(indexPath)?.textLabel?.text
             fvc!.selectedEvent = events[indexPath.row]
+        }
+        else if offerRide != nil{
+            offerRide!.ride.eventId = events[indexPath.row].id
+            offerRide!.ride.eventName = events[indexPath.row].name
+            offerRide!.ride.eventStartDate = events[indexPath.row].startNSDate
+            offerRide!.ride.eventEndDate = events[indexPath.row].endNSDate
+            offerRide!.updateOptions()
         }
         self.presentingViewController?.dismissViewControllerAnimated(true, completion: {})
     }

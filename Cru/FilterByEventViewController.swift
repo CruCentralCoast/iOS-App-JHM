@@ -104,7 +104,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         let thisRide = filteredRides[indexPath.row]
         cell.month.text = thisRide.month
         cell.day.text = String(thisRide.day)
-        cell.time.text = GlobalUtils.stringFromDate(thisRide.date!, format: "h:mma")
+        cell.time.text = GlobalUtils.stringFromDate(thisRide.date, format: "h:mma")
         
         cell.seatsLeft.text = thisRide.seatsLeft() + " seats left"
         

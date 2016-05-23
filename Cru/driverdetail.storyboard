@@ -39,7 +39,7 @@
         <!--Driver Ride Detail View Controller-->
         <scene sceneID="7KB-Ej-gOn">
             <objects>
-                <viewController id="iNM-Bt-tgs" customClass="DriverRideDetailViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="driverDetail" id="iNM-Bt-tgs" customClass="DriverRideDetailViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hc9-iK-NRe"/>
                         <viewControllerLayoutGuide type="bottom" id="lVM-0K-jK1"/>
@@ -401,10 +401,10 @@
             </objects>
             <point key="canvasLocation" x="2364" y="-111"/>
         </scene>
-        <!--Edit Ride View Controller-->
+        <!--Offer Or Edit Ride View Controller-->
         <scene sceneID="PSG-ft-xFj">
             <objects>
-                <viewController id="02L-Gk-VaH" customClass="EditRideViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="createRide" id="02L-Gk-VaH" customClass="OfferOrEditRideViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="P7r-GM-hbY"/>
                         <viewControllerLayoutGuide type="bottom" id="NHX-du-mxl"/>
@@ -527,12 +527,16 @@
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <connections>
+                        <outlet property="bottomButton" destination="wdV-Ja-GZb" id="Hka-QR-5Cr"/>
                         <outlet property="table" destination="f80-Ag-Nl7" id="gAu-Uk-58W"/>
                         <segue destination="sFi-3y-nFH" kind="popoverPresentation" identifier="direction" popoverAnchorView="f80-Ag-Nl7" id="2oZ-M8-fbJ">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                         <segue destination="He5-kL-mpg" kind="show" identifier="radius" id="boU-To-t6e"/>
                         <segue destination="3yh-Ii-FnX" kind="popoverPresentation" identifier="editPassengerSegue" popoverAnchorView="wdV-Ja-GZb" id="he8-TB-1wb">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
+                        <segue destination="f9X-V2-c8z" kind="popoverPresentation" identifier="chooseEvent" popoverAnchorView="f80-Ag-Nl7" id="RfR-6X-5xu">
                             <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                         </segue>
                     </connections>
@@ -621,6 +625,37 @@
             </objects>
             <point key="canvasLocation" x="3249" y="588"/>
         </scene>
+        <!--Events Modal Table View Controller-->
+        <scene sceneID="aD5-16-XMg">
+            <objects>
+                <tableViewController id="f9X-V2-c8z" customClass="EventsModalTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="7iP-Ea-Wvp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="30k-mX-3dc">
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="30k-mX-3dc" id="Cy7-pB-xds">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <animations/>
+                                </tableViewCellContentView>
+                                <animations/>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="f9X-V2-c8z" id="kqJ-Ac-mSd"/>
+                            <outlet property="delegate" destination="f9X-V2-c8z" id="ro3-To-fu2"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Z3-IR-CLM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3027" y="1350"/>
+        </scene>
         <!--DirectionTVC-->
         <scene sceneID="9P6-TT-ZZs">
             <objects>
@@ -662,6 +697,6 @@
         <image name="pencil" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KiA-Xm-1vs"/>
+        <segue reference="he8-TB-1wb"/>
     </inferredMetricsTieBreakers>
 </document>

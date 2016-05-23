@@ -84,9 +84,9 @@ class RideUtils {
         return rideIds
     }
 
-    func postRideOffer(eventId : String, name : String , phone : String, seats : Int,
+    func postRideOffer(eventId : String, name : String , phone : String, seats : Int, time: String,
         location: NSDictionary, radius: Int, direction: String, handler: (Ride?)->()) {
-            let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats,
+            let body = ["event":eventId, "driverName":name, "driverNumber":phone, "seats":seats, "time": time,
                 "gcm_id": Config.gcmId(), "location":location, "radius":radius, "direction":direction, "gender": 0]
             
             
