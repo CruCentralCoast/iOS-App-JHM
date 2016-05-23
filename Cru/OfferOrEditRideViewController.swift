@@ -55,6 +55,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
                 ride.eventStartDate = event.startNSDate
                 ride.eventEndDate = event.endNSDate
                 ride.eventName = event.name
+                ride.eventId = event.id
             }
         }
     }
@@ -62,6 +63,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         didSet{
             if(event != nil){
                 ride.eventName = event.name
+                ride.eventId = event.id
                 ride.eventStartDate = event.startNSDate
                 ride.eventEndDate = event.endNSDate
             }
@@ -551,12 +553,27 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     func handleRequestResult(result : Ride?){
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         if result != nil {
-            presentAlert("Ride Offered", msg: "Thank you your offered ride has been created!", handler:  {
-                if let navController = self.navigationController {
-                    navController.popViewControllerAnimated(true)
-                    self.rideVC.refresh(self)
-                }
-            })
+            
+            
+            if(rideVC != nil){
+                self.rideVC.refresh(self)
+                presentAlert("Ride Offered", msg: "Thank you! Your offered ride has been created!", handler:  {
+                    if let navController = self.navigationController {
+                        navController.popViewControllerAnimated(true)
+                        
+                    }
+                })
+            }
+            else{
+                presentAlert("Ride Offered", msg: "Thank you! Your offered ride has been created! You can view your ride offer in the Ridehsaring section.", handler:  {
+                    if let navController = self.navigationController {
+                        navController.popViewControllerAnimated(true)
+                        
+                    }
+                })
+            }
+            
+            
         } else {
             presentAlert("Ride Offer Failed", msg: "Failed to post ride offer", handler:  {})
         }
