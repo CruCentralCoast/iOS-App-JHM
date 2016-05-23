@@ -178,7 +178,7 @@ class EventDetailsViewController: UIViewController {
             else {
                 //self.eventLocalStorageManager.removeElement(self.event.id)
                 self.reconfigureCalendarButton(EventStatus.Added)
-                print("ERRORS")
+                //print("ERRORS")
             }
         })
     }

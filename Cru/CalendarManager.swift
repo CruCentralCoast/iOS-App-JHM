@@ -142,6 +142,7 @@ class CalendarManager {
     //Helper function that actually changes the event in user's calendar
     private func syncEvent(event: Event, eventIdentifier: String) -> NSError? {
         let dateFormat = "h:mma MMMM d, yyyy"
+        var errors: NSError? = nil
         print("Event to update: ")
         print("   start: \(GlobalUtils.stringFromDate(event.startNSDate, format: dateFormat))")
         print("   end: \(GlobalUtils.stringFromDate(event.endNSDate, format: dateFormat))")
@@ -158,6 +159,18 @@ class CalendarManager {
             print("Updated Event: ")
             print("   start: \(GlobalUtils.stringFromDate(calendarEvent.startDate, format: dateFormat))")
             print("   end: \(GlobalUtils.stringFromDate(calendarEvent.endDate, format: dateFormat))")
+            
+            do {
+                try self.calendarStore.saveEvent(calendarEvent, span: EKSpan.ThisEvent, commit: true)
+                
+            }
+            catch let error as NSError {
+                errors = error
+            }
+            catch {
+                fatalError()
+            }
+            
             return nil
             
         }
