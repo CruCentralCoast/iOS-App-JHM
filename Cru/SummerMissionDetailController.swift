@@ -25,61 +25,43 @@ class SummerMissionDetailController: UIViewController {
     @IBOutlet weak var learnMoreButton: UIButton!
     
     private let COVER_ALPHA: CGFloat = 0.35
-    
+    var uiImage: UIImage!
     var mission: SummerMission!
-    
+    var dateText = ""
     //MARK: Actions
     
     @IBAction func learnMoreButton(sender: UIButton) {
         UIApplication.sharedApplication().openURL(NSURL(string: (mission.url))!)
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
         
-        //check for width of phone
-//        let screenSize: CGRect = UIScreen.mainScreen().bounds
-//        if screenSize.width <= 320.0 {
-//            //make sure label fonts arent nil
-//            if let titleFont = titleLabel.font {
-//                titleLabel.font = UIFont(name: titleFont.fontName, size: 25)
-//            }
-//        }
         
         // Do any additional setup after loading the view.
         if let mission = mission {
             navigationItem.title = "Details"
             
-            self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+            //self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+            image.image = uiImage
             
-//            image.image = mission.image
-            
+            datesLabel.text = dateText
             titleLabel.text = mission.name
             titleLabel.sizeToFit()
-            
-//            datesLabel.text = mission.startDate.formatMonthDayYear() + " - " + mission.startDate.formatMonthDayYear()
-            
-//            locationLabel.text = mission.country //mission.street! + ", " + event.suburb! + ", " + event.postcode!
             
             
             descriptionView.text = mission.description
             descriptionView.sizeToFit()
-            //scrollingView.sizeToFit()
-            
             topCoverView.alpha = COVER_ALPHA
         }
         
+    
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        image.image = uiImage
     }
     
-    // MARK: - Navigation
-    
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    }
+
 }
