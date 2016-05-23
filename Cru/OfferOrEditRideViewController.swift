@@ -296,7 +296,12 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         case Labels.directionLabel:
             self.performSegueWithIdentifier(EditRideConstants.editDirectionSegue, sender: self)
         case Labels.pickupRadius:
-            self.performSegueWithIdentifier(EditRideConstants.editRadiusSegue, sender: self)
+            if(location != nil){
+                self.performSegueWithIdentifier(EditRideConstants.editRadiusSegue, sender: self)
+            }
+            else{
+                showValidationError("Please pick a location before picking a radius.")
+            }
         case Labels.passengers:
             self.performSegueWithIdentifier(EditRideConstants.editPassengersSegue, sender: self)
         case Labels.eventLabel:
