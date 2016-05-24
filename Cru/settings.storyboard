@@ -540,6 +540,7 @@
                         </connections>
                     </tableView>
                     <connections>
+                        <outlet property="loginLabel" destination="nV4-Bf-Ip8" id="T1a-uq-fAK"/>
                         <segue destination="IIb-iT-sZW" kind="show" identifier="LoginSegue" id="Cml-KT-813"/>
                         <segue destination="mXz-Zb-Rvl" kind="show" identifier="LogoutSegue" id="nGP-OL-mve"/>
                     </connections>
