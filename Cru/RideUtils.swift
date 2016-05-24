@@ -146,7 +146,7 @@ class RideUtils {
     }
     
     func dropPassenger(rideId: String, passengerId: String, handler: (Bool)->Void){
-        serverClient.deleteById(DBCollection.Ride,  id: rideId + "/passengers/" + passengerId, completionHandler: handler)
+        serverClient.deleteByIdIn(DBCollection.Ride, parentId: rideId, child: DBCollection.Passenger, childId: passengerId, completionHandler: handler)
     }
     
     
@@ -196,7 +196,7 @@ class RideUtils {
             }
             }, id: id)
     }
-    
+
     func patchPassenger(id: String, params: [String:AnyObject], handler: (Passenger?)->Void) {
         serverClient.patch(DBCollection.Passenger, params: params, completionHandler: { dict in
             if dict == nil {
