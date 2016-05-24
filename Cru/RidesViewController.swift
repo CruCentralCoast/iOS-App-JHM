@@ -194,7 +194,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         let event = Event(dict: dict)
         
         //insert into event array
-        events.insert(event!, atIndex: 0)
+        if(event?.rideSharingEnabled == true){
+            events.insert(event!, atIndex: 0)
+        }
     }
     
     func getEventNameForEventId(id : String)->String{

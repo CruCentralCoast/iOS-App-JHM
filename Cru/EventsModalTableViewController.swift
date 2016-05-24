@@ -16,7 +16,7 @@ class EventsModalTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        events.sortInPlace({$0.name < $1.name})
     }
 
     override func didReceiveMemoryWarning() {
