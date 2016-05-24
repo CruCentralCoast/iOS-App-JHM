@@ -173,6 +173,7 @@
                         <color key="barTintColor" red="0.72628045080000003" green="0.72629773620000004" blue="0.72628843779999996" alpha="1" colorSpace="deviceRGB"/>
                     </simulatedNavigationBarMetrics>
                     <connections>
+                        <outlet property="detailsTable" destination="hlO-HX-eT8" id="N5d-YK-xBq"/>
                         <segue destination="a5W-Rw-hLT" kind="show" identifier="eventDetailSegue" id="sUl-6n-xbp"/>
                     </connections>
                 </viewController>

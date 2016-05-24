@@ -40,7 +40,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         rideTable.delegate = self
         rideTable.dataSource = self
         
-        navigationItem.title = "Available Rides"
+        navigationItem.title = "Find Ride"
         loadEvents()
         if tempEvent == nil {
             loadRides(nil)

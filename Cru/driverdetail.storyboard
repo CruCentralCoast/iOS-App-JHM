@@ -425,7 +425,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="6tG-LP-JZx">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tG-LP-JZx">
                                                     <rect key="frame" x="8" y="28" width="539" height="39"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
@@ -697,6 +697,6 @@
         <image name="pencil" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="he8-TB-1wb"/>
+        <segue reference="KiA-Xm-1vs"/>
     </inferredMetricsTieBreakers>
 </document>

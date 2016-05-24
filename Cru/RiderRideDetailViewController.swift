@@ -10,6 +10,7 @@ import UIKit
 import MapKit
 
 class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    @IBOutlet weak var detailsTable: UITableView!
     let roundTrip = "round-trip"
     let roundTripDirection = "both"
     let fromEvent = "from event"
@@ -28,6 +29,9 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         populateDetails()
+        
+        detailsTable.estimatedRowHeight = 44
+        detailsTable.rowHeight = UITableViewAutomaticDimension
         
     }
     
@@ -61,19 +65,7 @@ class RiderRideDetailViewController: UIViewController, UITableViewDataSource, UI
         return cell
     }
     
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        let cell =  self.tableView(tableView, cellForRowAtIndexPath: indexPath) as? DetailCell
-        
-        if(cell!.title.text == Labels.addressLabel){
-            return 95.0
-        }
-        else{
-            return 44.0
-        }
-        
-    }
-    
-    
+
     func setTime(td : TimeDetail){
         //date.text = td.getTime()
     }

@@ -42,7 +42,8 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         self.navigationItem.leftBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont(name: Config.fontBold, size: 15)!], forState: .Normal)
         detailsTable.separatorStyle = .None
         
-        
+        detailsTable.estimatedRowHeight = 50.0 // Replace with your actual estimation
+        detailsTable.rowHeight = UITableViewAutomaticDimension
   
         CruClients.getRideUtils().getPassengersByIds(ride.passengers, inserter: insertPassenger, afterFunc: {success in
             //TODO: should be handling failure here
@@ -118,6 +119,17 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             //cell.label.text = details[indexPath.row].itemName
             cell.value.text = details[indexPath.row].itemValue
             
+            
+//            var fontSize = CGFloat(19.0)
+//            cell.value.font = UIFont(name: Config.fontName, size: fontSize)
+//            
+//            while (cell.value.contentSize.height > cell.value.frame.size.height && fontSize > 8.0) {
+//                fontSize -= 1.0;
+//                cell.value.font = UIFont(name: Config.fontName, size: fontSize)
+//            }
+            
+            
+            
             if (details[indexPath.row].itemName == Labels.addressLabel){
                 cell.value.dataDetectorTypes = .Address
                 cell.value.textContainer.lineBreakMode = NSLineBreakMode.ByWordWrapping
@@ -150,13 +162,6 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
         
     }
     
-    
-    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
-        if (details[indexPath.row].itemName == Labels.addressLabel){
-            return CGFloat(75.0)
-        }
-        return CGFloat(50.0)
-    }
     
     // Reload the data every time we come back to this view controller
     override func viewDidAppear(animated: Bool) {
