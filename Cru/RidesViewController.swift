@@ -178,7 +178,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         rides.sortInPlace()
         
-        self.ridesTableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        self.ridesTableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Middle)
     }
     
     

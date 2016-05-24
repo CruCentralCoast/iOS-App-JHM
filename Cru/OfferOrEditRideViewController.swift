@@ -102,13 +102,13 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             self.navigationItem.title = OfferRideConstants.pageTitle
             self.ride = Ride()
             bottomButton.setTitle(OfferRideConstants.bottomButton, forState: .Normal)
+            
         }
         else{
             self.navigationItem.title = EditRideConstants.pageTitle
             bottomButton.setTitle(EditRideConstants.bottomButton, forState: .Normal)
+            getRideLocation()
         }
-        
-        
         
         if(event != nil && ride != nil){
             ride.eventStartDate = event.startNSDate
@@ -119,7 +119,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         }
         
         populateOptions()
-        getRideLocation()
+        
     }
     
     func syncRideToEvent(){
@@ -299,7 +299,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         case Labels.directionLabel:
             self.performSegueWithIdentifier(EditRideConstants.editDirectionSegue, sender: self)
         case Labels.pickupRadius:
-            if(location != nil){
+            if(self.CLocation != nil){
                 self.performSegueWithIdentifier(EditRideConstants.editRadiusSegue, sender: self)
             }
             else{
@@ -525,11 +525,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
                 showValidationError(ValidationErrors.badSeats)
             }
         }
-        
-        if(seatsValue != ""){
-            showValidationError(ValidationErrors.noSeats)
-            return false
-        }
+
         return true
     }
     
@@ -788,7 +784,6 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             
             for item in response.mapItems {
                 initialLocation = item.placemark.location!
-  
                 self.CLocation = initialLocation
             }
         }
