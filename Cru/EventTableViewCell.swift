@@ -23,12 +23,18 @@ class EventTableViewCell: UITableViewCell {
             
             let startDate = GlobalUtils.stringFromDate(event.startNSDate, format: dateFormatter)
             let startTime = GlobalUtils.stringFromDate(event.startNSDate, format: timeFormatter)
-            let endDate = GlobalUtils.stringFromDate(event.startNSDate, format: dateFormatter)
-            let endTime = GlobalUtils.stringFromDate(event.startNSDate, format: timeFormatter)
+            let endDate = GlobalUtils.stringFromDate(event.endNSDate, format: dateFormatter)
+            let endTime = GlobalUtils.stringFromDate(event.endNSDate, format: timeFormatter)
             let location = GlobalUtils.stringFromLocation(event.location)
             
             eventTitleLabel.text = event.name
-            dateLabel.text = startDate + " - " + endDate
+            if startDate != endDate {
+                dateLabel.text = startDate + " - " + endDate
+            }
+            else {
+                dateLabel.text = startDate
+            }
+            
             timeLabel.text = startTime + " - " + endTime
             locationLabel.text = location
             
