@@ -37,14 +37,7 @@ class Ministry: NSObject, NSCoding, Comparable{
         self.id = dict["_id"] as! String
         self.campusId = dict["campus"] as! String
         self.feedEnabled = false // crashes without this shit
-        self.imageUrl = "http://res.cloudinary.com/dcyhqxvmq/image/upload/v1453505468/sxgmbetwbbvozk385a7j.jpg"
-        if (dict["image"] != nil){
-            let image = dict["image"] as! NSDictionary
-            
-            if(image["url"] != nil){
-                self.imageUrl = image["url"] as! String
-            }
-        }
+        self.imageUrl = dict["imageLink"] as! String
     }
     
     init(name: String, id: String, campusId: String, feedEnabled: Bool, imgUrl: String){
