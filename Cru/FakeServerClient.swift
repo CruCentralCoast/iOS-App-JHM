@@ -139,6 +139,16 @@ class FakeServerClient: ServerProtocol {
         exception.raise()
     }
     
+    func getDataIn(parent: DBCollection, parentId: String, child: DBCollection, insert: (NSDictionary) -> (),
+        completionHandler: (Bool)->Void) {
+        let exception = NSException(
+            name: "Not implemented!",
+            reason: "It's new",
+            userInfo: nil
+        )
+        exception.raise()
+    }
+    
     func patch(collection: DBCollection, params: [String : AnyObject], completionHandler: (NSDictionary?) -> Void, id: String) {
         var dict = getById(collection, id: id)
         if (dict == nil) {

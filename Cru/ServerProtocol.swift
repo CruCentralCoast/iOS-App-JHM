@@ -17,6 +17,9 @@ protocol ServerProtocol {
     //does the same as the function above but only gets data that match the params
     func getData(collection: DBCollection, insert: (NSDictionary) -> (), completionHandler: (Bool)->Void, params: [String:AnyObject])
     
+    func getDataIn(parent: DBCollection, parentId: String, child: DBCollection, insert: (NSDictionary) -> (),
+        completionHandler: (Bool)->Void)
+    
     func getById(collection: DBCollection, insert: (NSDictionary) -> (), completionHandler: (Bool)->Void, id: String)
     
     func postData(collection: DBCollection, params: [String:AnyObject], completionHandler: (NSDictionary?)->Void)

@@ -34,7 +34,9 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         
-        CruClients.getServerClient().getData(DBCollection.MinistyQuestion, insert: insertQuestion, completionHandler: finishInserting)
+        //CruClients.getServerClient().getData(DBCollection.MinistyQuestion, insert: insertQuestion, completionHandler: finishInserting)
+        CruClients.getServerClient().getDataIn(DBCollection.Ministry, parentId: ministry.id, child: DBCollection.Question,
+            insert: insertQuestion, completionHandler: finishInserting)
         // Do any additional setup after loading the view.
     }
     

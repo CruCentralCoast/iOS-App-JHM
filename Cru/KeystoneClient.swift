@@ -110,6 +110,12 @@ class KeystoneClient: ServerProtocol {
         requestData(reqUrl, method: .POST, params: params, insert: insert, completionHandler: completionHandler)
     }
     
+    func getDataIn(parent: DBCollection, parentId: String, child: DBCollection, insert: (NSDictionary) -> (),
+        completionHandler: (Bool)->Void) {
+        let reqUrl = Config.serverEndpoint + parent.name() + "/" + parentId + "/" + child.name()
+        requestData(reqUrl, method: .GET, params: nil, insert: insert, completionHandler: completionHandler)
+    }
+    
     func patch(collection: DBCollection, params: [String:AnyObject], completionHandler: (NSDictionary?)->Void, id: String) {
         let reqUrl = Config.serverEndpoint + collection.name() + "/" + id
         
