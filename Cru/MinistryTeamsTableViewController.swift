@@ -12,6 +12,8 @@ class MinistryTeamsTableViewController: UITableViewController {
 
     var ministryTeamsStorageManager: MapLocalStorageManager!
     var ministryTeams = [MinistryTeam]()
+    var signedUpMinistryTeams = [NSDictionary]()
+    var selectedMinistryTeam: MinistryTeam!
     private let reuseIdentifierPic = "ministryTeamCell"
     private let reuseIdentifierNoPic = "ministryTeamNoPicCell"
     
@@ -31,7 +33,11 @@ class MinistryTeamsTableViewController: UITableViewController {
     
     //inserts individual ministry teams into the collection view
     private func insertMinistryTeam(dict : NSDictionary) {
-        self.ministryTeams.insert(MinistryTeam(dict: dict)!, atIndex: 0)
+        let addMinistryTeam = MinistryTeam(dict: dict)!
+        
+        if ministryTeamsStorageManager.getElement(addMinistryTeam.id) == nil {
+            self.ministryTeams.insert(addMinistryTeam, atIndex: 0)
+        }
     }
     
     //reload the collection view data and store whether or not the user is in the repsective ministries
@@ -50,20 +56,42 @@ class MinistryTeamsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let ministryTeam = ministryTeams[indexPath.row]
+        //var cell: UITableViewCell! //make a new parent class for this
         
         if ministryTeam.imageUrl == "" {
             let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierNoPic, forIndexPath: indexPath) as! MinistryTeamNoPictureTableViewCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.ministryTeam = ministryTeam
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.signupButton.layer.setValue(indexPath.row, forKey: "index")
             
             return cell
         }
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierPic, forIndexPath: indexPath) as! MinistryTeamsTableViewCell
-            cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.ministryTeam = ministryTeam
+            cell.selectionStyle = UITableViewCellSelectionStyle.None
+            cell.signupButton.layer.setValue(indexPath.row, forKey: "index")
             
             return cell
         }
     }
+    
+    //opens sign up form for ministry teams
+    @IBAction func joinMinistryTeam(sender: UIButton) {
+        let index = sender.layer.valueForKey("index") as! Int
+        let ministry = ministryTeams[index]
+        
+        self.selectedMinistryTeam = ministry
+        self.performSegueWithIdentifier("ministryTeamSignUp", sender: self)
+    }
+    
+    //sets up segues with necessary data
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        //set the ministry team of the sign up controller to the selected ministry team
+        if segue.identifier == "ministryTeamSignUp" {
+            let vc = segue.destinationViewController as! MinistryTeamSignUpViewController
+            vc.ministryTeam = self.selectedMinistryTeam
+        }
+    }
+
 }

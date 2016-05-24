@@ -27,6 +27,8 @@
 		0F1B8C2F1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */; };
 		0F1B8C701CCFDB8700CEE24C /* RidesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F10F0211CC03F7000F478ED /* RidesViewController.swift */; };
 		0F1B8C721CCFDC2100CEE24C /* summermissions.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FB6CF501CBF4839007B9F6E /* summermissions.storyboard */; };
+		0F52709B1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F52709A1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift */; };
+		0F52709C1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F52709A1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift */; };
 		0F5302721CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */; };
 		0F5302731CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */; };
 		0F5302751CD2B85D0097F9F2 /* EventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */; };
@@ -265,6 +267,7 @@
 		0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2C1CC99B1A00CEE24C /* MinistryTeamViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamViewController.swift; sourceTree = "<group>"; };
 		0F1B8C2E1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamDetailViewController.swift; sourceTree = "<group>"; };
+		0F52709A1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTeamSignUpViewController.swift; sourceTree = "<group>"; };
 		0F5302711CD2AFCF0097F9F2 /* EventsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventsTableViewController.swift; sourceTree = "<group>"; };
 		0F5302741CD2B85D0097F9F2 /* EventTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EventTableViewCell.swift; sourceTree = "<group>"; };
 		0F68621D1CE65D3600138377 /* SummerMissionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SummerMissionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -588,6 +591,7 @@
 				0FAAE91B1CE6A83A0055770D /* MinistryTeamsTableViewController.swift */,
 				0FAAE91E1CE6A8480055770D /* MinistryTeamsTableViewCell.swift */,
 				0F83D56D1CEBB86E00E08BA4 /* MinistryTeamNoPictureTableViewCell.swift */,
+				0F52709A1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift */,
 			);
 			name = MinistryTeams;
 			sourceTree = "<group>";
@@ -1159,6 +1163,7 @@
 				50FE4D431C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F5302721CD2AFCF0097F9F2 /* EventsTableViewController.swift in Sources */,
 				0F6862211CE65D4A00138377 /* SummerMissionsTableViewController.swift in Sources */,
+				0F52709B1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift in Sources */,
 				502609501C066D1F0019E97C /* CampusesTableViewController.swift in Sources */,
 				50A341CE1C0C10F3006B73DB /* Campus.swift in Sources */,
 				501085B61BFBDCCE00849CED /* SettingsViewController.swift in Sources */,
@@ -1318,6 +1323,7 @@
 				6DA330AB1CD95E1200FCC970 /* ResourceTest.swift in Sources */,
 				0F6862221CE65D4A00138377 /* SummerMissionsTableViewController.swift in Sources */,
 				5072B4181CB38616001F5BF6 /* TimeDetail.swift in Sources */,
+				0F52709C1CEE55F000D71BB0 /* MinistryTeamSignUpViewController.swift in Sources */,
 				C1015CD31C942C0E005B559E /* DBCollection.swift in Sources */,
 				0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */,
 				0FB811861C8F47E200883951 /* Campus.swift in Sources */,

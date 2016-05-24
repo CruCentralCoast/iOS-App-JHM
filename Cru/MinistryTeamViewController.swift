@@ -47,6 +47,10 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.ministryTeamTableView.addSubview(self.refreshControl)
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        refresh(self)
+    }
 
     //toggle table view
     private func toggleMinistryTableView(hidden: Bool) {
@@ -109,6 +113,8 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
         for  key in keys {
             ministryTeams.append(ministryTeamsStorageManager.getElement(key) as! NSDictionary)
         }
+        
+        print(ministryTeams)
         
         self.ministryTeamTableView.reloadData()
         

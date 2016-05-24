@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qKH-sz-Wh1">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="qKH-sz-Wh1">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -18,7 +18,7 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Get Involved View Controller-->
+        <!--Get Involved-->
         <scene sceneID="721-Ra-dym">
             <objects>
                 <viewController id="Pi5-cD-Qdc" customClass="GetInvolvedViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
@@ -32,21 +32,18 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F2F-hS-g5Y">
                                 <rect key="frame" x="0.0" y="49" width="600" height="487"/>
-                                <animations/>
                                 <connections>
                                     <segue destination="Swp-qm-uyo" kind="embed" id="vlu-AP-znH"/>
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hpv-Rc-b55" userLabel="communityGroupContainer">
                                 <rect key="frame" x="0.0" y="49" width="600" height="487"/>
-                                <animations/>
                                 <connections>
                                     <segue destination="ROr-Ps-fvZ" kind="embed" id="HZc-Oc-05V"/>
                                 </connections>
                             </containerView>
                             <tabBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb7-NY-Slq">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>
                                     <tabBarItem title="Community Group" image="community-group-icon" id="AVU-sM-4Gk"/>
@@ -59,7 +56,6 @@
                                 </connections>
                             </tabBar>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="leadingMargin" secondItem="Hpv-Rc-b55" secondAttribute="leading" id="0BU-qn-O71"/>
@@ -88,7 +84,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="JMl-pk-V0g">
+                    <navigationItem key="navigationItem" title="Get Involved" id="JMl-pk-V0g">
                         <barButtonItem key="leftBarButtonItem" image="menuIcon" id="Hav-vb-26K"/>
                     </navigationItem>
                     <connections>
@@ -110,7 +106,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="8Aj-E9-wWT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="barTintColor" red="0.40000000000000002" green="0.37647058820000001" blue="0.38431372549999998" alpha="1" colorSpace="calibratedRGB"/>
                         <textAttributes key="titleTextAttributes">
@@ -138,78 +133,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHE-Mw-sQa" userLabel="MinistryTeamView">
-                                <rect key="frame" x="20" y="0.0" width="560" height="487"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join A Ministry Team!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-Pu-SrR">
-                                        <rect key="frame" x="8" y="8" width="544" height="29"/>
-                                        <animations/>
-                                        <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="25"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-Mj-jWS">
-                                        <rect key="frame" x="8" y="36" width="544" height="405"/>
-                                        <animations/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <string key="text">Here is information about what a community group is and anything else that you would like to hear about Ministry Teams. Here's another sentence to provide more information about what this information provides.</string>
-                                        <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pWe-rh-4Mb">
-                                        <rect key="frame" x="486" y="449" width="66" height="30"/>
-                                        <animations/>
-                                        <gestureRecognizers/>
-                                        <state key="normal" title="See More"/>
-                                        <connections>
-                                            <outletCollection property="gestureRecognizers" destination="egy-Ra-TCD" appends="YES" id="YLr-WN-BwW"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <gestureRecognizers/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="fB6-Mj-jWS" secondAttribute="trailing" constant="8" id="1IS-9v-Lkz"/>
-                                    <constraint firstAttribute="trailing" secondItem="jmt-Pu-SrR" secondAttribute="trailing" constant="8" id="4Ir-lP-qBq"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="DMR-kf-D87"/>
-                                    <constraint firstItem="jmt-Pu-SrR" firstAttribute="centerX" secondItem="bHE-Mw-sQa" secondAttribute="centerX" id="FRa-si-NBW"/>
-                                    <constraint firstAttribute="bottom" secondItem="pWe-rh-4Mb" secondAttribute="bottom" constant="8" id="ORb-oM-yCa"/>
-                                    <constraint firstItem="fB6-Mj-jWS" firstAttribute="leading" secondItem="bHE-Mw-sQa" secondAttribute="leading" constant="8" id="RbP-A0-sxr"/>
-                                    <constraint firstItem="fB6-Mj-jWS" firstAttribute="centerX" secondItem="bHE-Mw-sQa" secondAttribute="centerX" id="fvB-nc-XOk"/>
-                                    <constraint firstItem="jmt-Pu-SrR" firstAttribute="top" secondItem="bHE-Mw-sQa" secondAttribute="top" constant="8" id="g9f-fS-dGj"/>
-                                    <constraint firstItem="fB6-Mj-jWS" firstAttribute="top" secondItem="jmt-Pu-SrR" secondAttribute="bottom" id="ghH-EP-aUA"/>
-                                    <constraint firstItem="jmt-Pu-SrR" firstAttribute="leading" secondItem="bHE-Mw-sQa" secondAttribute="leading" constant="8" id="hgW-GH-gyz"/>
-                                    <constraint firstItem="pWe-rh-4Mb" firstAttribute="top" secondItem="fB6-Mj-jWS" secondAttribute="bottom" constant="8" id="p84-k2-Rfg"/>
-                                    <constraint firstAttribute="trailing" secondItem="pWe-rh-4Mb" secondAttribute="trailing" constant="8" id="po0-3X-jcD"/>
-                                </constraints>
-                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VJc-Md-wFN">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                                 <subviews>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-4c-lwh">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="447"/>
-                                        <animations/>
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="427"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ministryTeam" id="Vbj-Jf-Yw3" customClass="JoinedTeamsTableViewCell" customModule="Cru" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="28" width="600" height="50"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vbj-Jf-Yw3" id="cJk-ey-s1u">
-                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="49"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="567" height="49.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1dZ-uY-I7B">
-                                                            <rect key="frame" x="8" y="14" width="584" height="21"/>
-                                                            <animations/>
+                                                            <rect key="frame" x="8" y="14" width="584" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
-                                                    <animations/>
                                                 </tableViewCellContentView>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstItem="1dZ-uY-I7B" firstAttribute="leading" secondItem="Vbj-Jf-Yw3" secondAttribute="leading" constant="8" id="G35-Bc-s6k"/>
                                                     <constraint firstItem="1dZ-uY-I7B" firstAttribute="centerY" secondItem="Vbj-Jf-Yw3" secondAttribute="centerY" id="J6k-co-NO7"/>
@@ -226,11 +171,10 @@
                                         </connections>
                                     </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pIj-MI-WSB">
-                                        <rect key="frame" x="0.0" y="447" width="600" height="40"/>
-                                        <animations/>
-                                        <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                        <rect key="frame" x="0.0" y="427" width="600" height="60"/>
+                                        <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="zB3-iQ-1XA"/>
+                                            <constraint firstAttribute="height" constant="60" id="zB3-iQ-1XA"/>
                                         </constraints>
                                         <state key="normal" title="Join Ministry Team">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -240,7 +184,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="pIj-MI-WSB" firstAttribute="top" secondItem="RiY-4c-lwh" secondAttribute="bottom" id="3Tf-K1-JOb"/>
@@ -252,8 +195,55 @@
                                     <constraint firstItem="pIj-MI-WSB" firstAttribute="centerX" secondItem="VJc-Md-wFN" secondAttribute="centerX" id="hYY-y1-vkr"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bHE-Mw-sQa" userLabel="MinistryTeamView">
+                                <rect key="frame" x="20" y="0.0" width="560" height="487"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join A Ministry Team!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jmt-Pu-SrR">
+                                        <rect key="frame" x="8" y="8" width="544" height="28.5"/>
+                                        <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="25"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="fB6-Mj-jWS">
+                                        <rect key="frame" x="8" y="36" width="544" height="383"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Here is information about what a community group is and anything else that you would like to hear about Ministry Teams. Here's another sentence to provide more information about what this information provides.</string>
+                                        <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rsD-Fv-mTC">
+                                        <rect key="frame" x="-20" y="427" width="600" height="60"/>
+                                        <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="AmW-Ip-OtE"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" title="Join a Ministry Team"/>
+                                        <connections>
+                                            <action selector="onTouchSeeMore:" destination="Swp-qm-uyo" eventType="touchUpInside" id="EcM-Ki-xqD"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="fB6-Mj-jWS" secondAttribute="trailing" constant="8" id="1IS-9v-Lkz"/>
+                                    <constraint firstAttribute="trailing" secondItem="jmt-Pu-SrR" secondAttribute="trailing" constant="8" id="4Ir-lP-qBq"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="100" id="DMR-kf-D87"/>
+                                    <constraint firstItem="rsD-Fv-mTC" firstAttribute="centerX" secondItem="bHE-Mw-sQa" secondAttribute="centerX" id="ElZ-Tw-qwA"/>
+                                    <constraint firstItem="jmt-Pu-SrR" firstAttribute="centerX" secondItem="bHE-Mw-sQa" secondAttribute="centerX" id="FRa-si-NBW"/>
+                                    <constraint firstItem="fB6-Mj-jWS" firstAttribute="leading" secondItem="bHE-Mw-sQa" secondAttribute="leading" constant="8" id="RbP-A0-sxr"/>
+                                    <constraint firstAttribute="trailing" secondItem="rsD-Fv-mTC" secondAttribute="trailing" constant="-20" id="SG6-Qo-eD0"/>
+                                    <constraint firstAttribute="bottom" secondItem="rsD-Fv-mTC" secondAttribute="bottom" id="a0G-Qi-7vz"/>
+                                    <constraint firstItem="rsD-Fv-mTC" firstAttribute="top" secondItem="fB6-Mj-jWS" secondAttribute="bottom" constant="8" id="dx4-uc-otC"/>
+                                    <constraint firstItem="fB6-Mj-jWS" firstAttribute="centerX" secondItem="bHE-Mw-sQa" secondAttribute="centerX" id="fvB-nc-XOk"/>
+                                    <constraint firstItem="jmt-Pu-SrR" firstAttribute="top" secondItem="bHE-Mw-sQa" secondAttribute="top" constant="8" id="g9f-fS-dGj"/>
+                                    <constraint firstItem="fB6-Mj-jWS" firstAttribute="top" secondItem="jmt-Pu-SrR" secondAttribute="bottom" id="ghH-EP-aUA"/>
+                                    <constraint firstItem="rsD-Fv-mTC" firstAttribute="leading" secondItem="bHE-Mw-sQa" secondAttribute="leading" constant="-20" id="gwf-yB-Vat"/>
+                                    <constraint firstItem="jmt-Pu-SrR" firstAttribute="leading" secondItem="bHE-Mw-sQa" secondAttribute="leading" constant="8" id="hgW-GH-gyz"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="bHE-Mw-sQa" secondAttribute="trailing" id="1kx-8g-mqI"/>
@@ -297,12 +287,11 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2v-fc-Wdb">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4T-Of-6oF">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="336"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4T-Of-6oF">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="296.5"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wWw-vp-4CK">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
-                                                <animations/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="wWw-vp-4CK" secondAttribute="height" multiplier="5:3" id="NUE-YB-d0L"/>
                                                     <constraint firstAttribute="height" constant="200" id="Pgj-My-pvc"/>
@@ -324,43 +313,25 @@
                                                 </variation>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1x-uX-6FD">
-                                                <rect key="frame" x="8" y="208" width="584" height="31"/>
-                                                <animations/>
+                                                <rect key="frame" x="8" y="208" width="584" height="30.5"/>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="24"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-ig-BtX">
-                                                <rect key="frame" x="8" y="246" width="584" height="1"/>
-                                                <animations/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-ig-BtX">
+                                                <rect key="frame" x="8" y="246.5" width="584" height="1"/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="GE1-VB-0WG"/>
                                                 </constraints>
                                             </view>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul5-hy-nar">
-                                                <rect key="frame" x="0.0" y="296" width="608" height="40"/>
-                                                <animations/>
-                                                <color key="backgroundColor" red="0.72941176470588232" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="1de-ET-fky"/>
-                                                </constraints>
-                                                <state key="normal" title="Leave Team">
-                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="leaveMinistryTeam:" destination="kK3-7x-RQT" eventType="touchUpInside" id="19Q-Kb-dat"/>
-                                                </connections>
-                                            </button>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-hT-PEM">
-                                                <rect key="frame" x="8" y="255" width="584" height="33"/>
-                                                <animations/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Ministry team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-hT-PEM">
+                                                <rect key="frame" x="8" y="255.5" width="584" height="33"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
                                         </subviews>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="2qi-hT-PEM" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="09R-cU-MzS"/>
@@ -369,8 +340,8 @@
                                             <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="6LK-WO-i9o"/>
                                             <constraint firstItem="wWw-vp-4CK" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" id="DCS-h5-szz"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="m4T-Of-6oF" secondAttribute="top" constant="8" id="Dan-Jt-qpC"/>
-                                            <constraint firstItem="Ul5-hy-nar" firstAttribute="top" secondItem="2qi-hT-PEM" secondAttribute="bottom" constant="8" id="FHK-T6-C1r"/>
                                             <constraint firstAttribute="height" constant="97" id="GTg-05-h4J"/>
+                                            <constraint firstAttribute="bottom" secondItem="2qi-hT-PEM" secondAttribute="bottom" constant="8" id="KRO-NU-ulA"/>
                                             <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="LdW-Mt-lN8"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="wWw-vp-4CK" secondAttribute="bottom" constant="8" id="Uud-dM-FDa"/>
                                             <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="WhJ-eo-njJ"/>
@@ -379,14 +350,11 @@
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="bQR-DC-BGS"/>
                                             <constraint firstAttribute="trailing" secondItem="wWw-vp-4CK" secondAttribute="trailing" id="fIL-4m-j3z"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="wWw-vp-4CK" secondAttribute="trailing" id="fiy-Du-bUa"/>
-                                            <constraint firstAttribute="bottom" secondItem="Ul5-hy-nar" secondAttribute="bottom" id="hZt-AS-1B2"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="centerX" secondItem="m4T-Of-6oF" secondAttribute="centerX" id="iIz-ml-BBG"/>
                                             <constraint firstAttribute="trailing" secondItem="wWw-vp-4CK" secondAttribute="trailing" constant="-8" id="im9-9A-v6m"/>
                                             <constraint firstItem="2qi-hT-PEM" firstAttribute="top" secondItem="h1x-uX-6FD" secondAttribute="bottom" constant="7.5" id="jZS-p7-Cxf"/>
                                             <constraint firstItem="wWw-vp-4CK" firstAttribute="top" secondItem="m4T-Of-6oF" secondAttribute="top" id="kSu-iQ-xYu"/>
                                             <constraint firstItem="qNB-ig-BtX" firstAttribute="centerX" secondItem="m4T-Of-6oF" secondAttribute="centerX" id="mW3-pL-RcM"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ul5-hy-nar" secondAttribute="trailing" constant="-8" id="mZo-68-7Is"/>
-                                            <constraint firstItem="Ul5-hy-nar" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" id="ohv-sj-HNj"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="wWw-vp-4CK" secondAttribute="bottom" constant="8" id="pFt-1o-6No"/>
                                             <constraint firstAttribute="trailing" secondItem="2qi-hT-PEM" secondAttribute="trailing" constant="8" id="rMs-tR-RZQ"/>
                                             <constraint firstItem="qNB-ig-BtX" firstAttribute="top" secondItem="h1x-uX-6FD" secondAttribute="bottom" constant="8" id="vyr-n7-ftN"/>
@@ -408,7 +376,6 @@
                                         </variation>
                                     </view>
                                 </subviews>
-                                <animations/>
                                 <constraints>
                                     <constraint firstItem="m4T-Of-6oF" firstAttribute="leading" secondItem="s2v-fc-Wdb" secondAttribute="leading" id="Gkd-cD-HtF"/>
                                     <constraint firstItem="m4T-Of-6oF" firstAttribute="top" secondItem="s2v-fc-Wdb" secondAttribute="top" id="J7i-vU-OPN"/>
@@ -416,17 +383,33 @@
                                     <constraint firstAttribute="bottom" secondItem="m4T-Of-6oF" secondAttribute="bottom" id="biL-Mm-bEG"/>
                                 </constraints>
                             </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ul5-hy-nar">
+                                <rect key="frame" x="-4" y="540" width="608" height="60"/>
+                                <color key="backgroundColor" red="0.72941176470588232" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="1de-ET-fky"/>
+                                </constraints>
+                                <state key="normal" title="Leave Team">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="leaveMinistryTeam:" destination="kK3-7x-RQT" eventType="touchUpInside" id="19Q-Kb-dat"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="s2v-fc-Wdb" firstAttribute="top" secondItem="Xdb-gG-xJa" secondAttribute="bottom" id="0AG-T1-lng"/>
                             <constraint firstItem="s2v-fc-Wdb" firstAttribute="top" secondItem="Xdb-gG-xJa" secondAttribute="bottom" constant="-20" id="5PJ-4i-5rV"/>
                             <constraint firstItem="ezZ-hQ-EOG" firstAttribute="top" secondItem="s2v-fc-Wdb" secondAttribute="bottom" id="9cr-OE-qmZ"/>
+                            <constraint firstItem="ezZ-hQ-EOG" firstAttribute="top" secondItem="Ul5-hy-nar" secondAttribute="bottom" id="9dL-vN-5Wk"/>
                             <constraint firstItem="ezZ-hQ-EOG" firstAttribute="top" secondItem="s2v-fc-Wdb" secondAttribute="bottom" id="JgA-L6-IES"/>
                             <constraint firstItem="m4T-Of-6oF" firstAttribute="height" secondItem="tMc-Rh-DgV" secondAttribute="height" id="XYI-eN-AFN"/>
                             <constraint firstAttribute="trailingMargin" secondItem="s2v-fc-Wdb" secondAttribute="trailing" constant="-20" id="dUi-R7-V6F"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Ul5-hy-nar" secondAttribute="trailing" constant="-24" id="h24-1k-v3D"/>
                             <constraint firstAttribute="trailingMargin" secondItem="s2v-fc-Wdb" secondAttribute="trailing" constant="-20" id="i3K-06-sSn"/>
+                            <constraint firstItem="Ul5-hy-nar" firstAttribute="centerX" secondItem="tMc-Rh-DgV" secondAttribute="centerX" id="mjQ-LL-KSO"/>
+                            <constraint firstItem="Ul5-hy-nar" firstAttribute="leading" secondItem="tMc-Rh-DgV" secondAttribute="leadingMargin" constant="-24" id="n1u-IU-yXD"/>
                             <constraint firstItem="s2v-fc-Wdb" firstAttribute="leading" secondItem="tMc-Rh-DgV" secondAttribute="leadingMargin" constant="-20" id="spl-fL-7Mf"/>
                             <constraint firstItem="m4T-Of-6oF" firstAttribute="width" secondItem="tMc-Rh-DgV" secondAttribute="width" id="xWT-zb-bUd"/>
                             <constraint firstItem="s2v-fc-Wdb" firstAttribute="leading" secondItem="tMc-Rh-DgV" secondAttribute="leadingMargin" constant="-20" id="yYA-BJ-mYg"/>
@@ -469,14 +452,12 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Join A Community Group!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kld-tR-OoT">
                                         <rect key="frame" x="8" y="8" width="544" height="29"/>
-                                        <animations/>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="25"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="EUt-3t-uJg">
                                         <rect key="frame" x="8" y="36" width="544" height="383"/>
-                                        <animations/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <string key="text">Here is information about what a community group is and anything else that you would like to hear about Community Groups. Here's another sentence to provide more information about what this information provides.</string>
                                         <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="14"/>
@@ -484,7 +465,6 @@
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZHy-fT-PBH">
                                         <rect key="frame" x="-20" y="427" width="600" height="60"/>
-                                        <animations/>
                                         <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                         <gestureRecognizers/>
                                         <constraints>
@@ -498,7 +478,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <gestureRecognizers/>
                                 <constraints>
@@ -517,7 +496,6 @@
                                 </constraints>
                             </view>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="uS1-wq-mn1" firstAttribute="height" secondItem="Xpd-b9-2bh" secondAttribute="height" id="1IA-dI-m4d"/>
@@ -561,6 +539,6 @@
     <resources>
         <image name="community-group-icon" width="36" height="27"/>
         <image name="menuIcon" width="27" height="18"/>
-        <image name="ministry-team-icon" width="23" height="24"/>
+        <image name="ministry-team-icon" width="29" height="27"/>
     </resources>
 </document>

@@ -11,6 +11,7 @@ import UIKit
 class MinistryTeamNoPictureTableViewCell: UITableViewCell {
     @IBOutlet weak var ministryTeamNameLabel: UILabel!
     @IBOutlet weak var ministryDescriptionLabel: UITextView!
+    @IBOutlet weak var signupButton: UIButton!
     
     var ministryTeam: MinistryTeam! {
         didSet {

@@ -12,6 +12,7 @@ class MinistryTeamsTableViewCell: UITableViewCell {
     @IBOutlet weak var ministryTeamImage: UIImageView!
     @IBOutlet weak var ministryTeamName: UILabel!
     @IBOutlet weak var ministryTeamDescription: UITextView!
+    @IBOutlet weak var signupButton: UIButton!
     
     var ministryTeam: MinistryTeam! {
         didSet {
