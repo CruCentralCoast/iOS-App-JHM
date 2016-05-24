@@ -498,16 +498,6 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         }
     }
     
-    func extractMilesFromView(){
-        let index1 = pickupRadius.text?.startIndex.advancedBy(2)
-        let numMiles = pickupRadius.text?.substringToIndex(index1!)
-        let trimmedString = numMiles!.stringByTrimmingCharactersInSet(
-            NSCharacterSet.whitespaceAndNewlineCharacterSet()
-        )
-        ride.radius = Int(trimmedString)!
-    }
-    
-    
     func extractNumSeats()->Bool{
         if (seatsValue != nil && seatsValue != ""){
             if let val = Int(seatsValue.text.stringByTrimmingCharactersInSet(
@@ -533,24 +523,17 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     
     
     @IBAction func savePressed(sender: AnyObject) {
-        
         //extract seats, time, date, location, name, phone number (all if possible aka null checking)
-        
         if(timeValue != nil){ ride.time = timeValue.text! }
-        
         if(extractNumSeats() == false){return}
+        
         //you must extract direction before time, time validation depends on direction of ride
         extractDirectionFromView()
         if(extractDateTimeFromView() == false){return}
         if(extractLocationFromView() == false){return}
         if (extractNameFromView() == false){return}
         if (extractNumberFromView() == false){return}
-        
-        
-        
-        //radius already extracted when set
-        extractMilesFromView()
-    
+
         if(isOfferingRide){
             MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
             sendRideOffer()
@@ -759,9 +742,8 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     
     
     func setRadius(radius: Int){
-        pickupRadius.text = String(radius) + " mi."
-        
         ride.radius = radius
+        pickupRadius.text = ride.getRadius()
         updateOptions()
     }
     
@@ -797,11 +779,6 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
                 ride.driverName = nameValue.text
             case EditTags.Number.rawValue:
                 ride.driverNumber = numberValue.text
-            //case EditTags.Time.rawValue
-            //case EditTags.Date.rawValue
-            //case EditTags.Address.rawValue
-            case EditTags.Radius.rawValue:
-                extractMilesFromView()
             case EditTags.Direction.rawValue:
                 ride.direction = ride.getServerDirectionValue(directionValue.text!)
             case EditTags.Seats.rawValue:

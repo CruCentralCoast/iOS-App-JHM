@@ -184,9 +184,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func finishInserting(success: Bool){
         self.ridesTableView.beginUpdates()
-        print("got \(events.count) events")
-        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-        
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)        
         self.ridesTableView.reloadData()
         self.ridesTableView.endUpdates()
     }

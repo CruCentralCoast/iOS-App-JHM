@@ -185,7 +185,7 @@ class Ride: Comparable, Equatable, TimeDetail {
     
     
     func getRadius()->String{
-        if (radius == 1 ){
+        if (radius == 1){
             return String(radius) + " mile"
         }
         else{
