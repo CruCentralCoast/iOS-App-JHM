@@ -16,9 +16,6 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
-            <string>FreightSansProBook-Regular</string>
-            <string>FreightSansProBook-Regular</string>
-            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
@@ -63,102 +60,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Mc-qR-vqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1396" y="5068"/>
-        </scene>
-        <!--Settings Table View Controller-->
-        <scene sceneID="mbh-eg-69A">
-            <objects>
-                <tableViewController id="57g-ac-iSO" customClass="SettingsTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="B3z-Tb-SZH">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <sections>
-                            <tableViewSection id="obS-Vx-hLv">
-                                <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="dse-nT-AUL" style="IBUITableViewCellStyleDefault" id="lhq-eK-3SX">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lhq-eK-3SX" id="bpf-w5-n4f">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Campuses" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="300" id="dse-nT-AUL" userLabel="Campuses">
-                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <segue destination="mkA-SJ-ZBb" kind="show" id="uyN-IW-neX"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="gr5-4H-4d5" style="IBUITableViewCellStyleDefault" id="RyY-Qn-0I4">
-                                        <rect key="frame" x="0.0" y="44" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="RyY-Qn-0I4" id="To7-Q7-Q3R">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Ministries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gr5-4H-4d5">
-                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                        <connections>
-                                            <segue destination="2AH-CA-8ZX" kind="show" id="elN-Dh-3by"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" textLabel="Xnp-K3-LNG" style="IBUITableViewCellStyleDefault" id="OaA-n1-7R3">
-                                        <rect key="frame" x="0.0" y="88" width="600" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OaA-n1-7R3" id="Hzh-cM-uDL">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sign In" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Xnp-K3-LNG">
-                                                    <rect key="frame" x="15" y="0.0" width="550" height="43"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="19"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <animations/>
-                                        </tableViewCellContentView>
-                                        <animations/>
-                                    </tableViewCell>
-                                </cells>
-                            </tableViewSection>
-                        </sections>
-                        <connections>
-                            <outlet property="dataSource" destination="57g-ac-iSO" id="a3o-4z-cTb"/>
-                            <outlet property="delegate" destination="57g-ac-iSO" id="Uod-8u-28U"/>
-                        </connections>
-                    </tableView>
-                    <connections>
-                        <segue destination="mXz-Zb-Rvl" kind="show" identifier="LogoutSegue" id="E1o-go-bdG"/>
-                        <segue destination="IIb-iT-sZW" kind="show" identifier="LoginSegue" id="QAd-I0-MFJ"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ual-va-RA6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2082" y="4956.5"/>
+            <point key="canvasLocation" x="1096" y="4214"/>
         </scene>
         <!--Logout View Controller-->
         <scene sceneID="QO8-yH-uqd">
@@ -245,7 +147,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YI4-As-z5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2122" y="5807"/>
+            <point key="canvasLocation" x="2686" y="5114"/>
         </scene>
         <!--Campuses Table View Controller-->
         <scene sceneID="M1X-TA-opB">
@@ -276,7 +178,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZA-W6-Zbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3646" y="4360.5"/>
+            <point key="canvasLocation" x="4022" y="3868.5"/>
         </scene>
         <!--ministrytable-->
         <scene sceneID="JYQ-hO-ZsU">
@@ -284,7 +186,7 @@
                 <viewControllerPlaceholder storyboardName="ministrytable" id="dsr-1J-cqQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyq-Cn-Z8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3565.5" y="4976"/>
+            <point key="canvasLocation" x="3873.5" y="4374"/>
         </scene>
         <!--Campuses View Controller-->
         <scene sceneID="ask-ET-VZF">
@@ -319,7 +221,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lvc-X9-jca" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2918" y="4360.5"/>
+            <point key="canvasLocation" x="3230" y="3868.5"/>
         </scene>
         <!--Ministries-->
         <scene sceneID="DSR-Jy-fCn">
@@ -353,7 +255,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9DI-5d-EKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2902" y="4857.5"/>
+            <point key="canvasLocation" x="3230" y="4373.5"/>
         </scene>
         <!--Log In-->
         <scene sceneID="AN2-SH-rus">
@@ -480,7 +382,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAt-Nj-UWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2918" y="5542"/>
+            <point key="canvasLocation" x="1928" y="5114"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qJn-cj-1gx">
@@ -504,7 +406,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aL1-3f-ypY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="690" y="5068"/>
+            <point key="canvasLocation" x="364" y="4214"/>
         </scene>
         <!--Settings-->
         <scene sceneID="6RF-bY-hkg">
@@ -644,7 +546,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkS-6u-Ttj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2068" y="4351"/>
+            <point key="canvasLocation" x="1928" y="4213.5"/>
         </scene>
     </scenes>
     <resources>
@@ -655,10 +557,4 @@
         <image name="menuIcon" width="27" height="18"/>
         <image name="ministries" width="31" height="32"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="Cml-KT-813"/>
-        <segue reference="oL2-RU-eDZ"/>
-        <segue reference="ZvI-qQ-tiN"/>
-        <segue reference="nGP-OL-mve"/>
-    </inferredMetricsTieBreakers>
 </document>
