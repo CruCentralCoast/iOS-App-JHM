@@ -16,14 +16,24 @@ class MinistryTableViewCell: UITableViewCell {
     //Image for ministry image
     @IBOutlet weak var minstryImage: UIImageView!
     
+    var ministry: Ministry! {
+        didSet{
+            ministryNameLabel.text = ministry.name
+            ministryNameLabel.textColor = Config.introModalContentTextColor
+            minstryImage.load(ministry.imageUrl)
+        }
+    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        
+        
     }
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
 

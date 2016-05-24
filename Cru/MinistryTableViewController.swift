@@ -135,18 +135,19 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             let cell = tableView.dequeueReusableCellWithIdentifier("ministryCell", forIndexPath: indexPath) as! MinistryTableViewCell
         
             let ministry = getMinistryAtIndexPath(indexPath)
-            cell.ministryNameLabel.text = ministry.name
+            cell.ministry = ministry
+            //cell.ministryNameLabel.text = ministry.name
         
             //display add-ons
-            cell.ministryNameLabel.font = UIFont(name: "FreightSans Pro", size: 17)
-            cell.ministryNameLabel.textColor = Config.introModalContentTextColor
+           // cell.ministryNameLabel.font = UIFont(name: "FreightSans Pro", size: 17)
+            //cell.ministryNameLabel.textColor = Config.introModalContentTextColor
         
   
             //let url = NSURL(string: ministry.imageUrl)
             //let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
             //downloadImage(url!, imageView: cell.minstryImage) //UIImage(data: data!)
         
-            cell.minstryImage.load(ministry.imageUrl)
+            //cell.minstryImage.load(ministry.imageUrl)
             //asyncLoadMinistryImage(ministry, imageView: cell.minstryImage)
         
             if(ministry.feedEnabled == true){

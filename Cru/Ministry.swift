@@ -38,6 +38,9 @@ class Ministry: NSObject, NSCoding, Comparable{
         self.campusId = dict["campus"] as! String
         self.feedEnabled = false // crashes without this shit
         self.imageUrl = dict["imageLink"] as! String
+        if imageUrl.rangeOfString("https:") == nil{
+            self.imageUrl = "https:" + imageUrl
+        }
     }
     
     init(name: String, id: String, campusId: String, feedEnabled: Bool, imgUrl: String){
