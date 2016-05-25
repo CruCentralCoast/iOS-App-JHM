@@ -21,9 +21,9 @@ class SubscriptionManager{
     
     static func loadCampuses() -> [Campus]? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("campusKey") as? NSData {
-            let campuses = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Campus]
-            //print("getting \(campuses?.count) campuses")
-            return campuses
+            if let campuses = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Campus]{
+                return campuses
+            }
         }
         return [Campus]()
     }
@@ -45,7 +45,9 @@ class SubscriptionManager{
     
     static func loadMinistries() -> [Ministry]? {
         if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("ministryKey") as? NSData {
-            return NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Ministry]
+            if let minisArr = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Ministry]{
+                return minisArr
+            }
         }
         return [Ministry]()
     }
