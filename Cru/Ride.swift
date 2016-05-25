@@ -357,12 +357,12 @@ class Ride: Comparable, Equatable, TimeDetail {
         
         if(direction == "to" || direction == "both"){
             if theDate.compare(eventStartDate) == NSComparisonResult.OrderedDescending {
-                return ValidationErrors.badTimeBefore
+                return ValidationErrors.badTimeBefore  + " " + GlobalUtils.stringFromDate(eventStartDate)
             }
         }
         else{
             if theDate.compare(eventStartDate) == NSComparisonResult.OrderedAscending {
-                return ValidationErrors.badTimeBeforeStart
+                return ValidationErrors.badTimeBeforeStart + " " + GlobalUtils.stringFromDate(eventEndDate)
             }
         }
         

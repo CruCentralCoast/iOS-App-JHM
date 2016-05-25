@@ -369,30 +369,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     func extractDateTimeFromView()->Bool{
         ride.eventStartDate = event.startNSDate
         ride.eventEndDate = event.endNSDate
-    
-        
-        let timeVal = timeValue.text
-        let dateVal = dateValue.text
-        var timeDate: NSDate?
-        var dateDate: NSDate?
-        
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
-        dateFormatter.dateFormat = "MMM d, yyyy"
-        
-        //if date formatter returns nil return the current date/time
-        if let date = dateFormatter.dateFromString(dateVal!) {
-            dateDate = date
-        }
-        
-        dateFormatter.locale = NSLocale(localeIdentifier: "en_US")
-        dateFormatter.dateFormat = "h:mm a"
-        
-        //if date formatter returns nil return the current date/time
-        if let date = dateFormatter.dateFromString(timeVal!) {
-            timeDate = date
-        }
-        
+            
         if let components = GlobalUtils.dateComponentsFromDate(ride.getDepartureDay()){
             ride.day = (components.day)
             ride.monthNum = (components.month)

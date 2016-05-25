@@ -38,7 +38,8 @@ class EventsModalTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCellWithIdentifier("cell", forIndexPath: indexPath)
 
          cell.textLabel!.text = events[indexPath.row].name
-
+         cell.textLabel!.font = UIFont(name: Config.fontName, size: 18.0)
+        
         return cell
     }
     
