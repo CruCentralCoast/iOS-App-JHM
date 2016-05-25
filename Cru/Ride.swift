@@ -68,6 +68,13 @@ struct ValidationErrors{
     static let badPhone = "Please provide a valid 10 digit phone number"
     static let noName = "Please provide a first and last name"
     static let badName = "Please provide a valid first and last name"
+    static let badNumSeats = "Please provide a valid number of seats (" + String(RideConstants.minSeats) + " to " + String(RideConstants.maxSeats) + ")"
+}
+
+struct RideConstants{
+    static let minSeats = 1
+    static let maxSeats = 50
+    
 }
 
 class Ride: Comparable, Equatable, TimeDetail {
@@ -199,7 +206,7 @@ class Ride: Comparable, Equatable, TimeDetail {
             return "Driving to " + eventName + " at " + self.getTime()
          }
         else{
-            return "Geting a ride to " + eventName + " with " + self.driverName + " at " + self.getTime()
+            return "Getting a ride to " + eventName + " with " + self.driverName + " at " + self.getTime()
         }
     }
     
@@ -367,6 +374,15 @@ class Ride: Comparable, Equatable, TimeDetail {
         }
         
         return ValidationErrors.none
+    }
+    
+    func isValidNumSeats(num: Int) -> String{
+        if (num < RideConstants.minSeats || num > RideConstants.maxSeats){
+            return ValidationErrors.badNumSeats
+        }
+        else{
+            return ValidationErrors.none
+        }
     }
     
     func isValidAddress() -> String{

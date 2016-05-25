@@ -34,12 +34,16 @@ class EventsTableViewController: UITableViewController {
     //insert helper function for inserting event data
     private func insertEvent(dict: NSDictionary) {
         let event = Event(dict: dict)!
-        self.events.insert(event, atIndex: 0)
+        
+        if(event.startNSDate.compare(NSDate()) != .OrderedAscending){
+            self.events.insert(event, atIndex: 0)
+        }
+        
     }
     
     //helper function for finishing off inserting event data
     private func finishInserting(success: Bool) {
-        self.events.sortInPlace(Event.sortEventsByDate)
+        self.events.sortInPlace({$0.startNSDate.compare($1.startNSDate) == .OrderedAscending})
         self.tableView!.reloadData()
     }
 

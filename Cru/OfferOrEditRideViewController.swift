@@ -479,8 +479,8 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         if (seatsValue != nil && seatsValue != ""){
             if let val = Int(seatsValue.text.stringByTrimmingCharactersInSet(
                 NSCharacterSet.whitespaceAndNewlineCharacterSet())){
-                    if(val == 0){
-                        showValidationError(ValidationErrors.badSeats)
+                    if(ride.isValidNumSeats(val) != ""){
+                        showValidationError(ride.isValidNumSeats(val))
                         return false
                     }
                     else{

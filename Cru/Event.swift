@@ -121,10 +121,10 @@ class Event: Equatable {
 //        }
     }
     
-    //function for sorting events by date
-    class func sortEventsByDate(event1: Event, event2: Event) -> Bool {
-        return event1.startNSDate.compare(event2.endNSDate) == .OrderedAscending
-    }
+//    //function for sorting events by date
+//    class func sortEventsByDate(event1: Event, event2: Event) -> Bool {
+//        return event1.startNSDate.compare(event2.endNSDate) == .OrderedAscending
+//    }
     
     //return the location as a string
     func getLocationString() -> String {
