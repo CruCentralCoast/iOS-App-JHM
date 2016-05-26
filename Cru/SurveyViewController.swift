@@ -8,8 +8,10 @@
 
 import MRProgress
 import UIKit
+import SwiftValidator
 
-class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate {
+class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate/*,
+    ValidationDelegate*/ {
     
     let textId = "text-cell"
     let optionId = "option-cell"
@@ -18,6 +20,8 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var optionsToBeShown = [String]()
     var optionHandler: ((String)->())!
     var optionCell: OptionQuestionCell!
+    
+    let validator = Validator()
     
     private var ministry: Ministry!
     
@@ -34,7 +38,6 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         
-        //CruClients.getServerClient().getData(DBCollection.MinistyQuestion, insert: insertQuestion, completionHandler: finishInserting)
         CruClients.getServerClient().getDataIn(DBCollection.Ministry, parentId: ministry.id, child: DBCollection.Question,
             insert: insertQuestion, completionHandler: finishInserting)
         // Do any additional setup after loading the view.
@@ -68,6 +71,14 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     private func finishInserting(success: Bool) {
         table.reloadData()
+        
+        /*questions.forEach {
+            if let optionQ = $0 as? OptionQuestionCell {
+                validator.registerField(optionQ.optionButton, errorLabel: optionQ.error, rules: [RequiredRule()])
+            }
+        }*/
+        
+        
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
 
@@ -133,7 +144,18 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
                     controller?.delegate = self
                 }
             }
+        } else if (segue.identifier == "showCGS"){
+            if let selectCGVC = segue.destinationViewController as? SelectCGVC {
+                // we're ignoring the tet question answers for now, as they will be sent differently
+                selectCGVC.setAnswers(getOptionQuestionAnswers())
+            }
         }
+    }
+    
+    private func getOptionQuestionAnswers() -> [[String:String]] {
+        var optionQuestionCells = questions.filter{ $0 is OptionQuestionCell } as! [OptionQuestionCell]
+        optionQuestionCells = optionQuestionCells.filter{ $0.getAnswer() != nil }
+        return optionQuestionCells.map{ $0.getAnswer()!.getDict() }
     }
 
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {

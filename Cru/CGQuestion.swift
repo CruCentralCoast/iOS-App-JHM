@@ -22,12 +22,14 @@ class CGQuestion {
     
     static let ministryField = "ministry"
 
+    let id: String
     let ministry: String
     let question: String
     let type: CGQuestionType
     let options: [String]
 
     init(dict: NSDictionary) {
+        id = dict["_id"] as! String
         ministry = dict[CGQuestion.ministryField] as! String
         question = dict["question"] as! String
         type = CGQuestionType(rawValue: dict["type"] as! String)!

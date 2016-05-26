@@ -144,18 +144,30 @@
                                                         <action selector="showOptions:" destination="acY-t9-dfU" eventType="touchUpInside" id="uJP-jF-HUL"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nAT-yS-H31">
+                                                    <rect key="frame" x="329" y="90" width="237" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="237" id="s3N-hd-IU6"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="tintColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
                                             <constraints>
                                                 <constraint firstItem="PAj-uu-bXI" firstAttribute="top" secondItem="vNy-Qa-nXu" secondAttribute="topMargin" constant="78" id="0X2-8P-ebO"/>
                                                 <constraint firstItem="PAj-uu-bXI" firstAttribute="leading" secondItem="Y6O-gX-5nG" secondAttribute="leading" id="5Iy-kN-lX2"/>
                                                 <constraint firstItem="PAj-uu-bXI" firstAttribute="trailing" secondItem="Y6O-gX-5nG" secondAttribute="trailing" id="6uF-17-PS6"/>
+                                                <constraint firstItem="nAT-yS-H31" firstAttribute="trailing" secondItem="PAj-uu-bXI" secondAttribute="trailing" id="8nX-lJ-hew"/>
+                                                <constraint firstItem="nAT-yS-H31" firstAttribute="baseline" secondItem="PAj-uu-bXI" secondAttribute="baseline" id="S8r-Ph-aux"/>
                                                 <constraint firstItem="Y6O-gX-5nG" firstAttribute="top" secondItem="vNy-Qa-nXu" secondAttribute="topMargin" id="YQY-P8-suB"/>
                                                 <constraint firstItem="Y6O-gX-5nG" firstAttribute="leading" secondItem="vNy-Qa-nXu" secondAttribute="leadingMargin" constant="26" id="b0G-yE-cMS"/>
                                                 <constraint firstItem="Y6O-gX-5nG" firstAttribute="centerX" secondItem="vNy-Qa-nXu" secondAttribute="centerX" id="bzQ-NN-6iq"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="error" destination="nAT-yS-H31" id="dOz-FS-DyQ"/>
                                             <outlet property="optionButton" destination="PAj-uu-bXI" id="9dm-Wz-LVf"/>
                                             <outlet property="question" destination="Y6O-gX-5nG" id="7gO-VJ-QBs"/>
                                         </connections>
@@ -269,6 +281,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="JSY-rj-Etp" id="eF8-af-f0M"/>
+                                    <outlet property="delegate" destination="JSY-rj-Etp" id="4Se-PE-LHh"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -279,6 +295,9 @@
                             <constraint firstAttribute="trailing" secondItem="bU2-cY-Mq6" secondAttribute="trailing" id="RGw-4U-Ff4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="table" destination="bU2-cY-Mq6" id="cdu-XR-S1d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ND8-LY-TwO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
