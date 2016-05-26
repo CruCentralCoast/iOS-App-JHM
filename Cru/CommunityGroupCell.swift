@@ -13,12 +13,17 @@ class CommunityGroupCell: UITableViewCell {
     
     @IBOutlet weak var descript: UITextView!
     
+    @IBOutlet weak var meetingTime: UILabel!
     private var group: CommunityGroup!
     
     func setGroup(group: CommunityGroup) {
         self.group = group
         name.text = group.name
         descript.text = group.description
+        meetingTime.text = group.meetingTime
     }
 
+    @IBAction func signUpPressed(sender: AnyObject) {
+        print("TODO: not yet implemented")
+    }
 }
