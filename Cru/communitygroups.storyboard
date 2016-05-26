@@ -268,17 +268,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bU2-cY-Mq6">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="243" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bU2-cY-Mq6">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="1000"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" id="Gcw-x9-qff">
-                                        <rect key="frame" x="0.0" y="28" width="600" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="243" id="Gcw-x9-qff" customClass="CommunityGroupCell" customModule="Cru" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="243"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Gcw-x9-qff" id="TAp-WL-QDY">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="242"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Community Group Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mRc-Pl-NtW">
+                                                    <rect key="frame" x="55" y="19" width="533" height="35"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="35" id="gVq-pA-eBi"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Description" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-yR-pKI">
+                                                    <rect key="frame" x="55" y="62" width="473" height="128"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="ONB-yR-pKI" firstAttribute="top" secondItem="mRc-Pl-NtW" secondAttribute="bottom" constant="8" symbolic="YES" id="5Pd-Os-bga"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ONB-yR-pKI" secondAttribute="trailing" constant="64" id="JTz-GO-I4w"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ONB-yR-pKI" secondAttribute="bottom" constant="44" id="L7F-hL-nDM"/>
+                                                <constraint firstItem="mRc-Pl-NtW" firstAttribute="leading" secondItem="TAp-WL-QDY" secondAttribute="leadingMargin" constant="47" id="Ysz-s8-5n8"/>
+                                                <constraint firstItem="ONB-yR-pKI" firstAttribute="leading" secondItem="mRc-Pl-NtW" secondAttribute="leading" id="eYJ-Ri-WZW"/>
+                                                <constraint firstItem="mRc-Pl-NtW" firstAttribute="top" secondItem="TAp-WL-QDY" secondAttribute="topMargin" constant="11" id="wGD-kg-izF"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="mRc-Pl-NtW" secondAttribute="trailing" constant="4" id="zgD-Sj-MgB"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="descript" destination="ONB-yR-pKI" id="HQt-L0-YmK"/>
+                                            <outlet property="name" destination="mRc-Pl-NtW" id="wYY-6w-lK7"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

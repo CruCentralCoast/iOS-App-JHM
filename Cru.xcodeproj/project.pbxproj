@@ -225,6 +225,8 @@
 		C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1DCEC451C7681E1009FACE0 /* RideUtils.swift */; };
 		C1E9DC111CF6A2B200066C5F /* CGQuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9DC101CF6A2B200066C5F /* CGQuestionAnswer.swift */; };
 		C1E9DC121CF6A2B200066C5F /* CGQuestionAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9DC101CF6A2B200066C5F /* CGQuestionAnswer.swift */; };
+		C1E9DC141CF6B49700066C5F /* CommunityGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9DC131CF6B49700066C5F /* CommunityGroupCell.swift */; };
+		C1E9DC151CF6B49700066C5F /* CommunityGroupCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1E9DC131CF6B49700066C5F /* CommunityGroupCell.swift */; };
 		C1EF49041CDBE08C009439FE /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 506EBF911CD9D3AB002E6F6A /* TimePicker.swift */; };
 		C1EF49071CDBF3AD009439FE /* communitygroups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */; };
 		C1EF49081CDBF3AD009439FE /* communitygroups.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */; };
@@ -409,6 +411,7 @@
 		C1D99C811CD4011B00128CA9 /* RideUtilsTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtilsTest.swift; sourceTree = "<group>"; };
 		C1DCEC451C7681E1009FACE0 /* RideUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideUtils.swift; sourceTree = "<group>"; };
 		C1E9DC101CF6A2B200066C5F /* CGQuestionAnswer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGQuestionAnswer.swift; sourceTree = "<group>"; };
+		C1E9DC131CF6B49700066C5F /* CommunityGroupCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommunityGroupCell.swift; sourceTree = "<group>"; };
 		C1EF49061CDBF3AD009439FE /* communitygroups.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = communitygroups.storyboard; sourceTree = "<group>"; };
 		C1EF49091CDBF74E009439FE /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
 		CBC3F28E8C13E48AF1DD0BA8 /* Pods-Cru.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cru.release.xcconfig"; path = "Pods/Target Support Files/Pods-Cru/Pods-Cru.release.xcconfig"; sourceTree = "<group>"; };
@@ -885,6 +888,7 @@
 				C13F7DF31CE28D2F0057D0F5 /* OptionQuestionCell.swift */,
 				50B1725F1CEBBE7F007CDD44 /* SearchableOptionsVC.swift */,
 				C1E9DC101CF6A2B200066C5F /* CGQuestionAnswer.swift */,
+				C1E9DC131CF6B49700066C5F /* CommunityGroupCell.swift */,
 			);
 			name = CommunityGroups;
 			sourceTree = "<group>";
@@ -1229,6 +1233,7 @@
 				C1214DC81CEA63B300E7D25F /* EventUtils.swift in Sources */,
 				0F74A3121C0BC47700401377 /* GetInvolvedViewController.swift in Sources */,
 				50DD51481C86B85900752777 /* Colors.swift in Sources */,
+				C1E9DC141CF6B49700066C5F /* CommunityGroupCell.swift in Sources */,
 				C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */,
 				50B172601CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */,
 				50B1D3C81CED76910014EE1B /* SelectCGVC.swift in Sources */,
@@ -1316,6 +1321,7 @@
 				C13F7DE91CE277E30057D0F5 /* CGQuestion.swift in Sources */,
 				0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */,
 				6D76CA7C1C06AB6900F8B007 /* Event.swift in Sources */,
+				C1E9DC151CF6B49700066C5F /* CommunityGroupCell.swift in Sources */,
 				0F7CB3C91C919D9D00C8444F /* Config.swift in Sources */,
 				50B172611CEBBE7F007CDD44 /* SearchableOptionsVC.swift in Sources */,
 				C1214DC91CEA63B300E7D25F /* EventUtils.swift in Sources */,

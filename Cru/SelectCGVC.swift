@@ -9,7 +9,7 @@ import MRProgress
 import UIKit
 
 class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    var cgs = [CommunityGroup]()
+    var cgs = [CommunityGroupCell]()
     private var answers = [[String:String]]()
     
     
@@ -34,7 +34,10 @@ class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     private func insertGroup(dict: NSDictionary) {
-        cgs.append(CommunityGroup(dict: dict))
+        let cell = self.table.dequeueReusableCellWithIdentifier("cell")!
+        let groupCell = cell as! CommunityGroupCell
+        groupCell.setGroup(CommunityGroup(dict: dict))
+        cgs.append(groupCell)
         table.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
     }
     
@@ -47,9 +50,7 @@ class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("cell")!
-        cell.textLabel?.text = cgs[indexPath.row].name
-        return cell
+        return cgs[indexPath.row]
     }
     
 }
