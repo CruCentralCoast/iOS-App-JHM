@@ -15,13 +15,14 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealVie
     //container views for each section
     @IBOutlet weak var communityGroupContainer: UIView!
     @IBOutlet weak var ministryTeamContainer: UIView!
-    
+    @IBOutlet weak var inCommunityGroupContainer: UIView!
+
     //selector bar
     @IBOutlet weak var selectorBar: UITabBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         //side menu reveal controller
         if self.revealViewController() != nil{
             menuButton.target = self.revealViewController()
@@ -29,14 +30,18 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealVie
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
             self.revealViewController().delegate = self
         }
-        
-        selectorBar.selectedItem = selectorBar.items![0]
+                selectorBar.selectedItem = selectorBar.items![0]
         selectorBar.tintColor = UIColor.whiteColor()
-        
+
         //Set the nav title & font
         navigationItem.title = "Get Involved"
         
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        showCGContainer()
     }
     
     //tab bar function 
@@ -45,14 +50,25 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealVie
         
         switch (item.title!){
         case "Community Groups":
-            communityGroupContainer.hidden = false
-            ministryTeamContainer.hidden = true
+            showCGContainer()
         case "Ministry Teams":
             ministryTeamContainer.hidden = false
             communityGroupContainer.hidden = true
+            inCommunityGroupContainer.hidden = true
         default :
+            showCGContainer()
+        }
+    }
+    
+    private func showCGContainer() {
+        if (GlobalUtils.loadString(Config.communityGroupKey) == "") {
             communityGroupContainer.hidden = false
             ministryTeamContainer.hidden = true
+            inCommunityGroupContainer.hidden = true
+        } else {
+            ministryTeamContainer.hidden = true
+            communityGroupContainer.hidden = true
+            inCommunityGroupContainer.hidden = false
         }
     }
     

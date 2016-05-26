@@ -37,6 +37,7 @@ class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
         let cell = self.table.dequeueReusableCellWithIdentifier("cell")!
         let groupCell = cell as! CommunityGroupCell
         groupCell.setGroup(CommunityGroup(dict: dict))
+        groupCell.setSignupCallback(jumpBackToGetInvolved)
         cgs.append(groupCell)
         table.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
     }
@@ -51,6 +52,14 @@ class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         return cgs[indexPath.row]
+    }
+    
+    func jumpBackToGetInvolved() {
+        for controller in (self.navigationController?.viewControllers)! {
+            if controller.isKindOfClass(GetInvolvedViewController) {
+                self.navigationController?.popToViewController(controller, animated: true)
+            }
+        }
     }
     
 }

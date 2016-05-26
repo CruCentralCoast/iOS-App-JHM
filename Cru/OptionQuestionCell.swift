@@ -9,7 +9,7 @@
 import UIKit
 
 class OptionQuestionCell: UITableViewCell {
-    static let selectOption = "SelectOption"
+    static let selectOption = "Select Option"
     
     @IBOutlet weak var error: UILabel!
     @IBOutlet weak var question: UILabel!

@@ -37,6 +37,7 @@ struct Config {
     static let username = "username"
     static let ridesReceiving = "ridesReceiving"
     static let ridesOffering = "ridesOffering"
+    static let communityGroupKey = "CommunityGroup"
     
     /* Modal Configurations: Used on the introduction page and create ride */
     static let backgroundViewOpacity: CGFloat = 0.7

@@ -9,6 +9,7 @@
 import UIKit
 
 class CommunityGroup{
+    var id: String!
     var name : String!
     var description: String!
     var meetingTime: String!
@@ -16,6 +17,7 @@ class CommunityGroup{
     var parentMinitry : String!
     
     init(dict: NSDictionary) {
+        id = dict["_id"] as? String
         name = dict["name"] as? String
         description = dict["description"] as? String
         if let dateStr = dict["meetingTime"] as? String {

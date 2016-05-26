@@ -16,6 +16,8 @@ class CommunityGroupCell: UITableViewCell {
     @IBOutlet weak var meetingTime: UILabel!
     private var group: CommunityGroup!
     
+    private var signupCallback: (Void->Void)!
+    
     func setGroup(group: CommunityGroup) {
         self.group = group
         name.text = group.name
@@ -24,6 +26,11 @@ class CommunityGroupCell: UITableViewCell {
     }
 
     @IBAction func signUpPressed(sender: AnyObject) {
-        print("TODO: not yet implemented")
+        GlobalUtils.saveString(Config.communityGroupKey, value: group.id)
+        signupCallback()
+    }
+    
+    func setSignupCallback(callback: Void -> Void) {
+        signupCallback = callback
     }
 }

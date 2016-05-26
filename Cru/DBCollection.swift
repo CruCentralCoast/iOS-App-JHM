@@ -22,6 +22,7 @@ enum DBCollection : String {
     case CommunityGroup = "communitygroups"
     
     case Question = "questions" //subsection of ministry
+    case Leader = "leaders" //subsection of community group
     
     func name()->String {
         return self.rawValue
