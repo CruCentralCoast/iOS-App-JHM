@@ -30,7 +30,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var ridesTableView: UITableView!
-
+    @IBOutlet weak var findRideButton: UIButton!
+    @IBOutlet weak var offerRideButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -131,6 +133,8 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 self.ridesTableView.emptyDataSetDelegate = self
                 noRideImage = UIImage(named: Config.noConnectionImageName)!
                 MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+                offerRideButton.userInteractionEnabled = false
+                findRideButton.userInteractionEnabled = false
             
             default:
                 CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)

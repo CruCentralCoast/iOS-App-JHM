@@ -169,7 +169,9 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="findRideButton" destination="LWC-3r-hQh" id="Chp-W5-7hA"/>
                         <outlet property="menuButton" destination="FoJ-Kc-40s" id="xek-Lx-v5v"/>
+                        <outlet property="offerRideButton" destination="ut8-rs-O3u" id="JdX-7I-nB3"/>
                         <outlet property="ridesTableView" destination="6vb-NO-BXH" id="jPA-hD-Guz"/>
                         <segue destination="XEe-PU-cXZ" kind="show" identifier="offerridesegue" id="ahg-j0-yZ7"/>
                         <segue destination="Raw-86-Ixp" kind="show" identifier="findridesegue" id="NTG-FZ-lCL"/>
