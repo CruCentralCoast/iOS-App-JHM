@@ -17,12 +17,21 @@ class OptionQuestionCell: UITableViewCell {
     var presentingVC: SurveyViewController!
     var cgQuestion: CGQuestion!
     
-    func getAnswer() -> CGQuestionAnswer? {
-        let answer = optionButton.currentTitle
-        if (answer != OptionQuestionCell.selectOption) {
-            return CGQuestionAnswer(question: cgQuestion.id, value: answer!)
+    func isAnswered() -> Bool {
+        return optionButton.currentTitle != OptionQuestionCell.selectOption
+    }
+    
+    func getAnswer() -> CGQuestionAnswer {
+        return CGQuestionAnswer(question: cgQuestion.id, value: optionButton.currentTitle!)
+    }
+    
+    func validate() -> Bool {
+        if (!isAnswered()) {
+            error.text = "Required Question"
+            return false
         } else {
-            return nil
+            error.text = ""
+            return true
         }
     }
     
