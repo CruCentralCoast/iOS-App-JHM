@@ -2,7 +2,7 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "audio.png",
+      "filename" : "audio@1x.png",
       "scale" : "1x"
     },
     {

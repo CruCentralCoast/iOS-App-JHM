@@ -29,6 +29,10 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     var articleViews = [CardView]()
     var audioViews = [CardView]()
     var videoViews = [CardView]()
+    var allViews = [CardView]()
+    var audioPlayer:AVAudioPlayer!
+    
+    
     
     //Call this constructor in testing with a fake serverProtocol
     init?(serverProtocol: ServerProtocol, _ coder: NSCoder? = nil) {
@@ -74,6 +78,8 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         navigationItem.title = "Resources"
         
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        selectorBar.selectedImageTintColor = UIColor.whiteColor()
     }
     
     //Code for the bar at the top of the view for filtering resources
@@ -105,6 +111,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         case .Video:
             oldTypeCount = videoViews.count
         }
+        
         
         if(newType == currentType){
             return
@@ -156,16 +163,40 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
             
         else if (resource.type == ResourceType.Audio) {
-            //Implement audio later
+            insertAudio(resource, completionHandler: {error in})
         }
     }
     
     /* Implement when tools support is requested */
-    private func insertTool(resource: Resource, completionHandler: (NSError?) -> Void) {
+    private func insertAudio(resource: Resource, completionHandler: (NSError?) -> Void) {
+    
+        var cardView: CardView! = nil
+        var card: SummaryCard!
+       
+        let media:NSMutableDictionary = NSMutableDictionary()
+        media["type"] = "audio"
+        
+        let audioUrl = NSURL(string: resource.url)!
+        card = SummaryCard(url:audioUrl, description: "This is where a description would go.", title: resource.title, media:media, data:nil)
+        
+        // Make the view that is put into the table
+        cardView = CardView.createCardView(card!, layout: .SummaryCardNoImage)!
+        
+        
+        self.audioViews.insert(cardView, atIndex: 0)
+        
+        if (cardView != nil) {
+            cardView.delegate = self
+            self.resources.insert(resource, atIndex: 0)
+            if(self.currentType == .Audio){
+                self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+            }
+        }
+        completionHandler(nil)
         
     }
     
-    
+    /* Helper function to get and insert an article card */
     private func insertArticle(resource: Resource,completionHandler: (NSError?) -> Void) {
         Alamofire.request(.GET, resource.url)
             .responseString { responseString in
@@ -267,6 +298,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
     }
     
+    /* Inserts an article from a generic source */
     private func insertGeneric(resource: Resource,completionHandler: (NSError?) -> Void) {
         Alamofire.request(.GET, resource.url)
             .responseString { responseString in
@@ -299,10 +331,11 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 
                 let creator = Creator(name:"", url: NSURL(string:"")!, favicon:NSURL(string:"http://icons.iconarchive.com/icons/iconsmind/outline/512/Open-Book-icon.png"), iosStore:nil)
+              
                 
                 
                 let id = self.getYoutubeID(vidURL)
-                let posterImgString = String("http://img.youtube.com/vi/\(id)/default.jpg")
+                
                 
                 let embedUrl = NSURL(string: vidURL)!
                 let vidwebUrl = NSURL(string: vidURL)!
@@ -310,8 +343,8 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
                 
                 let videoData:NSMutableDictionary = NSMutableDictionary()
                 let videoMedia:NSMutableDictionary = NSMutableDictionary()
-                videoMedia["description"] =  "Subscribe to TRAILERS: http://bit.ly/sxaw6h Subscribe to COMING SOON: http://bit.ly/H2vZUn Like us on FACEBOOK: http://goo.gl/dHs73 Follow us on TWITTER: htt..."
-                videoMedia["posterImageUrl"] =  posterImgString
+                videoMedia["description"] =  ""
+                
                 videoData["media"] = videoMedia
                 videoCard = VideoCard(title: resource.title, embedUrl: embedUrl, url: vidwebUrl, creator: creator, data: videoData)
                 
@@ -442,7 +475,6 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     // MARK: Actions
     func cardViewRequestedAction(cardView: CardView, action: CardViewAction) {
         
-        // Let Wildcard handle the Card Action
         handleCardAction(cardView, action: action)
     }
 }
