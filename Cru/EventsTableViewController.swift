@@ -8,7 +8,7 @@
 
 import UIKit
 
-class EventsTableViewController: UITableViewController {
+class EventsTableViewController: UITableViewController, SWRevealViewControllerDelegate {
     
     var events = [Event]()
     let curDate = NSDate()
@@ -18,10 +18,13 @@ class EventsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("LOAD EVENTS")
+        
         if self.revealViewController() != nil{
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.revealViewController().delegate = self
         }
         CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
         
@@ -89,6 +92,25 @@ class EventsTableViewController: UITableViewController {
             let selectedEvent = events[indexPath.row]
             
             eventDetailViewController.event = selectedEvent
+        }
+    }
+    
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        
+        if position == FrontViewPosition.Left {
+            self.tableView.scrollEnabled = true
+            
+            for view in self.tableView.subviews {
+                view.userInteractionEnabled = true
+            }
+        }
+        else if position == FrontViewPosition.Right {
+            self.tableView.scrollEnabled = false
+            
+            for view in self.tableView.subviews {
+                view.userInteractionEnabled = false
+            }
         }
     }
 }

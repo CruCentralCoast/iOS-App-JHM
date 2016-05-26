@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GetInvolvedViewController: UIViewController, UITabBarDelegate {
+class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealViewControllerDelegate {
     //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -16,11 +16,8 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate {
     @IBOutlet weak var communityGroupContainer: UIView!
     @IBOutlet weak var ministryTeamContainer: UIView!
     
-    
     //selector bar
     @IBOutlet weak var selectorBar: UITabBar!
-    
-//    var communityGroupStorageManager: MapLocalStorageManager!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,6 +27,7 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.revealViewController().delegate = self
         }
         
         selectorBar.selectedItem = selectorBar.items![0]
@@ -39,8 +37,6 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate {
         navigationItem.title = "Get Involved"
         
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
-      
     }
     
     //tab bar function 
@@ -57,6 +53,21 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate {
         default :
             communityGroupContainer.hidden = false
             ministryTeamContainer.hidden = true
+        }
+    }
+    
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        
+        if position == FrontViewPosition.Left {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = true
+            }
+        }
+        else if position == FrontViewPosition.Right {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = false
+            }
         }
     }
 }

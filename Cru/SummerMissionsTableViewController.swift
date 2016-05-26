@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SummerMissionsTableViewController: UITableViewController {
+class SummerMissionsTableViewController: UITableViewController, SWRevealViewControllerDelegate {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
@@ -22,6 +22,7 @@ class SummerMissionsTableViewController: UITableViewController {
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.revealViewController().delegate = self
         }
         
         CruClients.getServerClient().getData(DBCollection.SummerMission, insert: insertMission, completionHandler: reload)
@@ -87,5 +88,22 @@ class SummerMissionsTableViewController: UITableViewController {
         }
     }
     
-
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        
+        if position == FrontViewPosition.Left {
+            self.tableView.scrollEnabled = true
+            
+            for view in self.tableView.subviews {
+                view.userInteractionEnabled = true
+            }
+        }
+        else if position == FrontViewPosition.Right {
+            self.tableView.scrollEnabled = false
+            
+            for view in self.tableView.subviews {
+                view.userInteractionEnabled = false
+            }
+        }
+    }
 }

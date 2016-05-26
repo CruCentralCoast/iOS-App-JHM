@@ -11,7 +11,7 @@ import MRProgress
 import DZNEmptyDataSet
 
 
-class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource, SWRevealViewControllerDelegate {
     let roundTrip = "round-trip"
     let roundTripDirection = "both"
     let fromEvent = "from event"
@@ -41,6 +41,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.revealViewController().delegate = self
         }
         
         self.refreshControl = UIRefreshControl()
@@ -279,5 +280,20 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
+    }
+    
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        
+        if position == FrontViewPosition.Left {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = true
+            }
+        }
+        else if position == FrontViewPosition.Right {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = false
+            }
+        }
     }
 }

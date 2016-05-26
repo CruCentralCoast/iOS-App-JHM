@@ -13,7 +13,7 @@ import AVFoundation
 import Alamofire
 import HTMLReader
 
-class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate, CardViewDelegate {
+class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate, CardViewDelegate, SWRevealViewControllerDelegate {
     //MARK: Properties
     @IBOutlet weak var menuButton: UIBarButtonItem!
     @IBOutlet weak var tableView: UITableView!
@@ -58,6 +58,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
             self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.revealViewController().delegate = self
         }
         selectorBar.selectedItem = selectorBar.items![0]
         self.tableView.delegate = self
@@ -136,12 +137,6 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         }
         self.tableView.endUpdates()
         self.tableView.reloadData()
-    }
-    
-    //Automatically generated function. Might have to use later if too many resources are loaded.
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     //Get resources from database
@@ -476,5 +471,20 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     func cardViewRequestedAction(cardView: CardView, action: CardViewAction) {
         
         handleCardAction(cardView, action: action)
+    }
+    
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        
+        if position == FrontViewPosition.Left {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = true
+            }
+        }
+        else if position == FrontViewPosition.Right {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = false
+            }
+        }
     }
 }
