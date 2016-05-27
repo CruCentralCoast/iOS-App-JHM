@@ -512,8 +512,10 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         if (extractNumberFromView() == false){return}
 
         if(isOfferingRide){
-            MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-            sendRideOffer()
+            if (validateOffer()) {
+                MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+                sendRideOffer()
+            }
             
         }
         else{
@@ -531,6 +533,16 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
            
         }
     }
+    
+    func validateOffer() -> Bool {
+        if (location != nil) {
+            return true 
+        } else {
+            showValidationError("Please Select a Pickup Location")
+            return false
+        }
+    }
+    
     func sendPatchRequest(){
         CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.passengers: ride.passengers, RideKeys.radius: ride.radius, RideKeys.driverName: ride.driverName, RideKeys.direction: ride.direction, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.city: ride.city, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
