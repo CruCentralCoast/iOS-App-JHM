@@ -20,7 +20,9 @@ class MinistryTableViewCell: UITableViewCell {
         didSet{
             ministryNameLabel.text = ministry.name
             ministryNameLabel.textColor = Config.introModalContentTextColor
-            minstryImage.load(ministry.imageUrl)
+            if (ministry.imageUrl != nil) {
+                minstryImage.load(ministry.imageUrl)
+            }
         }
     }
     
