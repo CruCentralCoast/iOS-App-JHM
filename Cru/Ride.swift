@@ -56,6 +56,8 @@ struct Labels{
 //used for validation errors on ride signup and edit forms
 struct ValidationErrors{
     static let none = ""
+    static let noEvent = "Please pick an event"
+    static let noDeparture = "Please provide a departure location"
     static let noSeats = "Please specify how many seats you would like to offer"
     static let badSeats = "Please enter a valid number of seats to offer"
     static let badTimeBefore = "Please select a time before the start of the event"
@@ -105,9 +107,11 @@ class Ride: Comparable, Equatable, TimeDetail {
     var country: String = ""
     var gender: Int = 0
     var timeStr = ""
-    var departureDate : NSDate! //both time and date
-    var departureTime: NSDate! //only time component h:mm a
-    var departureDay : NSDate!  //only date component d/m/y
+    
+    //user for offering rides primarily
+    var departureDate : NSDate? //both time and date
+    var departureTime: NSDate? //only time component h:mm a
+    var departureDay : NSDate?  //only date component d/m/y
     
     
     init(){
@@ -286,7 +290,7 @@ class Ride: Comparable, Equatable, TimeDetail {
     }
     
     func getDepartureDate()->NSDate{
-        return self.departureDate
+        return self.departureDate!
     }
     
     func getDepartureDay()->String{
@@ -295,13 +299,13 @@ class Ride: Comparable, Equatable, TimeDetail {
             return ""
         }
         else{
-            return GlobalUtils.stringFromDate(self.departureDay, format: dFormat)
+            return GlobalUtils.stringFromDate(self.departureDay!, format: dFormat)
         }
         
     }
     
     func getDepartureDay()->NSDate{
-        return self.departureDay
+        return self.departureDay!
     }
     
     func getDepartureTime()->String{
@@ -310,12 +314,12 @@ class Ride: Comparable, Equatable, TimeDetail {
             return ""
         }
         else{
-            return GlobalUtils.stringFromDate(self.departureTime, format: dFormat)
+            return GlobalUtils.stringFromDate(self.departureTime!, format: dFormat)
         }
     }
     
     func getDepartureTime()->NSDate{
-        return self.departureTime
+        return self.departureTime!
     }
         
     func hasSeats()->Bool{

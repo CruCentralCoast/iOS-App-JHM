@@ -367,6 +367,12 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func extractDateTimeFromView()->Bool{
+        
+        if(ride.eventStartDate == nil){
+            showValidationError(ValidationErrors.noEvent)
+            return false
+        }
+        
         ride.eventStartDate = event.startNSDate
         ride.eventEndDate = event.endNSDate
             
@@ -538,7 +544,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         if (location != nil) {
             return true 
         } else {
-            showValidationError("Please Select a Pickup Location")
+            showValidationError(ValidationErrors.noDeparture)
             return false
         }
     }
