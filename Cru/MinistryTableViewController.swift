@@ -53,19 +53,19 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
             // TODO: handle failure
             self.reloadData()
-            CruClients.getRideUtils().getMyRides(self.insertRide, afterFunc: self.finishConnectionCheck)
+            CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
         })
         self.tableView.reloadData()	
     }
     
     func insertRide(dict: NSDictionary){}
     
-    func finishConnectionCheck(response: ResponseType){
-        switch (response){
-        case ResponseType.NoConnection:
+    func finishConnectionCheck(connected: Bool){
+        if(!connected){
             self.emptyTableImage = UIImage(named: Config.noConnectionImageName)
             hasConnection = false
-        default:
+        }
+        else{
             self.emptyTableImage = UIImage(named: Config.noCampusesImage)
             hasConnection = true
         }
@@ -90,7 +90,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
                 // TODO: handle failure
                 self.reloadData()
-                CruClients.getRideUtils().getMyRides(self.insertRide, afterFunc: self.finishConnectionCheck)
+                CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
             })
         }
     }

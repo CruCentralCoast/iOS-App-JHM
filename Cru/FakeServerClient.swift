@@ -163,6 +163,10 @@ class FakeServerClient: ServerProtocol {
         }
     }
     
+    func checkConnection(handler: (Bool) -> ()) {
+        handler(true)
+    }
+    
     private func getById(collection: DBCollection, id: String) -> [String:AnyObject]! {
         let col = getCollection(collection)
         

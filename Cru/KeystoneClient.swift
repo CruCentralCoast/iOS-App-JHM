@@ -125,6 +125,13 @@ class KeystoneClient: ServerProtocol {
         }
     }
     
+    func checkConnection(handler: (Bool)->()){
+        Alamofire.request(.GET, Config.serverEndpoint + "users/phone/1234567890")
+            .responseJSON{ response in
+                handler(response.result.isSuccess)
+        }
+    }
+    
     private func requestData(url: String, method: Alamofire.Method, params: [String:AnyObject]?, insert: (NSDictionary) -> (), completionHandler: (Bool)->Void) {
         var reqUrl = url
         if (LoginUtils.isLoggedIn()) {
