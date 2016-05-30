@@ -8,12 +8,24 @@
 
 import UIKit
 
-class SettingsTableViewController: UITableViewController {
+class SettingsTableViewController: UITableViewController, SWRevealViewControllerDelegate {
     @IBOutlet weak var loginLabel: UILabel!
-
+    @IBOutlet weak var menuButton: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        if self.revealViewController() != nil{
+            menuButton.target = self.revealViewController()
+            menuButton.action = "revealToggle:"
+            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
+            self.revealViewController().delegate = self
+        }
+        
+        
+        navigationItem.title = "Settings"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -56,6 +68,22 @@ class SettingsTableViewController: UITableViewController {
             }
         }
     }
+    
+    //reveal controller function for disabling the current view
+    func revealController(revealController: SWRevealViewController!, willMoveToPosition position: FrontViewPosition) {
+        
+        if position == FrontViewPosition.Left {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = true
+            }
+        }
+        else if position == FrontViewPosition.Right {
+            for view in self.view.subviews {
+                view.userInteractionEnabled = false
+            }
+        }
+    }
+
 
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {

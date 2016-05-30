@@ -24,44 +24,6 @@
         </mutableArray>
     </customFonts>
     <scenes>
-        <!--Settings-->
-        <scene sceneID="WzN-ZA-ukK">
-            <objects>
-                <viewController title="Settings" id="8V2-5d-DAB" customClass="SettingsViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b5n-l2-6Ps"/>
-                        <viewControllerLayoutGuide type="bottom" id="FDc-XZ-Hv1"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pyi-Pv-lmb">
-                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7GJ-R0-g7s">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
-                                <animations/>
-                                <connections>
-                                    <segue destination="rzE-tY-zZm" kind="embed" id="WM0-zE-6Uf"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="7GJ-R0-g7s" secondAttribute="trailing" constant="-20" id="2ei-Zd-9pJ"/>
-                            <constraint firstItem="7GJ-R0-g7s" firstAttribute="leading" secondItem="Pyi-Pv-lmb" secondAttribute="leadingMargin" constant="-20" id="NtA-T9-jgf"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="Settings" id="SlI-hJ-gTM">
-                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="lyO-bf-jq2"/>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="menuButton" destination="lyO-bf-jq2" id="JUs-Dw-1c9"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="2Mc-qR-vqJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1096" y="4214"/>
-        </scene>
         <!--Logout View Controller-->
         <scene sceneID="QO8-yH-uqd">
             <objects>
@@ -71,21 +33,21 @@
                         <viewControllerLayoutGuide type="bottom" id="2Y5-AH-9dt"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="2kP-P8-8UG">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="gW0-pu-bPa">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <animations/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="You are logged in as:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-u6-yYh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You are logged in as:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2y5-u6-yYh">
                                 <rect key="frame" x="219" y="191" width="162" height="26"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5H-Xb-N4w">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R5H-Xb-N4w">
                                 <rect key="frame" x="252" y="225" width="97" height="28"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="24"/>
@@ -96,7 +58,7 @@
                                 <rect key="frame" x="250" y="35" width="101" height="79"/>
                                 <animations/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNR-lZ-B0o">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aNR-lZ-B0o">
                                 <rect key="frame" x="261" y="312" width="78" height="31"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.0" green="0.45098039220000002" blue="0.59607843140000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -147,14 +109,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YI4-As-z5r" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2686" y="5114"/>
+            <point key="canvasLocation" x="2158" y="4946"/>
         </scene>
         <!--Campuses Table View Controller-->
         <scene sceneID="M1X-TA-opB">
             <objects>
                 <tableViewController id="bJN-X4-sJv" customClass="CampusesTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="yeW-5o-0ts">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -178,7 +140,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NZA-W6-Zbq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4022" y="3868.5"/>
+            <point key="canvasLocation" x="2334" y="3624"/>
         </scene>
         <!--ministrytable-->
         <scene sceneID="JYQ-hO-ZsU">
@@ -186,76 +148,7 @@
                 <viewControllerPlaceholder storyboardName="ministrytable" id="dsr-1J-cqQ" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dyq-Cn-Z8P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3873.5" y="4374"/>
-        </scene>
-        <!--Campuses View Controller-->
-        <scene sceneID="ask-ET-VZF">
-            <objects>
-                <viewController id="mkA-SJ-ZBb" customClass="CampusesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7Qj-zu-7ul"/>
-                        <viewControllerLayoutGuide type="bottom" id="kge-fL-VfI"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="OFB-Rh-fdE">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="80F-Mz-sW9">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
-                                <animations/>
-                                <connections>
-                                    <segue destination="bJN-X4-sJv" kind="embed" id="pgp-f9-o32"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="80F-Mz-sW9" secondAttribute="trailing" id="Uek-wS-J7d"/>
-                            <constraint firstItem="80F-Mz-sW9" firstAttribute="top" secondItem="7Qj-zu-7ul" secondAttribute="bottom" id="ZVn-bE-DEA"/>
-                            <constraint firstItem="80F-Mz-sW9" firstAttribute="bottom" secondItem="kge-fL-VfI" secondAttribute="top" id="ZzA-nb-Yiq"/>
-                            <constraint firstItem="80F-Mz-sW9" firstAttribute="leading" secondItem="OFB-Rh-fdE" secondAttribute="leading" id="dTN-5R-E97"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="gb4-1F-XMK"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lvc-X9-jca" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="3868.5"/>
-        </scene>
-        <!--Ministries-->
-        <scene sceneID="DSR-Jy-fCn">
-            <objects>
-                <viewController title="Ministries" id="2AH-CA-8ZX" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="2SI-YL-ALS"/>
-                        <viewControllerLayoutGuide type="bottom" id="vYA-5s-Jck"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="UEM-Um-Zgp">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjT-a2-6kC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
-                                <animations/>
-                                <connections>
-                                    <segue destination="dsr-1J-cqQ" kind="embed" id="vpI-d7-cCb"/>
-                                </connections>
-                            </containerView>
-                        </subviews>
-                        <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="sjT-a2-6kC" secondAttribute="trailing" constant="-20" id="Bfr-M1-pUR"/>
-                            <constraint firstItem="sjT-a2-6kC" firstAttribute="leading" secondItem="UEM-Um-Zgp" secondAttribute="leadingMargin" constant="-20" id="C43-Es-HBQ"/>
-                            <constraint firstItem="vYA-5s-Jck" firstAttribute="top" secondItem="sjT-a2-6kC" secondAttribute="bottom" id="Fmy-Fo-MLl"/>
-                            <constraint firstItem="sjT-a2-6kC" firstAttribute="top" secondItem="2SI-YL-ALS" secondAttribute="bottom" id="fA7-0H-cMu"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9DI-5d-EKZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3230" y="4373.5"/>
+            <point key="canvasLocation" x="2105.5" y="4200"/>
         </scene>
         <!--Log In-->
         <scene sceneID="AN2-SH-rus">
@@ -266,11 +159,11 @@
                         <viewControllerLayoutGuide type="bottom" id="R0T-1U-Jc9"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="HPc-gs-iUD">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="login-background" translatesAutoresizingMaskIntoConstraints="NO" id="Dey-Lb-hlS">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <animations/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cru-white" translatesAutoresizingMaskIntoConstraints="NO" id="LGR-m5-FKw">
@@ -325,7 +218,7 @@
                                 <color key="textColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7D-AL-D1G">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n7D-AL-D1G">
                                 <rect key="frame" x="249" y="363" width="102" height="31"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.78431372549019607" alpha="1" colorSpace="calibratedRGB"/>
@@ -382,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eAt-Nj-UWN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="5114"/>
+            <point key="canvasLocation" x="1180" y="5122"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qJn-cj-1gx">
@@ -401,7 +294,7 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="8V2-5d-DAB" kind="relationship" relationship="rootViewController" id="ANS-e4-XaB"/>
+                        <segue destination="rzE-tY-zZm" kind="relationship" relationship="rootViewController" id="Ki0-8I-sGa"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aL1-3f-ypY" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -413,7 +306,7 @@
             <objects>
                 <tableViewController title="Settings" id="rzE-tY-zZm" customClass="SettingsTableViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="28" sectionFooterHeight="28" id="oxT-Qo-fYX">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="377"/>
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -435,7 +328,7 @@
                                                         <constraint firstAttribute="width" constant="38" id="sUE-Rv-SkR"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Change campuses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciJ-bY-VZZ">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change campuses" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ciJ-bY-VZZ">
                                                     <rect key="frame" x="86" y="19" width="143" height="26"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
@@ -459,7 +352,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="mkA-SJ-ZBb" kind="show" id="oL2-RU-eDZ"/>
+                                            <segue destination="bJN-X4-sJv" kind="show" id="kHQ-G1-aQ9"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="WKj-fx-oFc">
@@ -477,7 +370,7 @@
                                                         <constraint firstAttribute="height" constant="40" id="lKj-Hc-aSy"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Change ministries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXR-rc-Imc">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change ministries" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LXR-rc-Imc">
                                                     <rect key="frame" x="88" y="19" width="141" height="26"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
@@ -495,7 +388,7 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <segue destination="2AH-CA-8ZX" kind="show" id="ZvI-qQ-tiN"/>
+                                            <segue destination="dsr-1J-cqQ" kind="show" id="vzT-Bd-fEb"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" id="0hV-08-tkR">
@@ -505,7 +398,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="567" height="64"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV4-Bf-Ip8">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Log in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nV4-Bf-Ip8">
                                                     <rect key="frame" x="88" y="19" width="49" height="26"/>
                                                     <animations/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="20"/>
@@ -539,15 +432,19 @@
                             <outlet property="delegate" destination="rzE-tY-zZm" id="X9m-il-ZAm"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="ClY-r8-ovs">
+                        <barButtonItem key="leftBarButtonItem" image="menuIcon" id="0zk-Fl-m5k"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="loginLabel" destination="nV4-Bf-Ip8" id="T1a-uq-fAK"/>
+                        <outlet property="menuButton" destination="0zk-Fl-m5k" id="mWy-zR-Cgq"/>
                         <segue destination="IIb-iT-sZW" kind="show" identifier="LoginSegue" id="Cml-KT-813"/>
                         <segue destination="mXz-Zb-Rvl" kind="show" identifier="LogoutSegue" id="nGP-OL-mve"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xkS-6u-Ttj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1928" y="4213.5"/>
+            <point key="canvasLocation" x="1180" y="4221"/>
         </scene>
     </scenes>
     <resources>

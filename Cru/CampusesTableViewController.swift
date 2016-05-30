@@ -16,6 +16,12 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.title = "Campus Subscriptions"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
+        
         CruClients.getServerClient().getData(.Campus, insert: insertCampus, completionHandler: {success in
             //TODO: should be handling failure here
         })

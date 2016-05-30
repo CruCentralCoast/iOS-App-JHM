@@ -44,6 +44,10 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             prevMinistries = tempMinistries!
         }
 
+        navigationItem.title = "Ministry Subscriptions"
+        
+        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        
         CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
             // TODO: handle failure
             self.reloadData()
