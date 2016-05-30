@@ -7,12 +7,19 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class CampusesTableViewController: UITableViewController, UISearchResultsUpdating {
+
+class CampusesTableViewController: UITableViewController, UISearchResultsUpdating, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource   {
     var campuses = [Campus]()
     var subbedMinistries = [Ministry]()
     var filteredCampuses = [Campus]()
     var resultSearchController: UISearchController!
+    var emptyTableImage: UIImage!
+    var hasConnection = true
+    @IBOutlet var table: UITableView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,6 +30,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         
         
         CruClients.getServerClient().getData(.Campus, insert: insertCampus, completionHandler: {success in
+            CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
             //TODO: should be handling failure here
         })
         subbedMinistries = SubscriptionManager.loadMinistries()! 
@@ -31,7 +39,33 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         self.tableView.reloadData()
     }
     
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return emptyTableImage
+    }
     
+    func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
+        if(hasConnection == false){
+            CruClients.getServerClient().getData(.Campus, insert: insertCampus, completionHandler: {success in
+                // TODO: handle failure
+                self.table.reloadData()
+                CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
+            })
+        }
+    }
+    
+    func finishConnectionCheck(connected: Bool){
+        if(!connected){
+            hasConnection = false
+            self.emptyTableImage = UIImage(named: Config.noConnectionImageName)
+            self.table.emptyDataSetDelegate = self
+            self.table.emptyDataSetSource = self
+            self.tableView.reloadData()
+            //hasConnection = false
+        }else{
+            hasConnection = true
+        }
+        
+    }
     
     func refreshSubbedMinistries(){
         subbedMinistries = SubscriptionManager.loadMinistries()! 
