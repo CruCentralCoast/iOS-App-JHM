@@ -17,15 +17,15 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     var ministryMap = [Campus: [Ministry]]() //map of all subscribed campsuses to their respective ministries
     var prevMinistries = [Ministry]()        //list of previously subscribed ministries (saved on device)
     var totalMegsUsed = 0.0
-    var viewWasLoaded = false
+    var hasConnection = true
     var emptyTableImage: UIImage!
     @IBOutlet var table: UITableView!
     
     override func viewWillAppear(animated: Bool) {
 
-        if(viewWasLoaded){
-            self.reloadData()
-        }//
+//        if(viewWasLoaded){
+//            self.reloadData()
+//        }//
         //viewDidLoad()
     }
     
@@ -35,11 +35,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        viewWasLoaded = true
-        
-        
-        
-        
+
         let campuses = SubscriptionManager.loadCampuses()
         if(campuses != nil){
             subscribedCampuses = campuses!
@@ -68,8 +64,10 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         switch (response){
         case ResponseType.NoConnection:
             self.emptyTableImage = UIImage(named: Config.noConnectionImageName)
+            hasConnection = false
         default:
             self.emptyTableImage = UIImage(named: Config.noCampusesImage)
+            hasConnection = true
         }
         self.table.emptyDataSetDelegate = self
         self.table.emptyDataSetSource = self
@@ -85,6 +83,16 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
                 
         refreshMinistryMap()
         self.tableView.reloadData()
+    }
+    
+    func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
+        if(hasConnection == false){
+            CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
+                // TODO: handle failure
+                self.reloadData()
+                CruClients.getRideUtils().getMyRides(self.insertRide, afterFunc: self.finishConnectionCheck)
+            })
+        }
     }
     
     
