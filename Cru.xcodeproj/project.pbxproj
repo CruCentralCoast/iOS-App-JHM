@@ -19,7 +19,6 @@
 		0F1959CB1C8E5B0700A783BA /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E96367931C6D3B8D00B9DBBE /* DateExtension.swift */; };
 		0F1959CD1C8E5B0C00A783BA /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
 		0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
-		0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
 		0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
 		0F1B8C291CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C281CC97E4D00CEE24C /* JoinedTeamsTableViewCell.swift */; };
 		0F1B8C2B1CC99B0000CEE24C /* CommunityGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F1B8C2A1CC99B0000CEE24C /* CommunityGroupViewController.swift */; };
@@ -98,7 +97,6 @@
 		5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D76CA7F1C06C1D200F8B007 /* EventDetailsViewController.swift */; };
 		5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */; };
 		5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742451C759823003F276E /* OfferedRideTableViewCell.swift */; };
-		5072B4201CB38E5F001F5BF6 /* JoinRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */; };
 		5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA7CCA1C63320F00866BE6 /* RideTableViewCell.swift */; };
 		5072B4231CB38E75001F5BF6 /* DriverRideDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5094897C1C64000200A67697 /* DriverRideDetailViewController.swift */; };
 		5072B4281CB38F43001F5BF6 /* PassengerTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504742491C75988E003F276E /* PassengerTableViewCell.swift */; };
@@ -365,7 +363,6 @@
 		50E57A8A1CEE8FE300462F8A /* DriverDetailCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DriverDetailCell.swift; sourceTree = "<group>"; };
 		50ED8FED1C052C65002C9E30 /* settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = settings.storyboard; sourceTree = "<group>"; };
 		50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterByEventViewController.swift; sourceTree = "<group>"; };
-		50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JoinRideViewController.swift; sourceTree = "<group>"; };
 		50F8251E1C0BB965005396BC /* resources.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = resources.storyboard; sourceTree = "<group>"; };
 		50FAC03E1CFBD68000E93E89 /* RideJoinViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RideJoinViewController.swift; sourceTree = "<group>"; };
 		50FE4D3E1C50CE5100EA9042 /* MinistryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinistryTableViewController.swift; sourceTree = "<group>"; };
@@ -818,7 +815,6 @@
 				50FAC03E1CFBD68000E93E89 /* RideJoinViewController.swift */,
 				50A9B0281CFBE04A00E759E2 /* RiderEditTableViewCell.swift */,
 				504742451C759823003F276E /* OfferedRideTableViewCell.swift */,
-				50EF26EA1C75930A0055F480 /* JoinRideViewController.swift */,
 				50EF26E21C7592EF0055F480 /* FilterByEventViewController.swift */,
 			);
 			name = FindRide;
@@ -1173,7 +1169,6 @@
 				507B368A1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,
 				C1E9DC1A1CF7920B00066C5F /* DisplayCGVC.swift in Sources */,
 				0F1959F01C8E60AC00A783BA /* FilterByEventViewController.swift in Sources */,
-				0F1959EF1C8E60A800A783BA /* JoinRideViewController.swift in Sources */,
 				C1EF490A1CDBF74E009439FE /* SurveyViewController.swift in Sources */,
 				C1E9DC171CF7894800066C5F /* CGLeaderCell.swift in Sources */,
 				0F1959EE1C8E60A200A783BA /* OfferedRideTableViewCell.swift in Sources */,
@@ -1290,7 +1285,6 @@
 				5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */,
 				50D507871CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
 				0F68621F1CE65D3600138377 /* SummerMissionsTableViewCell.swift in Sources */,
-				5072B4201CB38E5F001F5BF6 /* JoinRideViewController.swift in Sources */,
 				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
 				5072B41C1CB38DF4001F5BF6 /* EventDetailsViewController.swift in Sources */,
