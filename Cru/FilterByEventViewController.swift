@@ -84,7 +84,10 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func insertRide(dict: NSDictionary) {
-        allRides.append(Ride(dict: dict)!)
+        let newRide = Ride(dict: dict)!
+        if(newRide.seats > 0 && newRide.seatsLeft() > 0){
+            allRides.append(newRide)
+        }
     }
     
     private func loadRidesCompletionHandler(success: Bool) {
