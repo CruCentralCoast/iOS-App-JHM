@@ -49,7 +49,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="PTN-k1-bUo">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="544"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="555"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -163,7 +163,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kai-El-QZC">
-                                <rect key="frame" x="300" y="544" width="300" height="56"/>
+                                <rect key="frame" x="300" y="555" width="300" height="45"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.72941176470588232" green="0.0" blue="0.0078431372549019607" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
@@ -177,11 +177,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E3O-gN-C7K">
-                                <rect key="frame" x="0.0" y="544" width="300" height="56"/>
+                                <rect key="frame" x="0.0" y="555" width="300" height="45"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="56" id="A2Q-5q-gYe"/>
+                                    <constraint firstAttribute="height" constant="45" id="A2Q-5q-gYe"/>
                                     <constraint firstAttribute="width" constant="300" id="rRX-gq-1kt"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="23"/>
@@ -425,26 +425,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tG-LP-JZx">
-                                                    <rect key="frame" x="8" y="28" width="539" height="39"/>
-                                                    <animations/>
-                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cell" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h90-KE-gi7">
-                                                    <rect key="frame" x="555" y="28" width="30" height="24"/>
-                                                    <animations/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" secondItem="h90-KE-gi7" secondAttribute="height" multiplier="37:30" id="MOw-4W-CLD"/>
-                                                        <constraint firstAttribute="width" constant="30" id="WEQ-Tr-B9y"/>
-                                                        <constraint firstAttribute="height" constant="24" id="Y6f-Rb-zEa"/>
-                                                    </constraints>
-                                                    <state key="normal" title="Button" image="pencil"/>
-                                                    <connections>
-                                                        <action selector="editPressed:" destination="02L-Gk-VaH" eventType="touchUpInside" id="Pwr-5t-YhB"/>
-                                                    </connections>
-                                                </button>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="1Ma-5j-Nrh">
                                                     <rect key="frame" x="8" y="28" width="539" height="52"/>
                                                     <animations/>
@@ -454,6 +434,13 @@
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="value" lineBreakMode="clip" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" adjustsLetterSpacingToFitWidth="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6tG-LP-JZx">
+                                                    <rect key="frame" x="8" y="28" width="539" height="39"/>
+                                                    <animations/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pAZ-1A-cBn">
                                                     <rect key="frame" x="8" y="0.0" width="539" height="35"/>
                                                     <animations/>
@@ -464,23 +451,36 @@
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="cell" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h90-KE-gi7">
+                                                    <rect key="frame" x="553" y="5" width="42" height="42"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="h90-KE-gi7" secondAttribute="height" multiplier="37:30" constant="-9.8000000000000043" id="MOw-4W-CLD"/>
+                                                        <constraint firstAttribute="width" constant="42" id="WEQ-Tr-B9y"/>
+                                                        <constraint firstAttribute="height" constant="42" id="Y6f-Rb-zEa"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="pencil"/>
+                                                    <connections>
+                                                        <action selector="editPressed:" destination="02L-Gk-VaH" eventType="touchUpInside" id="Pwr-5t-YhB"/>
+                                                    </connections>
+                                                </button>
                                             </subviews>
                                             <animations/>
                                             <constraints>
-                                                <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="pAZ-1A-cBn" secondAttribute="trailing" constant="8" symbolic="YES" id="1OM-NL-Cle"/>
-                                                <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="1Ma-5j-Nrh" secondAttribute="trailing" constant="8" symbolic="YES" id="9eN-VL-PyY"/>
+                                                <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="pAZ-1A-cBn" secondAttribute="trailing" constant="6" id="1OM-NL-Cle"/>
+                                                <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="1Ma-5j-Nrh" secondAttribute="trailing" constant="6" id="9eN-VL-PyY"/>
                                                 <constraint firstItem="1Ma-5j-Nrh" firstAttribute="top" secondItem="6H1-9a-0BJ" secondAttribute="topMargin" constant="20" id="EU2-Bw-ssm"/>
                                                 <constraint firstItem="6tG-LP-JZx" firstAttribute="bottom" secondItem="1Ma-5j-Nrh" secondAttribute="bottom" constant="-13" id="F4K-eg-JhW"/>
                                                 <constraint firstItem="6tG-LP-JZx" firstAttribute="leading" secondItem="1Ma-5j-Nrh" secondAttribute="leading" id="FJT-KQ-Lyb"/>
-                                                <constraint firstItem="h90-KE-gi7" firstAttribute="top" secondItem="6H1-9a-0BJ" secondAttribute="topMargin" constant="20" id="GwO-5U-2yd"/>
+                                                <constraint firstItem="h90-KE-gi7" firstAttribute="top" secondItem="6H1-9a-0BJ" secondAttribute="topMargin" constant="-3" id="GwO-5U-2yd"/>
                                                 <constraint firstItem="pAZ-1A-cBn" firstAttribute="top" secondItem="6H1-9a-0BJ" secondAttribute="top" id="Ijl-b5-iXK"/>
                                                 <constraint firstItem="6tG-LP-JZx" firstAttribute="top" secondItem="pAZ-1A-cBn" secondAttribute="bottom" constant="-7" id="N7v-P7-EhD"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="1Ma-5j-Nrh" secondAttribute="bottom" constant="-8" id="Qaj-gV-8tq"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="h90-KE-gi7" secondAttribute="bottom" constant="20" id="Whk-fX-KzO"/>
-                                                <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="6tG-LP-JZx" secondAttribute="trailing" constant="8" symbolic="YES" id="aTv-AB-xW8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="h90-KE-gi7" secondAttribute="bottom" constant="25" id="Whk-fX-KzO"/>
+                                                <constraint firstItem="h90-KE-gi7" firstAttribute="leading" secondItem="6tG-LP-JZx" secondAttribute="trailing" constant="6" id="aTv-AB-xW8"/>
                                                 <constraint firstItem="pAZ-1A-cBn" firstAttribute="leading" secondItem="6tG-LP-JZx" secondAttribute="leading" id="eIv-6t-MUU"/>
                                                 <constraint firstItem="6tG-LP-JZx" firstAttribute="leading" secondItem="6H1-9a-0BJ" secondAttribute="leadingMargin" id="jYZ-cY-z1e"/>
-                                                <constraint firstItem="h90-KE-gi7" firstAttribute="trailing" secondItem="6H1-9a-0BJ" secondAttribute="trailingMargin" constant="-7" id="kMl-rq-ah9"/>
+                                                <constraint firstItem="h90-KE-gi7" firstAttribute="trailing" secondItem="6H1-9a-0BJ" secondAttribute="trailingMargin" constant="3" id="kMl-rq-ah9"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <animations/>
@@ -697,6 +697,6 @@
         <image name="pencil" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KiA-Xm-1vs"/>
+        <segue reference="he8-TB-1wb"/>
     </inferredMetricsTieBreakers>
 </document>

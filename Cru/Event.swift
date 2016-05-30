@@ -138,6 +138,12 @@ class Event: Equatable {
         return ""
     }
     
+    func getTime()->String{
+        return GlobalUtils.stringFromDate(startNSDate, format: "M/d/YYYY") + "\n" +
+               GlobalUtils.stringFromDate(startNSDate, format: "h:mm a")
+        
+    }
+    
     static func eventsWithRideShare(eventList : [Event])->[Event]{
         var filteredList = [Event]()
         

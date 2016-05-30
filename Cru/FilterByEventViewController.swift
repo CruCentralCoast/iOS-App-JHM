@@ -142,7 +142,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
-        if let vc = segue.destinationViewController as? JoinRideViewController where segue.identifier == "joinSegue" {
+        if let vc = segue.destinationViewController as? RideJoinViewController where segue.identifier == "joinSegue" {
                     vc.ride = self.selectedRide
                     vc.event = self.selectedEvent
                     vc.rideVC = self.rideVC

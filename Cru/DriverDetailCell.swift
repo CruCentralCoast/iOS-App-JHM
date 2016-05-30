@@ -9,6 +9,6 @@
 import UIKit
 
 class DriverDetailCell: UITableViewCell {
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var cellLabel: UILabel!
     @IBOutlet weak var value: UITextView!
 }

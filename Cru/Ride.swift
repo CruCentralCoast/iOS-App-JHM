@@ -38,6 +38,8 @@ struct LocationKeys {
 //Used for display on detail screens
 struct Labels{
     static let eventLabel = "Event:"
+    static let eventTimeLabel = "Event Time:"
+    static let eventAddressLabel = "Event Address:"
     static let departureDateLabel = "Departure Date:"
     static let departureTimeLabel = "Departure Time:"
     static let addressLabel = "Departure Address:"

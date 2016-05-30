@@ -37,9 +37,15 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
+        </mutableArray>
+        <mutableArray key="FreigSanProSem.otf">
+            <string>FreightSansProSemibold-Regular</string>
+            <string>FreightSansProSemibold-Regular</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -73,6 +79,175 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iBm-D0-TMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1032" y="47"/>
+        </scene>
+        <!--Ride Join View Controller-->
+        <scene sceneID="OEZ-Yb-1QF">
+            <objects>
+                <viewController id="uUB-Wj-dpp" customClass="RideJoinViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vtS-o7-9sN"/>
+                        <viewControllerLayoutGuide type="bottom" id="ocb-Vt-Nm8"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="UGM-z7-uuk">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0EU-a0-zXT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="556"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="detailCell" rowHeight="55" id="AXo-OP-3CP" customClass="DriverDetailCell" customModule="Cru" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="600" height="55"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="AXo-OP-3CP" id="Yaz-EY-Rn3">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="54"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Departure Address:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n2R-Cy-sm1">
+                                                    <rect key="frame" x="8" y="7" width="148" height="40"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="148" id="MDt-dP-I3B"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UgK-bF-LYk">
+                                                    <rect key="frame" x="158" y="7" width="427" height="40"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="CxS-Oy-zK7"/>
+                                                    </constraints>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                    <dataDetectorType key="dataDetectorTypes" address="YES"/>
+                                                </textView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="n2R-Cy-sm1" firstAttribute="leading" secondItem="Yaz-EY-Rn3" secondAttribute="leadingMargin" id="0AT-uK-S5w"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UgK-bF-LYk" secondAttribute="trailing" constant="7" id="0N4-02-b9V"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UgK-bF-LYk" secondAttribute="bottom" constant="-1" id="2L4-1x-0EA"/>
+                                                <constraint firstItem="n2R-Cy-sm1" firstAttribute="top" secondItem="Yaz-EY-Rn3" secondAttribute="topMargin" constant="-1" id="7nf-qR-4aD"/>
+                                                <constraint firstItem="UgK-bF-LYk" firstAttribute="top" secondItem="Yaz-EY-Rn3" secondAttribute="topMargin" constant="-1" id="QWE-Tw-Fcx"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="UgK-bF-LYk" secondAttribute="bottom" constant="-1" id="Zuu-on-I9Z"/>
+                                                <constraint firstItem="UgK-bF-LYk" firstAttribute="leading" secondItem="n2R-Cy-sm1" secondAttribute="trailing" constant="2" id="cgX-RI-fAc"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="UgK-bF-LYk" secondAttribute="trailing" constant="7" id="dnv-8Y-8No"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="n2R-Cy-sm1" secondAttribute="bottom" constant="-1" id="frW-IU-Krd"/>
+                                                <constraint firstItem="n2R-Cy-sm1" firstAttribute="top" secondItem="Yaz-EY-Rn3" secondAttribute="topMargin" constant="-2" id="lth-fK-npm"/>
+                                                <constraint firstItem="UgK-bF-LYk" firstAttribute="leading" secondItem="n2R-Cy-sm1" secondAttribute="trailing" constant="2" id="mwi-yT-FuJ"/>
+                                                <constraint firstItem="UgK-bF-LYk" firstAttribute="top" secondItem="Yaz-EY-Rn3" secondAttribute="topMargin" constant="-1" id="zSy-aB-2EX"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="lth-fK-npm"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="cellLabel" destination="n2R-Cy-sm1" id="YuI-0a-NTO"/>
+                                            <outlet property="value" destination="UgK-bF-LYk" id="66C-8a-iWv"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="editCell" rowHeight="60" id="n93-WP-ADS" customClass="RiderEditTableViewCell" customModule="Cru" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="83" width="600" height="60"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n93-WP-ADS" id="XH0-xC-afc">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="59"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JI-e7-hla">
+                                                    <rect key="frame" x="553" y="5" width="42" height="42"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="42" id="Jsh-tE-Jap"/>
+                                                        <constraint firstAttribute="height" constant="42" id="amr-fy-DX1"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Button" image="pencil"/>
+                                                    <connections>
+                                                        <action selector="buttonPressed:" destination="n93-WP-ADS" eventType="touchUpInside" id="Pfp-cl-2tc"/>
+                                                    </connections>
+                                                </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OUl-uw-bJK">
+                                                    <rect key="frame" x="8" y="10" width="125" height="32"/>
+                                                    <animations/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="125" id="x4K-um-Ic0"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="FreightSansProSemibold-Regular" family="FreightSans Pro" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="CB8-JA-yPV">
+                                                    <rect key="frame" x="156" y="10" width="383" height="32"/>
+                                                    <animations/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                                </textView>
+                                            </subviews>
+                                            <animations/>
+                                            <constraints>
+                                                <constraint firstItem="CB8-JA-yPV" firstAttribute="leading" secondItem="OUl-uw-bJK" secondAttribute="trailing" constant="23" id="Hy4-JZ-RMg"/>
+                                                <constraint firstItem="OUl-uw-bJK" firstAttribute="centerY" secondItem="XH0-xC-afc" secondAttribute="centerY" constant="-3.5" id="KcM-fl-91b"/>
+                                                <constraint firstItem="OUl-uw-bJK" firstAttribute="top" secondItem="CB8-JA-yPV" secondAttribute="top" id="Lvm-Ar-Qvm"/>
+                                                <constraint firstItem="1JI-e7-hla" firstAttribute="leading" secondItem="CB8-JA-yPV" secondAttribute="trailing" constant="14" id="SiJ-Er-xEr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="CB8-JA-yPV" secondAttribute="bottom" constant="9" id="chL-Vf-rbx"/>
+                                                <constraint firstItem="CB8-JA-yPV" firstAttribute="top" secondItem="1JI-e7-hla" secondAttribute="top" constant="5" id="jYu-cm-XBI"/>
+                                                <constraint firstItem="1JI-e7-hla" firstAttribute="bottom" secondItem="XH0-xC-afc" secondAttribute="bottomMargin" constant="-4" id="vQx-vO-76b"/>
+                                                <constraint firstItem="1JI-e7-hla" firstAttribute="trailing" secondItem="XH0-xC-afc" secondAttribute="trailingMargin" constant="3" id="xQv-PS-MAK"/>
+                                                <constraint firstItem="OUl-uw-bJK" firstAttribute="leading" secondItem="XH0-xC-afc" secondAttribute="leadingMargin" id="zVc-S1-Y4v"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                        <connections>
+                                            <outlet property="button" destination="1JI-e7-hla" id="xY9-Yo-1us"/>
+                                            <outlet property="title" destination="OUl-uw-bJK" id="1b6-Q8-cJr"/>
+                                            <outlet property="value" destination="CB8-JA-yPV" id="RRf-QE-nEo"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GQc-pn-1wU">
+                                <rect key="frame" x="0.0" y="555" width="600" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="7rm-hi-yTk"/>
+                                </constraints>
+                                <state key="normal" title="Submit">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="submitPressed:" destination="uUB-Wj-dpp" eventType="touchUpInside" id="VKH-ZN-qxD"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0EU-a0-zXT" firstAttribute="top" secondItem="UGM-z7-uuk" secondAttribute="top" id="6YV-2J-fct"/>
+                            <constraint firstItem="GQc-pn-1wU" firstAttribute="leading" secondItem="UGM-z7-uuk" secondAttribute="leading" id="C7q-cq-eU0"/>
+                            <constraint firstItem="GQc-pn-1wU" firstAttribute="leading" secondItem="0EU-a0-zXT" secondAttribute="leading" id="HkM-gq-dMj"/>
+                            <constraint firstItem="GQc-pn-1wU" firstAttribute="top" secondItem="0EU-a0-zXT" secondAttribute="bottom" constant="-1" id="YXh-eB-S6i"/>
+                            <constraint firstItem="GQc-pn-1wU" firstAttribute="trailing" secondItem="0EU-a0-zXT" secondAttribute="trailing" id="f8h-ZD-yF8"/>
+                            <constraint firstItem="GQc-pn-1wU" firstAttribute="bottom" secondItem="ocb-Vt-Nm8" secondAttribute="top" id="gvO-8G-xbb"/>
+                            <constraint firstAttribute="trailing" secondItem="GQc-pn-1wU" secondAttribute="trailing" id="h4n-Io-A9t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="table" destination="0EU-a0-zXT" id="iH2-95-BSb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xmX-mH-g0x" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1801" y="428"/>
         </scene>
         <!--Filter By Event View Controller-->
         <scene sceneID="All-xW-VyS">
@@ -228,7 +403,7 @@
                     <connections>
                         <outlet property="eventNameLabel" destination="K6n-sk-rec" id="yZs-Hf-LiP"/>
                         <outlet property="rideTable" destination="zrB-ep-ZEj" id="0H3-hp-RiW"/>
-                        <segue destination="7Jh-iN-Kgk" kind="show" identifier="joinSegue" id="1I8-Ln-ZuA"/>
+                        <segue destination="uUB-Wj-dpp" kind="show" identifier="joinSegue" id="2MN-Xq-rCC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1E-GD-1Us" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -608,7 +783,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wRg-tO-eiR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1679" y="786"/>
+            <point key="canvasLocation" x="2745" y="879"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="pencil" width="256" height="256"/>
+    </resources>
 </document>

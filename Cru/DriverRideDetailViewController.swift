@@ -115,7 +115,7 @@ class DriverRideDetailViewController: UIViewController, UITableViewDelegate, UIP
             let cellIdentifier = "smallCell"
             let cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! DriverDetailCell
             
-            cell.label.text = details[indexPath.row].itemName
+            cell.cellLabel.text = details[indexPath.row].itemName
             //cell.label.text = details[indexPath.row].itemName
             cell.value.text = details[indexPath.row].itemValue
             

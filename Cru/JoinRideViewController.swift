@@ -11,15 +11,6 @@ import MapKit
 import SwiftValidator
 import MRProgress
 
-struct JoinRideConstants{
-    static let NAME = "Join Ride"
-    static let ROUND_TRIP = "Both"
-    static let TO_EVENT = "To"
-    static let FROM_EVENT = "From"
-    static let DIR_ROUND_TRIP = "Round Trip"
-    static let DIR_TO = "To Event"
-    static let DIR_FROM = "From Event"
-}
 
 class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationDelegate {
     //Buttons, labels, a map
@@ -124,6 +115,9 @@ class JoinRideViewController: UIViewController, UITextFieldDelegate, ValidationD
         CruClients.getRideUtils().joinRide(nameString!, phone: phoneNumber!, direction: "both",  rideId: (ride?.id)!, handler: successfulJoin)
         
     }
+    
+    
+    
     
     func successfulJoin(success: Bool){
         var msg: String
