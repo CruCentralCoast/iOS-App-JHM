@@ -30,7 +30,7 @@ class RideUtilsTest: XCTestCase {
         var readyExpectation = self.expectationWithDescription("post a ride")
         var postedRide: Ride!
         
-        rideUtils.postRideOffer("some-event-id", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ result in
+        rideUtils.postRideOffer("some-event-id", name: "Joe Schmo", phone: "1234567890", seats: 5, time: "2017-05-26T10:47:00.000Z", location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ result in
             XCTAssert(result != nil)
             postedRide = result!
             readyExpectation.fulfill()
@@ -65,7 +65,7 @@ class RideUtilsTest: XCTestCase {
         var readyExpectation = self.expectationWithDescription("post a ride")
         var id: String!
         
-        rideUtils.postRideOffer("test-event-id", name: "Joe Schmo", phone: "1234567890", seats: 5, location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ result in
+        rideUtils.postRideOffer("test-event-id", name: "Joe Schmo", phone: "1234567890", seats: 5, time: "2017-05-26T10:47:00.000Z", location: ["postcode":"93401", "state":"CA", "suburb":"SLO", "street1":"1 Grand ave."], radius: 3, direction: "both", handler :{ result in
             XCTAssert(result != nil)
             id = result?.id
             readyExpectation.fulfill()

@@ -35,7 +35,7 @@
                                     <outlet property="delegate" destination="M8g-nZ-a69" id="7mH-k8-Vnf"/>
                                 </connections>
                             </tableView>
-                            <tabBar contentMode="scaleAspectFit" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-Ok-niP">
+                            <tabBar contentMode="scaleAspectFit" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lHA-Ok-niP">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="49"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <items>

@@ -45,7 +45,11 @@ class EventDetailsViewController: UIViewController {
         //Set nav title & font
         navigationItem.title = "Event Details"
         
-        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        if self.navigationController != nil {
+            self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        }
+        
+        
         
         //initialize the view
         initializeView()
@@ -72,16 +76,20 @@ class EventDetailsViewController: UIViewController {
         }
         locationLabel.text = locationText
         
-        //If there's no URL hide the FB button
+        //If there's no Facebook event, disable the button
         if event.url == "" {
-            fbButton.hidden = true
+            fbButton.enabled = false
+        }
+        
+        //If ridesharing is not enabled, disable the buttons
+        if !event.rideSharingEnabled {
+            findRideButton.enabled = false
+            offerRideButton.enabled = false
         }
         
         //check if event is in calendar
         if let eventId = eventLocalStorageManager.getElement(event.id) {
-            
-            checkForChanges(eventId as! String)
-            
+            checkForChanges(eventId as! String)  
         }
     }
     

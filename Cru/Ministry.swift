@@ -37,12 +37,19 @@ class Ministry: NSObject, NSCoding, Comparable{
         self.id = dict["_id"] as! String
         self.campusId = dict["campus"] as! String
         self.feedEnabled = false // crashes without this shit
-        if let img = dict["imageLink"] as? String {
-            self.imageUrl = img
+
+        if dict["imageLink"] != nil {
+            self.imageUrl = dict["imageLink"] as! String
+        
             if imageUrl.rangeOfString("https:") == nil{
                 self.imageUrl = "https:" + imageUrl
             }
         }
+        //Default will be the cru logo
+        else {
+            self.imageUrl = "http://cruatucf.com/wordpress/wp-content/uploads/2012/08/cru_logo_screen.jpg"
+        }
+        
     }
     
     init(name: String, id: String, campusId: String, feedEnabled: Bool, imgUrl: String){
