@@ -15,14 +15,8 @@ class SettingsTableViewController: UITableViewController, SWRevealViewController
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.revealViewController() != nil{
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.revealViewController().delegate = self
-        }
-        
-        
+        GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)
+
         navigationItem.title = "Settings"
         
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]

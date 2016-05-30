@@ -24,12 +24,8 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealVie
         super.viewDidLoad()
 
         //side menu reveal controller
-        if self.revealViewController() != nil{
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.revealViewController().delegate = self
-        }
+        GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)
+
                 selectorBar.selectedItem = selectorBar.items![0]
         selectorBar.tintColor = UIColor.whiteColor()
 

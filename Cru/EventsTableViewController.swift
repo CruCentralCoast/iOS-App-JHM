@@ -26,13 +26,9 @@ class EventsTableViewController: UITableViewController, SWRevealViewControllerDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-                
-        if self.revealViewController() != nil{
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.revealViewController().delegate = self
-        }
+        
+        GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)
+
         CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
         
         //Set the nav title & font

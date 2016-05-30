@@ -28,6 +28,17 @@ class GlobalUtils {
         return locStr
     }
     
+    class func setupViewForSideMenu(view: UIViewController, menuButton :UIBarButtonItem){
+        if view.revealViewController() != nil{
+            menuButton.target = view.revealViewController()
+            menuButton.action = "revealToggle:"
+            view.view.addGestureRecognizer(view.revealViewController().panGestureRecognizer())
+            if let vc = view as? SWRevealViewControllerDelegate{
+                view.revealViewController().delegate = vc
+            }
+        }
+    }
+    
     class func getDefaultDateFormatter() -> NSDateFormatter {
         let dateFormatter = NSDateFormatter()
         dateFormatter.locale = NSLocale(localeIdentifier: "en_US")

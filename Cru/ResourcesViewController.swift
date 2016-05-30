@@ -54,12 +54,8 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if self.revealViewController() != nil{
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.revealViewController().delegate = self
-        }
+        GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)
+
         selectorBar.selectedItem = selectorBar.items![0]
         self.tableView.delegate = self
         

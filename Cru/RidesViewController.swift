@@ -38,13 +38,8 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
 
         ridesTableView.separatorStyle = .None
         
-        
-        if self.revealViewController() != nil{
-            menuButton.target = self.revealViewController()
-            menuButton.action = "revealToggle:"
-            self.view.addGestureRecognizer(self.revealViewController().panGestureRecognizer())
-            self.revealViewController().delegate = self
-        }
+        GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)
+
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "")
