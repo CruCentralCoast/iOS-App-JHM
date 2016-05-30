@@ -21,14 +21,6 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     var emptyTableImage: UIImage!
     @IBOutlet var table: UITableView!
     
-    override func viewWillAppear(animated: Bool) {
-
-//        if(viewWasLoaded){
-//            self.reloadData()
-//        }//
-        //viewDidLoad()
-    }
-    
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
         return emptyTableImage
     }
@@ -48,7 +40,11 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
 
         navigationItem.title = "Ministry Subscriptions"
         
-        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        if self.navigationController != nil{
+            self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        }
+        
+        
         
         CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
             // TODO: handle failure
@@ -87,11 +83,14 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     
     func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
         if(hasConnection == false){
-            CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
-                // TODO: handle failure
-                self.reloadData()
-                CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
-            })
+            
+            CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
+            
+//            CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
+//                // TODO: handle failure
+//                self.reloadData()
+//                CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
+//            })
         }
     }
     

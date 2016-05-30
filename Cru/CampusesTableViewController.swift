@@ -11,12 +11,14 @@ import DZNEmptyDataSet
 
 
 class CampusesTableViewController: UITableViewController, UISearchResultsUpdating, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource   {
-    var campuses = [Campus]()
+    var campuses = Set<Campus>()
     var subbedMinistries = [Ministry]()
+    
     var filteredCampuses = [Campus]()
     var resultSearchController: UISearchController!
     var emptyTableImage: UIImage!
     var hasConnection = true
+    var loadedData = false
     @IBOutlet var table: UITableView!
     
     
@@ -26,10 +28,21 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         
         navigationItem.title = "Campus Subscriptions"
         
-        self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        if self.navigationController != nil{
+            self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+        }
+        
+        
         
         
         CruClients.getServerClient().getData(.Campus, insert: insertCampus, completionHandler: {success in
+            
+            if (success){
+                self.loadedData = success
+            }
+
+            
+            self.tableView.reloadData()
             CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
             //TODO: should be handling failure here
         })
@@ -46,6 +59,8 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
         if(hasConnection == false){
             CruClients.getServerClient().getData(.Campus, insert: insertCampus, completionHandler: {success in
+
+                
                 // TODO: handle failure
                 self.table.reloadData()
                 CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
@@ -86,16 +101,27 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
                 curCamp.feedEnabled = true
             }
         }
-    
-        campuses.insert(curCamp, atIndex: 0)
-        campuses.sortInPlace()
-        self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        let preCount = campuses.count
+        campuses.insert(curCamp)
+        let countChanged = preCount != campuses.count
+        
+        //campuses.insert(curCamp, atIndex: 0)
+        //campuses.sortInPlace()
+        if(countChanged){
+            self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
+        }
+        
         self.tableView.reloadData()
         self.tableView.endUpdates()
     }
     
     override func viewWillDisappear(animated: Bool) {
-        SubscriptionManager.saveCampuses(campuses)
+        var temp = [Campus]()
+        for camp in campuses{
+            temp.append(camp)
+        }
+        
+        SubscriptionManager.saveCampuses(temp)
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,41 +137,33 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (self.resultSearchController != nil && self.resultSearchController.active){
-            return self.filteredCampuses.count
-        }
-        else{
+//        if (self.resultSearchController != nil && self.resultSearchController.active){
+//            return self.filteredCampuses.count
+//        }
+//        else{
             return self.campuses.count
-        }
+        //}
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("campusCell", forIndexPath: indexPath)
-        
-        if (self.resultSearchController != nil && self.resultSearchController.active){
-            cell.textLabel?.text = filteredCampuses[indexPath.row].name
-            if(filteredCampuses[indexPath.row].feedEnabled == true){
-                cell.accessoryType = .Checkmark
-            }
-            else{
-                cell.accessoryType = .None
-            }
-        }
-        else{
-            cell.textLabel?.text = campuses[indexPath.row].name
+
+            let thisCampus = campuses[campuses.startIndex.advancedBy(indexPath.row)]
+            
+            cell.textLabel?.text = thisCampus.name
             
             //display add-ons
             cell.textLabel?.font = UIFont(name: "FreightSans Pro", size: 20)
             cell.textLabel?.textColor = Config.introModalContentTextColor
             
-            if(campuses[indexPath.row].feedEnabled == true){
+            if(thisCampus.feedEnabled == true){
                 cell.accessoryType = .Checkmark
             }
             else{
                 cell.accessoryType = .None
             }
-        }
+        
         
         return cell
     }
@@ -153,7 +171,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if let cell = tableView.cellForRowAtIndexPath(indexPath){
             if(cell.accessoryType == .Checkmark){
-                let theCampus = campuses[indexPath.row]
+                let theCampus = campuses[campuses.startIndex.advancedBy(indexPath.row)]
                 
                 if(!willAffectMinistrySubscription(theCampus, indexPath: indexPath, cell: cell)){
                     cell.accessoryType = .None
@@ -162,7 +180,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             }
             else{
                 cell.accessoryType = .Checkmark
-                campuses[indexPath.row].feedEnabled = true
+                campuses[campuses.startIndex.advancedBy(indexPath.row)].feedEnabled = true
             }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -170,7 +188,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
         
         //TODO - Make is so this doesn't have to be called everytime didSelectRowAtIndexPath is called
-        SubscriptionManager.saveCampuses(campuses)
+        saveCampusSet()
     }
     
     
@@ -207,6 +225,23 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
     }
     
+    func saveCampusSet(){
+        SubscriptionManager.saveCampuses(campusAsArray())
+    }
+    
+    
+    func campusAsArray() -> [Campus]{
+        var temp = [Campus]()
+        
+        for camp in campuses{
+            temp.append(camp)
+        }
+        
+        return temp
+    }
+    
+    
+    
     func handleConfirmUnsubscribe(action: UIAlertAction, associatedMinistries: [Ministry], campus: Campus, cell: UITableViewCell){
         campus.feedEnabled = false
         cell.accessoryType = .None
@@ -221,7 +256,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
         
         SubscriptionManager.saveMinistrys(subbedMinistries, updateGCM: true)
-        SubscriptionManager.saveCampuses(campuses)
+        saveCampusSet()
     }
     
     func setupSearchBar(){
@@ -244,7 +279,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         }
         
         if(query == ""){
-            filteredCampuses = campuses
+            filteredCampuses = campusAsArray()
         }
         
         self.tableView.reloadData()

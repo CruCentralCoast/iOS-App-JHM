@@ -8,7 +8,7 @@
 
 import Foundation
 
-class Campus: NSObject, NSCoding, Comparable{
+class Campus: NSObject, NSCoding, Comparable {
     let name: String!
     let id: String!
     var feedEnabled: Bool!
@@ -45,9 +45,19 @@ class Campus: NSObject, NSCoding, Comparable{
             return false
         }
     }
+    
+    override var hashValue: Int {
+        get {
+            return id.hashValue
+        }
+    }
 
 }
 
 func  <(lCampus: Campus, rCampus: Campus) -> Bool{
     return lCampus.name < rCampus.name
+}
+
+func ==(lCampus: Campus, rCampus: Campus) -> Bool{
+    return lCampus.id == rCampus.id
 }
