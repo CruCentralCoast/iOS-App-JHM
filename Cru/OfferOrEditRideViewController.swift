@@ -244,6 +244,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             
             case Labels.nameLabel:
                 nameValue = cell.contentTextField
+                nameValue.delegate = self
                 cell.contentTextField.tag = EditTags.Name.rawValue
                 nameValue.delegate = self
             
@@ -807,7 +808,16 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if numberValue != nil {
+        
+        if(textView == nameValue){
+            let currentCharacterCount = textView.text?.characters.count ?? 0
+            if (range.length + range.location > currentCharacterCount){
+                return false
+            }
+            let newLength = currentCharacterCount + text.characters.count - range.length
+            return newLength <= 50
+        }
+        else if numberValue != nil {
             if textView == numberValue {
                 let newString = (textView.text! as NSString).stringByReplacingCharactersInRange(range, withString: text)
                 let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)

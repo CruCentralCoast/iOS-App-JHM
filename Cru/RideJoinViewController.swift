@@ -119,6 +119,7 @@ class RideJoinViewController: UIViewController, UITableViewDataSource, UITableVi
                     rCell.value.delegate = self
                 }else if(cell.title.text == Labels.nameLabel){
                     nameValue = rCell.value
+                    rCell.value.delegate = self
                 }
                 
                 return rCell
@@ -222,7 +223,16 @@ class RideJoinViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
-        if numberValue != nil {
+        
+        if(textView == nameValue){
+            let currentCharacterCount = textView.text?.characters.count ?? 0
+            if (range.length + range.location > currentCharacterCount){
+                return false
+            }
+            let newLength = currentCharacterCount + text.characters.count - range.length
+            return newLength <= 50
+        }
+        else if numberValue != nil {
             if textView == numberValue {
                 let newString = (textView.text! as NSString).stringByReplacingCharactersInRange(range, withString: text)
                 let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
