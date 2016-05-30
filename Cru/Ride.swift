@@ -511,6 +511,10 @@ class Ride: Comparable, Equatable, TimeDetail {
         return details
     }
     
+    func getMapSubtitle()->String{
+        return self.seatsLeft()  + " seats left"
+    }
+    
     func getRideAsDict()->[String:AnyObject]{
         var map: [String:AnyObject] = [RideKeys.id : self.id,
             RideKeys.direction: self.direction, RideKeys.driverName: self.driverName,

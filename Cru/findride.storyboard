@@ -16,6 +16,9 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
@@ -226,6 +229,95 @@
             </objects>
             <point key="canvasLocation" x="1801" y="428"/>
         </scene>
+        <!--Map Of Rides View Controller-->
+        <scene sceneID="xY8-le-baM">
+            <objects>
+                <viewController id="PAN-Vb-oeA" customClass="MapOfRidesViewController" customModule="Cru" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Pqf-sK-Upe"/>
+                        <viewControllerLayoutGuide type="bottom" id="ayr-1e-utc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0zJ-ti-hsp">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="67h-X2-hfU">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="557"/>
+                                <animations/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="abF-Un-PC2">
+                                <rect key="frame" x="0.0" y="555" width="200" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="fj2-KQ-ffO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                <state key="normal" title="Previous">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bottomButtonPressed:" destination="PAN-Vb-oeA" eventType="touchUpInside" id="Y0T-BQ-lz3"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9g2-xt-fb3">
+                                <rect key="frame" x="400" y="555" width="200" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.24313725489999999" green="0.69411764710000001" blue="0.7843137255" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="YGC-GE-eDJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                <state key="normal" title="Next">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="bottomButtonPressed:" destination="PAN-Vb-oeA" eventType="touchUpInside" id="Ug7-vw-Zdo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfK-57-hpW">
+                                <rect key="frame" x="200" y="555" width="200" height="45"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="u4R-Wz-kUG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
+                                <state key="normal" title="ride 1 of 3">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="67h-X2-hfU" firstAttribute="trailing" secondItem="9g2-xt-fb3" secondAttribute="trailing" id="33M-vN-lex"/>
+                            <constraint firstItem="67h-X2-hfU" firstAttribute="leading" secondItem="0zJ-ti-hsp" secondAttribute="leading" id="3Pb-ao-VCM"/>
+                            <constraint firstItem="ayr-1e-utc" firstAttribute="top" secondItem="67h-X2-hfU" secondAttribute="bottom" constant="43" id="DY2-Vm-8tG"/>
+                            <constraint firstItem="9g2-xt-fb3" firstAttribute="height" secondItem="abF-Un-PC2" secondAttribute="height" id="LRF-k9-ndS"/>
+                            <constraint firstItem="ayr-1e-utc" firstAttribute="top" secondItem="abF-Un-PC2" secondAttribute="bottom" id="QFy-yh-gfn"/>
+                            <constraint firstItem="abF-Un-PC2" firstAttribute="leading" secondItem="0zJ-ti-hsp" secondAttribute="leadingMargin" constant="-20" id="SYj-C7-cVp"/>
+                            <constraint firstItem="9g2-xt-fb3" firstAttribute="leading" secondItem="mfK-57-hpW" secondAttribute="trailing" id="aST-52-isi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9g2-xt-fb3" secondAttribute="trailing" constant="-20" id="bTS-UY-ppw"/>
+                            <constraint firstItem="67h-X2-hfU" firstAttribute="top" secondItem="0zJ-ti-hsp" secondAttribute="top" id="bjv-uO-cPD"/>
+                            <constraint firstItem="mfK-57-hpW" firstAttribute="height" secondItem="abF-Un-PC2" secondAttribute="height" id="djF-2C-zGF"/>
+                            <constraint firstItem="ayr-1e-utc" firstAttribute="top" secondItem="9g2-xt-fb3" secondAttribute="bottom" id="ehb-9L-nye"/>
+                            <constraint firstItem="9g2-xt-fb3" firstAttribute="width" secondItem="abF-Un-PC2" secondAttribute="width" id="hYE-gJ-MHJ"/>
+                            <constraint firstItem="mfK-57-hpW" firstAttribute="leading" secondItem="abF-Un-PC2" secondAttribute="trailing" id="iEO-bp-9NZ"/>
+                            <constraint firstItem="ayr-1e-utc" firstAttribute="top" secondItem="mfK-57-hpW" secondAttribute="bottom" id="uUO-0U-U5g"/>
+                            <constraint firstItem="mfK-57-hpW" firstAttribute="width" secondItem="abF-Un-PC2" secondAttribute="width" id="x7e-vf-Qxy"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bottomLabel" destination="mfK-57-hpW" id="Vmy-ob-fA8"/>
+                        <outlet property="map" destination="67h-X2-hfU" id="ZJk-61-ZUg"/>
+                        <segue destination="uUB-Wj-dpp" kind="show" identifier="joinRide" id="6pN-xF-QdS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oKd-Zu-Ybk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1571" y="1098"/>
+        </scene>
         <!--Filter By Event View Controller-->
         <scene sceneID="All-xW-VyS">
             <objects>
@@ -381,6 +473,7 @@
                         <outlet property="eventNameLabel" destination="K6n-sk-rec" id="yZs-Hf-LiP"/>
                         <outlet property="rideTable" destination="zrB-ep-ZEj" id="0H3-hp-RiW"/>
                         <segue destination="uUB-Wj-dpp" kind="show" identifier="joinSegue" id="2MN-Xq-rCC"/>
+                        <segue destination="PAN-Vb-oeA" kind="show" identifier="mapView" id="ip2-Iu-AnW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="b1E-GD-1Us" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -398,4 +491,7 @@
     <resources>
         <image name="pencil" width="256" height="256"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="6pN-xF-QdS"/>
+    </inferredMetricsTieBreakers>
 </document>

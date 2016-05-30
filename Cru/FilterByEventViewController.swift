@@ -41,9 +41,24 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         rideTable.dataSource = self
         
         navigationItem.title = "Find Ride"
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Map View", style: .Plain, target: self, action: "mapView")
+        
+        
         loadEvents()
         if tempEvent == nil {
             loadRides(nil)
+        }
+    }
+    
+    func mapView(){
+        if(selectedEvent != nil){
+            self.performSegueWithIdentifier("mapView", sender: self)
+        }
+        else{
+            let noEventAlert = UIAlertController(title: "Please select an event first", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            noEventAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(noEventAlert, animated: true, completion: nil)
         }
     }
     
@@ -157,6 +172,12 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
                 if(controller != nil){
                     controller?.delegate = self
                 }
+            }
+        }
+        else if segue.identifier == "mapView"{
+            if let vc = segue.destinationViewController as? MapOfRidesViewController{
+                vc.rides = filteredRides
+                vc.event = selectedEvent
             }
         }
     }

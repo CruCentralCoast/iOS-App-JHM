@@ -119,7 +119,7 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
         //1
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         //2
-        let circle = MKCircle(centerCoordinate: coordinates, radius: (Double(numMilesFloat!) * metersInMile))
+        let circle = MKCircle(centerCoordinate: coordinates, radius: (Double(ride!.radius) * metersInMile))
         //3
         //self.map.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 7, longitudeDelta: 7)), animated: true)
         //4
