@@ -7,14 +7,20 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class SummerMissionsTableViewController: UITableViewController, SWRevealViewControllerDelegate {
+
+class SummerMissionsTableViewController: UITableViewController, SWRevealViewControllerDelegate, DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
     var missions = [SummerMission]()
     private let reuseIdentifier = "missionCell"
 
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noConnectionImageName)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,7 +45,13 @@ class SummerMissionsTableViewController: UITableViewController, SWRevealViewCont
     
     // Signals the collection view to reload data.
     func reload(success: Bool) {
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
         self.tableView.reloadData()
+    }
+    
+    func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
+        CruClients.getServerClient().getData(DBCollection.SummerMission, insert: insertMission, completionHandler: reload)
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
