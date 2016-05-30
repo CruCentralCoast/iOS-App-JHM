@@ -78,4 +78,5 @@ struct Config {
     /* Image names */
     static let noConnectionImageName = "server-error"
     static let noRidesImageName = "no-rides"
+    static let noCampusesImage = "no-subscribed-campuses"
 }

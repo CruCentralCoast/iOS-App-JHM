@@ -18,6 +18,8 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     var prevMinistries = [Ministry]()        //list of previously subscribed ministries (saved on device)
     var totalMegsUsed = 0.0
     var viewWasLoaded = false
+    var emptyTableImage: UIImage!
+    @IBOutlet var table: UITableView!
     
     override func viewWillAppear(animated: Bool) {
 
@@ -28,12 +30,16 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: Config.noConnectionImageName)
+        return emptyTableImage
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewWasLoaded = true
+        
+        
+        
+        
         let campuses = SubscriptionManager.loadCampuses()
         if(campuses != nil){
             subscribedCampuses = campuses!
@@ -51,8 +57,23 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
             // TODO: handle failure
             self.reloadData()
+            CruClients.getRideUtils().getMyRides(self.insertRide, afterFunc: self.finishConnectionCheck)
         })
         self.tableView.reloadData()	
+    }
+    
+    func insertRide(dict: NSDictionary){}
+    
+    func finishConnectionCheck(response: ResponseType){
+        switch (response){
+        case ResponseType.NoConnection:
+            self.emptyTableImage = UIImage(named: Config.noConnectionImageName)
+        default:
+            self.emptyTableImage = UIImage(named: Config.noCampusesImage)
+        }
+        self.table.emptyDataSetDelegate = self
+        self.table.emptyDataSetSource = self
+        self.tableView.reloadData()
     }
     
     func reloadData(){
