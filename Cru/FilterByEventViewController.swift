@@ -15,10 +15,12 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     @IBOutlet weak var eventNameLabel: UILabel!
     
     var rideVC:RidesViewController?
+    var eventVC: EventDetailsViewController?
     
     var events = [Event]()
     var filteredRides = [Ride]()
     var allRides = [Ride]()
+    var wasLinkedFromEvents = false
     
     //this is dumb we need to change this
     var tempEvent: Event?
@@ -147,9 +149,9 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     
     // Function for sending the selected event to this view controller.
     // sets the selected event to the event that was selected in the event table view controller.
-    func selectVal(event: Event){
-        self.selectedEvent = event
-    }
+//    func selectVal(event: Event){
+//        self.selectedEvent = event
+//    }
     
     func adaptivePresentationStyleForPresentationController(controller: UIPresentationController) -> UIModalPresentationStyle {
         return .None
@@ -161,6 +163,8 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
                     vc.ride = self.selectedRide
                     vc.event = self.selectedEvent
                     vc.rideVC = self.rideVC
+                    vc.wasLinkedFromEvents = self.wasLinkedFromEvents
+                    vc.eventVC = self.eventVC
         }
         
         //check if we're going to event modal
@@ -168,6 +172,7 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
             if let destinationVC = segue.destinationViewController as? EventsModalTableViewController {
                 destinationVC.events = Event.eventsWithRideShare(events)
                 destinationVC.fvc = self
+            
                 let controller = destinationVC.popoverPresentationController
                 if(controller != nil){
                     controller?.delegate = self
@@ -178,6 +183,9 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
             if let vc = segue.destinationViewController as? MapOfRidesViewController{
                 vc.rides = filteredRides
                 vc.event = selectedEvent
+                vc.rideTVC = self.rideVC
+                vc.eventVC = self.eventVC
+                vc.wasLinkedFromEvents = self.wasLinkedFromEvents
             }
         }
     }

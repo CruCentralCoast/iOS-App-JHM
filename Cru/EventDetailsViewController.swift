@@ -250,6 +250,8 @@ class EventDetailsViewController: UIViewController {
                 let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ridesByEvent") as! FilterByEventViewController
                 self.navigationController?.pushViewController(vc, animated: true)
                 vc.loadRides(event)
+                vc.eventVC = self
+                vc.wasLinkedFromEvents = true
             }
         }
     }

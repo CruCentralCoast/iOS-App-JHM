@@ -152,8 +152,8 @@
                                         </tableViewCellContentView>
                                         <animations/>
                                         <connections>
-                                            <outlet property="label" destination="a9c-Rq-aGr" id="PXZ-a6-RVU"/>
-                                            <outlet property="value" destination="ujF-Pq-jiO" id="sXY-bV-7oO"/>
+                                            <outlet property="cellLabel" destination="a9c-Rq-aGr" id="505-1t-rHT"/>
+                                            <outlet property="value" destination="ujF-Pq-jiO" id="dpK-cD-m1L"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -697,6 +697,6 @@
         <image name="pencil" width="256" height="256"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="he8-TB-1wb"/>
+        <segue reference="KiA-Xm-1vs"/>
     </inferredMetricsTieBreakers>
 </document>

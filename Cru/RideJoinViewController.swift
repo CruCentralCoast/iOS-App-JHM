@@ -21,19 +21,22 @@ struct JoinRideConstants{
     static let EDIT_CELL = "editCell"
 }
 
+
+
 class RideJoinViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate {
     //sources of data to be displayed
     var ride: Ride!
     var event: Event!
-    var rideVC:RidesViewController!
+    var rideVC: RidesViewController?
+    var eventVC : EventDetailsViewController?
     var tableCells = [UITableViewCell]()
     @IBOutlet weak var table: UITableView!
     var numberValue : UITextView!
     var nameValue : UITextView!
-    
     var parsedName = ""
     var parsedNum = ""
-    
+    var wasLinkedFromEvents = false
+    var wasLinkedFromMap = false
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = JoinRideConstants.NAME
@@ -139,30 +142,42 @@ class RideJoinViewController: UIViewController, UITableViewDataSource, UITableVi
     }
     
     func successfulJoin(success: Bool){
-        var msg: String
+        var successAlert :UIAlertController?
         if success {
-            msg = "Join Successful"
-        } else {
-            msg = "Failed to Join Ride"
+            if(wasLinkedFromEvents){
+                successAlert = UIAlertController(title: "Join Successful", message: "You can view or cancel your ride in the Ridesharing section", preferredStyle: UIAlertControllerStyle.Alert)
+            }
+            else{
+                successAlert = UIAlertController(title: "Join Successful", message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            }
+            
+        }
+        else {
+            successAlert = UIAlertController(title: "Failed to Join Ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)
         }
         
-        let successAlert = UIAlertController(title: msg, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-        successAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
+        successAlert!.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         
         if (success == true){
-            self.presentViewController(successAlert, animated: true, completion: nil)
+            self.presentViewController(successAlert!, animated: true, completion: nil)
         }
         
     }
     
     func unwindToRideList(action: UIAlertAction){
         if let navController = self.navigationController {
-            navController.popViewControllerAnimated(true)
-            navController.popViewControllerAnimated(true)
-            
-            if (rideVC != nil){
-                rideVC?.refresh(self)
+
+            if(wasLinkedFromEvents){
+                if (eventVC != nil){
+                    navController.popToViewController(eventVC!, animated: true)
+                }
+            }
+            else{
+                if (rideVC != nil){
+                    navController.popToViewController(rideVC!, animated: true)
+                    rideVC?.refresh(self)
+                }
             }
             
         }

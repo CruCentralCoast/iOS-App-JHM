@@ -31,6 +31,9 @@ class MapOfRidesViewController: UIViewController, MKMapViewDelegate {
     var index = 0
     var selectedTitle = ""
     var selectedRide: Ride!
+    var rideTVC : RidesViewController?
+    var eventVC : EventDetailsViewController?
+    var wasLinkedFromEvents = false 
     @IBOutlet weak var map: MKMapView!
     
     
@@ -296,6 +299,10 @@ class MapOfRidesViewController: UIViewController, MKMapViewDelegate {
             if let vc = segue.destinationViewController as? RideJoinViewController{
                 vc.ride = self.selectedRide
                 vc.event = self.event
+                vc.rideVC = self.rideTVC
+                vc.eventVC = self.eventVC
+                vc.wasLinkedFromMap = true
+                vc.wasLinkedFromEvents = (self.eventVC != nil)
             }
         }
     }
