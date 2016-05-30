@@ -7,19 +7,26 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class EventsTableViewController: UITableViewController, SWRevealViewControllerDelegate {
+
+
+class EventsTableViewController: UITableViewController, SWRevealViewControllerDelegate, DZNEmptyDataSetDelegate,DZNEmptyDataSetSource {
     
     var events = [Event]()
     let curDate = NSDate()
     
     @IBOutlet weak var menuButton: UIBarButtonItem!
     
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noConnectionImageName)
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        print("LOAD EVENTS")
-        
+                
         if self.revealViewController() != nil{
             menuButton.target = self.revealViewController()
             menuButton.action = "revealToggle:"
@@ -32,6 +39,10 @@ class EventsTableViewController: UITableViewController, SWRevealViewControllerDe
         navigationItem.title = "Events"
         
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
+    }
+    
+    func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
+        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
     }
 
     //insert helper function for inserting event data
@@ -47,7 +58,10 @@ class EventsTableViewController: UITableViewController, SWRevealViewControllerDe
     //helper function for finishing off inserting event data
     private func finishInserting(success: Bool) {
         self.events.sortInPlace({$0.startNSDate.compare($1.startNSDate) == .OrderedAscending})
+        self.tableView.emptyDataSetSource = self
+        self.tableView.emptyDataSetDelegate = self
         self.tableView!.reloadData()
+        
     }
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
