@@ -15,7 +15,6 @@
 import UIKit
 import MapKit
 import LocationPicker
-import SwiftValidator
 import MRProgress
 
 enum EditTags: Int {
@@ -48,7 +47,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var bottomButton: UIButton!
     var isOfferingRide = false
-    var updateFunction : [(()->())]!
+    
     var events = [Event]()
     var event : Event!{
         didSet{
@@ -64,11 +63,18 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             }
         }
     }
-    var rideVC: RidesViewController!
+    var location: Location! {
+        didSet {
+            addressValue.text? = location.address
+            extractLocationFromView()
+            updateOptions()
+        }
+    }
     var options = [EditableItem]()
     var directionOption: EditableItem!
-    var rideDetailVC: DriverRideDetailViewController!
     var passengers = [Passenger]()
+    var passengersToDrop = [Passenger]()
+    
     var CLocation: CLLocation?
     var timeValue: UILabel!
     var dateValue: UILabel!
@@ -80,22 +86,16 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     var numberValue: UITextView!
     var passengerValue: UITextView!
     var eventValue: UILabel!
-    let validator = Validator()
     var hasUserEdited = false
     var directionCell: UITableViewCell!
     var directionCellPath: NSIndexPath!
-    var passengersToDrop = [Passenger]()
     var passesToDrop : Int!
     var passesDropped : Int!
     var parsedNum : String?
-    var location: Location! {
-        didSet {
-            addressValue.text? = location.address
-            extractLocationFromView()
-            updateOptions()
-        }
-    }
     
+    var updateFunctions : [(()->())]!
+    var rideDetailVC: DriverRideDetailViewController!
+    var rideVC: RidesViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -103,11 +103,11 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         
         
         if(rideDetailVC != nil){
-            updateFunction.append(rideDetailVC.updateData)
+            updateFunctions.append(rideDetailVC.updateData)
         }
         
         if(rideVC != nil){
-            updateFunction.append(rideVC.refresh)
+            updateFunctions.append(rideVC.refresh)
         }
         
         
@@ -670,7 +670,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             self.table!.reloadData()
             rideDetailVC?.ride = ride
             
-            for update in updateFunction{
+            for update in updateFunctions{
                 update()
             }
         }
