@@ -48,6 +48,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     @IBOutlet weak var table: UITableView!
     @IBOutlet weak var bottomButton: UIButton!
     var isOfferingRide = false
+    var updateFunction : [(()->())]!
     var events = [Event]()
     var event : Event!{
         didSet{
@@ -98,6 +99,17 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+        
+        if(rideDetailVC != nil){
+            updateFunction.append(rideDetailVC.updateData)
+        }
+        
+        if(rideVC != nil){
+            updateFunction.append(rideVC.refresh)
+        }
+        
         
         if(isOfferingRide){
             self.navigationItem.title = OfferRideConstants.pageTitle
@@ -654,12 +666,13 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             self.presentViewController(alert, animated: true, completion: {
                 //self.navigationController?.popViewControllerAnimated(true)
             })
-            rideVC!.refresh(self)
             self.ride = ride
             self.table!.reloadData()
             rideDetailVC?.ride = ride
-            rideDetailVC?.updateData()
             
+            for update in updateFunction{
+                update()
+            }
         }
         else{
             let alert = UIAlertController(title: "Could not update ride", message: "", preferredStyle: UIAlertControllerStyle.Alert)

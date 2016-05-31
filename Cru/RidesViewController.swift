@@ -106,6 +106,10 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         }
     }
     
+    func refresh(){
+        self.refresh(self)
+    }
+    
     func refresh(sender:AnyObject)
     {
         rides.removeAll()

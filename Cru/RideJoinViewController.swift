@@ -143,6 +143,8 @@ class RideJoinViewController: UIViewController, UITableViewDataSource, UITableVi
     
     func successfulJoin(success: Bool){
         var successAlert :UIAlertController?
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+        
         if success {
             if(wasLinkedFromEvents){
                 successAlert = UIAlertController(title: "Join Successful", message: "You can view or cancel your ride in the Ridesharing section", preferredStyle: UIAlertControllerStyle.Alert)
@@ -157,11 +159,8 @@ class RideJoinViewController: UIViewController, UITableViewDataSource, UITableVi
         }
         
         successAlert!.addAction(UIAlertAction(title: "Ok", style: .Default, handler: unwindToRideList))
-        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
         
-        if (success == true){
-            self.presentViewController(successAlert!, animated: true, completion: nil)
-        }
+        self.presentViewController(successAlert!, animated: true, completion: nil)
         
     }
     
