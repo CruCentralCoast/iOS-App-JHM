@@ -95,14 +95,12 @@ Usage
 
 **load**
 ```swift
-import ImageLoader
 
 ImageLoader.load("http://image").completionHandler { _ in }
 ```
 
 **suspend**
 ```swift
-import ImageLoader
 
 ImageLoader.suspend("http://image")
 ```
@@ -111,7 +109,6 @@ ImageLoader.suspend("http://image")
 #### UIImageView Category
 
 ```swift
-import ImageLoader
 
 imageView.load("http://image")
 ```
@@ -119,7 +116,6 @@ imageView.load("http://image")
 or
 
 ```swift
-import ImageLoader
 
 imageView.load("http://image", placeholder: nil) { _ in ... }
 ```

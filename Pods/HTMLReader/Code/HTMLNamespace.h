@@ -2,7 +2,7 @@
 //
 //  Public domain. https://github.com/nolanw/HTMLReader
 
-#import "HTMLSupport.h"
+#import <HTMLReader/HTMLSupport.h>
 
 NS_ASSUME_NONNULL_BEGIN
 

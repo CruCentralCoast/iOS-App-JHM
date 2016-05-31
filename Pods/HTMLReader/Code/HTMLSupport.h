@@ -5,9 +5,11 @@
 #import <Foundation/Foundation.h>
 
 // Objective-C generics arrived in Xcode 7.
-#if __has_feature(objc_generics)
+#if __has_feature(objc_generic)
+    #define HTMLGenericElse(T, Else) T
     #define HTMLGenericOf(T, args...) T<args>
 #else
+    #define HTMLGenericElse(T, Else) Else
     #define HTMLGenericOf(T, ...) T
 #endif
 

@@ -1,3 +1,7 @@
+# 2016-01-25 -- v1.1.6
+- Greatly reduce IID library size.
+- Bug fixes.
+
 # 2015-12-08 -- v1.1.4
 - Bug fixes.
 - Fix dSYM warnings.

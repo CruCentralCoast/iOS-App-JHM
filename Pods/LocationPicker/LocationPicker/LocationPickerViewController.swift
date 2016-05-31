@@ -27,7 +27,7 @@ public class LocationPickerViewController: UIViewController {
 	/// default: true
 	public var showCurrentLocationInitially = true
 	
-	/// see region property of MKLocalSearchRequest
+	/// see `region` property of `MKLocalSearchRequest`
 	/// default: false
 	public var useCurrentLocationAsHint = false
 	
@@ -36,6 +36,9 @@ public class LocationPickerViewController: UIViewController {
 	
 	/// default: "Search History"
 	public var searchHistoryLabel = "Search History"
+    
+    /// default: "Select"
+    public var selectButtonTitle = "Select"
 	
 	lazy public var currentLocationButtonBackground: UIColor = {
 		if let navigationBar = self.navigationController?.navigationBar,
@@ -43,8 +46,11 @@ public class LocationPickerViewController: UIViewController {
 				return barTintColor
 		} else { return .whiteColor() }
 	}()
+    
+    /// default: .Minimal
+    public var searchBarStyle: UISearchBarStyle = .Minimal
 	
-	public var mapType: MKMapType = .Standard {
+	public var mapType: MKMapType = .Hybrid {
 		didSet {
 			if isViewLoaded() {
 				mapView.mapType = mapType
@@ -90,7 +96,7 @@ public class LocationPickerViewController: UIViewController {
 	
 	lazy var searchBar: UISearchBar = {
 		let searchBar = self.searchController.searchBar
-		searchBar.searchBarStyle = .Minimal
+		searchBar.searchBarStyle = self.searchBarStyle
 		searchBar.placeholder = self.searchBarPlaceholder
 		return searchBar
 	}()
@@ -127,14 +133,6 @@ public class LocationPickerViewController: UIViewController {
 		locationManager.delegate = self
 		mapView.delegate = self
 		searchBar.delegate = self
-        
-        
-        //Edited by Max Crane, this changes the search text to white
-        let textFieldInsideSearchBar = searchBar.valueForKey("searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = UIColor.whiteColor()
-        
-        let textFieldInsideSearchBarLabel = textFieldInsideSearchBar!.valueForKey("placeholderLabel") as? UILabel
-        textFieldInsideSearchBarLabel?.textColor = UIColor.whiteColor()
 		
 		// gesture recognizer for adding by tap
 		mapView.addGestureRecognizer(UILongPressGestureRecognizer(target: self, action: "addLocation:"))
@@ -342,7 +340,7 @@ extension LocationPickerViewController: MKMapViewDelegate {
 	
 	func selectLocationButton() -> UIButton {
 		let button = UIButton(frame: CGRect(x: 0, y: 0, width: 70, height: 30))
-		button.setTitle("Select", forState: .Normal)
+		button.setTitle(selectButtonTitle, forState: .Normal)
 		button.setTitleColor(view.tintColor, forState: .Normal)
 		return button
 	}

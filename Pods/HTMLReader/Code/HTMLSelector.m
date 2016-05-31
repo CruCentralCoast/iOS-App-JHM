@@ -445,8 +445,6 @@ NSNumber * __nullable parseNumber(NSString *number, NSInteger defaultValue)
 
 #pragma mark Parse
 
-NSString * __nullable scanIdentifier(NSScanner *scanner,  NSError ** __nullable error);
-
 static NSString * __nullable scanFunctionInterior(NSScanner *scanner, NSError ** __nullable error)
 {
 	BOOL ok;
@@ -472,7 +470,16 @@ static __nullable HTMLSelectorPredicateGen scanPredicateFromPseudoClass(NSScanne
                                                                         HTMLSelectorPredicate typePredicate,
                                                                         NSError ** __nullable error)
 {
-	NSString *pseudo = scanIdentifier(scanner, error);
+    BOOL ok;
+    
+	NSString *pseudo;
+	
+	// TODO Can't assume the end of the pseudo is the end of the string
+	ok = [scanner scanUpToString:@"(" intoString:&pseudo];
+	if (!ok && !scanner.isAtEnd) {
+		pseudo = [scanner.string substringFromIndex:scanner.scanLocation];
+		scanner.scanLocation = scanner.string.length - 1;
+	}
 	
 	// Case-insensitively look for pseudo classes
 	pseudo = [pseudo lowercaseString];

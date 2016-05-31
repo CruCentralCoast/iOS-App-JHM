@@ -85,10 +85,6 @@ class RideTest: XCTestCase {
         XCTAssertTrue(ride4 < ride)
         XCTAssertTrue(ride4 < ride2)
         XCTAssertTrue(ride4 < ride3)
-//        print(ride!.getTime())
-//        print(ride2!.getTime())
-//        print(ride3!.getTime())
-//        print(ride4!.getTime())
     }
     
     func testRideEquatable(){
@@ -102,6 +98,15 @@ class RideTest: XCTestCase {
         self.measureBlock {
             // Put the code you want to measure the time of here.
         }
+    }
+    
+    func testShouldChangeName(){
+        let view = UITextView()
+        view.text = "hi"
+        
+        XCTAssertTrue(GlobalUtils.shouldChangeNameTextInRange(view,
+            range: NSRange(location: 3, length: 2), text: "k"))
+        
     }
 
 }
