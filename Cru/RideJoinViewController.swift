@@ -137,7 +137,7 @@ class RideJoinViewController: UIViewController, UITableViewDataSource, UITableVi
         if(extractNumberFromView() == false){return}
         
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        CruClients.getRideUtils().joinRide(parsedName, phone: parsedNum, direction: ride.direction,  rideId: ride.id, handler: successfulJoin)
+        CruClients.getRideUtils().joinRide(parsedName, phone: parsedNum, direction: "both",  rideId: ride.id, handler: successfulJoin)
         
     }
     

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "no-rides-for-event@3x-2.png",
+      "filename" : "no-rides-for-event@1x.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "no-rides-for-event@3x-1.png",
+      "filename" : "no-rides-for-event@1x-1.png",
       "scale" : "2x"
     },
     {

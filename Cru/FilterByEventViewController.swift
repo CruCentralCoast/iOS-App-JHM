@@ -55,7 +55,9 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        return UIImage(named: Config.noRidesForEvent)
+        let img =  UIImage(named: Config.noRidesForEvent)
+        
+        return img
     }
     
     func mapView(){
