@@ -12,7 +12,15 @@ class FakeSubscriptionManager: SubscriptionProtocol {
 
     private var gcmToken = "emulator-id-hey-whats-up-hello"
     
-    private let storageManager = LocalStorageManager()
+    private let storageManager: LocalStorageManager
+    
+    init() {
+        storageManager = LocalStorageManager()
+    }
+    
+    init(storageManager: LocalStorageManager) {
+        self.storageManager = storageManager
+    }
     
     func saveGCMToken(token: String) {
         gcmToken = token
