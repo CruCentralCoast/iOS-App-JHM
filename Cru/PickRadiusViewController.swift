@@ -108,10 +108,16 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
     }
     
     func centerMapOnLocation(location: CLLocation) {
-        let regionRadius: CLLocationDistance = 10000
+        var regionRadius: CLLocationDistance = 500
+        
+        if(ride!.radius != 0){
+            regionRadius = Double(numMilesFloat! * Float(metersInMile)) + 700
+        }
+        
         let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate,
          regionRadius * 2.0, regionRadius * 2.0)
         map.setRegion(coordinateRegion, animated: true)
+        map.reloadInputViews()
     }
     
     func loadOverlayForRegionWithLatitude(latitude: Double, andLongitude longitude: Double) {
@@ -119,14 +125,16 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
         //1
         let coordinates = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         //2
-        let circle = MKCircle(centerCoordinate: coordinates, radius: (Double(ride!.radius) * metersInMile))
+        let circle = MKCircle(centerCoordinate: coordinates, radius: (Double(numMilesFloat!) * metersInMile))
         //3
         //self.map.setRegion(MKCoordinateRegion(center: coordinates, span: MKCoordinateSpan(latitudeDelta: 7, longitudeDelta: 7)), animated: true)
         //4
         
         if(curOverlay != nil){
             self.map.removeOverlay(curOverlay!)
+            
         }
+        
         
         curOverlay = circle
         
@@ -134,7 +142,7 @@ class PickRadiusViewController: UIViewController, MKMapViewDelegate {
             self.map.addOverlay(circle)
         }
         
-        
+        self.centerMapOnLocation(location!)
     }
     
     
