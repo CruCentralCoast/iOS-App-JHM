@@ -8,8 +8,9 @@
 
 import UIKit
 import MRProgress
+import DZNEmptyDataSet
 
-class FilterByEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate /*UIPickerViewDelegate, UIPickerViewDataSource*/ {
+class FilterByEventViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UIPopoverPresentationControllerDelegate, DZNEmptyDataSetDelegate, DZNEmptyDataSetSource{
     
     @IBOutlet weak var rideTable: UITableView!
     @IBOutlet weak var eventNameLabel: UILabel!
@@ -51,6 +52,10 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
         if tempEvent == nil {
             loadRides(nil)
         }
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noRidesForEvent)
     }
     
     func mapView(){
@@ -99,13 +104,18 @@ class FilterByEventViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     private func filterRidesByEventId(eventId: String){
+        rideTable.emptyDataSetDelegate = nil
+        rideTable.emptyDataSetSource = nil
         filteredRides.removeAll()
-                
+        
         for ride in allRides {
             if(ride.eventId == eventId && ride.hasSeats()){
                 filteredRides.append(ride)
             }
         }
+        
+        rideTable.emptyDataSetDelegate = self
+        rideTable.emptyDataSetSource = self
         
         self.rideTable.reloadData()
     }
