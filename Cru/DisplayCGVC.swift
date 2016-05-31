@@ -23,7 +23,7 @@ class DisplayCGVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
 
     @IBAction func leaveGroup(sender: AnyObject) {
         GlobalUtils.saveString(Config.communityGroupKey, value: "")
-        //leaveCallback()
+        leaveCallback()
     }
     
     override func viewWillAppear(animated: Bool) {
