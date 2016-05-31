@@ -132,6 +132,13 @@ class KeystoneClient: ServerProtocol {
         }
     }
     
+    func checkIfValidNum(num: Int, handler: (Bool)->()){
+        Alamofire.request(.GET, Config.serverEndpoint + "users/phone/" + String(num))
+            .responseJSON{ response in
+                handler(!response.description.containsString("null"))
+        }
+    }
+    
     private func requestData(url: String, method: Alamofire.Method, params: [String:AnyObject]?, insert: (NSDictionary) -> (), completionHandler: (Bool)->Void) {
         var reqUrl = url
         if (LoginUtils.isLoggedIn()) {

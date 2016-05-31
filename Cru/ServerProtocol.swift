@@ -38,6 +38,8 @@ protocol ServerProtocol {
     
     func checkConnection(handler: (Bool)->())
     
+    func checkIfValidNum(num: Int, handler: (Bool)->())
+    
     // Send a request to the server with the users name, phonenumber and the id of the team they want to join.
     // The server should return a list containing the contact info for each team leader or nil if there was no
     // response from the server

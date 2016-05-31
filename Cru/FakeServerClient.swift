@@ -167,6 +167,10 @@ class FakeServerClient: ServerProtocol {
         handler(true)
     }
     
+    func checkIfValidNum(num: Int, handler: (Bool)->()){
+        
+    }
+    
     private func getById(collection: DBCollection, id: String) -> [String:AnyObject]! {
         let col = getCollection(collection)
         

@@ -86,6 +86,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     var passengersToDrop = [Passenger]()
     var passesToDrop : Int!
     var passesDropped : Int!
+    var parsedNum : String?
     var location: Location! {
         didSet {
             addressValue.text? = location.address
@@ -458,15 +459,16 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     
     func extractNumberFromView()->Bool{
         if (numberValue != nil){
-            let parsedNum = PhoneFormatter.parsePhoneNumber(numberValue.text!)
-            let error  = ride.isValidPhoneNum(parsedNum)
+            parsedNum = PhoneFormatter.parsePhoneNumber(numberValue.text!)
+            
+            let error  = ride.isValidPhoneNum(parsedNum!)
             if(error != ""){
                 showValidationError(error)
                 addTextViewError(numberValue)
                 return false
             }
             else{
-                ride.driverNumber = parsedNum
+                ride.driverNumber = parsedNum!
                 removeTextViewError(numberValue)
                 return true
             }
@@ -554,7 +556,16 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
         CruClients.getRideUtils().patchRide(ride.id, params: [RideKeys.passengers: ride.passengers, RideKeys.radius: ride.radius, RideKeys.driverName: ride.driverName, RideKeys.direction: ride.direction, RideKeys.driverNumber: ride.driverNumber, RideKeys.time : ride.getTimeInServerFormat(), RideKeys.seats: ride.seats, LocationKeys.loc: [LocationKeys.postcode: ride.postcode, LocationKeys.state : ride.state, LocationKeys.street1 : ride.street, LocationKeys.city: ride.city, LocationKeys.country: ride.country]], handler: handlePostResult)
     }
     func sendRideOffer(){
-        CruClients.getRideUtils().postRideOffer(ride.eventId, name: nameValue.text, phone: numberValue.text, seats: ride.seats, time: ride.getTimeInServerFormat(), location: location.getLocationAsDict(location), radius: 1, direction: ride.direction, handler:  handleRequestResult)
+        CruClients.getServerClient().checkIfValidNum(Int(parsedNum!)!, handler: postRideOffer)
+    }
+    
+    func postRideOffer(success: Bool){
+        if (success){
+            CruClients.getRideUtils().postRideOffer(ride.eventId, name: nameValue.text, phone: numberValue.text, seats: ride.seats, time: ride.getTimeInServerFormat(), location: location.getLocationAsDict(location), radius: 1, direction: ride.direction, handler:  handleRequestResult)
+        }else{
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
+            showValidationError(ValidationErrors.phoneUnauthorized)
+        }
     }
     
     func handleDropPass(success: Bool){

@@ -58,6 +58,7 @@ struct Labels{
 //used for validation errors on ride signup and edit forms
 struct ValidationErrors{
     static let none = ""
+    static let phoneUnauthorized = "Sorry, but it looks like you are not authorized to drive according to your phone number\nHint: a valid number is (123) 456-7890"
     static let noEvent = "Please pick an event"
     static let noDeparture = "Please provide a departure location"
     static let noSeats = "Please specify how many seats you would like to offer"
