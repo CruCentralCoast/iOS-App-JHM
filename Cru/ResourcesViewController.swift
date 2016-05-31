@@ -12,6 +12,7 @@ import WildcardSDK
 import AVFoundation
 import Alamofire
 import HTMLReader
+import MRProgress
 
 class ResourcesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITabBarDelegate, CardViewDelegate, SWRevealViewControllerDelegate {
     //MARK: Properties
@@ -64,8 +65,8 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
        
         //If the user is logged in, view special resources. Otherwise load non-restricted resources.
-        
-        serverClient.getData(DBCollection.Resource, insert: insertResource, completionHandler: {error in })
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+        serverClient.getData(DBCollection.Resource, insert: insertResource, completionHandler: completion)
         
         tableView.backgroundColor = Colors.googleGray
         tableView.rowHeight = UITableViewAutomaticDimension
@@ -77,6 +78,13 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         selectorBar.selectedImageTintColor = UIColor.whiteColor()
+    }
+    
+    func completion(success: Bool) {
+        if( success) {
+            
+        }
+        MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
     }
     
     //Code for the bar at the top of the view for filtering resources
@@ -402,7 +410,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         if (cardView != nil) {
             cardView.delegate = self
             self.resources.insert(resource, atIndex: 0)
-            if(self.currentType == .Article){
+            if(self.currentType == .Video){
                 self.tableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
             }
         }
