@@ -20,39 +20,50 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealVie
     //selector bar
     @IBOutlet weak var selectorBar: UITabBar!
     
+    var chosenSection = ""
+    var cgController : DisplayCGVC?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        showCGContainer()
+        
         //side menu reveal controller
         GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)
 
-                selectorBar.selectedItem = selectorBar.items![0]
+        selectorBar.selectedItem = selectorBar.items![0]
         selectorBar.tintColor = UIColor.whiteColor()
 
         //Set the nav title & font
         navigationItem.title = "Get Involved"
         
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
-        
     }
     
     override func viewWillAppear(animated: Bool) {
-        showCGContainer()
+        //showCGContainer()
+        chosenSection = selectorBar.selectedItem!.title!
+        showCorrectContainers()
     }
     
     //tab bar function 
     //TODO figure out how to call this in viewDidLoad
     func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        
-        switch (item.title!){
-        case "Community Groups":
-            showCGContainer()
-        case "Ministry Teams":
-            ministryTeamContainer.hidden = false
-            communityGroupContainer.hidden = true
-            inCommunityGroupContainer.hidden = true
-        default :
-            showCGContainer()
+        chosenSection = item.title!
+        showCorrectContainers()
+    }
+    
+    func showCorrectContainers(){
+        switch (chosenSection){
+            case "Community Group":
+                showCGContainer()
+                //cgController.
+            case "Ministry Teams":
+                ministryTeamContainer.hidden = false
+                communityGroupContainer.hidden = true
+                inCommunityGroupContainer.hidden = true
+            default :
+                print("")
         }
     }
     
@@ -82,4 +93,16 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealVie
             }
         }
     }
+    
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if (segue.identifier == "cgDetailSegue"){
+            if let cg = segue.destinationViewController as? DisplayCGVC{
+                cgController = cg
+                cgController?.setLeaveCallback(showCGContainer)
+            }
+        }
+    }
+    
+
 }

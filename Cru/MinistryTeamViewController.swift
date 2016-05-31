@@ -25,7 +25,16 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
         
         //setup local storage manager
         ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
+        showCorrectView()
         
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.ministryTeamTableView.addSubview(self.refreshControl)
+    }
+    
+    func showCorrectView(){
         if let joinedTeams = ministryTeamsStorageManager.getObject(Config.ministryTeamStorageKey) {
             
             //check if the map object is empty or not
@@ -41,15 +50,14 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
             //show initial view
             toggleMinistryTableView(true)
         }
-        
-        self.refreshControl = UIRefreshControl()
-        self.refreshControl.attributedTitle = NSAttributedString(string: "")
-        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
-        self.ministryTeamTableView.addSubview(self.refreshControl)
     }
     
     override func viewDidAppear(animated: Bool) {
         refresh(self)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        showCorrectView()
     }
 
     //toggle table view

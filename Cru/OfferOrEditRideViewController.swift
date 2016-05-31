@@ -93,13 +93,12 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     var passesDropped : Int!
     var parsedNum : String?
     
-    var updateFunctions : [(()->())]!
+    var updateFunctions: [()->()] = []
     var rideDetailVC: DriverRideDetailViewController!
     var rideVC: RidesViewController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         
         if(rideDetailVC != nil){

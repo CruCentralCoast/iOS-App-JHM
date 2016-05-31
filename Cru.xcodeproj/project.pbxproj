@@ -164,7 +164,6 @@
 		50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */; };
 		50FE4D471C50D37C00EA9042 /* Ministry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50FE4D461C50D37C00EA9042 /* Ministry.swift */; };
 		6D0968E41CE6600700FA8638 /* CardTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D59068D1CE3F0DC00464D57 /* CardTableViewCell.swift */; };
-		6D0968E51CE6637B00FA8638 /* WildcardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6D4B78BD1C70EBD500F643CB /* WildcardSDK.framework */; };
 		6D12525E1C0799EC0039D3C0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6D12525D1C0799EC0039D3C0 /* LaunchScreen.storyboard */; };
 		6D2798FA1CF26D79008E5906 /* EventStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2798F91CF26D78008E5906 /* EventStatus.swift */; };
 		6D2798FB1CF26D79008E5906 /* EventStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D2798F91CF26D78008E5906 /* EventStatus.swift */; };
@@ -460,7 +459,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECA244F33222A58BB52BB6DF /* Pods_CruTests.framework in Frameworks */,
-				6D0968E51CE6637B00FA8638 /* WildcardSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,7 +41,7 @@
                                 <rect key="frame" x="0.0" y="49" width="600" height="487"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="ROr-Ps-fvZ" kind="embed" id="HZc-Oc-05V"/>
+                                    <segue destination="ROr-Ps-fvZ" kind="embed" identifier="cgSegue" id="HZc-Oc-05V"/>
                                 </connections>
                             </containerView>
                             <tabBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zb7-NY-Slq">
@@ -62,7 +62,7 @@
                                 <rect key="frame" x="0.0" y="49" width="600" height="487"/>
                                 <animations/>
                                 <connections>
-                                    <segue destination="1jQ-Jp-03d" kind="embed" id="lX1-Ne-uRv"/>
+                                    <segue destination="1jQ-Jp-03d" kind="embed" identifier="cgDetailSegue" id="lX1-Ne-uRv"/>
                                 </connections>
                             </containerView>
                         </subviews>

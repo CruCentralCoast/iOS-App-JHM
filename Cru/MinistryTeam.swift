@@ -64,8 +64,18 @@ class MinistryTeam {
             //if image is nil
             self.image = UIImage(named: "fall-retreat-still")
         }
-        if (dLeaders != nil) {
+        /*if (dLeaders != nil) {
             self.leaders = dLeaders as! [String]
+        }*/
+        
+        if let leaderDicts = dLeaders as? [[String:AnyObject]] {
+            self.leaders = leaderDicts.map{
+                if let nameStruct = $0["name"] as? [String:String] {
+                    return nameStruct["first"]! + " " + nameStruct["last"]!
+                } else {
+                    return "No name"
+                }
+            }
         }
     }
     
