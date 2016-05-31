@@ -47,9 +47,13 @@ class DisplayCGVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     }
     
     private func loadLeaders(success: Bool) {
-        print("load leaders \(success)")
         if (success) {
-            CruClients.getServerClient().getDataIn(DBCollection.CommunityGroup, parentId: group.id, child: DBCollection.Leader, insert: insertLeader, completionHandler: finishInserting)
+            //CruClients.getServerClient().getDataIn(DBCollection.CommunityGroup, parentId: group.id, child: DBCollection.Leader, insert: insertLeader, completionHandler: finishInserting)
+            
+            if (group.leaders != nil && group.leaders.count > 0) {
+                CruClients.getServerClient().getData(.User, insert: insertLeader, completionHandler: finishInserting, params: ["_id":["$in": group.leaders]])
+            }
+            
         }
     }
     

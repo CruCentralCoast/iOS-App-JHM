@@ -205,8 +205,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-J4-cUs">
-                                <rect key="frame" x="20" y="350" width="560" height="67"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="115" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="I7x-J4-cUs">
+                                <rect key="frame" x="20" y="329" width="560" height="101"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -307,7 +307,7 @@
                             <constraint firstItem="8DY-Iv-ivW" firstAttribute="top" secondItem="cjX-bn-CMi" secondAttribute="top" constant="151" id="U3k-il-VjE"/>
                             <constraint firstItem="8DY-Iv-ivW" firstAttribute="leading" secondItem="54y-R2-cOn" secondAttribute="leading" id="VJX-hh-ua3"/>
                             <constraint firstItem="quK-46-3eX" firstAttribute="centerX" secondItem="I7x-J4-cUs" secondAttribute="centerX" id="Z7b-Y0-PZ0"/>
-                            <constraint firstItem="lYY-Uc-BgU" firstAttribute="top" secondItem="I7x-J4-cUs" secondAttribute="bottom" constant="-417" id="b9g-xo-1De"/>
+                            <constraint firstItem="lYY-Uc-BgU" firstAttribute="top" secondItem="I7x-J4-cUs" secondAttribute="bottom" constant="-430" id="b9g-xo-1De"/>
                             <constraint firstAttribute="trailing" secondItem="quK-46-3eX" secondAttribute="trailing" id="eJj-8p-Irr"/>
                             <constraint firstItem="8DY-Iv-ivW" firstAttribute="top" secondItem="jsz-C9-ykX" secondAttribute="bottom" constant="13" id="fkR-kX-TbJ"/>
                             <constraint firstItem="quK-46-3eX" firstAttribute="bottom" secondItem="m65-IS-AsP" secondAttribute="top" id="iA1-Cz-IVP"/>
@@ -318,7 +318,7 @@
                             <constraint firstItem="8DY-Iv-ivW" firstAttribute="trailing" secondItem="iaV-sQ-dpS" secondAttribute="trailing" id="raH-jc-UNi"/>
                             <constraint firstItem="8DY-Iv-ivW" firstAttribute="leading" secondItem="FWb-tD-ooR" secondAttribute="leading" id="xKQ-BD-suB"/>
                             <constraint firstItem="0Sf-rf-a4u" firstAttribute="top" secondItem="Ri0-q1-uQ3" secondAttribute="bottom" constant="25" id="xdl-ZJ-vgg"/>
-                            <constraint firstItem="I7x-J4-cUs" firstAttribute="top" secondItem="cjX-bn-CMi" secondAttribute="topMargin" constant="350" id="xqq-87-LPo"/>
+                            <constraint firstItem="I7x-J4-cUs" firstAttribute="top" secondItem="cjX-bn-CMi" secondAttribute="topMargin" constant="329" id="xqq-87-LPo"/>
                             <constraint firstItem="8DY-Iv-ivW" firstAttribute="trailing" secondItem="jsz-C9-ykX" secondAttribute="trailing" id="ynb-hz-n9p"/>
                         </constraints>
                     </view>

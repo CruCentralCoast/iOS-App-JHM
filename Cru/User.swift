@@ -15,7 +15,8 @@ class User {
     let email: String!
     
     init(dict: NSDictionary) {
-        name = dict["name"] as! String
+        let nameDict = dict["name"] as! [String:String]
+        name = nameDict["first"]! + " " + nameDict["last"]!
         phone = dict["phone"] as! String
         email = dict["email"] as! String
     }

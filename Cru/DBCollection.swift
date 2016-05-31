@@ -20,7 +20,7 @@ enum DBCollection : String {
     case Event = "events"
     case MinistyQuestion = "ministryquestions"
     case CommunityGroup = "communitygroups"
-    
+    case User = "users"
     case Question = "questions" //subsection of ministry
     case Leader = "leaders" //subsection of community group
     
