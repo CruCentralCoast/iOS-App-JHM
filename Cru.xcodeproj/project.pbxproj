@@ -996,6 +996,7 @@
 					0F8CEF331BEC0E14008FC70D = {
 						CreatedOnToolsVersion = 7.1;
 						DevelopmentTeam = 55E3ZU82Z7;
+						TestTargetID = 0F8CEF1C1BEC0E13008FC70D;
 					};
 				};
 			};
@@ -1574,6 +1575,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cru/CruTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cru.app/Cru";
 			};
 			name = Debug;
 		};
@@ -1592,6 +1594,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.hopscotch.CruTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Cru/CruTests-Bridging-Header.h";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Cru.app/Cru";
 			};
 			name = Release;
 		};
