@@ -9,7 +9,7 @@
 import UIKit
 
 class ChooseMinistryVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    let ministries = SubscriptionManager.loadMinistries()!
+    let ministries = CruClients.getSubscriptionManager().loadMinistries()
     var selectedMinistry: Ministry!
     
     override func viewDidLoad() {

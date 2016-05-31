@@ -220,6 +220,10 @@
 		C14019CE1CBF711000B01203 /* ArrayLocalStorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */; };
 		C151D9B41C7D2D870067A29E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B31C7D2D870067A29E /* LoginViewController.swift */; };
 		C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */; };
+		C1536D551CFD192400730281 /* SubscriptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1536D541CFD192400730281 /* SubscriptionProtocol.swift */; };
+		C1536D561CFD192400730281 /* SubscriptionProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1536D541CFD192400730281 /* SubscriptionProtocol.swift */; };
+		C1536D591CFD1DB400730281 /* FakeSubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1536D581CFD1DB400730281 /* FakeSubscriptionManager.swift */; };
+		C1536D5A1CFD1DB400730281 /* FakeSubscriptionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1536D581CFD1DB400730281 /* FakeSubscriptionManager.swift */; };
 		C17247101C8BDB8A00A794D4 /* LogoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */; };
 		C185BB391CD2904F00787153 /* FakeServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185BB381CD2904F00787153 /* FakeServerClient.swift */; };
 		C185BB3A1CD2904F00787153 /* FakeServerClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C185BB381CD2904F00787153 /* FakeServerClient.swift */; };
@@ -414,6 +418,8 @@
 		C14019CC1CBF711000B01203 /* ArrayLocalStorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArrayLocalStorageManager.swift; sourceTree = "<group>"; };
 		C151D9B31C7D2D870067A29E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		C151D9B51C7D2D9A0067A29E /* LoginUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginUtils.swift; sourceTree = "<group>"; };
+		C1536D541CFD192400730281 /* SubscriptionProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionProtocol.swift; sourceTree = "<group>"; };
+		C1536D581CFD1DB400730281 /* FakeSubscriptionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeSubscriptionManager.swift; sourceTree = "<group>"; };
 		C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutViewController.swift; sourceTree = "<group>"; };
 		C185BB381CD2904F00787153 /* FakeServerClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FakeServerClient.swift; sourceTree = "<group>"; };
 		C1D9078D1C88F8C800FDC096 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
@@ -755,6 +761,8 @@
 				50FE4D421C50D0D100EA9042 /* SubscriptionManager.swift */,
 				C151D9B31C7D2D870067A29E /* LoginViewController.swift */,
 				C172470F1C8BDB8A00A794D4 /* LogoutViewController.swift */,
+				C1536D541CFD192400730281 /* SubscriptionProtocol.swift */,
+				C1536D581CFD1DB400730281 /* FakeSubscriptionManager.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1216,6 +1224,7 @@
 				50AA7CCB1C63320F00866BE6 /* RideTableViewCell.swift in Sources */,
 				50D507861CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
 				0F74A3101C0BB9D300401377 /* User.swift in Sources */,
+				C1536D551CFD192400730281 /* SubscriptionProtocol.swift in Sources */,
 				50FAC03F1CFBD68000E93E89 /* RideJoinViewController.swift in Sources */,
 				C151D9B61C7D2D9A0067A29E /* LoginUtils.swift in Sources */,
 				0F1B8C2F1CC9ACA500CEE24C /* MinistryTeamDetailViewController.swift in Sources */,
@@ -1228,6 +1237,7 @@
 				5047424A1C75988E003F276E /* PassengerTableViewCell.swift in Sources */,
 				C12940E91CCD833E004DACB1 /* ServerProtocol.swift in Sources */,
 				505722A41CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
+				C1536D591CFD1DB400730281 /* FakeSubscriptionManager.swift in Sources */,
 				50A9B02F1CFCD74400E759E2 /* RideAnnotation.swift in Sources */,
 				C13F7DEE1CE28CF50057D0F5 /* TextQuestionCell.swift in Sources */,
 				509527241C63DAAE00E4F7B6 /* RiderRideDetailViewController.swift in Sources */,
@@ -1294,6 +1304,7 @@
 				50697BC81CE0456600776CC5 /* PhoneFormatter.swift in Sources */,
 				5072B4221CB38E70001F5BF6 /* RideTableViewCell.swift in Sources */,
 				50D507871CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */,
+				C1536D5A1CFD1DB400730281 /* FakeSubscriptionManager.swift in Sources */,
 				0F68621F1CE65D3600138377 /* SummerMissionsTableViewCell.swift in Sources */,
 				5072B41F1CB38E53001F5BF6 /* OfferedRideTableViewCell.swift in Sources */,
 				5072B41E1CB38E30001F5BF6 /* FilterByEventViewController.swift in Sources */,
@@ -1351,6 +1362,7 @@
 				6D8F42401CD80CF60013BB13 /* YoutubeThumbnail.swift in Sources */,
 				50B1D3C91CED76910014EE1B /* SelectCGVC.swift in Sources */,
 				50E57A8E1CEE989A00462F8A /* DriverDetailCell.swift in Sources */,
+				C1536D561CFD192400730281 /* SubscriptionProtocol.swift in Sources */,
 				50FE4D441C50D0D100EA9042 /* SubscriptionManager.swift in Sources */,
 				0F74A3111C0BB9D300401377 /* User.swift in Sources */,
 				6DBD7B8D1C756D1000D11FFA /* CruColors.swift in Sources */,

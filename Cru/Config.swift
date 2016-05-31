@@ -17,12 +17,7 @@ struct Config {
     static let globalTopic = "/topics/global"
     static let gcmIdField = "gcmId"
     static func gcmId()->String{
-            if(simulatorMode){
-                return "emulator-id-hey-whats-up-hello"
-            }
-            else{
-                return SubscriptionManager.loadGCMToken()
-            }
+        return CruClients.getSubscriptionManager().loadGCMToken()
     }
     static var simulatorMode: Bool{
         get{
@@ -38,6 +33,9 @@ struct Config {
     static let ridesReceiving = "ridesReceiving"
     static let ridesOffering = "ridesOffering"
     static let communityGroupKey = "CommunityGroup"
+    
+    static let campusKey = "campusKey"
+    static let ministryKey = "ministryKey"
     
     /* Modal Configurations: Used on the introduction page and create ride */
     static let backgroundViewOpacity: CGFloat = 0.7

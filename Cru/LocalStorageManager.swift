@@ -27,6 +27,7 @@ class LocalStorageManager {
     //function for storing an object into local storage
     func putObject(key: String, object: AnyObject) {
         defaults.setObject(object, forKey: key)
+        defaults.synchronize()
     }
     
     //function for removing an object from local storage

@@ -23,9 +23,8 @@ class EventUtils {
     func loadEvents(inserter: (NSDictionary)->Void, completionHandler: (Bool)->Void) {
         //Will load all events if you belong to no ministries
         var ministryIds = []
-        if let ministries = SubscriptionManager.loadMinistries() {
-            ministryIds = ministries.map({min in min.id})
-        }
+        let ministries = CruClients.getSubscriptionManager().loadMinistries()
+        ministryIds = ministries.map({min in min.id})
         
         let curDate = GlobalUtils.stringFromDate(NSDate())
         

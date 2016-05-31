@@ -46,7 +46,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
             //TODO: should be handling failure here
         })
-        subbedMinistries = SubscriptionManager.loadMinistries()! 
+        subbedMinistries = CruClients.getSubscriptionManager().loadMinistries()
         
         //setupSearchBar()
         self.tableView.reloadData()
@@ -83,7 +83,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     func refreshSubbedMinistries(){
-        subbedMinistries = SubscriptionManager.loadMinistries()! 
+        subbedMinistries = CruClients.getSubscriptionManager().loadMinistries()
     }
     
     
@@ -95,11 +95,9 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         let campusId = dict["_id"] as! String
         
         let curCamp = Campus(name: campusName, id: campusId)
-        if (SubscriptionManager.loadCampuses() != nil){
-            let enabledCampuses = SubscriptionManager.loadCampuses()!
-            if(enabledCampuses.contains(curCamp)){
-                curCamp.feedEnabled = true
-            }
+        let enabledCampuses = CruClients.getSubscriptionManager().loadCampuses()
+        if(enabledCampuses.contains(curCamp)){
+            curCamp.feedEnabled = true
         }
         let preCount = campuses.count
         campuses.insert(curCamp)
@@ -121,7 +119,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             temp.append(camp)
         }
         
-        SubscriptionManager.saveCampuses(temp)
+        CruClients.getSubscriptionManager().saveCampuses(temp)
     }
 
     override func didReceiveMemoryWarning() {
@@ -196,7 +194,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
         var associatedMinistries = [Ministry]()
         
         for ministry in subbedMinistries{
-            if(SubscriptionManager.campusContainsMinistry(campus, ministry: ministry)){
+            if(CruClients.getSubscriptionManager().campusContainsMinistry(campus, ministry: ministry)){
                 associatedMinistries.append(ministry)
             }
         }
@@ -226,7 +224,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
     }
     
     func saveCampusSet(){
-        SubscriptionManager.saveCampuses(campusAsArray())
+        CruClients.getSubscriptionManager().saveCampuses(campusAsArray())
     }
     
     
@@ -255,7 +253,7 @@ class CampusesTableViewController: UITableViewController, UISearchResultsUpdatin
             }
         }
         
-        SubscriptionManager.saveMinistrys(subbedMinistries, updateGCM: true)
+        CruClients.getSubscriptionManager().saveMinistries(subbedMinistries, updateGCM: true)
         saveCampusSet()
     }
     

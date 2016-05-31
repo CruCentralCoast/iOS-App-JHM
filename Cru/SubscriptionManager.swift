@@ -9,18 +9,18 @@
 import UIKit
 import Google
 
-class SubscriptionManager{
+class SubscriptionManager: SubscriptionProtocol {
     
-    static func saveGCMToken(token: String){
+    func saveGCMToken(token: String){
         GlobalUtils.saveString("GCM", value: token)
     }
     
-    static func loadGCMToken()->String{
+    func loadGCMToken()->String{
         return GlobalUtils.loadString("GCM")
     }
     
-    static func loadCampuses() -> [Campus]? {
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("campusKey") as? NSData {
+    func loadCampuses() -> [Campus] {
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Config.campusKey) as? NSData {
             if let campuses = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Campus]{
                 return campuses
             }
@@ -28,7 +28,7 @@ class SubscriptionManager{
         return [Campus]()
     }
     
-    static func saveCampuses(campuses:[Campus]) {
+    func saveCampuses(campuses:[Campus]) {
         var enabledCampuses = [Campus]()
         
         for camp in campuses{
@@ -39,12 +39,12 @@ class SubscriptionManager{
         //TODO: Ensure that unsubscribing from a campus will unsubscribe the associate ministries
         let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledCampuses as NSArray)
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: "campusKey")
+        defaults.setObject(archivedObject, forKey: Config.campusKey)
         defaults.synchronize()
     }
     
-    static func loadMinistries() -> [Ministry]? {
-        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey("ministryKey") as? NSData {
+    func loadMinistries() -> [Ministry] {
+        if let unarchivedObject = NSUserDefaults.standardUserDefaults().objectForKey(Config.ministryKey) as? NSData {
             if let minisArr = NSKeyedUnarchiver.unarchiveObjectWithData(unarchivedObject) as? [Ministry]{
                 return minisArr
             }
@@ -52,11 +52,11 @@ class SubscriptionManager{
         return [Ministry]()
     }
     
-    static func saveMinistrys(ministrys:[Ministry], updateGCM: Bool) {
+    func saveMinistries(ministries:[Ministry], updateGCM: Bool) {
         
         var enabledMinistries = [Ministry]()
         
-        for min in ministrys{
+        for min in ministries {
             if(min.feedEnabled == true){
                 enabledMinistries.append(min)
             }
@@ -69,19 +69,13 @@ class SubscriptionManager{
             // unsubcribe from ministries you are no longer in
             // and subscribe to ones that you just joined
             let oldMinistries = loadMinistries()
-            if (oldMinistries != nil) {
-                for min in oldMinistries! {
-                    if (!enabledMinistries.contains(min)) {
-                        unsubscribeToTopic("/topics/" + min.id)
-                    }
+            for min in oldMinistries {
+                if (!enabledMinistries.contains(min)) {
+                    unsubscribeToTopic("/topics/" + min.id)
                 }
-                for min in enabledMinistries {
-                    if (!oldMinistries!.contains(min)) {
-                        subscribeToTopic("/topics/" + min.id)
-                    }
-                }
-            } else {
-                for min in enabledMinistries {
+            }
+            for min in enabledMinistries {
+                if (!oldMinistries.contains(min)) {
                     subscribeToTopic("/topics/" + min.id)
                 }
             }
@@ -89,28 +83,22 @@ class SubscriptionManager{
         
         let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledMinistries as NSArray)
         let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: "ministryKey")
+        defaults.setObject(archivedObject, forKey: Config.ministryKey)
         defaults.synchronize()
     }
     
-    static func campusContainsMinistry(campus: Campus, ministry: Ministry)->Bool{
-        if(ministry.campusId == campus.id){
-            return true
-        }
-        return false
+    func campusContainsMinistry(campus: Campus, ministry: Ministry)->Bool{
+        return ministry.campusId == campus.id
     }
     
-    
-    // REALLY BAD RACE CONDITIONS EXIST FOR NOW!!!!
-    
-    class func subscribeToTopic(topic: String) {
+    func subscribeToTopic(topic: String) {
         subscribeToTopic(topic, handler : {(success) in })
     }
     
-    class func subscribeToTopic(topic: String, handler: (Bool) -> Void) {
+    func subscribeToTopic(topic: String, handler: (Bool) -> Void) {
         // If the app has a registration token and is connected to GCM, proceed to subscribe to the
         // topic
-        let gcmToken = SubscriptionManager.loadGCMToken()
+        let gcmToken = loadGCMToken()
         GCMPubSub.sharedInstance().subscribeWithToken(gcmToken, topic: topic,
             options: nil, handler: {(NSError error) -> Void in
                 var success : Bool = false
@@ -129,15 +117,15 @@ class SubscriptionManager{
         })
     }
     
-    class func unsubscribeToTopic(topic: String) {
+    func unsubscribeToTopic(topic: String) {
         unsubscribeToTopic(topic, handler : {(success) in })
     }
 
-    class func unsubscribeToTopic(topic: String, handler: (Bool) -> Void) {
+    func unsubscribeToTopic(topic: String, handler: (Bool) -> Void) {
         // If the app has a registration token and is connected to GCM, proceed to subscribe to the
         // topic
         
-        let gcmToken = SubscriptionManager.loadGCMToken()
+        let gcmToken = loadGCMToken()
         
         GCMPubSub.sharedInstance().unsubscribeWithToken(gcmToken, topic: topic,
             options: nil, handler: {(NSError error) -> Void in

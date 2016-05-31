@@ -82,8 +82,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
                 self.connectedToGCM = true
                 print("Connected to GCM")
                 if(self.registrationToken != nil) {
-                    SubscriptionManager.saveGCMToken(self.registrationToken!)
-                    SubscriptionManager.subscribeToTopic(Config.globalTopic)
+                    CruClients.getSubscriptionManager().saveGCMToken(self.registrationToken!)
+                    CruClients.getSubscriptionManager().subscribeToTopic(Config.globalTopic)
                 }
             }
         })
@@ -141,11 +141,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     
     func registrationHandler(registrationToken: String!, error: NSError!) {
         if (registrationToken != nil) {
-            SubscriptionManager.saveGCMToken(registrationToken)
+            CruClients.getSubscriptionManager().saveGCMToken(registrationToken)
             self.registrationToken = registrationToken
             print("Registration Token: \(registrationToken)")
             if (connectedToGCM) {
-                SubscriptionManager.subscribeToTopic(Config.globalTopic)
+                CruClients.getSubscriptionManager().subscribeToTopic(Config.globalTopic)
             }
             let userInfo = ["registrationToken": registrationToken]
             NSNotificationCenter.defaultCenter().postNotificationName(

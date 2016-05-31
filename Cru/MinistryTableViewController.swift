@@ -28,15 +28,9 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let campuses = SubscriptionManager.loadCampuses()
-        if(campuses != nil){
-            subscribedCampuses = campuses!
-        }
+        subscribedCampuses = CruClients.getSubscriptionManager().loadCampuses()
         
-        let tempMinistries = SubscriptionManager.loadMinistries()
-        if(tempMinistries != nil){
-            prevMinistries = tempMinistries!
-        }
+        prevMinistries = CruClients.getSubscriptionManager().loadMinistries()
 
         navigationItem.title = "Ministry Subscriptions"
         
@@ -74,8 +68,8 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         //TODO: handler failure
         
         //super.viewDidLoad()
-        subscribedCampuses = SubscriptionManager.loadCampuses()!
-        prevMinistries = SubscriptionManager.loadMinistries()!
+        subscribedCampuses = CruClients.getSubscriptionManager().loadCampuses()
+        prevMinistries = CruClients.getSubscriptionManager().loadMinistries()
                 
         refreshMinistryMap()
         self.tableView.reloadData()
@@ -99,7 +93,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         ministryMap.removeAll()
         for ministry in ministries {
             for campus in subscribedCampuses {
-                if(SubscriptionManager.campusContainsMinistry(campus, ministry: ministry)) {
+                if(CruClients.getSubscriptionManager().campusContainsMinistry(campus, ministry: ministry)) {
                     if(prevMinistries.contains(ministry)){
                         ministry.feedEnabled = true
                     }
@@ -146,7 +140,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
                 }
             }
         }
-        SubscriptionManager.saveMinistrys(subscribedMinistries, updateGCM: false)
+        CruClients.getSubscriptionManager().saveMinistries(subscribedMinistries, updateGCM: false)
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -199,7 +193,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             
             if(cell.accessoryType == .Checkmark){
                 MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-                SubscriptionManager.unsubscribeToTopic("/topics/" + ministry.id, handler: {(success) in
+                CruClients.getSubscriptionManager().unsubscribeToTopic("/topics/" + ministry.id, handler: {(success) in
                     
                     if (success) {
                         cell.accessoryType = .None
@@ -218,7 +212,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             }
             else{
                 MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-                SubscriptionManager.subscribeToTopic("/topics/" + ministry.id, handler: {(success) in
+                CruClients.getSubscriptionManager().subscribeToTopic("/topics/" + ministry.id, handler: {(success) in
                     
                     if (success) {
                         cell.accessoryType = .Checkmark
