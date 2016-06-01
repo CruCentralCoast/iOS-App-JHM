@@ -22,7 +22,7 @@ class CommunityGroupCell: UITableViewCell {
         self.group = group
         name.text = group.name
         descript.text = group.description
-        meetingTime.text = group.meetingTime
+        meetingTime.text = group.getMeetingTime()
     }
 
     @IBAction func signUpPressed(sender: AnyObject) {

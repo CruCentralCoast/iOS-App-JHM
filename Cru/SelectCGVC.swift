@@ -17,6 +17,8 @@ class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     override func viewDidLoad() {
         self.navigationItem.title = "Choose a Community Group"
+        table.estimatedRowHeight = 250.0
+        table.rowHeight = UITableViewAutomaticDimension
         loadCommunityGroups()
     }
     
