@@ -43,12 +43,12 @@ class RideTest: XCTestCase {
     }
     
     func testGetCompleteAddress(){
-        let ride = Ride(dict: rideDict)
+        //let ride = Ride(dict: rideDict)
         //XCTAssertEqual(ride!.getCompleteAddress(), "1 Grand ave., SLO, CA")
     }
     
     func testRideGetTime(){
-        let ride = Ride(dict: rideDict)
+        //let ride = Ride(dict: rideDict)
         //XCTAssertEqual("4:10 PM March 6, 2016", ride!.getTime())
     }
     
@@ -104,8 +104,8 @@ class RideTest: XCTestCase {
         let view = UITextView()
         view.text = "hi"
         
-        XCTAssertTrue(GlobalUtils.shouldChangeNameTextInRange(view,
-            range: NSRange(location: 3, length: 2), text: "k"))
+        XCTAssertTrue(GlobalUtils.shouldChangeNameTextInRange(view.text,
+            range: NSRange(location: 0, length: 2), text: "fshfshfshshshsf"))
         
     }
 

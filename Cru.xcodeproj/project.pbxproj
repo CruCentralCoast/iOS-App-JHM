@@ -149,6 +149,7 @@
 		50C6CC7F1CBF3A3700EF5EFB /* SWRevealViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 50C6CC7D1CBF3A3700EF5EFB /* SWRevealViewController.m */; };
 		50D3166E1CFECD800050692B /* CGDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3166D1CFECD800050692B /* CGDetailTableViewCell.swift */; };
 		50D3166F1CFECD800050692B /* CGDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D3166D1CFECD800050692B /* CGDetailTableViewCell.swift */; };
+		50D316701CFED8990050692B /* CruPhoneNoRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FC49DAE1CFE8D9700B4D175 /* CruPhoneNoRule.swift */; };
 		50D507861CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */; };
 		50D507871CBF7A7F00A07045 /* OfferRideViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50D507851CBF7A7F00A07045 /* OfferRideViewController.swift */; };
 		50D8B6DD1C0E323A001127D5 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50D8B6DC1C0E323A001127D5 /* MapKit.framework */; };
@@ -1337,6 +1338,7 @@
 				0F1959B61C8E59DE00A783BA /* Cancler.swift in Sources */,
 				5031E1531CE682F30005AAF6 /* TestDriverRideDetail.swift in Sources */,
 				C1DCEC471C7681E1009FACE0 /* RideUtils.swift in Sources */,
+				50D316701CFED8990050692B /* CruPhoneNoRule.swift in Sources */,
 				505722A51CE095A800F87BE4 /* PickRadiusViewController.swift in Sources */,
 				50B1D3CC1CED76D60014EE1B /* CommunityGroup.swift in Sources */,
 				507B368B1CE10BDC003D6CF9 /* UpcomingItemCell.swift in Sources */,

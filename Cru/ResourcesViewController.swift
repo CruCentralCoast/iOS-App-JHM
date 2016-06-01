@@ -77,7 +77,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
         
         self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         
-        selectorBar.selectedImageTintColor = UIColor.whiteColor()
+        selectorBar.tintColor = UIColor.whiteColor()
     }
     
     func completion(success: Bool) {
@@ -333,7 +333,7 @@ class ResourcesViewController: UIViewController, UITableViewDelegate, UITableVie
               
                 
                 
-                let id = self.getYoutubeID(vidURL)
+                let _ = self.getYoutubeID(vidURL)
                 
                 
                 let embedUrl = NSURL(string: vidURL)!

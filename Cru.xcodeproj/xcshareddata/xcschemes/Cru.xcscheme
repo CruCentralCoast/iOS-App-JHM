@@ -48,6 +48,9 @@
                <Test
                   Identifier = "RideUtilsTest/testPostAndRemoveRideOffer()">
                </Test>
+               <Test
+                  Identifier = "TestDriverRideDetail">
+               </Test>
             </SkippedTests>
          </TestableReference>
          <TestableReference
