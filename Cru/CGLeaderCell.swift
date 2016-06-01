@@ -9,19 +9,14 @@
 import UIKit
 
 class CGLeaderCell: UITableViewCell {
-
-    @IBOutlet weak var name: UILabel!
-    
-    @IBOutlet weak var phone: UILabel!
-    
-    @IBOutlet weak var email: UILabel!
-    
-    private var user: User!
+    @IBOutlet weak var name: UITextView!
+    @IBOutlet weak var email: UITextView!
+    @IBOutlet weak var phone: UITextView!
     
     func setUser(user: User) {
-        self.user = user
         name.text = user.name
-        phone.text = user.phone
+        let number = user.phone
+        phone.text = number
         email.text = user.email
     }
     
