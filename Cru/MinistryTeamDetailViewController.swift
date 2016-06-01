@@ -14,11 +14,15 @@ class MinistryTeamDetailViewController: UIViewController {
     @IBOutlet weak var ministryTeamImage: UIImageView!
     @IBOutlet weak var ministryTeamDescription: UITextView!
     
+    //constraint for ministry team name to superview
+    @IBOutlet weak var heightFromLabelToSuperView: NSLayoutConstraint!
+    
     //storage manager
     var teamStorageManager: MapLocalStorageManager!
     
-    //ministry team reference
-    var ministryTeam: NSDictionary!
+    //ministry team reference dictionary for the id
+    var ministryTeamDict: NSDictionary!
+    var ministryTeam: MinistryTeam!
     
     //reference to previous vc
     var listVC: MinistryTeamViewController?
@@ -26,12 +30,33 @@ class MinistryTeamDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        ministryTeamNameLabel.text = ministryTeam["name"] as? String
-        ministryTeamImage.load(ministryTeam["imageUrl"] as! String)
+        let ministryTeamId = ministryTeamDict["id"] as! String
+        CruClients.getServerClient().getById(.MinistryTeam, insert: insertMinistryTeam, completionHandler: completeMinistryTeamInsert, id: ministryTeamId)
         
-            ministryTeamDescription.text = ministryTeam["description"] as! String
-    
         teamStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
+    }
+    
+    //inserts the ministry team we're looking for into the current view
+    func insertMinistryTeam(dict: NSDictionary) {
+        self.ministryTeam = MinistryTeam(dict: dict)!
+    }
+    
+    func completeMinistryTeamInsert(isSuccess: Bool) {
+        if isSuccess {
+            ministryTeamNameLabel.text = ministryTeam.ministryName
+            
+            if ministryTeam.imageUrl == "" {
+                heightFromLabelToSuperView.constant = 8.0
+            }
+            else {
+                ministryTeamImage.load(ministryTeam.imageUrl)
+            }
+            
+            ministryTeamDescription.text = ministryTeam.description
+        }
+        else {
+            //show server error view
+        }
     }
     
     //leaves the ministry team
@@ -47,7 +72,7 @@ class MinistryTeamDetailViewController: UIViewController {
     }
     
     func unwindToMinistryTeamList(action: UIAlertAction){
-        teamStorageManager.removeElement(ministryTeam["id"] as! String)
+        teamStorageManager.removeElement(ministryTeam.id)
         
         if let navController = self.navigationController {
             navController.popViewControllerAnimated(true)

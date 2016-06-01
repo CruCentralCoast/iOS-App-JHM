@@ -149,8 +149,8 @@ class GlobalUtils {
         
     }
     
-    static func shouldChangeNameTextInRange(textView: UITextView, range: NSRange, text: String)->Bool{
-        let currentCharacterCount = textView.text?.characters.count ?? 0
+    static func shouldChangeNameTextInRange(fieldText: String, range: NSRange, text: String)-> Bool {
+        let currentCharacterCount = fieldText.characters.count ?? 0
         if (range.length + range.location > currentCharacterCount){
             return false
         }
@@ -159,7 +159,7 @@ class GlobalUtils {
     }
     
     
-    static func shouldChangePhoneTextInRange(num : String, range: NSRange, replacementText: String)->PhoneRes{
+    static func shouldChangePhoneTextInRange(num : String, range: NSRange, replacementText: String)-> PhoneRes {
         let res = PhoneRes()
         res.newText = num
         

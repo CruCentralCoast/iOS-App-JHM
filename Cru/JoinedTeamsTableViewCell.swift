@@ -15,7 +15,7 @@ class JoinedTeamsTableViewCell: UITableViewCell {
     var ministryTeam: NSDictionary? {
         didSet {
             if let ministryTeam = ministryTeam {
-                ministryName.text = ministryTeam["name"] as? String
+                self.ministryName.text = ministryTeam["name"] as! String
             }
         }
     }

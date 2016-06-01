@@ -23,10 +23,9 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //setup local storage manager
-        ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
-        showCorrectView()
-        
+        //populate view and show correct view
+        populateJoinedMinistryTeams()
+        showCorrectMinistryTeamsView()
         
         self.refreshControl = UIRefreshControl()
         self.refreshControl.attributedTitle = NSAttributedString(string: "")
@@ -34,35 +33,55 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
         self.ministryTeamTableView.addSubview(self.refreshControl)
     }
     
-    func showCorrectView(){
-        if let joinedTeams = ministryTeamsStorageManager.getObject(Config.ministryTeamStorageKey) {
-            
-            //check if the map object is empty or not
-            if joinedTeams.count > 0 {
-                toggleMinistryTableView(false)
-                insertMinistryTeams()
-            }
-            else {
-                toggleMinistryTableView(true)
-            }
-        }
-        else {
-            //show initial view
-            toggleMinistryTableView(true)
-        }
-    }
-    
-    override func viewDidAppear(animated: Bool) {
+    //if the view did appear refresh it
+    override func viewWillAppear(animated: Bool) {
         refresh(self)
     }
     
-    override func viewWillAppear(animated: Bool) {
-        showCorrectView()
+    //function for refreshing the ministry team list
+    func refresh(sender: AnyObject) {
+        self.ministryTeams.removeAll()
+        populateJoinedMinistryTeams()
+        showCorrectMinistryTeamsView()
+        endRefreshing()
     }
+    
+    //completion handler for finishing refreshing
+    func endRefreshing() {
+        if let refresh = self.refreshControl {
+            self.ministryTeamTableView.reloadData()
+            refresh.endRefreshing()
+        }
+    }
+    
+    //retrieves all ministry teams that the user has signed up for
+    func populateJoinedMinistryTeams() {
+        self.ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
+        let joinedTeamIds = ministryTeamsStorageManager.getKeys()
 
+        for id in joinedTeamIds {
+            var ministryTeam: Dictionary<String, String>! = [:]
+            
+            ministryTeam["id"] = id
+            ministryTeam["name"] = (ministryTeamsStorageManager.getElement(id) as! String)
+            self.ministryTeams.append(ministryTeam)
+        }
+    }
+    
+    //shows the table view or the "join" view depending on how many teams
+    //the user has joined
+    func showCorrectMinistryTeamsView(){
+        if self.ministryTeams.count > 0 {
+            hideMinistryTableView(false)
+        }
+        else {
+            hideMinistryTableView(true)
+        }
+    }
+    
     //toggle table view
-    private func toggleMinistryTableView(hidden: Bool) {
-        if hidden {
+    private func hideMinistryTableView(isHidden: Bool) {
+        if isHidden {
             joinMTeamView.hidden = false
             ministryTeamView.hidden = true
         }
@@ -70,14 +89,6 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
             ministryTeamView.hidden = false
             joinMTeamView.hidden = true
         }
-    }
-
-    //refreshes the table view
-    func refresh(sender: AnyObject)
-    {
-        ministryTeams.removeAll()
-        self.ministryTeamTableView.reloadData()
-        insertMinistryTeams()
     }
     
     //navigates to the ministry teams list
@@ -105,37 +116,13 @@ class MinistryTeamViewController: UIViewController, UITableViewDelegate, UITable
         let ministryTeam = ministryTeams[indexPath.item]
         
         let viewController = self.storyboard!.instantiateViewControllerWithIdentifier("MinistryTeamDetailViewController") as! MinistryTeamDetailViewController
-        viewController.ministryTeam = ministryTeam
+        viewController.ministryTeamDict = ministryTeam
         viewController.listVC = self
         
         self.navigationController?.pushViewController(viewController, animated: true)
     }
     
-    //inserts ministry teams to table
-    private func insertMinistryTeams() {
-        //setup local storage manager
-        ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
-        
-        let keys: [String] = ministryTeamsStorageManager.getKeys()
-        
-        for  key in keys {
-            ministryTeams.append(ministryTeamsStorageManager.getElement(key) as! NSDictionary)
-        }
-        
-        print(ministryTeams)
-        
-        self.ministryTeamTableView.reloadData()
-        
-        if let refresh = self.refreshControl {
-            refresh.endRefreshing()
-        }
-    }
-    
     @IBAction func unwindToMinistryTeamsList(segue: UIStoryboardSegue) {
-        if ministryTeams.count == 0 {
-            toggleMinistryTableView(false)
-        }
-            
         refresh(self)
     }
 }

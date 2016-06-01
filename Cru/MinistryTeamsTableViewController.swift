@@ -31,7 +31,7 @@ class MinistryTeamsTableViewController: UITableViewController {
 
     }
     
-    //inserts individual ministry teams into the collection view
+    //inserts individual ministry teams into the table view
     private func insertMinistryTeam(dict : NSDictionary) {
         let addMinistryTeam = MinistryTeam(dict: dict)!
         

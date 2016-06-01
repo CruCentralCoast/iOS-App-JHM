@@ -9,7 +9,8 @@
 import UIKit
 import SwiftValidator
 
-class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate {
+class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate, UITextFieldDelegate {
+    //reference to fields we will use
     @IBOutlet weak var fullNameField: UITextField!
     @IBOutlet weak var phoneNoField: UITextField!
     @IBOutlet weak var nameError: UILabel!
@@ -31,9 +32,13 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate {
         
         //set up validator to validate the fields
         validator.registerField(fullNameField, errorLabel: nameError, rules: [RequiredRule(), FullNameRule()])
-        validator.registerField(phoneNoField, errorLabel: phoneNoError, rules: [RequiredRule(), PhoneNumberRule()])
+        validator.registerField(phoneNoField, errorLabel: phoneNoError, rules: [RequiredRule(), CruPhoneNoRule()])
         nameError.text = ""
         phoneNoError.text = ""
+        
+        //setup delegates for text fields
+        fullNameField.delegate = self
+        phoneNoField.delegate = self
         
         //check if user is already in local storage
         if let user = ministryTeamStorageManager.getObject(Config.userStorageKey) as? NSDictionary {
@@ -45,6 +50,7 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate {
     
     //action for submitting information from the sign up process
     @IBAction func submitInformation(sender: UIButton) {
+        
         validator.validate(self)
     }
     
@@ -59,7 +65,7 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate {
         updateUserInformation(user)
         
         //add ministry team to list of ministry teams we're a part of
-        ministryTeamStorageManager.addElement(ministryTeam.id, elem: ministryTeam.toDictionary())
+        ministryTeamStorageManager.addElement(ministryTeam.id, elem: ministryTeam.ministryName)
 
         for controller in (self.navigationController?.viewControllers)! {
             if controller.isKindOfClass(GetInvolvedViewController) {
@@ -68,6 +74,7 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate {
         }
     }
     
+    //used to update the user's information on the sign up page
     func updateUserInformation(user: NSDictionary) {
         let storedUser = ministryTeamStorageManager.getObject(Config.userStorageKey)
         
@@ -101,4 +108,20 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate {
             error.errorLabel?.hidden = false
         }
     }
+    
+    //text field delegate method for parsing and formatting the phone number
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+        if(textField == fullNameField){
+            return GlobalUtils.shouldChangeNameTextInRange(textField.text!, range: range, text: string)
+        }
+        else if textField == phoneNoField {
+            let res = GlobalUtils.shouldChangePhoneTextInRange(phoneNoField.text!, range: range, replacementText: string)
+            phoneNoField.text = res.newText
+            
+            return res.shouldChange
+        }
+        
+        return false
+    }
+
 }

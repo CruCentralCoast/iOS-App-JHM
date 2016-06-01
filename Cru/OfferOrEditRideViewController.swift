@@ -833,7 +833,7 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
     func textView(textView: UITextView, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
         
         if(textView == nameValue){
-            return GlobalUtils.shouldChangeNameTextInRange(textView, range: range, text: text)
+            return GlobalUtils.shouldChangeNameTextInRange(textView.text, range: range, text: text)
         }
         else if numberValue != nil {
             let res = GlobalUtils.shouldChangePhoneTextInRange(numberValue.text, range: range, replacementText: text)
