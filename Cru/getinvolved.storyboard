@@ -15,6 +15,7 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
@@ -150,19 +151,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri0-q1-uQ3">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ri0-q1-uQ3">
                                 <rect key="frame" x="20" y="18" width="43" height="23"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Meeting Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWb-tD-ooR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meeting Time:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWb-tD-ooR">
                                 <rect key="frame" x="20" y="115" width="102" height="23"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" misplaced="YES" text="time goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jsz-C9-ykX">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="time goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="jsz-C9-ykX">
                                 <rect key="frame" x="144" y="115" width="436" height="23"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -184,7 +185,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ministry:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-rf-a4u">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Sf-rf-a4u">
                                 <rect key="frame" x="20" y="66" width="81" height="23"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="5cd-aO-0QS"/>
@@ -260,7 +261,7 @@
                                     <action selector="leaveGroup:" destination="1jQ-Jp-03d" eventType="touchUpInside" id="Kxh-Gz-7Ck"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="ministry goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iaV-sQ-dpS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ministry goes here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iaV-sQ-dpS">
                                 <rect key="frame" x="144" y="66" width="436" height="23"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -479,8 +480,8 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s2v-fc-Wdb">
                                 <rect key="frame" x="0.0" y="20" width="600" height="580"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="m4T-Of-6oF">
-                                        <rect key="frame" x="0.0" y="0.0" width="600" height="297"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="m4T-Of-6oF">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="323"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="wWw-vp-4CK">
                                                 <rect key="frame" x="0.0" y="0.0" width="600" height="200"/>
@@ -504,25 +505,39 @@
                                                     </mask>
                                                 </variation>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1x-uX-6FD">
-                                                <rect key="frame" x="8" y="208" width="584" height="31"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1x-uX-6FD">
+                                                <rect key="frame" x="8" y="208" width="584" height="30.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="323" id="9On-hB-s2m"/>
+                                                </constraints>
                                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="24"/>
                                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="9On-hB-s2m"/>
+                                                    </mask>
+                                                </variation>
                                             </label>
-                                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-ig-BtX">
-                                                <rect key="frame" x="8" y="247" width="584" height="1"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qNB-ig-BtX">
+                                                <rect key="frame" x="8" y="273" width="584" height="1"/>
                                                 <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="1" id="GE1-VB-0WG"/>
                                                 </constraints>
                                             </view>
-                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-hT-PEM">
-                                                <rect key="frame" x="8" y="256" width="584" height="33"/>
+                                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Ministry team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2qi-hT-PEM">
+                                                <rect key="frame" x="8" y="282" width="584" height="33"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d51-Xt-F9n">
+                                                <rect key="frame" x="8" y="246" width="584" height="19"/>
+                                                <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="15"/>
+                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
@@ -530,14 +545,17 @@
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="2fN-YT-97j"/>
                                             <constraint firstItem="2qi-hT-PEM" firstAttribute="top" secondItem="qNB-ig-BtX" secondAttribute="bottom" constant="8" id="3jM-wi-GM7"/>
                                             <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="6LK-WO-i9o"/>
+                                            <constraint firstItem="d51-Xt-F9n" firstAttribute="centerY" secondItem="h1x-uX-6FD" secondAttribute="centerY" id="8AO-iB-DgM"/>
                                             <constraint firstItem="wWw-vp-4CK" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" id="DCS-h5-szz"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="m4T-Of-6oF" secondAttribute="top" constant="8" id="Dan-Jt-qpC"/>
                                             <constraint firstAttribute="height" constant="97" id="GTg-05-h4J"/>
                                             <constraint firstAttribute="bottom" secondItem="2qi-hT-PEM" secondAttribute="bottom" constant="8" id="KRO-NU-ulA"/>
-                                            <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="LdW-Mt-lN8"/>
+                                            <constraint firstAttribute="trailing" secondItem="d51-Xt-F9n" secondAttribute="trailing" constant="8" id="LJ9-Q2-cDo"/>
+                                            <constraint firstItem="qNB-ig-BtX" firstAttribute="top" secondItem="d51-Xt-F9n" secondAttribute="bottom" constant="8" id="LKi-iz-A6T"/>
                                             <constraint firstAttribute="trailing" secondItem="h1x-uX-6FD" secondAttribute="trailing" constant="8" id="WhJ-eo-njJ"/>
                                             <constraint firstItem="qNB-ig-BtX" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="Whd-eq-8J4"/>
                                             <constraint firstItem="2qi-hT-PEM" firstAttribute="top" secondItem="wWw-vp-4CK" secondAttribute="bottom" constant="8" id="XNC-9Q-zMM"/>
+                                            <constraint firstItem="d51-Xt-F9n" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="Yzu-e8-WtM"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="m4T-Of-6oF" secondAttribute="leading" constant="8" id="bQR-DC-BGS"/>
                                             <constraint firstAttribute="trailing" secondItem="wWw-vp-4CK" secondAttribute="trailing" id="fIL-4m-j3z"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="leading" secondItem="wWw-vp-4CK" secondAttribute="trailing" id="fiy-Du-bUa"/>
@@ -546,6 +564,7 @@
                                             <constraint firstItem="2qi-hT-PEM" firstAttribute="top" secondItem="h1x-uX-6FD" secondAttribute="bottom" constant="7.5" id="jZS-p7-Cxf"/>
                                             <constraint firstItem="wWw-vp-4CK" firstAttribute="top" secondItem="m4T-Of-6oF" secondAttribute="top" id="kSu-iQ-xYu"/>
                                             <constraint firstItem="qNB-ig-BtX" firstAttribute="centerX" secondItem="m4T-Of-6oF" secondAttribute="centerX" id="mW3-pL-RcM"/>
+                                            <constraint firstItem="d51-Xt-F9n" firstAttribute="top" secondItem="h1x-uX-6FD" secondAttribute="bottom" constant="8" id="nct-KX-6TZ"/>
                                             <constraint firstItem="h1x-uX-6FD" firstAttribute="top" secondItem="wWw-vp-4CK" secondAttribute="bottom" constant="8" id="pFt-1o-6No"/>
                                             <constraint firstAttribute="trailing" secondItem="2qi-hT-PEM" secondAttribute="trailing" constant="8" id="rMs-tR-RZQ"/>
                                             <constraint firstItem="qNB-ig-BtX" firstAttribute="top" secondItem="h1x-uX-6FD" secondAttribute="bottom" constant="8" id="vyr-n7-ftN"/>
@@ -561,6 +580,8 @@
                                                 <exclude reference="bQR-DC-BGS"/>
                                                 <exclude reference="fiy-Du-bUa"/>
                                                 <exclude reference="pFt-1o-6No"/>
+                                                <exclude reference="8AO-iB-DgM"/>
+                                                <exclude reference="vyr-n7-ftN"/>
                                                 <exclude reference="XNC-9Q-zMM"/>
                                                 <exclude reference="jZS-p7-Cxf"/>
                                             </mask>
@@ -619,6 +640,7 @@
                     <navigationItem key="navigationItem" id="NLQ-fQ-d2O"/>
                     <connections>
                         <outlet property="heightFromLabelToSuperView" destination="Woa-s3-tEs" id="Wb9-8e-ZtM"/>
+                        <outlet property="ministryNameLabel" destination="d51-Xt-F9n" id="nj0-jT-jkS"/>
                         <outlet property="ministryTeamDescription" destination="2qi-hT-PEM" id="bB2-mn-WYG"/>
                         <outlet property="ministryTeamImage" destination="wWw-vp-4CK" id="m4C-uj-3yw"/>
                         <outlet property="ministryTeamNameLabel" destination="h1x-uX-6FD" id="hxu-bW-82b"/>

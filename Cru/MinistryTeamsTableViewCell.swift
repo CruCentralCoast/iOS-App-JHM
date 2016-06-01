@@ -13,12 +13,19 @@ class MinistryTeamsTableViewCell: UITableViewCell {
     @IBOutlet weak var ministryTeamName: UILabel!
     @IBOutlet weak var ministryTeamDescription: UITextView!
     @IBOutlet weak var signupButton: UIButton!
+    @IBOutlet weak var ministryNameLabel: UILabel!
     
     var ministryTeam: MinistryTeam! {
         didSet {
             ministryTeamImage.load(ministryTeam.imageUrl)
             ministryTeamName.text = ministryTeam.ministryName
             ministryTeamDescription.text = ministryTeam.description
+            
+            CruClients.getServerClient().getById(.Ministry, insert: {
+                dict in
+                let ministry = Ministry(dict: dict)
+                self.ministryNameLabel.text = ministry.name
+                }, completionHandler: {_ in }, id: ministryTeam.parentMinistry)
         }
     }
 }

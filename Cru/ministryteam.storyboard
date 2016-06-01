@@ -12,6 +12,8 @@
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
             <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
+            <string>FreightSansProBook-Regular</string>
         </mutableArray>
         <mutableArray key="FreigSanProMed.otf">
             <string>FreightSansProMedium-Regular</string>
@@ -35,7 +37,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="273"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Gv-F0y">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="laG-Gv-F0y">
                                             <rect key="frame" x="16" y="8" width="266" height="257"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Summer Missions" translatesAutoresizingMaskIntoConstraints="NO" id="dwc-6t-M48">
@@ -45,19 +47,19 @@
                                                         <constraint firstAttribute="height" constant="100" id="TmV-X9-e9E"/>
                                                     </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPT-Cg-l3C">
-                                                    <rect key="frame" x="116" y="48" width="142" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MPT-Cg-l3C">
+                                                    <rect key="frame" x="116" y="48" width="142" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry Team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fqj-fo-mUz">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Ministry Team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Fqj-fo-mUz">
                                                     <rect key="frame" x="8" y="116" width="250" height="98"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teV-Ab-QhB">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teV-Ab-QhB">
                                                     <rect key="frame" x="73" y="222" width="120" height="27"/>
                                                     <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -72,18 +74,27 @@
                                                         <action selector="joinMinistryTeam:" destination="X1c-iH-i36" eventType="touchUpInside" id="oNH-im-MOt"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MC4-aR-ERi">
+                                                    <rect key="frame" x="116" y="76" width="142" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="4e9-c7-8j8"/>
                                                 <constraint firstItem="teV-Ab-QhB" firstAttribute="top" secondItem="Fqj-fo-mUz" secondAttribute="bottom" constant="8" id="5pd-Dh-4Tq"/>
+                                                <constraint firstItem="MC4-aR-ERi" firstAttribute="leading" secondItem="dwc-6t-M48" secondAttribute="trailing" constant="8" id="77F-UM-xF7"/>
                                                 <constraint firstItem="Fqj-fo-mUz" firstAttribute="top" secondItem="dwc-6t-M48" secondAttribute="bottom" constant="8" id="8yk-0T-oQJ"/>
                                                 <constraint firstItem="dwc-6t-M48" firstAttribute="leading" secondItem="laG-Gv-F0y" secondAttribute="leading" constant="8" id="Csn-tS-7z6"/>
                                                 <constraint firstItem="dwc-6t-M48" firstAttribute="top" secondItem="laG-Gv-F0y" secondAttribute="top" constant="8" id="DBB-Mf-5BM"/>
                                                 <constraint firstAttribute="trailing" secondItem="MPT-Cg-l3C" secondAttribute="trailing" constant="8" id="NLM-sK-g4x"/>
+                                                <constraint firstAttribute="trailing" secondItem="MC4-aR-ERi" secondAttribute="trailing" constant="8" id="O45-Pk-a8V"/>
                                                 <constraint firstAttribute="bottom" secondItem="Fqj-fo-mUz" secondAttribute="bottom" constant="8" id="SSr-Au-ZI6"/>
                                                 <constraint firstAttribute="bottom" secondItem="teV-Ab-QhB" secondAttribute="bottom" constant="8" id="TAa-1s-ZUq"/>
                                                 <constraint firstItem="MPT-Cg-l3C" firstAttribute="centerY" secondItem="dwc-6t-M48" secondAttribute="centerY" id="Y7p-cu-TFV"/>
+                                                <constraint firstItem="MC4-aR-ERi" firstAttribute="top" secondItem="MPT-Cg-l3C" secondAttribute="bottom" constant="8" id="ZKy-zl-ikP"/>
                                                 <constraint firstItem="Fqj-fo-mUz" firstAttribute="leading" secondItem="laG-Gv-F0y" secondAttribute="leading" constant="8" id="p58-kT-Xlc"/>
                                                 <constraint firstItem="MPT-Cg-l3C" firstAttribute="leading" secondItem="dwc-6t-M48" secondAttribute="trailing" constant="8" id="tTD-Jj-d8I"/>
                                                 <constraint firstAttribute="trailing" secondItem="Fqj-fo-mUz" secondAttribute="trailing" constant="8" id="tj3-5g-qyG"/>
@@ -106,6 +117,7 @@
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
+                                    <outlet property="ministryNameLabel" destination="MC4-aR-ERi" id="C3c-8X-4ap"/>
                                     <outlet property="ministryTeamDescription" destination="Fqj-fo-mUz" id="U0k-jp-VxR"/>
                                     <outlet property="ministryTeamImage" destination="dwc-6t-M48" id="sBA-T3-lNA"/>
                                     <outlet property="ministryTeamName" destination="MPT-Cg-l3C" id="nXQ-da-iiS"/>
@@ -119,16 +131,16 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="273"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-st-lki">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sHU-st-lki">
                                             <rect key="frame" x="16" y="8" width="170" height="257"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-1u-Nwu">
-                                                    <rect key="frame" x="8" y="8" width="154" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Team Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcg-1u-Nwu">
+                                                    <rect key="frame" x="8" y="8" width="154" height="19.5"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProMedium-Regular" family="FreightSans Pro" pointSize="17"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-RI-Zbg">
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lKd-RI-Zbg">
                                                     <rect key="frame" x="25" y="222" width="120" height="27"/>
                                                     <color key="backgroundColor" red="0.97647058819999999" green="0.71372549019999998" blue="0.1450980392" alpha="1" colorSpace="calibratedRGB"/>
                                                     <constraints>
@@ -143,20 +155,29 @@
                                                         <action selector="joinMinistryTeam:" destination="X1c-iH-i36" eventType="touchUpInside" id="wUg-G1-Mrv"/>
                                                     </connections>
                                                 </button>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Ministry Team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHY-R5-KDS">
-                                                    <rect key="frame" x="8" y="35" width="154" height="179"/>
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Ministry Team description" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="eHY-R5-KDS">
+                                                    <rect key="frame" x="8" y="64" width="154" height="150"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="14"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ministry Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymT-eq-7f6">
+                                                    <rect key="frame" x="8" y="35.5" width="154" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="16"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" relation="lessThanOrEqual" constant="380" id="0IW-3B-hgA"/>
                                                 <constraint firstItem="lKd-RI-Zbg" firstAttribute="centerX" secondItem="sHU-st-lki" secondAttribute="centerX" id="6TS-f6-nAE"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rcg-1u-Nwu" secondAttribute="trailing" constant="8" id="CbT-hp-vLF"/>
-                                                <constraint firstItem="eHY-R5-KDS" firstAttribute="top" secondItem="Rcg-1u-Nwu" secondAttribute="bottom" constant="7.5" id="E0A-hM-0Ti"/>
                                                 <constraint firstAttribute="bottom" secondItem="lKd-RI-Zbg" secondAttribute="bottom" constant="8" id="KVc-O5-xqk"/>
+                                                <constraint firstAttribute="trailing" secondItem="ymT-eq-7f6" secondAttribute="trailing" constant="8" id="LGx-cu-ZFN"/>
+                                                <constraint firstItem="ymT-eq-7f6" firstAttribute="top" secondItem="Rcg-1u-Nwu" secondAttribute="bottom" constant="8" id="PTF-nC-ARP"/>
+                                                <constraint firstItem="ymT-eq-7f6" firstAttribute="leading" secondItem="sHU-st-lki" secondAttribute="leading" constant="8" id="Poh-Dt-LLu"/>
+                                                <constraint firstItem="eHY-R5-KDS" firstAttribute="top" secondItem="ymT-eq-7f6" secondAttribute="bottom" constant="8" id="nSl-cY-dmQ"/>
                                                 <constraint firstItem="eHY-R5-KDS" firstAttribute="leading" secondItem="sHU-st-lki" secondAttribute="leading" constant="8" id="prS-bK-fSG"/>
                                                 <constraint firstItem="lKd-RI-Zbg" firstAttribute="top" secondItem="eHY-R5-KDS" secondAttribute="bottom" constant="8" id="sGo-fd-U3B"/>
                                                 <constraint firstAttribute="trailing" secondItem="Rcg-1u-Nwu" secondAttribute="trailing" constant="8" id="sNC-D8-caj"/>
@@ -182,6 +203,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <outlet property="ministryDescriptionLabel" destination="eHY-R5-KDS" id="egW-g2-kmT"/>
+                                    <outlet property="ministryNameLabel" destination="ymT-eq-7f6" id="3Y0-lm-TTj"/>
                                     <outlet property="ministryTeamNameLabel" destination="Rcg-1u-Nwu" id="Ol7-t2-29C"/>
                                     <outlet property="signupButton" destination="lKd-RI-Zbg" id="N9B-kA-Hpb"/>
                                 </connections>

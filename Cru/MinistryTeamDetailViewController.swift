@@ -13,6 +13,7 @@ class MinistryTeamDetailViewController: UIViewController {
     @IBOutlet weak var ministryTeamNameLabel: UILabel!
     @IBOutlet weak var ministryTeamImage: UIImageView!
     @IBOutlet weak var ministryTeamDescription: UITextView!
+    @IBOutlet weak var ministryNameLabel: UILabel!
     
     //constraint for ministry team name to superview
     @IBOutlet weak var heightFromLabelToSuperView: NSLayoutConstraint!
@@ -53,6 +54,13 @@ class MinistryTeamDetailViewController: UIViewController {
             }
             
             ministryTeamDescription.text = ministryTeam.description
+            
+            //grab ministry name
+            CruClients.getServerClient().getById(.Ministry, insert: {
+                dict in
+                let ministry = Ministry(dict: dict)
+                self.ministryNameLabel.text = ministry.name
+                }, completionHandler: {_ in }, id: ministryTeam.parentMinistry)
         }
         else {
             //show server error view
