@@ -140,7 +140,19 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
                 }
             }
         }
-        CruClients.getSubscriptionManager().saveMinistries(subscribedMinistries, updateGCM: false)
+        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+        CruClients.getSubscriptionManager().saveMinistries(subscribedMinistries, updateGCM: true, handler: { (responses) in
+            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
+                let success = responses.reduce(true) {(result, cur) in result && cur.1 == true}
+                print("Was actually a success: \(success)")
+                //let title = "Something Happended"
+                
+                //let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                //alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                
+                //self.presentViewController(alert, animated: true, completion: nil)
+            })
+        })
     }
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -162,19 +174,6 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         
             let ministry = getMinistryAtIndexPath(indexPath)
             cell.ministry = ministry
-            //cell.ministryNameLabel.text = ministry.name
-        
-            //display add-ons
-           // cell.ministryNameLabel.font = UIFont(name: "FreightSans Pro", size: 17)
-            //cell.ministryNameLabel.textColor = Config.introModalContentTextColor
-        
-  
-            //let url = NSURL(string: ministry.imageUrl)
-            //let data = NSData(contentsOfURL: url!) //make sure your image in this url does exist, otherwise unwrap in a if let check
-            //downloadImage(url!, imageView: cell.minstryImage) //UIImage(data: data!)
-        
-            //cell.minstryImage.load(ministry.imageUrl)
-            //asyncLoadMinistryImage(ministry, imageView: cell.minstryImage)
         
             if(ministry.feedEnabled == true){
                 cell.accessoryType = .Checkmark
@@ -192,46 +191,15 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             let ministry = getMinistryAtIndexPath(indexPath)
             
             if(cell.accessoryType == .Checkmark){
-                MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-                CruClients.getSubscriptionManager().unsubscribeToTopic("/topics/" + ministry.id, handler: {(success) in
-                    
-                    if (success) {
-                        cell.accessoryType = .None
-                        ministry.feedEnabled = false
-                    }
-
-                    let title = success ? "Successfully unsubscribed" : "Failed to unsubscribe"
-                    
-                    let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-                    
-                    MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
-                        self.presentViewController(alert, animated: true, completion: nil)
-                    })
-                })
+                cell.accessoryType = .None
+                ministry.feedEnabled = false
             }
             else{
-                MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-                CruClients.getSubscriptionManager().subscribeToTopic("/topics/" + ministry.id, handler: {(success) in
-                    
-                    if (success) {
-                        cell.accessoryType = .Checkmark
-                        ministry.feedEnabled = true
-                    }
-
-                    let title = success ? "Successfully subscribed" : "Failed to subscribe"
-                    
-                    let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-                    alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-                    
-                    MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
-                        self.presentViewController(alert, animated: true, completion: nil)
-                    })
-                })
+                cell.accessoryType = .Checkmark
+                ministry.feedEnabled = true
             }
             
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
-            //tableView.reloadRowsAtIndexPaths([indexPath], withRowAnimation: .Automatic)
         }
         
     }
@@ -285,25 +253,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         })
         
     }
-//    func getDataFromUrl(url:NSURL, completion: ((data: NSData?, response: NSURLResponse?, error: NSError? ) -> Void)) {
-//        NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-//            completion(data: data, response: response, error: error)
-//            }.resume()
-//    }
-//    
-//    func downloadImage(url: NSURL, imageView: UIImageView){
-//        //print("Download Started")
-//        //print("lastPathComponent: " + (url.lastPathComponent ?? ""))
-//        getDataFromUrl(url) { (data, response, error)  in
-//            dispatch_async(dispatch_get_main_queue()) { () -> Void in
-//                guard let data = data where error == nil else { return }
-//                //print(response?.suggestedFilename ?? "")
-//                //print("Download Finished")
-//                imageView.image = self.resizeImage(UIImage(data: data)!, newWidth: 50.0)
-//            }
-//        }
-//    }
-//    
+
     
     func smallerImage(image: UIImage)->UIImage{
         let size = CGSizeApplyAffineTransform(image.size, CGAffineTransformMakeScale(0.1, 0.1))

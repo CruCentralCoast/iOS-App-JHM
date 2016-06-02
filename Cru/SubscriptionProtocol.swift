@@ -23,6 +23,8 @@ protocol SubscriptionProtocol {
     
     func saveMinistries(ministrys:[Ministry], updateGCM: Bool)
     
+    func saveMinistries(ministries:[Ministry], updateGCM: Bool, handler: [String:Bool]->Void)
+    
     func campusContainsMinistry(campus: Campus, ministry: Ministry)->Bool
     
     func subscribeToTopic(topic: String)

@@ -11,12 +11,26 @@ import Google
 
 class SubscriptionManager: SubscriptionProtocol {
     
+    let gcmKey = "GCM"
+    
+    private var unsubList = [String]()
+    private var subList = [String]()
+    private var responses = [String:Bool?]()
+    
+    private static let clientDispatchQueue = dispatch_queue_create("gcm-subcription-queue", DISPATCH_QUEUE_CONCURRENT)
+    
+    private static func synchronized(closure: Void->Void) {
+        dispatch_sync(clientDispatchQueue) {
+            closure()
+        }
+    }
+    
     func saveGCMToken(token: String){
-        GlobalUtils.saveString("GCM", value: token)
+        GlobalUtils.saveString(gcmKey, value: token)
     }
     
     func loadGCMToken()->String{
-        return GlobalUtils.loadString("GCM")
+        return GlobalUtils.loadString(gcmKey)
     }
     
     func loadCampuses() -> [Campus] {
@@ -53,6 +67,10 @@ class SubscriptionManager: SubscriptionProtocol {
     }
     
     func saveMinistries(ministries:[Ministry], updateGCM: Bool) {
+        saveMinistries(ministries, updateGCM: updateGCM, handler: {(map) in })
+    }
+    
+    func saveMinistries(ministries:[Ministry], updateGCM: Bool, handler: [String:Bool]->Void) {
         
         var enabledMinistries = [Ministry]()
         
@@ -61,7 +79,6 @@ class SubscriptionManager: SubscriptionProtocol {
                 enabledMinistries.append(min)
             }
         }
-        
         print("updating device ministry data")
         
         if(updateGCM){
@@ -71,20 +88,57 @@ class SubscriptionManager: SubscriptionProtocol {
             let oldMinistries = loadMinistries()
             for min in oldMinistries {
                 if (!enabledMinistries.contains(min)) {
-                    unsubscribeToTopic("/topics/" + min.id)
+                    unsubList.append(min.id)
+                    responses[min.id] = nil
+                    //unsubscribeToTopic("/topics/" + min.id)
                 }
             }
             for min in enabledMinistries {
                 if (!oldMinistries.contains(min)) {
-                    subscribeToTopic("/topics/" + min.id)
+                    subList.append(min.id)
+                    responses[min.id] = nil
+                    //subscribeToTopic("/topics/" + min.id)
                 }
             }
+            sendRequests(handler)
         }
         
         let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledMinistries as NSArray)
         let defaults = NSUserDefaults.standardUserDefaults()
         defaults.setObject(archivedObject, forKey: Config.ministryKey)
         defaults.synchronize()
+    }
+    
+    private func sendRequests(handler: [String:Bool]->Void) {
+        subList.forEach {
+            let minId = $0
+            subscribeToTopic("/topics/" + minId, handler: {(response) in
+                SubscriptionManager.synchronized() {
+                    self.responses[minId] = response
+                    self.checkFinished(handler)
+                }
+            })
+        }
+        
+        unsubList.forEach {
+            let minId = $0
+            unsubscribeToTopic("/topics/" + minId, handler: {(response) in
+                SubscriptionManager.synchronized() {
+                    self.responses[minId] = response
+                    self.checkFinished(handler)
+                }
+            })
+        }
+    }
+    
+    private func checkFinished(handler: [String:Bool]->Void) {
+        if (responses.reduce(true) {(result, cur) in (cur != nil) && result}) {
+            handler(responses as! [String:Bool])
+            print("Yup")
+            print("responses: \(responses)")
+        } else {
+            print("Nope")
+        }
     }
     
     func campusContainsMinistry(campus: Campus, ministry: Ministry)->Bool{
@@ -139,4 +193,7 @@ class SubscriptionManager: SubscriptionProtocol {
                 handler(success)
         })
     }
+    
+    
+    
 }

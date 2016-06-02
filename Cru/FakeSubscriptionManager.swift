@@ -60,6 +60,15 @@ class FakeSubscriptionManager: SubscriptionProtocol {
         storageManager.putObject(Config.ministryKey, object: archivedObject)
     }
     
+    func saveMinistries(ministries:[Ministry], updateGCM: Bool, handler: [String:Bool]->Void) {
+        let enabled = ministries.filter{ $0.feedEnabled }
+        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabled as NSArray)
+        storageManager.putObject(Config.ministryKey, object: archivedObject)
+        var minMap = [String:Bool]()
+        enabled.forEach{ minMap[$0.id] = true }
+        handler(minMap)
+    }
+    
     func campusContainsMinistry(campus: Campus, ministry: Ministry)->Bool {
         return ministry.campusId == campus.id
     }
