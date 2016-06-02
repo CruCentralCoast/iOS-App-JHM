@@ -20,6 +20,7 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     let rider = "rider"
     var refreshControl: UIRefreshControl!
     var rides = [Ride]()
+    var ridesDroppedFrom = [Ride]()
     var events = [Event]()
     var tappedRide = Ride?()
     var tappedEvent = Event?()
@@ -32,6 +33,8 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     @IBOutlet weak var ridesTableView: UITableView!
     @IBOutlet weak var findRideButton: UIButton!
     @IBOutlet weak var offerRideButton: UIButton!
+    var passMap: LocalStorageManager!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,6 +53,9 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
         CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
         
         noRideImage = UIImage(named: Config.noRidesImageName)!
+        
+        
+        passMap = RideUtils.getMyPassengerMaps()
         
         
         self.ridesTableView.tableFooterView = UIView()
@@ -112,15 +118,19 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func refresh(sender:AnyObject)
     {
+        rides.removeAll()
         ridesTableView.emptyDataSetDelegate = nil
         ridesTableView.emptyDataSetSource = nil
-        rides.removeAll()
-        self.ridesTableView.reloadData()
-        CruClients.getRideUtils().getMyRides(insertNewRide, afterFunc: finishRefresh)
+        ridesTableView.reloadData()
+        CruClients.getRideUtils().getMyRides(insertRide, afterFunc: finishRideInsert)
+        passMap = RideUtils.getMyPassengerMaps()
     }
     
     func finishRideInsert(type: ResponseType){
-
+        if(self.refreshControl.refreshing){
+            self.refreshControl?.endRefreshing()
+        }
+        
         switch type{
             case .NoRides:
                 self.ridesTableView.emptyDataSetSource = self
@@ -138,61 +148,82 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
                 findRideButton.userInteractionEnabled = false
             
             default:
+                self.ridesTableView.emptyDataSetSource = nil
+                self.ridesTableView.emptyDataSetDelegate = nil
                 CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
         }
         
         rides.sortInPlace()
-    }
-    
-    func finishRefresh(type: ResponseType){
-        rides.sortInPlace()
         self.ridesTableView.reloadData()
-        self.refreshControl?.endRefreshing()
-        
-        switch type{
-        case .NoRides:
-            self.ridesTableView.emptyDataSetSource = self
-            self.ridesTableView.emptyDataSetDelegate = self
-            noRideImage = UIImage(named: Config.noRidesImageName)!
-            CruClients.getServerClient().getData(DBCollection.Event, insert: insertEvent, completionHandler: finishInserting)
-            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-            
-        case .NoConnection:
-            self.ridesTableView.emptyDataSetSource = self
-            self.ridesTableView.emptyDataSetDelegate = self
-            noRideImage = UIImage(named: Config.noConnectionImageName)!
-            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)
-            
-        default:
-            print("")
-        }
-        
     }
     
-    func insertNewRide(dict : NSDictionary){
-        let newRide = Ride(dict: dict)
-        rides.insert(newRide!, atIndex: 0)
-        self.ridesTableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-    }
     
     func insertRide(dict : NSDictionary) {
-        //create ride
         let newRide = Ride(dict: dict)
         
-        //insert into ride array
-        rides.insert(newRide!, atIndex: 0)
+        if let pMap = passMap as? MapLocalStorageManager{
+            if(newRide!.gcmId != Config.gcmId()){
+                if let passId = pMap.getElement(newRide!.id) as? String{
+                    
+                    //if dropped from ride
+                    if(!newRide!.isPassengerInRide(passId)){
+                        ridesDroppedFrom.append(newRide!)
+                        pMap.removeElement(newRide!.id)
+                        passMap = RideUtils.getMyPassengerMaps()
+                    }
+                        
+                    //if passenger in ride
+                    else{
+                        rides.insert(newRide!, atIndex: 0)
+                        self.ridesTableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Middle)
+                    }
+                }
+            }
+            else{
+                
+                //if driving a ride
+                rides.insert(newRide!, atIndex: 0)
+                self.ridesTableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Middle)
+            }
+        }
         
         rides.sortInPlace()
-        
-        self.ridesTableView.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Middle)
     }
     
     
     func finishInserting(success: Bool){
+        showDroppedRides()
+        
         self.ridesTableView.beginUpdates()
         MRProgressOverlayView.dismissOverlayForView(self.view, animated: true)        
         self.ridesTableView.reloadData()
         self.ridesTableView.endUpdates()
+    }
+    
+    func showDroppedRides(){
+        if(ridesDroppedFrom.count > 0){
+            var droppedMsg = ""
+            
+            if(ridesDroppedFrom.count == 1){
+                droppedMsg += "Sorry, It looks like you were dropped from a ride to the following event: "
+            }else{
+                droppedMsg += "Sorry, It looks like you were dropped from a ride to the following events: "
+            }
+            
+            for ride in ridesDroppedFrom{
+                droppedMsg += getEventNameForEventId(ride.eventId) + "\n"
+            }
+            ridesDroppedFrom.removeAll()
+            
+            let droppedAlert = UIAlertController(title: droppedMsg, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+            droppedAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            self.presentViewController(droppedAlert, animated: true, completion: nil)
+            
+        }
+        
+        self.ridesTableView.emptyDataSetSource = self
+        self.ridesTableView.emptyDataSetDelegate = self
+        noRideImage = UIImage(named: Config.noRidesImageName)!
     }
     
     func insertEvent(dict : NSDictionary) {

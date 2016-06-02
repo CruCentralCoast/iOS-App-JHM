@@ -207,6 +207,15 @@ class Ride: Comparable, Equatable, TimeDetail {
         }
     }
     
+    func isPassengerInRide(passId: String)->Bool{
+        for pass in passengers{
+            if pass == passId{
+                return true
+            }
+        }
+        return false
+    }
+    
     
     func getDescription(eventName: String)->String{
         if (self.gcmId == Config.gcmId()){

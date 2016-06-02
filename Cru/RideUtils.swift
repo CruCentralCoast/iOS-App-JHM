@@ -48,6 +48,7 @@ class RideUtils {
         
         
         print("There are \(rideIds.count) rides")
+        
         if (rideIds.count > 0) {
             let params = ["_id": ["$in": rideIds]]
             
@@ -82,6 +83,11 @@ class RideUtils {
         rideIds += mlsm.getKeys()
         
         return rideIds
+    }
+    
+    static func getMyPassengerMaps() -> LocalStorageManager{
+        let mlsm = MapLocalStorageManager(key: Config.ridesReceiving)
+        return mlsm
     }
 
     func postRideOffer(eventId : String, name : String , phone : String, seats : Int, time: String,
