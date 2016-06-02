@@ -157,7 +157,9 @@ class SubscriptionManager: SubscriptionProtocol {
         }
         
         if (responses.reduce(true) {(result, cur) in (cur != nil) && result}) {
-            handler(responses as! [String:Bool])
+            var responseMap = [String:Bool]()
+            responses.forEach {(pair) in responseMap[pair.0] = pair.1 }
+            handler(responseMap)
             print("Yup")
             print("responses: \(responses)")
             
