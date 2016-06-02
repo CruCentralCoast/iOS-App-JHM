@@ -17,7 +17,7 @@ class MinistryTeam {
     var imageUrl: String
     var teamImage: UIImage!
     var teamImageUrl: String
-    var leaders: [String]
+    var leaders: [User]
     
     init?(dict: NSDictionary) {
         //required initialization of variables
@@ -29,7 +29,7 @@ class MinistryTeam {
         self.imageUrl = ""
         self.teamImage = UIImage(named: "event1")
         self.teamImageUrl = ""
-        self.leaders = [String]()
+        self.leaders = [User]()
         
         //grabbing dictionary values
         let dId = dict.objectForKey("_id")
@@ -64,17 +64,9 @@ class MinistryTeam {
             //if image is nil
             self.image = UIImage(named: "fall-retreat-still")
         }
-        /*if (dLeaders != nil) {
-            self.leaders = dLeaders as! [String]
-        }*/
-        
         if let leaderDicts = dLeaders as? [[String:AnyObject]] {
             self.leaders = leaderDicts.map{
-                if let nameStruct = $0["name"] as? [String:String] {
-                    return nameStruct["first"]! + " " + nameStruct["last"]!
-                } else {
-                    return "No name"
-                }
+                User(dict: $0)
             }
         }
     }

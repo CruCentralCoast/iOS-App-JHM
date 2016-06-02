@@ -75,8 +75,6 @@ class MinistryTeamsCollectionViewController: UICollectionViewController {
         
         ministryTeamsStorageManager.addElement(ministry.id, elem: ministry.toDictionary())
         
-        CruClients.getServerClient().joinMinistryTeam(ministry.id, fullName: user!["name"] as! String, phone: user!["phone"] as! String, callback: joinMinistryTeamCompletionHandler(ministry, sender: sender))
-        
         //showCompletionAlert()
     }
     

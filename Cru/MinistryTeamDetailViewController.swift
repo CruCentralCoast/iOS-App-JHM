@@ -53,13 +53,29 @@ class MinistryTeamDetailViewController: UIViewController {
                 ministryTeamImage.load(ministryTeam.imageUrl)
             }
             
-            ministryTeamDescription.text = ministryTeam.description
+            var description = ministryTeam.description
+            description += "\n\n\nLeader Information:\n\n"
+            
+            if ministryTeam.leaders.count > 0 {
+                for leader in ministryTeam.leaders {
+                    description += leader.name + "   -   " + GlobalUtils.formatPhoneNumber(leader.phone)
+                }
+            }
+            else {
+                description += "N/A"
+            }
+            
+            ministryTeamDescription.text = description
             
             //grab ministry name
             CruClients.getServerClient().getById(.Ministry, insert: {
-                dict in
-                let ministry = Ministry(dict: dict)
-                self.ministryNameLabel.text = ministry.name
+                ministry in
+                if let ministryName = ministry["name"] as? String {
+                    self.ministryNameLabel.text = ministryName
+                }
+                else {
+                    self.ministryNameLabel.text = "N/A"
+                }
                 }, completionHandler: {_ in }, id: ministryTeam.parentMinistry)
         }
         else {

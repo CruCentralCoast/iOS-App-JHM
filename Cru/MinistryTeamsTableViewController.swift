@@ -28,12 +28,17 @@ class MinistryTeamsTableViewController: UITableViewController {
         ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
         
         self.ministries = CruClients.getSubscriptionManager().loadMinistries()
-        let ministryIds = ministries.map{$0.id}
-        let params: [String:AnyObject] = ["parentMinistry":["$in":ministryIds]]
         
-        //load ministry teams
-        CruClients.getServerClient().getData(.MinistryTeam, insert: insertMinistryTeam, completionHandler: finishInserting, params: params)
-
+        if !self.ministries.isEmpty {
+            let ministryIds = ministries.map{$0.id}
+            let params: [String:AnyObject] = ["parentMinistry":["$in":ministryIds]]
+            
+            //load ministry teams
+            CruClients.getServerClient().getData(.MinistryTeam, insert: insertMinistryTeam, completionHandler: finishInserting, params: params)
+        }
+        else {
+            print("NO MINISTRIES!!!")
+        }
     }
     
     //inserts individual ministry teams into the table view
@@ -66,7 +71,14 @@ class MinistryTeamsTableViewController: UITableViewController {
         if ministryTeam.imageUrl == "" {
             let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierNoPic, forIndexPath: indexPath) as! MinistryTeamNoPictureTableViewCell
             cell.ministryTeam = ministryTeam
-            cell.ministryNameLabel.text = ministry!.name
+            
+            if ministry != nil {
+                cell.ministryNameLabel.text = ministry!.name
+            }
+            else {
+                cell.ministryNameLabel.text = "N/A"
+            }
+            
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.signupButton.layer.setValue(indexPath.row, forKey: "index")
             
@@ -75,7 +87,14 @@ class MinistryTeamsTableViewController: UITableViewController {
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierPic, forIndexPath: indexPath) as! MinistryTeamsTableViewCell
             cell.ministryTeam = ministryTeam
-            cell.ministryNameLabel.text = ministry!.name
+            
+            if ministry != nil {
+                cell.ministryNameLabel.text = ministry!.name
+            }
+            else {
+                cell.ministryNameLabel.text = "N/A"
+            }
+            
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.signupButton.layer.setValue(indexPath.row, forKey: "index")
             

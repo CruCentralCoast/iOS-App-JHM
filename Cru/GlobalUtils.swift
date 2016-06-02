@@ -201,4 +201,24 @@ class GlobalUtils {
         
         return res
     }
+    
+    //formats a phone number
+    static func formatPhoneNumber(phoneNo: String) -> String {
+        var retPhoneNo: String = "("
+        
+        for ndx in 0..<phoneNo.characters.count {
+            let charIndex = phoneNo.startIndex.advancedBy(ndx)
+            
+            retPhoneNo.append(phoneNo[charIndex])
+            
+            if ndx == 2 {
+                retPhoneNo += ") "
+            }
+            else if ndx == 5 {
+                retPhoneNo += "-"
+            }
+        }
+        
+        return retPhoneNo
+    }
 }

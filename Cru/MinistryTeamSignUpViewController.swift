@@ -64,9 +64,16 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate, UI
         //update the user information in the local storage
         updateUserInformation(user)
         
+        //join ministry team
+        CruClients.getServerClient().joinMinistryTeam(ministryTeam.id, fullName: user[fullNameKey]!, phone: user[phoneNoKey]!, callback: completeJoinTeam)
+    }
+    
+    //completion handler for joining a ministry team
+    func completeJoinTeam(leaderInfo: NSArray?) {
         //add ministry team to list of ministry teams we're a part of
         ministryTeamStorageManager.addElement(ministryTeam.id, elem: ministryTeam.ministryName)
-
+        
+        //navigate back to get involved
         for controller in (self.navigationController?.viewControllers)! {
             if controller.isKindOfClass(GetInvolvedViewController) {
                 self.navigationController?.popToViewController(controller, animated: true)
@@ -80,7 +87,7 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate, UI
         
         //if there is no information stored about the user yet
         if storedUser == nil {
-            print("ADDED NEW USER")
+//            print("ADDED NEW USER")
             ministryTeamStorageManager.putObject(Config.userStorageKey, object: user)
         }
         //if the information about the user is different in this form
@@ -92,7 +99,7 @@ class MinistryTeamSignUpViewController: UIViewController, ValidationDelegate, UI
                 let phoneNo = user[phoneNoKey] as! String
                 
                 if (storedFullName != fullName) || (storedPhoneNo != phoneNo) {
-                    print("REPLACE EXISTING USER")
+//                    print("REPLACE EXISTING USER")
                     ministryTeamStorageManager.putObject(Config.userStorageKey, object: user)
                 }
             }

@@ -29,7 +29,7 @@ class EventsTableViewController: UITableViewController, SWRevealViewControllerDe
         
         GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)
 
-        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
+        CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
         
         //Set the nav title & font
         navigationItem.title = "Events"
@@ -38,7 +38,7 @@ class EventsTableViewController: UITableViewController, SWRevealViewControllerDe
     }
     
     func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
-        CruClients.getServerClient().getData(.Event, insert: insertEvent, completionHandler: finishInserting)
+        CruClients.getEventUtils().loadEvents(insertEvent, completionHandler: finishInserting)
     }
 
     //insert helper function for inserting event data
