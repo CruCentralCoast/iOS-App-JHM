@@ -465,7 +465,11 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
                 return true
             }
         }
-        return true
+        else{
+            showValidationError(ValidationErrors.noName)
+            return false
+        }
+        
     }
     
     func extractNumberFromView()->Bool{
@@ -485,7 +489,10 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             }
             
         }
-        return true
+        else{
+            showValidationError(ValidationErrors.noPhone)
+            return false
+        }
     }
     
     
