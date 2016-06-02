@@ -336,7 +336,7 @@
                                 <color key="backgroundColor" red="0.86666666670000003" green="0.49019607840000001" blue="0.1058823529" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="73" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="zrB-ep-ZEj">
-                                <rect key="frame" x="0.0" y="162" width="600" height="479"/>
+                                <rect key="frame" x="0.0" y="162" width="600" height="438"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -462,7 +462,7 @@
                             <constraint firstItem="4Bj-T4-cVj" firstAttribute="top" secondItem="yRh-MN-6kb" secondAttribute="bottom" id="JKu-RI-4ZV"/>
                             <constraint firstItem="zrB-ep-ZEj" firstAttribute="leading" secondItem="RbK-H2-gAx" secondAttribute="leading" id="LmC-0x-cH1"/>
                             <constraint firstItem="4Bj-T4-cVj" firstAttribute="leading" secondItem="35n-JR-77p" secondAttribute="leading" id="MnL-ee-paa"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="zrB-ep-ZEj" secondAttribute="bottom" constant="-41" id="RxT-gJ-LhP"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="zrB-ep-ZEj" secondAttribute="bottom" id="RxT-gJ-LhP"/>
                             <constraint firstItem="35n-JR-77p" firstAttribute="top" secondItem="yRh-MN-6kb" secondAttribute="bottom" constant="72" id="YPI-hI-qlh"/>
                             <constraint firstItem="08C-SR-hN9" firstAttribute="top" secondItem="35n-JR-77p" secondAttribute="bottom" constant="22" id="eWO-OC-cQS"/>
                             <constraint firstItem="zrB-ep-ZEj" firstAttribute="top" secondItem="08C-SR-hN9" secondAttribute="bottom" constant="15" id="lbo-wE-x20"/>

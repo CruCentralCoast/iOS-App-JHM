@@ -23,7 +23,7 @@ class DisplayCGVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
   
     
-    override func viewDidLoad() {
+    override func viewWillAppear(animated: Bool) {
         let groupId = GlobalUtils.loadString(Config.communityGroupKey)
         if (groupId != "") {
             loadCommunityGroup(groupId)

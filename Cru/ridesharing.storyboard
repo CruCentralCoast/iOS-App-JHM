@@ -28,7 +28,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="75" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6vb-NO-BXH">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="544"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="557"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -117,7 +117,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LWC-3r-hQh">
-                                <rect key="frame" x="0.0" y="544" width="300" height="56"/>
+                                <rect key="frame" x="0.0" y="556" width="300" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.24313725490196078" green="0.69411764705882351" blue="0.7803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -132,7 +132,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ut8-rs-O3u">
-                                <rect key="frame" x="300" y="544" width="300" height="56"/>
+                                <rect key="frame" x="300" y="556" width="300" height="44"/>
                                 <animations/>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.71372549019607845" blue="0.14509803921568626" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="FreightSansProBook-Regular" family="FreightSans Pro" pointSize="22"/>
@@ -147,7 +147,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="ut8-rs-O3u" firstAttribute="top" secondItem="6vb-NO-BXH" secondAttribute="bottom" id="6UR-eZ-qwB"/>
+                            <constraint firstItem="ut8-rs-O3u" firstAttribute="top" secondItem="6vb-NO-BXH" secondAttribute="bottom" constant="-1" id="6UR-eZ-qwB"/>
                             <constraint firstItem="rfO-wA-UUR" firstAttribute="top" secondItem="LWC-3r-hQh" secondAttribute="bottom" id="76R-Qd-s2z"/>
                             <constraint firstItem="LWC-3r-hQh" firstAttribute="leading" secondItem="0kr-aN-tpz" secondAttribute="leadingMargin" constant="-20" id="P22-rO-pD7"/>
                             <constraint firstItem="rfO-wA-UUR" firstAttribute="top" secondItem="ut8-rs-O3u" secondAttribute="bottom" id="ddk-aT-oPg"/>
@@ -156,10 +156,10 @@
                             <constraint firstItem="ut8-rs-O3u" firstAttribute="leading" secondItem="LWC-3r-hQh" secondAttribute="trailing" id="kha-8W-xq8"/>
                             <constraint firstItem="6vb-NO-BXH" firstAttribute="top" secondItem="Jdq-fx-Oea" secondAttribute="bottom" constant="-64" id="nZ3-9D-aDB"/>
                             <constraint firstItem="LWC-3r-hQh" firstAttribute="leading" secondItem="6vb-NO-BXH" secondAttribute="leading" id="p0x-KI-mEZ"/>
-                            <constraint firstItem="rfO-wA-UUR" firstAttribute="top" secondItem="6vb-NO-BXH" secondAttribute="bottom" constant="56" id="qFh-Ee-rja"/>
+                            <constraint firstItem="rfO-wA-UUR" firstAttribute="top" secondItem="6vb-NO-BXH" secondAttribute="bottom" constant="43" id="qFh-Ee-rja"/>
                             <constraint firstAttribute="trailingMargin" secondItem="6vb-NO-BXH" secondAttribute="trailing" constant="-20" id="rFF-YJ-Wrb"/>
                             <constraint firstItem="ut8-rs-O3u" firstAttribute="leading" secondItem="LWC-3r-hQh" secondAttribute="trailing" id="s6o-JQ-9Ku"/>
-                            <constraint firstItem="LWC-3r-hQh" firstAttribute="top" secondItem="6vb-NO-BXH" secondAttribute="bottom" id="sHo-tv-uPv"/>
+                            <constraint firstItem="LWC-3r-hQh" firstAttribute="top" secondItem="6vb-NO-BXH" secondAttribute="bottom" constant="-1" id="sHo-tv-uPv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ut8-rs-O3u" secondAttribute="trailing" constant="-20" id="sKO-Br-iAw"/>
                         </constraints>
                     </view>
