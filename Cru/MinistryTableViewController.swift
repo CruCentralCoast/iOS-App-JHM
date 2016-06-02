@@ -34,10 +34,12 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
 
         navigationItem.title = "Ministry Subscriptions"
         
+        self.navigationItem.hidesBackButton = true
+        let newBackButton = UIBarButtonItem(title: "Back", style: UIBarButtonItemStyle.Plain, target: self, action: "saveMinistriesToDevice")
+        self.navigationItem.leftBarButtonItem = newBackButton
         if self.navigationController != nil{
             self.navigationController!.navigationBar.titleTextAttributes  = [ NSFontAttributeName: UIFont(name: Config.fontBold, size: 20)!, NSForegroundColorAttributeName: UIColor.whiteColor()]
         }
-        
         
         
         CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
@@ -125,10 +127,6 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         ministries.insert(newMinistry, atIndex: 0)
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        saveMinistriesToDevice()
-    }
-    
     func saveMinistriesToDevice(){
         var subscribedMinistries = [Ministry]()
         
@@ -145,15 +143,23 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
             MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
                 let success = responses.reduce(true) {(result, cur) in result && cur.1 == true}
                 print("Was actually a success: \(success)")
-                //let title = "Something Happended"
-                
-                //let alert = UIAlertController(title: title, message: "", preferredStyle: UIAlertControllerStyle.Alert)
-                //alert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
-                
-                //self.presentViewController(alert, animated: true, completion: nil)
+                self.leavePage(success)
             })
         })
     }
+    
+    func leavePage(success: Bool) {
+        let title = success ? "Success" : "Failure"
+        let message = success ? "Successfully subscribed/unsubscribed!" : "Something may have gone wrong..."
+        let updateAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        updateAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {(thing) in
+            self.navigationController?.popViewControllerAnimated(true)
+            //self.dismissViewControllerAnimated(true, completion: nil)
+        }))
+        presentViewController(updateAlert, animated: true, completion: nil)
+    }
+    
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return subscribedCampuses.count

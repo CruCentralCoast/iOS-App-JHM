@@ -26,6 +26,9 @@ protocol ServerProtocol {
     
     func postDataIn(parent: DBCollection, parentId: String, child: DBCollection, params: [String:AnyObject], completionHandler: (NSDictionary?)->Void)
     
+    func postDataIn(parent: DBCollection, parentId: String, child: DBCollection, params: [String:AnyObject],
+        insert: (NSDictionary)->(), completionHandler: Bool->Void)
+    
     func deleteById(collection: DBCollection, id: String, completionHandler: (Bool)->Void)
     
     func deleteByIdIn(parent: DBCollection, parentId: String, child: DBCollection, childId: String, completionHandler: (Bool)->Void)

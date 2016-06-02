@@ -10,6 +10,7 @@ import UIKit
 
 class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var cgs = [CommunityGroupCell]()
+    private var ministry: String!
     private var answers = [[String:String]]()
     
     
@@ -25,9 +26,13 @@ class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     private func loadCommunityGroups() {
         MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
         
+        
+        
         //load all community groups until the submit answers endpoint is added
-        CruClients.getServerClient().getData(DBCollection.CommunityGroup, insert: insertGroup,
-            completionHandler: finishInserting)
+        
+        let params = ["answers":answers]
+        CruClients.getServerClient().postDataIn(DBCollection.Ministry, parentId: ministry,
+            child: DBCollection.CommunityGroup, params: params, insert: insertGroup, completionHandler: finishInserting)
     }
     
     private func finishInserting(success: Bool) {
@@ -46,6 +51,10 @@ class SelectCGVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
     func setAnswers(answers: [[String:String]]) {
         self.answers = answers
+    }
+    
+    func setMinistry(ministryId: String) {
+        self.ministry = ministryId
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

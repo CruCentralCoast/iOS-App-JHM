@@ -17,6 +17,8 @@ class SubscriptionManager: SubscriptionProtocol {
     private var subList = [String]()
     private var responses = [String:Bool?]()
     
+    private var successfulMinistries = [Ministry]()
+    
     private static let clientDispatchQueue = dispatch_queue_create("gcm-subcription-queue", DISPATCH_QUEUE_CONCURRENT)
     
     private static func synchronized(closure: Void->Void) {
@@ -90,16 +92,15 @@ class SubscriptionManager: SubscriptionProtocol {
                 if (!enabledMinistries.contains(min)) {
                     unsubList.append(min.id)
                     responses[min.id] = nil
-                    //unsubscribeToTopic("/topics/" + min.id)
                 }
             }
             for min in enabledMinistries {
                 if (!oldMinistries.contains(min)) {
                     subList.append(min.id)
                     responses[min.id] = nil
-                    //subscribeToTopic("/topics/" + min.id)
                 }
             }
+            successfulMinistries = enabledMinistries
             sendRequests(handler)
         }
         
@@ -110,28 +111,32 @@ class SubscriptionManager: SubscriptionProtocol {
     }
     
     private func sendRequests(handler: [String:Bool]->Void) {
+        
         subList.forEach {
             let minId = $0
-            subscribeToTopic("/topics/" + minId, handler: {(response) in
+            subscribeToTopic("/topics/" + minId, handler: {(success) in
                 SubscriptionManager.synchronized() {
-                    self.responses[minId] = response
-                    self.checkFinished(handler)
+                    self.checkFinished(success, minId: minId, handler: handler)
                 }
             })
         }
         
         unsubList.forEach {
             let minId = $0
-            unsubscribeToTopic("/topics/" + minId, handler: {(response) in
+            unsubscribeToTopic("/topics/" + minId, handler: {(success) in
                 SubscriptionManager.synchronized() {
-                    self.responses[minId] = response
-                    self.checkFinished(handler)
+                    self.checkFinished(success, minId: minId, handler: handler)
                 }
             })
         }
     }
     
-    private func checkFinished(handler: [String:Bool]->Void) {
+    private func checkFinished(success: Bool, minId: String, handler: [String:Bool]->Void) {
+        self.responses[minId] = success
+        if (!success) {
+            self.successfulMinistries = self.successfulMinistries.filter { $0.id != minId }
+        }
+        
         if (responses.reduce(true) {(result, cur) in (cur != nil) && result}) {
             handler(responses as! [String:Bool])
             print("Yup")

@@ -95,6 +95,14 @@ class KeystoneClient: ServerProtocol {
                 completionHandler(response.result.value as? NSDictionary)
         }
     }
+    
+    func postDataIn(parent: DBCollection, parentId: String, child: DBCollection, params: [String:AnyObject],
+        insert: (NSDictionary)->(), completionHandler: Bool->Void) {
+
+        let requestUrl = Config.serverEndpoint + parent.name() + "/" + parentId + "/" + child.name()
+        
+        requestData(requestUrl, method: .POST, params: params, insert: insert, completionHandler: completionHandler)
+    }
 
     // gets data from server using get endpoint
     func getData(collection: DBCollection, insert: (NSDictionary) -> (), completionHandler: (Bool)->Void) {

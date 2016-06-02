@@ -144,6 +144,7 @@ class SurveyViewController: UIViewController, UITableViewDelegate, UITableViewDa
             if let selectCGVC = segue.destinationViewController as? SelectCGVC {
                 // we're ignoring the tet question answers for now, as they will be sent differently
                 selectCGVC.setAnswers(getOptionQuestionAnswers())
+                selectCGVC.setMinistry(ministry.id)
             }
         }
     }

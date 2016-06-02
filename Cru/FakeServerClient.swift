@@ -121,6 +121,16 @@ class FakeServerClient: ServerProtocol {
             completionHandler(childObj)
         }
     }
+    
+    func postDataIn(parent: DBCollection, parentId: String, child: DBCollection, params: [String:AnyObject],
+        insert: (NSDictionary)->(), completionHandler: Bool->Void) {
+        let exception = NSException(
+            name: "Not implemented!",
+            reason: "Seems complicated",
+            userInfo: nil
+        )
+        exception.raise()
+    }
 
     func getData(collection: DBCollection, insert: (NSDictionary) -> (), completionHandler: (Bool)->Void) {
         let col = getCollection(collection)
