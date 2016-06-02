@@ -103,11 +103,6 @@ class SubscriptionManager: SubscriptionProtocol {
             successfulMinistries = enabledMinistries
             sendRequests(handler)
         }
-        
-        let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(enabledMinistries as NSArray)
-        let defaults = NSUserDefaults.standardUserDefaults()
-        defaults.setObject(archivedObject, forKey: Config.ministryKey)
-        defaults.synchronize()
     }
     
     private func sendRequests(handler: [String:Bool]->Void) {
@@ -141,6 +136,11 @@ class SubscriptionManager: SubscriptionProtocol {
             handler(responses as! [String:Bool])
             print("Yup")
             print("responses: \(responses)")
+            
+            let archivedObject = NSKeyedArchiver.archivedDataWithRootObject(successfulMinistries as NSArray)
+            let defaults = NSUserDefaults.standardUserDefaults()
+            defaults.setObject(archivedObject, forKey: Config.ministryKey)
+            defaults.synchronize()
         } else {
             print("Nope")
         }
