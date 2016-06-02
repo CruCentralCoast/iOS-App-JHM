@@ -2,7 +2,7 @@
 //  SummerMission.swift
 //  Cru
 //
-//  Created by Quan Tran on 2/2/01.
+//  Created by Deniz Tumer on 6/1/16.
 //  Copyright © 2016 Jamaican Hopscotch Mafia. All rights reserved.
 //
 
@@ -10,7 +10,6 @@ import UIKit
 
 class SummerMission {
     
-    //MARK: Properties
     var id: String
     var description: String
     var name: String

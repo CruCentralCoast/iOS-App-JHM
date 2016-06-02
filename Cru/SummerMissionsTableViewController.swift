@@ -90,8 +90,6 @@ class SummerMissionsTableViewController: UITableViewController, SWRevealViewCont
             missionDetailViewController.uiImage = selectedMissionCell.missionImage?.image
             missionDetailViewController.mission = selectedMission
             missionDetailViewController.dateText = selectedMissionCell.missionDateLabel.text!
-            
-            
         }
     }
     
