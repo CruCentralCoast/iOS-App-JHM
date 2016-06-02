@@ -7,13 +7,24 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class PassengersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class PassengersViewController: UIViewController, UITableViewDataSource, UITableViewDelegate,
+  DZNEmptyDataSetDelegate, DZNEmptyDataSetSource{
     var passengers = [Passenger]()
     var passengersToDrop = [Passenger]()
     var editable = false
     var parentEditVC: OfferOrEditRideViewController!
+    @IBOutlet weak var table: UITableView!
     
+    override func viewDidAppear(animated: Bool) {
+        table.emptyDataSetDelegate = self
+        table.emptyDataSetSource = self
+    }
+    
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        return UIImage(named: Config.noPassengersImage)
+    }
     override func viewWillDisappear(animated: Bool) {
         var remainingPassengers = [Passenger]()
         var remainingPassString = [String]()

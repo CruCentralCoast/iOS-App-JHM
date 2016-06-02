@@ -77,4 +77,5 @@ struct Config {
     static let noRidesImageName = "no-rides"
     static let noRidesForEvent = "no-rides-for-event"
     static let noCampusesImage = "no-subscribed-campuses"
+    static let noPassengersImage = "no-passengers"
 }

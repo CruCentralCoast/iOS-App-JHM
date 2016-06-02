@@ -466,8 +466,13 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             }
         }
         else{
-            showValidationError(ValidationErrors.noName)
-            return false
+            if(ride.driverName == ""){
+                showValidationError(ValidationErrors.noName)
+                return false
+            }
+            else{
+                return true
+            }
         }
         
     }
@@ -490,8 +495,14 @@ class OfferOrEditRideViewController: UIViewController, UITableViewDataSource, UI
             
         }
         else{
-            showValidationError(ValidationErrors.noPhone)
-            return false
+            if(ride.isValidPhoneNum(ride.driverNumber) == ""){
+                return true
+            }
+            else{
+                ride.isValidPhoneNum(ride.driverNumber)
+                return false
+            }
+            
         }
     }
     
