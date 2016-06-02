@@ -20,12 +20,6 @@ class MinistryTeamsTableViewCell: UITableViewCell {
             ministryTeamImage.load(ministryTeam.imageUrl)
             ministryTeamName.text = ministryTeam.ministryName
             ministryTeamDescription.text = ministryTeam.description
-            
-            CruClients.getServerClient().getById(.Ministry, insert: {
-                dict in
-                let ministry = Ministry(dict: dict)
-                self.ministryNameLabel.text = ministry.name
-                }, completionHandler: {_ in }, id: ministryTeam.parentMinistry)
         }
     }
 }

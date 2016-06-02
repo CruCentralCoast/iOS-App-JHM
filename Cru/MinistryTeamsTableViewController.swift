@@ -12,6 +12,7 @@ class MinistryTeamsTableViewController: UITableViewController {
 
     var ministryTeamsStorageManager: MapLocalStorageManager!
     var ministryTeams = [MinistryTeam]()
+    var ministries = [Ministry]()
     var signedUpMinistryTeams = [NSDictionary]()
     var selectedMinistryTeam: MinistryTeam!
     private let reuseIdentifierPic = "ministryTeamCell"
@@ -26,8 +27,12 @@ class MinistryTeamsTableViewController: UITableViewController {
         //setup local storage manager
         ministryTeamsStorageManager = MapLocalStorageManager(key: Config.ministryTeamStorageKey)
         
+        self.ministries = CruClients.getSubscriptionManager().loadMinistries()
+        let ministryIds = ministries.map{$0.id}
+        let params: [String:AnyObject] = ["parentMinistry":["$in":ministryIds]]
+        
         //load ministry teams
-        CruClients.getServerClient().getData(.MinistryTeam, insert: insertMinistryTeam, completionHandler: finishInserting)
+        CruClients.getServerClient().getData(.MinistryTeam, insert: insertMinistryTeam, completionHandler: finishInserting, params: params)
 
     }
     
@@ -56,11 +61,12 @@ class MinistryTeamsTableViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let ministryTeam = ministryTeams[indexPath.row]
-        //var cell: UITableViewCell! //make a new parent class for this
+        let ministry = ministries.filter{$0.id == ministryTeam.parentMinistry}.first
         
         if ministryTeam.imageUrl == "" {
             let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierNoPic, forIndexPath: indexPath) as! MinistryTeamNoPictureTableViewCell
             cell.ministryTeam = ministryTeam
+            cell.ministryNameLabel.text = ministry!.name
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.signupButton.layer.setValue(indexPath.row, forKey: "index")
             
@@ -69,6 +75,7 @@ class MinistryTeamsTableViewController: UITableViewController {
         else {
             let cell = tableView.dequeueReusableCellWithIdentifier(reuseIdentifierPic, forIndexPath: indexPath) as! MinistryTeamsTableViewCell
             cell.ministryTeam = ministryTeam
+            cell.ministryNameLabel.text = ministry!.name
             cell.selectionStyle = UITableViewCellSelectionStyle.None
             cell.signupButton.layer.setValue(indexPath.row, forKey: "index")
             
