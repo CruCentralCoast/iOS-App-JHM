@@ -112,6 +112,8 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func refresh(sender:AnyObject)
     {
+        ridesTableView.emptyDataSetDelegate = nil
+        ridesTableView.emptyDataSetSource = nil
         rides.removeAll()
         self.ridesTableView.reloadData()
         CruClients.getRideUtils().getMyRides(insertNewRide, afterFunc: finishRefresh)
