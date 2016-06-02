@@ -87,6 +87,7 @@ class SummerMissionsTableViewController: UITableViewController, SWRevealViewCont
             let selectedMissionCell = sender as! SummerMissionsTableViewCell
             let indexPath = self.tableView!.indexPathForCell(selectedMissionCell)!
             let selectedMission = missions[indexPath.row]
+            
             missionDetailViewController.uiImage = selectedMissionCell.missionImage?.image
             missionDetailViewController.mission = selectedMission
             missionDetailViewController.dateText = selectedMissionCell.missionDateLabel.text!

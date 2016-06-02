@@ -36,12 +36,17 @@ class CommunityGroup{
         let formatter = NSDateFormatter()
         formatter.dateFormat = serverFormat
         
-        let parsedMeetingTime = meetingTime.substringWithRange(Range<String.Index>(start: meetingTime.startIndex, end: meetingTime.endIndex.advancedBy(-14)))
-        let meetingTimeAsDate = formatter.dateFromString(parsedMeetingTime)
-        formatter.dateFormat = format
-        
-        if (meetingTimeAsDate != nil){
-            return formatter.stringFromDate(meetingTimeAsDate!)
+        if (meetingTime != nil && meetingTime.characters.count > 15){
+            let parsedMeetingTime = meetingTime.substringWithRange(Range<String.Index>(start: meetingTime.startIndex, end: meetingTime.endIndex.advancedBy(-14)))
+            let meetingTimeAsDate = formatter.dateFromString(parsedMeetingTime)
+            formatter.dateFormat = format
+            
+            if (meetingTimeAsDate != nil){
+                return formatter.stringFromDate(meetingTimeAsDate!)
+            }
+            else{
+                return ""
+            }
         }
         else{
             return ""
