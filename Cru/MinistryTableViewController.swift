@@ -155,8 +155,8 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
         
         updateAlert.addAction(UIAlertAction(title: "Ok", style: .Default, handler: {(thing) in
             self.navigationController?.popViewControllerAnimated(true)
-            //self.dismissViewControllerAnimated(true, completion: nil)
         }))
+        
         presentViewController(updateAlert, animated: true, completion: nil)
     }
     

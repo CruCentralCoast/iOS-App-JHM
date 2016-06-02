@@ -99,7 +99,7 @@ class GetInvolvedViewController: UIViewController, UITabBarDelegate, SWRevealVie
         if (segue.identifier == "cgDetailSegue"){
             if let cg = segue.destinationViewController as? DisplayCGVC{
                 cgController = cg
-                cgController?.setLeaveCallback(showCGContainer)
+                cgController!.leaveCallback = showCGContainer
             }
         }
     }

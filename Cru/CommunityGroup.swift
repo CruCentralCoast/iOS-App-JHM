@@ -9,12 +9,15 @@
 import UIKit
 
 class CommunityGroup{
+
     var id: String!
     var name : String!
     var description: String!
     var meetingTime: String!
-    var leaders : [String]!
-    var parentMinitry : String!
+    //var leaders : [[String: AnyObject]]!
+    var parentMinistry : String!
+    var ministryName: String?
+    var leaders = [User]()
     
     init(dict: NSDictionary) {
         id = dict["_id"] as? String
@@ -25,20 +28,24 @@ class CommunityGroup{
             // just going to use the string for now
             meetingTime = dateStr//GlobalUtils.dateFromString(dateStr)
         }
-        leaders = dict["leaders"] as? [String]
-        parentMinitry = dict["parentMinistry"] as? String
+        if let leadersDict  = dict["leaders"] as? [[String: AnyObject]]{
+            for lead in leadersDict{
+                leaders.append(User(dict: lead))
+            }
+        }
+        parentMinistry = dict["parentMinistry"] as? String
     }
     
     func getMeetingTime()->String{
         let format = "E h:mm a"
         let serverFormat = "E M d y H:m:s"
   
-        let formatter = NSDateFormatter()
-        formatter.dateFormat = serverFormat
+        let formatter = GlobalUtils.getDefaultDateFormatter()//NSDateFormatter()
+        //formatter.dateFormat = serverFormat
         
         if (meetingTime != nil && meetingTime.characters.count > 15){
-            let parsedMeetingTime = meetingTime.substringWithRange(Range<String.Index>(start: meetingTime.startIndex, end: meetingTime.endIndex.advancedBy(-14)))
-            let meetingTimeAsDate = formatter.dateFromString(parsedMeetingTime)
+            //let parsedMeetingTime = meetingTime.substringWithRange(Range<String.Index>(start: meetingTime.startIndex, end: meetingTime.endIndex.advancedBy(-14)))
+            let meetingTimeAsDate = formatter.dateFromString(meetingTime)
             formatter.dateFormat = format
             
             if (meetingTimeAsDate != nil){

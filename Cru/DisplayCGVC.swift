@@ -14,9 +14,12 @@ class DisplayCGVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
     var group: CommunityGroup!
     var cells = [UITableViewCell]()
     @IBOutlet weak var table: UITableView!
-    private var leaveCallback: (Void->Void)!
+    var leaveCallback: (Void->Void)!
+    var ministryNameCell: UITextView!
 
     @IBAction func leaveGroup(sender: AnyObject) {
+        cells.removeAll()
+        self.table.reloadData()
         GlobalUtils.saveString(Config.communityGroupKey, value: "")
         leaveCallback()
     }
@@ -28,16 +31,36 @@ class DisplayCGVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         if (groupId != "") {
             loadCommunityGroup(groupId)
         }
+        
+        
         table.estimatedRowHeight = 300
         table.rowHeight = UITableViewAutomaticDimension
     }
 
     private func loadCommunityGroup(id: String) {
-        CruClients.getServerClient().getById(DBCollection.CommunityGroup, insert: insertGroup, completionHandler: loadLeaders, id: id)
+        CruClients.getServerClient().getById(DBCollection.CommunityGroup, insert: insertGroup, completionHandler: { success in
+            
+                self.table.reloadData()
+            
+            
+            
+            
+            }, id: id)
+    }
+    private func insertMinistry(dict: NSDictionary){
+        let minist = Ministry(dict: dict)
+        ministryNameCell.text = minist.name
     }
 
     private func insertGroup(dict: NSDictionary) {
         group = CommunityGroup(dict: dict)
+        
+        if(group.parentMinistry != nil){
+            CruClients.getServerClient().getById(.Ministry, insert: insertMinistry, completionHandler: {
+                success in
+                }, id: group.parentMinistry)
+        }
+        
         
         if let cell = table.dequeueReusableCellWithIdentifier("cell")! as? CGDetailTableViewCell{
             cell.cellTitle.text = "Meeting Time:"
@@ -62,31 +85,22 @@ class DisplayCGVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         
         if let cell = table.dequeueReusableCellWithIdentifier("cell")! as? CGDetailTableViewCell{
             cell.cellTitle.text = "Ministry:"
-            cell.cellValue.text = group.parentMinitry
+            ministryNameCell = cell.cellValue
+            cell.cellValue.text = ""
             cells.append(cell)
             table.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
         }
         
-        self.table.reloadData()
-    }
-    
-    private func loadLeaders(success: Bool) {
-        if (success) {
-            //CruClients.getServerClient().getDataIn(DBCollection.CommunityGroup, parentId: group.id, child: DBCollection.Leader, insert: insertLeader, completionHandler: finishInserting)
-            
-            if (group.leaders != nil && group.leaders.count > 0) {
-                CruClients.getServerClient().getData(.User, insert: insertLeader, completionHandler: finishInserting, params: ["_id":["$in": group.leaders]])
+        for lead in group.leaders{
+            if let cell = self.table.dequeueReusableCellWithIdentifier("leaderCell")! as? CGLeaderCell{
+                cell.setUser(lead)
+                cells.append(cell)
+                table.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
             }
-            
         }
-    }
-    
-    private func insertLeader(dict: NSDictionary) {
-        if let cell = self.table.dequeueReusableCellWithIdentifier("leaderCell")! as? CGLeaderCell{
-            cell.setUser(User(dict: dict))
-            cells.append(cell)
-            table.insertRowsAtIndexPaths([NSIndexPath(forItem: 0, inSection: 0)], withRowAnimation: .Automatic)
-        }
+        
+        
+        self.table.reloadData()
     }
     
     private func finishInserting(success: Bool) {
@@ -102,8 +116,8 @@ class DisplayCGVC: UIViewController, UITableViewDelegate, UITableViewDataSource 
         return cells[indexPath.row]
     }
     
-    func setLeaveCallback(callback: Void->Void) {
-        leaveCallback = callback
-    }
+//    func setLeaveCallback(callback: Void->Void) {
+//        leaveCallback = callback
+//    }
 
 }
