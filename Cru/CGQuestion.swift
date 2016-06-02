@@ -30,12 +30,22 @@ class CGQuestion {
 
     init(dict: NSDictionary) {
         id = dict["_id"] as! String
-        ministry = dict[CGQuestion.ministryField] as! String
-        question = dict["question"] as! String
+        ministry = CGQuestion.getString(dict, key: CGQuestion.ministryField)
+        question = CGQuestion.getString(dict, key: "question")
         type = CGQuestionType(rawValue: dict["type"] as! String)!
         
         let optionStructs = dict["selectOptions"] as! [NSDictionary]
         
+        
         options = optionStructs.map() {$0["value"] as! String}
+    }
+    
+    static
+        func getString(dict: NSDictionary, key: String) -> String {
+        if let value = dict[key] as? String {
+            return value
+        } else {
+            return ""
+        }
     }
 }

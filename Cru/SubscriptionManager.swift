@@ -89,7 +89,7 @@ class SubscriptionManager: SubscriptionProtocol {
             }
         }
         
-        return false
+        return oldMinistries.count != enabledMinistries.count
     }
     
     func saveMinistries(ministries:[Ministry], updateGCM: Bool) {
