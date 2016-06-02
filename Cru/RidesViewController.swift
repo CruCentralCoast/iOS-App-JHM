@@ -38,7 +38,10 @@ class RidesViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        appDelegate.ridesPage = self
+        
         ridesTableView.separatorStyle = .None
         
         GlobalUtils.setupViewForSideMenu(self, menuButton: menuButton)

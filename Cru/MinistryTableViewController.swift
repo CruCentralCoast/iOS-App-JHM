@@ -79,14 +79,7 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
     
     func emptyDataSet(scrollView: UIScrollView!, didTapView view: UIView!) {
         if(hasConnection == false){
-            
             CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
-            
-//            CruClients.getServerClient().getData(.Ministry, insert: insertMinistry, completionHandler: {success in
-//                // TODO: handle failure
-//                self.reloadData()
-//                CruClients.getServerClient().checkConnection(self.finishConnectionCheck)
-//            })
         }
     }
     

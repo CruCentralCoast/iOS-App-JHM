@@ -24,6 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
     var gcmSenderID: String?
     var registrationToken: String?
     var registrationOptions = [String: AnyObject]()
+    var ridesPage : RidesViewController?
     
     let registrationKey = "onRegistrationCompleted"
     let messageKey = "onMessageReceived"
@@ -132,6 +133,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GGLInstanceIDDelegate, GC
             print("Notification received: \(userInfo)")
             // This works only if the app started the GCM service
             GCMService.sharedInstance().appDidReceiveMessage(userInfo);
+            
+            if let apsDict = userInfo["aps"] as? [String : AnyObject]{
+                if let alertDict = apsDict["alert"] as? [String : AnyObject]{
+                    if let alert = alertDict["body"] as? String{
+                        if let alertTitle = alertDict["title"] as? String{
+                            
+                            let alertControl = UIAlertController(title: alert, message: "", preferredStyle: UIAlertControllerStyle.Alert)
+                            alertControl.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+                            self.window?.rootViewController!.presentViewController(alertControl, animated: true, completion: {
+                                
+                                if (alertTitle == "Cru Ride Sharing" && self.ridesPage != nil){
+                                    self.ridesPage?.refresh()
+                                }
+                            })
+                        }
+                    }
+                }
+            }
             // Handle the received message
             // Invoke the completion handler passing the appropriate UIBackgroundFetchResult value
             NSNotificationCenter.defaultCenter().postNotificationName(messageKey, object: nil,
