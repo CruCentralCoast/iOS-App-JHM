@@ -138,14 +138,21 @@ class MinistryTableViewController: UITableViewController, DZNEmptyDataSetDelegat
                 }
             }
         }
-        MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
-        CruClients.getSubscriptionManager().saveMinistries(subscribedMinistries, updateGCM: true, handler: { (responses) in
-            MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
-                let success = responses.reduce(true) {(result, cur) in result && cur.1 == true}
-                print("Was actually a success: \(success)")
-                self.leavePage(success)
+        
+        let update = CruClients.getSubscriptionManager().didMinistriesChange(subscribedMinistries)
+        
+        if (update) {
+            MRProgressOverlayView.showOverlayAddedTo(self.view, animated: true)
+            CruClients.getSubscriptionManager().saveMinistries(subscribedMinistries, updateGCM: true, handler: { (responses) in
+                MRProgressOverlayView.dismissOverlayForView(self.view, animated: true, completion: {
+                    let success = responses.reduce(true) {(result, cur) in result && cur.1 == true}
+                    print("Was actually a success: \(success)")
+                    self.leavePage(success)
+                })
             })
-        })
+        } else {
+            self.navigationController?.popViewControllerAnimated(true)
+        }
     }
     
     func leavePage(success: Bool) {

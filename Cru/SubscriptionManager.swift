@@ -68,6 +68,30 @@ class SubscriptionManager: SubscriptionProtocol {
         return [Ministry]()
     }
     
+    func didMinistriesChange(ministries:[Ministry]) -> Bool {
+        var enabledMinistries = [Ministry]()
+        
+        for min in ministries {
+            if(min.feedEnabled == true){
+                enabledMinistries.append(min)
+            }
+        }
+
+        let oldMinistries = loadMinistries()
+        for min in oldMinistries {
+            if (!enabledMinistries.contains(min)) {
+                return true
+            }
+        }
+        for min in enabledMinistries {
+            if (!oldMinistries.contains(min)) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func saveMinistries(ministries:[Ministry], updateGCM: Bool) {
         saveMinistries(ministries, updateGCM: updateGCM, handler: {(map) in })
     }

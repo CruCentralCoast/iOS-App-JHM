@@ -69,6 +69,30 @@ class FakeSubscriptionManager: SubscriptionProtocol {
         handler(minMap)
     }
     
+    func didMinistriesChange(ministries:[Ministry]) -> Bool {
+        var enabledMinistries = [Ministry]()
+        
+        for min in ministries {
+            if(min.feedEnabled == true){
+                enabledMinistries.append(min)
+            }
+        }
+        
+        let oldMinistries = loadMinistries()
+        for min in oldMinistries {
+            if (!enabledMinistries.contains(min)) {
+                return true
+            }
+        }
+        for min in enabledMinistries {
+            if (!oldMinistries.contains(min)) {
+                return true
+            }
+        }
+        
+        return false
+    }
+    
     func campusContainsMinistry(campus: Campus, ministry: Ministry)->Bool {
         return ministry.campusId == campus.id
     }
